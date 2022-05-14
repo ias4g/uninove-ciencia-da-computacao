@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <locale.h>
-
 // ########## DADOS DO ALUNO ##########
 // NOME: IZAEL ALVES DA SILVA
 // RA: 922114939
@@ -10,6 +6,10 @@
 //	Faça um programa em C que permita entrar com o nome, a idade e o sexo de 5 pessoas.
 //	O programa deve imprimir o nome da pessoa se ela for do sexo masculino e tiver mais de 20 anos.
 //	Use  1 - para masculino - 2- para feminino
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
 
 int main(void)
 {
