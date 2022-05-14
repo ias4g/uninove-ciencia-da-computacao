@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h> //necessário para usar setlocale
+#include <locale.h>
 
 // ########## DADOS DO ALUNO ##########
 // NOME: IZAEL ALVES DA SILVA
