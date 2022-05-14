@@ -1,0 +1,10 @@
+## 1º SEMESTRE
+***
+
+## `MATÉRIA`:
+##### ALGORITMOS E PRÁTICAS DE PROGRAMAÇÃO
+
+***
+
+## `PROFESSOR(A)`:
+##### DEBORA VIGILIA CANNE
