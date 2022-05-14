@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h> //necessário para usar setlocale
-#include <ctype.h>	//necessário para usar o isdigit()
 
 // ########## DADOS DO ALUNO ##########
 // NOME: IZAEL ALVES DA SILVA
@@ -21,7 +20,6 @@ int main(void)
 	int i = 1;
 	char nome[50];
 	int qtd_pessoas;
-	char caracter_digitado;
 
 	printf("\n\n");
 	printf(">>>>>>>>>>>>>>>>>>>> PROGRAM STAR... \n\n");
@@ -31,38 +29,31 @@ int main(void)
 
 	do
 	{
-		caracter_digitado = getch();
-		if (isdigit(caracter_digitado) != 0)
+
+		printf("Digite o nome da %iª pessoas: ", i);
+		fflush(stdin);
+		fgets(nome, 50, stdin);
+
+		printf("Digite sua idade: ");
+		scanf("%i", &idade);
+
+		printf("Digite seu sexo | [1] - Masculino. [2] - Feminino: ");
+		scanf("%i", &sexo);
+
+		printf("----------------------------------------------------- \n");
+
+		if (sexo == 1 && idade > 20)
 		{
-			printf("DIGITE APENAS NÚMEROS");
+			printf("Nome: %s \n", nome, idade);
 		}
 		else
 		{
-			printf("Digite o nome da %iª pessoas: ", i);
-			fflush(stdin);
-			fgets(nome, 50, stdin);
-
-			printf("Digite sua idade: ");
-			scanf("%i", &idade);
-
-			printf("Digite seu sexo | [1] - Masculino. [2] - Feminino: ");
-			scanf("%i", &sexo);
-
-			printf("----------------------------------------------------- \n");
-
-			if (sexo == 1 && idade > 20)
-			{
-				printf("Nome: %s \n", nome, idade);
-			}
-			else
-			{
-				printf("Não enquadra nos requisitos do programa! \n");
-			}
-
-			i++;
-
-			printf("####################################################### \n\n");
+			printf("Não enquadra nos requisitos do programa! \n");
 		}
+
+		i++;
+
+		printf("####################################################### \n\n");
 
 	} while (i <= qtd_pessoas);
 
