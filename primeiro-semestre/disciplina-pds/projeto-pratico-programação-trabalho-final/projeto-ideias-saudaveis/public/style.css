@@ -48,7 +48,7 @@ p, .description{
 /* Estilos padrões */
 
 #container{
-    width: 90%;
+    width: 100vw;
     max-width: 980px;
     margin: 50px auto;
     display: flex;
@@ -57,6 +57,10 @@ p, .description{
 #intro{
     max-width: 300px;
     margin-right: 40px;
+}
+
+#intro header a img{
+    width: 100%;
 }
 
 main{
@@ -101,7 +105,7 @@ footer a{
 
 .idea{
     display: flex;
-    background-color: #fff;
+    background-color: rgb(173, 24, 24);
     box-shadow: 0px 4px 16px -8px rgba(1, 1, 1, 0.1);
     margin-bottom: 35px;
     padding: 35px;
