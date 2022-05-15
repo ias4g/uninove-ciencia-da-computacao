@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block title %}
+    <title>Home - Creative house</title>
+    {% endblock title %}
+
+    {% include "head.html" %}
+</head>
+
+<body id="{{ bodyId }}">
+
+    <div id="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Modal -->
+    {% include "modal.html" %}
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
