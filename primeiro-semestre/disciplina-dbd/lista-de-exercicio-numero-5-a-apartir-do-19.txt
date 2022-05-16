@@ -1,5 +1,13 @@
 -- RESOLUÇÃO DOS EXERCICIOS DA LISTA DE NÚMERO 5, A PARTIR DO 19º
 
+-- ###############################################################################
+--     SELECT      LISTA DE CAMPOS PARA PROJEÇÃO
+--     FROM        NOME DA TABELA
+--     WHERE       CONDICIONAL PARA FILTRAR LINHAS DA TABELA
+--     GROUP BY    AGRUPA AS LINHAS RESULTANTES
+--     ORDER BY    ORDENA/CLASSIFICA AS LINHAS RESULTANTES
+-- ###############################################################################
+
 -- 19) Consulte o campo DEPTNO da tabela EMP, alterando o cabeçalho para ‘Número do
 -- departamento’, além de apresentar o menor salário, maior salário, média salarial por
 -- departamento. Para isso, agrupe pelo número do departamento.
@@ -115,8 +123,40 @@
 -- 32)Faça uma consulta que apresente o total pago por alunos no ano de 2007 e a média de
 -- valores pagos por eles
 -- RESPOSTA 32 👇
+    SELECT      IDALUNO, SUM(VALLIQ), AVG(VALLIQ)
+    FROM        PAGTO
+    WHERE       DTPAGO LIKE '__/__/07'
+    GROUP BY    IDALUNO
+    
+    -- OU
+    
+    SELECT      IDALUNO, SUM(VALLIQ), AVG(VALLIQ)
+    FROM        PAGTO
+    WHERE       DTPAGO LIKE '%07'
+    GROUP BY    IDALUNO
+    
+    -- OU
+    
+    SELECT      IDALUNO, SUM(VALLIQ), AVG(VALLIQ)
+    FROM        PAGTO
+    WHERE       DTPAGO BETWEEN '01/01/2007' AND '31/12/2007'
+    GROUP BY    IDALUNO
+    
+    -- OU
+    
+    SELECT      IDALUNO, SUM(VALLIQ), AVG(VALLIQ)
+    FROM        PAGTO
+    WHERE       DTPAGO >= '01/01/2007' AND DTPAGO <= '31/12/2007'
+    GROUP BY    IDALUNO
 
 
--- 33)Consulte quantos pagamentos foram feitos para cada professor no 1o semestre de 2008,
+-- 33)Consulte quantos pagamentos foram feitos para cada professor no 1º semestre de 2008,
 -- classificando por professor.
 -- RESPOSTA 33 👇
+    SELECT      IDPROF, COUNT(*)
+    FROM        PAGTO
+    WHERE       DTPAGTO BETWEEN '01/01/2008' AND '30/06/2008'
+    GROUP BY    IDPROF
+    ORDER BY    IDPROF
+    
+    
