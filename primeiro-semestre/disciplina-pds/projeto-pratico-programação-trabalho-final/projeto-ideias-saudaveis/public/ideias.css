@@ -3,12 +3,18 @@
 }
 
 #page-ideas header{
+    height: 54px;
+    /* background-color: #0984e3; */
     display: flex;
     justify-content: space-between;
 }
 
-#page-ideas header img{
+/* #page-ideas header a img{
     width: 100%;
+} */
+
+#page-ideas header img{
+    width: 300px;
 }
 
 #page-ideas nav{
@@ -51,10 +57,11 @@ section#title h1{
     font-size: 28px;
 }
 
+
 section#ideas{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
 }
 
 section#ideas .idea{
@@ -64,5 +71,5 @@ section#ideas .idea{
 section#title,
 section#ideas,
 footer{
-    margin-top: 64px;
+    margin-top: 24px;
 }
