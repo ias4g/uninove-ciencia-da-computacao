@@ -1,12 +1,12 @@
-body.hideScroll{
+body.hideScroll {
     overflow: hidden;
 }
 
-#modal.addScroll{
+#modal.addScroll {
     overflow: auto;
 }
 
-#modal{
+#modal {
     background: #ff5e84;
     position: fixed;
     top: 0;
@@ -19,17 +19,17 @@ body.hideScroll{
     transition: 800ms;
 }
 
-#modal .content{
+#modal .content {
     margin-top: 0;
     color: #fff;
 }
 
-#modal .content h1{
+#modal .content h1 {
     text-align: center;
     text-transform: uppercase;
 }
 
-#modal form{
+#modal form {
     width: 80%;
     max-width: 800px;
     margin: 0 auto;
@@ -38,17 +38,14 @@ body.hideScroll{
     gap: 15px;
 }
 
-/* .input-wrapper{
-    margin: 16px 0;
-} */
-
 .content form div:nth-child(3),
 .content form div:nth-child(4),
-.content form div:nth-child(5){
+.content form div:nth-child(5) {
     grid-column: span 2;
 }
 
-form input, form textarea{
+form input,
+form textarea {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -58,18 +55,18 @@ form input, form textarea{
     font-size: 12px;
 }
 
-form textarea{
+form textarea {
     resize: vertical;
 }
 
-form label{
+form label {
     font-size: 12px;
     font-weight: 600;
     line-height: 32px;
     letter-spacing: 0.8px;
 }
 
-form a{
+form a {
     background-color: #ffffff22;
     color: #fff;
     width: 150px;
@@ -84,13 +81,13 @@ form a{
     transition: 400ms;
 }
 
-form a:hover{
+form a:hover {
     background-color: #fff;
     color: #ff5e84;
     text-decoration: none;
 }
 
-form button{
+form button {
     background: #fff;
     width: 150px;
     height: 40px;
@@ -102,13 +99,13 @@ form button{
     transition: 400ms;
 }
 
-form button:hover{
+form button:hover {
     background-color: #0984e3;
     color: #fff;
     text-decoration: none;
 }
 
-#modal.hide{
+#modal.hide {
     opacity: 0;
     visibility: hidden;
 }

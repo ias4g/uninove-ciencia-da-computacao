@@ -1,31 +1,31 @@
-
 /* Estilos globais */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap");
 
-body{
+body {
     background: #e5e5e5;
     color: #25282b;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     margin: 10px;
 }
 
-a{
+a {
     color: #ff5e84;
     font-weight: bold;
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
 }
 
-p, .description{
+p,
+.description {
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 0.1px;
 }
 
-.button{
+.button {
     color: #fff;
     background: #ff5e84;
     border-radius: 8px;
@@ -40,41 +40,36 @@ p, .description{
     justify-content: center;
 }
 
-.button:hover{
+.button:hover {
     background-color: #0984e3;
     text-decoration: none;
 }
 
 /* Estilos padrões */
 
-#container{
-    /* width: 100vw; */
+#container {
     max-width: 920px;
     margin: 50px auto;
     display: flex;
     flex: 1;
 }
 
-#intro{
-    /* width: 350px; */
+#intro {
     max-width: 300px;
     margin-right: 20px;
-    /* padding: 10px; */
-    /* background-color: #bde724; */
 }
 
-#intro header a img{
+#intro header a img {
     width: 100%;
 }
 
-#last-ideias{
+#last-ideias {
     width: 100%;
     margin: 0;
     padding: 0;
-    opacity: .6;
 }
 
-.sem-registro{
+.sem-registro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,29 +78,25 @@ p, .description{
     height: 100%;
     margin: 0px;
     padding: 0px;
-    /* background-color: #ffffff; */
-    /* padding: 35px; */
     text-align: center;
 }
 
-.sem-registro img{
+.sem-registro img {
     width: 128px;
-    opacity: .1;
-    /* box-shadow: 0px 0px 6px 0px rgba(1, 1, 1, 1); */
-    /* border: 1px solid #333; */
+    opacity: 0.1;
 }
 
-main{
+main {
     margin: 35px 0;
 }
 
-#buttons{
+#buttons {
     display: flex;
     margin-bottom: 35px;
     justify-content: space-evenly;
 }
 
-button{
+button {
     background: none;
     color: #ff5e84;
     border: none;
@@ -115,14 +106,13 @@ button{
     font-weight: bold;
     cursor: pointer;
     outline: none;
-    
 }
 
-button:hover{
+button:hover {
     text-decoration: underline;
 }
 
-footer{
+footer {
     text-align: center;
     font-size: 12px;
     font-weight: 400;
@@ -131,12 +121,11 @@ footer{
     color: #777;
 }
 
-footer a{
+footer a {
     opacity: 0.7;
 }
 
-.idea{
-    /* max-width: 100%; */
+.idea {
     display: flex;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 4px 16px -8px rgba(1, 1, 1, 0.1);
@@ -146,34 +135,34 @@ footer a{
     word-wrap: break-word;
 }
 
-.idea img{
+.idea img {
     width: 42px;
     height: 42px;
     margin-right: 35px;
 }
 
-.idea h3{
+.idea h3 {
     margin: 0;
 }
 
-.idea p{
+.idea p {
     margin: 0px;
     color: #777;
 }
 
-.idea a{
+.idea a {
     font-size: 12px;
 }
 
-.idea .description{
+.idea .description {
     margin: 16px 0px;
 }
 
-.idea p.ideas-footer{
+.idea p.ideas-footer {
     font-size: 10px;
 }
 
-#ideas-footer{
+#ideas-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;

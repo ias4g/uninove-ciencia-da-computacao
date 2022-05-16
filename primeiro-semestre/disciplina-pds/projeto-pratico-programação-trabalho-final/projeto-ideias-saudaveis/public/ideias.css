@@ -1,75 +1,69 @@
-#page-ideas #container{
+#page-ideas #container {
     display: block;
 }
 
-#page-ideas header{
+#page-ideas header {
     height: 54px;
-    /* background-color: #0984e3; */
     display: flex;
     justify-content: space-between;
 }
 
-/* #page-ideas header a img{
-    width: 100%;
-} */
-
-#page-ideas header img{
+#page-ideas header img {
     width: 300px;
 }
 
-#page-ideas nav{
+#page-ideas nav {
     display: flex;
     align-items: center;
 }
 
-#page-ideas nav li{
+#page-ideas nav li {
     list-style: none;
     margin-right: 15px;
 }
 
-#page-ideas nav li a{
+#page-ideas nav li a {
     color: #25282b;
 }
 
-#page-ideas nav li:last-child:hover{
+#page-ideas nav li:last-child:hover {
     background-color: #0984e3;
     cursor: pointer;
 }
 
-#page-ideas nav li:last-child{
+#page-ideas nav li:last-child {
     margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
-section#title{
+section#title {
     text-align: center;
 }
 
-section#title p{
+section#title p {
     opacity: 0.6;
     margin: 0;
 }
 
-section#title h1{
+section#title h1 {
     margin: 0;
     font-size: 28px;
 }
 
-
-section#ideas{
+section#ideas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 
-section#ideas .idea{
+section#ideas .idea {
     margin: 0;
 }
 
 section#title,
 section#ideas,
-footer{
+footer {
     margin-top: 24px;
 }
