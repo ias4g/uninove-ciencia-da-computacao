@@ -1,11 +1,12 @@
 -- RESOLUÇÃO DOS EXERCICIOS DA LISTA DE NÚMERO 5, A PARTIR DO 19º
 
 -- ###############################################################################
---     SELECT      LISTA DE CAMPOS PARA PROJEÇÃO
---     FROM        NOME DA TABELA
---     WHERE       CONDICIONAL PARA FILTRAR LINHAS DA TABELA
---     GROUP BY    AGRUPA AS LINHAS RESULTANTES
---     ORDER BY    ORDENA/CLASSIFICA AS LINHAS RESULTANTES
+--  SELECT      LISTA DE CAMPOS PARA PROJEÇÃO
+--  FROM        NOME DA TABELA
+--  WHERE       CONDICIONAL PARA FILTRAR LINHAS DA TABELA
+--  GROUP BY    AGRUPA AS LINHAS RESULTANTES
+--  HAVING      CONDICIONAL PARA FILTRAR LINHAS APOS AGRUPAR
+--  ORDER BY    ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 -- ###############################################################################
 
 -- 19) Consulte o campo DEPTNO da tabela EMP, alterando o cabeçalho para ‘Número do
