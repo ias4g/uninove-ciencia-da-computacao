@@ -50,6 +50,10 @@ int main()
     letra = toupper(getchar()); // scanf("%c", &letra); outra maneira de resolver
     for (i = 0; i < n; i++)
     {
+        if (cadastro[i][0] == letra)
+        {
+            printf("Aluno %2d: %10s\n", i + 1, cadastro[i]);
+        }
     }
 
     system("pause");
