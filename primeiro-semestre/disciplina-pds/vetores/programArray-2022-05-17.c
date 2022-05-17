@@ -10,7 +10,7 @@
  */
 
 /**
- * Desenvolver um programa em C que permita o usuário cadastrar N nomes de alunos
+ * Desenvolver um programa em C que permita o usuário cadastrar N nomes de alunos,
  * Escolher uma letra inicial para exibir a lista de nomes com a inicial escolhida.
  */
 
@@ -31,7 +31,7 @@ int main()
     char letra;
 
     printf("\tCADASTRO DE ALUNO.\n");
-    printf("-----------------------------------\n\n");
+    printf("-----------------------------------------------------------------------------------------------\n\n");
 
     printf("QUANTOS NOME DESEJA CADASTRAR? ");
     scanf("%i", &n);
@@ -45,7 +45,7 @@ int main()
     }
 
     printf("Listando os nomes com a letra solicitada\n");
-    printf("-----------------------------------\n\n");
+    printf("----------------------------------------------------------------------------------------------\n\n");
     printf("Digite a primeira letra do nome: ");
     letra = toupper(getchar()); // scanf("%c", &letra); outra maneira de resolver
     for (i = 0; i < n; i++)
