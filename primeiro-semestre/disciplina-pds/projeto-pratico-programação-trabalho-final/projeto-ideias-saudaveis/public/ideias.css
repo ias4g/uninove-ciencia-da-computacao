@@ -3,13 +3,13 @@
 }
 
 #page-ideas header {
-    height: 54px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
 #page-ideas header img {
-    width: 300px;
+    width: 208px;
 }
 
 #page-ideas nav {
