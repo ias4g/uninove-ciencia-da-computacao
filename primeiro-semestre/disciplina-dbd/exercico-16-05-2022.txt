@@ -1,0 +1,76 @@
+-- EXERCICIOS PROPOSTO DO DIA 16 DE MAIO DE 2022
+
+
+SELECT MIN(SAL)
+FROM EMP
+
+SELECT ENAME, JOB, SAL
+FROM EMP
+WHERE SAL = (SELECT MIN(SAL) FROM EMP)
+
+-- ##################################################
+
+SELECT ENAME, JOB, SAL
+FROM EMP
+WHERE SAL = (
+                SELECT MAX(SAL)
+                FROM EMP
+                WHERE DETPNO = 20
+            )
+ORDER BY ENAME
+
+-- #########################################
+
+SELECT ENAME, JOB, SAL
+FROM EMP
+WHERE SAL = (
+                SELECT MAX(SAL)
+                FROM EMP
+                GROUP BY DEPTNO
+            )
+ORDER BY ENAME
+
+-- ###############################################
+
+SELECT ENAME, JOB, SAL
+FROM EMP
+WHERE SAL IN (
+                SELECT MAX(SAL)
+                FROM EMP
+                GROUP BY DEPTNO
+            )
+ORDER BY ENAME
+
+-- #############################################
+
+SELECT ENAME, JOB, SAL
+FROM EMP
+WHERE (DETPNO, SAL) = (
+            SELECT MAX(SAL)
+            FROM EMP
+            GROUP BY DEPTNO
+        )
+ORDER BY ENAME
+
+-- #####################################################
+
+SELECT ENAME, JOB, SAL
+FROM EMP
+WHERE (DETPNO = 10 AND SAL = 5000) OR (DEPTNO = 20 AND SAL = 3000) OR (DEPTNO = 30 AND SAL = )= (
+            SELECT MAX(SAL)
+            FROM EMP
+            GROUP BY DEPTNO
+        )
+ORDER BY ENAME
+
+-- ################################################
+
+INSERT INTO EMP (EMPNO, ENAME, JOB, SAL)
+VALUES (1, 'IZAEL', (SELECT JOB FROM EMP WHERE EMPNO - 7788), 3400)
+
+
+
+
+
+
+
