@@ -9,7 +9,7 @@
 }
 
 #page-ideas header img {
-    width: 208px;
+    width: 20.8rem;
 }
 
 #page-ideas nav {
@@ -19,7 +19,7 @@
 
 #page-ideas nav li {
     list-style: none;
-    margin-right: 15px;
+    margin-right: 1.5rem;
 }
 
 #page-ideas nav li a {
@@ -49,13 +49,13 @@ section#title p {
 
 section#title h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 2.8rem;
 }
 
 section#ideas {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 1rem;
 }
 
 section#ideas .idea {
@@ -65,5 +65,5 @@ section#ideas .idea {
 section#title,
 section#ideas,
 footer {
-    margin-top: 24px;
+    margin-top: 2.4rem;
 }

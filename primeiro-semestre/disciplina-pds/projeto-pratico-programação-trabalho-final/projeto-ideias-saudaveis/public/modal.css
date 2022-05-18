@@ -31,11 +31,11 @@ body.hideScroll {
 
 #modal form {
     width: 80%;
-    max-width: 800px;
+    max-width: 80rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 1.5rem;
 }
 
 .content form div:nth-child(3),
@@ -47,12 +47,12 @@ body.hideScroll {
 form input,
 form textarea {
     width: 100%;
-    padding: 8px;
+    padding: 0.8rem;
     box-sizing: border-box;
-    border-radius: 6px;
-    border: 1px solid rgba(141, 25, 52, 0.5);
+    border-radius: 0.6rem;
+    border: 0.1rem solid rgba(141, 25, 52, 0.5);
     outline: none;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 form textarea {
@@ -60,23 +60,23 @@ form textarea {
 }
 
 form label {
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 600;
-    line-height: 32px;
-    letter-spacing: 0.8px;
+    line-height: 3.2rem;
+    letter-spacing: 0.08rem;
 }
 
 form a {
     background-color: #ffffff22;
     color: #fff;
-    width: 150px;
-    height: 40px;
+    width: 15rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 0.6rem;
     align-self: end;
     transition: 400ms;
 }
@@ -89,11 +89,11 @@ form a:hover {
 
 form button {
     background: #fff;
-    width: 150px;
-    height: 40px;
-    border-radius: 6px;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 0.6rem;
     cursor: pointer;
-    margin-top: 32px;
+    margin-top: 3.2rem;
     grid-column: 2;
     justify-self: end;
     transition: 400ms;
