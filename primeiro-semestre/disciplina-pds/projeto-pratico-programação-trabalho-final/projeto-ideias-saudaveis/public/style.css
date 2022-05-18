@@ -1,11 +1,16 @@
 /* Estilos globais */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap");
 
+:root {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
 body {
-    background: #e5e5e5;
+    margin: 1rem;
     color: #25282b;
+    font-size: 1.6rem;
+    background: #e5e5e5;
     font-family: "Montserrat", sans-serif;
-    margin: 10px;
 }
 
 a {
@@ -20,19 +25,19 @@ a:hover {
 
 p,
 .description {
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 0.1px;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.01rem;
 }
 
 .button {
     color: #fff;
     background: #ff5e84;
-    border-radius: 8px;
-    width: 150px;
-    height: 40px;
+    border-radius: 0.8rem;
+    width: 15rem;
+    height: 4rem;
     box-shadow: #ff5e8432;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 600;
 
     display: flex;
@@ -48,21 +53,21 @@ p,
 /* Estilos padrões */
 
 #container {
-    max-width: 920px;
-    margin: 50px auto;
+    max-width: 92rem;
+    margin: 5rem auto;
     display: flex;
     flex: 1;
 }
 
 #intro {
-    max-width: 300px;
-    margin-right: 25px;
+    max-width: 30rem;
+    margin-right: 2.5rem;
     /* border: 1px solid #333; */
     /* background-color: #0984e3; */
 }
 
 #intro header a img {
-    width: 208px;
+    width: 20.8rem;
 }
 
 #last-ideias {
@@ -78,18 +83,18 @@ p,
     justify-content: center;
     width: 100%;
     height: 100%;
-    margin: 0px;
-    padding: 0px;
+    margin: 0rem;
+    padding: 0rem;
     text-align: center;
 }
 
 .sem-registro img {
-    width: 128px;
+    width: 12.8rem;
     opacity: 0.1;
 }
 
 main {
-    margin: 35px 0;
+    margin: 3.5rem 0;
 }
 
 #buttons {
@@ -102,9 +107,9 @@ button {
     background: none;
     color: #ff5e84;
     border: none;
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: 0.2px;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.02rem;
     font-weight: bold;
     cursor: pointer;
     outline: none;
@@ -116,10 +121,10 @@ button:hover {
 
 footer {
     text-align: center;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0.2px;
+    line-height: 1.8rem;
+    letter-spacing: 0.02rem;
     color: #777;
     /* background-color: #0984e3; */
 }
@@ -131,17 +136,17 @@ footer a {
 .idea {
     display: flex;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 4px 16px -8px rgba(1, 1, 1, 0.1);
-    margin-bottom: 35px;
-    padding: 20px;
-    border-radius: 8px;
+    box-shadow: 0rem 0.4rem 1.6rem -0.8rem rgba(1, 1, 1, 0.1);
+    margin-bottom: 3.5rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
     word-wrap: break-word;
 }
 
 .idea img {
-    width: 42px;
-    height: 42px;
-    margin-right: 35px;
+    width: 4.2rem;
+    height: 4.2rem;
+    margin-right: 3.5rem;
 }
 
 .idea h3 {
@@ -149,20 +154,20 @@ footer a {
 }
 
 .idea p {
-    margin: 0px;
+    margin: 0;
     color: #777;
 }
 
 .idea a {
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 .idea .description {
-    margin: 16px 0px;
+    margin: 1.6rem 0;
 }
 
 .idea p.ideas-footer {
-    font-size: 10px;
+    font-size: 1rem;
 }
 
 #ideas-footer {
