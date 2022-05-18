@@ -1,8 +1,8 @@
 const sqlite3 = require('sqlite3').verbose()
 const db = new sqlite3.Database('./db/ideias-saudaveis.db')
 // const db = new sqlite3.Database('./db/ideias-saudaveis-vazio.db')
- 
-db.serialize(function(){
+
+db.serialize(function () {
 
     //Criando a tabela
     db.run(`
@@ -18,7 +18,7 @@ db.serialize(function(){
     `)
 
 
-    
+
 
 
     //Consultando dados na tabela
@@ -29,7 +29,7 @@ db.serialize(function(){
 
 
     //Deletando dados da tabela
-    // db.run(`DELETE FROM ideas WHERE id=?`, [1], function(err){
+    // db.run(`DELETE FROM ideas`, function(err){
     //     if (err) return console.log(err)
     //     console.log("Deletei", this)
     // })

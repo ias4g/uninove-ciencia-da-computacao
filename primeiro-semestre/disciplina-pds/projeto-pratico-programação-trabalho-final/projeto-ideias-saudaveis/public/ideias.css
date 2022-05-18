@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background-color: #25282b; */
 }
 
 #page-ideas header img {
@@ -20,6 +21,10 @@
 #page-ideas nav li {
     list-style: none;
     margin-right: 1.5rem;
+}
+
+#page-ideas nav li#mobile {
+    display: none;
 }
 
 #page-ideas nav li a {
@@ -40,6 +45,10 @@
 
 section#title {
     text-align: center;
+}
+
+section#title div.sem-registro img {
+    margin-bottom: 2rem;
 }
 
 section#title p {
@@ -66,4 +75,19 @@ section#title,
 section#ideas,
 footer {
     margin-top: 2.4rem;
+}
+
+/* ########################################################################################### */
+@media (max-width: 768px) {
+    section#ideas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #page-ideas nav li#desktop {
+        display: none;
+    }
+    #page-ideas nav li#mobile {
+        display: block;
+    }
 }

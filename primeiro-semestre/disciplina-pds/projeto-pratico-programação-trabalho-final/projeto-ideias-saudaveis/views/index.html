@@ -28,23 +28,19 @@
         <button onclick="onOff()">+ adicionar idéias</button>
         <a href="/ideias" class="button">Ver idéias</a>
     </section>
-
-    <footer>
-        {% include "footer.html" %}
-    </footer>
 </section>
 
 <section id="last-ideias">
     {% if ideas.length === 0 %}
-        <div class="sem-registro">
-            <img src="./images/browser.png" alt="Imagem de registro não encontra">
-            <p>
-                Nenhum registro encontrado! <br>
-                seja o primeiro(a) a cadastrar uma ideia!
-            </p>
-        </div>
+    <div class="sem-registro">
+        <img src="./images/browser.png" alt="Imagem de registro não encontra">
+        <p>
+            Nenhum registro encontrado! <br>
+            seja o primeiro(a) a cadastrar uma ideia!
+        </p>
+    </div>
     {% else %}
-        {% include "all_ideas.html" %}        
+    {% include "all_ideas.html" %}
     {% endif %}
 </section>
 {% endblock %}
