@@ -28,6 +28,7 @@ int main()
     int n;
     int i;
     char cadastro[30][60];
+    char hasLetra[10][20];
     char letra;
 
     printf("\tCADASTRO DE ALUNO.\n");
@@ -44,9 +45,9 @@ int main()
         gets(cadastro[i]);
     }
 
-    printf("Listando os nomes com a letra solicitada\n");
+    printf("\nListando os nomes com a letra solicitada\n");
     printf("----------------------------------------------------------------------------------------------\n\n");
-    printf("Digite a primeira letra do nome: ");
+    printf("Digite a 1ª letra do nome: ");
     letra = toupper(getchar()); // scanf("%c", &letra); outra maneira de resolver
     for (i = 0; i < n; i++)
     {
@@ -54,7 +55,19 @@ int main()
         {
             printf("Aluno %2d: %10s\n", i + 1, cadastro[i]);
         }
+        else
+        {
+            printf("Nenhum nome encontrado com esta letra.\n");
+            break;
+        }
+
+        // if (achei != 1)
+        // {
+        //     printf("Nenhum nome encontrado com esta letra.\n");
+        // }
     }
+
+    printf("----------------------------------------------------------------------------------------------\n\n");
 
     system("pause");
     return 0;
