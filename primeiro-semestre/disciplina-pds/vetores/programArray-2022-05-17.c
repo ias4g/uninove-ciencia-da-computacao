@@ -1,6 +1,6 @@
 /**
  * @file programArray-2022-05-17.c
- * @author Izael Silva
+ * @author Izael Silva (https//github.com/Ias4g)
  * @brief
  * @version 0.1
  * @date 2022-05-17
