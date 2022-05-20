@@ -1,12 +1,12 @@
 /**
- * @file vetores-ordenação-2022-05-17.c
+ * @file 2022-05-20_ordenation.c
  * @author Izael Silva (https//github.com/Ias4g)
  * @brief
  * @version 0.1
  * @date 2022-05-20
  *
  * @copyright Copyright (c) 2022
- * ############################################################################################
+ * ####################################################################
  */
 
 #include <stdio.h>
@@ -30,7 +30,7 @@ int main()
     }
     printf("\n\n");
     printf("-. Lista das letras .-\n");
-    printf("-----------------------\n");
+    printf("####################################################################\n");
 
     for (i = 0; i < SIZE; i++)
     { // laço para imprimir o valor

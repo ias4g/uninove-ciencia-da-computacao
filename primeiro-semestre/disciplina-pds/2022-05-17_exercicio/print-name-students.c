@@ -1,16 +1,17 @@
 /**
- * @file programArray-2022-05-17.c
+ * @file print-name-students.c
  * @author Izael Silva (https//github.com/Ias4g)
  * @brief
  * @version 0.1
- * @date 2022-05-17
+ * @date 2022-05-20
+ *
  * @copyright Copyright (c) 2022
  *
- */
-
-/**
- * Desenvolver um programa em C que permita o usuário cadastrar N nomes de alunos,
- * Escolher uma letra inicial para exibir a lista de nomes com a inicial escolhida.
+ * Desenvolver um programa em C que permita o usuário cadastrar N
+ * nomes de alunos,
+ * Escolher uma letra inicial para exibir a lista de nomes com
+ * a inicial escolhida.
+ * ####################################################################
  */
 
 #include <stdio.h>
@@ -27,13 +28,13 @@ int main()
     int n, i, j = 0;
     char letra, cadastro[30][60];
 
-    printf("\tCADASTRO DE ALUNO.\n");
-    printf("-----------------------------------------------------------------------------------------------\n\n");
+    printf("CADASTRO DE ALUNO.\n");
+    printf("####################################################################\n\n");
 
     printf("QUANTOS NOME DESEJA CADASTRAR? ");
     scanf("%i", &n);
 
-    printf("Legal! Você vai poder cadastar %i nomes.\n\n", n);
+    printf("Legal! Voce vai poder cadastar %i nomes.\n\n", n);
     for (i = 0; i < n; i++)
     {
         printf("Digite o %i nome: ", i + 1);
@@ -42,7 +43,7 @@ int main()
     }
 
     printf("\nListando os nomes com a letra solicitada\n");
-    printf("----------------------------------------------------------------------------------------------\n\n");
+    printf("####################################################################\n\n");
 
     printf("Digite a 1ª letra do nome: ");
     letra = toupper(getchar()); // scanf("%c", &letra); outra maneira de resolver
@@ -57,10 +58,10 @@ int main()
 
     if (j != 1)
     {
-        printf("Não achei nenhum nome com esta letra %c", letra);
+        printf("Não achei nenhum nome com esta letra %c\n", letra);
     }
 
-    printf("----------------------------------------------------------------------------------------------\n\n");
+    printf("####################################################################\n\n");
 
     system("pause");
     return 0;
