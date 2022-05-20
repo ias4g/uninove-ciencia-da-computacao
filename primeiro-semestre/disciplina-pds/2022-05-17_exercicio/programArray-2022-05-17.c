@@ -4,7 +4,6 @@
  * @brief
  * @version 0.1
  * @date 2022-05-17
- *
  * @copyright Copyright (c) 2022
  *
  */
@@ -44,6 +43,7 @@ int main()
 
     printf("\nListando os nomes com a letra solicitada\n");
     printf("----------------------------------------------------------------------------------------------\n\n");
+
     printf("Digite a 1ª letra do nome: ");
     letra = toupper(getchar()); // scanf("%c", &letra); outra maneira de resolver
     for (i = 0; i < n; i++)
