@@ -25,11 +25,8 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    int n;
-    int i;
-    char cadastro[30][60];
-    char hasLetra[10][20];
-    char letra;
+    int n, i;
+    char letra, cadastro[30][60];
 
     printf("\tCADASTRO DE ALUNO.\n");
     printf("-----------------------------------------------------------------------------------------------\n\n");
@@ -37,7 +34,7 @@ int main()
     printf("QUANTOS NOME DESEJA CADASTRAR? ");
     scanf("%i", &n);
 
-    printf("Legal! Você vai poder cadastar %i nomes.\n", n);
+    printf("Legal! Você vai poder cadastar %i nomes.\n\n", n);
     for (i = 0; i < n; i++)
     {
         printf("Digite o %i nome: ", i + 1);
@@ -55,16 +52,6 @@ int main()
         {
             printf("Aluno %2d: %10s\n", i + 1, cadastro[i]);
         }
-        else
-        {
-            printf("Nenhum nome encontrado com esta letra.\n");
-            break;
-        }
-
-        // if (achei != 1)
-        // {
-        //     printf("Nenhum nome encontrado com esta letra.\n");
-        // }
     }
 
     printf("----------------------------------------------------------------------------------------------\n\n");
