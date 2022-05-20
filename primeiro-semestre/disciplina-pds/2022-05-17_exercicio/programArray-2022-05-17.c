@@ -24,7 +24,7 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    int n, i;
+    int n, i, j = 0;
     char letra, cadastro[30][60];
 
     printf("\tCADASTRO DE ALUNO.\n");
@@ -51,7 +51,13 @@ int main()
         if (cadastro[i][0] == letra)
         {
             printf("Aluno %2d: %10s\n", i + 1, cadastro[i]);
+            j = 1;
         }
+    }
+
+    if (j != 1)
+    {
+        printf("Não achei nenhum nome com esta letra %c", letra);
     }
 
     printf("----------------------------------------------------------------------------------------------\n\n");
