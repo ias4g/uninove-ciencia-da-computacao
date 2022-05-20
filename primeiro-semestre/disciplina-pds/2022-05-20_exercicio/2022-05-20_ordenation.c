@@ -6,17 +6,19 @@
  * @date 2022-05-20
  *
  * @copyright Copyright (c) 2022
+ *
+ * Ordenação cm Buble Sort
  * ####################################################################
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#define SIZE 5
+#define SIZE 5 // constante
 
 int main()
 {
-    system("color f");
+    system("color A");
     setlocale(LC_ALL, "Portuguese");
 
     int i;             // controle do laço
