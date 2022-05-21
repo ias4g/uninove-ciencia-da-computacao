@@ -27,20 +27,20 @@ int main()
     int aux;
     int cont;
 
-    printf("Digite %d números inteiros: \n", TAM);
+    printf("Digite os %d numeros inteiros\n", TAM);
     for (i = 0; i < TAM; i++)
     {
+        printf("Numeros %d: ", i + 1);
         scanf("%d", &numeros[i]);
     }
 
-    printf("Ordem atual dos números: \n");
+    printf("Ordem atual dos numeros: \n");
     for (i = 0; i < TAM; i++)
     {
         printf("%4d", numeros[i]);
     }
 
-    printf("\nNúmeros em ordem crescente:\n");
-
+    printf("\nNumeros em ordem crescente:\n");
     for (cont = 1; cont < TAM; cont++)
     {
         for (i = 0; i < TAM - 1; i++)
