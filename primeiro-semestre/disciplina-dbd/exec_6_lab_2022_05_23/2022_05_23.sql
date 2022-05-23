@@ -20,6 +20,9 @@
     ORDER BY 	JOB;
 
 -- 36) Selecione todos os dados dos empregados SMITH e TURNER da tabela EMP.
+	SELECT	*
+    FROM	EMP
+    WHERE	EMPNO = 7369 OR EMPNO = 7844
 
 -- 37) O que está errado no comando abaixo?
 -- SELECT JOB, AVG(SAL) FROM EMP GROUP BY SAL
