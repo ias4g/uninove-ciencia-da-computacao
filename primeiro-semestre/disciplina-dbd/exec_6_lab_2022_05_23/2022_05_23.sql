@@ -3,10 +3,21 @@
 -- 34) Consulte o nome do empregado, salário e o número do departamento em que trabalha,
 -- apresentando dados apenas dos empregados que tem o maior salário por departamento.
 -- Faça o comando utilizando uma subquery.
+	SELECT	ENAME, SAL, DEPTNO
+	FROM	EMP
+	WHERE	SAL IN (
+						SELECT		MAX(SAL)
+						FROM		EMP
+						GROUP BY	DEPTNO
+					);
 
 -- 35) Consulte os cargos dos empregados da tabela emp apresentando a soma dos salários
 -- gastos por cargo. Altere os cabeçalhos para “Cargos” e “Total de Salário” e classifique
 -- por cargo o resultado final.
+	SELECT		JOB AS CARGOS, SUM(SAL)
+    FROM 		EMP
+    GROUP BY 	JOB
+    ORDER BY 	JOB;
 
 -- 36) Selecione todos os dados dos empregados SMITH e TURNER da tabela EMP.
 
