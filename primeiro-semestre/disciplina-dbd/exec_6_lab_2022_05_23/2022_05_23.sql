@@ -14,7 +14,7 @@
 -- 35) Consulte os cargos dos empregados da tabela emp apresentando a soma dos salários
 -- gastos por cargo. Altere os cabeçalhos para “Cargos” e “Total de Salário” e classifique
 -- por cargo o resultado final.
-	SELECT		JOB AS CARGOS, SUM(SAL)
+	SELECT		JOB AS CARGOS, SUM(SAL) AS "TOTAL DE SALÁRIOS"
     FROM 		EMP
     GROUP BY 	JOB
     ORDER BY 	JOB;
