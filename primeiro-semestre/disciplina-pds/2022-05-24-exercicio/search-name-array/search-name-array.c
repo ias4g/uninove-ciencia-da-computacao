@@ -12,19 +12,44 @@
 
 #include <stdio.h>
 #include <string.h>
+#define QUANT 2
 
 int main()
 {
-    char empresa[4][50];
     int i;
+    int achei = 0;
+    char busca[50];
+    char empresa[QUANT][50];
 
     printf("===============================\n");
     printf("**\t CADASTRO DE EMPRESAS **\n");
     printf("===============================\n");
 
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < QUANT; i++)
     {
         printf("DIGITE O NOME DA %dEMPRESA: ", i + 1);
         gets(empresa[i]);
+    }
+
+    printf("-- EMPRESAS CADASTRADAS --\n");
+    for (i = 0; i < QUANT; i++)
+    {
+        printf("%s\t\n", empresa[i]);
+    }
+
+    printf("DIGITE O NAME DA EMPRESA QUE DESEJA CONSULTAR: ");
+    gets(busca);
+    for (i = 0; i < QUANT; i++)
+    {
+        if (strcmp(empresa[i], busca) == 0)
+        {
+            printf("EMPRESA: %s\n", empresa[i]);
+            achei = 1;
+        }
+    }
+
+    if (!achei)
+    {
+        printf("EMPRESA NAO ENCONTRADA!\n");
     }
 }
