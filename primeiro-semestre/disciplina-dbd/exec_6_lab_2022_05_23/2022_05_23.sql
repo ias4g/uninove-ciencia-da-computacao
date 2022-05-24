@@ -42,13 +42,16 @@
 -- 38) O que está errado no comando abaixo?
 -- UPDATE EMP SAL = 4000 WHERE ENAME = ‘SMITH’
 -- R: 👇
-	UPDATE EMP
-    SET SAL = 4000
-    WHERE ENAME = 'SMITH';
+	UPDATE	EMP
+    SET		SAL = 4000
+    WHERE	ENAME = 'SMITH';
 
 -- 39) O empregado “Smith” foi transferido para o departamento ‘OPERATIONS’. Faça essa
 -- alteração na tabela EMP.
 -- R: 👇
+	UPDATE	EMP
+    SET		DEPTNO = 40
+    WHERE	EMPNO = 7369;
 
 -- 40) Faça uma consulta que mostre quantos funcionários existem alocados por departamento
 -- e a média de salários gastos pelos departamentos.
