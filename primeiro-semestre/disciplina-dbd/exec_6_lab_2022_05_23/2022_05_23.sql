@@ -80,6 +80,9 @@
 -- 43) O empregado “James foi transferido para o departamento ‘ACCOUNTING’. Faça essa
 -- alteração na tabela EMP utilizando uma subquery.
 -- R: 👇
+	UPDATE	EMP
+    SET		DEPTNO = (SELECT DEPTNO FROM DEPT WHERE DNAME = 'ACCOUNTING')
+	WHERE 	EMPNO = 76900;
 
 -- 44) Consulte todos os empregados da tabela EMP que não possuem valores para o campo
 -- que representa a comissão. Traga apenas seu nome, no do empregado e salário,
