@@ -17,10 +17,13 @@
 
 int main()
 {
-    system("color E");
+    system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    int vet[QUANT], i, nump, achei = 0;
+    int vet[QUANT];
+    int i;
+    int nump;
+    int achei = 0;
 
     for (i = 0; i < QUANT; i++)
     { // leitura dos valores
