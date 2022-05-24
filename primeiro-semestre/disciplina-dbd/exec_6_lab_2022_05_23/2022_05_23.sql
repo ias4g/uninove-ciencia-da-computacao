@@ -55,6 +55,10 @@
 
 -- 40) Faça uma consulta que mostre quantos funcionários existem alocados por departamento
 -- e a média de salários gastos pelos departamentos.
+-- R: 👇
+	SELECT		DEPTNO, COUNT(*), AVG(SAL)
+    FROM		EMP
+    GROUP BY 	DEPTNO;
 
 -- 41) Selecione o menor salário, o maior salário e a soma dos salários pagos por cargo dentro
 -- de cada departamento. Classifique o resultado por departamento.
