@@ -89,3 +89,9 @@
 -- classificados em ordem decrescente de Nome. (Verifique a estrutura da tabela para saber
 -- o nome correto das colunas).
 -- R: 👇
+	SELECT		ENAME, EMPNO, SAL
+    FROM		EMP
+    WHERE		COMM IS NULL
+    ORDER BY	ENAME DESC;
+    
+    
