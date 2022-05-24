@@ -44,7 +44,7 @@
 -- R: 👇
 	UPDATE	EMP
     SET		SAL = 4000
-    WHERE	ENAME = 'SMITH';
+    WHERE	EMPNO = 7369;
 
 -- 39) O empregado “Smith” foi transferido para o departamento ‘OPERATIONS’. Faça essa
 -- alteração na tabela EMP.
