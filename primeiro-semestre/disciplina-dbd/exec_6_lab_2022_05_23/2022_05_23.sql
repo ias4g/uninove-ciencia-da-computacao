@@ -71,7 +71,12 @@
 -- 42) Apague da tabela EMP os empregados que foram admitidos em 87. Faça um RollBack
 -- em seguida.
 -- R: 👇
-
+	DELETE
+    FROM	EMP
+    WHERE	HIREDATE LIKE '%87';
+    
+    ROLLBACK;
+    
 -- 43) O empregado “James foi transferido para o departamento ‘ACCOUNTING’. Faça essa
 -- alteração na tabela EMP utilizando uma subquery.
 -- R: 👇
