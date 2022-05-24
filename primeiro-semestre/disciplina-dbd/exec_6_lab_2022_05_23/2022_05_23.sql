@@ -25,15 +25,26 @@
 -- R: 👇
 	SELECT	*
     FROM	EMP
-    WHERE	EMPNO = 7369 OR EMPNO = 7844
+    WHERE	EMPNO = 7369 OR EMPNO = 7844;
+    
+    SELECT	*
+    FROM	EMP
+    WHERE	EMPNO IN (7369, 7844);
 
 -- 37) O que está errado no comando abaixo?
 -- SELECT JOB, AVG(SAL) FROM EMP GROUP BY SAL
 -- R: 👇
+	-- TEM QUE SER AGRUPADO POR JOB NÃO POR SAL
+    SELECT		JOB, AVG(SAL)
+    FROM		EMP
+    GROUP BY	JOB;
 
 -- 38) O que está errado no comando abaixo?
 -- UPDATE EMP SAL = 4000 WHERE ENAME = ‘SMITH’
 -- R: 👇
+	UPDATE EMP
+    SET SAL = 4000
+    WHERE ENAME = 'SMITH';
 
 -- 39) O empregado “Smith” foi transferido para o departamento ‘OPERATIONS’. Faça essa
 -- alteração na tabela EMP.
