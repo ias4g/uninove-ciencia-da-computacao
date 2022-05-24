@@ -242,4 +242,11 @@ footer a {
     #desktop {
         display: none;
     }
+
+    footer{
+        /* background-color: #0984e3; */
+        display: flex;
+        flex-direction: column;
+        position: initial;
+    }
 }
