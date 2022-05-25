@@ -1,6 +1,6 @@
 /**
  * @file matriz.c
- * @author Izael Silva (https://gitub.com/Ias4g)
+ * @author Izael Silva (https://github.com/Ias4g)
  * @brief
  * @version 0.1
  * @date 2022-05-24
@@ -20,6 +20,20 @@ int main()
 {
     system("color A");
     setlocale(LC_ALL, "Portuguese");
+
+    int i;
+    int j;
+    int matriz[MATRIZ_L][MATRIZ_C];
+
+    printf("Matriz de numeros\n");
+    for (i = 0; i < MATRIZ_L; i++)
+    {
+        for (j = 0; j < MATRIZ_C; j++)
+        {
+            printf("Digite o numero da posicao [%d][%d]", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
 
     printf("\n\n");
     system("pause");
