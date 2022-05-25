@@ -16,13 +16,14 @@
 
 int main()
 {
+    system("color A");
     int i;
     int achei = 0;
     char busca[50];
     char empresa[QUANT][50];
 
     printf("===============================\n");
-    printf("**\t CADASTRO DE EMPRESAS **\n");
+    printf("\t** CADASTRO DE EMPRESAS **\n");
     printf("===============================\n");
 
     for (i = 0; i < QUANT; i++)
@@ -34,16 +35,16 @@ int main()
     printf("-- EMPRESAS CADASTRADAS --\n");
     for (i = 0; i < QUANT; i++)
     {
-        printf("%s\t\n", empresa[i]);
+        printf("%s\t", empresa[i]);
     }
 
-    printf("DIGITE O NAME DA EMPRESA QUE DESEJA CONSULTAR: ");
+    printf("\n\nDIGITE O NAME DA EMPRESA QUE DESEJA CONSULTAR: ");
     gets(busca);
     for (i = 0; i < QUANT; i++)
     {
         if (strcmp(empresa[i], busca) == 0)
         {
-            printf("EMPRESA: %s\n", empresa[i]);
+            printf("\n\nEMPRESA ENCONTRADA: %s\n\n", empresa[i]);
             achei = 1;
         }
     }
