@@ -1,6 +1,6 @@
 /**
  * @file search-name-array.c
- * @author Izael Silva (https://gitub.com/Ias4g)
+ * @author Izael Silva (https://github.com/Ias4g)
  * @brief
  * @version 0.1
  * @date 2022-05-24
