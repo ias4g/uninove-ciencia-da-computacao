@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define MATRIZ_L 2
+#define MATRIZ_L 3
 #define MATRIZ_C 3
 
 int main()
@@ -25,17 +25,27 @@ int main()
     int j;
     int matriz[MATRIZ_L][MATRIZ_C];
 
-    printf("Matriz de numeros\n");
+    printf("\n\n**** Matriz de numeros ****\n\n");
     for (i = 0; i < MATRIZ_L; i++)
     {
         for (j = 0; j < MATRIZ_C; j++)
         {
-            printf("Digite o numero da posicao [%d][%d]", i, j);
+            printf("Digite o numero da posicao [%d][%d]: ", i, j);
             scanf("%d", &matriz[i][j]);
         }
     }
 
+    printf("\n\nImprimindo valores da matriz\n\n");
+    for (i = 0; i < MATRIZ_L; i++)
+    {
+        for (j = 0; j < MATRIZ_C; j++)
+        {
+            printf("%4d", matriz[i][j]);
+        }
+        printf("\n\n");
+    }
+
     printf("\n\n");
-    system("pause");
+    // system("pause");
     return 0;
 }
