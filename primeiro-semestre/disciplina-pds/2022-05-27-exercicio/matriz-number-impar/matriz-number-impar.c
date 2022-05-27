@@ -49,13 +49,32 @@ int main()
         printf("\n");
     }
 
-    printf("\n\nMatriz com valores impares\n");
+    printf("\n\nNumeros impares\n");
     printf("........................................\n");
     for (i = 0; i < MATRIZ_L; i++)
     {
         for (j = 0; j < MATRIZ_C; j++)
         {
             if (matrix[i][j] % 2 == 1)
+            {
+                printf("%3d", matrix[i][j]);
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("\n");
+    }
+
+    printf("\n\nNumeros pares\n");
+    printf("........................................\n");
+    for (i = 0; i < MATRIZ_L; i++)
+    {
+        for (j = 0; j < MATRIZ_C; j++)
+        {
+            if (matrix[i][j] % 2 == 0)
             {
                 printf("%3d", matrix[i][j]);
             }
