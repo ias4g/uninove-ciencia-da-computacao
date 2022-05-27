@@ -38,12 +38,27 @@ int main()
 
     printf("Matriz digitada com todos os valores.\n");
     printf("----------------------------------------");
-
     for (i = 0; i < MATRIZ_L; i++)
     {
         for (j = 0; j < MATRIZ_C; j++)
         {
             printf("[%d][%d]=: ", i, j);
+        }
+
+        printf("\n");
+    }
+
+    printf("........................................\n");
+
+    printf("Matriz com valores impares\n\n");
+    for (i = 0; i < MATRIZ_L; i++)
+    {
+        for (j = 0; j < MATRIZ_C; j++)
+        {
+            if (matrix[i][j] % 2 == 1)
+            {
+                printf("");
+            }
         }
     }
 
