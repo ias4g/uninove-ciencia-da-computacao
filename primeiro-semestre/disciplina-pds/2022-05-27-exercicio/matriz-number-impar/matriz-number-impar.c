@@ -15,8 +15,8 @@
 #include <conio.h>
 #include <locale.h>
 
-#define MATRIZ_L 4
-#define MATRIZ_C 4
+#define MATRIZ_L 2
+#define MATRIZ_C 2
 
 int main()
 {
@@ -27,6 +27,7 @@ int main()
     int j;
     int matrix[MATRIZ_L][MATRIZ_C];
 
+    printf("\n\n");
     for (i = 0; i < MATRIZ_L; i++)
     {
         for (j = 0; j < MATRIZ_C; j++)
@@ -36,30 +37,35 @@ int main()
         }
     }
 
-    printf("Matriz digitada com todos os valores.\n");
-    printf("----------------------------------------");
+    printf("\n\nMatriz digitada com todos os valores.\n");
+    printf(".........................................\n");
     for (i = 0; i < MATRIZ_L; i++)
     {
         for (j = 0; j < MATRIZ_C; j++)
         {
-            printf("[%d][%d]=: ", i, j);
+            printf("%3d", matrix[i][j]);
         }
 
         printf("\n");
     }
 
+    printf("\n\nMatriz com valores impares\n");
     printf("........................................\n");
-
-    printf("Matriz com valores impares\n\n");
     for (i = 0; i < MATRIZ_L; i++)
     {
         for (j = 0; j < MATRIZ_C; j++)
         {
             if (matrix[i][j] % 2 == 1)
             {
-                printf("");
+                printf("%3d", matrix[i][j]);
+            }
+            else
+            {
+                printf(" ");
             }
         }
+
+        printf("\n");
     }
 
     return 0;
