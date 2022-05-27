@@ -19,7 +19,7 @@
 
 int main()
 {
-    system("color E");
+    system("color A");
     setlocale(LC_ALL, "Portuguese");
 
     int i;
@@ -27,14 +27,14 @@ int main()
     float mat[MATRIZ_L][MATRIZ_C];
 
     printf("Matriz de numeros reais\n");
-    printf("-------------------------------------");
+    printf("-------------------------------------\n");
 
     for (i = 0; i < MATRIZ_L; i++)
     {
         for (j = 0; j < MATRIZ_C; j++)
         {
-            printf("[%f][%f]= ", i, j);
-            scanf("%F", &mat[i][j]);
+            printf("[%d][%d]= ", i, j);
+            scanf("%f", &mat[i][j]);
         }
     }
 
