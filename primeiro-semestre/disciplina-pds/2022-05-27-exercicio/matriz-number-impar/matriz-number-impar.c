@@ -36,5 +36,16 @@ int main()
         }
     }
 
+    printf("Matriz digitada com todos os valores.\n");
+    printf("----------------------------------------");
+
+    for (i = 0; i < MATRIZ_L; i++)
+    {
+        for (j = 0; j < MATRIZ_C; j++)
+        {
+            printf("[%d][%d]=: ", i, j);
+        }
+    }
+
     return 0;
 }
