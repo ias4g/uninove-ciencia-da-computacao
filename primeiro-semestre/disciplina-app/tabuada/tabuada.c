@@ -24,19 +24,18 @@ int main()
     int number;
     char operacao;
 
-    printf("Digite o numero para fazer a operacao: \n");
+    printf("Digite o numero para fazer a operacao: ");
     scanf("%i", &number);
 
-    printf("Digite a operacao [+][-][*][/]: \n");
-    fflush(stdin);
-    gets(operacao);
+    printf("Digite a operacao [+][-][*][/]: ");
+    scanf("%c", &operacao);
 
     printf("%s\n", operacao);
 
-    for (i = 0; i <= 10; i++)
-    {
-        printf("%i x %i = %i\n", number, i, number * i);
-    }
+    // for (i = 0; i <= 10; i++)
+    // {
+    //     printf("%i x %i = %i\n", number, i, number * i);
+    // }
 
     return 0;
 }
