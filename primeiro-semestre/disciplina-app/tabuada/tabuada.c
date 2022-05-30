@@ -22,20 +22,63 @@ int main()
 
     int i;
     int number;
-    char operacao;
+    int opcao;
 
-    printf("Digite o numero para fazer a operacao: ");
+    printf("\n\n#########################################\n");
+    printf("#\tESCOLHA UMA OPCAO ABAIXO. \t#\n");
+    printf("#---------------------------------------#\n");
+    printf("#\t1 - ADICAO\t\t\t#\n");
+    printf("#\t2 - SUBTRACAO\t\t\t#\n");
+    printf("#\t3 - MULTIPLICACAO\t\t\t#\n");
+    printf("#\t4 - DIVISAO\t\t\t#\n");
+    printf("#########################################\n\n");
+
+    printf("QUAL OPERACAO MATEMATICA QUER FAZER? ");
+    scanf("%i", &opcao);
+
+    printf("\nDIGITE O NUMERO INTEIRO QUE DESEJA FAZER A OPERACAO ESCOLHIDA: ");
     scanf("%i", &number);
 
-    printf("Digite a operacao [+][-][*][/]: ");
-    scanf("%c", &operacao);
-
-    printf("%s\n", operacao);
-
-    for (i = 0; i <= 10; i++)
+    printf("\n\nRESULTADO\n\n");
+    switch (opcao)
     {
-        printf("%i x %i = %i\n", number, i, number * i);
-    }
+    case 1:
+        for (i = 0; i <= 10; i++)
+        {
+            printf("%i + %i = %i\n", number, i, number + i);
+        }
+        break;
 
+    case 2:
+        for (i = 0; i <= 10; i++)
+        {
+            printf("%i - %i = %f\n", i, number, number - i);
+        }
+        break;
+
+    case 3:
+        for (i = 0; i <= 10; i++)
+        {
+            printf("%i * %i * %i\n", number, i, number * i);
+        }
+        break;
+
+    case 4:
+        for (i = 0; i <= 10; i++)
+        {
+            printf("%i / %i = %i\n", i + number, i, number / i);
+        }
+        break;
+
+    default:
+        printf("OPERACAO INVALIDA!");
+        break;
+    }
+    // for (i = 0; i <= 10; i++)
+    // {
+    //     printf("%i x %i = %i\n", number, i, number * i);
+    // }
+
+    system("pause");
     return 0;
 }
