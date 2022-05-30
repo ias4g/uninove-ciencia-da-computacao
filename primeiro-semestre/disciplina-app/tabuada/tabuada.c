@@ -32,10 +32,10 @@ int main()
 
     printf("%s\n", operacao);
 
-    // for (i = 0; i <= 10; i++)
-    // {
-    //     printf("%i x %i = %i\n", number, i, number * i);
-    // }
+    for (i = 0; i <= 10; i++)
+    {
+        printf("%i x %i = %i\n", number, i, number * i);
+    }
 
     return 0;
 }
