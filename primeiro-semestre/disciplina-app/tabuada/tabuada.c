@@ -52,7 +52,7 @@ int main()
     case 2:
         for (i = 0; i <= 10; i++)
         {
-            printf("%i - %i = %f\n", i, number, number - i);
+            printf("%i - %i = %f\n", number, i, number - i);
         }
         break;
 
