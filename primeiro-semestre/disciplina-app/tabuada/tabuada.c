@@ -44,7 +44,7 @@ int main()
     switch (opcao)
     {
     case 1:
-        for (i = 0; i <= 10; i++)
+        for (i = 1; i <= 10; i++)
         {
             printf("%i + %i = %i\n", number, i, number + i);
         }
@@ -65,7 +65,7 @@ int main()
         break;
 
     case 4:
-        for (i = 0; i <= 10; i += number)
+        for (i = 0; i <= 10 * number; i += number)
         {
             printf("%i / %i = %i\n", i, number, i / number);
         }
