@@ -34,10 +34,10 @@ int main()
     printf("\n\n#########################################\n");
     printf("#\tESCOLHA UMA OPCAO ABAIXO. \t#\n");
     printf("#---------------------------------------#\n");
-    printf("#\t1 - ADICAO\t\t\t#\n");
-    printf("#\t2 - SUBTRACAO\t\t\t#\n");
-    printf("#\t3 - MULTIPLICACAO\t\t#\n");
-    printf("#\t4 - DIVISAO\t\t\t#\n");
+    printf("#\t1 - + ADICAO\t\t\t#\n");
+    printf("#\t2 - - SUBTRACAO\t\t\t#\n");
+    printf("#\t3 - * MULTIPLICACAO\t\t#\n");
+    printf("#\t4 - / DIVISAO\t\t\t#\n");
     printf("#########################################\n\n");
 
     printf("QUAL OPERACAO MATEMATICA QUER FAZER? ");
@@ -54,6 +54,7 @@ int main()
         {
             printf("%2i + %i = %2i\n", number, i, number + i);
         }
+        printf("\n\n");
         break;
 
     case 2:
@@ -62,6 +63,7 @@ int main()
         {
             printf("%2i - %i = %2i\n", i, number, i - number);
         }
+        printf("\n\n");
         break;
 
     case 3:
@@ -70,6 +72,7 @@ int main()
         {
             printf("%2i * %2i = %2i\n", number, i, number * i);
         }
+        printf("\n\n");
         break;
 
     case 4:
@@ -78,6 +81,7 @@ int main()
         {
             printf("%2i / %2i = %2i\n", i, number, i / number);
         }
+        printf("\n\n");
         break;
 
     default:
