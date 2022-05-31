@@ -9,7 +9,7 @@
  *
  * FAZER UM ALGORITMO EM LINGUAGEM C PARA EXIBIR NA TELA A TABUADA ESCOLHIDA PELO USUARIO.
  * USE A ESTRUTURA WHILE(). Trabalhe as formatações de saída.
- * 
+ *
  * Professora: Debora Virgilia Canne
  * Data postagem: 19 de abril de 2022.
  * Data prevista de entrega: 23 de abril de 2022.
