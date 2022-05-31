@@ -40,6 +40,7 @@ int main()
     scanf("%i", &number);
 
     printf("\n\nRESULTADO\n\n");
+
     switch (opcao)
     {
     case 1:
@@ -52,7 +53,7 @@ int main()
     case 2:
         for (i = 0; i <= 10; i++)
         {
-            printf("%i - %i = %f\n", number, i, number - i);
+            printf("%i - %i = %i\n", i, number, number - i);
         }
         break;
 
@@ -64,9 +65,9 @@ int main()
         break;
 
     case 4:
-        for (i = 0; i <= 10; i++)
+        for (i = 0; i <= 10; i += number)
         {
-            printf("%i / %i = %i\n", i + number, i, number / i);
+            printf("%i / %i = %i\n", i, number, i / number);
         }
         break;
 
@@ -74,6 +75,7 @@ int main()
         printf("OPERACAO INVALIDA!");
         break;
     }
+
     // for (i = 0; i <= 10; i++)
     // {
     //     printf("%i x %i = %i\n", number, i, number * i);
