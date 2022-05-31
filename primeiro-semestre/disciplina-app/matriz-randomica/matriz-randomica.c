@@ -25,7 +25,7 @@ int main()
         }
     }
 
-    printf("Matriz com numeros aleatorios\n\n");
+    printf("\n\nMatriz com numeros aleatorios\n");
     printf("-------------------------------------\n");
     for (i = 0; i < MATRIZ_L; i++)
     {
@@ -35,7 +35,7 @@ int main()
         }
         printf("\n");
     }
-    printf("-------------------------------------\n");
+    printf("-------------------------------------\n\n");
 
     system("pause");
     return 0;
