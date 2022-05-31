@@ -26,7 +26,14 @@ int main()
     }
 
     printf("\n\nMatriz com numeros aleatorios\n");
-    printf("-------------------------------------\n");
+
+    for (i = 0; i < 50; i++)
+    {
+        printf("%c", '+');
+    }
+
+    printf("\n");
+
     for (i = 0; i < MATRIZ_L; i++)
     {
         for (j = 0; j < MATRIZ_C; j++)
@@ -35,7 +42,12 @@ int main()
         }
         printf("\n");
     }
-    printf("-------------------------------------\n\n");
+
+    for (i = 0; i < 50; i++)
+    {
+        printf("%c", '+');
+    }
+    printf("\n\n\n");
 
     system("pause");
     return 0;
