@@ -29,7 +29,7 @@ int main()
     printf("#---------------------------------------#\n");
     printf("#\t1 - ADICAO\t\t\t#\n");
     printf("#\t2 - SUBTRACAO\t\t\t#\n");
-    printf("#\t3 - MULTIPLICACAO\t\t\t#\n");
+    printf("#\t3 - MULTIPLICACAO\t\t#\n");
     printf("#\t4 - DIVISAO\t\t\t#\n");
     printf("#########################################\n\n");
 
@@ -39,47 +39,46 @@ int main()
     printf("\nDIGITE O NUMERO INTEIRO QUE DESEJA FAZER A OPERACAO ESCOLHIDA: ");
     scanf("%i", &number);
 
-    printf("\n\nRESULTADO\n\n");
-
     switch (opcao)
     {
     case 1:
+        printf("\n\n.................... RESULTADO ....................\n\n");
         for (i = 1; i <= 10; i++)
         {
-            printf("%i + %i = %i\n", number, i, number + i);
+            printf("%2i + %i = %2i\n", number, i, number + i);
         }
         break;
 
     case 2:
-        for (i = 0; i <= 10; i++)
+        printf("\n\n.................... RESULTADO ....................\n\n");
+        for (i = number; i <= 10 + number; i++)
         {
-            printf("%i - %i = %i\n", i, number, number - i);
+            printf("%2i - %i = %2i\n", i, number, i - number);
         }
         break;
 
     case 3:
-        for (i = 0; i <= 10; i++)
+        printf("\n\n.................... RESULTADO ....................\n\n");
+        for (i = 1; i <= 10; i++)
         {
-            printf("%i * %i * %i\n", number, i, number * i);
+            printf("%2i * %2i = %2i\n", number, i, number * i);
         }
         break;
 
     case 4:
-        for (i = 0; i <= 10 * number; i += number)
+        printf("\n\n.................... RESULTADO ....................\n\n");
+        for (i = number; i <= 10 * number; i += number)
         {
-            printf("%i / %i = %i\n", i, number, i / number);
+            printf("%2i / %2i = %2i\n", i, number, i / number);
         }
         break;
 
     default:
-        printf("OPERACAO INVALIDA!");
+        printf("\n\n\n-----------------------------------------------------------------------------\n");
+        printf("OPERACAO INVALIDA - [ escolha apenas 1, 2, 3 ou 4 ]\n");
+        printf("-----------------------------------------------------------------------------\n\n\n");
         break;
     }
-
-    // for (i = 0; i <= 10; i++)
-    // {
-    //     printf("%i x %i = %i\n", number, i, number * i);
-    // }
 
     system("pause");
     return 0;
