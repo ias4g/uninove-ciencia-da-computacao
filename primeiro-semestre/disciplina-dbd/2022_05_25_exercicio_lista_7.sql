@@ -32,10 +32,10 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 
 -- 47. Faça uma consulta que apresente o menor salário, maior salário, média salarial por
 -- departamento, porém, traga o nome do departamento no lugar do código.
-    SELECT  MIN(E.SAL), MAX(E.SAL), AVG(E.SAL)
-    FROM    EMP E JOIN DEPT D
-    ON
-    GROUP BY
+    SELECT    D.DNAME, MIN(E.SAL), MAX(E.SAL), AVG(E.SAL)
+    FROM      EMP E JOIN DEPT D
+    ON        E.DEPTNO = D.DEPTNO
+    GROUP BY  D.DNAME
 
 -- 48. Consulte todos os empregados contratados no ano de 87, mostrando seu nome,
 -- salário e seu departamento (nome).
