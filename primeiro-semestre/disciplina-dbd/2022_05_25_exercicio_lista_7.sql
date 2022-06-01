@@ -30,7 +30,8 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
     WHERE     HIREDATE LIKE '__/__/81'
     
 
--- 47. Faça uma consulta que apresente o menor salário, maior salário, média salarial por
+-- 47. Faça uma consulta que apresente o menor salário, maior salário, média
+-- salarial por
 -- departamento, porém, traga o nome do departamento no lugar do código.
     SELECT    D.DNAME, MIN(E.SAL), MAX(E.SAL), ROUND(AVG(E.SAL),2)
     FROM      EMP E JOIN DEPT D
@@ -40,19 +41,26 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
     ORDER BY  D.DNAME
     
 
--- 48. Consulte todos os empregados contratados no ano de 87, mostrando seu nome,
--- salário e seu departamento (nome).
+-- 48. Consulte todos os empregados contratados no ano de 87, mostrando seu
+-- nome,salário e seu departamento (nome
+
 -- 49. Consulte o nome dos empregados, seu cargo e salário e o nome do seu depto,
 -- classificados em ordem crescente por cargo e nome do empregado, nesta ordem.
+
 -- 50. Consulte a quantidade de funcionários por departamento (nome).
+
 -- 51. Qual o custo dos empregados por departamento (nome).
 
--- 52. Consulte o número e o nome da categoria do filme e quantos filmes existem na
--- locadora por categoria.
--- 53. Consulte quantos filmes cada cliente alugou, mostrando o pré-nome do cliente e a
--- quantidade de filmes ao lado.
--- 54. Faça uma consulta para mostrar o nome dos empregados, a data de admissão, e seis
--- meses após a data de admissão.
+-- 52. Consulte o número e o nome da categoria do filme e quantos filmes
+-- existem na locadora por categoria.
+
+-- 53. Consulte quantos filmes cada cliente alugou, mostrando o pré-nome do
+-- cliente e a quantidade de filmes ao lado.
+
+-- 54. Faça uma consulta para mostrar o nome dos empregados, a data de
+-- admissão, e seis meses após a data de admissão.
+
+
 
 -- ATENÇÃO: Para fazer os próximos exercícios, EXECUTE os scripts de criação/inserção dados
 -- das tabelas ALUNO, PROF, PAGTO que estão na Central do Aluno com o nome de
