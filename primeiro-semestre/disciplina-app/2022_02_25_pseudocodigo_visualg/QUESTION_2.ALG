@@ -1,13 +1,15 @@
 Algoritmo "question_2"
-// Disciplina   : Algoritmos e Práticas de Programação
+// Disciplina   : Algoritmos e Prï¿½ticas de Programaï¿½ï¿½o
 
 // Professor   : Debora Virgilia Canne
 
-// Descrição   : Escreva um algoritmo que leia três valores inteiros e
+// Descriï¿½ï¿½o   : Escreva um algoritmo que leia trï¿½s valores inteiros e
 //               mostre em ordem decrescente.
 
 // Autor(a)    : Izael Silva (https://github.com/Ias4g)
 // Data atual  : 01/06/2022
+// ###################################################################################
+
 
 Var
    x: inteiro
@@ -15,21 +17,21 @@ Var
    z: inteiro
 
 Inicio
-      escreva("Digite o primeiro número: ")
+      escreva("Digite o primeiro nï¿½mero: ")
       leia(x)
       
-      escreva("Digite o segundo número: ")
+      escreva("Digite o segundo nï¿½mero: ")
       leia(y)
       
-      escreva("Digite o terceiro número: ")
+      escreva("Digite o terceiro nï¿½mero: ")
       leia(z)
       
       se(x > y) entao
            se(x > z) entao
                 se(y > z) entao
-                     escreva("A ordem é: ", x, y, z)
+                     escreva("A ordem ï¿½: ", x, y, z)
                 senao
-                     escreva("A ordem é: ", x, z, y)
+                     escreva("A ordem ï¿½: ", x, z, y)
                 fimse
            fimse
       fimse
@@ -37,22 +39,22 @@ Inicio
       se(x < y) entao
            se(y > z) entao
                 se(x > z) entao
-                     escreva("A ordem é: ", y, x, z)
+                     escreva("A ordem ï¿½: ", y, x, z)
                 senao
-                     escreva("A ordem é: ", y, z, x)
+                     escreva("A ordem ï¿½: ", y, z, x)
                 fimse
            fimse
       fimse
       
       se(x < y) entao
            se(y < z) entao
-                escreva("A ordem é: ", z, y, x)
+                escreva("A ordem ï¿½: ", z, y, x)
            fimse
       fimse
       
       se(x > y) entao
            se(y < z) entao
-                escreva("A ordem é: ", z, x, y)
+                escreva("A ordem ï¿½: ", z, x, y)
            fimse
       fimse
 
