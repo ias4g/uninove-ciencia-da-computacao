@@ -1,16 +1,18 @@
 Algoritmo "question_3"
-// Disciplina   : Algoritmos e Práticas de Programação
+// Disciplina   : Algoritmos e Prï¿½ticas de Programaï¿½ï¿½o
 
 // Professor   : Debora Virgilia Canne
 
-// Descrição   : Tendo como dados de entrada a altura (h) e o sexo de
+// Descriï¿½ï¿½o   : Tendo como dados de entrada a altura (h) e o sexo de
 //               uma pessoa, construa um algoritmo que calcule seu
-//               “peso”(p) ideal, utilizando as seguintes fórmulas:
-//               Homens: (72.7 * h) – 58
-//               Mulher: (62.1 * h) – 44.7
+//               ï¿½pesoï¿½(p) ideal, utilizando as seguintes fï¿½rmulas:
+//               Homens: (72.7 * h) ï¿½ 58
+//               Mulher: (62.1 * h) ï¿½ 44.7
 
 // Autor(a)    : Izael Silva (https://github.com/Ias4g)
 // Data atual  : 01/06/2022
+// ###################################################################################
+
 
 Var
    peso: real
@@ -28,9 +30,9 @@ Inicio
         peso <- (72.7 * altura)-58
         escreval("")
         escreval("-------------------------------------")
-        escreva("Seu sexo é: ", sexo)
+        escreva("Seu sexo ï¿½: ", sexo)
         escreval("")
-        escreval("Peso ideal é:", peso)
+        escreval("Peso ideal ï¿½:", peso)
         escreva("-------------------------------------")
         escreval("")
         
@@ -39,16 +41,16 @@ Inicio
           peso <- (62.1 * altura)-44.7
           escreval("")
           escreval("-------------------------------------")
-          escreva("Seu sexo é: ", sexo)
+          escreva("Seu sexo ï¿½: ", sexo)
           escreval("")
-          escreval("Peso ideal é:", peso)
+          escreval("Peso ideal ï¿½:", peso)
           escreva("-------------------------------------")
           escreval("")
         
         senao
           escreval("")
           escreval("-------------------------------------")
-          escreval("Opção de sexo invalida! só pode ser [masculino] ou [Feminino]")
+          escreval("Opï¿½ï¿½o de sexo invalida! sï¿½ pode ser [masculino] ou [Feminino]")
           escreva("-------------------------------------")
           escreval("")
         fimse
