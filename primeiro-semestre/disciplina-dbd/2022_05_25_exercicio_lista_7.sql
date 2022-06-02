@@ -108,10 +108,6 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
     FROM    EMP
 
 
--- ATENÇÃO: Para fazer os próximos exercícios, EXECUTE os scripts de criação/inserção dados
--- das tabelas ALUNO, PROF, PAGTO que estão na Central do Aluno com o nome de
--- Script_TabAcad
-
 -- 55. Faça uma consulta que apresente todos os alunos matriculados no período de
 -- 15/03/08 a 30/04/08, mostrando apenas seu Código, Nome e Data de Nascimento,
 -- classificados por Nome. Altere os cabeçalhos para Cód.Aluno, Nome Aluno e Data
