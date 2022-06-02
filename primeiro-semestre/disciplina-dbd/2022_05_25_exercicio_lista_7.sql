@@ -96,6 +96,12 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 
 -- 53. Consulte quantos filmes cada cliente alugou, mostrando o pré-nome do
 -- cliente e a quantidade de filmes ao lado.
+    SELECT      C.PRENOME, COUNT(L.CODCLI)
+    FROM        LOCACAO L JOIN CLIENTE C
+    ON          L.CODCLI = C.CODCLI
+    GROUP BY    C.PRENOME
+    
+
 
 -- 54. Faça uma consulta para mostrar o nome dos empregados, a data de
 -- admissão, e seis meses após a data de admissão.
