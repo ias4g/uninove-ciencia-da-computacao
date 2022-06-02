@@ -40,6 +40,8 @@ int main()
     system("cls");
 
     printf("\n\nFuncao a ser resolvida -> f(x): %4.1fx2 + %4.1fx + %4.1f", a, b, c);
+    printf("\n\n");
 
+    system("pause");
     return 0;
 }
