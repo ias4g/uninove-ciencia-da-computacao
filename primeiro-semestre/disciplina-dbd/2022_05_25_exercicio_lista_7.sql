@@ -102,10 +102,10 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
     GROUP BY    C.PRENOME
     
 
-
 -- 54. Faça uma consulta para mostrar o nome dos empregados, a data de
 -- admissão, e seis meses após a data de admissão.
-
+    SELECT  ENAME, HIREDATE, ADD_MONTHS(HIREDATE, 6)
+    FROM    EMP
 
 
 -- ATENÇÃO: Para fazer os próximos exercícios, EXECUTE os scripts de criação/inserção dados
