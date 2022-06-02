@@ -37,8 +37,8 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
     FROM      EMP E JOIN DEPT D
     ON        E.DEPTNO = D.DEPTNO
     GROUP BY  D.DNAME
-    HAVING    MIN(E.SAL) > 900
-    ORDER BY  D.DNAME
+    -- HAVING    MIN(E.SAL) > 900
+    -- ORDER BY  D.DNAME
     
     -- ou
     
@@ -46,16 +46,38 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
     FROM      EMP E RIGHT JOIN DEPT D
     ON        E.DEPTNO = D.DEPTNO
     GROUP BY  D.DNAME
-    ORDER BY  D.DNAME
+    -- ORDER BY  D.DNAME
     
 
 -- 48. Consulte todos os empregados contratados no ano de 87, mostrando seu
--- nome,salário e seu departamento (nome
+-- nome,salário e seu departamento (nome).
+    SELECT    E.ENAME, E.SAL, D.DNAME
+    FROM      EMP E JOIN DEPT D
+    ON        E.DEPTNO = D.DEPTNO
+    WHERE     E.HIREDATE BETWEEN '01/01/87' AND '31/12/87'
+    
+    --OU
+    
+    SELECT    E.ENAME, E.SAL, D.DNAME
+    FROM      EMP E JOIN DEPT D
+    ON        E.DEPTNO = D.DEPTNO
+    WHERE     E.HIREDATE >= '01/01/87' AND E.HIREDATE <= '31/12/87'
+    
 
 -- 49. Consulte o nome dos empregados, seu cargo e salário e o nome do seu depto,
 -- classificados em ordem crescente por cargo e nome do empregado, nesta ordem.
+    SELECT    E.ENAME, E.JOB, E.SAL, D.DNAME
+    FROM      EMP E JOIN DEPT D
+    ON        E.DEPTNO = D.DEPTNO
+    ORDER BY  E.JOB, E.ENAME
+
 
 -- 50. Consulte a quantidade de funcionários por departamento (nome).
+    SELECT    D.DNAME, COUNT(E.EMPNO)
+    FROM      EMP E JOIN DEPT D
+    ON        E.DEPTNO = D.DEPTNO
+    GROUP BY  D.DNAME
+
 
 -- 51. Qual o custo dos empregados por departamento (nome).
 
