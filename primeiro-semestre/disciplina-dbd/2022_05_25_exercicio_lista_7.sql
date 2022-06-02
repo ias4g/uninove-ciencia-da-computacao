@@ -80,6 +80,11 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 
 
 -- 51. Qual o custo dos empregados por departamento (nome).
+SELECT    D.DNAME, SUM(E.SAL)
+FROM      EMP E JOIN DEPT D
+ON        E.DEPTNO = D.DEPTNO
+GROUP BY  D.DNAME
+
 
 -- 52. Consulte o número e o nome da categoria do filme e quantos filmes
 -- existem na locadora por categoria.
