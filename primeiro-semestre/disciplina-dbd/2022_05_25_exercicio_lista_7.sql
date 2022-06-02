@@ -40,6 +40,14 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
     HAVING    MIN(E.SAL) > 900
     ORDER BY  D.DNAME
     
+    -- ou
+    
+    SELECT    D.DNAME, MIN(E.SAL), MAX(E.SAL), ROUND(AVG(E.SAL),2)
+    FROM      EMP E RIGHT JOIN DEPT D
+    ON        E.DEPTNO = D.DEPTNO
+    GROUP BY  D.DNAME
+    ORDER BY  D.DNAME
+    
 
 -- 48. Consulte todos os empregados contratados no ano de 87, mostrando seu
 -- nome,salário e seu departamento (nome
