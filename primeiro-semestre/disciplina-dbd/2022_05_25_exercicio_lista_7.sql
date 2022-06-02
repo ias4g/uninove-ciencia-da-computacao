@@ -116,6 +116,10 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 -- 15/03/08 a 30/04/08, mostrando apenas seu Código, Nome e Data de Nascimento,
 -- classificados por Nome. Altere os cabeçalhos para Cód.Aluno, Nome Aluno e Data
 -- Nasc, respectivamente.
+    SELECT    IDALUNO, NOME, DTNASC
+    FROM      ALUNO
+    WHERE     DTMATRIC BETWEEN '15/03/08' AND '30/04/08'
+
 
 -- 56. Faça uma consulta que traga todos os pagamentos da aluna Paola Moraes,
 -- mostrando apenas as colunas correspondentes ao código do professor, nome do
@@ -124,6 +128,12 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 
 -- 57. Faça uma consulta que apresente o total pago por alunos no ano de 2007 e a média
 -- de valores pagos por eles. Apresente seu Nome ao invés do código.
+    SELECT A.NOME, SUM(P.VALLIQ), AVG(P.VALLIQ)
+    FROM        PAGTO P JOIN ALUNO A
+    ON          P.IDALUNO = A.IDALUNO
+    WHERE       P.DTPAGTO LIKE '%07'
+    GROUP BY    A.NOME
+
 
 -- 58. Consulte quantos pagamentos foram feitos para cada professor no 1o semestre de
 -- 2008, classificando por professor. Apresente seu nome ao invés do código do
