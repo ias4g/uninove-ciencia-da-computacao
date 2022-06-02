@@ -25,6 +25,7 @@ int main()
     float x2;
     float delta;
 
+    printf("\n\n");
     printf("\n\nf(x): ax2 + bx + c\n\n");
 
     printf("Digite o valar para o coeficiente A: ");
