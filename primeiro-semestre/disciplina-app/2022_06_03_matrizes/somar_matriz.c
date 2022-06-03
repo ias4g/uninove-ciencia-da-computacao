@@ -28,18 +28,19 @@ int main()
     {
         for (j = 0; j < MC; j++)
         {
-            printf("SL[%f][%f] = ", i, j);
+            printf("SL[%i][%i] = ", i, j);
             scanf("%f", &SL[i][j]);
         }
     }
-    
+
     for (i = 0; i < ML; i++)
     {
         for (j = 0; j < MC; j++)
         {
-            printf("SL[%f][%f] = ", i, j);
-            scanf("%f", &SL[i][j]);
+            printf("%8.2f", SL[i][j]);
         }
+
+        printf("\n\n");
     }
 
     system("pause");
