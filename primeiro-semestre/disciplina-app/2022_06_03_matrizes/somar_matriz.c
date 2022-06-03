@@ -20,6 +20,12 @@ int main()
     int j;
     int SL[ML][MC];
 
+    printf("\n\n");
+    printf("ESTE PROGRAMA ARMAZENA UMA DETERMINADA MATRIZ\n");
+    printf("E EXIBE A SOMA DE CADA LINHA.");
+
+    
+
     system("pause");
     return 0;
 }
