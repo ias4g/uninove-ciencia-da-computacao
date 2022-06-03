@@ -60,7 +60,7 @@ int main()
             x1 = (-b - sqrt(delta)) / (2 * a);
             x2 = (-b + sqrt(delta)) / (2 * a);
 
-            printf("Delta = %.1f\n X1 = %.1f\n X2 = %.1f\n\n", delta, x1, x2);
+            printf("DELTA = %.1f\nX1 = %.1f\nX2 = %.1f\n\n", delta, x1, x2);
         }
     }
 
