@@ -33,6 +33,7 @@ int main()
             scanf("%f", &SL[i][j]);
         }
     }
+    printf("\n----------------\n");
 
     for (i = 0; i < ML; i++)
     {
@@ -43,6 +44,7 @@ int main()
 
         printf("\n\n");
     }
+    printf("\n*************************\n");
 
     for (i = 0; i < ML; i++)
     {
@@ -54,6 +56,8 @@ int main()
         printf("SL {%i} = %.2f\n", i + 1, soma);
         soma = 0;
     }
+
+    printf("\n\n");
 
     system("pause");
     return 0;
