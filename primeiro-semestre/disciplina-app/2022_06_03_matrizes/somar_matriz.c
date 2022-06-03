@@ -7,8 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#define ML 3 // define a quantidade de linhas que a matriz tem
-#define MC 3 // define a quantidade de colunas que a matriz tem
+#define ML 2 // define a quantidade de linhas que a matriz tem
+#define MC 2 // define a quantidade de colunas que a matriz tem
 
 int main()
 {
@@ -33,18 +33,17 @@ int main()
             scanf("%f", &SL[i][j]);
         }
     }
-    printf("\n----------------\n");
+    printf("==============================\n\n");
 
     for (i = 0; i < ML; i++)
     {
         for (j = 0; j < MC; j++)
         {
-            printf("%8.2f", SL[i][j]);
+            printf("%.2f", SL[i][j]);
         }
-
-        printf("\n\n");
+        printf("\n");
     }
-    printf("\n*************************\n");
+    printf("==============================\n\n");
 
     for (i = 0; i < ML; i++)
     {
@@ -56,8 +55,7 @@ int main()
         printf("SL {%i} = %.2f\n", i + 1, soma);
         soma = 0;
     }
-
-    printf("\n\n");
+    printf("---------------------------------\n\n******PROFRAM END******\n\n");
 
     system("pause");
     return 0;
