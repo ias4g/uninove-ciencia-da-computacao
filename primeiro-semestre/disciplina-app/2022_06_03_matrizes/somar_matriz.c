@@ -18,6 +18,7 @@ int main()
 
     int i;
     int j;
+    float soma;
     float SL[ML][MC];
 
     printf("\n\n");
@@ -41,6 +42,17 @@ int main()
         }
 
         printf("\n\n");
+    }
+
+    for (i = 0; i < ML; i++)
+    {
+        for (j = 0; j < MC; j++)
+        {
+            soma += SL[i][j];
+        }
+
+        printf("SL {%i} = %.2f\n", i + 1, soma);
+        soma = 0;
     }
 
     system("pause");
