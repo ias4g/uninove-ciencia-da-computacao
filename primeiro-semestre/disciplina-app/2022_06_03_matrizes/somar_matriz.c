@@ -18,13 +18,29 @@ int main()
 
     int i;
     int j;
-    int SL[ML][MC];
+    float SL[ML][MC];
 
     printf("\n\n");
     printf("ESTE PROGRAMA ARMAZENA UMA DETERMINADA MATRIZ\n");
-    printf("E EXIBE A SOMA DE CADA LINHA.");
+    printf("E EXIBE A SOMA DE CADA LINHA.\n\n");
 
+    for (i = 0; i < ML; i++)
+    {
+        for (j = 0; j < MC; j++)
+        {
+            printf("SL[%f][%f] = ", i, j);
+            scanf("%f", &SL[i][j]);
+        }
+    }
     
+    for (i = 0; i < ML; i++)
+    {
+        for (j = 0; j < MC; j++)
+        {
+            printf("SL[%f][%f] = ", i, j);
+            scanf("%f", &SL[i][j]);
+        }
+    }
 
     system("pause");
     return 0;
