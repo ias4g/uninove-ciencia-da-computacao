@@ -48,6 +48,21 @@ int main()
     {
         printf("\nDelta = %.2f\nNeste caso delta nao possui raizes reais.\n\n", delta);
     }
+    else
+    {
+        if (delta == 0)
+        {
+            x1 = -b / (2 * a);
+            printf("\nDelta = %.2f\n X1 = %.2f\n\n", delta, x1);
+        }
+        else
+        {
+            x1 = (-b - sqrt(delta)) / (2 * a);
+            x2 = (-b + sqrt(delta)) / (2 * a);
+
+            printf("\nDelta = %.2f\n X1 = %.2f\n X2 = %.2f\n\n", delta, x1, x2);
+        }
+    }
 
     system("pause");
     return 0;
