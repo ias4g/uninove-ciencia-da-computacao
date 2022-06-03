@@ -25,8 +25,8 @@ int main()
     float x2;
     float delta;
 
-    printf("\n\n");
-    printf("\n\nf(x): ax2 + bx + c\n\n");
+    system("cls");
+    printf("f(x): ax2 + bx + c\n\n");
 
     printf("Digite o valar para o coeficiente A: ");
     scanf("%f", &a);
@@ -39,7 +39,7 @@ int main()
 
     system("cls");
 
-    printf("\n\nFuncao a ser resolvida -> f(x): %4.1fx2 + %4.1fx + %4.1f", a, b, c);
+    printf("Funcao a ser resolvida -> f(x): %.1fx2 + %.1fx + %.1f = 0", a, b, c);
     printf("\n\n");
 
     delta = (b * b) - (4 * a * c);
