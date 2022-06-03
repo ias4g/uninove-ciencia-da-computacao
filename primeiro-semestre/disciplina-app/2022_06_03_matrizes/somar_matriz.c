@@ -21,10 +21,10 @@ int main()
     float soma;
     float SL[ML][MC];
 
-    printf("\n\n");
     printf("ESTE PROGRAMA ARMAZENA UMA DETERMINADA MATRIZ\n");
     printf("E EXIBE A SOMA DE CADA LINHA.\n\n");
 
+    printf("ENTRADA:\n---------------------------->\n");
     for (i = 0; i < ML; i++)
     {
         for (j = 0; j < MC; j++)
@@ -33,18 +33,20 @@ int main()
             scanf("%f", &SL[i][j]);
         }
     }
-    printf("==============================\n\n");
+    printf("\n\n");
 
+    printf("SAIDA:\n---------------------------->\n");
     for (i = 0; i < ML; i++)
     {
         for (j = 0; j < MC; j++)
         {
-            printf("%.2f", SL[i][j]);
+            printf("%8.2f", SL[i][j]);
         }
-        printf("\n");
+        printf("\n\n");
     }
-    printf("==============================\n\n");
+    printf("\n\n");
 
+    printf("RESULTADO:\n---------------------------->\n");
     for (i = 0; i < ML; i++)
     {
         for (j = 0; j < MC; j++)
@@ -52,10 +54,10 @@ int main()
             soma += SL[i][j];
         }
 
-        printf("SL {%i} = %.2f\n", i + 1, soma);
+        printf("Soma da linha %i = %.2f\n", i + 1, soma);
         soma = 0;
     }
-    printf("---------------------------------\n\n******PROFRAM END******\n\n");
+    printf("\n\n");
 
     system("pause");
     return 0;
