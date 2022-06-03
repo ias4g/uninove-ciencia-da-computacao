@@ -1,7 +1,14 @@
 /**
+ * @file somar_matriz.c
+ * @author Izael Silva (https://github.com/Ias4g)
+ * @brief
+ * @version 0.1
+ * @date 2022-06-03
+ *
+ * @copyright Copyright (c) 2022
+ *
  * Desenvolver um programa em linguagem c
  * para exibir a soma das linhas de uma matriz
- *
  */
 
 #include <stdio.h>
