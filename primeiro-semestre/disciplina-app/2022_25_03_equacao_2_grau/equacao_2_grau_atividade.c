@@ -28,13 +28,13 @@ int main()
     system("cls");
     printf("f(x): ax2 + bx + c\n\n");
 
-    printf("Digite o valar para o coeficiente A: ");
+    printf("Digite o valor para o coeficiente A: ");
     scanf("%f", &a);
 
-    printf("Digite o valar para o coeficiente B: ");
+    printf("Digite o valor para o coeficiente B: ");
     scanf("%f", &b);
 
-    printf("Digite o valar para o termo independente C: ");
+    printf("Digite o valar para o coeficiente C: ");
     scanf("%f", &c);
 
     system("cls");
@@ -46,21 +46,21 @@ int main()
 
     if (delta < 0)
     {
-        printf("\nDelta = %8.2f\nNeste caso delta nao possui raizes reais.\n\n", delta);
+        printf("\n==> Delta = %8.2f\nNeste caso delta nao possui raizes reais.\n\n", delta);
     }
     else
     {
         if (delta == 0)
         {
             x1 = -b / (2 * a);
-            printf("\nDelta = %.2f\n X1 = %.2f\n\n", delta, x1);
+            printf("\n==> Delta = %.2f\n X1 = %.2f\n\n", delta, x1);
         }
         else
         {
             x1 = (-b - sqrt(delta)) / (2 * a);
             x2 = (-b + sqrt(delta)) / (2 * a);
 
-            printf("DELTA = %.1f\nX1 = %.1f\nX2 = %.1f\n\n", delta, x1, x2);
+            printf("==> DELTA = %.1f\n==> X1 = %.1f\n==> X2 = %.1f\n\n", delta, x1, x2);
         }
     }
 
