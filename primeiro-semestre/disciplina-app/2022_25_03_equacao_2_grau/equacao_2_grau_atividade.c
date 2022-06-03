@@ -43,11 +43,10 @@ int main()
     printf("\n\n");
 
     delta = (b * b) - (4 * a * c);
-    printf("%f", delta);
 
     if (delta < 0)
     {
-        printf("\nDelta = %f\nNeste caso delta não possui raizes reais.\n\n", delta);
+        printf("\nDelta = %.2f\nNeste caso delta nao possui raizes reais.\n\n", delta);
     }
 
     system("pause");
