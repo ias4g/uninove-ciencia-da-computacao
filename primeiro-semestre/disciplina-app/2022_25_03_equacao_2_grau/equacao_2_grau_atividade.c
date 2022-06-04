@@ -1,11 +1,17 @@
 /**
+ * @file equacao_2_grau_atividade.c
+ * @author Izael Silva (https://github.com/Ias4g)
+ * @brief
+ * @version 0.1
+ * @date 2022-06-03
+ *
+ * @copyright Copyright (c) 2022
+ *
  * Elabore um Algoritmo para resolver uma equação do 2º grau.
  * O usuario deve informar os coeficientes: a,b,c.
  *
  * Profª: Debora Virgilia Canne
  * Data postagem: 11 de março de 2022
- *
- *
  */
 
 #include <stdio.h>
