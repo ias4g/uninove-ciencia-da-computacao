@@ -121,10 +121,17 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 -- mostrando apenas as colunas correspondentes ao código do professor, nome do
 -- professor, data do pagamento e valor, apresentando os cabeçalhos Código, Nome
 -- Professor, Data Pagto e Valor Pago, respectivamente.
-    SELECT    
-    FROM      
-    ON      
-    WHERE   
+    SELECT    A.IDPROF AS CÓDIGO, B.NOME AS "NOME PROFESSOR", A.DTPAGTO "DATA PAGTO", A.VALLIQ "VALOR PAGO"
+    FROM      PAGTO A JOIN PROF B
+    ON        A.IDPROF = B.IDPROF
+    WHERE     A.IDALUNO = 10468
+    
+    -- OUTRA MANEIRA DE RESOLVER
+    
+    SELECT    A.IDPROF AS CÓDIGO, B.NOME AS "NOME PROFESSOR", A.DTPAGTO "DATA PAGTO", A.VALLIQ "VALOR PAGO"
+    FROM      PAGTO A JOIN PROF B
+    ON        A.IDPROF = B.IDPROF
+    WHERE     A.IDALUNO = 10468
 
 
 -- 57. Faça uma consulta que apresente o total pago por alunos no ano de 2007 e a média
