@@ -121,6 +121,10 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 -- mostrando apenas as colunas correspondentes ao código do professor, nome do
 -- professor, data do pagamento e valor, apresentando os cabeçalhos Código, Nome
 -- Professor, Data Pagto e Valor Pago, respectivamente.
+    SELECT    
+    FROM      
+    ON      
+    WHERE   
 
 
 -- 57. Faça uma consulta que apresente o total pago por alunos no ano de 2007 e a média
