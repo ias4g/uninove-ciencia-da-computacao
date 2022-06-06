@@ -135,10 +135,16 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 -- 58. Consulte quantos pagamentos foram feitos para cada professor no 1o semestre de
 -- 2008, classificando por professor. Apresente seu nome ao invés do código do
 -- professor.
-    SELECT
-    FROM
-    WHERE
-    GROUP BY
-    ORDER BY
+    SELECT      PF.NOME, COUNT(PG.IDPAGTO)
+    FROM        PAGTO PG INNER JOIN PROF PF
+    ON          PG.IDPROF = PF.IDPROF
+    WHERE       
+    GROUP BY    PF.NOME
+    ORDER BY  
+    
 
-
+-- SEM WHERE
+    SELECT      PF.NOME, COUNT(*)
+    FROM        PAGTO PG INNER JOIN PROF PF
+    ON          PG.IDPROF = PF.IDPROF      
+    GROUP BY    PF.NOME
