@@ -135,3 +135,10 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 -- 58. Consulte quantos pagamentos foram feitos para cada professor no 1o semestre de
 -- 2008, classificando por professor. Apresente seu nome ao invés do código do
 -- professor.
+    SELECT
+    FROM
+    WHERE
+    GROUP BY
+    ORDER BY
+
+
