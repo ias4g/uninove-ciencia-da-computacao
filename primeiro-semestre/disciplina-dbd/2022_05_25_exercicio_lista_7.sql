@@ -132,6 +132,13 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
     ON        A.IDPROF = B.IDPROF
     WHERE     A.IDALUNO = (SELECT IDALUNO FROM ALUNO WHERE NOME = 'PAOLA MORAES')
 
+-- OUTRA MANEIRA
+    SELECT    A.IDPROF AS CÓDIGO, B.NOME AS "NOME PROFESSOR", A.DTPAGTO "DATA PAGTO", A.VALLIQ "VALOR PAGO"
+    FROM      PAGTO A JOIN PROF B
+    ON        A.IDPROF = B.IDPROF
+    JOIN      ALUNO C
+    ON        C.IDALUNO = A.IDALUNO
+    WHERE     C.NOME = 'PAOLA MORAES'
 
 -- 57. Faça uma consulta que apresente o total pago por alunos no ano de 2007 e a média
 -- de valores pagos por eles. Apresente seu Nome ao invés do código.
