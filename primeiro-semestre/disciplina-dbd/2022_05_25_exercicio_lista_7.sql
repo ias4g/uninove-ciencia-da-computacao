@@ -122,6 +122,7 @@ ORDER BY    -- ORDENA/CLASSIFICA AS LINHAS RESULTANTES
 -- professor, data do pagamento e valor, apresentando os cabeçalhos Código, Nome
 -- Professor, Data Pagto e Valor Pago, respectivamente.
 
+
 -- 57. Faça uma consulta que apresente o total pago por alunos no ano de 2007 e a média
 -- de valores pagos por eles. Apresente seu Nome ao invés do código.
     SELECT A.NOME, SUM(P.VALLIQ), AVG(P.VALLIQ)
