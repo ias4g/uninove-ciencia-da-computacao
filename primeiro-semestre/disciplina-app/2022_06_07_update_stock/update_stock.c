@@ -43,6 +43,12 @@ int main()
         scanf("%d", &stock[i][1]);
     }
 
+    printf("Relacao dos produtos com estoque baixo ");
+    printf("PRODUCT\t\t\tSTOCK\tESTOQUE MINIMO\n");
+    for (i = 0; i < 5; i++)
+    {
+        }
+
     system("pause");
     return 0;
 }
