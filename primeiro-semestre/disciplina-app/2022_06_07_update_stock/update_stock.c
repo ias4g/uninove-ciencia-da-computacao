@@ -44,9 +44,14 @@ int main()
     }
 
     printf("Relacao dos produtos com estoque baixo ");
-    printf("PRODUCT\t\t\tSTOCK\tESTOQUE MINIMO\n");
+    printf("PRODUCT\t\t\tESTOQUE ATUAL\tESTOQUE MINIMO\n");
     for (i = 0; i < 5; i++)
     {
+        if (stock[i][0] < stock[i][1])
+        {
+            printf("%s\t\t\t", product[i]);
+            printf("%d\t%d", stock)
+        }
     }
 
     system("pause");
