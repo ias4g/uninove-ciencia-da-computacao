@@ -35,6 +35,12 @@ int main()
         printf("Produto: ");
         setbuf(stdin, NULL); // limpa o buffer do teclado
         fgets(product[i], 100, stdin);
+
+        printf("Estoque atual: ");
+        scanf("%d", &stock[i][0]);
+
+        printf("Estoque minimo: ");
+        scanf("%d", &stock[i][1]);
     }
 
     system("pause");
