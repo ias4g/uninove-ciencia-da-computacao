@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <conio.h>
+#define NUMBER 2
 
 int main()
 {
@@ -30,7 +31,7 @@ int main()
 
     printf("\n\n");
     printf("Cadastre o nome do produto: \n");
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < NUMBER; i++)
     {
         printf("Produto: ");
         setbuf(stdin, NULL); // limpa o buffer do teclado
@@ -47,7 +48,7 @@ int main()
 
     printf("Relacao dos produtos com estoque baixo \n");
     printf("PRODUCT\t\tESTOQUE ATUAL\tESTOQUE MINIMO\n");
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < NUMBER; i++)
     {
         if (stock[i][0] < stock[i][1])
         {
