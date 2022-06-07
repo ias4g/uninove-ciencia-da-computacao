@@ -11,7 +11,6 @@ int main()
     int y = 5;
     int z = 0;
 
-    for (z = 0; x >= y; x = x - y, z++)
-        ;
+    for (z = 0; x >= y; x = x - y, z++);
     printf("x=%2d, y=%2d, z=%2d\n", x, y, z);
 }
