@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2022
  *
  * Fazer um programa em c
- * para cadstrar 5 produtos
+ * para cadastrar 5 produtos
  * e atualizar o estoque.
  */
 
@@ -28,11 +28,12 @@ int main()
     char product[5][100];
     // Estoque com 2 colunas [0] ataul e [1] minimo
 
+    printf("\n\n");
     printf("Cadastre o nome do produto: \n");
     for (i = 0; i < 5; i++)
     {
         printf("Produto: ");
-        setbuf(stdin, NULL);
+        setbuf(stdin, NULL); // limpa o buffer do teclado
         fgets(product[i], 100, stdin);
     }
 
