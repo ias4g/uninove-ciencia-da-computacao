@@ -47,7 +47,7 @@ int main()
     printf("PRODUCT\t\t\tSTOCK\tESTOQUE MINIMO\n");
     for (i = 0; i < 5; i++)
     {
-        }
+    }
 
     system("pause");
     return 0;
