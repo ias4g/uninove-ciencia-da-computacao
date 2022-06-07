@@ -50,7 +50,7 @@ int main()
         if (stock[i][0] < stock[i][1])
         {
             printf("%s\t\t\t", product[i]);
-            printf("%d\t%d", stock)
+            printf("%d\t%d", stock[i][0], stock[i][1]);
         }
     }
 
