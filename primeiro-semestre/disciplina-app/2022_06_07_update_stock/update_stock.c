@@ -33,6 +33,7 @@ int main()
     {
         printf("Produto: ");
         setbuf(stdin, NULL);
+        fgets(product[i], 100, stdin);
     }
 
     system("pause");
