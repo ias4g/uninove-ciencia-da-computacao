@@ -5,12 +5,24 @@
 
 int main()
 {
+    system("cls");
     system("color A");
 
     int x = 25;
     int y = 5;
     int z = 0;
 
-    for (z = 0; x >= y; x = x - y, z++); //ESTE PONTO E VIRGULA FAZ COM QUE O FOR EXECUTE SOMENTE UMA VEZ, E PRINTA SOMENTE A ULTIMA LINHA
+    for (z = 0; x >= y; x = x - y, z++)
+    {
+        printf("x=%2d, y=%2d, z=%2d\n", x, y, z);
+    }
+
+    printf("------------------\n\n");
+
+    for (z = 0; x >= y; x = x - y, z++); // ESTE PONTO E VIRGULA FAZ COM QUE O FOR EXECUTE SOMENTE UMA VEZ, E PRINTA SOMENTE A ULTIMA LINHA
     printf("x=%2d, y=%2d, z=%2d\n", x, y, z);
+    
+    
+    printf("------------------\n\n");
+
 }
