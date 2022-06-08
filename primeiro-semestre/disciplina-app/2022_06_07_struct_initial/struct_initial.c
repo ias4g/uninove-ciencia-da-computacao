@@ -34,7 +34,12 @@ int main()
 
     printf("Reference: ");
     fflush(stdin);
-    fgets(example.name, 20, stdin);
+    fgets(example.reference);
+
+    printf("Preco: ");
+    scanf("%f", &example.price);
+
+    printf("Componente: %s\n", example.name);
 
     system("pause");
     return 0;
