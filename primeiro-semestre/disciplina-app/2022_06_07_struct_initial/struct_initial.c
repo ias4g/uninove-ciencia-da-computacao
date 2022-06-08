@@ -26,6 +26,7 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
+    // tipo de dado nome var
     struct struct_initial example;
 
     system("pause");
