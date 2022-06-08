@@ -47,13 +47,13 @@ int main()
     system("cls");
 
     printf("Relacao dos produtos com estoque baixo \n\n");
-    printf("PRODUCT\t\tESTOQUE ATUAL\tESTOQUE MINIMO\n\n");
+    printf("PRODUCT\t\tATUAL\tMINIMO\n");
     for (i = 0; i < NUMBER; i++)
     {
         if (stock[i][0] < stock[i][1])
         {
             printf("%s\t\t", product[i]);
-            printf("%d\t\t%d\n", stock[i][0], stock[i][1]);
+            printf("%3d\t\t%3d\n", stock[i][0], stock[i][1]);
         }
     }
 
