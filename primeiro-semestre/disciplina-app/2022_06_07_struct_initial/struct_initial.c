@@ -29,6 +29,13 @@ int main()
     // tipo de dado nome var
     struct struct_initial example;
 
+    printf("Nome do componente: ");
+    fgets(example.name, 20, stdin);
+
+    printf("Reference: ");
+    fflush(stdin);
+    fgets(example.name, 20, stdin);
+
     system("pause");
     return 0;
 }
