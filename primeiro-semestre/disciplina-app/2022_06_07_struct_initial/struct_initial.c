@@ -24,6 +24,9 @@ int main()
 {
     system("cls");
     system("color A");
+    setlocale(LC_ALL, "Portuguese");
+
+    struct struct_initial example;
 
     system("pause");
     return 0;
