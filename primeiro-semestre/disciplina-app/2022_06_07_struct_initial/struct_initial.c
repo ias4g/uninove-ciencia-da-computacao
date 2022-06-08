@@ -15,7 +15,9 @@
 
 struct struct_initial
 {
-    char nome[20];
+    char name[20];
+    char reference[5];
+    float price;
 };
 
 int main()
