@@ -46,7 +46,7 @@ int main()
         printf("\nDIGITE UM NUMERO: ");
         scanf("%i", &number);
 
-        printf("\nVOCE QUER [+] - [-] - [*] OU [/] o numero %i? ", number);
+        printf("\nDIGITE [+] [-] [*] [/] OU PRESSIONE 'F' PARA FINALIZAR O PROGRAMA: ");
         setbuf(stdin, NULL); // limpa o buffer do teclado
         scanf("%c", &operation);
 
@@ -99,8 +99,7 @@ int main()
     } while (operation != 'f' && operation != 'F');
 
     system("cls");
-    printf("\nPROGRAMA FINALIZADO\n\n");
+    printf("\nPROGRAMA FINALIZADO...\n\n");
 
-    // system("pause");
     return 0;
 }
