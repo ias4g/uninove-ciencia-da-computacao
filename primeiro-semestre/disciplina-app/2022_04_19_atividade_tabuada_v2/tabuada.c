@@ -32,68 +32,75 @@ int main()
     int number;
     char operation;
 
-    printf("\n\n#########################################\n");
-    printf("#\tESCOLHA UMA OPCAO ABAIXO. \t#\n");
-    printf("#---------------------------------------#\n");
-    printf("#\t1 - + ADICAO\t\t\t#\n");
-    printf("#\t2 - - SUBTRACAO\t\t\t#\n");
-    printf("#\t3 - * MULTIPLICACAO\t\t#\n");
-    printf("#\t4 - / DIVISAO\t\t\t#\n");
-    printf("#########################################\n\n");
-
-    printf("\nDIGITE UM NUMERO: ");
-    scanf("%i", &number);
-
-    printf("\nVOCE QUER [+]SOMAR | [-]SUBTRAIR | [*]MULTIPLICAR OU [/]DIVIDIR O NUMERO %i? ", number);
-    scanf("%s", &operation);
-
-    // printf("\n\n%i - %c\n\n", number, operation);
-
-    switch (operation)
+    do
     {
-    case '+':
-        printf("\n\n.................... RESULTADO ....................\n\n");
-        for (i = 1; i <= 10; i++)
+        printf("\n\n#########################################\n");
+        printf("#\tESCOLHA UMA OPCAO ABAIXO. \t#\n");
+        printf("#---------------------------------------#\n");
+        printf("#\t+ ADICAO\t\t\t#\n");
+        printf("#\t- SUBTRACAO\t\t\t#\n");
+        printf("#\t* MULTIPLICACAO\t\t\t#\n");
+        printf("#\t/ DIVISAO\t\t\t#\n");
+        printf("#########################################\n\n");
+
+        printf("\nDIGITE UM NUMERO: ");
+        scanf("%i", &number);
+
+        printf("\nVOCE QUER [+] - [-] - [*] OU [/] o numero %i? ", number);
+        setbuf(stdin, NULL); // limpa o buffer do teclado
+        scanf("%c", &operation);
+
+        system("cls");
+
+        switch (operation)
         {
-            printf("%2i + %i = %2i\n", number, i, number + i);
+        case '+':
+            printf("\n\n.................... RESULTADO ....................\n\n");
+            for (i = 1; i <= 10; i++)
+            {
+                printf("%2i + %i = %2i\n", number, i, number + i);
+            }
+            printf("\n............................................................\n");
+            break;
+
+        case '-':
+            printf("\n\n.................... RESULTADO ....................\n\n");
+            for (i = number; i <= 10 + number; i++)
+            {
+                printf("%2i - %i = %2i\n", i, number, i - number);
+            }
+            printf("\n............................................................\n");
+            break;
+
+        case '*':
+            printf("\n\n.................... RESULTADO ....................\n\n");
+            for (i = 1; i <= 10; i++)
+            {
+                printf("%2i * %2i = %2i\n", number, i, number * i);
+            }
+            printf("\n............................................................\n");
+            break;
+
+        case '/':
+            printf("\n\n.................... RESULTADO ....................\n\n");
+            for (i = number; i <= 10 * number; i += number)
+            {
+                printf("%2i / %2i = %2i\n", i, number, i / number);
+            }
+            printf("\n............................................................\n");
+            break;
+
+        default:
+            printf("\n\n\n-----------------------------------------------------------------------------\n");
+            printf("OPERACAO INVALIDA, ESCOLHA APENAS AS OPERACOES MATEMATICAS => [+ - * /]\n");
+            printf("-----------------------------------------------------------------------------\n\n\n");
+            break;
         }
-        printf("\n\n");
-        break;
+    } while (operation != 'f' && operation != 'F');
 
-    case '-':
-        printf("\n\n.................... RESULTADO ....................\n\n");
-        for (i = number; i <= 10 + number; i++)
-        {
-            printf("%2i - %i = %2i\n", i, number, i - number);
-        }
-        printf("\n\n");
-        break;
+    system("cls");
+    printf("\nPROGRAMA FINALIZADO\n\n");
 
-    case '*':
-        printf("\n\n.................... RESULTADO ....................\n\n");
-        for (i = 1; i <= 10; i++)
-        {
-            printf("%2i * %2i = %2i\n", number, i, number * i);
-        }
-        printf("\n\n");
-        break;
-
-    case '/':
-        printf("\n\n.................... RESULTADO ....................\n\n");
-        for (i = number; i <= 10 * number; i += number)
-        {
-            printf("%2i / %2i = %2i\n", i, number, i / number);
-        }
-        printf("\n\n");
-        break;
-
-    default:
-        printf("\n\n\n-----------------------------------------------------------------------------\n");
-        printf("OPERACAO INVALIDA - [ escolha apenas -, +, * ou / ]\n");
-        printf("-----------------------------------------------------------------------------\n\n\n");
-        break;
-    }
-
-    system("pause");
+    // system("pause");
     return 0;
 }
