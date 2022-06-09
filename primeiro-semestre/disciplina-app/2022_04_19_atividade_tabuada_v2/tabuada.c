@@ -30,7 +30,7 @@ int main()
 
     int i;
     int number;
-    int opcao;
+    char opreration;
 
     printf("\n\n#########################################\n");
     printf("#\tESCOLHA UMA OPCAO ABAIXO. \t#\n");
