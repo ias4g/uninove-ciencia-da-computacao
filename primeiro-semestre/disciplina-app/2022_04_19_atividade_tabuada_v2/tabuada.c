@@ -92,7 +92,7 @@ int main()
 
         default:
             printf("\n\n\n-----------------------------------------------------------------------------\n");
-            printf("OPERACAO INVALIDA, ESCOLHA APENAS AS OPERACOES MATEMATICAS => [+ - * /]\n");
+            printf("OPERACAO INVALIDA, ESCOLHA APENAS AS OPERACOES MATEMATICAS [+] [-] [*] [/].\n");
             printf("-----------------------------------------------------------------------------\n\n\n");
             break;
         }
