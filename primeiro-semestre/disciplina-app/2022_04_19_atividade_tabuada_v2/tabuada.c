@@ -50,6 +50,9 @@ int main()
         setbuf(stdin, NULL); // limpa o buffer do teclado
         scanf("%c", &operation);
 
+        // getchar();
+        // printf("Caracter = %s\n", operation);
+
         system("cls");
 
         switch (operation)
