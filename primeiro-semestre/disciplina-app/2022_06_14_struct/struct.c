@@ -13,6 +13,14 @@
 #include <stdlib.h>
 #include <locale.h>
 
+struct ficha_aluno
+{
+    char nome[50];
+    char disciplina[50];
+    float n1;
+    float n2;
+};
+
 int main()
 {
     system("cls");
