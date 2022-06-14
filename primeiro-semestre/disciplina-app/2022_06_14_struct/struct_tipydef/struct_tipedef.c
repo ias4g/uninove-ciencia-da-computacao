@@ -13,12 +13,22 @@
 #include <stdlib.h>
 #include <locale.h>
 
+typedef struct
+{
+    int idade;
+    float peso;
+    float altura;
+} pessoa;
+
 int main()
 {
     system("cls");
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    system("pause");
+    pessoa p1, p2;
+
+    p1.peso = 54.5;
+
     return 0;
 }
