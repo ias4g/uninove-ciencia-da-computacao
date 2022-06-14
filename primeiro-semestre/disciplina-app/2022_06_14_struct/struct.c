@@ -32,9 +32,19 @@ int main()
     printf("Cadastro da ficha de aluno\n");
     printf("----------------------------------\n");
 
-    printf("Nome do aluno");
+    printf("Nome do aluno: ");
     fflush(stdin);
     gets(Aluno.nome);
+
+    printf("Disciplina: ");
+    fflush(stdin);
+    gets(Aluno.disciplina);
+
+    printf("Prova 01: ");
+    scanf("%f", Aluno.n1);
+
+    printf("Prova 02: ");
+    scanf("%f", Aluno.n2);
 
     system("pause");
     return 0;
