@@ -30,5 +30,7 @@ int main()
 
     p1.peso = 54.5;
 
+    printf("Peso = %.1fKg\n\n", p1.peso);
+
     return 0;
 }
