@@ -27,6 +27,7 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
+    float media;
     struct ficha_aluno Aluno;
 
     printf("Cadastro da ficha de aluno\n");
@@ -46,6 +47,8 @@ int main()
     printf("Prova 02: ");
     scanf("%f", &Aluno.n2);
 
+    media = (Aluno.n1 + Aluno.n2) / 2;
+
     printf("\n\n");
     system("cls");
 
@@ -54,7 +57,8 @@ int main()
     printf("Nome: %s\n", Aluno.nome);
     printf("Disciplina: %s\n", Aluno.disciplina);
     printf("Nota da primeira prova: %.2f\n", Aluno.n1);
-    printf("Nota da segunda prova: %.2f\n\n", Aluno.n2);
+    printf("Nota da segunda prova: %.2f\n", Aluno.n2);
+    printf("Media do aluno: %.2f\n\n", media);
 
     printf("FIM DO PROGRAMA...\n\n");
 
