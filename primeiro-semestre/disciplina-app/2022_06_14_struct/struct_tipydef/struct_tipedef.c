@@ -29,8 +29,12 @@ int main()
     pessoa p1, p2;
 
     p1.peso = 54.5;
+    p2.peso = 60;
+    p1.idade = 18;
+    p2.idade = 25;
 
-    printf("Peso = %.1fKg\n\n", p1.peso);
+    printf("Primeira pesooas tem peso de %.1fKg e %i anos de idade\n\n", p1.peso, p1.idade);
+    printf("Segunda pesooa tem peso de %.1fKg e %i anos de idade\n\n", p2.peso, p2.idade);
 
     return 0;
 }
