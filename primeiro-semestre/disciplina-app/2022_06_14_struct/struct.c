@@ -46,6 +46,13 @@ int main()
     printf("Prova 02: ");
     scanf("%f", &Aluno.n2);
 
+    printf("Informacoes do aluno\n");
+    printf("=============================\n\n");
+    printf("Aluno %s\n", Aluno.nome);
+    printf("Disciplina: %s\n", Aluno.disciplina);
+    printf("Nota da primeira prova: %f\n", Aluno.n1);
+    printf("Nota da segunda prova: %.2f\n\n", Aluno.n2);
+
     system("pause");
     return 0;
 }
