@@ -56,7 +56,7 @@ int main()
     printf("Nota da primeira prova: %.2f\n", Aluno.n1);
     printf("Nota da segunda prova: %.2f\n\n", Aluno.n2);
 
-    printf("..................FIM DO PROGRAMA");
+    printf("FIM DO PROGRAMA...\n\n");
 
     return 0;
 }
