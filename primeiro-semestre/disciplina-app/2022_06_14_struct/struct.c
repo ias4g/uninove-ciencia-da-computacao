@@ -60,7 +60,7 @@ int main()
     printf("Nota da segunda prova: %.2f\n", Aluno.n2);
     printf("Media do aluno: %.2f\n\n", media);
 
-    printf("FIM DO PROGRAMA...\n\n");
+    printf("FIM DO PROGRAMA...\n\n\n\n");
 
     return 0;
 }
