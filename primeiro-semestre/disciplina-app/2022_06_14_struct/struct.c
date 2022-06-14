@@ -30,7 +30,7 @@ int main()
     struct ficha_aluno Aluno;
 
     printf("Cadastro da ficha de aluno\n");
-    printf("----------------------------------\n");
+    printf("----------------------------------\n\n");
 
     printf("Nome do aluno: ");
     fflush(stdin);
@@ -41,10 +41,10 @@ int main()
     gets(Aluno.disciplina);
 
     printf("Prova 01: ");
-    scanf("%f", Aluno.n1);
+    scanf("%f", &Aluno.n1);
 
     printf("Prova 02: ");
-    scanf("%f", Aluno.n2);
+    scanf("%f", &Aluno.n2);
 
     system("pause");
     return 0;
