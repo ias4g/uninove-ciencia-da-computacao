@@ -27,6 +27,8 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
+    struct ficha_aluno Aluno;
+
     system("pause");
     return 0;
 }
