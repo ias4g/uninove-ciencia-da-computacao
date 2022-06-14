@@ -29,6 +29,13 @@ int main()
 
     struct ficha_aluno Aluno;
 
+    printf("Cadastro da ficha de aluno\n");
+    printf("----------------------------------\n");
+
+    printf("Nome do aluno");
+    fflush(stdin);
+    gets(Aluno.nome);
+
     system("pause");
     return 0;
 }
