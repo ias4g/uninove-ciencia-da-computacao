@@ -2,7 +2,7 @@
 -- numero do departamento, media salarial, menor salario e maior salario.
     CREATE OR REPLACE VIEW VEMP
     AS
-    SELECT    DEPTNO, AVG(SAL), MIN(SAL), MAX(SAL)
+    SELECT    DEPTNO, AVG(SAL) SAL_MED, MIN(SAL) SAL_MIN, MAX(SAL) SAL_MAX
     FROM      EMP
     GROUP BY  DEPTNO;
 
