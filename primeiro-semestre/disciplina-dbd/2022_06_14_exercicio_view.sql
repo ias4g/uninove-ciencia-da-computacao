@@ -22,7 +22,3 @@ SELECT * FROM VEMP;
 
 
 --........................................................................
-
-SELECT    DEPTNO, ROUND(AVG(SAL),2), MIN(SAL), MAX(SAL)
-FROM      EMP
-GROUP BY  DEPTNO;
