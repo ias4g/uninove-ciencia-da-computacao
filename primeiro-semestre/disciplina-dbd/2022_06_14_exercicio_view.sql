@@ -4,3 +4,10 @@
 -- 002) Visualize a VIEW criada.
 
 -- 003) Apague a VIEW criada no exercicio anterior (VEMP)
+
+
+-- #################################################################
+
+SELECT    DEPTNO, ROUND(AVG(SAL),2), MIN(SAL), MAX(SAL)
+FROM      EMP
+GROUP BY  DEPTNO;
