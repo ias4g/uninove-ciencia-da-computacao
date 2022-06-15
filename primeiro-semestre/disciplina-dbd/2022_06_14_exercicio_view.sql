@@ -1,5 +1,10 @@
 -- 001) Crie uma visãoda tabela EMP, chamada EMP com os seguintes campos,
 -- numero do departamento, media salarial, menor salario e maior salario.
+    CREATE OR REPLACE VIEW VEMP
+    AS
+    SELECT    DEPTNO, AVG(SAL), MIN(SAL), MAX(SAL)
+    FROM      EMP
+    GROUP BY  DEPTNO;
 
 -- 002) Visualize a VIEW criada.
 
