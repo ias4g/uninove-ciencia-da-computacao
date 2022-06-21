@@ -14,7 +14,6 @@
 #include <locale.h>
 #include <conio.h>
 #include <string.h>
-
 #define qtd_client 2
 
 struct tp_address
@@ -38,6 +37,8 @@ struct client_register
 {
     char name[50];
     char phone[20];
+    struct tp_address address;
+    struct tp_birth_date birthday;
 };
 
 int main()
