@@ -34,6 +34,12 @@ struct tp_birth_date
     int year;
 };
 
+struct client_register
+{
+    char name[50];
+    char phone[20];
+};
+
 int main()
 {
     system('cls');
