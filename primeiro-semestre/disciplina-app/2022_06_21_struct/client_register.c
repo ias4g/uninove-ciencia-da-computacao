@@ -15,6 +15,8 @@
 #include <conio.h>
 #include <string.h>
 
+#define qtd_client 3
+
 int main()
 {
     system('cls');
