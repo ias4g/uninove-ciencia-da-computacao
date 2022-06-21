@@ -15,7 +15,11 @@
 #include <conio.h>
 #include <string.h>
 
-#define qtd_client 3
+#define qtd_client 2
+
+struct tp_address{
+
+};
 
 int main()
 {
