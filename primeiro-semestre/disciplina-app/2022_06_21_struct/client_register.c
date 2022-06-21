@@ -67,7 +67,27 @@ int main()
 
         printf("RUA: ");
         fflush(stdin);
-        gets(client);
+        gets(client[i].address.street);
+
+        printf("NUMERO: ");
+        fflush(stdin);
+        scanf("%d", &client[i].address.number);
+
+        printf("BAIRRO: ");
+        fflush(stdin);
+        gets(client[i].address.district);
+
+        printf("CIDADE: ");
+        fflush(stdin);
+        gets(client[i].address.city);
+
+        printf("ESTADO: ");
+        fflush(stdin);
+        gets(client[i].address.state);
+
+        printf("CEP: ");
+        fflush(stdin);
+        gets(client[i].address.code);
     }
 
     system('pause');
