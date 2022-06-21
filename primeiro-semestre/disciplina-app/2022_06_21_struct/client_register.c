@@ -30,6 +30,8 @@ struct tp_address
 struct tp_birth_date
 {
     int day;
+    int month;
+    int year;
 };
 
 int main()
