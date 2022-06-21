@@ -45,9 +45,13 @@ int main()
 {
     system('cls');
     system('color A');
-    
+
     int i;
+
+
+    printf("===================================\n");
     printf("-- CADASTRO DE CLIENTES --\n");
+    printf("===================================\n");
 
     system('pause');
     return 0;
