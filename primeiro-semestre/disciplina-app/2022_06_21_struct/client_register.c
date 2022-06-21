@@ -88,6 +88,15 @@ int main()
         printf("CEP: ");
         fflush(stdin);
         gets(client[i].address.code);
+
+        printf("DIA: ");
+        scanf("%d", &client[i].birthday.day);
+
+        printf("MES [NUMERO]: ");
+        scanf("%d", &client[i].birthday.month);
+
+        printf("ANO [yyyy]: ");
+        scanf("%d", &client[i].birthday.year);
     }
 
     system('pause');
