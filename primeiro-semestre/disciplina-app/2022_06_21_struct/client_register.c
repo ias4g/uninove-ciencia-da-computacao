@@ -48,10 +48,10 @@ int main()
 
     int i;
 
-
+    printf("\n\n");
     printf("===================================\n");
     printf("-- CADASTRO DE CLIENTES --\n");
-    printf("===================================\n");
+    printf("===================================\n\n");
 
     system('pause');
     return 0;
