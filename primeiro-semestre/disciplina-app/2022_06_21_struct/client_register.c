@@ -45,7 +45,9 @@ int main()
 {
     system('cls');
     system('color A');
-    setlocale(LC_ALL, 'Portuguese');
+    
+    int i;
+    printf("-- CADASTRO DE CLIENTES --\n");
 
     system('pause');
     return 0;
