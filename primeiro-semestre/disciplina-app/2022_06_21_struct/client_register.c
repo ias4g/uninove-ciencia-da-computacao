@@ -19,10 +19,12 @@
 
 struct tp_address
 {
-    char street[50];
     int number;
-    char district[50];
     char city[25];
+    char state[3];
+    char code[10];
+    char street[50];
+    char district[50];
 };
 
 int main()
