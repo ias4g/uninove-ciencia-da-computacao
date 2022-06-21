@@ -53,6 +53,23 @@ int main()
     printf("-- CADASTRO DE CLIENTES --\n");
     printf("===================================\n\n");
 
+    for (i = 0; i < qtd_client; i++)
+    {
+        printf("CLIENTE %d\n", i + 1);
+
+        printf("NOME: ");
+        fflush(stdin);
+        gets(client[i].name);
+
+        printf("TELEFONE: ");
+        fflush(stdin);
+        gets(client[i].phone);
+
+        printf("RUA: ");
+        fflush(stdin);
+        gets(client);
+    }
+
     system('pause');
     return 0;
 }
