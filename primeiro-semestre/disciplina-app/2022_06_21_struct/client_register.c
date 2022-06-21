@@ -17,8 +17,12 @@
 
 #define qtd_client 2
 
-struct tp_address{
-
+struct tp_address
+{
+    char street[50];
+    int number;
+    char district[50];
+    char city[25];
 };
 
 int main()
