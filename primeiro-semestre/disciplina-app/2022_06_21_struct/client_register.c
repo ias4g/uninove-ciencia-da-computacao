@@ -27,6 +27,11 @@ struct tp_address
     char district[50];
 };
 
+struct tp_birth_date
+{
+    int day;
+};
+
 int main()
 {
     system('cls');
