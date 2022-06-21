@@ -39,7 +39,7 @@ struct client_register
     char phone[20];
     struct tp_address address;
     struct tp_birth_date birthday;
-};
+} client[qtd_client];
 
 int main()
 {
