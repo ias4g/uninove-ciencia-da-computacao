@@ -92,10 +92,10 @@ int main()
         printf("DIA: ");
         scanf("%d", &client[i].birthday.day);
 
-        printf("MES [NUMERO]: ");
+        printf("MES [EX: 01]: ");
         scanf("%d", &client[i].birthday.month);
 
-        printf("ANO [yyyy]: ");
+        printf("ANO [EX: 2022]: ");
         scanf("%d", &client[i].birthday.year);
     }
 
