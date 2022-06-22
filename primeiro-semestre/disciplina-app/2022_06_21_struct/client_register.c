@@ -99,6 +99,14 @@ int main()
         scanf("%d", &client[i].birthday.year);
     }
 
+    for (i = 0; i < qtd_client; i++)
+    {
+        printf("\nCLIENTE %d\n", i + 1);
+        printf("NOME: %s\n", client[i].name);
+        printf("TELEFONE: \n", client[i].phone);
+        printf("ANIVERSAIO: %2d/%2d/%d", client[i].birthday.day, client[i].birthday.month, client[i].birthday.year);
+    }
+
     system('pause');
     return 0;
 }
