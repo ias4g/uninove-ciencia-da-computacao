@@ -90,9 +90,11 @@ int main()
         gets(client[i].address.zipcode);
 
         printf("DIA: ");
+        fflush(stdin);
         scanf("%d", &client[i].birthday.day);
 
         printf("MES [EX: 01]: ");
+        fflush(stdin);
         scanf("%d", &client[i].birthday.month);
 
         printf("ANO [EX: 2022]: ");
@@ -104,7 +106,7 @@ int main()
         printf("\nCLIENTE %d\n", i + 1);
         printf("NOME: %s\n", client[i].name);
         printf("TELEFONE: \n", client[i].phone);
-        printf("ANIVERSAIO: %2d/%2d/%d", client[i].birthday.day, client[i].birthday.month, client[i].birthday.year);
+        printf("ANIVERSARIO: %2d/%2d/%d", client[i].birthday.day, client[i].birthday.month, client[i].birthday.year);
     }
 
     system('pause');
