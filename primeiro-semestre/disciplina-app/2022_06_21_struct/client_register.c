@@ -21,7 +21,7 @@ struct tp_address
     int number;
     char city[25];
     char state[3];
-    char code[10];
+    char zipcode[10];
     char street[50];
     char district[50];
 };
@@ -87,7 +87,7 @@ int main()
 
         printf("CEP: ");
         fflush(stdin);
-        gets(client[i].address.code);
+        gets(client[i].address.zipcode);
 
         printf("DIA: ");
         scanf("%d", &client[i].birthday.day);
