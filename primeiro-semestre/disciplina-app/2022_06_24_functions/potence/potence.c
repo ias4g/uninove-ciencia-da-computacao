@@ -19,6 +19,19 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
+    float base;
+    float exp;
+    float pot;
+
+    printf("Informe o valor da base: ");
+    scanf("%f", &base);
+
+    printf("Informe o valor do expoente: ");
+    scanf("%f", &exp);
+
+    printf("Informe o valor da potencia: ");
+    scanf("%f", &pot);
+
     system("pause");
     return 0;
 }
