@@ -43,5 +43,7 @@ int main()
 
     area = area_rectangle(base, height);
 
+    printf("Area: %.1f\n", area);
+    printf("----------------------------------------\n\n");
     return 0;
 }
