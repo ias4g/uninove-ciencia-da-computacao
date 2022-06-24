@@ -19,7 +19,9 @@
 
 void double_number(int n1, int n2, int n3)
 {
-    
+    printf("\nO dobro do numero %d eh: %d\n", n1, n1 * 2);
+    printf("\nO dobro do numero %d eh: %d\n", n2, n2 * 2);
+    printf("\nO dobro do numero %d eh: %d\n", n3, n3 * 2);
 }
 
 int main()
