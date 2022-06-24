@@ -32,5 +32,11 @@ int main()
     float height;
     float area;
 
+    printf("Digite o valor da base: ");
+    scanf("%f", &base);
+
+    printf("Digite o valor da altura: ");
+    scanf("%f", &height);
+
     return 0;
 }
