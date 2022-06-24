@@ -17,18 +17,26 @@
 #include <stdlib.h>
 #include <locale.h>
 
-void double_number(int n1, int n2, int n3)
-{
-    printf("\nO dobro do numero %d eh: %d\n", n1, n1 * 2);
-    printf("\nO dobro do numero %d eh: %d\n", n2, n2 * 2);
-    printf("\nO dobro do numero %d eh: %d\n", n3, n3 * 2);
-}
+// void double_number(int n1, int n2, int n3)
+// {
+//     printf("\nO dobro do numero %d eh: %d\n", n1, n1 * 2);
+//     printf("\nO dobro do numero %d eh: %d\n", n2, n2 * 2);
+//     printf("\nO dobro do numero %d eh: %d\n", n3, n3 * 2);
+// }
 
 int main()
 {
     system("cls");
     system("color A");
     setlocale(LC_ALL, "Portuguese");
+
+    void double_number(int n1, int n2, int n3);
+    int n1, n2, n3;
+
+    printf("Digite tres numeros: ");
+    scanf("%d %d %d", &n1, &n2, &n3);
+
+    double_number(n1, n2, n3);
 
     return 0;
 }
