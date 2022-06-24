@@ -18,6 +18,8 @@
 float area_rectangle(float base, float height)
 {
     float area = base * height;
+
+    return area;
 }
 
 int main()
