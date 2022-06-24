@@ -15,8 +15,9 @@
 #include <stdlib.h>
 #include <locale.h>
 
-float area_rectangle()
+float area_rectangle(float base, float height)
 {
+    float area = base * height;
 }
 
 int main()
