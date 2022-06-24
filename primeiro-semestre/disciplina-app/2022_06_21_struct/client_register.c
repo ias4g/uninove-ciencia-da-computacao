@@ -109,6 +109,8 @@ int main()
         printf("ANIVERSARIO: %2d/%2d/%d", client[i].birthday.day, client[i].birthday.month, client[i].birthday.year);
     }
 
-    system("pause");
+    printf("\n\n");
+
+    // system("pause");
     return 0;
 }
