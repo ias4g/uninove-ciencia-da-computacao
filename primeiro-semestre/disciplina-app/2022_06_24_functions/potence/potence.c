@@ -29,8 +29,7 @@ int main()
     printf("Informe o valor do expoente: ");
     scanf("%f", &exp);
 
-    printf("Informe o valor da potencia: ");
-    scanf("%f", &pot);
+    pot = pow(base, exp);
 
     system("pause");
     return 0;
