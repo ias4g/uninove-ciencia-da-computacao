@@ -31,6 +31,8 @@ int main()
 
     pot = pow(base, exp);
 
-    system("pause");
+    printf("%.2f elevado a %.2f eh: %.2f\n\n", base, exp, pot);
+
+    // system("pause");
     return 0;
 }
