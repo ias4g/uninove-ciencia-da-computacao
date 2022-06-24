@@ -14,12 +14,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <math.h>
 
-float area_rectangle(float base, float height)
+float area_rectangle(float b, float h)
 {
-    float area = base * height;
-
-    return area;
+    float a = b * h;
+    return a;
 }
 
 int main()
@@ -28,6 +28,9 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    system("pause");
+    float base;
+    float height;
+    float area;
+
     return 0;
 }
