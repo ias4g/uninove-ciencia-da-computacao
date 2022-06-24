@@ -17,12 +17,16 @@
 #include <stdlib.h>
 #include <locale.h>
 
+void double_number(int n1, int n2, int n3)
+{
+    
+}
+
 int main()
 {
     system("cls");
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    system("pause");
     return 0;
 }
