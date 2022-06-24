@@ -30,7 +30,7 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    // void double_number(int n1, int n2, int n3);
+    void double_number(int n1, int n2, int n3);
     int n1, n2, n3;
 
     printf("Digite tres numeros: ");
