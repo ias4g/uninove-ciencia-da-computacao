@@ -32,11 +32,16 @@ int main()
     float height;
     float area;
 
+    printf("CALCULANDO A AREA DE UM RETANGULO.\n");
+    printf("----------------------------------------\n\n");
+
     printf("Digite o valor da base: ");
     scanf("%f", &base);
 
     printf("Digite o valor da altura: ");
     scanf("%f", &height);
+
+    area = area_rectangle(base, height);
 
     return 0;
 }
