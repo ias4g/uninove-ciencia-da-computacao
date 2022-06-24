@@ -16,12 +16,14 @@
 
 int main()
 {
-    system('cls');
-    system('color A');
-    setlocale(LC_ALL, 'Portuguese');
+    system("cls");
+    system("color A");
+    setlocale(LC_ALL, "Portuguese");
 
     float number;
     float root;
+
+    printf("\n\n");
 
     printf("Digite um numero: ");
     scanf("%f", &number);
@@ -30,6 +32,6 @@ int main()
 
     printf("A raiz quadrada do numero %.2f, eh @.2f\n", number, root);
 
-    system('pause');
+    // system("pause");
     return 0;
 }
