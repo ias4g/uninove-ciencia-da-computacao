@@ -30,7 +30,7 @@ int main()
 
     root = sqrt(number);
 
-    printf("A raiz quadrada do numero %.2f, eh @.2f\n", number, root);
+    printf("A raiz quadrada do numero %.2f, eh %.2f\n\n", number, root);
 
     // system("pause");
     return 0;
