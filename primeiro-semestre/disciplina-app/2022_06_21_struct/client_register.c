@@ -43,8 +43,8 @@ struct client_register
 
 int main()
 {
-    system('cls');
-    system('color A');
+    system("cls");
+    system("color A");
 
     int i;
 
@@ -109,6 +109,6 @@ int main()
         printf("ANIVERSARIO: %2d/%2d/%d", client[i].birthday.day, client[i].birthday.month, client[i].birthday.year);
     }
 
-    system('pause');
+    system("pause");
     return 0;
 }
