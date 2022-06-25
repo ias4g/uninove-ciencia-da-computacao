@@ -39,5 +39,7 @@ int main()
     printf("Informe o angulo em graus: ");
     scanf("%d", &valor);
 
+    radian = radian_angle(valor);
+
     return 0;
 }
