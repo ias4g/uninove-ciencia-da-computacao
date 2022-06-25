@@ -16,6 +16,7 @@
 
 float calculating_media(float p1, float p2, float p3)
 {
+    return (p1 + p2 + p3) / 3;
 }
 
 int main()
@@ -24,6 +25,5 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    system("pause");
     return 0;
 }
