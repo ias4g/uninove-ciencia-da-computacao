@@ -30,6 +30,5 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    system("pause");
     return 0;
 }
