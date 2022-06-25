@@ -28,12 +28,15 @@ int main()
     float n1;
     float n2;
     float n3;
+    float media;
 
     printf("Calculo da media de 3 provas.\n");
     printf("**********************************\n\n");
 
     printf("Digite as tres notas, dando enter depois de cada uma.");
     scanf("%f %f %f", &n1, &n2, &n3);
+
+    media = calculating_media(n1, n2, n3);
 
     return 0;
 }
