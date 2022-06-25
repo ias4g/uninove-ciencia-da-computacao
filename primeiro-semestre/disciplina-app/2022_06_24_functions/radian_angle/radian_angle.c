@@ -30,5 +30,14 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
+    int valor;
+    float radian;
+
+    printf("Convertendo angulo em radiano.");
+    printf("**********************************\n\n");
+
+    printf("Informe o angulo em graus: ");
+    scanf("%d", &valor);
+
     return 0;
 }
