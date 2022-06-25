@@ -33,13 +33,17 @@ int main()
     int valor;
     float radian;
 
-    printf("Convertendo angulo em radiano.");
+    printf("Convertendo angulo em radiano.\n");
     printf("**********************************\n\n");
 
     printf("Informe o angulo em graus: ");
     scanf("%d", &valor);
 
     radian = radian_angle(valor);
+
+    printf("\n\nO resultado eh: %.2f", radian);
+    printf("\n**********************************\n");
+    printf("PROGRAM END ****************\n\n");
 
     return 0;
 }
