@@ -38,5 +38,8 @@ int main()
 
     media = calculating_media(n1, n2, n3);
 
+    printf("Media eh: %f", media);
+    printf("\n**********************************\n\n");
+
     return 0;
 }
