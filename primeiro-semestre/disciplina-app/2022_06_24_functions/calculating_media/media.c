@@ -33,12 +33,12 @@ int main()
     printf("Calculo da media de 3 provas.\n");
     printf("**********************************\n\n");
 
-    printf("Digite as tres notas, dando enter depois de cada uma.");
+    printf("Digite as tres notas, dando enter depois de cada uma: ");
     scanf("%f %f %f", &n1, &n2, &n3);
 
     media = calculating_media(n1, n2, n3);
 
-    printf("Media eh: %f", media);
+    printf("Media eh: %.2f", media);
     printf("\n**********************************\n\n");
 
     return 0;
