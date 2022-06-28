@@ -32,7 +32,7 @@ int prime_number(int number)
 
 int main()
 {
-    // system("cls");
+    system("cls");
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
