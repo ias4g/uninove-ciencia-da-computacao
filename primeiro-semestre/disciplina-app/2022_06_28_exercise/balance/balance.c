@@ -16,7 +16,7 @@
 
 float calculate_balance(float value, float rate)
 {
-    return value + (rate / 100);
+    return value + (value * (rate / 100));
 }
 
 int main()
