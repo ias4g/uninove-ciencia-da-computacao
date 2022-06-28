@@ -41,7 +41,7 @@ int main()
 
     fat = factorial(number);
 
-    printf("Fatorial de %d eh: %f\n\n", number, fat);
+    printf("Fatorial de %d eh: %d\n\n", number, fat);
 
     return 0;
 }
