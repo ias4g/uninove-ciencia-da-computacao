@@ -46,7 +46,7 @@ int main()
 
     if (result == 2)
     {
-        printf("O numero %d eh primo.\n", number);
+        printf("O numero %d eh primo.\n\n", number);
     }
     else
     {
