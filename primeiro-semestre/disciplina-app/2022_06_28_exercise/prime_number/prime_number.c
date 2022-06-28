@@ -19,7 +19,7 @@ int prime_number(int number)
     int i;
     int cont = 0;
 
-    for (i = 0; i <= number; i++)
+    for (i = 1; i < number; i++)
     {
         if (number % i == 0)
         {
@@ -32,7 +32,7 @@ int prime_number(int number)
 
 int main()
 {
-    system("cls");
+    // system("cls");
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
@@ -41,6 +41,17 @@ int main()
 
     printf("Digite o numero inteiro para saber se eh primo: ");
     scanf("%d", &number);
+
+    result = prime_number(number);
+
+    if (result == 2)
+    {
+        printf("O numero %d eh primo.\n", number);
+    }
+    else
+    {
+        printf("O numero %d nao eh primo.\n", number);
+    }
 
     return 0;
 }
