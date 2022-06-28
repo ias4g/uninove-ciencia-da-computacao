@@ -26,6 +26,8 @@ int prime_number(int number)
             aux++;
         }
     }
+
+    return aux;
 }
 
 int main()
