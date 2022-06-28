@@ -17,17 +17,17 @@
 int prime_number(int number)
 {
     int i;
-    int aux = 0;
+    int cont = 0;
 
     for (i = 0; i <= number; i++)
     {
         if (number % i == 0)
         {
-            aux++;
+            cont++;
         }
     }
 
-    return aux;
+    return cont;
 }
 
 int main()
