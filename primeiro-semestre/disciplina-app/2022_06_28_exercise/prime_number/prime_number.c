@@ -17,6 +17,11 @@
 int prime_number(int number)
 {
     int i;
+    int aux = 0;
+
+    for (i = 0; i < number; i++)
+    {
+    }
 }
 
 int main()
