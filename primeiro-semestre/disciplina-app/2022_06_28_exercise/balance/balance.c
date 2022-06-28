@@ -25,6 +25,16 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
+    float balance;
+    float rate;
+    float new_balance;
+
+    printf("Informe seu saldo em reais: ");
+    scanf("%f", &balance);
+
+    printf("Informe o percentual do reajuste: ");
+    scanf("%f", &rate);
+
     system("pause");
     return 0;
 }
