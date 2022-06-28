@@ -19,7 +19,7 @@ int prime_number(int number)
     int i;
     int cont = 0;
 
-    for (i = 1; i < number; i++)
+    for (i = 1; i <= number; i++)
     {
         if (number % i == 0)
         {
@@ -50,7 +50,7 @@ int main()
     }
     else
     {
-        printf("O numero %d nao eh primo.\n", number);
+        printf("O numero %d nao eh primo.\n\n", number);
     }
 
     return 0;
