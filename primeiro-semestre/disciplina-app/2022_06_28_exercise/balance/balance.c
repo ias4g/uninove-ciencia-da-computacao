@@ -37,5 +37,7 @@ int main()
 
     new_balance = calculate_balance(balance, rate);
 
+    printf("Informe o percentual do reajuste: ");
+
     return 0;
 }
