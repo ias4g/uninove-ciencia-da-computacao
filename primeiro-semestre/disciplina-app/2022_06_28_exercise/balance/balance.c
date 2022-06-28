@@ -14,8 +14,9 @@
 #include <locale.h>
 #include <locale.h>
 
-float calculate_balance(float value, float rate){
-
+float calculate_balance(float value, float rate)
+{
+    return value + (rate / 100);
 }
 
 int main()
