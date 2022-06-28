@@ -12,6 +12,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <locale.h>
+
+float calculate_balance(float value, float rate){
+
+}
 
 int main()
 {
