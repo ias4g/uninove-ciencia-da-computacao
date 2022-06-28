@@ -37,7 +37,7 @@ int main()
 
     new_balance = calculate_balance(balance, rate);
 
-    printf("Saldo anterior: %.2f reais\n", balance);
+    printf("\n\nSaldo anterior: %.2f reais\n", balance);
     printf("Saldo atual: %.2f reais\n\n", new_balance);
 
     return 0;
