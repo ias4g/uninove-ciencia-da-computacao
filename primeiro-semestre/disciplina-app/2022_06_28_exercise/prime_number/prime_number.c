@@ -39,5 +39,8 @@ int main()
     int number;
     int result;
 
+    printf("Digite o numero inteiro para saber se eh primo: ");
+    scanf("%d", &number);
+
     return 0;
 }
