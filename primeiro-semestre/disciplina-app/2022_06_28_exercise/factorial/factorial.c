@@ -14,14 +14,14 @@
 #include <locale.h>
 #include <math.h>
 
-float factorial(int number)
+int factorial(int number)
 {
-    int fact = 1;
+    int fact = 0;
     int i;
 
     for (i = 0; i < number; i++)
     {
-        fact = fact * i;
+        fact *= i;
     }
 
     return fact;
@@ -41,7 +41,7 @@ int main()
 
     fat = factorial(number);
 
-    printf("Fatorial de %d eh: %d\n\n", number, fat);
+    printf("Fatorial de %d eh: %f\n\n", number, fat);
 
     return 0;
 }
