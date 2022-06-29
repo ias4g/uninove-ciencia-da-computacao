@@ -25,7 +25,11 @@
 
 float calculate_perimeter(float b, float h)
 {
+    // GOSTO MAIS DESSA FORMA
     return 2 * (b + h);
+
+    // OUTRA MANEIRA DE RESOLVER.
+    // return ((2 * b) + (2 * h));
 }
 
 float calculate_area(float b, float h)
@@ -35,12 +39,13 @@ float calculate_area(float b, float h)
 
 float calculate_diagonal(float b, float h)
 {
+    // VERSÃO VERBOSA
     // float b_pow_two = pow(b, 2);
     // float h_pow_two = pow(h, 2);
-
     // float soma = b_pow_two + h_pow_two;
-
     // return sqrt(soma);
+
+    // VERSÃO SIMPLES E DIRETA
     return sqrt((pow(b, 2)) + (pow(h, 2)));
 }
 
@@ -52,7 +57,7 @@ int main()
 
     printf("Perimetro: %.1f\n", calculate_perimeter(30, 90));
     printf("Area: %.1f\n", calculate_area(30, 90));
-    printf("Diagonal: %.1f\n\n", calculate_diagonal(10, 5));
+    printf("Diagonal: %.1f\n\n", calculate_diagonal(30, 90));
 
     return 0;
 }
