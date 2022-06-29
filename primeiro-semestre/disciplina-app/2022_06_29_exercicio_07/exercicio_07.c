@@ -14,7 +14,7 @@
  * Utilize as fórmulas a seguir.
  * perimetro = 2x (base + altura)
  * area = base x altura
- * diagonal Vbase2+ altura2
+ * diagonal Raiz(base2 + altura2)
  *
  */
 
