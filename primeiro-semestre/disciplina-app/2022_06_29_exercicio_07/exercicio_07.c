@@ -35,6 +35,12 @@ float calculate_area(float b, float h)
 
 float calculate_diagonal(float b, float h)
 {
+    float b_pow_two = pow(b, 2);
+    float h_pow_two = pow(h, 2);
+
+    float soma = b_pow_two + h_pow_two;
+
+    return sqrt(soma);
 }
 
 int main()
@@ -43,7 +49,9 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    printf("%.2f", calculate_perimeter(6, 4));
+    printf("Perimetro: %.2f\n", calculate_perimeter(6, 4));
+    printf("Area: %.2f\n", calculate_area(6, 4));
+    printf("Diagonal: %.2f\n\n", calculate_diagonal(6, 4));
 
     return 0;
 }
