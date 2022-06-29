@@ -55,9 +55,30 @@ int main()
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    printf("Perimetro: %.1f\n", calculate_perimeter(30, 90));
-    printf("Area: %.1f\n", calculate_area(30, 90));
-    printf("Diagonal: %.1f\n\n", calculate_diagonal(30, 90));
+    float base;
+    float height;
+
+    float area;
+    float diagonal;
+    float perimeter;
+
+    printf("INFORME A BASE: ");
+    scanf("%f", &base);
+
+    printf("INFORME A ALTURA: ");
+    scanf("%f", &height);
+
+    area = calculate_area(base, height);
+    diagonal = calculate_diagonal(base, height);
+    perimeter = calculate_perimeter(base, height);
+    printf("--------------------------------------------\n\n");
+
+    system("cls");
+
+    printf("Area: %.1f\n", area);
+    printf("Perimetro: %.1f\n", perimeter);
+    printf("Diagonal: %.1f\n", diagonal);
+    printf("--------------------------------------------\n\n");
 
     return 0;
 }
