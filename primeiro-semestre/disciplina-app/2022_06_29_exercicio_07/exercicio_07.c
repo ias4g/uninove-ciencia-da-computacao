@@ -23,12 +23,18 @@
 #include <locale.h>
 #include <math.h>
 
+float calculate_perimeter(float b, float h)
+{
+    return 2 * (b + h);
+}
+
 int main()
 {
     system("cls");
     system("color A");
     setlocale(LC_ALL, "Portuguese");
 
-    system("pause");
+    printf("%.2f", calculate_perimeter(6, 4));
+
     return 0;
 }
