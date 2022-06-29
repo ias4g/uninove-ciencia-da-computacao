@@ -75,9 +75,9 @@ int main()
 
     system("cls");
 
-    printf("Area: %.1f\n", area);
-    printf("Perimetro: %.1f\n", perimeter);
-    printf("Diagonal: %.1f\n", diagonal);
+    printf("Area: %.1fcm\n", area);
+    printf("Perimetro: %.1fcm\n", perimeter);
+    printf("Diagonal: %.1fcm\n", diagonal);
     printf("--------------------------------------------\n\n");
 
     return 0;
