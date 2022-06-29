@@ -62,6 +62,7 @@ int main()
     float diagonal;
     float perimeter;
 
+    printf("\n\n");
     printf("INFORME A BASE: ");
     scanf("%f", &base);
 
@@ -74,6 +75,8 @@ int main()
     printf("--------------------------------------------\n\n");
 
     system("cls");
+    printf("\n\n");
+    printf("RESULTADOS:\n\n");
 
     printf("Area: %.1fcm\n", area);
     printf("Perimetro: %.1fcm\n", perimeter);
