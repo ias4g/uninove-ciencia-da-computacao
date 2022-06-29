@@ -28,6 +28,15 @@ float calculate_perimeter(float b, float h)
     return 2 * (b + h);
 }
 
+float calculate_area(float b, float h)
+{
+    return b * h;
+}
+
+float calculate_diagonal(float b, float h)
+{
+}
+
 int main()
 {
     system("cls");
