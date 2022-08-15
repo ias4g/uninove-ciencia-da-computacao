@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Ideias {
+  id          String   @id @default(uuid())
+  image       String
+  title       String
+  category    String
+  description String
+  link        String
+  createdAt   DateTime @default(now())
+
+  @@map("ideias")
+}
