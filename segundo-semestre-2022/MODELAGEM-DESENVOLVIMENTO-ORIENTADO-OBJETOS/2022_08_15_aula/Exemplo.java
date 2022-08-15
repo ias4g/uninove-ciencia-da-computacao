@@ -21,11 +21,11 @@ public class Exemplo {
 
         rg = JOptionPane.showInputDialog("Qual é o seu RG?");
 
-        endereco = JOptionPane.showInputDialog("Qual é o seu RG?");
+        endereco = JOptionPane.showInputDialog("Qual é o seu endereço?");
 
         salario = Double.parseDouble(JOptionPane.showInputDialog("Qual é o seu salario?"));
 
         // imprimindo os valores lidos
-        
+        JOptionPane.showMessageDialog(null, "Seu códiigo é: " + codigoFuncionario);
     }
 }
