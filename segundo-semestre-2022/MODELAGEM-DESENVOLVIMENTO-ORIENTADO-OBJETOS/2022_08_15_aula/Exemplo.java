@@ -14,6 +14,7 @@ public class Exemplo {
         // declarando variavéis
         int codigoFuncionario;
         String rg, endereco;
+        double salario;
 
         // armazenando os valores nas variavéis
         codigoFuncionario = Integer.parseInt(JOptionPane.showInputDialog("Qual éo seu código?"));
@@ -21,5 +22,10 @@ public class Exemplo {
         rg = JOptionPane.showInputDialog("Qual é o seu RG?");
 
         endereco = JOptionPane.showInputDialog("Qual é o seu RG?");
+
+        salario = Double.parseDouble(JOptionPane.showInputDialog("Qual é o seu salario?"));
+
+        // imprimindo os valores lidos
+        
     }
 }
