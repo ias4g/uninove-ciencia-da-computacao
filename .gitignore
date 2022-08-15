@@ -1,2 +1,4 @@
-primeiro-semestre/disciplina-app/**/*.exe
-primeiro-semestre/disciplina-pds/**/*.exe
+**/node_modules
+**/*.exe
+**/.env
+**/*.md
