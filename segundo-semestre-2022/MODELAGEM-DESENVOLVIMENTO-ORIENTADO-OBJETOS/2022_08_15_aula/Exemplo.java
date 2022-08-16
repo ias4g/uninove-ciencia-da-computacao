@@ -28,9 +28,7 @@ public class Exemplo {
         salario *= 1.30;
 
         // imprimindo os valores lidos
-        JOptionPane.showMessageDialog(null,
-                "Seu códiigo é: " + codigoFuncionario + "\nRG: " + rg + "\nEndereço: " + endereco + "\nNovo salario: "
-                        + salario);
+        JOptionPane.showMessageDialog(null, "Seu códiigo é: " + codigoFuncionario + "\nRG: " + rg + "\nEndereço: " + endereco + "\nNovo salario: " + salario);
 
         if (salario <= 1212) {
             JOptionPane.showMessageDialog(null, "Vc ganha um salario minimo");
