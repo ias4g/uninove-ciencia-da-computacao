@@ -25,9 +25,11 @@ public class Exemplo {
 
         salario = Double.parseDouble(JOptionPane.showInputDialog("Qual é o seu salario?"));
 
+        salario *= 1.30;
+
         // imprimindo os valores lidos
         JOptionPane.showMessageDialog(null,
-                "Seu códiigo é: " + codigoFuncionario + "\nRG: " + rg + "\nEndereço: " + endereco + "\nSalario: "
+                "Seu códiigo é: " + codigoFuncionario + "\nRG: " + rg + "\nEndereço: " + endereco + "\nNovo salario: "
                         + salario);
     }
 }
