@@ -31,5 +31,11 @@ public class Exemplo {
         JOptionPane.showMessageDialog(null,
                 "Seu códiigo é: " + codigoFuncionario + "\nRG: " + rg + "\nEndereço: " + endereco + "\nNovo salario: "
                         + salario);
+
+        if (salario <= 1212) {
+            JOptionPane.showMessageDialog(null, "Vc ganha um salario minimo");
+        } else {
+            JOptionPane.showMessageDialog(null, "Vc ganha muito bem");
+        }
     }
 }
