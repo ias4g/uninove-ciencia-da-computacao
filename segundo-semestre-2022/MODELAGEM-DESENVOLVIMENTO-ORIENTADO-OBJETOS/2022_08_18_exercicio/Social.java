@@ -25,7 +25,7 @@ public class Social {
             JOptionPane.showMessageDialog(null, "Classe E - Salario: " + salario);
         } else if (salario <= 4848) {
             JOptionPane.showMessageDialog(null, "Classe D - Salario: " + salario);
-        } else if (salario > 4848 && salario <= 12120) {
+        } else if (salario <= 12120) {
             JOptionPane.showMessageDialog(null, "Classe C - Salario: " + salario);
         } else if (salario > 12120 && salario <= 24240) {
             JOptionPane.showMessageDialog(null, "Classe B - Salario: " + salario);
