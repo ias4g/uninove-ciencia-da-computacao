@@ -17,12 +17,21 @@ public class Social {
 
         // armazenando os valores nas variavéis
         name = JOptionPane.showInputDialog("Qual é o seu nome?");
+
+        if (name.equals("Izael")) {
+            JOptionPane.showMessageDialog(null, "Nome bonitão");
+        } else {
+            JOptionPane.showMessageDialog(null, "FEIO");
+        }
+
         salario = Double.parseDouble(JOptionPane.showInputDialog("Qual é o seu salario?"));
 
         salario *= 1.30;
 
         // imprimindo os valores lidos
-        if (salario <= 2424) {
+        if (salario <= 2424)
+
+        {
             JOptionPane.showMessageDialog(null, "Nome: " + name + "\nClasse E\nSalario: " + salario);
         } else if (salario <= 4848) {
             JOptionPane.showMessageDialog(null, "Nome: " + name + "\nClasse D\nSalario: " + salario);
