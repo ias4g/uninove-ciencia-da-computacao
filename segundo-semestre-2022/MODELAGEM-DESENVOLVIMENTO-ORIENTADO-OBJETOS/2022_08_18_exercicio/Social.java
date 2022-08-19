@@ -18,7 +18,7 @@ public class Social {
         // armazenando os valores nas variavéis
         name = JOptionPane.showInputDialog("Qual é o seu nome?");
 
-        if (name.equals("Izael")) {
+        if (name.equalsIgnoreCase("Izael")) {
             JOptionPane.showMessageDialog(null, "Nome bonitão");
         } else {
             JOptionPane.showMessageDialog(null, "FEIO");
