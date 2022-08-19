@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 /**
  * @file Exemplo.java
@@ -7,8 +8,6 @@
  * @copyright Copyright (c) 2022
  *
  */
-
-import javax.swing.JOptionPane;
 
 public class Exemplo {
     public static void main(String[] args) {
