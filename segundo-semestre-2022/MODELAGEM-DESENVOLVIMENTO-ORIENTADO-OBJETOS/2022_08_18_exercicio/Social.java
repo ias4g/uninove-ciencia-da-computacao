@@ -23,15 +23,15 @@ public class Social {
 
         // imprimindo os valores lidos
         if (salario <= 2424) {
-            JOptionPane.showMessageDialog(null, "Nome: " + name + "Classe E - Salario: " + salario);
+            JOptionPane.showMessageDialog(null, "Nome: " + name + " - Classe E - Salario: " + salario);
         } else if (salario <= 4848) {
-            JOptionPane.showMessageDialog(null, "Nome: " + name + "Classe D - Salario: " + salario);
+            JOptionPane.showMessageDialog(null, "Nome: " + name + " - Classe D - Salario: " + salario);
         } else if (salario <= 12120) {
-            JOptionPane.showMessageDialog(null, "Nome: " + name + "Classe C - Salario: " + salario);
+            JOptionPane.showMessageDialog(null, "Nome: " + name + " - Classe C - Salario: " + salario);
         } else if (salario <= 24240) {
-            JOptionPane.showMessageDialog(null, "Nome: " + name + "Classe B - Salario: " + salario);
+            JOptionPane.showMessageDialog(null, "Nome: " + name + " - Classe B - Salario: " + salario);
         } else {
-            JOptionPane.showMessageDialog(null, "Nome: " + name + "Classe A - Salario: " + salario);
+            JOptionPane.showMessageDialog(null, "Nome: " + name + " - Classe A - Salario: " + salario);
         }
     }
 }
