@@ -18,7 +18,7 @@ public class Social {
         // armazenando os valores nas variavéis
         salario = Double.parseDouble(JOptionPane.showInputDialog("Qual é o seu salario?"));
 
-        salario *= 1.30;
+        // salario *= 1.30;
 
         // imprimindo os valores lidos
         if (salario <= 2424) {
