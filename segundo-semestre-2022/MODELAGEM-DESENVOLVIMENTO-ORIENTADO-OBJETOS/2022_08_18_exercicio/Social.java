@@ -12,16 +12,18 @@ import javax.swing.JOptionPane;
 public class Social {
     public static void main(String[] args) {
         // declarando variavéis
+        String name;
         double salario;
 
         // armazenando os valores nas variavéis
+        name = JOptionPane.showInputDialog("Qual é o seu nome?");
         salario = Double.parseDouble(JOptionPane.showInputDialog("Qual é o seu salario?"));
 
         salario *= 1.30;
 
         // imprimindo os valores lidos
         if (salario <= 2424) {
-            JOptionPane.showMessageDialog(null, "Classe E - Salario: " + salario);
+            JOptionPane.showMessageDialog(null, "Nome: " + name + "Classe E - Salario: " + salario);
         } else if (salario <= 4848) {
             JOptionPane.showMessageDialog(null, "Classe D - Salario: " + salario);
         } else if (salario <= 12120) {
