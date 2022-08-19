@@ -29,9 +29,7 @@ public class Social {
         salario *= 1.30;
 
         // imprimindo os valores lidos
-        if (salario <= 2424)
-
-        {
+        if (salario <= 2424) {
             JOptionPane.showMessageDialog(null, "Nome: " + name + "\nClasse E\nSalario: " + salario);
         } else if (salario <= 4848) {
             JOptionPane.showMessageDialog(null, "Nome: " + name + "\nClasse D\nSalario: " + salario);
