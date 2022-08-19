@@ -17,7 +17,7 @@ public class Social {
             JOptionPane.showMessageDialog(null, "Classe C");
         } else if (salario > 12120 && salario <= 24240) {
             JOptionPane.showMessageDialog(null, "Classe B");
-        } else if (salario > 24240) {
+        } else {
             JOptionPane.showMessageDialog(null, "Classe A");
         }
     }
