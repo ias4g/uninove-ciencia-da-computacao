@@ -1,4 +1,3 @@
-import javax.swing.JOptionPane;
 
 /**
  * @file Exemplo.java
@@ -8,6 +7,8 @@ import javax.swing.JOptionPane;
  * @copyright Copyright (c) 2022
  *
  */
+
+import javax.swing.JOptionPane;
 
 public class Exemplo {
     public static void main(String[] args) {
@@ -28,7 +29,8 @@ public class Exemplo {
         salario *= 1.30;
 
         // imprimindo os valores lidos
-        JOptionPane.showMessageDialog(null, "Seu códiigo é: " + codigoFuncionario + "\nRG: " + rg + "\nEndereço: " + endereco + "\nNovo salario: " + salario);
+        JOptionPane.showMessageDialog(null, "Seu códiigo é: " + codigoFuncionario + "\nRG: " + rg + "\nEndereço: "
+                + endereco + "\nNovo salario: " + salario);
 
         if (salario <= 1212) {
             JOptionPane.showMessageDialog(null, "Vc ganha um salario minimo");
