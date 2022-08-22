@@ -17,5 +17,9 @@ public class System {
 
         // Cadastrar as informações nas variáveis
         name = JOptionPane.showInputDialog("Digite seu nome");
+
+        job = JOptionPane.showInputDialog("Digite seu cargo");
+
+        salary = Double.parseDouble(JOptionPane.showInputDialog("Digite seu salario"));
     }
 }
