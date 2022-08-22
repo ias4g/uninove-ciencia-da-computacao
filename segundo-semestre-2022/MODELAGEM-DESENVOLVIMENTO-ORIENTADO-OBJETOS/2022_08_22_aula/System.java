@@ -14,6 +14,7 @@ public class System {
         String name;
         String job;
         double salary;
+        double newSalary;
 
         // Cadastrar as informações nas variáveis
         name = JOptionPane.showInputDialog("Digite seu nome");
@@ -22,6 +23,9 @@ public class System {
 
         salary = Double.parseDouble(JOptionPane.showInputDialog("Digite seu salario"));
 
-        JOptionPane.showMessageDialog(null, "Seu nome é " + name + " você é " + job + " e ganha " + salary + " reais.");
+        newSalary = salary * 1.30;
+
+        JOptionPane.showMessageDialog(null, "Seu nome é " + name + " você é " + job + " e ganha " + salary
+                + " reais. Novo \nsalario: " + newSalary);
     }
 }
