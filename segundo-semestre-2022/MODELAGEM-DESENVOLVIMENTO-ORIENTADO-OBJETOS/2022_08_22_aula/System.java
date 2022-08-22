@@ -21,5 +21,7 @@ public class System {
         job = JOptionPane.showInputDialog("Digite seu cargo");
 
         salary = Double.parseDouble(JOptionPane.showInputDialog("Digite seu salario"));
+
+        JOptionPane.showMessageDialog(null, "Nome: " + name + "\nCargo: " + job + "\nSalário: " + salary);
     }
 }
