@@ -9,6 +9,11 @@
 
 public class System {
     public static void main(String[] args) {
+        String name;
+        String job;
+        double salary;
 
+        // Cadastrar as informações nas variáveis
+        
     }
 }
