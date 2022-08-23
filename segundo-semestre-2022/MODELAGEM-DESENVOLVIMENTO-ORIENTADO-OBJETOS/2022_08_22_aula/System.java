@@ -22,6 +22,10 @@ public class System {
 
         salary = Double.parseDouble(JOptionPane.showInputDialog("Digite seu salario"));
 
+        // Chama o metodo exibirdados() da class Apoio
         Apoio.exibirdados(name, job, salary);
+
+        // Chama o metodo reajustarSalary() da class Apoio
+        Apoio.reajustarSalary(salary, 1.30);
     }
 }
