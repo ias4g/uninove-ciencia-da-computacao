@@ -25,7 +25,6 @@ public class System {
 
         newSalary = salary * 1.30;
 
-        JOptionPane.showMessageDialog(null, "Seu nome é " + name + " você é " + job + " e ganha " + salary
-                + " reais. Novo \nsalario: " + newSalary);
+        JOptionPane.showMessageDialog(null, "Seu nome é " + name + " você é " + job + " e ganha " + salary + " reais. Novo \nsalario: " + newSalary);
     }
 }
