@@ -9,7 +9,7 @@ public class Apoio {
                         "\nGanha " + salary + " reais.");
     }
 
-    public static void reajustarSalary(double salary, double tx) {
+    static void reajustarSalary(double salary, double tx) {
         salary = salary * tx;
         JOptionPane.showMessageDialog(null, "O salario reajustado é: " + salary);
     }
