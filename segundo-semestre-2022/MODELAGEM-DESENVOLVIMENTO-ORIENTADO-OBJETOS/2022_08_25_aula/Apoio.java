@@ -1,5 +1,14 @@
 import javax.swing.JOptionPane;
 
+/**
+ * @file Apoio.java
+ * @author Izael Silva (https://github.com/Ias4g)
+ * @date 25 de Agosto de 2022
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
 public class Apoio {
     public static void exibirdados(String name, String job, double salary) {
         JOptionPane.showMessageDialog(
