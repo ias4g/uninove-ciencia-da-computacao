@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 /**
  * @file System.java
  * @author Izael Silva (https://github.com/Ias4g)
- * @date 22 de Agosto de 2022
+ * @date 25 de Agosto de 2022
  *
  * @copyright Copyright (c) 2022
  *
