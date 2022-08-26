@@ -9,8 +9,7 @@
 
 public class Percent {
     public static double reajustarsalary(double salary, double percent) {
-        salary = salary + (salary * (percent / 100));
-        return salary;
+        return salary = (salary + (salary * (percent / 100)));
     }
 
     public static String verifyClass(double salary) {
