@@ -9,7 +9,7 @@
 
 public class Percent {
     public static double reajustarSalario(double salary, double percent) {
-        salary = salary + salary * percent / 100;
+        salary = salary + (salary * (percent / 100));
         return salary;
     }
 }
