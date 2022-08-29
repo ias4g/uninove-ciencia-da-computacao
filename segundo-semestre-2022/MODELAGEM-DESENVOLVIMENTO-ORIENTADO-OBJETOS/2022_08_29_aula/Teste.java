@@ -13,8 +13,8 @@ public class Teste {
     public static void main(String[] args) {
         double numberOne;
         double numberTwo;
-        // double result;
-        // int d, e, f;
+        double result;
+        int d, e, f;
 
         numberOne = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
 
