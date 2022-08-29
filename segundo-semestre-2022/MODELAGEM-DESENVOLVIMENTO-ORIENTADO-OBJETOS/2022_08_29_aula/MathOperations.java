@@ -11,4 +11,8 @@ public class MathOperations {
     public static double sum(double n1, double n2, int n3) {
         return n1 + n2 + n3;
     }
+
+    public static double subtraction(double n1, double n2, int n3) {
+        return n1 - n2 - n3;
+    }
 }
