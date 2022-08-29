@@ -16,8 +16,8 @@ public class Teste {
 
         a = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
 
-        b = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
+        b = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo número"));
 
-        c = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
+        c = Double.parseDouble(JOptionPane.showInputDialog("Digite o terceiro número"));
     }
 }
