@@ -13,11 +13,13 @@ public class Teste {
     public static void main(String[] args) {
         double numberOne;
         double numberTwo;
-        double result;
-        int d, e, f;
+        // double result;
+        // int d, e, f;
 
         numberOne = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
 
         numberTwo = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo número"));
+
+        JOptionPane.showMessageDialog(null, "Numero digitados foram " + numberOne + " " + numberTwo);
     }
 }
