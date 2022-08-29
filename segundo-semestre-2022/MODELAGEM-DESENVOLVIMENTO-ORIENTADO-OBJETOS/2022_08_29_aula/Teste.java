@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 /**
  * @file Teste.java
  * @author Izael Silva (https://github.com/Ias4g)
@@ -12,6 +14,10 @@ public class Teste {
         double a, b, c;
         int d, e, f;
 
-        
+        a = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
+
+        b = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
+
+        c = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
     }
 }
