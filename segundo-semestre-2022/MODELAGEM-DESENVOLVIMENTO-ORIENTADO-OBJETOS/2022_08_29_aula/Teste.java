@@ -14,7 +14,9 @@ public class Teste {
         double numberOne;
         double numberTwo;
         double result;
-        int d, e, f;
+        int numberThree;
+        int numberFour;
+        int numberFive;
 
         numberOne = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
 
