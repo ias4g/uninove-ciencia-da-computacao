@@ -9,6 +9,9 @@
 
 public class Teste {
     public static void main(String[] args) {
+        double a, b, c;
+        int d, e, f;
+
         
     }
 }
