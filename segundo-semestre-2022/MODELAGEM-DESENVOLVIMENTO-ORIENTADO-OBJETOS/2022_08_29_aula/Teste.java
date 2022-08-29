@@ -26,6 +26,6 @@ public class Teste {
 
         result = numberOne + numberTwo + numberThree;
 
-        JOptionPane.showMessageDialog(null, "Numero digitados foram " + numberOne + " " + numberTwo);
+        JOptionPane.showMessageDialog(null, "Resultado " + result);
     }
 }
