@@ -22,6 +22,10 @@ public class Teste {
 
         numberTwo = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo número"));
 
+        numberThree = Integer.parseInt(JOptionPane.showInputDialog("Digite o terceiro número"));
+
+        result = numberOne + numberTwo + numberThree;
+
         JOptionPane.showMessageDialog(null, "Numero digitados foram " + numberOne + " " + numberTwo);
     }
 }
