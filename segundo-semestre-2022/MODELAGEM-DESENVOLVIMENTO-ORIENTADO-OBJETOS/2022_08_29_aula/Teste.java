@@ -11,13 +11,13 @@ import javax.swing.JOptionPane;
 
 public class Teste {
     public static void main(String[] args) {
-        double a, b, c;
+        double numberOne;
+        double numberTwo;
+        double result;
         int d, e, f;
 
-        a = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
+        numberOne = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
 
-        b = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo número"));
-
-        c = Double.parseDouble(JOptionPane.showInputDialog("Digite o terceiro número"));
+        numberTwo = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo número"));
     }
 }
