@@ -22,9 +22,9 @@ public class Teste {
 
         // ###################################################
         JOptionPane.showMessageDialog(null,
-                "Resultado\nDivisão: " + MathOperations.division(numberOne, numberTwo, numberThree) + "\nMultiplição: "
-                        + MathOperations.multiplication(numberOne, numberTwo, numberThree) + "\nSoma: "
-                        + MathOperations.sum(numberOne, numberTwo, numberThree) + "\nSubtração: "
-                        + MathOperations.subtraction(numberOne, numberTwo, numberThree));
+                "Resultado\nDivisão: " + MathOperations.division(numberOne, numberTwo, numberThree)
+                        + "\nMultiplição: " + MathOperations.multiplication(numberOne, numberTwo, numberThree)
+                        + "\nSoma: " + MathOperations.sum(numberOne, numberTwo, numberThree)
+                        + "\nSubtração: " + MathOperations.subtraction(numberOne, numberTwo, numberThree));
     }
 }
