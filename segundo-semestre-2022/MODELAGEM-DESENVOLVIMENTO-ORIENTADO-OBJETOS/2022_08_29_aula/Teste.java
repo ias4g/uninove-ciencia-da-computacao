@@ -26,7 +26,11 @@ public class Teste {
         resultDivision = MathOperations.division(numberOne, numberTwo, numberThree);
 
         resultSum = MathOperations.sum(numberOne, numberTwo, numberThree);
-        
+
         resultSubtraction = MathOperations.subtraction(numberOne, numberTwo, numberThree);
+
+        // ###################################################
+        JOptionPane.showMessageDialog(null, "Resultado\nDivisão: " + resultDivision + "\nMultiplição: "
+                + resultMultiplication + "\nSoma: " + resultSum + "\nSubtração: " + resultSubtraction);
     }
 }
