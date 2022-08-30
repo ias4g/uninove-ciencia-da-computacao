@@ -11,12 +11,9 @@ import javax.swing.JOptionPane;
 
 public class Teste {
     public static void main(String[] args) {
-        double numberOne;
-        double numberTwo;
-        double result;
         int numberThree;
-        int numberFour;
-        int numberFive;
+        double numberOne, numberTwo;
+        double resultSum, resultDivision, resultMultiplication, resultSubtraction;
 
         numberOne = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro número"));
 
@@ -24,8 +21,12 @@ public class Teste {
 
         numberThree = Integer.parseInt(JOptionPane.showInputDialog("Digite o terceiro número"));
 
-        result = numberOne + numberTwo + numberThree;
+        resultMultiplication = MathOperations.multiplication(numberOne, numberTwo, numberThree);
 
-        JOptionPane.showMessageDialog(null, "Resultado " + result);
+        resultDivision = MathOperations.division(numberOne, numberTwo, numberThree);
+
+        resultSum = MathOperations.sum(numberOne, numberTwo, numberThree);
+        
+        resultSubtraction = MathOperations.subtraction(numberOne, numberTwo, numberThree);
     }
 }
