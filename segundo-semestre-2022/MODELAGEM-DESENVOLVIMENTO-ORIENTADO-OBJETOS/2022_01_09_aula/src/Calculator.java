@@ -38,7 +38,7 @@ public class Calculator extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculator");
+        setTitle(" Calculator 🖩");
         getContentPane().setLayout(null);
 
         jLabel1.setText("Resultado");
