@@ -25,10 +25,61 @@ public class Calculator extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        pack();
+        jLabel1.setText("Resultado");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(230, 50, 60, 16);
+
+        jLabel2.setText("Número");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 20, 50, 16);
+
+        jLabel3.setText("Número");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(20, 70, 50, 16);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(230, 70, 120, 22);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(70, 20, 70, 22);
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(70, 70, 71, 22);
+
+        jButton1.setText("Exp");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(170, 110, 50, 22);
+
+        jButton2.setText("+");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 110, 30, 22);
+
+        jButton3.setText("-");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(50, 110, 30, 22);
+
+        jButton4.setText("*");
+        getContentPane().add(jButton4);
+        jButton4.setBounds(90, 110, 30, 22);
+
+        jButton5.setText("/");
+        getContentPane().add(jButton5);
+        jButton5.setBounds(130, 110, 30, 22);
+
+        setSize(new java.awt.Dimension(416, 308));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -67,5 +118,16 @@ public class Calculator extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
