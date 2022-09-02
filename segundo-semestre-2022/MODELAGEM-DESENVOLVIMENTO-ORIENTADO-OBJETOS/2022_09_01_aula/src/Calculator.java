@@ -26,6 +26,7 @@ public class Calculator extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(" Calculator 🖩");
+        setResizable(false);
         getContentPane().setLayout(null);
 
         lblResult.setText("Resultado");
