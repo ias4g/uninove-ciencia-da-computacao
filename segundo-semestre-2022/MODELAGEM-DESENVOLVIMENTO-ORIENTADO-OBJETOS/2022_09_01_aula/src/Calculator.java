@@ -22,6 +22,7 @@ public class Calculator extends javax.swing.JFrame {
         btnMultiplicar = new javax.swing.JButton();
         btnDividir = new javax.swing.JButton();
         txtNumber1 = new javax.swing.JTextField();
+        btnLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(" Calculator 🖩");
@@ -95,7 +96,17 @@ public class Calculator extends javax.swing.JFrame {
         getContentPane().add(txtNumber1);
         txtNumber1.setBounds(30, 40, 80, 30);
 
-        setSize(new java.awt.Dimension(331, 261));
+        btnLimpar.setText("Limpar campos");
+        btnLimpar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimpar);
+        btnLimpar.setBounds(30, 200, 250, 30);
+
+        setSize(new java.awt.Dimension(331, 309));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -144,6 +155,14 @@ public class Calculator extends javax.swing.JFrame {
         txtResult.setText(String.valueOf(result));
     }//GEN-LAST:event_btnExponeciacaoActionPerformed
 
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        txtNumber1.setText("");
+        txtNumber2.setText("");
+        txtResult.setText("");
+
+        txtNumber1.requestFocus();
+    }//GEN-LAST:event_btnLimparActionPerformed
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -174,6 +193,7 @@ public class Calculator extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDividir;
     private javax.swing.JButton btnExponeciacao;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnMultiplicar;
     private javax.swing.JButton btnSomar;
     private javax.swing.JButton btnSubtrair;
