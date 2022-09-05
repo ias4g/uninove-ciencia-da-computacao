@@ -113,7 +113,7 @@ public class Calculator extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnLimpar);
-        btnLimpar.setBounds(30, 200, 250, 30);
+        btnLimpar.setBounds(30, 200, 250, 40);
 
         mnuFiles.setText("Arquivos");
 
@@ -123,6 +123,11 @@ public class Calculator extends javax.swing.JFrame {
 
         itmLogout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmLogout.setText("Sair");
+        itmLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmLogoutActionPerformed(evt);
+            }
+        });
         mnuFiles.add(itmLogout);
 
         barMenu.add(mnuFiles);
@@ -200,6 +205,10 @@ public class Calculator extends javax.swing.JFrame {
 
         txtNumber1.requestFocus();
     }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void itmLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmLogoutActionPerformed
+        
+    }//GEN-LAST:event_itmLogoutActionPerformed
 
     public static void main(String args[]) {
         try {
