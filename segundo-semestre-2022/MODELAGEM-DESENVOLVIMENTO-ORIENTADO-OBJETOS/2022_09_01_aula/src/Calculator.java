@@ -121,6 +121,7 @@ public class Calculator extends javax.swing.JFrame {
         itmClean.setText("Limpar");
         mnuFiles.add(itmClean);
 
+        itmLogout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmLogout.setText("Sair");
         mnuFiles.add(itmLogout);
 
