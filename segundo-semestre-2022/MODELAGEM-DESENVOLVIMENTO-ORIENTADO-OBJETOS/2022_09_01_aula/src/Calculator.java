@@ -110,15 +110,15 @@ public class Calculator extends javax.swing.JFrame {
         getContentPane().add(btnLimpar);
         btnLimpar.setBounds(30, 200, 250, 30);
 
-        jMenu1.setText("File");
+        jMenu1.setText("Arquivos");
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Ajuda");
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(331, 291));
+        setSize(new java.awt.Dimension(331, 322));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
