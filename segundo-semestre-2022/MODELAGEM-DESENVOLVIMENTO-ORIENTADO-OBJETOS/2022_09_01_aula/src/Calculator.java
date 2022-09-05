@@ -119,9 +119,14 @@ public class Calculator extends javax.swing.JFrame {
 
         itmClean.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmClean.setText("Limpar");
+        itmClean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmCleanActionPerformed(evt);
+            }
+        });
         mnuFiles.add(itmClean);
 
-        itmLogout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmLogout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmLogout.setText("Sair");
         itmLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,7 +213,12 @@ public class Calculator extends javax.swing.JFrame {
 
     private void itmLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmLogoutActionPerformed
         dispose();
+        //System.exit(0);
     }//GEN-LAST:event_itmLogoutActionPerformed
+
+    private void itmCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCleanActionPerformed
+        btnLimpar.doClick();
+    }//GEN-LAST:event_itmCleanActionPerformed
 
     public static void main(String args[]) {
         try {
