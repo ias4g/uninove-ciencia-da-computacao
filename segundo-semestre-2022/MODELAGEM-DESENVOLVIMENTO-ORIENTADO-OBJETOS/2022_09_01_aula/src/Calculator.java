@@ -25,6 +25,8 @@ public class Calculator extends javax.swing.JFrame {
         btnLimpar = new javax.swing.JButton();
         barMenu = new javax.swing.JMenuBar();
         mnuFiles = new javax.swing.JMenu();
+        itmClean = new javax.swing.JMenuItem();
+        itmLogout = new javax.swing.JMenuItem();
         mnuHelp = new javax.swing.JMenu();
         mnuOptions = new javax.swing.JMenu();
 
@@ -112,6 +114,13 @@ public class Calculator extends javax.swing.JFrame {
         btnLimpar.setBounds(30, 200, 250, 30);
 
         mnuFiles.setText("Arquivos");
+
+        itmClean.setText("Limpar");
+        mnuFiles.add(itmClean);
+
+        itmLogout.setText("Sair");
+        mnuFiles.add(itmLogout);
+
         barMenu.add(mnuFiles);
 
         mnuHelp.setText("Ajuda");
@@ -214,6 +223,8 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton btnMultiplicar;
     private javax.swing.JButton btnSomar;
     private javax.swing.JButton btnSubtrair;
+    private javax.swing.JMenuItem itmClean;
+    private javax.swing.JMenuItem itmLogout;
     private javax.swing.JLabel lblNumber1;
     private javax.swing.JLabel lblNumber2;
     private javax.swing.JLabel lblResult;
