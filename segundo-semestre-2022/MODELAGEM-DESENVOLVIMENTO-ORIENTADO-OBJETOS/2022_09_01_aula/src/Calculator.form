@@ -34,6 +34,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itmCalculatorUse">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+Ctrl+H"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Uso da calculadora"/>
               </Properties>
             </MenuItem>
