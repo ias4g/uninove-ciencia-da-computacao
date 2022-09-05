@@ -23,10 +23,10 @@ public class Calculator extends javax.swing.JFrame {
         btnDividir = new javax.swing.JButton();
         txtNumber1 = new javax.swing.JTextField();
         btnLimpar = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        barMenu = new javax.swing.JMenuBar();
+        mnuFiles = new javax.swing.JMenu();
+        mnuHelp = new javax.swing.JMenu();
+        mnuOptions = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Basic Calculator");
@@ -111,16 +111,16 @@ public class Calculator extends javax.swing.JFrame {
         getContentPane().add(btnLimpar);
         btnLimpar.setBounds(30, 200, 250, 30);
 
-        jMenu1.setText("Arquivos");
-        jMenuBar1.add(jMenu1);
+        mnuFiles.setText("Arquivos");
+        barMenu.add(mnuFiles);
 
-        jMenu2.setText("Ajuda");
-        jMenuBar1.add(jMenu2);
+        mnuHelp.setText("Ajuda");
+        barMenu.add(mnuHelp);
 
-        jMenu3.setText("Opções");
-        jMenuBar1.add(jMenu3);
+        mnuOptions.setText("Opções");
+        barMenu.add(mnuOptions);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(barMenu);
 
         setSize(new java.awt.Dimension(331, 322));
         setLocationRelativeTo(null);
@@ -207,19 +207,19 @@ public class Calculator extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar barMenu;
     private javax.swing.JButton btnDividir;
     private javax.swing.JButton btnExponeciacao;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnMultiplicar;
     private javax.swing.JButton btnSomar;
     private javax.swing.JButton btnSubtrair;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblNumber1;
     private javax.swing.JLabel lblNumber2;
     private javax.swing.JLabel lblResult;
+    private javax.swing.JMenu mnuFiles;
+    private javax.swing.JMenu mnuHelp;
+    private javax.swing.JMenu mnuOptions;
     private javax.swing.JTextField txtNumber1;
     private javax.swing.JTextField txtNumber2;
     private javax.swing.JTextField txtResult;
