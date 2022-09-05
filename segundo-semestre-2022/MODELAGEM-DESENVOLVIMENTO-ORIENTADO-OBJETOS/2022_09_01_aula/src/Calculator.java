@@ -23,6 +23,9 @@ public class Calculator extends javax.swing.JFrame {
         btnDividir = new javax.swing.JButton();
         txtNumber1 = new javax.swing.JTextField();
         btnLimpar = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Basic Calculator");
@@ -107,7 +110,15 @@ public class Calculator extends javax.swing.JFrame {
         getContentPane().add(btnLimpar);
         btnLimpar.setBounds(30, 200, 250, 30);
 
-        setSize(new java.awt.Dimension(331, 309));
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
+        setSize(new java.awt.Dimension(331, 291));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -198,6 +209,9 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton btnMultiplicar;
     private javax.swing.JButton btnSomar;
     private javax.swing.JButton btnSubtrair;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblNumber1;
     private javax.swing.JLabel lblNumber2;
     private javax.swing.JLabel lblResult;
