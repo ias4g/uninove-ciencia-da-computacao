@@ -204,11 +204,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExponeciacaoActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        txtNumber1.setText("");
-        txtNumber2.setText("");
-        txtResult.setText("");
-
-        txtNumber1.requestFocus();
+        cleanTextField();
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void itmLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmLogoutActionPerformed
@@ -217,8 +213,16 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_itmLogoutActionPerformed
 
     private void itmCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCleanActionPerformed
-        btnLimpar.doClick();
+        cleanTextField();
     }//GEN-LAST:event_itmCleanActionPerformed
+
+    private void cleanTextField() {
+        txtNumber1.setText("");
+        txtNumber2.setText("");
+        txtResult.setText("");
+
+        txtNumber1.requestFocus();
+    }
 
     public static void main(String args[]) {
         try {
