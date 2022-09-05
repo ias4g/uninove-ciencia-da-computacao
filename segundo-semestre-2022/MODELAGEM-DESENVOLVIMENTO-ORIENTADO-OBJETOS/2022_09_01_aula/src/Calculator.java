@@ -26,6 +26,7 @@ public class Calculator extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Basic Calculator");
@@ -115,6 +116,9 @@ public class Calculator extends javax.swing.JFrame {
 
         jMenu2.setText("Ajuda");
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Opções");
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -211,6 +215,7 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton btnSubtrair;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblNumber1;
     private javax.swing.JLabel lblNumber2;
