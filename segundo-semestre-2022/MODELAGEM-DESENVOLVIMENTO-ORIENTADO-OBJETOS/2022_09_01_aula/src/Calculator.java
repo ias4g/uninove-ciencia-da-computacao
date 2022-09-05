@@ -25,7 +25,7 @@ public class Calculator extends javax.swing.JFrame {
         btnLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle(" Calculator 🖩");
+        setTitle("Basic Calculator");
         setResizable(false);
         getContentPane().setLayout(null);
 
