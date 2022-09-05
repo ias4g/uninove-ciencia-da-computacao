@@ -207,7 +207,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void itmLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmLogoutActionPerformed
-        
+        dispose();
     }//GEN-LAST:event_itmLogoutActionPerformed
 
     public static void main(String args[]) {
