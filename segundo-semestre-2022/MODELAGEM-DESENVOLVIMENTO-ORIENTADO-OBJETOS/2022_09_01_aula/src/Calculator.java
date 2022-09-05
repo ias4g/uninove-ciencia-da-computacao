@@ -28,6 +28,8 @@ public class Calculator extends javax.swing.JFrame {
         itmClean = new javax.swing.JMenuItem();
         itmLogout = new javax.swing.JMenuItem();
         mnuHelp = new javax.swing.JMenu();
+        itmCalculatorUse = new javax.swing.JMenuItem();
+        itmSupport = new javax.swing.JMenuItem();
         mnuOptions = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -115,6 +117,7 @@ public class Calculator extends javax.swing.JFrame {
 
         mnuFiles.setText("Arquivos");
 
+        itmClean.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmClean.setText("Limpar");
         mnuFiles.add(itmClean);
 
@@ -124,6 +127,13 @@ public class Calculator extends javax.swing.JFrame {
         barMenu.add(mnuFiles);
 
         mnuHelp.setText("Ajuda");
+
+        itmCalculatorUse.setText("Uso da calculadora");
+        mnuHelp.add(itmCalculatorUse);
+
+        itmSupport.setText("Suporte");
+        mnuHelp.add(itmSupport);
+
         barMenu.add(mnuHelp);
 
         mnuOptions.setText("Opções");
@@ -223,8 +233,10 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton btnMultiplicar;
     private javax.swing.JButton btnSomar;
     private javax.swing.JButton btnSubtrair;
+    private javax.swing.JMenuItem itmCalculatorUse;
     private javax.swing.JMenuItem itmClean;
     private javax.swing.JMenuItem itmLogout;
+    private javax.swing.JMenuItem itmSupport;
     private javax.swing.JLabel lblNumber1;
     private javax.swing.JLabel lblNumber2;
     private javax.swing.JLabel lblResult;
