@@ -133,6 +133,7 @@ public class Calculator extends javax.swing.JFrame {
         itmCalculatorUse.setText("Uso da calculadora");
         mnuHelp.add(itmCalculatorUse);
 
+        itmSupport.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmSupport.setText("Suporte");
         mnuHelp.add(itmSupport);
 
