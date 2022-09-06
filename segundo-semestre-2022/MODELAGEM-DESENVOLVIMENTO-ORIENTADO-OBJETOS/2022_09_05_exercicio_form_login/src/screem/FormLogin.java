@@ -1,3 +1,12 @@
+/**
+ * Exercício:
+ *
+ * Crie um formulário que tenha os campos, "USUÁRIO" e "SENHA", os botões "ENTRAR"
+ * e "CADASTRE-SE".
+ *
+ *
+ */
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -5,6 +14,7 @@
 package screem;
 
 /**
+ * fdfdfd
  *
  * @author ias4g
  */
