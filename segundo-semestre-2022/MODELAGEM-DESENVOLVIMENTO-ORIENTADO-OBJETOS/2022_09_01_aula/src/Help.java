@@ -26,6 +26,7 @@ public class Help extends javax.swing.JFrame {
     private void initComponents() {
 
         setTitle("Help using the calculator");
+        setResizable(false);
         getContentPane().setLayout(null);
 
         setSize(new java.awt.Dimension(416, 308));
