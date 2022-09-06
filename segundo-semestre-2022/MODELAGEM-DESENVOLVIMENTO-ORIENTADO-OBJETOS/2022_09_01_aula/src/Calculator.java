@@ -1,4 +1,7 @@
 
+import javax.swing.JOptionPane;
+
+
 public class Calculator extends javax.swing.JFrame {
 
     double n1, n2, result;
