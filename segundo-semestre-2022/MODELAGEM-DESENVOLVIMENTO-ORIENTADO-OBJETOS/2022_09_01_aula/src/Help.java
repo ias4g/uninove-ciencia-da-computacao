@@ -29,7 +29,7 @@ public class Help extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        setSize(new java.awt.Dimension(416, 308));
+        setSize(new java.awt.Dimension(354, 221));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
