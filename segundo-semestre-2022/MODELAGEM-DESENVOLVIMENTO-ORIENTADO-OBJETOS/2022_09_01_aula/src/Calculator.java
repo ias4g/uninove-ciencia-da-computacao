@@ -1,15 +1,14 @@
 
 import javax.swing.JOptionPane;
 
-
 public class Calculator extends javax.swing.JFrame {
-
+    
     double n1, n2, result;
-
+    
     public Calculator() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -144,6 +143,11 @@ public class Calculator extends javax.swing.JFrame {
 
         itmCalculatorUse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmCalculatorUse.setText("Uso da calculadora");
+        itmCalculatorUse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmCalculatorUseActionPerformed(evt);
+            }
+        });
         mnuHelp.add(itmCalculatorUse);
 
         itmSupport.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -169,45 +173,45 @@ public class Calculator extends javax.swing.JFrame {
     private void btnSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSomarActionPerformed
         n1 = Double.parseDouble(txtNumber1.getText());
         n2 = Double.parseDouble(txtNumber2.getText());
-
+        
         result = n1 + n2;
-
+        
         txtResult.setText(String.valueOf(result));
     }//GEN-LAST:event_btnSomarActionPerformed
 
     private void btnSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtrairActionPerformed
         n1 = Double.parseDouble(txtNumber1.getText());
         n2 = Double.parseDouble(txtNumber2.getText());
-
+        
         result = n1 - n2;
-
+        
         txtResult.setText(String.valueOf(result));
     }//GEN-LAST:event_btnSubtrairActionPerformed
 
     private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicarActionPerformed
         n1 = Double.parseDouble(txtNumber1.getText());
         n2 = Double.parseDouble(txtNumber2.getText());
-
+        
         result = n1 * n2;
-
+        
         txtResult.setText(String.valueOf(result));
     }//GEN-LAST:event_btnMultiplicarActionPerformed
 
     private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDividirActionPerformed
         n1 = Double.parseDouble(txtNumber1.getText());
         n2 = Double.parseDouble(txtNumber2.getText());
-
+        
         result = n1 / n2;
-
+        
         txtResult.setText(String.valueOf(result));
     }//GEN-LAST:event_btnDividirActionPerformed
 
     private void btnExponeciacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExponeciacaoActionPerformed
         n1 = Double.parseDouble(txtNumber1.getText());
         n2 = Double.parseDouble(txtNumber2.getText());
-
+        
         result = Math.pow(n1, n2);
-
+        
         txtResult.setText(String.valueOf(result));
     }//GEN-LAST:event_btnExponeciacaoActionPerformed
 
@@ -228,14 +232,19 @@ public class Calculator extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Entre em contato com o suporte: \n E-mail: suporte@empresa.com.br \n Telefone: (11)7865-9876", "Suporte", 1);
     }//GEN-LAST:event_itmSupportActionPerformed
 
+    private void itmCalculatorUseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCalculatorUseActionPerformed
+        Help h = new Help();
+        h.setVisible(true);
+    }//GEN-LAST:event_itmCalculatorUseActionPerformed
+    
     private void cleanTextField() {
         txtNumber1.setText("");
         txtNumber2.setText("");
         txtResult.setText("");
-
+        
         txtNumber1.requestFocus();
     }
-
+    
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
