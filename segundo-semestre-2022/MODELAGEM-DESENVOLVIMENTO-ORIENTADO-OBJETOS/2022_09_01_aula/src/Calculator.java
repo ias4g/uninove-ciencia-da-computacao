@@ -145,6 +145,11 @@ public class Calculator extends javax.swing.JFrame {
 
         itmSupport.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmSupport.setText("Suporte");
+        itmSupport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmSupportActionPerformed(evt);
+            }
+        });
         mnuHelp.add(itmSupport);
 
         barMenu.add(mnuHelp);
@@ -215,6 +220,10 @@ public class Calculator extends javax.swing.JFrame {
     private void itmCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmCleanActionPerformed
         cleanTextField();
     }//GEN-LAST:event_itmCleanActionPerformed
+
+    private void itmSupportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmSupportActionPerformed
+        JOptionPane.showMessageDialog(null, "Entre em contato com o suporte: \n E-mail: suporte@empresa.com.br \n Telefone: (11)7865-9876", "Suporte", 1);
+    }//GEN-LAST:event_itmSupportActionPerformed
 
     private void cleanTextField() {
         txtNumber1.setText("");
