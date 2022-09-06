@@ -26,7 +26,7 @@ public class Help extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculator | help!");
+        setTitle("Help using the calculator");
         getContentPane().setLayout(null);
 
         setSize(new java.awt.Dimension(416, 308));
