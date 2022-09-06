@@ -29,10 +29,10 @@ public class Calculator extends javax.swing.JFrame {
         mnuFiles = new javax.swing.JMenu();
         itmClean = new javax.swing.JMenuItem();
         itmLogout = new javax.swing.JMenuItem();
+        mnuOptions = new javax.swing.JMenu();
         mnuHelp = new javax.swing.JMenu();
         itmCalculatorUse = new javax.swing.JMenuItem();
         itmSupport = new javax.swing.JMenuItem();
-        mnuOptions = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Basic Calculator");
@@ -139,6 +139,9 @@ public class Calculator extends javax.swing.JFrame {
 
         barMenu.add(mnuFiles);
 
+        mnuOptions.setText("Opções");
+        barMenu.add(mnuOptions);
+
         mnuHelp.setText("Ajuda");
 
         itmCalculatorUse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -160,9 +163,6 @@ public class Calculator extends javax.swing.JFrame {
         mnuHelp.add(itmSupport);
 
         barMenu.add(mnuHelp);
-
-        mnuOptions.setText("Opções");
-        barMenu.add(mnuOptions);
 
         setJMenuBar(barMenu);
 
