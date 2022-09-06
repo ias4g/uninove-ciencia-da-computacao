@@ -3,10 +3,10 @@
  *
  * Crie um formulário que tenha os campos, "USUÁRIO" e "SENHA", os botões "ENTRAR" e "CADASTRE-SE".
  *
- * Se for clicado no botão Cadastre-se, abrir um formulário novo chamado Cadastro.
- * Se for clicado no botão Entrar, verificar:
- * Se o usuário digitado for “teste” e a senha digitada for “1234”, abrir um formulário novo chamado Acesso.
- * Senão, mostrar uma mensagem “Usuário e/ou senha inválidos”.
+ * Se for clicado no botão "CADASTRE-SE", abrir um formulário novo chamado "CADASTRO".
+ * Se for clicado no botão "ENTRAR", verificar:
+ *  Se o usuário digitado for “teste” e a senha digitada for “1234”, abrir um formulário novo chamado "ACESSO".
+ *  Senão, mostrar uma mensagem “Usuário e/ou senha inválidos”.
  */
 
 /*
