@@ -1,10 +1,7 @@
 /**
  * Exercício:
  *
- * Crie um formulário que tenha os campos, "USUÁRIO" e "SENHA", os botões "ENTRAR"
- * e "CADASTRE-SE".
- *
- *
+ * Crie um formulário que tenha os campos, "USUÁRIO" e "SENHA", os botões "ENTRAR" e "CADASTRE-SE".
  */
 
 /*
