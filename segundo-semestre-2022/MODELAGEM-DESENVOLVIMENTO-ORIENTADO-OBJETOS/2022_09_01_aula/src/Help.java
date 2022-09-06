@@ -34,14 +34,16 @@ public class Help extends javax.swing.JFrame {
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(10);
-        jTextArea1.setText("Atalhos da calculadora\n\nLimpar os campos - CTRL+L\nSair da sistema - CTRL+ALT+X\n\nInstruções:\nColoque os números nos campos e clique nos\nbotões relacionados às operações\nque deseja executar.\n\nSão permitidos apenas números nos campos.\nNão digite letras, símbolos ou sinais.\n\nPara obter ajuda, acesse o menu Ajuda e\nselecione a opção desejada.");
+        jTextArea1.setText("Atalhos da calculadora\n\nLimpar os campos - CTRL+L\nSair da sistema - CTRL+ALT+X\n\nInstruções:\nColoque os números nos campos e clique nos botões relacionados às operações que deseja executar.\n\nSão permitidos apenas números nos campos. Não digite letras, símbolos ou sinais.\n\nPara obter ajuda, acesse o menu Ajuda e selecione a opção desejada.");
+        jTextArea1.setAutoscrolls(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 10, 330, 290);
+        jScrollPane1.setBounds(50, 30, 250, 310);
 
-        setSize(new java.awt.Dimension(371, 372));
+        setSize(new java.awt.Dimension(371, 414));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
