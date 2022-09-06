@@ -33,6 +33,11 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="mnuOptions">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Op&#xe7;&#xf5;es"/>
+          </Properties>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="mnuHelp">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ajuda"/>
@@ -61,11 +66,6 @@
               </Events>
             </MenuItem>
           </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="mnuOptions">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Op&#xe7;&#xf5;es"/>
-          </Properties>
         </Menu>
       </SubComponents>
     </Menu>
