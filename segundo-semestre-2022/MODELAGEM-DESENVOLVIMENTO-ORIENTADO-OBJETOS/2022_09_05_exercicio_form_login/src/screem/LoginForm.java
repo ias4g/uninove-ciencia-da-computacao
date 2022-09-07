@@ -14,106 +14,227 @@ import java.awt.CardLayout;
 import javax.swing.JFrame;
 
 public class LoginForm extends javax.swing.JFrame {
-
+    
     public LoginForm() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jpPrincipal = new javax.swing.JPanel();
+        lblIconLogin = new javax.swing.JLabel();
+        lblLogin = new javax.swing.JLabel();
+        lblHide = new javax.swing.JLabel();
+        lblClose = new javax.swing.JLabel();
+        lblDescription = new javax.swing.JLabel();
+        lblDescription2 = new javax.swing.JLabel();
+        jpUser = new javax.swing.JPanel();
+        lblUser = new javax.swing.JLabel();
+        txtUser = new javax.swing.JTextField();
+        jpPassword = new javax.swing.JPanel();
+        lblPassword = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
+        lblRegister = new javax.swing.JLabel();
+        btnEnter = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de login");
+        setMaximumSize(new java.awt.Dimension(480, 320));
+        setMinimumSize(new java.awt.Dimension(480, 320));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(480, 320));
         setResizable(false);
+        setSize(new java.awt.Dimension(480, 320));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        jPanel1.setBackground(new java.awt.Color(52, 58, 64));
-        jPanel1.setToolTipText("");
+        jpPrincipal.setBackground(new java.awt.Color(52, 58, 64));
+        jpPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 167, 69), 2));
+        jpPrincipal.setToolTipText("");
+        jpPrincipal.setLayout(null);
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("E:\\google-chrome\\2203549_admin_avatar_human_login_user_icon.png")); // NOI18N
+        lblIconLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/enter.png"))); // NOI18N
+        lblIconLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(lblIconLogin);
+        lblIconLogin.setBounds(190, 20, 24, 24);
 
-        jLabel1.setFont(new java.awt.Font("Fira Code Medium", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("LOGIN");
-        jLabel1.setPreferredSize(new java.awt.Dimension(35, 5));
+        lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/login.png"))); // NOI18N
+        lblLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(lblLogin);
+        lblLogin.setBounds(220, 20, 67, 24);
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon("E:\\google-chrome\\2203549_admin_avatar_human_login_user_icon.png")); // NOI18N
+        lblHide.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblHide.setForeground(new java.awt.Color(255, 255, 51));
+        lblHide.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHide.setText("-");
+        lblHide.setToolTipText("Minimizar janela");
+        lblHide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblHide.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblHide.setMaximumSize(new java.awt.Dimension(24, 24));
+        lblHide.setMinimumSize(new java.awt.Dimension(24, 24));
+        lblHide.setPreferredSize(new java.awt.Dimension(24, 24));
+        lblHide.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHideMouseClicked(evt);
+            }
+        });
+        jpPrincipal.add(lblHide);
+        lblHide.setBounds(420, 5, 24, 24);
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon("E:\\google-chrome\\2203549_admin_avatar_human_login_user_icon.png")); // NOI18N
+        lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblClose.setForeground(new java.awt.Color(255, 0, 51));
+        lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblClose.setText("x");
+        lblClose.setToolTipText("Fechar programa");
+        lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblClose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblClose.setMaximumSize(new java.awt.Dimension(24, 24));
+        lblClose.setMinimumSize(new java.awt.Dimension(24, 24));
+        lblClose.setPreferredSize(new java.awt.Dimension(24, 24));
+        lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCloseMouseClicked(evt);
+            }
+        });
+        jpPrincipal.add(lblClose);
+        lblClose.setBounds(450, 5, 24, 24);
 
-        jTextField1.setFont(new java.awt.Font("Fira Code Medium", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(204, 204, 255));
-        jTextField1.setMinimumSize(new java.awt.Dimension(64, 24));
+        lblDescription.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblDescription.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDescription.setText("Entre com suas credenciais");
+        lblDescription.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(lblDescription);
+        lblDescription.setBounds(130, 60, 228, 25);
 
-        jPasswordField1.setFont(new java.awt.Font("Fira Code Medium", 0, 18)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(204, 204, 255));
-        jPasswordField1.setMargin(new java.awt.Insets(2, 10, 2, 6));
-        jPasswordField1.setMinimumSize(new java.awt.Dimension(64, 24));
-        jPasswordField1.setPreferredSize(new java.awt.Dimension(64, 24));
+        lblDescription2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDescription2.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescription2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDescription2.setText("para ter acesso ao sistema!");
+        lblDescription2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(lblDescription2);
+        lblDescription2.setBounds(160, 90, 182, 20);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(140, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(139, 139, 139))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
+        jpUser.setBackground(new java.awt.Color(255, 0, 51));
+        jpUser.setMaximumSize(new java.awt.Dimension(50, 38));
+        jpUser.setLayout(new java.awt.CardLayout());
 
-        getContentPane().add(jPanel1, "card2");
+        lblUser.setBackground(new java.awt.Color(255, 51, 51));
+        lblUser.setForeground(new java.awt.Color(255, 0, 51));
+        lblUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/user.png"))); // NOI18N
+        lblUser.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblUser.setMaximumSize(new java.awt.Dimension(50, 38));
+        lblUser.setMinimumSize(new java.awt.Dimension(50, 38));
+        lblUser.setPreferredSize(new java.awt.Dimension(50, 38));
+        jpUser.add(lblUser, "card2");
 
-        setSize(new java.awt.Dimension(395, 364));
+        jpPrincipal.add(jpUser);
+        jpUser.setBounds(40, 150, 50, 38);
+
+        txtUser.setBackground(new java.awt.Color(52, 58, 64));
+        txtUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtUser.setForeground(new java.awt.Color(255, 255, 255));
+        txtUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 167, 69), 2));
+        txtUser.setMaximumSize(new java.awt.Dimension(353, 38));
+        txtUser.setMinimumSize(new java.awt.Dimension(353, 38));
+        txtUser.setPreferredSize(new java.awt.Dimension(353, 38));
+        txtUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserActionPerformed(evt);
+            }
+        });
+        jpPrincipal.add(txtUser);
+        txtUser.setBounds(90, 150, 353, 38);
+
+        jpPassword.setBackground(new java.awt.Color(255, 0, 51));
+        jpPassword.setMaximumSize(new java.awt.Dimension(50, 38));
+        jpPassword.setMinimumSize(new java.awt.Dimension(50, 38));
+        jpPassword.setPreferredSize(new java.awt.Dimension(50, 38));
+        jpPassword.setLayout(new java.awt.CardLayout());
+
+        lblPassword.setBackground(new java.awt.Color(255, 51, 51));
+        lblPassword.setForeground(new java.awt.Color(255, 0, 51));
+        lblPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/key.png"))); // NOI18N
+        lblPassword.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPassword.setMaximumSize(new java.awt.Dimension(50, 38));
+        lblPassword.setMinimumSize(new java.awt.Dimension(50, 38));
+        lblPassword.setPreferredSize(new java.awt.Dimension(50, 38));
+        jpPassword.add(lblPassword, "card2");
+
+        jpPrincipal.add(jpPassword);
+        jpPassword.setBounds(40, 200, 50, 38);
+
+        txtPassword.setBackground(new java.awt.Color(52, 58, 64));
+        txtPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(255, 255, 255));
+        txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 167, 69), 2));
+        txtPassword.setMaximumSize(new java.awt.Dimension(353, 38));
+        txtPassword.setMinimumSize(new java.awt.Dimension(353, 38));
+        txtPassword.setPreferredSize(new java.awt.Dimension(353, 38));
+        jpPrincipal.add(txtPassword);
+        txtPassword.setBounds(90, 200, 353, 38);
+
+        lblRegister.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblRegister.setForeground(new java.awt.Color(204, 204, 204));
+        lblRegister.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRegister.setText("Não tem cadastro? Clique aqui!");
+        lblRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblRegister.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblRegister.setMaximumSize(new java.awt.Dimension(210, 38));
+        lblRegister.setMinimumSize(new java.awt.Dimension(210, 38));
+        lblRegister.setPreferredSize(new java.awt.Dimension(210, 38));
+        lblRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblRegisterMouseClicked(evt);
+            }
+        });
+        jpPrincipal.add(lblRegister);
+        lblRegister.setBounds(90, 250, 210, 38);
+
+        btnEnter.setBackground(new java.awt.Color(40, 167, 69));
+        btnEnter.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnEnter.setForeground(new java.awt.Color(255, 255, 255));
+        btnEnter.setText("ENTRAR");
+        btnEnter.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        btnEnter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEnter.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEnter.setMaximumSize(new java.awt.Dimension(130, 38));
+        btnEnter.setMinimumSize(new java.awt.Dimension(130, 38));
+        btnEnter.setPreferredSize(new java.awt.Dimension(130, 38));
+        jpPrincipal.add(btnEnter);
+        btnEnter.setBounds(310, 250, 130, 38);
+
+        getContentPane().add(jpPrincipal, "card2");
+
+        setSize(new java.awt.Dimension(480, 320));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserActionPerformed
+
+    private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lblCloseMouseClicked
+
+    private void lblHideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHideMouseClicked
+        setExtendedState(HIDE_ON_CLOSE);
+    }//GEN-LAST:event_lblHideMouseClicked
+
+    private void lblRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegisterMouseClicked
+        RegistrationForm r = new RegistrationForm();
+        r.setVisible(true);
+    }//GEN-LAST:event_lblRegisterMouseClicked
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -148,13 +269,21 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btnEnter;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jpPassword;
+    private javax.swing.JPanel jpPrincipal;
+    private javax.swing.JPanel jpUser;
+    private javax.swing.JLabel lblClose;
+    private javax.swing.JLabel lblDescription;
+    private javax.swing.JLabel lblDescription2;
+    private javax.swing.JLabel lblHide;
+    private javax.swing.JLabel lblIconLogin;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblRegister;
+    private javax.swing.JLabel lblUser;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }
