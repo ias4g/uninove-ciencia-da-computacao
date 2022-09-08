@@ -72,7 +72,7 @@ public class LoginForm extends javax.swing.JFrame {
         lblHide.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblHide.setForeground(new java.awt.Color(255, 255, 51));
         lblHide.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHide.setText("-");
+        lblHide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/minimizar.png"))); // NOI18N
         lblHide.setToolTipText("Minimizar janela");
         lblHide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblHide.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -90,7 +90,7 @@ public class LoginForm extends javax.swing.JFrame {
         lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClose.setForeground(new java.awt.Color(255, 0, 51));
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose.setText("x");
+        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/minimizar.png"))); // NOI18N
         lblClose.setToolTipText("Fechar programa");
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblClose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
