@@ -70,8 +70,10 @@
               <Color blue="33" green="0" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="x"/>
-            <Property name="toolTipText" type="java.lang.String" value="Fechar programa"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/assets/close.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Fechar"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
@@ -91,7 +93,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="450" y="5" width="24" height="24"/>
+              <AbsoluteConstraints x="445" y="10" width="24" height="24"/>
             </Constraint>
           </Constraints>
         </Component>
