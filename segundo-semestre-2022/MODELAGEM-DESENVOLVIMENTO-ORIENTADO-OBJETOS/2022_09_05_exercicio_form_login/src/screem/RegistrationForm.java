@@ -56,9 +56,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         lblClose.setToolTipText("Fechar");
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblClose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblClose.setMaximumSize(new java.awt.Dimension(24, 24));
-        lblClose.setMinimumSize(new java.awt.Dimension(24, 24));
-        lblClose.setPreferredSize(new java.awt.Dimension(24, 24));
         lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblCloseMouseClicked(evt);
