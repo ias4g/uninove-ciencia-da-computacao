@@ -136,7 +136,7 @@ public class LoginForm extends javax.swing.JFrame {
         jpUser.add(lblUser, "card2");
 
         jpPrincipal.add(jpUser);
-        jpUser.setBounds(40, 150, 50, 38);
+        jpUser.setBounds(30, 150, 50, 38);
 
         txtUser.setBackground(new java.awt.Color(52, 58, 64));
         txtUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -170,7 +170,7 @@ public class LoginForm extends javax.swing.JFrame {
         jpPassword.add(lblPassword, "card2");
 
         jpPrincipal.add(jpPassword);
-        jpPassword.setBounds(40, 200, 50, 38);
+        jpPassword.setBounds(30, 200, 50, 38);
 
         txtPassword.setBackground(new java.awt.Color(52, 58, 64));
         txtPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
