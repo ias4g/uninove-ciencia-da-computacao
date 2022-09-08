@@ -1,13 +1,17 @@
 package screem;
 
+import apoio.Apoio;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class LoginForm extends javax.swing.JFrame {
-    
+
+    boolean result;
+
     public LoginForm() {
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -219,9 +223,10 @@ public class LoginForm extends javax.swing.JFrame {
         lblError.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblError.setForeground(new java.awt.Color(255, 51, 51));
         lblError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblError.setText(" ");
         lblError.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblError);
-        lblError.setBounds(0, 125, 480, 0);
+        lblError.setBounds(0, 125, 480, 25);
 
         getContentPane().add(jpPrincipal, "card2");
 
@@ -248,9 +253,16 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lblInfoMouseClicked
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        lblError.setText("Usuário e/ou senha inválidos!");
+        result = Apoio.verifyCredentials(txtUser.getText(), txtPassword.getText());
+
+        if (result) {
+            Access a = new Access();
+            a.setVisible(true);
+        } else {
+            lblError.setText("Usuário e/ou senha inválidos!");
+        }
     }//GEN-LAST:event_btnEnterActionPerformed
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
