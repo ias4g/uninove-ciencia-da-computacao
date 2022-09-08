@@ -10,9 +10,6 @@
  */
 package screem;
 
-import java.awt.CardLayout;
-import javax.swing.JFrame;
-
 public class LoginForm extends javax.swing.JFrame {
     
     public LoginForm() {
@@ -125,11 +122,6 @@ public class LoginForm extends javax.swing.JFrame {
         txtUser.setMaximumSize(new java.awt.Dimension(353, 38));
         txtUser.setMinimumSize(new java.awt.Dimension(353, 38));
         txtUser.setPreferredSize(new java.awt.Dimension(353, 38));
-        txtUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUserActionPerformed(evt);
-            }
-        });
         jpPrincipal.add(txtUser);
         txtUser.setBounds(90, 150, 353, 38);
 
@@ -211,6 +203,11 @@ public class LoginForm extends javax.swing.JFrame {
         lblInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/info.png"))); // NOI18N
         lblInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblInfoMouseClicked(evt);
+            }
+        });
         jpPrincipal.add(lblInfo);
         lblInfo.setBounds(385, 10, 24, 24);
 
@@ -219,10 +216,6 @@ public class LoginForm extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(480, 320));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUserActionPerformed
 
     private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
         System.exit(0);
@@ -234,8 +227,13 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lblRegisterMouseClicked
 
     private void lblHide1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHide1MouseClicked
-        // TODO add your handling code here:
+        setVisible(false);
     }//GEN-LAST:event_lblHide1MouseClicked
+
+    private void lblInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInfoMouseClicked
+        Information i = new Information(this, false);
+        i.setVisible(true);
+    }//GEN-LAST:event_lblInfoMouseClicked
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
