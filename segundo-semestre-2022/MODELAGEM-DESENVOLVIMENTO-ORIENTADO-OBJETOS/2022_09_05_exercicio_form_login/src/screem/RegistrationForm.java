@@ -52,8 +52,8 @@ public class RegistrationForm extends javax.swing.JFrame {
         lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClose.setForeground(new java.awt.Color(255, 0, 51));
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose.setText("x");
-        lblClose.setToolTipText("Fechar programa");
+        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/close.png"))); // NOI18N
+        lblClose.setToolTipText("Fechar");
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblClose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblClose.setMaximumSize(new java.awt.Dimension(24, 24));
@@ -65,7 +65,7 @@ public class RegistrationForm extends javax.swing.JFrame {
             }
         });
         jpPrincipal.add(lblClose);
-        lblClose.setBounds(450, 5, 24, 24);
+        lblClose.setBounds(445, 10, 24, 24);
 
         lblIconLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/enter.png"))); // NOI18N
