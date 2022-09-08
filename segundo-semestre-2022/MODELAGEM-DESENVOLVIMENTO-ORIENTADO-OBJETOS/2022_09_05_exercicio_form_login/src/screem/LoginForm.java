@@ -10,12 +10,14 @@
  */
 package screem;
 
+import javax.swing.JFrame;
+
 public class LoginForm extends javax.swing.JFrame {
-    
+
     public LoginForm() {
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -37,6 +39,7 @@ public class LoginForm extends javax.swing.JFrame {
         btnEnter = new javax.swing.JButton();
         lblHide1 = new javax.swing.JLabel();
         lblInfo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -59,13 +62,13 @@ public class LoginForm extends javax.swing.JFrame {
         lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/enter.png"))); // NOI18N
         lblIconLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblIconLogin);
-        lblIconLogin.setBounds(190, 20, 24, 24);
+        lblIconLogin.setBounds(20, 10, 24, 24);
 
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/login.png"))); // NOI18N
         lblLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblLogin);
-        lblLogin.setBounds(220, 20, 67, 24);
+        lblLogin.setBounds(46, 10, 67, 24);
 
         lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClose.setForeground(new java.awt.Color(255, 0, 51));
@@ -113,7 +116,7 @@ public class LoginForm extends javax.swing.JFrame {
         jpUser.add(lblUser, "card2");
 
         jpPrincipal.add(jpUser);
-        jpUser.setBounds(30, 150, 50, 38);
+        jpUser.setBounds(35, 150, 50, 38);
 
         txtUser.setBackground(new java.awt.Color(52, 58, 64));
         txtUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -142,7 +145,7 @@ public class LoginForm extends javax.swing.JFrame {
         jpPassword.add(lblPassword, "card2");
 
         jpPrincipal.add(jpPassword);
-        jpPassword.setBounds(30, 200, 50, 38);
+        jpPassword.setBounds(35, 200, 50, 38);
 
         txtPassword.setBackground(new java.awt.Color(52, 58, 64));
         txtPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -201,6 +204,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         lblInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/info.png"))); // NOI18N
+        lblInfo.setToolTipText("Informações");
         lblInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblInfo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -210,6 +214,11 @@ public class LoginForm extends javax.swing.JFrame {
         });
         jpPrincipal.add(lblInfo);
         lblInfo.setBounds(385, 10, 24, 24);
+
+        jLabel2.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel2.setOpaque(true);
+        jpPrincipal.add(jLabel2);
+        jLabel2.setBounds(0, 43, 480, 2);
 
         getContentPane().add(jpPrincipal, "card2");
 
@@ -227,14 +236,14 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lblRegisterMouseClicked
 
     private void lblHide1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHide1MouseClicked
-        setVisible(false);
+        setExtendedState(JFrame.ICONIFIED);
     }//GEN-LAST:event_lblHide1MouseClicked
 
     private void lblInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInfoMouseClicked
-        Information i = new Information(this, false);
+        Info i = new Info();
         i.setVisible(true);
     }//GEN-LAST:event_lblInfoMouseClicked
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -270,6 +279,7 @@ public class LoginForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnter;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jpPassword;
     private javax.swing.JPanel jpPrincipal;

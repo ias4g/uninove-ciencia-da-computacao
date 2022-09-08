@@ -35,6 +35,8 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         btnEnter = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setTitle("Tela de cadastro");
         setMaximumSize(new java.awt.Dimension(480, 460));
@@ -68,13 +70,13 @@ public class RegistrationForm extends javax.swing.JFrame {
         lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/enter.png"))); // NOI18N
         lblIconLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblIconLogin);
-        lblIconLogin.setBounds(190, 20, 24, 24);
+        lblIconLogin.setBounds(20, 10, 24, 24);
 
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/login.png"))); // NOI18N
         lblLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblLogin);
-        lblLogin.setBounds(220, 20, 67, 24);
+        lblLogin.setBounds(46, 10, 67, 24);
 
         lblDescription.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblDescription.setForeground(new java.awt.Color(255, 255, 255));
@@ -154,6 +156,19 @@ public class RegistrationForm extends javax.swing.JFrame {
         jpPrincipal.add(btnEnter);
         btnEnter.setBounds(70, 380, 353, 38);
 
+        jLabel4.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel4.setOpaque(true);
+        jpPrincipal.add(jLabel4);
+        jLabel4.setBounds(0, 43, 480, 2);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Cadastro");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(jLabel5);
+        jLabel5.setBounds(202, 10, 75, 25);
+
         getContentPane().add(jpPrincipal, "card2");
 
         setSize(new java.awt.Dimension(480, 460));
@@ -205,6 +220,8 @@ public class RegistrationForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
