@@ -27,7 +27,6 @@ public class LoginForm extends javax.swing.JFrame {
         jpPrincipal = new javax.swing.JPanel();
         lblIconLogin = new javax.swing.JLabel();
         lblLogin = new javax.swing.JLabel();
-        lblHide = new javax.swing.JLabel();
         lblClose = new javax.swing.JLabel();
         lblDescription = new javax.swing.JLabel();
         lblDescription2 = new javax.swing.JLabel();
@@ -39,6 +38,8 @@ public class LoginForm extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         lblRegister = new javax.swing.JLabel();
         btnEnter = new javax.swing.JButton();
+        lblHide1 = new javax.swing.JLabel();
+        lblInfo = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -69,24 +70,6 @@ public class LoginForm extends javax.swing.JFrame {
         jpPrincipal.add(lblLogin);
         lblLogin.setBounds(220, 20, 67, 24);
 
-        lblHide.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblHide.setForeground(new java.awt.Color(255, 255, 51));
-        lblHide.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/minimize.png"))); // NOI18N
-        lblHide.setToolTipText("Minimizar");
-        lblHide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblHide.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblHide.setMaximumSize(new java.awt.Dimension(24, 24));
-        lblHide.setMinimumSize(new java.awt.Dimension(24, 24));
-        lblHide.setPreferredSize(new java.awt.Dimension(24, 24));
-        lblHide.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblHideMouseClicked(evt);
-            }
-        });
-        jpPrincipal.add(lblHide);
-        lblHide.setBounds(415, 10, 24, 24);
-
         lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClose.setForeground(new java.awt.Color(255, 0, 51));
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -94,9 +77,6 @@ public class LoginForm extends javax.swing.JFrame {
         lblClose.setToolTipText("Fechar");
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblClose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblClose.setMaximumSize(new java.awt.Dimension(24, 24));
-        lblClose.setMinimumSize(new java.awt.Dimension(24, 24));
-        lblClose.setPreferredSize(new java.awt.Dimension(24, 24));
         lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblCloseMouseClicked(evt);
@@ -212,6 +192,28 @@ public class LoginForm extends javax.swing.JFrame {
         jpPrincipal.add(btnEnter);
         btnEnter.setBounds(310, 250, 130, 38);
 
+        lblHide1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblHide1.setForeground(new java.awt.Color(255, 255, 51));
+        lblHide1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHide1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/minimize.png"))); // NOI18N
+        lblHide1.setToolTipText("Minimizar");
+        lblHide1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblHide1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblHide1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHide1MouseClicked(evt);
+            }
+        });
+        jpPrincipal.add(lblHide1);
+        lblHide1.setBounds(415, 10, 24, 24);
+
+        lblInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/info.png"))); // NOI18N
+        lblInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(lblInfo);
+        lblInfo.setBounds(385, 10, 24, 24);
+
         getContentPane().add(jpPrincipal, "card2");
 
         setSize(new java.awt.Dimension(480, 320));
@@ -226,14 +228,14 @@ public class LoginForm extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_lblCloseMouseClicked
 
-    private void lblHideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHideMouseClicked
-        setExtendedState(HIDE_ON_CLOSE);
-    }//GEN-LAST:event_lblHideMouseClicked
-
     private void lblRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegisterMouseClicked
         RegistrationForm r = new RegistrationForm();
         r.setVisible(true);
     }//GEN-LAST:event_lblRegisterMouseClicked
+
+    private void lblHide1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHide1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblHide1MouseClicked
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -277,8 +279,9 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblDescription2;
-    private javax.swing.JLabel lblHide;
+    private javax.swing.JLabel lblHide1;
     private javax.swing.JLabel lblIconLogin;
+    private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblRegister;
