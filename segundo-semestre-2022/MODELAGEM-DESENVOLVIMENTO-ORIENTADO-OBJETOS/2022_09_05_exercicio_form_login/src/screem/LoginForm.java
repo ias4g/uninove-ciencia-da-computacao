@@ -72,8 +72,8 @@ public class LoginForm extends javax.swing.JFrame {
         lblHide.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblHide.setForeground(new java.awt.Color(255, 255, 51));
         lblHide.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/minimizar.png"))); // NOI18N
-        lblHide.setToolTipText("Minimizar janela");
+        lblHide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/minimize.png"))); // NOI18N
+        lblHide.setToolTipText("Minimizar");
         lblHide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblHide.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblHide.setMaximumSize(new java.awt.Dimension(24, 24));
@@ -85,13 +85,13 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
         jpPrincipal.add(lblHide);
-        lblHide.setBounds(420, 5, 24, 24);
+        lblHide.setBounds(415, 10, 24, 24);
 
         lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClose.setForeground(new java.awt.Color(255, 0, 51));
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/minimizar.png"))); // NOI18N
-        lblClose.setToolTipText("Fechar programa");
+        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/close.png"))); // NOI18N
+        lblClose.setToolTipText("Fechar");
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblClose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblClose.setMaximumSize(new java.awt.Dimension(24, 24));
@@ -103,7 +103,7 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
         jpPrincipal.add(lblClose);
-        lblClose.setBounds(450, 5, 24, 24);
+        lblClose.setBounds(445, 10, 24, 24);
 
         lblDescription.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblDescription.setForeground(new java.awt.Color(255, 255, 255));
