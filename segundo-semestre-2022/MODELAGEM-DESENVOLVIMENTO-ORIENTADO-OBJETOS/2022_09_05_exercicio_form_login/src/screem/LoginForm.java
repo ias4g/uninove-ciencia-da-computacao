@@ -1,23 +1,13 @@
-/**
- * Exercício:
- *
- * Crie um formulário que tenha os campos, "USUÁRIO" e "SENHA", os botões "ENTRAR" e "CADASTRE-SE".
- *
- * Se for clicado no botão "CADASTRE-SE", abrir um formulário novo chamado "CADASTRO".
- * Se for clicado no botão "ENTRAR", verificar:
- *  Se o usuário digitado for “teste” e a senha digitada for “1234”, abrir um formulário novo chamado "ACESSO".
- *  Senão, mostrar uma mensagem “Usuário e/ou senha inválidos”.
- */
 package screem;
 
 import javax.swing.JFrame;
 
 public class LoginForm extends javax.swing.JFrame {
-
+    
     public LoginForm() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -40,6 +30,7 @@ public class LoginForm extends javax.swing.JFrame {
         lblHide1 = new javax.swing.JLabel();
         lblInfo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblError = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -184,6 +175,11 @@ public class LoginForm extends javax.swing.JFrame {
         btnEnter.setMaximumSize(new java.awt.Dimension(130, 38));
         btnEnter.setMinimumSize(new java.awt.Dimension(130, 38));
         btnEnter.setPreferredSize(new java.awt.Dimension(130, 38));
+        btnEnter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnterActionPerformed(evt);
+            }
+        });
         jpPrincipal.add(btnEnter);
         btnEnter.setBounds(310, 250, 130, 38);
 
@@ -220,6 +216,13 @@ public class LoginForm extends javax.swing.JFrame {
         jpPrincipal.add(jLabel2);
         jLabel2.setBounds(0, 43, 480, 2);
 
+        lblError.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblError.setForeground(new java.awt.Color(255, 51, 51));
+        lblError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblError.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(lblError);
+        lblError.setBounds(0, 125, 480, 0);
+
         getContentPane().add(jpPrincipal, "card2");
 
         setSize(new java.awt.Dimension(480, 320));
@@ -244,6 +247,10 @@ public class LoginForm extends javax.swing.JFrame {
         i.setVisible(true);
     }//GEN-LAST:event_lblInfoMouseClicked
 
+    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
+        lblError.setText("Usuário e/ou senha inválidos!");
+    }//GEN-LAST:event_btnEnterActionPerformed
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -287,6 +294,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblDescription2;
+    private javax.swing.JLabel lblError;
     private javax.swing.JLabel lblHide1;
     private javax.swing.JLabel lblIconLogin;
     private javax.swing.JLabel lblInfo;

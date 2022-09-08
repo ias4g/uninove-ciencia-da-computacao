@@ -1,23 +1,11 @@
-/**
- * Exercício:
- *
- * Crie um formulário que tenha os campos, "USUÁRIO" e "SENHA", os botões "ENTRAR" e "CADASTRE-SE".
- *
- * Se for clicado no botão "CADASTRE-SE", abrir um formulário novo chamado "CADASTRO".
- * Se for clicado no botão "ENTRAR", verificar:
- *  Se o usuário digitado for “teste” e a senha digitada for “1234”, abrir um formulário novo chamado "ACESSO".
- *  Senão, mostrar uma mensagem “Usuário e/ou senha inválidos”.
- */
 package screem;
 
-import javax.swing.JFrame;
-
 public class RegistrationForm extends javax.swing.JFrame {
-    
+
     public RegistrationForm() {
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -148,11 +136,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         btnEnter.setMaximumSize(new java.awt.Dimension(353, 38));
         btnEnter.setMinimumSize(new java.awt.Dimension(353, 38));
         btnEnter.setPreferredSize(new java.awt.Dimension(353, 38));
-        btnEnter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEnterActionPerformed(evt);
-            }
-        });
         jpPrincipal.add(btnEnter);
         btnEnter.setBounds(70, 380, 353, 38);
 
@@ -179,10 +162,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_lblCloseMouseClicked
 
-    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEnterActionPerformed
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
