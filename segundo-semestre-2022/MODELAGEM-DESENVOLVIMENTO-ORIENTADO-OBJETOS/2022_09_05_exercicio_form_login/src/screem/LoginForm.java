@@ -16,7 +16,6 @@ public class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
         jpPrincipal = new javax.swing.JPanel();
         lblIconLogin = new javax.swing.JLabel();
         lblLogin = new javax.swing.JLabel();
@@ -35,8 +34,6 @@ public class LoginForm extends javax.swing.JFrame {
         lblInfo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblError = new javax.swing.JLabel();
-
-        jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de login");
@@ -215,7 +212,7 @@ public class LoginForm extends javax.swing.JFrame {
         jpPrincipal.add(lblInfo);
         lblInfo.setBounds(385, 10, 24, 24);
 
-        jLabel2.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel2.setBackground(new java.awt.Color(102, 102, 102));
         jLabel2.setOpaque(true);
         jpPrincipal.add(jLabel2);
         jLabel2.setBounds(0, 43, 480, 2);
@@ -256,8 +253,11 @@ public class LoginForm extends javax.swing.JFrame {
         result = Apoio.verifyCredentials(txtUser.getText(), txtPassword.getText());
 
         if (result) {
-            Access a = new Access();
-            a.setVisible(true);
+            new Dashboard().setVisible(true);
+            //Dashboard a = new Dashboard();
+            //a.setVisible(true);
+
+            this.dispose();
         } else {
             lblError.setText("Usuário e/ou senha inválidos!");
         }
@@ -299,7 +299,6 @@ public class LoginForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnter;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jpPassword;
     private javax.swing.JPanel jpPrincipal;
     private javax.swing.JPanel jpUser;
