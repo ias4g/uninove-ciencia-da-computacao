@@ -2,7 +2,6 @@ package apoio;
 
 import java.awt.Color;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 
@@ -17,11 +16,6 @@ public class Apoio {
         } else {
             return false;
         }
-    }
-
-    public static void resetFields(JTextField user, JPasswordField pass) {
-        user.setText("");
-        pass.setText("");
     }
 
     public static void resetFields(JTextField user, JPasswordField pass, JLabel error) {
