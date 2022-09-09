@@ -2,7 +2,7 @@ package screem;
 
 import apoio.Apoio;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 public class LoginForm extends javax.swing.JFrame {
 
@@ -18,7 +18,6 @@ public class LoginForm extends javax.swing.JFrame {
 
         jpPrincipal = new javax.swing.JPanel();
         lblIconLogin = new javax.swing.JLabel();
-        lblLogin = new javax.swing.JLabel();
         lblClose = new javax.swing.JLabel();
         lblDescription = new javax.swing.JLabel();
         lblDescription2 = new javax.swing.JLabel();
@@ -34,9 +33,11 @@ public class LoginForm extends javax.swing.JFrame {
         lblInfo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         lblError = new javax.swing.JLabel();
+        lblBdInfo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de login");
+        setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
         setMaximumSize(new java.awt.Dimension(480, 320));
         setMinimumSize(new java.awt.Dimension(480, 320));
         setUndecorated(true);
@@ -51,16 +52,10 @@ public class LoginForm extends javax.swing.JFrame {
         jpPrincipal.setLayout(null);
 
         lblIconLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/enter.png"))); // NOI18N
+        lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/logo.png"))); // NOI18N
         lblIconLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblIconLogin);
-        lblIconLogin.setBounds(20, 10, 24, 24);
-
-        lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/login.png"))); // NOI18N
-        lblLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jpPrincipal.add(lblLogin);
-        lblLogin.setBounds(46, 10, 67, 24);
+        lblIconLogin.setBounds(10, 10, 24, 24);
 
         lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClose.setForeground(new java.awt.Color(255, 0, 51));
@@ -217,13 +212,19 @@ public class LoginForm extends javax.swing.JFrame {
         jpPrincipal.add(jLabel2);
         jLabel2.setBounds(0, 43, 480, 2);
 
-        lblError.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblError.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         lblError.setForeground(new java.awt.Color(255, 51, 51));
         lblError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblError.setText(" ");
         lblError.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblError);
-        lblError.setBounds(0, 125, 480, 25);
+        lblError.setBounds(0, 122, 480, 20);
+
+        lblBdInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBdInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/db-error-24x.png"))); // NOI18N
+        lblBdInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(lblBdInfo);
+        lblBdInfo.setBounds(10, 286, 24, 24);
 
         getContentPane().add(jpPrincipal, "card2");
 
@@ -254,21 +255,14 @@ public class LoginForm extends javax.swing.JFrame {
 
         if (result) {
             new Dashboard().setVisible(true);
-            //Dashboard a = new Dashboard();
-            //a.setVisible(true);
-
             this.dispose();
         } else {
-            lblError.setText("Usuário e/ou senha inválidos!");
+            //lblError.setText("Usuário e/ou senha inválidos!");
+            Apoio.resetFields(txtUser, txtPassword, lblError);
         }
     }//GEN-LAST:event_btnEnterActionPerformed
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -302,6 +296,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JPanel jpPassword;
     private javax.swing.JPanel jpPrincipal;
     private javax.swing.JPanel jpUser;
+    private javax.swing.JLabel lblBdInfo;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblDescription2;
@@ -309,7 +304,6 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblHide1;
     private javax.swing.JLabel lblIconLogin;
     private javax.swing.JLabel lblInfo;
-    private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblRegister;
     private javax.swing.JLabel lblUser;

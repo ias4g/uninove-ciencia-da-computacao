@@ -1,5 +1,7 @@
 package screem;
 
+import javax.swing.ImageIcon;
+
 public class RegistrationForm extends javax.swing.JFrame {
 
     public RegistrationForm() {
@@ -13,7 +15,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         jpPrincipal = new javax.swing.JPanel();
         lblClose = new javax.swing.JLabel();
         lblIconLogin = new javax.swing.JLabel();
-        lblLogin = new javax.swing.JLabel();
         lblDescription = new javax.swing.JLabel();
         lblDescription2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -27,6 +28,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setTitle("Tela de cadastro");
+        setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
         setMaximumSize(new java.awt.Dimension(480, 460));
         setMinimumSize(new java.awt.Dimension(480, 460));
         setUndecorated(true);
@@ -55,16 +57,10 @@ public class RegistrationForm extends javax.swing.JFrame {
         lblClose.setBounds(445, 10, 24, 24);
 
         lblIconLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/enter.png"))); // NOI18N
+        lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/logo.png"))); // NOI18N
         lblIconLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblIconLogin);
-        lblIconLogin.setBounds(20, 10, 24, 24);
-
-        lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/login.png"))); // NOI18N
-        lblLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jpPrincipal.add(lblLogin);
-        lblLogin.setBounds(46, 10, 67, 24);
+        lblIconLogin.setBounds(10, 10, 24, 24);
 
         lblDescription.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblDescription.setForeground(new java.awt.Color(255, 255, 255));
@@ -139,7 +135,7 @@ public class RegistrationForm extends javax.swing.JFrame {
         jpPrincipal.add(btnEnter);
         btnEnter.setBounds(70, 380, 353, 38);
 
-        jLabel4.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel4.setBackground(new java.awt.Color(102, 102, 102));
         jLabel4.setOpaque(true);
         jpPrincipal.add(jLabel4);
         jLabel4.setBounds(0, 43, 480, 2);
@@ -209,6 +205,5 @@ public class RegistrationForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblDescription;
     private javax.swing.JLabel lblDescription2;
     private javax.swing.JLabel lblIconLogin;
-    private javax.swing.JLabel lblLogin;
     // End of variables declaration//GEN-END:variables
 }
