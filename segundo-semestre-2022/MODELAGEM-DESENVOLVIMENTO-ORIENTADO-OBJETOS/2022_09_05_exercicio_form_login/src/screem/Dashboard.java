@@ -3,12 +3,12 @@ package screem;
 import javax.swing.ImageIcon;
 
 public class Dashboard extends javax.swing.JFrame {
-    
+
     public Dashboard() {
         initComponents();
-        //setExtendedState(MAXIMIZED_BOTH);
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -30,7 +30,6 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.CardLayout());
 
         jpPrincipal.setBackground(new java.awt.Color(52, 58, 64));
-        jpPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 167, 69), 2));
         jpPrincipal.setLayout(null);
 
         lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -76,7 +75,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
         System.exit(0);
     }//GEN-LAST:event_lblCloseMouseClicked
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
