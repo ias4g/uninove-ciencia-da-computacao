@@ -251,13 +251,14 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lblInfoMouseClicked
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        result = Apoio.verifyCredentials(txtUser.getText(), txtPassword.getText());
+        String password = new String(txtPassword.getPassword());
+
+        result = Apoio.verifyCredentials(txtUser.getText(), password);
 
         if (result) {
             new Dashboard().setVisible(true);
             this.dispose();
         } else {
-            //lblError.setText("Usuário e/ou senha inválidos!");
             Apoio.resetFields(txtUser, txtPassword, lblError);
         }
     }//GEN-LAST:event_btnEnterActionPerformed
