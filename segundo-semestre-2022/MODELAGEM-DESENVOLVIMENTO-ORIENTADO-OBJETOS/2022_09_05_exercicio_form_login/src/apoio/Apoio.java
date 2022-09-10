@@ -19,9 +19,12 @@ public class Apoio {
     }
 
     public static void resetFields(JTextField user, JPasswordField pass, JLabel error) {
-        if (user.getText().isEmpty() || pass.getText().isEmpty()) {
+        String password = new String(pass.getPassword());
+
+        if (user.getText().isEmpty() || password.equals("")) {
             error.setForeground(Color.YELLOW);
             error.setText("Preencha todos os campos!");
+            user.requestFocus();
             return;
         }
 
@@ -29,5 +32,7 @@ public class Apoio {
         pass.setText("");
         error.setForeground(Color.RED);
         error.setText("Usuário e/ou senha inválidos!");
+
+        user.requestFocus();
     }
 }
