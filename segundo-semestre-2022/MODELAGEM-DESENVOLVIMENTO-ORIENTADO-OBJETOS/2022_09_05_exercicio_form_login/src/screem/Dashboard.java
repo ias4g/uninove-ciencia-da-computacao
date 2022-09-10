@@ -22,11 +22,23 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jpPrincipal = new javax.swing.JPanel();
         lblClose = new javax.swing.JLabel();
         lblIconLogin = new javax.swing.JLabel();
         lblSeparator = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
+
+        jPopupMenu1.setPopupSize(new java.awt.Dimension(90, 30));
+
+        jMenu1.setText("jMenu1");
+
+        jMenuItem1.setText("jMenuItem1");
+        jMenu1.add(jMenuItem1);
+
+        jPopupMenu1.add(jMenu1);
 
         setTitle("Tela de cadastro");
         setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
@@ -120,6 +132,9 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPanel jpPrincipal;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblIconLogin;
