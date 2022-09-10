@@ -1,5 +1,7 @@
 package screem;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class Dashboard extends javax.swing.JFrame {
@@ -7,6 +9,13 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        System.out.println(this.getWidth());
+
+        Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
+
+        lblTitle.setBounds((tela.width - lblTitle.getWidth()) / 2, 10, 92, 25);
+        lblClose.setBounds(tela.width - 34, 10, 24, 24);
+        lblSeparator.setBounds(0, 43, tela.width, 2);
     }
 
     @SuppressWarnings("unchecked")
@@ -16,8 +25,8 @@ public class Dashboard extends javax.swing.JFrame {
         jpPrincipal = new javax.swing.JPanel();
         lblClose = new javax.swing.JLabel();
         lblIconLogin = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblSeparator = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
 
         setTitle("Tela de cadastro");
         setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
@@ -25,7 +34,6 @@ public class Dashboard extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(500, 500));
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(500, 500));
-        setResizable(false);
         setSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new java.awt.CardLayout());
 
@@ -53,18 +61,18 @@ public class Dashboard extends javax.swing.JFrame {
         jpPrincipal.add(lblIconLogin);
         lblIconLogin.setBounds(10, 10, 24, 24);
 
-        jLabel4.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel4.setOpaque(true);
-        jpPrincipal.add(jLabel4);
-        jLabel4.setBounds(0, 43, 500, 2);
+        lblSeparator.setBackground(new java.awt.Color(102, 102, 102));
+        lblSeparator.setOpaque(true);
+        jpPrincipal.add(lblSeparator);
+        lblSeparator.setBounds(0, 43, 500, 2);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Dashboard");
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jpPrincipal.add(jLabel5);
-        jLabel5.setBounds(202, 10, 92, 25);
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(153, 153, 153));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Dashboard");
+        lblTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(lblTitle);
+        lblTitle.setBounds(202, 10, 92, 25);
 
         getContentPane().add(jpPrincipal, "card2");
 
@@ -112,10 +120,10 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jpPrincipal;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblIconLogin;
+    private javax.swing.JLabel lblSeparator;
+    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }
