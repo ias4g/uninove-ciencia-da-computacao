@@ -1,8 +1,6 @@
 package screem;
 
 import apoio.Apoio;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 
@@ -12,8 +10,6 @@ public class LoginForm extends javax.swing.JFrame {
 
     public LoginForm() {
         initComponents();
-        Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
-        System.out.println(tela.width + tela.height);
     }
 
     @SuppressWarnings("unchecked")
