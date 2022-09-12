@@ -21,7 +21,6 @@ public class Info extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setTitle("Informações do programa");
-        setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
         setIconImages(null);
         setMinimumSize(new java.awt.Dimension(480, 320));
         setName("jfInfo"); // NOI18N

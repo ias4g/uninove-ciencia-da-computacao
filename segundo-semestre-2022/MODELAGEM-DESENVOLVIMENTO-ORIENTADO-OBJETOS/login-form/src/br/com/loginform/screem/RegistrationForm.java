@@ -28,7 +28,6 @@ public class RegistrationForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setTitle("Tela de cadastro");
-        setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
         setMinimumSize(new java.awt.Dimension(480, 460));
         setUndecorated(true);
         setResizable(false);
