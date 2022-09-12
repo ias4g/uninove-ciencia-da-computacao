@@ -17,7 +17,6 @@ public class LoginForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jpPrincipal = new javax.swing.JPanel();
-        lblIconLogin = new javax.swing.JLabel();
         lblClose = new javax.swing.JLabel();
         lblDescription = new javax.swing.JLabel();
         lblDescription2 = new javax.swing.JLabel();
@@ -34,10 +33,10 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblError = new javax.swing.JLabel();
         lblBdInfo = new javax.swing.JLabel();
+        lblIconLogin1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de login");
-        setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
         setMinimumSize(new java.awt.Dimension(480, 320));
         setUndecorated(true);
         setResizable(false);
@@ -48,12 +47,6 @@ public class LoginForm extends javax.swing.JFrame {
         jpPrincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 167, 69), 2));
         jpPrincipal.setToolTipText("");
         jpPrincipal.setLayout(null);
-
-        lblIconLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/logo.png"))); // NOI18N
-        lblIconLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jpPrincipal.add(lblIconLogin);
-        lblIconLogin.setBounds(10, 10, 0, 0);
 
         lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClose.setForeground(new java.awt.Color(255, 0, 51));
@@ -219,10 +212,16 @@ public class LoginForm extends javax.swing.JFrame {
         lblError.setBounds(0, 122, 480, 20);
 
         lblBdInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblBdInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/db-error-24x.png"))); // NOI18N
+        lblBdInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/db-error-24x.png"))); // NOI18N
         lblBdInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblBdInfo);
-        lblBdInfo.setBounds(10, 286, 0, 0);
+        lblBdInfo.setBounds(10, 286, 24, 24);
+
+        lblIconLogin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIconLogin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo.png"))); // NOI18N
+        lblIconLogin1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpPrincipal.add(lblIconLogin1);
+        lblIconLogin1.setBounds(10, 10, 24, 24);
 
         getContentPane().add(jpPrincipal, "card2");
 
@@ -301,7 +300,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblDescription2;
     private javax.swing.JLabel lblError;
     private javax.swing.JLabel lblHide1;
-    private javax.swing.JLabel lblIconLogin;
+    private javax.swing.JLabel lblIconLogin1;
     private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblRegister;

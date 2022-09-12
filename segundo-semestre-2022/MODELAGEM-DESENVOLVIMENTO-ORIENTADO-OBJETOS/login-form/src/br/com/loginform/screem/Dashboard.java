@@ -29,7 +29,6 @@ public class Dashboard extends javax.swing.JFrame {
         setTitle("Tela de cadastro");
         setBackground(new java.awt.Color(255, 255, 102));
         setExtendedState(6);
-        setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
         setMinimumSize(new java.awt.Dimension(683, 384));
         setUndecorated(true);
         setSize(new java.awt.Dimension(683, 384));

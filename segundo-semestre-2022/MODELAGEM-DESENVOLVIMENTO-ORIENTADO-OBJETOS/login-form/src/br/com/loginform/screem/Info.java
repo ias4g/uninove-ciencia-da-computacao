@@ -35,7 +35,7 @@ public class Info extends javax.swing.JFrame {
         jpPrincipal.setLayout(null);
 
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/close.png"))); // NOI18N
+        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/close.png"))); // NOI18N
         lblClose.setToolTipText("Fechar");
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -71,7 +71,7 @@ public class Info extends javax.swing.JFrame {
         jScrollPane1.setBounds(20, 50, 440, 250);
 
         lblIconLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/logo.png"))); // NOI18N
+        lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo.png"))); // NOI18N
         lblIconLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblIconLogin);
         lblIconLogin.setBounds(10, 10, 24, 24);
