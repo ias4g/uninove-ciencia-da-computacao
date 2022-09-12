@@ -1,4 +1,4 @@
-package screem;
+package br.com.loginform.screem;
 
 import javax.swing.ImageIcon;
 
@@ -23,7 +23,6 @@ public class Info extends javax.swing.JFrame {
         setTitle("Informações do programa");
         setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
         setIconImages(null);
-        setMaximumSize(new java.awt.Dimension(480, 320));
         setMinimumSize(new java.awt.Dimension(480, 320));
         setName("jfInfo"); // NOI18N
         setUndecorated(true);

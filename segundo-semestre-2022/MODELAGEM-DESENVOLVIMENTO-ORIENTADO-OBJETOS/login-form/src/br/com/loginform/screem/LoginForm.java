@@ -1,6 +1,6 @@
-package screem;
+package br.com.loginform.screem;
 
-import apoio.Apoio;
+import br.com.loginform.apoio.Apoio;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 
@@ -38,10 +38,8 @@ public class LoginForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de login");
         setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
-        setMaximumSize(new java.awt.Dimension(480, 320));
         setMinimumSize(new java.awt.Dimension(480, 320));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(480, 320));
         setResizable(false);
         setSize(new java.awt.Dimension(480, 320));
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -55,12 +53,12 @@ public class LoginForm extends javax.swing.JFrame {
         lblIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/logo.png"))); // NOI18N
         lblIconLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblIconLogin);
-        lblIconLogin.setBounds(10, 10, 24, 24);
+        lblIconLogin.setBounds(10, 10, 0, 0);
 
         lblClose.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblClose.setForeground(new java.awt.Color(255, 0, 51));
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/close.png"))); // NOI18N
+        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/close.png"))); // NOI18N
         lblClose.setToolTipText("Fechar");
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblClose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -95,7 +93,7 @@ public class LoginForm extends javax.swing.JFrame {
         lblUser.setBackground(new java.awt.Color(255, 51, 51));
         lblUser.setForeground(new java.awt.Color(255, 0, 51));
         lblUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/user.png"))); // NOI18N
+        lblUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/user.png"))); // NOI18N
         lblUser.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblUser.setMaximumSize(new java.awt.Dimension(50, 38));
         lblUser.setMinimumSize(new java.awt.Dimension(50, 38));
@@ -124,7 +122,7 @@ public class LoginForm extends javax.swing.JFrame {
         lblPassword.setBackground(new java.awt.Color(255, 51, 51));
         lblPassword.setForeground(new java.awt.Color(255, 0, 51));
         lblPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/key.png"))); // NOI18N
+        lblPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/key.png"))); // NOI18N
         lblPassword.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblPassword.setMaximumSize(new java.awt.Dimension(50, 38));
         lblPassword.setMinimumSize(new java.awt.Dimension(50, 38));
@@ -182,7 +180,7 @@ public class LoginForm extends javax.swing.JFrame {
         lblHide1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblHide1.setForeground(new java.awt.Color(255, 255, 51));
         lblHide1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHide1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/minimize.png"))); // NOI18N
+        lblHide1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/minimize.png"))); // NOI18N
         lblHide1.setToolTipText("Minimizar");
         lblHide1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblHide1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -195,7 +193,7 @@ public class LoginForm extends javax.swing.JFrame {
         lblHide1.setBounds(415, 10, 24, 24);
 
         lblInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/info.png"))); // NOI18N
+        lblInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/info.png"))); // NOI18N
         lblInfo.setToolTipText("Informações");
         lblInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -224,7 +222,7 @@ public class LoginForm extends javax.swing.JFrame {
         lblBdInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/db-error-24x.png"))); // NOI18N
         lblBdInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpPrincipal.add(lblBdInfo);
-        lblBdInfo.setBounds(10, 286, 24, 24);
+        lblBdInfo.setBounds(10, 286, 0, 0);
 
         getContentPane().add(jpPrincipal, "card2");
 

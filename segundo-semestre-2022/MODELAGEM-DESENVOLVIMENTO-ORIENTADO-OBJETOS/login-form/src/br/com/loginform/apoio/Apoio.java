@@ -1,4 +1,4 @@
-package apoio;
+package br.com.loginform.apoio;
 
 import java.awt.Color;
 import javax.swing.JLabel;

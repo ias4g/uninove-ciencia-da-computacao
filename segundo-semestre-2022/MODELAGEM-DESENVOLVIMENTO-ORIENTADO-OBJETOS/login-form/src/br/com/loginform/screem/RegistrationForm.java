@@ -1,4 +1,4 @@
-package screem;
+package br.com.loginform.screem;
 
 import javax.swing.ImageIcon;
 
@@ -29,10 +29,8 @@ public class RegistrationForm extends javax.swing.JFrame {
 
         setTitle("Tela de cadastro");
         setIconImage(new ImageIcon(getClass().getResource("/assets/logo.png")).getImage());
-        setMaximumSize(new java.awt.Dimension(480, 460));
         setMinimumSize(new java.awt.Dimension(480, 460));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(480, 460));
         setResizable(false);
         setSize(new java.awt.Dimension(480, 460));
         getContentPane().setLayout(new java.awt.CardLayout());
