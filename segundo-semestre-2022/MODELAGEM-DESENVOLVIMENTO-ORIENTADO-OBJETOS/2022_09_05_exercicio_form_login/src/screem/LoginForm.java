@@ -251,6 +251,10 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lblInfoMouseClicked
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
+        String user, pass;
+        user = txtUser.getText();
+        pass = txtPassword.getText();
+
 //        String password = new String(txtPassword.getPassword());
 //
 //        result = Apoio.verifyCredentials(txtUser.getText(), password);
