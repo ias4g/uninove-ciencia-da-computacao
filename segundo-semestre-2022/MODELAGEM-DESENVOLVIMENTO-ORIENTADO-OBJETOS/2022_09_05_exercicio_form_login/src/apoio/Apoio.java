@@ -20,10 +20,10 @@ public class Apoio {
         PreparedStatement pst = null;
 
         final String SQL = "SELECT * FROM tbusers WHERE user=? AND password=?";
-        conn = ConnectBD.connect();
 
         try {
 
+            conn = ConnectBD.connect();
             pst = conn.prepareStatement(SQL);
             pst.setString(1, user);
             pst.setString(2, pass);
