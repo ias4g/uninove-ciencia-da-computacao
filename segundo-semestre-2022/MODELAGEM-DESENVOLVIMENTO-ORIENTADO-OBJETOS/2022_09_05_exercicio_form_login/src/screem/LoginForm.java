@@ -4,9 +4,11 @@ import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class LoginForm extends javax.swing.JFrame {
@@ -256,41 +258,37 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lblInfoMouseClicked
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-//      Pegando user e pass digitados
         String user, pass;
         user = txtUser.getText();
         pass = txtPassword.getText();
-
-        //Conectando no banco de dados
         try {
+            //Conectando no banco de dados
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "Izael@student", "Izael@student");
-            PreparedStatement st = conectado.prepareStatement("SELECT * FROM user_name WHERE user_name=?");
+            Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+            PreparedStatement st = conectado.prepareStatement("SELECT * FROM users WHERE user_name=?");
             st.setString(1, user);
             ResultSet resultado = st.executeQuery();
-
             if (resultado.next()) {
                 new Dashboard().setVisible(true);
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario e/ou senha invalidos");
             }
-
             conectado.close();
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex);
+        } catch (SQLException ex) {
+            System.out.println(ex);
         }
 
-//        String password = new String(txtPassword.getPassword());
-//
-//        result = Apoio.verifyCredentials(txtUser.getText(), password);
-//
-//        if (result) {
-//            new Dashboard().setVisible(true);
-//            this.dispose();
-//        } else {
-//            Apoio.resetFields(txtUser, txtPassword, lblError);
-//        }
+        //String password = new String(txtPassword.getPassword());
+        //result = Apoio.verifyCredentials(txtUser.getText(), password);
+        //if (result) {
+        //new Dashboard().setVisible(true);
+        //this.dispose();
+        //} else {
+        //Apoio.resetFields(txtUser, txtPassword, lblError);
+        //}
     }//GEN-LAST:event_btnEnterActionPerformed
 
     public static void main(String args[]) {
