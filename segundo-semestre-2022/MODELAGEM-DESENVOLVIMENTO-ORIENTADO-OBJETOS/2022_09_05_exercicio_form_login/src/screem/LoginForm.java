@@ -2,6 +2,10 @@ package screem;
 
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
 
 public class LoginForm extends javax.swing.JFrame {
 
@@ -258,7 +262,9 @@ public class LoginForm extends javax.swing.JFrame {
         //Conectando no banco de dados
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            
+            Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistemabd", "root", "teruel");
+            PreparedStatement st = conectado.prepareStatement("SELECT * FROM user_name WHERE user_name=?");
+            st.setString(1, user);
         } catch (Exception e) {
             System.out.println(e);
         }
