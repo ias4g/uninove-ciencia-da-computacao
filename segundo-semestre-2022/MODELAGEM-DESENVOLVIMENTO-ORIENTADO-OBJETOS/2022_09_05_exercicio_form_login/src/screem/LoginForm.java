@@ -5,11 +5,6 @@ import dao.ConnectBD;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 public class LoginForm extends javax.swing.JFrame {
 
@@ -271,7 +266,8 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
 
-        Boolean result = Apoio.verifyCredentials(txtUser.getText(), txtPassword.getText());
+        String password = new String(txtPassword.getPassword());
+        Boolean result = Apoio.verifyCredentials(txtUser.getText(), password);
 
         if (result) {
             new Dashboard().setVisible(true);
@@ -279,55 +275,7 @@ public class LoginForm extends javax.swing.JFrame {
         } else {
             Apoio.resetFields(txtUser, txtPassword, lblError);
         }
-        
-//        String user;
-//        String pass;
-//
-//        final String HOST = "localhost";
-//        final int PORT = 3306;
-//        final String BD = "bdsystem";
-//        final String USERBD = "student";
-//        final String PASSWORD = "Izael@student";
-//        final String SQL = "SELECT * FROM users WHERE user_name=?";
-//        final String HOSTURL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + BD;
-//
-//        user = txtUser.getText();
-//        pass = txtPassword.getText();
-//
-//        ResultSet rs = null;
-//        Connection conn = null;
-//        PreparedStatement stm = null;
-//
-//        try {
-//            //Conectando no banco de dados
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            conn = DriverManager.getConnection(HOSTURL, USERBD, PASSWORD);
-//            stm = conn.prepareStatement(SQL);
-//            stm.setString(1, user);
-//            rs = stm.executeQuery();
-//
-//            if (rs.next()) {
-//                new Dashboard().setVisible(true);
-//                this.dispose();
-//            } else {
-//                JOptionPane.showMessageDialog(null, "Usuario e/ou senha invalidos");
-//            }
-//
-//            conn.close();
-//
-//        } catch (ClassNotFoundException ex) {
-//            System.out.println(ex);
-//        } catch (SQLException ex) {
-//            System.out.println(ex);
-//        }
-        //String password = new String(txtPassword.getPassword());
-        //result = Apoio.verifyCredentials(txtUser.getText(), password);
-        //if (result) {
-        //new Dashboard().setVisible(true);
-        //this.dispose();
-        //} else {
-        //Apoio.resetFields(txtUser, txtPassword, lblError);
-        //}
+
     }//GEN-LAST:event_btnEnterActionPerformed
 
     public static void main(String args[]) {
