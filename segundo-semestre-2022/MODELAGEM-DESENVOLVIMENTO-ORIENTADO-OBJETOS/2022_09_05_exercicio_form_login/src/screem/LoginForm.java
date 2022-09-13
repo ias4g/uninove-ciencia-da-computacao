@@ -258,23 +258,41 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lblInfoMouseClicked
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        String user, pass;
+        String user;
+        String pass;
+
+        final String HOST = "localhost";
+        final int PORT = 3306;
+        final String BD = "bdsystem";
+        final String USERBD = "student";
+        final String PASSWORD = "Izael@student";
+        final String SQL = "SELECT * FROM users WHERE user_name=?";
+        final String HOSTURL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + BD;
+
         user = txtUser.getText();
         pass = txtPassword.getText();
+
+        ResultSet rs = null;
+        Connection conn = null;
+        PreparedStatement stm = null;
+
         try {
             //Conectando no banco de dados
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
-            PreparedStatement st = conectado.prepareStatement("SELECT * FROM users WHERE user_name=?");
-            st.setString(1, user);
-            ResultSet resultado = st.executeQuery();
-            if (resultado.next()) {
+            conn = DriverManager.getConnection(HOSTURL, USERBD, PASSWORD);
+            stm = conn.prepareStatement(SQL);
+            stm.setString(1, user);
+            rs = stm.executeQuery();
+
+            if (rs.next()) {
                 new Dashboard().setVisible(true);
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario e/ou senha invalidos");
             }
-            conectado.close();
+
+            conn.close();
+
         } catch (ClassNotFoundException ex) {
             System.out.println(ex);
         } catch (SQLException ex) {
