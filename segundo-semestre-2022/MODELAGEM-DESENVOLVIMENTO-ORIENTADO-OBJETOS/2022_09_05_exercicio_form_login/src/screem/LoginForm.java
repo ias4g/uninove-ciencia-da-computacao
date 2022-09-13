@@ -251,9 +251,13 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lblInfoMouseClicked
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
+//      Pegando user e pass digitados
         String user, pass;
         user = txtUser.getText();
         pass = txtPassword.getText();
+
+        //Conectando no banco de dados
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
 //        String password = new String(txtPassword.getPassword());
 //
