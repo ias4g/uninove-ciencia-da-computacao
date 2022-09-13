@@ -14,9 +14,9 @@ public class Apoio {
 
     public static Boolean verifyCredentials(String user, String pass) {
 
-        Boolean result = false;
         ResultSet rs = null;
         Connection conn = null;
+        Boolean result = false;
         PreparedStatement pst = null;
 
         final String SQL = "SELECT * FROM tbusers WHERE user=? AND password=?";
@@ -33,6 +33,8 @@ public class Apoio {
             if (rs.next()) {
                 result = true;
             }
+
+            conn.close();
 
         } catch (SQLException ex) {
             System.out.println(ex);
