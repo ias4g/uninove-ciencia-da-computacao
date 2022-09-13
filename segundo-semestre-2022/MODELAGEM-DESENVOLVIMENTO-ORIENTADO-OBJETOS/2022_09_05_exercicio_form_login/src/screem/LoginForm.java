@@ -258,6 +258,7 @@ public class LoginForm extends javax.swing.JFrame {
         //Conectando no banco de dados
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
+            
         } catch (Exception e) {
             System.out.println(e);
         }
