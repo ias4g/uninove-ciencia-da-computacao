@@ -1,6 +1,5 @@
 package screem;
 
-import apoio.Apoio;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 
@@ -257,7 +256,11 @@ public class LoginForm extends javax.swing.JFrame {
         pass = txtPassword.getText();
 
         //Conectando no banco de dados
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
 //        String password = new String(txtPassword.getPassword());
 //
