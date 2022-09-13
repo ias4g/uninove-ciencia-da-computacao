@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 public class LoginForm extends javax.swing.JFrame {
 
@@ -262,9 +264,19 @@ public class LoginForm extends javax.swing.JFrame {
         //Conectando no banco de dados
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistemabd", "root", "teruel");
+            Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "Izael@student", "Izael@student");
             PreparedStatement st = conectado.prepareStatement("SELECT * FROM user_name WHERE user_name=?");
             st.setString(1, user);
+            ResultSet resultado = st.executeQuery();
+
+            if (resultado.next()) {
+                new Dashboard().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario e/ou senha invalidos");
+            }
+
+            conectado.close();
         } catch (Exception e) {
             System.out.println(e);
         }
