@@ -1,6 +1,11 @@
 package apoio;
 
+import dao.ConnectBD;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -8,14 +13,32 @@ import javax.swing.JPasswordField;
 public class Apoio {
 
     public static Boolean verifyCredentials(String user, String pass) {
-        final String USER = "Adm";
-        final String PASSWORD = "123";
 
-        if (user.equals(USER) && pass.equals(PASSWORD)) {
-            return true;
-        } else {
-            return false;
+        Boolean result = false;
+        ResultSet rs = null;
+        Connection conn = null;
+        PreparedStatement pst = null;
+
+        final String SQL = "SELECT * FROM tbusers WHERE user=? AND password=?";
+        conn = ConnectBD.connect();
+
+        try {
+
+            pst = conn.prepareStatement(SQL);
+            pst.setString(1, user);
+            pst.setString(2, pass);
+
+            rs = pst.executeQuery();
+
+            if (rs.next()) {
+                result = true;
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
         }
+
+        return result;
     }
 
     public static void resetFields(JTextField user, JPasswordField pass, JLabel error) {
@@ -35,4 +58,5 @@ public class Apoio {
 
         user.requestFocus();
     }
+
 }
