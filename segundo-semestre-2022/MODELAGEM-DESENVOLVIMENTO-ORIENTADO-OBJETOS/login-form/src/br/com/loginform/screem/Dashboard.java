@@ -17,7 +17,7 @@ public class Dashboard extends javax.swing.JFrame {
 //        lblClose.setBounds(tela.width - 34, 10, 24, 24);
 //        lblSeparator.setBounds(0, 43, tela.width, 2);
 
-        getContentPane().setBackground(new java.awt.Color(52, 58, 64));
+        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
     }
 
     @SuppressWarnings("unchecked")
@@ -27,11 +27,13 @@ public class Dashboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de cadastro");
         setBackground(new java.awt.Color(255, 255, 102));
-        setMinimumSize(new java.awt.Dimension(683, 384));
-        setSize(new java.awt.Dimension(683, 384));
+        setMaximumSize(new java.awt.Dimension(720, 480));
+        setMinimumSize(new java.awt.Dimension(720, 480));
+        setPreferredSize(new java.awt.Dimension(720, 480));
+        setSize(new java.awt.Dimension(720, 480));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        setSize(new java.awt.Dimension(699, 392));
+        setSize(new java.awt.Dimension(736, 488));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
