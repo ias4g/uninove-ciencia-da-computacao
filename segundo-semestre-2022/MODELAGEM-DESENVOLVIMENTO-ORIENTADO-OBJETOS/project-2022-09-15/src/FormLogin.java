@@ -94,11 +94,13 @@ public class FormLogin extends javax.swing.JFrame {
 
             //2 - Conectar no banco de dados sistemabd;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistemabd", "root", "teruel");
+            Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+
             //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
             PreparedStatement st = conectado.prepareStatement("SELECT * FROM usuario WHERE usuario = ?");
             st.setString(1, usuario);
             ResultSet resultado = st.executeQuery();
+
             //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
             if (resultado.next()) {
                 //Abrir o formulário Menu.java
