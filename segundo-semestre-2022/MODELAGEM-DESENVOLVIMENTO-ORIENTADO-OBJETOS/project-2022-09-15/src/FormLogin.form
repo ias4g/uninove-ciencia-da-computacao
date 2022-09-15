@@ -119,6 +119,9 @@
           <Dimension value="[100, 38]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnterActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
