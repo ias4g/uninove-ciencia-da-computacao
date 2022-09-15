@@ -21,9 +21,6 @@ public class LoginForm extends javax.swing.JFrame {
             lblBdInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/db-error-24x.png")));
             lblBdInfo.setToolTipText("Não conectado ao banco!");
         }
-
-        //A linha abaixo serve de apoio ao status de conexão.
-        //System.out.println(conn);
     }
 
     @SuppressWarnings("unchecked")
