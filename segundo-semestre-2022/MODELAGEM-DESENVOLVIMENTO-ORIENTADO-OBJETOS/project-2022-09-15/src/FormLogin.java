@@ -97,35 +97,35 @@ public class FormLogin extends javax.swing.JFrame {
         if (txtUser.getText().isEmpty() || txtPass.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
         } else {
+            try {
+                //2 - Conectar no banco de dados sistemabd;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
-        }
-        try {
-            //2 - Conectar no banco de dados sistemabd;
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+                //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
+                PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers WHERE user = ? AND password = ?");
+                st.setString(1, usuario);
+                st.setString(2, senha);
+                ResultSet resultado = st.executeQuery();
 
-            //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
-            PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers WHERE user = ? AND password = ?");
-            st.setString(1, usuario);
-            st.setString(2, senha);
-            ResultSet resultado = st.executeQuery();
+                //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
+                if (resultado.next()) {
+                    //Abrir o formulário Menu.java
+                    JOptionPane.showMessageDialog(null, "Acesso permitido");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
+                }
 
-            //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
-            if (resultado.next()) {
-                //Abrir o formulário Menu.java
-                JOptionPane.showMessageDialog(null, "Acesso permitido");
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
+                //5 - Desconectar.
+                conn.close();
+
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Driver não está na library");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Você errou nos dados da conexão com o banco de dados");
             }
-
-            //5 - Desconectar.
-            conn.close();
-
-        } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "Driver não está na library");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Você errou nos dados da conexão com o banco de dados");
         }
+
     }//GEN-LAST:event_btnEnterActionPerformed
 
     public static void main(String args[]) {
