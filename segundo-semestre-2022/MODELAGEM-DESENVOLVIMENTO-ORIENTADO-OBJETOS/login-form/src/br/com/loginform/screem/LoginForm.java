@@ -2,7 +2,6 @@ package br.com.loginform.screem;
 
 import br.com.loginform.apoio.Apoio;
 import javax.swing.JFrame;
-import javax.swing.ImageIcon;
 
 public class LoginForm extends javax.swing.JFrame {
 
