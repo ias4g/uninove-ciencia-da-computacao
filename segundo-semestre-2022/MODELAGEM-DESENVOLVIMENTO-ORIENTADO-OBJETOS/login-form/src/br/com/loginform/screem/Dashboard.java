@@ -1,12 +1,11 @@
 package br.com.loginform.screem;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import javax.swing.ImageIcon;
-
+//import java.awt.Color;
+//import java.awt.Dimension;
+//import java.awt.Toolkit;
+//import javax.swing.ImageIcon;
 public class Dashboard extends javax.swing.JFrame {
-    
+
     public Dashboard() {
         initComponents();
 //        this.setExtendedState(MAXIMIZED_BOTH);
@@ -20,7 +19,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         getContentPane().setBackground(new java.awt.Color(52, 58, 64));
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -53,7 +52,7 @@ public class Dashboard extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Dashboard().setVisible(true);
