@@ -94,10 +94,10 @@ public class FormLogin extends javax.swing.JFrame {
 
             //2 - Conectar no banco de dados sistemabd;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
             //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
-            PreparedStatement st = conectado.prepareStatement("SELECT * FROM tbusers WHERE user = ? AND password = ?");
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers WHERE user = ? AND password = ?");
             st.setString(1, usuario);
             st.setString(2, senha);
             ResultSet resultado = st.executeQuery();
