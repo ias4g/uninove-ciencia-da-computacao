@@ -97,8 +97,9 @@ public class FormLogin extends javax.swing.JFrame {
             Connection conectado = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
             //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
-            PreparedStatement st = conectado.prepareStatement("SELECT * FROM usuario WHERE usuario = ?");
+            PreparedStatement st = conectado.prepareStatement("SELECT * FROM tbusers WHERE user = ? AND password = ?");
             st.setString(1, usuario);
+            st.setString(2, senha);
             ResultSet resultado = st.executeQuery();
 
             //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
@@ -107,7 +108,9 @@ public class FormLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Acesso permitido");
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
-            }     //5 - Desconectar.
+            }
+
+            //5 - Desconectar.
             conectado.close();
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
