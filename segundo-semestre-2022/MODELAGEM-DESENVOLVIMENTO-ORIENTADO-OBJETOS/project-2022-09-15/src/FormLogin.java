@@ -111,7 +111,7 @@ public class FormLogin extends javax.swing.JFrame {
             }
 
             //5 - Desconectar.
-            conectado.close();
+            conn.close();
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         } catch (SQLException ex) {
