@@ -28,13 +28,11 @@ public class Dashboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de cadastro");
         setBackground(new java.awt.Color(255, 255, 102));
-        setExtendedState(6);
         setMinimumSize(new java.awt.Dimension(683, 384));
-        setUndecorated(true);
         setSize(new java.awt.Dimension(683, 384));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        setSize(new java.awt.Dimension(683, 384));
+        setSize(new java.awt.Dimension(699, 392));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
