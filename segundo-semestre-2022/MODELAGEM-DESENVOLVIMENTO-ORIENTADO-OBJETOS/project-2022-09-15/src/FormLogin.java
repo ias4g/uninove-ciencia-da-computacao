@@ -41,6 +41,8 @@ public class FormLogin extends javax.swing.JFrame {
 
         btnEnter.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEnter.setText("Entrar");
+        btnEnter.setBorder(null);
+        btnEnter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEnter.setPreferredSize(new java.awt.Dimension(100, 38));
         btnEnter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
