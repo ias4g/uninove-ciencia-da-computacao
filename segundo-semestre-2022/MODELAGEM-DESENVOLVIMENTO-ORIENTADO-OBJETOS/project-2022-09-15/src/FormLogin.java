@@ -87,14 +87,16 @@ public class FormLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        try {
-            String usuario, senha;
-            usuario = txtUser.getText();
-            senha = txtPass.getText();
 
+        String usuario, senha;
+        usuario = txtUser.getText();
+        senha = txtPass.getText();
+        Connection conn;
+
+        try {
             //2 - Conectar no banco de dados sistemabd;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
             //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
             PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers WHERE user = ? AND password = ?");
@@ -112,6 +114,7 @@ public class FormLogin extends javax.swing.JFrame {
 
             //5 - Desconectar.
             conn.close();
+
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         } catch (SQLException ex) {
@@ -120,11 +123,7 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEnterActionPerformed
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
