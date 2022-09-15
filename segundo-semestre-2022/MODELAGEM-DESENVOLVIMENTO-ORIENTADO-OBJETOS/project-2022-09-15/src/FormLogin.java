@@ -89,12 +89,16 @@ public class FormLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-
         String usuario, senha;
         usuario = txtUser.getText();
         senha = txtPass.getText();
         Connection conn;
 
+        if (txtUser.getText().isEmpty() || txtPass.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+        } else {
+
+        }
         try {
             //2 - Conectar no banco de dados sistemabd;
             Class.forName("com.mysql.cj.jdbc.Driver");
