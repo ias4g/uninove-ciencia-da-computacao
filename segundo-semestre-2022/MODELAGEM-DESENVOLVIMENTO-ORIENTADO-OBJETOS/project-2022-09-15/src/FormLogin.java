@@ -96,6 +96,11 @@ public class FormLogin extends javax.swing.JFrame {
 
         if (txtUser.getText().isEmpty() || txtPass.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+
+            txtUser.setText(null);
+            txtPass.setText(null);
+
+            txtUser.requestFocus();
         } else {
             try {
                 //2 - Conectar no banco de dados sistemabd;
@@ -114,6 +119,11 @@ public class FormLogin extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Acesso permitido");
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
+
+                    txtUser.setText("");
+                    txtPass.setText("");
+
+                    txtUser.requestFocus();
                 }
 
                 //5 - Desconectar.
