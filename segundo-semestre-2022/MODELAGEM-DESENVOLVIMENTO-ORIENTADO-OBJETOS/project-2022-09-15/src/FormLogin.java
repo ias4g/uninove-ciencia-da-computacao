@@ -7,11 +7,11 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class FormLogin extends javax.swing.JFrame {
-
+    
     public FormLogin() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -93,13 +93,13 @@ public class FormLogin extends javax.swing.JFrame {
         usuario = txtUser.getText();
         senha = txtPass.getText();
         Connection conn;
-
+        
         if (txtUser.getText().isEmpty() || txtPass.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
-
+            
             txtUser.setText(null);
             txtPass.setText(null);
-
+            
             txtUser.requestFocus();
         } else {
             try {
@@ -116,19 +116,19 @@ public class FormLogin extends javax.swing.JFrame {
                 //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
                 if (resultado.next()) {
                     //Abrir o formulário Menu.java
-                    JOptionPane.showMessageDialog(null, "Acesso permitido");
+                    new Menu().setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
-
+                    
                     txtUser.setText("");
                     txtPass.setText("");
-
+                    
                     txtUser.requestFocus();
                 }
 
                 //5 - Desconectar.
                 conn.close();
-
+                
             } catch (ClassNotFoundException ex) {
                 JOptionPane.showMessageDialog(null, "Driver não está na library");
             } catch (SQLException ex) {
@@ -137,9 +137,9 @@ public class FormLogin extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnEnterActionPerformed
-
+    
     public static void main(String args[]) {
-
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
