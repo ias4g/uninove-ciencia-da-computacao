@@ -23,7 +23,7 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setTitle("Tela de cadastro");
+        setTitle("Menu do sistema");
         getContentPane().setLayout(null);
 
         setSize(new java.awt.Dimension(416, 308));
