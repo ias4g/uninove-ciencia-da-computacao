@@ -4,7 +4,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {
         initComponents();
-        getContentPane().setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setBackground(new java.awt.Color(244, 244, 244));
     }
 
     @SuppressWarnings("unchecked")
@@ -13,7 +13,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de cadastro");
-        setBackground(new java.awt.Color(255, 255, 102));
+        setBackground(new java.awt.Color(244, 244, 244));
         setMaximumSize(new java.awt.Dimension(720, 480));
         setMinimumSize(new java.awt.Dimension(720, 480));
         setPreferredSize(new java.awt.Dimension(720, 480));
