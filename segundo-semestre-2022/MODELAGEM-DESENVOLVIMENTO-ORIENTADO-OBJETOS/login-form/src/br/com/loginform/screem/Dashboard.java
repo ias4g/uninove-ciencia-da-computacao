@@ -1,22 +1,9 @@
 package br.com.loginform.screem;
 
-//import java.awt.Color;
-//import java.awt.Dimension;
-//import java.awt.Toolkit;
-//import javax.swing.ImageIcon;
 public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {
         initComponents();
-//        this.setExtendedState(MAXIMIZED_BOTH);
-//        System.out.println(this.getWidth());
-//
-//        Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
-//
-//        lblTitle.setBounds((tela.width - lblTitle.getWidth()) / 2, 10, 92, 25);
-//        lblClose.setBounds(tela.width - 34, 10, 24, 24);
-//        lblSeparator.setBounds(0, 43, tela.width, 2);
-
         getContentPane().setBackground(new java.awt.Color(255, 255, 255));
     }
 
