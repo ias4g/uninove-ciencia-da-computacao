@@ -88,7 +88,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem7.setText("Excluir Usuário");
         jMenu3.add(jMenuItem7);
 
-        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         jMenuItem8.setText("Excluir Todos os Usuários");
         jMenu3.add(jMenuItem8);
 
