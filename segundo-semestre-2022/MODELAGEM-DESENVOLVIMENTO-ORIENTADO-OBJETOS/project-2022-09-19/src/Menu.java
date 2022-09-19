@@ -23,9 +23,33 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu do sistema");
         getContentPane().setLayout(null);
+
+        jMenu1.setText("Produtos");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Clientes");
+        jMenuBar1.add(jMenu2);
+
+        jMenu5.setText("Funcionários");
+        jMenuBar1.add(jMenu5);
+
+        jMenu3.setText("Admin");
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Ajuda");
+        jMenuBar1.add(jMenu4);
+
+        setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(416, 308));
         setLocationRelativeTo(null);
@@ -67,5 +91,11 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
