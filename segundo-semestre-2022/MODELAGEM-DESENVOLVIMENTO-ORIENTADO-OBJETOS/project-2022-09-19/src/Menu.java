@@ -25,8 +25,8 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -36,15 +36,19 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu do sistema");
+        setMaximumSize(new java.awt.Dimension(530, 380));
+        setMinimumSize(new java.awt.Dimension(530, 380));
+        setName("jfDashboard"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(530, 380));
         getContentPane().setLayout(null);
 
         jMenu1.setText("Produtos");
 
-        jMenuItem1.setText("Cadastrar");
-        jMenu1.add(jMenuItem1);
-
         jMenuItem2.setText("Alterar");
         jMenu1.add(jMenuItem2);
+
+        jMenuItem1.setText("Cadastrar");
+        jMenu1.add(jMenuItem1);
 
         jMenuItem3.setText("Excluir");
         jMenu1.add(jMenuItem3);
@@ -68,7 +72,7 @@ public class Menu extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(416, 308));
+        setSize(new java.awt.Dimension(546, 388));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
