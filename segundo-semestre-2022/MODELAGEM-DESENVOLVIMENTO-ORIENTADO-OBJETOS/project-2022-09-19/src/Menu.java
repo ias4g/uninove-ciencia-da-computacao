@@ -23,21 +23,21 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jmbPrincipal = new javax.swing.JMenuBar();
+        mnuProducts = new javax.swing.JMenu();
+        itmUpdate = new javax.swing.JMenuItem();
+        itmCreate = new javax.swing.JMenuItem();
+        itmDelete = new javax.swing.JMenuItem();
+        itmReports = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        itmExit = new javax.swing.JMenuItem();
+        mnuClients = new javax.swing.JMenu();
+        mnuEmployee = new javax.swing.JMenu();
+        mnuAdm = new javax.swing.JMenu();
+        itmChangeUserPass = new javax.swing.JMenuItem();
+        itmDeleteUser = new javax.swing.JMenuItem();
+        itmDeleteAllUser = new javax.swing.JMenuItem();
+        mnuHelp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu do sistema");
@@ -47,57 +47,57 @@ public class Menu extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(530, 380));
         getContentPane().setLayout(null);
 
-        jMenu1.setText("Produtos");
+        mnuProducts.setText("Produtos");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("Alterar");
-        jMenu1.add(jMenuItem2);
+        itmUpdate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmUpdate.setText("Alterar");
+        mnuProducts.add(itmUpdate);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem1.setText("Cadastrar");
-        jMenu1.add(jMenuItem1);
+        itmCreate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmCreate.setText("Cadastrar");
+        mnuProducts.add(itmCreate);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("Excluir");
-        jMenu1.add(jMenuItem3);
+        itmDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmDelete.setText("Excluir");
+        mnuProducts.add(itmDelete);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setText("Relátrios");
-        jMenu1.add(jMenuItem4);
-        jMenu1.add(jSeparator1);
+        itmReports.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmReports.setText("Relatórios");
+        mnuProducts.add(itmReports);
+        mnuProducts.add(jSeparator1);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem5.setText("Sair");
-        jMenu1.add(jMenuItem5);
+        itmExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmExit.setText("Sair");
+        mnuProducts.add(itmExit);
 
-        jMenuBar1.add(jMenu1);
+        jmbPrincipal.add(mnuProducts);
 
-        jMenu2.setText("Clientes");
-        jMenuBar1.add(jMenu2);
+        mnuClients.setText("Clientes");
+        jmbPrincipal.add(mnuClients);
 
-        jMenu5.setText("Funcionários");
-        jMenuBar1.add(jMenu5);
+        mnuEmployee.setText("Funcionários");
+        jmbPrincipal.add(mnuEmployee);
 
-        jMenu3.setText("Admin");
+        mnuAdm.setText("Admin");
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        jMenuItem6.setText("Alterar Senha de Usuário");
-        jMenu3.add(jMenuItem6);
+        itmChangeUserPass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmChangeUserPass.setText("Alterar Senha de Usuário");
+        mnuAdm.add(itmChangeUserPass);
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        jMenuItem7.setText("Excluir Usuário");
-        jMenu3.add(jMenuItem7);
+        itmDeleteUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmDeleteUser.setText("Excluir Usuário");
+        mnuAdm.add(itmDeleteUser);
 
-        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        jMenuItem8.setText("Excluir Todos os Usuários");
-        jMenu3.add(jMenuItem8);
+        itmDeleteAllUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmDeleteAllUser.setText("Excluir Todos os Usuários");
+        mnuAdm.add(itmDeleteAllUser);
 
-        jMenuBar1.add(jMenu3);
+        jmbPrincipal.add(mnuAdm);
 
-        jMenu4.setText("Ajuda");
-        jMenuBar1.add(jMenu4);
+        mnuHelp.setText("Ajuda");
+        jmbPrincipal.add(mnuHelp);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jmbPrincipal);
 
         setSize(new java.awt.Dimension(546, 388));
         setLocationRelativeTo(null);
@@ -139,20 +139,20 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem itmChangeUserPass;
+    private javax.swing.JMenuItem itmCreate;
+    private javax.swing.JMenuItem itmDelete;
+    private javax.swing.JMenuItem itmDeleteAllUser;
+    private javax.swing.JMenuItem itmDeleteUser;
+    private javax.swing.JMenuItem itmExit;
+    private javax.swing.JMenuItem itmReports;
+    private javax.swing.JMenuItem itmUpdate;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuBar jmbPrincipal;
+    private javax.swing.JMenu mnuAdm;
+    private javax.swing.JMenu mnuClients;
+    private javax.swing.JMenu mnuEmployee;
+    private javax.swing.JMenu mnuHelp;
+    private javax.swing.JMenu mnuProducts;
     // End of variables declaration//GEN-END:variables
 }
