@@ -115,9 +115,14 @@ public class FormLogin extends javax.swing.JFrame {
 
                 //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
                 if (resultado.next()) {
+                    String name;
+                    String job;
+
+                    name = resultado.getString("name");
+                    job = resultado.getString("job");
 
                     //Abrir o formulário Menu.java
-                    new Menu("Izael", "Alves", "Dev").setVisible(true);
+                    new Menu(name, job).setVisible(true);
 
                     this.dispose();
 

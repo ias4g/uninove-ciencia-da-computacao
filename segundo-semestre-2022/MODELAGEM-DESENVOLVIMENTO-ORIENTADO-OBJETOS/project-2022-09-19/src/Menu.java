@@ -1,11 +1,15 @@
 
 public class Menu extends javax.swing.JFrame {
-    
-    public Menu(String name, String lastname, String job) {
+
+    public Menu() {
         initComponents();
-        lblSaudacao.setText("Bem vindo " + name + " " + lastname + " - Perfil: " + job);
     }
-    
+
+    public Menu(String name, String job) {
+        initComponents();
+        lblSaudacao.setText("Bem vindo " + name + " - Perfil: " + job);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -39,7 +43,7 @@ public class Menu extends javax.swing.JFrame {
         lblSaudacao.setBackground(new java.awt.Color(255, 255, 255));
         lblSaudacao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSaudacao.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(lblSaudacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 250, 50));
+        getContentPane().add(lblSaudacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/fundo.jpg"))); // NOI18N
         getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 403));
