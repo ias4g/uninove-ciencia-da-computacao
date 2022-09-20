@@ -23,6 +23,7 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblBackground = new javax.swing.JLabel();
         jmbMain = new javax.swing.JMenuBar();
         mnuProducts = new javax.swing.JMenu();
         itmChange = new javax.swing.JMenuItem();
@@ -45,7 +46,10 @@ public class Menu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(640, 426));
         setName("jfDashboard"); // NOI18N
         setPreferredSize(new java.awt.Dimension(640, 426));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new java.awt.CardLayout());
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/fundo.jpg"))); // NOI18N
+        getContentPane().add(lblBackground, "card2");
 
         mnuProducts.setText("Produtos");
 
@@ -149,6 +153,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmReports;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenuBar jmbMain;
+    private javax.swing.JLabel lblBackground;
     private javax.swing.JMenu mnuAdministrative;
     private javax.swing.JMenu mnuCustomers;
     private javax.swing.JMenu mnuEmployee;
