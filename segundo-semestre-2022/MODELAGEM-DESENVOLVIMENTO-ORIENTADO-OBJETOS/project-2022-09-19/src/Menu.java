@@ -1,10 +1,11 @@
 
 public class Menu extends javax.swing.JFrame {
-
-    public Menu(String name, String job) {
+    
+    public Menu(String name, String lastname, String job) {
         initComponents();
+        lblSaudacao.setText("Bem vindo " + name + " " + lastname + " - Perfil: " + job);
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

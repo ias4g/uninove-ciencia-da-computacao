@@ -117,7 +117,7 @@ public class FormLogin extends javax.swing.JFrame {
                 if (resultado.next()) {
 
                     //Abrir o formulário Menu.java
-                    new Menu().setVisible(true);
+                    new Menu("Izael", "Alves", "Dev").setVisible(true);
 
                     this.dispose();
 
