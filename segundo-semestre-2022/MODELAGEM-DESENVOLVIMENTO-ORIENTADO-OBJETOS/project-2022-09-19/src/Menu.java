@@ -23,17 +23,17 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jmbPrincipal = new javax.swing.JMenuBar();
+        jmbMain = new javax.swing.JMenuBar();
         mnuProducts = new javax.swing.JMenu();
-        itmUpdate = new javax.swing.JMenuItem();
-        itmCreate = new javax.swing.JMenuItem();
+        itmChange = new javax.swing.JMenuItem();
+        itmRegister = new javax.swing.JMenuItem();
         itmDelete = new javax.swing.JMenuItem();
         itmReports = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         itmExit = new javax.swing.JMenuItem();
-        mnuClients = new javax.swing.JMenu();
+        mnuCustomers = new javax.swing.JMenu();
         mnuEmployee = new javax.swing.JMenu();
-        mnuAdm = new javax.swing.JMenu();
+        mnuAdministrative = new javax.swing.JMenu();
         itmChangeUserPass = new javax.swing.JMenuItem();
         itmDeleteUser = new javax.swing.JMenuItem();
         itmDeleteAllUser = new javax.swing.JMenuItem();
@@ -41,21 +41,21 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu do sistema");
-        setMaximumSize(new java.awt.Dimension(530, 380));
-        setMinimumSize(new java.awt.Dimension(530, 380));
+        setMaximumSize(new java.awt.Dimension(640, 426));
+        setMinimumSize(new java.awt.Dimension(640, 426));
         setName("jfDashboard"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(530, 380));
+        setPreferredSize(new java.awt.Dimension(640, 426));
         getContentPane().setLayout(null);
 
         mnuProducts.setText("Produtos");
 
-        itmUpdate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itmUpdate.setText("Alterar");
-        mnuProducts.add(itmUpdate);
+        itmChange.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmChange.setText("Alterar");
+        mnuProducts.add(itmChange);
 
-        itmCreate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itmCreate.setText("Cadastrar");
-        mnuProducts.add(itmCreate);
+        itmRegister.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmRegister.setText("Cadastrar");
+        mnuProducts.add(itmRegister);
 
         itmDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmDelete.setText("Excluir");
@@ -70,36 +70,36 @@ public class Menu extends javax.swing.JFrame {
         itmExit.setText("Sair");
         mnuProducts.add(itmExit);
 
-        jmbPrincipal.add(mnuProducts);
+        jmbMain.add(mnuProducts);
 
-        mnuClients.setText("Clientes");
-        jmbPrincipal.add(mnuClients);
+        mnuCustomers.setText("Clientes");
+        jmbMain.add(mnuCustomers);
 
         mnuEmployee.setText("Funcionários");
-        jmbPrincipal.add(mnuEmployee);
+        jmbMain.add(mnuEmployee);
 
-        mnuAdm.setText("Admin");
+        mnuAdministrative.setText("Admin");
 
         itmChangeUserPass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itmChangeUserPass.setText("Alterar Senha de Usuário");
-        mnuAdm.add(itmChangeUserPass);
+        mnuAdministrative.add(itmChangeUserPass);
 
         itmDeleteUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itmDeleteUser.setText("Excluir Usuário");
-        mnuAdm.add(itmDeleteUser);
+        mnuAdministrative.add(itmDeleteUser);
 
         itmDeleteAllUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itmDeleteAllUser.setText("Excluir Todos os Usuários");
-        mnuAdm.add(itmDeleteAllUser);
+        mnuAdministrative.add(itmDeleteAllUser);
 
-        jmbPrincipal.add(mnuAdm);
+        jmbMain.add(mnuAdministrative);
 
         mnuHelp.setText("Ajuda");
-        jmbPrincipal.add(mnuHelp);
+        jmbMain.add(mnuHelp);
 
-        setJMenuBar(jmbPrincipal);
+        setJMenuBar(jmbMain);
 
-        setSize(new java.awt.Dimension(546, 388));
+        setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -139,18 +139,18 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itmChange;
     private javax.swing.JMenuItem itmChangeUserPass;
-    private javax.swing.JMenuItem itmCreate;
     private javax.swing.JMenuItem itmDelete;
     private javax.swing.JMenuItem itmDeleteAllUser;
     private javax.swing.JMenuItem itmDeleteUser;
     private javax.swing.JMenuItem itmExit;
+    private javax.swing.JMenuItem itmRegister;
     private javax.swing.JMenuItem itmReports;
-    private javax.swing.JMenuItem itmUpdate;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JMenuBar jmbPrincipal;
-    private javax.swing.JMenu mnuAdm;
-    private javax.swing.JMenu mnuClients;
+    private javax.swing.JMenuBar jmbMain;
+    private javax.swing.JMenu mnuAdministrative;
+    private javax.swing.JMenu mnuCustomers;
     private javax.swing.JMenu mnuEmployee;
     private javax.swing.JMenu mnuHelp;
     private javax.swing.JMenu mnuProducts;
