@@ -35,6 +35,7 @@ public class Menu extends javax.swing.JFrame {
         itmChangeUserPass = new javax.swing.JMenuItem();
         itmDeleteUser = new javax.swing.JMenuItem();
         itmDeleteAllUser = new javax.swing.JMenuItem();
+        itmAddNewUser = new javax.swing.JMenuItem();
         mnuHelp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,6 +99,10 @@ public class Menu extends javax.swing.JFrame {
         itmDeleteAllUser.setText("Excluir Todos os Usuários");
         mnuAdministrative.add(itmDeleteAllUser);
 
+        itmAddNewUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmAddNewUser.setText("Adicionar Usuário");
+        mnuAdministrative.add(itmAddNewUser);
+
         jmbMain.add(mnuAdministrative);
 
         mnuHelp.setText("Ajuda");
@@ -110,6 +115,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itmAddNewUser;
     private javax.swing.JMenuItem itmChange;
     private javax.swing.JMenuItem itmChangeUserPass;
     private javax.swing.JMenuItem itmDelete;
