@@ -1,10 +1,6 @@
 
 public class Menu extends javax.swing.JFrame {
 
-    public Menu() {
-        initComponents();
-    }
-
     public Menu(String name, String job) {
         initComponents();
 
