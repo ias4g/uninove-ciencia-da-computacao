@@ -1,16 +1,19 @@
 
 public class Menu extends javax.swing.JFrame {
-    
+
     public Menu() {
         initComponents();
     }
-    
+
     public Menu(String name, String job) {
         initComponents();
-        mnuAdministrative.setVisible(false);
         lblSaudacao.setText("Bem vindo " + name + " - Perfil: " + job);
+
+        if (job.equalsIgnoreCase("Administrador")) {
+            mnuAdministrative.setVisible(true);
+        }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
