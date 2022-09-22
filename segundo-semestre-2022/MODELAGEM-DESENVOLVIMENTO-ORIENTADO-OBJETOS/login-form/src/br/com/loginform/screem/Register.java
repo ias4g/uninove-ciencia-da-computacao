@@ -1,13 +1,14 @@
 package br.com.loginform.screem;
 
-import java.awt.CardLayout;
+import br.com.loginform.utils.Utilities;
 import java.awt.Color;
 
 public class Register extends javax.swing.JFrame {
     
     public Register() {
         initComponents();
-//        jdpPrincipal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        
+        Utilities.insertIcon(this);
     }
     
     @SuppressWarnings("unchecked")
@@ -22,7 +23,6 @@ public class Register extends javax.swing.JFrame {
         setTitle("Tela de cadastro");
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(960, 540));
-        setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(960, 540));
         getContentPane().setLayout(null);
@@ -65,7 +65,7 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(lblGoBack);
         lblGoBack.setBounds(800, 50, 118, 16);
 
-        setSize(new java.awt.Dimension(960, 540));
+        setSize(new java.awt.Dimension(976, 548));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

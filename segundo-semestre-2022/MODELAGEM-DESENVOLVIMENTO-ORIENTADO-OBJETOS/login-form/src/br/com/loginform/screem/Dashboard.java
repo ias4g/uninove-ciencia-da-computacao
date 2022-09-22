@@ -1,13 +1,16 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.utils.Utilities;
 import java.awt.Color;
 
 public class Dashboard extends javax.swing.JFrame {
-
+    
     public Dashboard() {
         initComponents();
+        
+        Utilities.insertIcon(this);
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -26,11 +29,10 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Tela de cadastro");
+        setTitle("Tela Inicial");
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(960, 540));
         setMinimumSize(new java.awt.Dimension(960, 540));
-        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(960, 540));
         setResizable(false);
         setSize(new java.awt.Dimension(960, 540));
@@ -155,7 +157,7 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(jLabel10);
         jLabel10.setBounds(40, 400, 300, 60);
 
-        setSize(new java.awt.Dimension(960, 540));
+        setSize(new java.awt.Dimension(976, 548));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -191,7 +193,7 @@ public class Dashboard extends javax.swing.JFrame {
         new Register().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
-
+    
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -209,7 +211,7 @@ public class Dashboard extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Dashboard().setVisible(true);
