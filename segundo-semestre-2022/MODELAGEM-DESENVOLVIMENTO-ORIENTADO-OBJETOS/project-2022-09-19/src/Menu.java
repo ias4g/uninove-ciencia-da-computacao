@@ -7,6 +7,7 @@ public class Menu extends javax.swing.JFrame {
 
     public Menu(String name, String job) {
         initComponents();
+        mnuAdministrative.setVisible(false);
         lblSaudacao.setText("Bem vindo " + name + " - Perfil: " + job);
 
         if (job.equalsIgnoreCase("Administrador")) {
