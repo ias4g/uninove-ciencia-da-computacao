@@ -10,6 +10,8 @@ public class Menu extends javax.swing.JFrame {
 
         if (job.equalsIgnoreCase("Administrador")) {
             mnuAdministrative.setVisible(true);
+        } else if (job.equalsIgnoreCase("Estagiário")) {
+            itmDelete.setEnabled(false);
         }
     }
 
