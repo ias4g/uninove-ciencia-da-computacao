@@ -10,14 +10,14 @@ public class CreateNewUser extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        txtUser = new javax.swing.JTextField();
+        lblPass = new javax.swing.JLabel();
+        txtPass = new javax.swing.JTextField();
+        lblName = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        lblJob = new javax.swing.JLabel();
+        cmbJob = new javax.swing.JComboBox<>();
+        btnSave = new javax.swing.JButton();
 
         setTitle("User Control");
         getContentPane().setLayout(null);
@@ -27,55 +27,55 @@ public class CreateNewUser extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(20, 20, 70, 40);
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(90, 20, 290, 40);
+        txtUser.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(txtUser);
+        txtUser.setBounds(90, 20, 290, 40);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("Senha");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 80, 70, 40);
+        lblPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblPass.setText("Senha");
+        getContentPane().add(lblPass);
+        lblPass.setBounds(20, 80, 70, 40);
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(90, 80, 290, 40);
+        txtPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(txtPass);
+        txtPass.setBounds(90, 80, 290, 40);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Nome");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 140, 70, 40);
+        lblName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblName.setText("Nome");
+        getContentPane().add(lblName);
+        lblName.setBounds(20, 140, 70, 40);
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(90, 140, 450, 40);
+        txtName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(txtName);
+        txtName.setBounds(90, 140, 450, 40);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setText("Cargo");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 200, 70, 40);
+        lblJob.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblJob.setText("Cargo");
+        getContentPane().add(lblJob);
+        lblJob.setBounds(20, 200, 70, 40);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um cargo", "Analista", "Gerente", "Vendedor", "Estagiário", "Segurança", "Programador", "Administrador" }));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(90, 200, 230, 40);
+        cmbJob.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um cargo", "Analista", "Gerente", "Vendedor", "Estagiário", "Segurança", "Programador", "Administrador" }));
+        getContentPane().add(cmbJob);
+        cmbJob.setBounds(90, 200, 230, 40);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setText("Salvar");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(20, 280, 230, 40);
+        btnSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnSave.setText("Salvar");
+        getContentPane().add(btnSave);
+        btnSave.setBounds(20, 280, 230, 40);
 
         setSize(new java.awt.Dimension(615, 385));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JComboBox<String> cmbJob;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel lblJob;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPass;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPass;
+    private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }
