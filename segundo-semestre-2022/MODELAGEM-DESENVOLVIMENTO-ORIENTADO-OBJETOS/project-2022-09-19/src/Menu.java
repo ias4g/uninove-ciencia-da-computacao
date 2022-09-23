@@ -1,20 +1,20 @@
 
 public class Menu extends javax.swing.JFrame {
-
+    
     public Menu(String name, String job) {
         initComponents();
-
+        
         mnuAdministrative.setVisible(false);
-
+        
         lblSaudacao.setText("Bem vindo " + name + " - Perfil: " + job);
-
+        
         if (job.equalsIgnoreCase("Administrador")) {
             mnuAdministrative.setVisible(true);
         } else if (job.equalsIgnoreCase("Estagiário")) {
             itmDelete.setEnabled(false);
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -120,7 +120,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itmAddNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAddNewUserActionPerformed
-
+        new CreateNewUser().setVisible(true);
         
     }//GEN-LAST:event_itmAddNewUserActionPerformed
 
