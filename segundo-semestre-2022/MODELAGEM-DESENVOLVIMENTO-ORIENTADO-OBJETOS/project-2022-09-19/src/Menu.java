@@ -101,6 +101,11 @@ public class Menu extends javax.swing.JFrame {
 
         itmAddNewUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itmAddNewUser.setText("Adicionar Usuário");
+        itmAddNewUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmAddNewUserActionPerformed(evt);
+            }
+        });
         mnuAdministrative.add(itmAddNewUser);
 
         jmbMain.add(mnuAdministrative);
@@ -113,6 +118,11 @@ public class Menu extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void itmAddNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAddNewUserActionPerformed
+
+        
+    }//GEN-LAST:event_itmAddNewUserActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itmAddNewUser;
