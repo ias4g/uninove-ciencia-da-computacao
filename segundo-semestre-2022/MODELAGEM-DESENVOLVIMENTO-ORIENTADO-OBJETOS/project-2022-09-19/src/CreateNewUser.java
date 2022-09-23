@@ -60,6 +60,7 @@ public class CreateNewUser extends javax.swing.JFrame {
 
         btnSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnSave.setText("Salvar");
+        btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btnSave);
         btnSave.setBounds(20, 280, 230, 40);
 
