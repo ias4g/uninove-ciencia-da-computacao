@@ -12,7 +12,7 @@ public class CreateNewUser extends javax.swing.JFrame {
         setTitle("User Control");
         getContentPane().setLayout(null);
 
-        setSize(new java.awt.Dimension(416, 308));
+        setSize(new java.awt.Dimension(615, 385));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
