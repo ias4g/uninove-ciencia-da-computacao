@@ -16,7 +16,7 @@ public class CreateNewUser extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setTitle("User Control");
         getContentPane().setLayout(null);
@@ -40,7 +40,7 @@ public class CreateNewUser extends javax.swing.JFrame {
         jTextField2.setBounds(90, 80, 290, 40);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Usuário");
+        jLabel3.setText("Nome");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(20, 140, 70, 40);
 
@@ -49,19 +49,20 @@ public class CreateNewUser extends javax.swing.JFrame {
         jTextField3.setBounds(90, 140, 290, 40);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setText("Senha");
+        jLabel4.setText("Cargo");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(20, 200, 70, 40);
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(90, 200, 290, 40);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(90, 200, 290, 40);
 
         setSize(new java.awt.Dimension(615, 385));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -69,6 +70,5 @@ public class CreateNewUser extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
