@@ -66,7 +66,7 @@ public class CreateNewUser extends javax.swing.JFrame {
         btnSave.setText("Salvar");
         btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btnSave);
-        btnSave.setBounds(20, 280, 230, 40);
+        btnSave.setBounds(20, 360, 230, 40);
 
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
