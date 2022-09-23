@@ -13,6 +13,10 @@ public class CreateNewUser extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
 
         setTitle("User Control");
         getContentPane().setLayout(null);
@@ -35,6 +39,24 @@ public class CreateNewUser extends javax.swing.JFrame {
         getContentPane().add(jTextField2);
         jTextField2.setBounds(90, 80, 290, 40);
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setText("Usuário");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(20, 140, 70, 40);
+
+        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(90, 140, 290, 40);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setText("Senha");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(20, 200, 70, 40);
+
+        jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(90, 200, 290, 40);
+
         setSize(new java.awt.Dimension(615, 385));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -42,7 +64,11 @@ public class CreateNewUser extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
