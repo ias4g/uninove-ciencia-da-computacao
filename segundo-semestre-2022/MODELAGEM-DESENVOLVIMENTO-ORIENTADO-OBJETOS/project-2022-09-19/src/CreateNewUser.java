@@ -20,6 +20,10 @@ public class CreateNewUser extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
 
         setTitle("User Control");
+        setMaximizedBounds(new java.awt.Rectangle(640, 426, 426, 426));
+        setMaximumSize(new java.awt.Dimension(640, 426));
+        setMinimumSize(new java.awt.Dimension(640, 426));
+        setPreferredSize(new java.awt.Dimension(640, 426));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -64,7 +68,7 @@ public class CreateNewUser extends javax.swing.JFrame {
         getContentPane().add(btnSave);
         btnSave.setBounds(20, 280, 230, 40);
 
-        setSize(new java.awt.Dimension(615, 385));
+        setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
