@@ -17,6 +17,7 @@ public class CreateNewUser extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
 
         setTitle("User Control");
         getContentPane().setLayout(null);
@@ -46,7 +47,7 @@ public class CreateNewUser extends javax.swing.JFrame {
 
         jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(90, 140, 290, 40);
+        jTextField3.setBounds(90, 140, 450, 40);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Cargo");
@@ -55,13 +56,19 @@ public class CreateNewUser extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Analista", "Gerente", "Vendedor", "Estagiário", "Segurança", "Programador", "Administrador" }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(90, 200, 290, 40);
+        jComboBox1.setBounds(90, 200, 230, 40);
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setText("Salvar");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(20, 280, 230, 40);
 
         setSize(new java.awt.Dimension(615, 385));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
