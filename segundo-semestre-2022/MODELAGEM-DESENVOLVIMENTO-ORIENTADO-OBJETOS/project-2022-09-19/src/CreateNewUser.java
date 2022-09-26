@@ -1,4 +1,11 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 public class CreateNewUser extends javax.swing.JFrame {
 
     public CreateNewUser() {
@@ -9,7 +16,7 @@ public class CreateNewUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblUser = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         lblPass = new javax.swing.JLabel();
         txtPass = new javax.swing.JTextField();
@@ -18,18 +25,21 @@ public class CreateNewUser extends javax.swing.JFrame {
         lblJob = new javax.swing.JLabel();
         cmbJob = new javax.swing.JComboBox<>();
         btnSave = new javax.swing.JButton();
+        lblLastname = new javax.swing.JLabel();
+        txtLastname = new javax.swing.JTextField();
+        lblEmail = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
 
         setTitle("User Control");
-        setMaximizedBounds(new java.awt.Rectangle(640, 426, 426, 426));
         setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
         setPreferredSize(new java.awt.Dimension(640, 426));
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Usuário");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 20, 70, 40);
+        lblUser.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblUser.setText("Usuário");
+        getContentPane().add(lblUser);
+        lblUser.setBounds(20, 20, 70, 40);
 
         txtUser.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(txtUser);
@@ -51,34 +61,109 @@ public class CreateNewUser extends javax.swing.JFrame {
 
         txtName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(txtName);
-        txtName.setBounds(90, 140, 450, 40);
+        txtName.setBounds(90, 140, 160, 40);
 
         lblJob.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblJob.setText("Cargo");
         getContentPane().add(lblJob);
-        lblJob.setBounds(20, 200, 70, 40);
+        lblJob.setBounds(20, 260, 70, 40);
 
         cmbJob.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um cargo", "Analista", "Gerente", "Vendedor", "Estagiário", "Segurança", "Programador", "Administrador" }));
         getContentPane().add(cmbJob);
-        cmbJob.setBounds(90, 200, 230, 40);
+        cmbJob.setBounds(90, 260, 230, 40);
 
         btnSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnSave.setText("Salvar");
         btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSave);
-        btnSave.setBounds(20, 360, 230, 40);
+        btnSave.setBounds(20, 320, 230, 40);
+
+        lblLastname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblLastname.setText("Sobrenome");
+        getContentPane().add(lblLastname);
+        lblLastname.setBounds(290, 140, 120, 40);
+
+        txtLastname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(txtLastname);
+        txtLastname.setBounds(390, 140, 210, 40);
+
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblEmail.setText("E-mail");
+        getContentPane().add(lblEmail);
+        lblEmail.setBounds(20, 200, 260, 40);
+
+        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(txtEmail);
+        txtEmail.setBounds(90, 200, 350, 40);
 
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        String user;
+        String pass;
+        String name;
+        String lastname;
+        String email;
+        String job;
+        Connection conn;
+
+        user = txtUser.getText();
+        pass = txtPass.getText();
+        name = txtName.getText();
+        lastname = txtLastname.getText();
+        email = txtEmail.getText();
+        job = cmbJob.getSelectedItem().toString();
+
+//        System.out.println(user + pass + name + job);
+        try {
+            //2 - Conectar no banco de dados sistemabd;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+
+            //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
+            PreparedStatement st = conn.prepareStatement("INSERT INTO tbusers (user, password, name, lastname, email, job) VALUES (?, ?, ?, ?, ?, ?)");
+
+            st.setString(1, user);
+            st.setString(2, pass);
+            st.setString(3, name);
+            st.setString(4, lastname);
+            st.setString(5, email);
+            st.setString(6, job);
+            ResultSet resultado = st.executeUpdate();
+
+            //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
+            if (resultado.next()) {
+                JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
+            }
+
+            //5 - Desconectar.
+            conn.close();
+
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Driver não está na library");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Você errou nos dados da conexão com o banco de dados" + ex.getMessage());
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmbJob;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblJob;
+    private javax.swing.JLabel lblLastname;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPass;
+    private javax.swing.JLabel lblUser;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtLastname;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPass;
     private javax.swing.JTextField txtUser;

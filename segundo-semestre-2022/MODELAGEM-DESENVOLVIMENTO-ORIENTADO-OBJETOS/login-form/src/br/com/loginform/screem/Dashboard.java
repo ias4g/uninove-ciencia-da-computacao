@@ -1,100 +1,75 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.utils.FontsLoad;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
+import java.awt.Font;
 
 public class Dashboard extends javax.swing.JFrame {
-    
+
     public Dashboard() {
+        setBackground(new Color(0, 0, 0));
         initComponents();
-        
+
         Utilities.insertIcon(this);
+
+        final Font UBUNTU_BOLD_32 = new FontsLoad().loadFonts("/br/com/loginform/fonts/ubuntubold.ttf", Font.BOLD, 32);
+        final Font PT_SANS_REGULAR_16 = new FontsLoad().loadFonts("/br/com/loginform/fonts/ptsansregular.ttf", Font.PLAIN, 16);
+        final Font PT_SANS_REGULAR_12 = new FontsLoad().loadFonts("/br/com/loginform/fonts/ptsansregular.ttf", Font.PLAIN, 12);
+
+        lblDescriptionHeader.setFont(PT_SANS_REGULAR_12);
+        lblSeu.setFont(UBUNTU_BOLD_32);
+        lblDe.setFont(UBUNTU_BOLD_32);
+        lblResiduo.setFont(UBUNTU_BOLD_32);
+
+        lblAjudamos.setFont(PT_SANS_REGULAR_16);
+        lblColeta.setFont(PT_SANS_REGULAR_16);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jpHeader = new javax.swing.JPanel();
+        lblLogoHeader = new javax.swing.JLabel();
+        lblDescriptionHeader = new javax.swing.JLabel();
+        lblClose = new javax.swing.JLabel();
+        lblMinimize = new javax.swing.JLabel();
+        jpSeparator = new javax.swing.JPanel();
+        lblLogo = new javax.swing.JLabel();
+        lblResiduo = new javax.swing.JLabel();
+        lblSeu = new javax.swing.JLabel();
+        lblDe = new javax.swing.JLabel();
+        lblColeta = new javax.swing.JLabel();
+        lblAjudamos = new javax.swing.JLabel();
+        jpButton = new br.com.loginform.components.PanelBorder();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        lblClose = new javax.swing.JLabel();
-        lblMaximize = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial");
-        setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(960, 540));
-        setMinimumSize(new java.awt.Dimension(960, 540));
-        setPreferredSize(new java.awt.Dimension(960, 540));
+        setBackground(new java.awt.Color(244, 244, 244));
+        setMaximumSize(new java.awt.Dimension(1024, 590));
+        setMinimumSize(new java.awt.Dimension(1024, 590));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1024, 590));
         setResizable(false);
-        setSize(new java.awt.Dimension(960, 540));
+        setSize(new java.awt.Dimension(1024, 590));
         getContentPane().setLayout(null);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo-1.png"))); // NOI18N
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 80, 182, 54);
+        jpHeader.setLayout(null);
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/background.png"))); // NOI18N
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(330, 90, 719, 540);
+        lblLogoHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/logo-header.png"))); // NOI18N
+        jpHeader.add(lblLogoHeader);
+        lblLogoHeader.setBounds(2, 2, 13, 16);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 28)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(50, 33, 83));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("coleta de resíduos");
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 205, 247, 33);
+        lblDescriptionHeader.setText("Ecoleta | Tela Inicial");
+        jpHeader.add(lblDescriptionHeader);
+        lblDescriptionHeader.setBounds(20, 2, 140, 16);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 28)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(50, 33, 83));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Seu marketplace de");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 170, 268, 33);
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(108, 124, 128));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("forma eficiente");
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(50, 330, 157, 28);
-
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(108, 124, 128));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Ajudamos pessoas a encontrarem");
-        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(50, 270, 365, 28);
-
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(108, 124, 128));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("pontos de coleta de");
-        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 300, 212, 28);
-
-        lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/close-32x16.png"))); // NOI18N
-        lblClose.setToolTipText("Fechar");
+        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/close-header.png"))); // NOI18N
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblClose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblClose.setOpaque(true);
         lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,130 +82,127 @@ public class Dashboard extends javax.swing.JFrame {
                 lblCloseMouseExited(evt);
             }
         });
-        getContentPane().add(lblClose);
-        lblClose.setBounds(912, 0, 48, 24);
+        jpHeader.add(lblClose);
+        lblClose.setBounds(984, 0, 40, 20);
 
-        lblMaximize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMaximize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/maximize-32x16.png"))); // NOI18N
-        lblMaximize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblMaximize.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblMaximize.setOpaque(true);
-        lblMaximize.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblMaximizeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblMaximizeMouseExited(evt);
-            }
-        });
-        getContentPane().add(lblMaximize);
-        lblMaximize.setBounds(864, 0, 48, 24);
+        lblMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/minimize-header.png"))); // NOI18N
+        lblMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpHeader.add(lblMinimize);
+        lblMinimize.setBounds(944, 0, 40, 20);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel8.setText("Epoint");
-        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(24, 0, 50, 24);
+        jpSeparator.setBackground(new java.awt.Color(204, 204, 204));
+        jpHeader.add(jpSeparator);
+        jpSeparator.setBounds(0, 20, 1024, 2);
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo-2.png"))); // NOI18N
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(0, 0, 24, 24);
+        getContentPane().add(jpHeader);
+        jpHeader.setBounds(0, 0, 1024, 24);
 
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/botao-entrar-300x60-1.png"))); // NOI18N
-        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/logo.png"))); // NOI18N
+        getContentPane().add(lblLogo);
+        lblLogo.setBounds(80, 80, 236, 64);
+
+        lblResiduo.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        lblResiduo.setText("resíduos");
+        getContentPane().add(lblResiduo);
+        lblResiduo.setBounds(80, 280, 320, 43);
+
+        lblSeu.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        lblSeu.setText("Seu marketplace");
+        getContentPane().add(lblSeu);
+        lblSeu.setBounds(80, 200, 320, 43);
+
+        lblDe.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        lblDe.setText("de coleta de");
+        getContentPane().add(lblDe);
+        lblDe.setBounds(80, 240, 320, 43);
+
+        lblColeta.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblColeta.setText("coleta de forma eficiente");
+        getContentPane().add(lblColeta);
+        lblColeta.setBounds(80, 380, 320, 16);
+
+        lblAjudamos.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblAjudamos.setText("Ajudamos pessoas a encontrarem pontos de");
+        getContentPane().add(lblAjudamos);
+        lblAjudamos.setBounds(80, 350, 320, 22);
+
+        jpButton.setBackground(new java.awt.Color(52, 203, 121));
+        jpButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+                jpButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel10MouseEntered(evt);
+                jpButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel10MouseExited(evt);
+                jpButtonMouseExited(evt);
             }
         });
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(40, 400, 300, 60);
+        jpButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        setSize(new java.awt.Dimension(976, 548));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/button-icon.png"))); // NOI18N
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpButton.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Cadastre um ponto de coleta");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpButton.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 290, 70));
+
+        getContentPane().add(jpButton);
+        jpButton.setBounds(80, 430, 360, 72);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/image-header.png"))); // NOI18N
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(543, 108, 392, 434);
+
+        setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_lblCloseMouseClicked
-
     private void lblCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseEntered
-        lblClose.setBackground(Color.RED);
+        lblClose.setBackground(Color.red);
     }//GEN-LAST:event_lblCloseMouseEntered
 
     private void lblCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseExited
         lblClose.setBackground(null);
     }//GEN-LAST:event_lblCloseMouseExited
 
-    private void lblMaximizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMaximizeMouseEntered
-        lblMaximize.setBackground(Color.LIGHT_GRAY);
-    }//GEN-LAST:event_lblMaximizeMouseEntered
+    private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lblCloseMouseClicked
 
-    private void lblMaximizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMaximizeMouseExited
-        lblMaximize.setBackground(null);
-    }//GEN-LAST:event_lblMaximizeMouseExited
+    private void jpButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpButtonMouseEntered
+        jpButton.setBackground(new Color(52, 180, 121));        // TODO add your handling code here:
+    }//GEN-LAST:event_jpButtonMouseEntered
 
-    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/botao-entrar-300x60-op-30.png")));
-    }//GEN-LAST:event_jLabel10MouseEntered
+    private void jpButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpButtonMouseExited
+        jpButton.setBackground(new Color(52, 203, 121));
+    }//GEN-LAST:event_jpButtonMouseExited
 
-    private void jLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseExited
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/botao-entrar-300x60-1.png")));
-    }//GEN-LAST:event_jLabel10MouseExited
-
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        new Register().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel10MouseClicked
-    
-    public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dashboard().setVisible(true);
-            }
-        });
-    }
+    private void jpButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpButtonMouseClicked
+//        new Register().setVisible(true);
+    }//GEN-LAST:event_jpButtonMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private br.com.loginform.components.PanelBorder jpButton;
+    private javax.swing.JPanel jpHeader;
+    private javax.swing.JPanel jpSeparator;
+    private javax.swing.JLabel lblAjudamos;
     private javax.swing.JLabel lblClose;
-    private javax.swing.JLabel lblMaximize;
+    private javax.swing.JLabel lblColeta;
+    private javax.swing.JLabel lblDe;
+    private javax.swing.JLabel lblDescriptionHeader;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblLogoHeader;
+    private javax.swing.JLabel lblMinimize;
+    private javax.swing.JLabel lblResiduo;
+    private javax.swing.JLabel lblSeu;
     // End of variables declaration//GEN-END:variables
 }
