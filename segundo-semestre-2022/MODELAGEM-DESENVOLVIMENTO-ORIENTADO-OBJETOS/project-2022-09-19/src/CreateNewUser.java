@@ -2,7 +2,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -112,6 +111,8 @@ public class CreateNewUser extends javax.swing.JFrame {
         String lastname;
         String email;
         String job;
+
+        int rs;
         Connection conn;
 
         user = txtUser.getText();
@@ -121,13 +122,10 @@ public class CreateNewUser extends javax.swing.JFrame {
         email = txtEmail.getText();
         job = cmbJob.getSelectedItem().toString();
 
-//        System.out.println(user + pass + name + job);
         try {
-            //2 - Conectar no banco de dados sistemabd;
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
-            //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
             PreparedStatement st = conn.prepareStatement("INSERT INTO tbusers (user, password, name, lastname, email, job) VALUES (?, ?, ?, ?, ?, ?)");
 
             st.setString(1, user);
@@ -136,14 +134,13 @@ public class CreateNewUser extends javax.swing.JFrame {
             st.setString(4, lastname);
             st.setString(5, email);
             st.setString(6, job);
-            ResultSet resultado = st.executeUpdate();
 
-            //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
-            if (resultado.next()) {
+            rs = st.executeUpdate();
+
+            if (rs > 0) {
                 JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
             }
 
-            //5 - Desconectar.
             conn.close();
 
         } catch (ClassNotFoundException ex) {
