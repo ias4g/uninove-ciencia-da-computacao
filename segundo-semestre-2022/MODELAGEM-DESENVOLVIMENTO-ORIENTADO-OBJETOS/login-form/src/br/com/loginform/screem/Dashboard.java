@@ -176,7 +176,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCloseMouseClicked
 
     private void jpButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpButtonMouseEntered
-        jpButton.setBackground(new Color(52, 180, 121));        // TODO add your handling code here:
+        jpButton.setBackground(new Color(52, 180, 121));
     }//GEN-LAST:event_jpButtonMouseEntered
 
     private void jpButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpButtonMouseExited
