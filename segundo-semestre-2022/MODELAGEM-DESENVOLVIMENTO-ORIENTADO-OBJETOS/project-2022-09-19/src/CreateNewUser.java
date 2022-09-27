@@ -6,11 +6,11 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class CreateNewUser extends javax.swing.JFrame {
-
+    
     public CreateNewUser() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -111,38 +111,45 @@ public class CreateNewUser extends javax.swing.JFrame {
         String lastname;
         String email;
         String job;
-
+        
         int rs;
         Connection conn;
-
+        
         user = txtUser.getText();
         pass = txtPass.getText();
         name = txtName.getText();
         lastname = txtLastname.getText();
         email = txtEmail.getText();
         job = cmbJob.getSelectedItem().toString();
-
+        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
-
+            
             PreparedStatement st = conn.prepareStatement("INSERT INTO tbusers (user, password, name, lastname, email, job) VALUES (?, ?, ?, ?, ?, ?)");
-
+            
             st.setString(1, user);
             st.setString(2, pass);
             st.setString(3, name);
             st.setString(4, lastname);
             st.setString(5, email);
             st.setString(6, job);
-
+            
             rs = st.executeUpdate();
-
+            
             if (rs > 0) {
                 JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
             }
-
+            
+            txtUser.setText(null);
+            txtPass.setText(null);
+            txtName.setText(null);
+            txtLastname.setText(null);
+            txtEmail.setText(null);
+            cmbJob.setSelectedIndex(0);
+            
             conn.close();
-
+            
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         } catch (SQLException ex) {
