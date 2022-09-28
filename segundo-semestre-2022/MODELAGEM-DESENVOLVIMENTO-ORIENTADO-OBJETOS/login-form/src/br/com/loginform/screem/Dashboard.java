@@ -126,7 +126,6 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblAjudamos);
         lblAjudamos.setBounds(80, 350, 320, 22);
 
-        jpButton.setBackground(new java.awt.Color(52, 203, 121));
         jpButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jpButtonMouseClicked(evt);
