@@ -15,6 +15,7 @@ public class Register extends javax.swing.JDialog {
         setTitle("Cadastro de pontos de coletas");
         setMaximumSize(new java.awt.Dimension(1024, 590));
         setMinimumSize(new java.awt.Dimension(1024, 590));
+        setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(1024, 590));
 
@@ -29,7 +30,7 @@ public class Register extends javax.swing.JDialog {
             .addGap(0, 590, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(1040, 598));
+        setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
