@@ -183,7 +183,8 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jpButtonMouseExited
 
     private void jpButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpButtonMouseClicked
-//        new Register().setVisible(true);
+        Register dialog = new Register(new javax.swing.JFrame(), true);
+        dialog.setVisible(true);
     }//GEN-LAST:event_jpButtonMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
