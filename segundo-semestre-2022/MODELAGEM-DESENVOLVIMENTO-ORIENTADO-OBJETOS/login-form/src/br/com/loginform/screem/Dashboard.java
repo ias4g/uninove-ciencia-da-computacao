@@ -30,12 +30,6 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpHeader = new javax.swing.JPanel();
-        lblLogoHeader = new javax.swing.JLabel();
-        lblDescriptionHeader = new javax.swing.JLabel();
-        lblClose = new javax.swing.JLabel();
-        lblMinimize = new javax.swing.JLabel();
-        jpSeparator = new javax.swing.JPanel();
         lblLogo = new javax.swing.JLabel();
         lblResiduo = new javax.swing.JLabel();
         lblSeu = new javax.swing.JLabel();
@@ -46,6 +40,10 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        lblClose = new javax.swing.JLabel();
+        lblMinimize = new javax.swing.JLabel();
+        lblDescriptionHeader = new javax.swing.JLabel();
+        lblLogoHeader = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial");
@@ -57,45 +55,6 @@ public class Dashboard extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1024, 590));
         getContentPane().setLayout(null);
-
-        jpHeader.setLayout(null);
-
-        lblLogoHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/logo-header.png"))); // NOI18N
-        jpHeader.add(lblLogoHeader);
-        lblLogoHeader.setBounds(2, 2, 13, 16);
-
-        lblDescriptionHeader.setText("Ecoleta | Tela Inicial");
-        jpHeader.add(lblDescriptionHeader);
-        lblDescriptionHeader.setBounds(20, 2, 140, 16);
-
-        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/close-header.png"))); // NOI18N
-        lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblClose.setOpaque(true);
-        lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCloseMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblCloseMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblCloseMouseExited(evt);
-            }
-        });
-        jpHeader.add(lblClose);
-        lblClose.setBounds(984, 0, 40, 20);
-
-        lblMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/minimize-header.png"))); // NOI18N
-        lblMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpHeader.add(lblMinimize);
-        lblMinimize.setBounds(944, 0, 40, 20);
-
-        jpSeparator.setBackground(new java.awt.Color(204, 204, 204));
-        jpHeader.add(jpSeparator);
-        jpSeparator.setBounds(0, 20, 1024, 2);
-
-        getContentPane().add(jpHeader);
-        jpHeader.setBounds(0, 0, 1024, 24);
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
@@ -158,6 +117,36 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(543, 108, 392, 434);
 
+        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/close-header.png"))); // NOI18N
+        lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblClose.setOpaque(true);
+        lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCloseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblCloseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblCloseMouseExited(evt);
+            }
+        });
+        getContentPane().add(lblClose);
+        lblClose.setBounds(980, 0, 40, 20);
+
+        lblMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/minimize-header.png"))); // NOI18N
+        lblMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(lblMinimize);
+        lblMinimize.setBounds(900, 40, 40, 20);
+
+        lblDescriptionHeader.setText("Ecoleta | Tela Inicial");
+        getContentPane().add(lblDescriptionHeader);
+        lblDescriptionHeader.setBounds(30, 5, 140, 16);
+
+        lblLogoHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/main/logo-header.png"))); // NOI18N
+        getContentPane().add(lblLogoHeader);
+        lblLogoHeader.setBounds(5, 5, 13, 16);
+
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -192,8 +181,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private br.com.loginform.components.JPanelButton jpButton;
-    private javax.swing.JPanel jpHeader;
-    private javax.swing.JPanel jpSeparator;
     private javax.swing.JLabel lblAjudamos;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblColeta;
