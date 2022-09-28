@@ -27,10 +27,8 @@ public class SplashScreem extends javax.swing.JFrame {
             @Override
             public void run() {
                 for (int i = 1; i <= 100; i++) {
-                    Random r = new Random();
-
                     try {
-                        sleep(r.nextInt(100, 300));
+                        sleep(20);
 
                         lblPercent.setText(i + "%");
 
