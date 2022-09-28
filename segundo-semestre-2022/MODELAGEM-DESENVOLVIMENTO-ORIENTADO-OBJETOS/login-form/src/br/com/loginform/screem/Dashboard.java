@@ -42,7 +42,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblDe = new javax.swing.JLabel();
         lblColeta = new javax.swing.JLabel();
         lblAjudamos = new javax.swing.JLabel();
-        jpButton = new br.com.loginform.components.PanelBorder();
+        jpButton = new br.com.loginform.components.JPanelButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -191,7 +191,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private br.com.loginform.components.PanelBorder jpButton;
+    private br.com.loginform.components.JPanelButton jpButton;
     private javax.swing.JPanel jpHeader;
     private javax.swing.JPanel jpSeparator;
     private javax.swing.JLabel lblAjudamos;
