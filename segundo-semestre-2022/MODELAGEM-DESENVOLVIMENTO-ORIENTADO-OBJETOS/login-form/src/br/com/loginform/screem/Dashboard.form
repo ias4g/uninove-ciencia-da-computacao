@@ -206,7 +206,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Container class="br.com.loginform.components.PanelBorder" name="jpButton">
+    <Container class="br.com.loginform.components.JPanelButton" name="jpButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="79" green="cb" red="34" type="rgb"/>
