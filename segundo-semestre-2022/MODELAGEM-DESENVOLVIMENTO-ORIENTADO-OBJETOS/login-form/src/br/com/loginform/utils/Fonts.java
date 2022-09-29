@@ -6,6 +6,10 @@ import java.io.IOException;
 
 public class Fonts {
 
+    public Fonts() {
+
+    }
+
     public Font getPT_SANS_BOLD_12() {
         return PT_SANS_BOLD_12;
     }
@@ -26,12 +30,12 @@ public class Fonts {
         return PT_SANS_REGULAR_24;
     }
 
-    public Font getUBUNTU_BOLD_32() {
-        return UBUNTU_BOLD_32;
-    }
-
     public Font getUBUNTU_BOLD_24() {
         return UBUNTU_BOLD_24;
+    }
+
+    public Font getUBUNTU_BOLD_32() {
+        return UBUNTU_BOLD_32;
     }
 
     private final Font PT_SANS_BOLD_12 = loadFonts("/br/com/loginform/fonts/pt-sans-bold.ttf", Font.BOLD, 12);
