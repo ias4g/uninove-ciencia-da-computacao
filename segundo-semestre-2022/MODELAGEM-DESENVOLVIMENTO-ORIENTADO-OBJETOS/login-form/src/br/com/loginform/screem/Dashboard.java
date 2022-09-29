@@ -29,6 +29,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblFaviconDescription = new javax.swing.JLabel();
         lblClose = new javax.swing.JLabel();
         lblMinimize = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial");
@@ -57,6 +58,10 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblMinimize);
         lblMinimize.setBounds(944, 0, 40, 20);
 
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo.png"))); // NOI18N
+        getContentPane().add(lblLogo);
+        lblLogo.setBounds(80, 80, 112, 32);
+
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -65,6 +70,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
     // End of variables declaration//GEN-END:variables
 }
