@@ -3,6 +3,7 @@ package br.com.loginform.screem;
 import br.com.loginform.utils.Fonts;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
+import static java.lang.Thread.sleep;
 
 public class Dashboard extends javax.swing.JFrame {
 
@@ -18,7 +19,15 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     private void setFonts() {
-        lblFaviconDescription.setFont(new Fonts().getPT_SANS_BOLD_12());
+
+        new Thread() {
+            @Override
+            public void run() {
+                lblFaviconDescription.setFont(new Fonts().getPT_SANS_BOLD_12());
+                lblTitle.setFont(new Fonts().getUBUNTU_BOLD_32());
+            }
+        }.start();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -30,7 +39,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblClose = new javax.swing.JLabel();
         lblMinimize = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial");
@@ -63,21 +72,23 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblLogo);
         lblLogo.setBounds(80, 80, 112, 32);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        jLabel1.setText("<html>Seu marketplace<br>de coleta de<br>resíduos</html>");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(80, 164, 247, 129);
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        lblTitle.setText("<html>Seu marketplace<br>de coleta de<br>resíduos</html>");
+        lblTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblTitle.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        getContentPane().add(lblTitle);
+        lblTitle.setBounds(80, 164, 310, 160);
 
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
+    private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }
