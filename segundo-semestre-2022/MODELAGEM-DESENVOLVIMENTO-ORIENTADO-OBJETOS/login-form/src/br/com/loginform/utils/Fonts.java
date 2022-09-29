@@ -50,11 +50,11 @@ public class Fonts {
 
     private Font loadFonts(String fontpath, int fonttype, int fontsize) {
 
-        Font minhaFonte = null;
+        Font myFont = null;
 
         try {
 
-            minhaFonte = Font.createFont(
+            myFont = Font.createFont(
                     Font.TRUETYPE_FONT,
                     getClass().getResourceAsStream(fontpath)
             ).deriveFont(fonttype, fontsize);
@@ -63,6 +63,6 @@ public class Fonts {
             System.out.println(ex);
         }
 
-        return minhaFonte;
+        return myFont;
     }
 }
