@@ -156,7 +156,7 @@ public class CreateNewUser extends javax.swing.JFrame {
             if (ex.getErrorCode() == 1062) {
                 JOptionPane.showMessageDialog(null, "Usuário já cadastrado.");
             } else {
-                JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n" + ex.getMessage() + "\n" + ex.getErrorCode());
+                JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n Message: " + ex.getMessage() + "\n Código do erro: " + ex.getErrorCode());
             }
         }
     }//GEN-LAST:event_btnSaveActionPerformed
