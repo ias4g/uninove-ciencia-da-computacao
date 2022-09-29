@@ -4,7 +4,7 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.io.IOException;
 
-public class Utils {
+public class Fonts {
 
     public Font getPT_SANS_BOLD_12() {
         return PT_SANS_BOLD_12;
