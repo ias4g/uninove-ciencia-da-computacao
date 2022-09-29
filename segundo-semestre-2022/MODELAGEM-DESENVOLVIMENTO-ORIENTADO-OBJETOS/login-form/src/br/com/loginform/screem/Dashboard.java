@@ -6,10 +6,12 @@ import java.awt.Color;
 public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {
-        setBackground(new Color(0, 0, 0));
         initComponents();
+    }
 
+    public void customComponents() {
         Utilities.insertIconFrm(this);
+        setBackground(new Color(0, 0, 0));
     }
 
     @SuppressWarnings("unchecked")
