@@ -1,6 +1,5 @@
 package br.com.loginform.screem;
 
-import br.com.loginform.utils.FontsLoad;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
 
