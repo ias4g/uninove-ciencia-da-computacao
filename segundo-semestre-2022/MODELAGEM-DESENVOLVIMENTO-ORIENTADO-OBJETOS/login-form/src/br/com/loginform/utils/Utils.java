@@ -6,6 +6,16 @@ import java.io.IOException;
 
 public class Utils {
 
+    private Font PT_SANS_BOLD_12;
+    private Font PT_SANS_BOLD_16;
+
+    private Font PT_SANS_REGULAR_12;
+    private Font PT_SANS_REGULAR_16;
+    private Font PT_SANS_REGULAR_24;
+
+    private Font UBUNTU_BOLD_32;
+    private Font UBUNTU_BOLD_24;
+
     private Font loadFonts(String fontpath, int fonttype, int fontsize) {
 
         Font minhaFonte = null;
