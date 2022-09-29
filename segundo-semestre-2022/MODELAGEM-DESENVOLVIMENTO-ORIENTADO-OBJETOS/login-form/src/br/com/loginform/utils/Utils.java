@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Utils {
 
-    public Font loadFonts(String fontpath, int fonttype, int fontsize) {
+    private Font loadFonts(String fontpath, int fonttype, int fontsize) {
 
         Font minhaFonte = null;
 
