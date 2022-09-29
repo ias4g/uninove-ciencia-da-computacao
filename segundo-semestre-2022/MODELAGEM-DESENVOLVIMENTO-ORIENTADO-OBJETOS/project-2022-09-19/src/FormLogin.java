@@ -32,12 +32,22 @@ public class FormLogin extends javax.swing.JFrame {
 
         txtUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtUser.setPreferredSize(new java.awt.Dimension(200, 38));
+        txtUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUserKeyPressed(evt);
+            }
+        });
 
         lblPass.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblPass.setText("Senha");
 
         txtPass.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtPass.setPreferredSize(new java.awt.Dimension(200, 38));
+        txtPass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPassKeyPressed(evt);
+            }
+        });
 
         btnEnter.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEnter.setText("Entrar");
@@ -89,6 +99,22 @@ public class FormLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
+        enterSystem();
+    }//GEN-LAST:event_btnEnterActionPerformed
+
+    private void txtUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            txtPass.requestFocus();
+        }
+    }//GEN-LAST:event_txtUserKeyPressed
+
+    private void txtPassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            btnEnter.doClick();
+        }
+    }//GEN-LAST:event_txtPassKeyPressed
+
+    private void enterSystem() {
         String usuario, senha;
         usuario = txtUser.getText();
         senha = txtPass.getText();
@@ -144,8 +170,7 @@ public class FormLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Você errou nos dados da conexão com o banco de dados");
             }
         }
-
-    }//GEN-LAST:event_btnEnterActionPerformed
+    }
 
     public static void main(String args[]) {
 
