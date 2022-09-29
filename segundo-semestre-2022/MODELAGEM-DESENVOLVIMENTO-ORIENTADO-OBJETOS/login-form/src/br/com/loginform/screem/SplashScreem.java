@@ -1,9 +1,8 @@
 package br.com.loginform.screem;
 
-import br.com.loginform.utils.FontsLoad;
+import br.com.loginform.utils.Fonts;
 import java.awt.Font;
 
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -18,11 +17,8 @@ public class SplashScreem extends javax.swing.JFrame {
 
     private void customizingComponents() {
 
-        final Font PT_SANS_REGULAR_16 = new FontsLoad().loadFonts("/br/com/loginform/fonts/ptsansregular.ttf", Font.PLAIN, 16);
-
-        lblLoading.setFont(PT_SANS_REGULAR_16);
-        lblPercent.setFont(PT_SANS_REGULAR_16);
-
+//        lblLoading.setFont(Fonts.get);
+//        lblPercent.setFont(PT_SANS_REGULAR_16);
         new Thread() {
             @Override
             public void run() {
