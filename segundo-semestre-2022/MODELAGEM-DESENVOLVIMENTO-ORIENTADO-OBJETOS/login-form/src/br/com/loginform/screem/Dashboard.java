@@ -13,7 +13,7 @@ public class Dashboard extends javax.swing.JFrame {
 
 //        lblFaviconDescription.setFont(new Fonts().getPT_SANS_BOLD_12());
 //        lblTitle.setFont(new Fonts().getUBUNTU_BOLD_32());
-        Font UBUNTU_BOLD_32 = new Fonts().loadFonts("/br/com/loginform/fonts/ubuntu-bold.ttf", Font.BOLD, 32);
+        Font UBUNTU_BOLD_32 = new Fonts().getPT_SANS_BOLD_12();
         lblSubTitle.setFont(UBUNTU_BOLD_32);
     }
 
