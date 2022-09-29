@@ -9,7 +9,7 @@ public class Dashboard extends javax.swing.JFrame {
         setBackground(new Color(0, 0, 0));
         initComponents();
 
-        Utilities.insertIcon(this);
+        Utilities.insertIconFrm(this);
     }
 
     @SuppressWarnings("unchecked")
