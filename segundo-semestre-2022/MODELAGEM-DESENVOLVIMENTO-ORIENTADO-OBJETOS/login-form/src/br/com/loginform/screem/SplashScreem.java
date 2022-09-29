@@ -1,7 +1,6 @@
 package br.com.loginform.screem;
 
 import br.com.loginform.utils.Fonts;
-import java.awt.Font;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
