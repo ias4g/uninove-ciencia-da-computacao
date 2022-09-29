@@ -17,8 +17,9 @@ public class SplashScreem extends javax.swing.JFrame {
 
     private void customizingComponents() {
 
-//        lblLoading.setFont(Fonts.get);
-//        lblPercent.setFont(PT_SANS_REGULAR_16);
+        lblLoading.setFont(new Fonts().getPT_SANS_REGULAR_16());
+        lblPercent.setFont(new Fonts().getPT_SANS_REGULAR_16());
+
         new Thread() {
             @Override
             public void run() {
