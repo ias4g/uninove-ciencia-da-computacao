@@ -90,6 +90,9 @@
           <Dimension value="[200, 38]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtUserKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPass">
       <Properties>
@@ -108,6 +111,9 @@
           <Dimension value="[200, 38]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPassKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnEnter">
       <Properties>
