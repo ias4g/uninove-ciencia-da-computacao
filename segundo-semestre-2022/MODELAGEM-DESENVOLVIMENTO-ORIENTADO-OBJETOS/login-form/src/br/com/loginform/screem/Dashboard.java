@@ -3,31 +3,23 @@ package br.com.loginform.screem;
 import br.com.loginform.utils.Fonts;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
-import static java.lang.Thread.sleep;
+import java.awt.Font;
 
 public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {
         initComponents();
         customComponents();
-        setFonts();
+
+//        lblFaviconDescription.setFont(new Fonts().getPT_SANS_BOLD_12());
+//        lblTitle.setFont(new Fonts().getUBUNTU_BOLD_32());
+        Font UBUNTU_BOLD_32 = new Fonts().loadFonts("/br/com/loginform/fonts/ubuntu-bold.ttf", Font.BOLD, 32);
+        lblSubTitle.setFont(UBUNTU_BOLD_32);
     }
 
     private void customComponents() {
         Utilities.insertIconFrm(this);
         setBackground(new Color(0, 0, 0));
-    }
-
-    private void setFonts() {
-
-        new Thread() {
-            @Override
-            public void run() {
-                lblFaviconDescription.setFont(new Fonts().getPT_SANS_BOLD_12());
-                lblTitle.setFont(new Fonts().getUBUNTU_BOLD_32());
-            }
-        }.start();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -40,6 +32,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblMinimize = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
+        lblSubTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial");
@@ -72,12 +65,17 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblLogo);
         lblLogo.setBounds(80, 80, 112, 32);
 
-        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
         lblTitle.setText("<html>Seu marketplace<br>de coleta de<br>resíduos</html>");
         lblTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lblTitle.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         getContentPane().add(lblTitle);
         lblTitle.setBounds(80, 164, 310, 160);
+
+        lblSubTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblSubTitle.setText("<html>Ajudamos pessoas a encontrarem pontos<br>de coleta de forma eficiente</html>");
+        lblSubTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(lblSubTitle);
+        lblSubTitle.setBounds(80, 323, 500, 80);
 
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
@@ -89,6 +87,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblFaviconDescription;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
+    private javax.swing.JLabel lblSubTitle;
     private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }
