@@ -34,15 +34,15 @@ public class Utils {
         return UBUNTU_BOLD_24;
     }
 
-    private Font PT_SANS_BOLD_12;
-    private Font PT_SANS_BOLD_16;
+    private final Font PT_SANS_BOLD_12 = loadFonts("/br/com/loginform/fonts/pt-sans-bold.ttf", Font.BOLD, 12);
+    private final Font PT_SANS_BOLD_16 = loadFonts("/br/com/loginform/fonts/pt-sans-bold.ttf", Font.BOLD, 16);
 
-    private Font PT_SANS_REGULAR_12;
-    private Font PT_SANS_REGULAR_16;
-    private Font PT_SANS_REGULAR_24;
+    private final Font PT_SANS_REGULAR_12 = loadFonts("/br/com/loginform/fonts/pt-sans-regular.ttf", Font.PLAIN, 12);
+    private final Font PT_SANS_REGULAR_16 = loadFonts("/br/com/loginform/fonts/pt-sans-regular.ttf", Font.PLAIN, 16);
+    private final Font PT_SANS_REGULAR_24 = loadFonts("/br/com/loginform/fonts/pt-sans-regular.ttf", Font.PLAIN, 24);
 
-    private Font UBUNTU_BOLD_32;
-    private Font UBUNTU_BOLD_24;
+    private final Font UBUNTU_BOLD_24 = loadFonts("/br/com/loginform/fonts/ubuntu-bold.ttf", Font.BOLD, 24);
+    private final Font UBUNTU_BOLD_32 = loadFonts("/br/com/loginform/fonts/ubuntu-bold.ttf", Font.BOLD, 32);
 
     private Font loadFonts(String fontpath, int fonttype, int fontsize) {
 
