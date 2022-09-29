@@ -7,9 +7,10 @@ public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {
         initComponents();
+        customComponents();
     }
 
-    public void customComponents() {
+    private void customComponents() {
         Utilities.insertIconFrm(this);
         setBackground(new Color(0, 0, 0));
     }
