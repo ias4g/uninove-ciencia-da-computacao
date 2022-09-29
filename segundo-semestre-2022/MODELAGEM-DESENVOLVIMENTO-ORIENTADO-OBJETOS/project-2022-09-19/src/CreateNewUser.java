@@ -153,7 +153,11 @@ public class CreateNewUser extends javax.swing.JFrame {
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage() + " " + ex.getErrorCode());
+            if (ex.getErrorCode() == 1062) {
+                JOptionPane.showMessageDialog(null, "Usuário já cadastrado.");
+            } else {
+                JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n" + ex.getMessage() + "\n" + ex.getErrorCode());
+            }
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
