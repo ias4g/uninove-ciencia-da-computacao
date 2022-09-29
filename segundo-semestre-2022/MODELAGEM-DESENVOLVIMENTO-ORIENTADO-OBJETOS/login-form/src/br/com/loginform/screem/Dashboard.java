@@ -1,20 +1,13 @@
 package br.com.loginform.screem;
 
-import br.com.loginform.utils.Fonts;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
-import java.awt.Font;
 
 public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {
         initComponents();
         customComponents();
-
-//        lblFaviconDescription.setFont(new Fonts().getPT_SANS_BOLD_12());
-//        lblTitle.setFont(new Fonts().getUBUNTU_BOLD_32());
-        Font UBUNTU_BOLD_32 = new Fonts().getPT_SANS_BOLD_12();
-        lblSubTitle.setFont(UBUNTU_BOLD_32);
     }
 
     private void customComponents() {

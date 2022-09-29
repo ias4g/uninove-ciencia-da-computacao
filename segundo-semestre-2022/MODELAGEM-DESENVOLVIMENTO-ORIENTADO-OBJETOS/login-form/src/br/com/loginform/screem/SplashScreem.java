@@ -1,7 +1,8 @@
 package br.com.loginform.screem;
 
-import br.com.loginform.utils.Fonts;
+import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
+import java.awt.Font;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -9,28 +10,28 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class SplashScreem extends javax.swing.JFrame {
-    
+
     public SplashScreem() {
         initComponents();
         customizingComponents();
+        Font PT_SANS_BOLD = new FontManager().loadFont("src/br/com/loginform/fonts/PTSANSBOLD.ttf", Font.BOLD, 24);
+
+        lblLoading.setFont(PT_SANS_BOLD);
     }
-    
+
     private void customizingComponents() {
-        
+
         Utilities.insertIconDialog(this);
-//        
-//        lblLoading.setFont(new Fonts().getPT_SANS_REGULAR_16());
-//        lblPercent.setFont(new Fonts().getPT_SANS_REGULAR_16());
-        
+
         new Thread() {
             @Override
             public void run() {
                 for (int i = 1; i <= 100; i++) {
                     try {
                         sleep(20);
-                        
+
                         lblPercent.setText(i + "%");
-                        
+
                         switch (i) {
                             case 10 ->
                                 lblLoading.setText("Ativando os módulos...");
@@ -43,20 +44,20 @@ public class SplashScreem extends javax.swing.JFrame {
                             case 80 ->
                                 lblLoading.setText("Iniciando o programa...");
                         }
-                        
+
                         jpProgress.setValue(i);
-                        
+
                     } catch (InterruptedException ex) {
                         System.out.println(ex.getMessage());
                     }
                 }
-                
+
                 new Dashboard().setVisible(true);
                 dispose();
             }
         }.start();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -125,7 +126,7 @@ public class SplashScreem extends javax.swing.JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(SplashScreem.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         new SplashScreem().setVisible(true);
     }
 
