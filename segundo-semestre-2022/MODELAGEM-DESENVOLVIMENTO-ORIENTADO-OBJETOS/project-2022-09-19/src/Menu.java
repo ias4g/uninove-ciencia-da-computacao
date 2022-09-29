@@ -93,6 +93,11 @@ public class Menu extends javax.swing.JFrame {
 
         itmDeleteUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itmDeleteUser.setText("Excluir Usuário");
+        itmDeleteUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmDeleteUserActionPerformed(evt);
+            }
+        });
         mnuAdministrative.add(itmDeleteUser);
 
         itmDeleteAllUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
@@ -123,6 +128,10 @@ public class Menu extends javax.swing.JFrame {
         new CreateNewUser().setVisible(true);
         
     }//GEN-LAST:event_itmAddNewUserActionPerformed
+
+    private void itmDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteUserActionPerformed
+
+    }//GEN-LAST:event_itmDeleteUserActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itmAddNewUser;
