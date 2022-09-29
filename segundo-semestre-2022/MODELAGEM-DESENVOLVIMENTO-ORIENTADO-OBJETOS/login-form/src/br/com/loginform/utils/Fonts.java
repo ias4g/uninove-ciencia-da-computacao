@@ -5,14 +5,12 @@ import java.awt.FontFormatException;
 import java.io.IOException;
 
 public class Fonts {
-//
-//    public Fonts() {
-//
-//    }
-//
-//    public Font getPT_SANS_BOLD_12() {
-//        return PT_SANS_BOLD_12;
-//    }
+
+    public Font getPT_SANS_BOLD_12() {
+        Font PT_SANS_BOLD_12 = loadFonts("/br/com/loginform/fonts/pt-sans-bold.ttf", Font.BOLD, 12);
+
+        return PT_SANS_BOLD_12;
+    }
 //
 //    public Font getPT_SANS_BOLD_16() {
 //        return PT_SANS_BOLD_16;
@@ -38,7 +36,6 @@ public class Fonts {
 //        return UBUNTU_BOLD_32;
 //    }
 //
-//    private final Font PT_SANS_BOLD_12 = loadFonts("/br/com/loginform/fonts/pt-sans-bold.ttf", Font.BOLD, 12);
 //    private final Font PT_SANS_BOLD_16 = loadFonts("/br/com/loginform/fonts/pt-sans-bold.ttf", Font.BOLD, 16);
 //
 //    private final Font PT_SANS_REGULAR_12 = loadFonts("/br/com/loginform/fonts/pt-sans-regular.ttf", Font.PLAIN, 12);
@@ -48,7 +45,7 @@ public class Fonts {
 //    private final Font UBUNTU_BOLD_24 = loadFonts("/br/com/loginform/fonts/ubuntu-bold.ttf", Font.BOLD, 24);
 //    private final Font UBUNTU_BOLD_32 = loadFonts("/br/com/loginform/fonts/ubuntu-bold.ttf", Font.BOLD, 32);
 
-    public Font loadFonts(String fontpath, int fonttype, int fontsize) {
+    private Font loadFonts(String fontpath, int fonttype, int fontsize) {
 
         Font myFont = null;
 
