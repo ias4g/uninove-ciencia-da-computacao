@@ -7,6 +7,10 @@ import javax.swing.JOptionPane;
 
 public class CreateNewUser extends javax.swing.JFrame {
 
+    public CreateNewUser() {
+        initComponents();
+    }
+
     public CreateNewUser(int id, String user, String password, String name, String lastname, String email, String job) {
         initComponents();
     }
