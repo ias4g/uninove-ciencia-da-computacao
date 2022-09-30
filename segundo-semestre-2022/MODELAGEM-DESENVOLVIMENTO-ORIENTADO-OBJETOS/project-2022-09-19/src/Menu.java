@@ -139,7 +139,7 @@ public class Menu extends javax.swing.JFrame {
     private void itmDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteUserActionPerformed
 
         Connection conn;
-        String user = JOptionPane.showInputDialog("Digite o nome do usuário a ser excluido!");
+        String u = JOptionPane.showInputDialog("Digite o nome do usuário a ser excluido!");
 
         try {
             //2 - Conectar no banco de dados sistemabd;
@@ -148,29 +148,23 @@ public class Menu extends javax.swing.JFrame {
 
             //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
             PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers WHERE user = ?");
-            st.setString(1, user);
+            st.setString(1, u);
             ResultSet resultado = st.executeQuery();
 
             //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
             if (resultado.next()) {
-                String name;
-                String job;
-
-                name = resultado.getString("name");
-                job = resultado.getString("job");
+                String user = resultado.getString("user");
+                String password = resultado.getString("password");
+                String name = resultado.getString("name");
+                String lastname = resultado.getString("lastname");
+                String email = resultado.getString("email");
+                String job = resultado.getString("job");
 
                 //Abrir o formulário Menu.java
-                new Menu(name, job).setVisible(true);
-
-                this.dispose();
+                new CreateNewUser(user, password, name, lastname, email, job).setVisible(true);
 
             } else {
-                JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
-
-                txtUser.setText("");
-                txtPass.setText("");
-
-                txtUser.requestFocus();
+                JOptionPane.showMessageDialog(null, "Usuário não encontrado");
             }
 
             //5 - Desconectar.
