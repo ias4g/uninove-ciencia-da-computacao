@@ -147,7 +147,7 @@ public class Menu extends javax.swing.JFrame {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
             //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
-            PreparedStatement st = conn.prepareStatement("SELECT user FROM tbusers WHERE user = ?");
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers WHERE user = ?");
             st.setString(1, user);
             ResultSet resultado = st.executeQuery();
 
