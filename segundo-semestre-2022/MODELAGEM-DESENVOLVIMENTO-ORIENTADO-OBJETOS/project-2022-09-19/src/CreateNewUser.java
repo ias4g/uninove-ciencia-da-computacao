@@ -7,13 +7,26 @@ import javax.swing.JOptionPane;
 
 public class CreateNewUser extends javax.swing.JFrame {
     
+    int idUser;
+    Connection conn;
+    
     public CreateNewUser() {
         initComponents();
+        
+        lblId.setVisible(false);
+        txtId.setVisible(false);
+        btnDelete.setVisible(false);
     }
     
     public CreateNewUser(int id, String user, String password, String name, String lastname, String email, String job) {
         initComponents();
         
+        lblId.setVisible(true);
+        txtId.setVisible(true);
+        
+        idUser = id;
+        
+        txtId.setText(String.valueOf(id));
         txtUser.setText(user);
         txtPass.setText(password);
         txtName.setText(name);
@@ -43,6 +56,8 @@ public class CreateNewUser extends javax.swing.JFrame {
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
+        txtId = new javax.swing.JTextField();
+        lblId = new javax.swing.JLabel();
 
         setTitle("User Control");
         setMaximumSize(new java.awt.Dimension(640, 426));
@@ -126,6 +141,16 @@ public class CreateNewUser extends javax.swing.JFrame {
         getContentPane().add(btnSave);
         btnSave.setBounds(20, 320, 230, 40);
 
+        txtId.setEditable(false);
+        txtId.setEnabled(false);
+        getContentPane().add(txtId);
+        txtId.setBounds(460, 20, 40, 40);
+
+        lblId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblId.setText("Id");
+        getContentPane().add(lblId);
+        lblId.setBounds(430, 25, 20, 25);
+
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -139,7 +164,6 @@ public class CreateNewUser extends javax.swing.JFrame {
         String job;
         
         int rs;
-        Connection conn;
         
         user = txtUser.getText();
         pass = txtPass.getText();
@@ -188,7 +212,29 @@ public class CreateNewUser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+            
+            PreparedStatement st = conn.prepareStatement("DELETE FROM tbusers WHERE id = ?");
+            st.setString(1, String.valueOf(idUser));
+            
+            int rs = st.executeUpdate();
+            
+            System.out.println(rs);
+            
+            if (rs > 0) {
+                JOptionPane.showMessageDialog(null, "Excluido com sucesso");
+            }
+            
+            conn.close();
+            dispose();
+            
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n Message: " + ex.getMessage() + "\n Código do erro: " + ex.getErrorCode());
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -196,12 +242,14 @@ public class CreateNewUser extends javax.swing.JFrame {
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmbJob;
     private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblJob;
     private javax.swing.JLabel lblLastname;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPass;
     private javax.swing.JLabel lblUser;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtLastname;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPass;
