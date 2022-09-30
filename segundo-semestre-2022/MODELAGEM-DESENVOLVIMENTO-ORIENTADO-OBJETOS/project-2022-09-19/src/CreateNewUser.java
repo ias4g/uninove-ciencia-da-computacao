@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 public class CreateNewUser extends javax.swing.JFrame {
 
-    public CreateNewUser() {
+    public CreateNewUser(int id, String user, String password, String name, String lastname, String email, String job) {
         initComponents();
     }
 
@@ -23,11 +23,12 @@ public class CreateNewUser extends javax.swing.JFrame {
         txtName = new javax.swing.JTextField();
         lblJob = new javax.swing.JLabel();
         cmbJob = new javax.swing.JComboBox<>();
-        btnSave = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         lblLastname = new javax.swing.JLabel();
         txtLastname = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
+        btnSave = new javax.swing.JButton();
 
         setTitle("User Control");
         setMaximumSize(new java.awt.Dimension(640, 426));
@@ -71,16 +72,16 @@ public class CreateNewUser extends javax.swing.JFrame {
         getContentPane().add(cmbJob);
         cmbJob.setBounds(90, 260, 230, 40);
 
-        btnSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnSave.setText("Salvar");
-        btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnDelete.setText("Excluir");
+        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSave);
-        btnSave.setBounds(20, 320, 230, 40);
+        getContentPane().add(btnDelete);
+        btnDelete.setBounds(280, 320, 230, 40);
 
         lblLastname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblLastname.setText("Sobrenome");
@@ -99,6 +100,17 @@ public class CreateNewUser extends javax.swing.JFrame {
         txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(txtEmail);
         txtEmail.setBounds(90, 200, 350, 40);
+
+        btnSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnSave.setText("Salvar");
+        btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSave);
+        btnSave.setBounds(20, 320, 230, 40);
 
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
@@ -161,7 +173,12 @@ public class CreateNewUser extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmbJob;
     private javax.swing.JLabel lblEmail;
