@@ -153,6 +153,7 @@ public class Menu extends javax.swing.JFrame {
 
             //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
             if (resultado.next()) {
+                int id = Integer.parseInt(resultado.getString("id"));
                 String user = resultado.getString("user");
                 String password = resultado.getString("password");
                 String name = resultado.getString("name");
@@ -161,7 +162,7 @@ public class Menu extends javax.swing.JFrame {
                 String job = resultado.getString("job");
 
                 //Abrir o formulário Menu.java
-                new CreateNewUser(user, password, name, lastname, email, job).setVisible(true);
+                new CreateNewUser(id, user, password, name, lastname, email, job).setVisible(true);
 
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado");
