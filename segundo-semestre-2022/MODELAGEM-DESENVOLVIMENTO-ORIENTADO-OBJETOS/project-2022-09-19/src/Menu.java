@@ -1,20 +1,27 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 public class Menu extends javax.swing.JFrame {
-    
+
     public Menu(String name, String job) {
         initComponents();
-        
+
         mnuAdministrative.setVisible(false);
-        
+
         lblSaudacao.setText("Bem vindo " + name + " - Perfil: " + job);
-        
+
         if (job.equalsIgnoreCase("Administrador")) {
             mnuAdministrative.setVisible(true);
         } else if (job.equalsIgnoreCase("Estagiário")) {
             itmDelete.setEnabled(false);
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -126,11 +133,54 @@ public class Menu extends javax.swing.JFrame {
 
     private void itmAddNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAddNewUserActionPerformed
         new CreateNewUser().setVisible(true);
-        
+
     }//GEN-LAST:event_itmAddNewUserActionPerformed
 
     private void itmDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteUserActionPerformed
 
+        Connection conn;
+        String user = JOptionPane.showInputDialog("Digite o nome do usuário a ser excluido!");
+
+        try {
+            //2 - Conectar no banco de dados sistemabd;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+
+            //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
+            PreparedStatement st = conn.prepareStatement("SELECT user FROM tbusers WHERE user = ?");
+            st.setString(1, user);
+            ResultSet resultado = st.executeQuery();
+
+            //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
+            if (resultado.next()) {
+                String name;
+                String job;
+
+                name = resultado.getString("name");
+                job = resultado.getString("job");
+
+                //Abrir o formulário Menu.java
+                new Menu(name, job).setVisible(true);
+
+                this.dispose();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
+
+                txtUser.setText("");
+                txtPass.setText("");
+
+                txtUser.requestFocus();
+            }
+
+            //5 - Desconectar.
+            conn.close();
+
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Driver não está na library");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Você errou nos dados da conexão com o banco de dados");
+        }
     }//GEN-LAST:event_itmDeleteUserActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
