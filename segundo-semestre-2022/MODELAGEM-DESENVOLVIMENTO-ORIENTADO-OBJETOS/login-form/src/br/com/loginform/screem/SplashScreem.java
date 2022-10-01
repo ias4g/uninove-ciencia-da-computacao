@@ -1,8 +1,6 @@
 package br.com.loginform.screem;
 
-import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
-import java.awt.Font;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,21 +12,17 @@ public class SplashScreem extends javax.swing.JFrame {
     public SplashScreem() {
         initComponents();
         customizingComponents();
-        Font PT_SANS_BOLD = new FontManager().loadFont("src/br/com/loginform/fonts/PTSANSBOLD.ttf", Font.BOLD, 24);
-
-        lblLoading.setFont(PT_SANS_BOLD);
     }
 
     private void customizingComponents() {
-
-        Utilities.insertIconDialog(this);
+        Utilities.insertIconFrame(this);
 
         new Thread() {
             @Override
             public void run() {
                 for (int i = 1; i <= 100; i++) {
                     try {
-                        sleep(20);
+                        sleep(10);
 
                         lblPercent.setText(i + "%");
 
@@ -95,16 +89,18 @@ public class SplashScreem extends javax.swing.JFrame {
         getContentPane().add(jpProgress);
         jpProgress.setBounds(10, 350, 505, 10);
 
+        lblPercent.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblPercent.setForeground(new java.awt.Color(50, 33, 83));
         lblPercent.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPercent.setText("0%");
         getContentPane().add(lblPercent);
-        lblPercent.setBounds(415, 330, 100, 16);
+        lblPercent.setBounds(415, 330, 100, 14);
 
+        lblLoading.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblLoading.setForeground(new java.awt.Color(50, 33, 83));
         lblLoading.setText("Carregando...");
         getContentPane().add(lblLoading);
-        lblLoading.setBounds(10, 330, 290, 16);
+        lblLoading.setBounds(10, 330, 290, 14);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/splash/splash-screem-bg.png"))); // NOI18N
         getContentPane().add(jLabel1);
