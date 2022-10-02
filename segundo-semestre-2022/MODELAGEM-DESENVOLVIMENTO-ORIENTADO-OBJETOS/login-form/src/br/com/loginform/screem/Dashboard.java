@@ -1,7 +1,9 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
+import java.awt.Font;
 
 public class Dashboard extends javax.swing.JFrame {
 
@@ -12,6 +14,10 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void customComponents() {
         Utilities.insertIconFrame(this);
+        
+        Font Ubuntu_Regular_32 = FontManager.Loading("Ubuntu-Bold.ttf", 32f);
+        
+        lblTitle.setFont(Ubuntu_Regular_32);
     }
 
     @SuppressWarnings("unchecked")
