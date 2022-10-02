@@ -11,23 +11,6 @@ import java.util.logging.Logger;
 
 public class FontManager {
 
-//    public Font loadFont(String pathFont, int typeFont, int sizeFont) {
-//
-//        Font myFont = null;
-//
-//        try {
-//
-//            myFont = Font.createFont(
-//                    Font.TRUETYPE_FONT,
-//                    getClass().getResourceAsStream(pathFont)
-//            ).deriveFont(typeFont, sizeFont);
-//
-//        } catch (FontFormatException | IOException ex) {
-//            System.out.println(ex);
-//        }
-//
-//        return myFont;
-//    }
     public static final Font Loading(String Fontname, int Fonttype, Float Fontsize) {
 
         Font myFont = null;
@@ -43,6 +26,6 @@ public class FontManager {
         }
 
         return myFont;
-    }
 
+    }
 }
