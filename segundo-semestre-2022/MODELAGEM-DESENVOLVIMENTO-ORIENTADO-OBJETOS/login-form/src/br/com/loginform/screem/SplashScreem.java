@@ -1,6 +1,12 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
+import java.io.IOException;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,6 +18,9 @@ public class SplashScreem extends javax.swing.JFrame {
     public SplashScreem() {
         initComponents();
         customizingComponents();
+
+        Font Ubuntu_Regular_16 = FontManager.Loading("Ubuntu-Bold.ttf", 16f);
+        lblLoading.setFont(Ubuntu_Regular_16);
     }
 
     private void customizingComponents() {
@@ -22,7 +31,7 @@ public class SplashScreem extends javax.swing.JFrame {
             public void run() {
                 for (int i = 1; i <= 100; i++) {
                     try {
-                        sleep(10);
+                        sleep(100);
 
                         lblPercent.setText(i + "%");
 
@@ -113,13 +122,7 @@ public class SplashScreem extends javax.swing.JFrame {
     public static void main(String args[]) {
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(SplashScreem.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(SplashScreem.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(SplashScreem.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
             Logger.getLogger(SplashScreem.class.getName()).log(Level.SEVERE, null, ex);
         }
 
