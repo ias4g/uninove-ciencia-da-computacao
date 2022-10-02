@@ -20,7 +20,7 @@ public class SplashScreem extends javax.swing.JFrame {
 
         Utilities.insertIconFrame(this);
 
-        Font Ubuntu_Regular_12 = FontManager.Loading("Ubuntu-Regular.ttf", 12f);
+        Font Ubuntu_Regular_12 = FontManager.Loading("Ubuntu-Regular.ttf", Font.PLAIN, 12f);
 
         lblLoading.setFont(Ubuntu_Regular_12);
         lblPercent.setFont(Ubuntu_Regular_12);

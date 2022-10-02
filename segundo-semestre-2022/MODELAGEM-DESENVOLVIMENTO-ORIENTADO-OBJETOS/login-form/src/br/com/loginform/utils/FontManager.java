@@ -28,12 +28,12 @@ public class FontManager {
 //
 //        return myFont;
 //    }
-    public static final Font Loading(String Fontname, Float Fontsize) {
+    public static final Font Loading(String Fontname, int Fonttype, Float Fontsize) {
 
         Font myFont = null;
 
         try {
-            myFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/br/com/loginform/fonts/" + Fontname)).deriveFont(Fontsize);
+            myFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/br/com/loginform/fonts/" + Fontname)).deriveFont(Fonttype, Fontsize);
 
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(myFont);

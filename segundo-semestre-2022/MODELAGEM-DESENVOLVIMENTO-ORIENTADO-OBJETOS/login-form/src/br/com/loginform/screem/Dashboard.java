@@ -14,9 +14,9 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void customComponents() {
         Utilities.insertIconFrame(this);
-        
-        Font Ubuntu_Regular_32 = FontManager.Loading("Ubuntu-Bold.ttf", 32f);
-        
+
+        Font Ubuntu_Regular_32 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 32f);
+
         lblTitle.setFont(Ubuntu_Regular_32);
     }
 
