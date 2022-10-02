@@ -6,32 +6,33 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class Dashboard extends javax.swing.JFrame {
-    
+
     public Dashboard() {
         initComponents();
         customComponents();
     }
-    
+
     private void customComponents() {
         Utilities.insertIconFrame(this);
-        
-        Font Ubuntu_Regular_32 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 32f);
+
+        Font Ubuntu_Bold_32 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 32f);
+
         Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
-        Font PTSans_Regular_24 = FontManager.Loading("PTSans-Regular.ttf", Font.BOLD, 24f);
         Font PTSans_Bold_16 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 16f);
-        
+        Font PTSans_Regular_24 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 24f);
+
         lblFaviconDescription.setFont(PTSans_Bold_12);
-        
-        lblTitle1.setFont(Ubuntu_Regular_32);
-        lblTitle2.setFont(Ubuntu_Regular_32);
-        lblTitle3.setFont(Ubuntu_Regular_32);
-        
+
+        lblTitle1.setFont(Ubuntu_Bold_32);
+        lblTitle2.setFont(Ubuntu_Bold_32);
+        lblTitle3.setFont(Ubuntu_Bold_32);
+
         lblSubTitle1.setFont(PTSans_Regular_24);
         lblSubTitle2.setFont(PTSans_Regular_24);
-        
+
         lblButtonEnter.setFont(PTSans_Bold_16);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
