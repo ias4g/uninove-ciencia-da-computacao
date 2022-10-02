@@ -1,7 +1,9 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
+import java.awt.Font;
 
 public class Register extends javax.swing.JDialog {
     
@@ -10,6 +12,10 @@ public class Register extends javax.swing.JDialog {
         initComponents();
         
         Utilities.insertIconDialog(this);
+        
+        Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
+        
+        lblFaviconDescription.setFont(PTSans_Bold_12);
     }
     
     @SuppressWarnings("unchecked")
