@@ -10,7 +10,7 @@ public class JPanelRoundedBorder extends javax.swing.JPanel {
     public JPanelRoundedBorder() {
         initComponents();
         setOpaque(false);
-        setBackground(new Color(244, 244, 244));
+        setBackground(new Color(255, 255, 255));
     }
 
     @SuppressWarnings("unchecked")

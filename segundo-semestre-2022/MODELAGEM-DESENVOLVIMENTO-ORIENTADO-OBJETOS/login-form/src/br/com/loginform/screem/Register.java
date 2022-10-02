@@ -6,20 +6,24 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class Register extends javax.swing.JDialog {
-    
+
     public Register(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+
         Utilities.insertIconDialog(this);
-        
+
         Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
-        Font PTSans_Bold_16 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 16f);
-        
+        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
+
+        Font Ubuntu_Bold_16 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 16f);
+
         lblFaviconDescription.setFont(PTSans_Bold_12);
-        lblGoBack.setFont(PTSans_Bold_16);
+        lblGoBack.setFont(PTSans_Regular_16);
+
+        lblImagePoint.setFont(Ubuntu_Bold_16);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -30,6 +34,8 @@ public class Register extends javax.swing.JDialog {
         lblFavicon = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         lblGoBack = new javax.swing.JLabel();
+        jpImagePoint = new br.com.loginform.components.JPanelRoundedBorder();
+        lblImagePoint = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de pontos de coletas");
@@ -90,10 +96,19 @@ public class Register extends javax.swing.JDialog {
         lblLogo.setBounds(60, 60, 112, 32);
 
         lblGoBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-left.png"))); // NOI18N
-        lblGoBack.setText("Voltar para Dashboard");
+        lblGoBack.setText("Voltar");
         lblGoBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(lblGoBack);
-        lblGoBack.setBounds(822, 66, 190, 18);
+        lblGoBack.setBounds(899, 71, 90, 18);
+
+        jpImagePoint.setLayout(null);
+
+        lblImagePoint.setText("Imagem do ponto");
+        jpImagePoint.add(lblImagePoint);
+        lblImagePoint.setBounds(20, 20, 200, 30);
+
+        getContentPane().add(jpImagePoint);
+        jpImagePoint.setBounds(177, 120, 670, 420);
 
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
@@ -120,10 +135,12 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblMinimizeMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private br.com.loginform.components.JPanelRoundedBorder jpImagePoint;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
     private javax.swing.JLabel lblGoBack;
+    private javax.swing.JLabel lblImagePoint;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
     // End of variables declaration//GEN-END:variables

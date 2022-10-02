@@ -109,24 +109,24 @@ public class Dashboard extends javax.swing.JFrame {
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
-        lblLogo.setBounds(80, 80, 112, 32);
+        lblLogo.setBounds(60, 60, 112, 32);
 
         lblTitle2.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         lblTitle2.setText("de coleta de");
         lblTitle2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lblTitle2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         getContentPane().add(lblTitle2);
-        lblTitle2.setBounds(80, 211, 310, 40);
+        lblTitle2.setBounds(60, 211, 310, 40);
 
         lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/bg-image.png"))); // NOI18N
         getContentPane().add(lblImage);
-        lblImage.setBounds(588, 117, 356, 393);
+        lblImage.setBounds(608, 137, 356, 393);
 
         lblSubTitle2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblSubTitle2.setText("de coleta de forma eficiente");
         lblSubTitle2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(lblSubTitle2);
-        lblSubTitle2.setBounds(80, 356, 460, 30);
+        lblSubTitle2.setBounds(60, 366, 460, 30);
 
         jpButtonEnter.setLayout(null);
 
@@ -166,27 +166,27 @@ public class Dashboard extends javax.swing.JFrame {
         lblButtonEnter.setBounds(56, 0, 236, 56);
 
         getContentPane().add(jpButtonEnter);
-        jpButtonEnter.setBounds(80, 425, 292, 56);
+        jpButtonEnter.setBounds(60, 455, 292, 56);
 
         lblTitle1.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         lblTitle1.setText("Seu marketplace");
         lblTitle1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lblTitle1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         getContentPane().add(lblTitle1);
-        lblTitle1.setBounds(80, 164, 370, 40);
+        lblTitle1.setBounds(60, 164, 370, 40);
 
         lblTitle3.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         lblTitle3.setText("resíduos");
         lblTitle3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lblTitle3.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         getContentPane().add(lblTitle3);
-        lblTitle3.setBounds(80, 258, 310, 40);
+        lblTitle3.setBounds(60, 258, 310, 40);
 
         lblSubTitle1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         lblSubTitle1.setText("Ajudamos pessoas a encontrarem pontos");
         lblSubTitle1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(lblSubTitle1);
-        lblSubTitle1.setBounds(80, 315, 500, 30);
+        lblSubTitle1.setBounds(60, 325, 500, 30);
 
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
