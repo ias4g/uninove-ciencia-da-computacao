@@ -14,8 +14,10 @@ public class Register extends javax.swing.JDialog {
         Utilities.insertIconDialog(this);
         
         Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
+        Font PTSans_Bold_16 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 16f);
         
         lblFaviconDescription.setFont(PTSans_Bold_12);
+        lblGoBack.setFont(PTSans_Bold_16);
     }
     
     @SuppressWarnings("unchecked")
@@ -27,6 +29,7 @@ public class Register extends javax.swing.JDialog {
         lblFaviconDescription = new javax.swing.JLabel();
         lblFavicon = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
+        lblGoBack = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de pontos de coletas");
@@ -84,7 +87,13 @@ public class Register extends javax.swing.JDialog {
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
-        lblLogo.setBounds(80, 80, 112, 32);
+        lblLogo.setBounds(60, 60, 112, 32);
+
+        lblGoBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-left.png"))); // NOI18N
+        lblGoBack.setText("Voltar para Dashboard");
+        lblGoBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(lblGoBack);
+        lblGoBack.setBounds(822, 66, 190, 18);
 
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
@@ -114,6 +123,7 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
+    private javax.swing.JLabel lblGoBack;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
     // End of variables declaration//GEN-END:variables
