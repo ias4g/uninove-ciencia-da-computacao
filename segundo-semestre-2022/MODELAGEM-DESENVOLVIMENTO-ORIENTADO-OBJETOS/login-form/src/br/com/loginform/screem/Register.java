@@ -8,6 +8,7 @@ public class Register extends javax.swing.JDialog {
     public Register(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
         Utilities.insertIconDialog(this);
     }
     
