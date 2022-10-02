@@ -6,20 +6,32 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class Dashboard extends javax.swing.JFrame {
-
+    
     public Dashboard() {
         initComponents();
         customComponents();
     }
-
+    
     private void customComponents() {
         Utilities.insertIconFrame(this);
-
+        
         Font Ubuntu_Regular_32 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 32f);
-
-        lblTitle.setFont(Ubuntu_Regular_32);
+        Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
+        Font PTSans_Regular_24 = FontManager.Loading("PTSans-Regular.ttf", Font.BOLD, 24f);
+        Font PTSans_Bold_16 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 16f);
+        
+        lblFaviconDescription.setFont(PTSans_Bold_12);
+        
+        lblTitle1.setFont(Ubuntu_Regular_32);
+        lblTitle2.setFont(Ubuntu_Regular_32);
+        lblTitle3.setFont(Ubuntu_Regular_32);
+        
+        lblSubTitle1.setFont(PTSans_Regular_24);
+        lblSubTitle2.setFont(PTSans_Regular_24);
+        
+        lblButtonEnter.setFont(PTSans_Bold_16);
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -29,12 +41,15 @@ public class Dashboard extends javax.swing.JFrame {
         lblClose = new javax.swing.JLabel();
         lblMinimize = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
-        lblTitle = new javax.swing.JLabel();
-        lblSubTitle = new javax.swing.JLabel();
+        lblTitle2 = new javax.swing.JLabel();
         lblImage = new javax.swing.JLabel();
+        lblSubTitle2 = new javax.swing.JLabel();
         jpButtonEnter = new br.com.loginform.components.JPanelButton();
         lblButtonEnterIcon = new javax.swing.JLabel();
         lblButtonEnter = new javax.swing.JLabel();
+        lblTitle1 = new javax.swing.JLabel();
+        lblTitle3 = new javax.swing.JLabel();
+        lblSubTitle1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial");
@@ -95,22 +110,22 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblLogo);
         lblLogo.setBounds(80, 80, 112, 32);
 
-        lblTitle.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
-        lblTitle.setText("<html>Seu marketplace<br>de coleta de<br>resíduos</html>");
-        lblTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lblTitle.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        getContentPane().add(lblTitle);
-        lblTitle.setBounds(80, 164, 310, 120);
-
-        lblSubTitle.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        lblSubTitle.setText("<html>Ajudamos pessoas a encontrarem pontos<br>de coleta de forma eficiente</html>");
-        lblSubTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(lblSubTitle);
-        lblSubTitle.setBounds(80, 323, 500, 80);
+        lblTitle2.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        lblTitle2.setText("de coleta de");
+        lblTitle2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblTitle2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        getContentPane().add(lblTitle2);
+        lblTitle2.setBounds(80, 211, 310, 40);
 
         lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/bg-image.png"))); // NOI18N
         getContentPane().add(lblImage);
         lblImage.setBounds(588, 117, 356, 393);
+
+        lblSubTitle2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        lblSubTitle2.setText("de coleta de forma eficiente");
+        lblSubTitle2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(lblSubTitle2);
+        lblSubTitle2.setBounds(80, 356, 460, 30);
 
         jpButtonEnter.setLayout(null);
 
@@ -151,6 +166,26 @@ public class Dashboard extends javax.swing.JFrame {
 
         getContentPane().add(jpButtonEnter);
         jpButtonEnter.setBounds(80, 425, 292, 56);
+
+        lblTitle1.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        lblTitle1.setText("Seu marketplace");
+        lblTitle1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblTitle1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        getContentPane().add(lblTitle1);
+        lblTitle1.setBounds(80, 164, 370, 40);
+
+        lblTitle3.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        lblTitle3.setText("resíduos");
+        lblTitle3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblTitle3.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        getContentPane().add(lblTitle3);
+        lblTitle3.setBounds(80, 258, 310, 40);
+
+        lblSubTitle1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        lblSubTitle1.setText("Ajudamos pessoas a encontrarem pontos");
+        lblSubTitle1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(lblSubTitle1);
+        lblSubTitle1.setBounds(80, 315, 500, 30);
 
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
@@ -210,7 +245,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
-    private javax.swing.JLabel lblSubTitle;
-    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblSubTitle1;
+    private javax.swing.JLabel lblSubTitle2;
+    private javax.swing.JLabel lblTitle1;
+    private javax.swing.JLabel lblTitle2;
+    private javax.swing.JLabel lblTitle3;
     // End of variables declaration//GEN-END:variables
 }
