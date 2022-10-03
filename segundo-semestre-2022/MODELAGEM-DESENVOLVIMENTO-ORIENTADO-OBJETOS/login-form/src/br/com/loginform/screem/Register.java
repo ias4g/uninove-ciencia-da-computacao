@@ -5,6 +5,10 @@ import br.com.loginform.utils.Utilities;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
 
@@ -117,6 +121,11 @@ public class Register extends javax.swing.JDialog {
         lblPointImageDropzone.setText("Clique aqui para selecionar uma imagem.");
         lblPointImageDropzone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(52, 203, 121)));
         lblPointImageDropzone.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        lblPointImageDropzone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPointImageDropzoneMouseClicked(evt);
+            }
+        });
         jpPointImageDropzone.add(lblPointImageDropzone);
         lblPointImageDropzone.setBounds(35, 24, 500, 252);
 
@@ -337,6 +346,22 @@ public class Register extends javax.swing.JDialog {
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardImage");
     }//GEN-LAST:event_lblCloseSuccessMouseClicked
+
+    private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
+        selectImage();
+    }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
+
+    public File selectImage() {
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
+        fileChooser.addChoosableFileFilter(filter);
+        fileChooser.setAcceptAllFileFilterUsed(false);
+        fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
+        fileChooser.setCurrentDirectory(new File("/"));
+        fileChooser.showOpenDialog(this);
+
+        return fileChooser.getSelectedFile();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

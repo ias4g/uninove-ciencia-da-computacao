@@ -1,6 +1,7 @@
 package br.com.loginform.utils;
 
 import java.awt.Toolkit;
+import java.io.File;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 
@@ -25,5 +26,4 @@ public class Utilities {
             System.out.println(e.toString());
         }
     }
-
 }
