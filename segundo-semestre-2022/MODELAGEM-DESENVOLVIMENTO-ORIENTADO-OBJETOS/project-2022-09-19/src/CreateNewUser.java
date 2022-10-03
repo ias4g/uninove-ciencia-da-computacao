@@ -212,6 +212,7 @@ public class CreateNewUser extends javax.swing.JFrame {
         int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este usuário?", "Confirmação", 0);
 
         if (resp == 0) {
+
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection(
