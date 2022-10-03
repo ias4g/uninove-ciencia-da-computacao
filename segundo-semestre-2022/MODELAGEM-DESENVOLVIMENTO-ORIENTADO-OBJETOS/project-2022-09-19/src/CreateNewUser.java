@@ -212,38 +212,40 @@ public class CreateNewUser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este usuário?");
+        int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este usuário?", "Confirmação", 0);
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
-            );
+        JOptionPane.showMessageDialog(null, resp);
 
-            PreparedStatement st = conn.prepareStatement(
-                    "DELETE FROM tbusers WHERE id = ?"
-            );
-
-            st.setString(1, String.valueOf(idUser));
-
-            int rs = st.executeUpdate();
-
-            System.out.println(rs);
-
-            if (rs > 0) {
-                JOptionPane.showMessageDialog(
-                        null, "Excluido com sucesso"
-                );
-            }
-
-            conn.close();
-            dispose();
-
-        } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n Message: " + ex.getMessage() + "\n Código do erro: " + ex.getErrorCode());
-        }
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            conn = DriverManager.getConnection(
+//                    "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
+//            );
+//
+//            PreparedStatement st = conn.prepareStatement(
+//                    "DELETE FROM tbusers WHERE id = ?"
+//            );
+//
+//            st.setString(1, String.valueOf(idUser));
+//
+//            int rs = st.executeUpdate();
+//
+//            System.out.println(rs);
+//
+//            if (rs > 0) {
+//                JOptionPane.showMessageDialog(
+//                        null, "Excluido com sucesso"
+//                );
+//            }
+//
+//            conn.close();
+//            dispose();
+//
+//        } catch (ClassNotFoundException ex) {
+//            JOptionPane.showMessageDialog(null, ex.getMessage());
+//        } catch (SQLException ex) {
+//            JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n Message: " + ex.getMessage() + "\n Código do erro: " + ex.getErrorCode());
+//        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
