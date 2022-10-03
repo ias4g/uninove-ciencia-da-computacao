@@ -212,7 +212,7 @@ public class CreateNewUser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este usuário?", JOptionPane.INFORMATION_MESSAGE);
+        int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este usuário?");
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
