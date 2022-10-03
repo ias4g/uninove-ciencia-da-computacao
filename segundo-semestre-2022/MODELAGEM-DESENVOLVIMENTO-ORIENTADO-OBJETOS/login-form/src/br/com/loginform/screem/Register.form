@@ -164,7 +164,7 @@
             <Property name="useNullLayout" type="boolean" value="true"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblImagePoint">
+            <Component class="javax.swing.JLabel" name="lblTitleImagePoint">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Imagem do ponto"/>
               </Properties>
@@ -260,7 +260,7 @@
             <Property name="useNullLayout" type="boolean" value="true"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblTitle">
+            <Component class="javax.swing.JLabel" name="lblTitlePointDescription">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o do ponto"/>
               </Properties>
@@ -270,7 +270,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Container class="br.com.loginform.components.JPanelRoundedBorder" name="jpButtonBackDescriptionPoint">
+            <Container class="br.com.loginform.components.JPanelRoundedBorder" name="jpButtonBackPointDescription">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="8" y="376" width="36" height="36"/>
@@ -281,7 +281,7 @@
                 <Property name="useNullLayout" type="boolean" value="true"/>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="lblButtonBackDescriptionPoint">
+                <Component class="javax.swing.JLabel" name="lblButtonBackPointDescription">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -289,6 +289,9 @@
                     </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblButtonBackPointDescriptionMouseClicked"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="0" y="0" width="36" height="36"/>
@@ -297,7 +300,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="br.com.loginform.components.JPanelRoundedBorder" name="jpButtonNextImagePoint1">
+            <Container class="br.com.loginform.components.JPanelRoundedBorder" name="jpButtonNextPointDescription">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="626" y="376" width="36" height="36"/>
@@ -308,7 +311,7 @@
                 <Property name="useNullLayout" type="boolean" value="true"/>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="lblButtonNext1">
+                <Component class="javax.swing.JLabel" name="lblButtonNextPointDescription">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -320,7 +323,7 @@
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblButtonNext1MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblButtonNextPointDescriptionMouseClicked"/>
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

@@ -22,7 +22,7 @@ public class Register extends javax.swing.JDialog {
         lblFaviconDescription.setFont(PTSans_Bold_12);
         lblGoBack.setFont(PTSans_Regular_16);
 
-        lblImagePoint.setFont(Ubuntu_Bold_16);
+        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
     }
 
     @SuppressWarnings("unchecked")
@@ -37,17 +37,17 @@ public class Register extends javax.swing.JDialog {
         lblGoBack = new javax.swing.JLabel();
         jpMain = new br.com.loginform.components.JPanelRoundedBorder();
         jpImagePoint = new br.com.loginform.components.JPanelRoundedBorder();
-        lblImagePoint = new javax.swing.JLabel();
+        lblTitleImagePoint = new javax.swing.JLabel();
         jpBgGreenImagePoint = new br.com.loginform.components.JPanelRoundedBorder();
         lblImageDescriptionImagePoint = new javax.swing.JLabel();
         jpButtonNextImagePoint = new br.com.loginform.components.JPanelRoundedBorder();
         lblButtonNextImagePoint = new javax.swing.JLabel();
         jpPointDescription = new br.com.loginform.components.JPanelRoundedBorder();
-        lblTitle = new javax.swing.JLabel();
-        jpButtonBackDescriptionPoint = new br.com.loginform.components.JPanelRoundedBorder();
-        lblButtonBackDescriptionPoint = new javax.swing.JLabel();
-        jpButtonNextImagePoint1 = new br.com.loginform.components.JPanelRoundedBorder();
-        lblButtonNext1 = new javax.swing.JLabel();
+        lblTitlePointDescription = new javax.swing.JLabel();
+        jpButtonBackPointDescription = new br.com.loginform.components.JPanelRoundedBorder();
+        lblButtonBackPointDescription = new javax.swing.JLabel();
+        jpButtonNextPointDescription = new br.com.loginform.components.JPanelRoundedBorder();
+        lblButtonNextPointDescription = new javax.swing.JLabel();
         jpPointAddress = new br.com.loginform.components.JPanelRoundedBorder();
         lblTitleAddress = new javax.swing.JLabel();
         lblTitleInfoAddress = new javax.swing.JLabel();
@@ -125,9 +125,9 @@ public class Register extends javax.swing.JDialog {
         jpImagePoint.setOpaque(true);
         jpImagePoint.setLayout(null);
 
-        lblImagePoint.setText("Imagem do ponto");
-        jpImagePoint.add(lblImagePoint);
-        lblImagePoint.setBounds(20, 20, 200, 16);
+        lblTitleImagePoint.setText("Imagem do ponto");
+        jpImagePoint.add(lblTitleImagePoint);
+        lblTitleImagePoint.setBounds(20, 20, 200, 16);
 
         jpBgGreenImagePoint.setBackground(new java.awt.Color(214, 245, 228));
         jpBgGreenImagePoint.setLayout(null);
@@ -164,37 +164,42 @@ public class Register extends javax.swing.JDialog {
         jpPointDescription.setOpaque(true);
         jpPointDescription.setLayout(null);
 
-        lblTitle.setText("Descrição do ponto");
-        jpPointDescription.add(lblTitle);
-        lblTitle.setBounds(20, 20, 200, 16);
+        lblTitlePointDescription.setText("Descrição do ponto");
+        jpPointDescription.add(lblTitlePointDescription);
+        lblTitlePointDescription.setBounds(20, 20, 200, 16);
 
-        jpButtonBackDescriptionPoint.setLayout(null);
+        jpButtonBackPointDescription.setLayout(null);
 
-        lblButtonBackDescriptionPoint.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblButtonBackDescriptionPoint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-left-10x.png"))); // NOI18N
-        lblButtonBackDescriptionPoint.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jpButtonBackDescriptionPoint.add(lblButtonBackDescriptionPoint);
-        lblButtonBackDescriptionPoint.setBounds(0, 0, 36, 36);
-
-        jpPointDescription.add(jpButtonBackDescriptionPoint);
-        jpButtonBackDescriptionPoint.setBounds(8, 376, 36, 36);
-
-        jpButtonNextImagePoint1.setLayout(null);
-
-        lblButtonNext1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblButtonNext1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
-        lblButtonNext1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblButtonNext1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblButtonNext1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblButtonBackPointDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonBackPointDescription.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-left-10x.png"))); // NOI18N
+        lblButtonBackPointDescription.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblButtonBackPointDescription.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblButtonNext1MouseClicked(evt);
+                lblButtonBackPointDescriptionMouseClicked(evt);
             }
         });
-        jpButtonNextImagePoint1.add(lblButtonNext1);
-        lblButtonNext1.setBounds(0, 0, 36, 36);
+        jpButtonBackPointDescription.add(lblButtonBackPointDescription);
+        lblButtonBackPointDescription.setBounds(0, 0, 36, 36);
 
-        jpPointDescription.add(jpButtonNextImagePoint1);
-        jpButtonNextImagePoint1.setBounds(626, 376, 36, 36);
+        jpPointDescription.add(jpButtonBackPointDescription);
+        jpButtonBackPointDescription.setBounds(8, 376, 36, 36);
+
+        jpButtonNextPointDescription.setLayout(null);
+
+        lblButtonNextPointDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonNextPointDescription.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
+        lblButtonNextPointDescription.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonNextPointDescription.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblButtonNextPointDescription.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblButtonNextPointDescriptionMouseClicked(evt);
+            }
+        });
+        jpButtonNextPointDescription.add(lblButtonNextPointDescription);
+        lblButtonNextPointDescription.setBounds(0, 0, 36, 36);
+
+        jpPointDescription.add(jpButtonNextPointDescription);
+        jpButtonNextPointDescription.setBounds(626, 376, 36, 36);
 
         jpMain.add(jpPointDescription, "cardDescription");
 
@@ -273,40 +278,45 @@ public class Register extends javax.swing.JDialog {
         cl.show(jpMain, "cardDescription");
     }//GEN-LAST:event_lblButtonNextImagePointMouseClicked
 
-    private void lblButtonNext1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonNext1MouseClicked
+    private void lblButtonNextPointDescriptionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonNextPointDescriptionMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblButtonNext1MouseClicked
+    }//GEN-LAST:event_lblButtonNextPointDescriptionMouseClicked
 
     private void lblButtonNextAddressPointMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonNextAddressPointMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lblButtonNextAddressPointMouseClicked
 
+    private void lblButtonBackPointDescriptionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonBackPointDescriptionMouseClicked
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardImage");
+    }//GEN-LAST:event_lblButtonBackPointDescriptionMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private br.com.loginform.components.JPanelRoundedBorder jpBgGreenImagePoint;
     private br.com.loginform.components.JPanelRoundedBorder jpButtonBackAddressPoint;
-    private br.com.loginform.components.JPanelRoundedBorder jpButtonBackDescriptionPoint;
+    private br.com.loginform.components.JPanelRoundedBorder jpButtonBackPointDescription;
     private br.com.loginform.components.JPanelRoundedBorder jpButtonNextAddressPoint;
     private br.com.loginform.components.JPanelRoundedBorder jpButtonNextImagePoint;
-    private br.com.loginform.components.JPanelRoundedBorder jpButtonNextImagePoint1;
+    private br.com.loginform.components.JPanelRoundedBorder jpButtonNextPointDescription;
     private br.com.loginform.components.JPanelRoundedBorder jpImagePoint;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
     private br.com.loginform.components.JPanelRoundedBorder jpPointDescription;
     private javax.swing.JLabel lblButtonBackAddressPoint;
-    private javax.swing.JLabel lblButtonBackDescriptionPoint;
-    private javax.swing.JLabel lblButtonNext1;
+    private javax.swing.JLabel lblButtonBackPointDescription;
     private javax.swing.JLabel lblButtonNextAddressPoint;
     private javax.swing.JLabel lblButtonNextImagePoint;
+    private javax.swing.JLabel lblButtonNextPointDescription;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
     private javax.swing.JLabel lblGoBack;
     private javax.swing.JLabel lblImageDescriptionImagePoint;
-    private javax.swing.JLabel lblImagePoint;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
-    private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblTitleAddress;
+    private javax.swing.JLabel lblTitleImagePoint;
     private javax.swing.JLabel lblTitleInfoAddress;
+    private javax.swing.JLabel lblTitlePointDescription;
     // End of variables declaration//GEN-END:variables
 }
