@@ -2,6 +2,7 @@ package br.com.loginform.screem;
 
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -34,8 +35,26 @@ public class Register extends javax.swing.JDialog {
         lblFavicon = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         lblGoBack = new javax.swing.JLabel();
+        jpMain = new br.com.loginform.components.JPanelRoundedBorder();
         jpImagePoint = new br.com.loginform.components.JPanelRoundedBorder();
         lblImagePoint = new javax.swing.JLabel();
+        jpBgGreenImagePoint = new br.com.loginform.components.JPanelRoundedBorder();
+        lblImageDescriptionImagePoint = new javax.swing.JLabel();
+        jpButtonNextImagePoint = new br.com.loginform.components.JPanelRoundedBorder();
+        lblButtonNextImagePoint = new javax.swing.JLabel();
+        jpPointDescription = new br.com.loginform.components.JPanelRoundedBorder();
+        lblTitle = new javax.swing.JLabel();
+        jpButtonBackDescriptionPoint = new br.com.loginform.components.JPanelRoundedBorder();
+        lblButtonBackDescriptionPoint = new javax.swing.JLabel();
+        jpButtonNextImagePoint1 = new br.com.loginform.components.JPanelRoundedBorder();
+        lblButtonNext1 = new javax.swing.JLabel();
+        jpPointAddress = new br.com.loginform.components.JPanelRoundedBorder();
+        lblTitleAddress = new javax.swing.JLabel();
+        lblTitleInfoAddress = new javax.swing.JLabel();
+        jpButtonNextAddressPoint = new br.com.loginform.components.JPanelRoundedBorder();
+        lblButtonNextAddressPoint = new javax.swing.JLabel();
+        jpButtonBackAddressPoint = new br.com.loginform.components.JPanelRoundedBorder();
+        lblButtonBackAddressPoint = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de pontos de coletas");
@@ -101,14 +120,129 @@ public class Register extends javax.swing.JDialog {
         getContentPane().add(lblGoBack);
         lblGoBack.setBounds(899, 71, 90, 18);
 
+        jpMain.setLayout(new java.awt.CardLayout());
+
+        jpImagePoint.setOpaque(true);
         jpImagePoint.setLayout(null);
 
         lblImagePoint.setText("Imagem do ponto");
         jpImagePoint.add(lblImagePoint);
-        lblImagePoint.setBounds(20, 20, 200, 30);
+        lblImagePoint.setBounds(20, 20, 200, 16);
 
-        getContentPane().add(jpImagePoint);
-        jpImagePoint.setBounds(177, 120, 670, 420);
+        jpBgGreenImagePoint.setBackground(new java.awt.Color(214, 245, 228));
+        jpBgGreenImagePoint.setLayout(null);
+
+        lblImageDescriptionImagePoint.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImageDescriptionImagePoint.setText("Clique aqui para selecionar uma imagem.");
+        lblImageDescriptionImagePoint.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(52, 203, 121)));
+        lblImageDescriptionImagePoint.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpBgGreenImagePoint.add(lblImageDescriptionImagePoint);
+        lblImageDescriptionImagePoint.setBounds(35, 24, 500, 252);
+
+        jpImagePoint.add(jpBgGreenImagePoint);
+        jpBgGreenImagePoint.setBounds(50, 70, 570, 300);
+
+        jpButtonNextImagePoint.setLayout(null);
+
+        lblButtonNextImagePoint.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonNextImagePoint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
+        lblButtonNextImagePoint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonNextImagePoint.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblButtonNextImagePoint.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblButtonNextImagePointMouseClicked(evt);
+            }
+        });
+        jpButtonNextImagePoint.add(lblButtonNextImagePoint);
+        lblButtonNextImagePoint.setBounds(0, 0, 36, 36);
+
+        jpImagePoint.add(jpButtonNextImagePoint);
+        jpButtonNextImagePoint.setBounds(626, 376, 36, 36);
+
+        jpMain.add(jpImagePoint, "cardImage");
+
+        jpPointDescription.setOpaque(true);
+        jpPointDescription.setLayout(null);
+
+        lblTitle.setText("Descrição do ponto");
+        jpPointDescription.add(lblTitle);
+        lblTitle.setBounds(20, 20, 200, 16);
+
+        jpButtonBackDescriptionPoint.setLayout(null);
+
+        lblButtonBackDescriptionPoint.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonBackDescriptionPoint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-left-10x.png"))); // NOI18N
+        lblButtonBackDescriptionPoint.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpButtonBackDescriptionPoint.add(lblButtonBackDescriptionPoint);
+        lblButtonBackDescriptionPoint.setBounds(0, 0, 36, 36);
+
+        jpPointDescription.add(jpButtonBackDescriptionPoint);
+        jpButtonBackDescriptionPoint.setBounds(8, 376, 36, 36);
+
+        jpButtonNextImagePoint1.setLayout(null);
+
+        lblButtonNext1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonNext1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
+        lblButtonNext1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonNext1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblButtonNext1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblButtonNext1MouseClicked(evt);
+            }
+        });
+        jpButtonNextImagePoint1.add(lblButtonNext1);
+        lblButtonNext1.setBounds(0, 0, 36, 36);
+
+        jpPointDescription.add(jpButtonNextImagePoint1);
+        jpButtonNextImagePoint1.setBounds(626, 376, 36, 36);
+
+        jpMain.add(jpPointDescription, "cardDescription");
+
+        jpPointAddress.setOpaque(true);
+        jpPointAddress.setLayout(null);
+
+        lblTitleAddress.setText("Endereço do ponto");
+        jpPointAddress.add(lblTitleAddress);
+        lblTitleAddress.setBounds(20, 20, 200, 16);
+
+        lblTitleInfoAddress.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblTitleInfoAddress.setText("Insira o cep para preencher alguns campos");
+        lblTitleInfoAddress.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jpPointAddress.add(lblTitleInfoAddress);
+        lblTitleInfoAddress.setBounds(358, 24, 292, 16);
+
+        jpButtonNextAddressPoint.setLayout(null);
+
+        lblButtonNextAddressPoint.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonNextAddressPoint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
+        lblButtonNextAddressPoint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonNextAddressPoint.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblButtonNextAddressPoint.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblButtonNextAddressPointMouseClicked(evt);
+            }
+        });
+        jpButtonNextAddressPoint.add(lblButtonNextAddressPoint);
+        lblButtonNextAddressPoint.setBounds(0, 0, 36, 36);
+
+        jpPointAddress.add(jpButtonNextAddressPoint);
+        jpButtonNextAddressPoint.setBounds(626, 376, 36, 36);
+
+        jpButtonBackAddressPoint.setLayout(null);
+
+        lblButtonBackAddressPoint.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonBackAddressPoint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-left-10x.png"))); // NOI18N
+        lblButtonBackAddressPoint.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpButtonBackAddressPoint.add(lblButtonBackAddressPoint);
+        lblButtonBackAddressPoint.setBounds(0, 0, 36, 36);
+
+        jpPointAddress.add(jpButtonBackAddressPoint);
+        jpButtonBackAddressPoint.setBounds(8, 376, 36, 36);
+
+        jpMain.add(jpPointAddress, "cardAddress");
+
+        getContentPane().add(jpMain);
+        jpMain.setBounds(177, 120, 670, 420);
 
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
@@ -134,14 +268,45 @@ public class Register extends javax.swing.JDialog {
         lblMinimize.setBackground(null);
     }//GEN-LAST:event_lblMinimizeMouseExited
 
+    private void lblButtonNextImagePointMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonNextImagePointMouseClicked
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardDescription");
+    }//GEN-LAST:event_lblButtonNextImagePointMouseClicked
+
+    private void lblButtonNext1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonNext1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblButtonNext1MouseClicked
+
+    private void lblButtonNextAddressPointMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonNextAddressPointMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblButtonNextAddressPointMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private br.com.loginform.components.JPanelRoundedBorder jpBgGreenImagePoint;
+    private br.com.loginform.components.JPanelRoundedBorder jpButtonBackAddressPoint;
+    private br.com.loginform.components.JPanelRoundedBorder jpButtonBackDescriptionPoint;
+    private br.com.loginform.components.JPanelRoundedBorder jpButtonNextAddressPoint;
+    private br.com.loginform.components.JPanelRoundedBorder jpButtonNextImagePoint;
+    private br.com.loginform.components.JPanelRoundedBorder jpButtonNextImagePoint1;
     private br.com.loginform.components.JPanelRoundedBorder jpImagePoint;
+    private br.com.loginform.components.JPanelRoundedBorder jpMain;
+    private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
+    private br.com.loginform.components.JPanelRoundedBorder jpPointDescription;
+    private javax.swing.JLabel lblButtonBackAddressPoint;
+    private javax.swing.JLabel lblButtonBackDescriptionPoint;
+    private javax.swing.JLabel lblButtonNext1;
+    private javax.swing.JLabel lblButtonNextAddressPoint;
+    private javax.swing.JLabel lblButtonNextImagePoint;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
     private javax.swing.JLabel lblGoBack;
+    private javax.swing.JLabel lblImageDescriptionImagePoint;
     private javax.swing.JLabel lblImagePoint;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblTitleAddress;
+    private javax.swing.JLabel lblTitleInfoAddress;
     // End of variables declaration//GEN-END:variables
 }
