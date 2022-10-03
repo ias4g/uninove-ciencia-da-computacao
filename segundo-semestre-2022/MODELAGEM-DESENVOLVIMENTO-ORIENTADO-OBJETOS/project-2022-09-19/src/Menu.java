@@ -13,7 +13,8 @@ public class Menu extends javax.swing.JFrame {
 
         mnuAdministrative.setVisible(false);
 
-        lblSaudacao.setText("Bem vindo " + name + " - Perfil: " + job);
+        lblSaudacao.setText("Bem vindo: " + name);
+        lblUserLogged.setText("Usuário logado: " + job);
 
         if (job.equalsIgnoreCase("Administrador")) {
             mnuAdministrative.setVisible(true);
@@ -27,6 +28,7 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         lblSaudacao = new javax.swing.JLabel();
+        lblUserLogged = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
         jmbMain = new javax.swing.JMenuBar();
         mnuProducts = new javax.swing.JMenu();
@@ -56,7 +58,15 @@ public class Menu extends javax.swing.JFrame {
         lblSaudacao.setBackground(new java.awt.Color(255, 255, 255));
         lblSaudacao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSaudacao.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(lblSaudacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        lblSaudacao.setText("Saudação");
+        getContentPane().add(lblSaudacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 230, -1));
+
+        lblUserLogged.setBackground(new java.awt.Color(255, 255, 255));
+        lblUserLogged.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblUserLogged.setForeground(new java.awt.Color(255, 255, 255));
+        lblUserLogged.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblUserLogged.setText("Logado");
+        getContentPane().add(lblUserLogged, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 400, -1));
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/fundo.jpg"))); // NOI18N
         getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 403));
@@ -192,6 +202,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmbMain;
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblSaudacao;
+    private javax.swing.JLabel lblUserLogged;
     private javax.swing.JMenu mnuAdministrative;
     private javax.swing.JMenu mnuCustomers;
     private javax.swing.JMenu mnuEmployee;
