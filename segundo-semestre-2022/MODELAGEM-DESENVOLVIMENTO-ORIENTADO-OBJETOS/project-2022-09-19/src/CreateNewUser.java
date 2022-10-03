@@ -231,11 +231,10 @@ public class CreateNewUser extends javax.swing.JFrame {
                 conn.close();
                 dispose();
 
-            } catch (ClassNotFoundException ex) {
+            } catch (ClassNotFoundException | SQLException ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n Message: " + ex.getMessage() + "\n Código do erro: " + ex.getErrorCode());
             }
+
         } else {
 
             dispose();
