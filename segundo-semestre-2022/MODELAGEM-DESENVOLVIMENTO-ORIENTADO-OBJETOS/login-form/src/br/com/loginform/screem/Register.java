@@ -35,6 +35,9 @@ public class Register extends javax.swing.JDialog {
         lblLogo = new javax.swing.JLabel();
         lblGoBack = new javax.swing.JLabel();
         jpMain = new br.com.loginform.components.JPanelRoundedBorder();
+        jpPointImage = new br.com.loginform.components.JPanelRoundedBorder();
+        jpPointImageDropzone = new br.com.loginform.components.JPanelRoundedBorder();
+        lblPointImageDropzone = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de pontos de coletas");
@@ -101,6 +104,23 @@ public class Register extends javax.swing.JDialog {
         lblGoBack.setBounds(899, 71, 90, 18);
 
         jpMain.setLayout(new java.awt.CardLayout());
+
+        jpPointImage.setLayout(null);
+
+        jpPointImageDropzone.setBackground(new java.awt.Color(214, 245, 228));
+        jpPointImageDropzone.setLayout(null);
+
+        lblPointImageDropzone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPointImageDropzone.setText("Clique aqui para selecionar uma imagem.");
+        lblPointImageDropzone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(52, 203, 121)));
+        jpPointImageDropzone.add(lblPointImageDropzone);
+        lblPointImageDropzone.setBounds(35, 24, 500, 252);
+
+        jpPointImage.add(jpPointImageDropzone);
+        jpPointImageDropzone.setBounds(50, 68, 570, 300);
+
+        jpMain.add(jpPointImage, "card2");
+
         getContentPane().add(jpMain);
         jpMain.setBounds(177, 120, 670, 420);
 
@@ -130,11 +150,14 @@ public class Register extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
+    private br.com.loginform.components.JPanelRoundedBorder jpPointImage;
+    private br.com.loginform.components.JPanelRoundedBorder jpPointImageDropzone;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
     private javax.swing.JLabel lblGoBack;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
+    private javax.swing.JLabel lblPointImageDropzone;
     // End of variables declaration//GEN-END:variables
 }
