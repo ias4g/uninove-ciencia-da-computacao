@@ -116,7 +116,7 @@ public class Register extends javax.swing.JDialog {
         lblPointImageDropzone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPointImageDropzone.setText("Clique aqui para selecionar uma imagem.");
         lblPointImageDropzone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(52, 203, 121)));
-        lblPointImageDropzone.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        lblPointImageDropzone.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         jpPointImageDropzone.add(lblPointImageDropzone);
         lblPointImageDropzone.setBounds(35, 24, 500, 252);
 
