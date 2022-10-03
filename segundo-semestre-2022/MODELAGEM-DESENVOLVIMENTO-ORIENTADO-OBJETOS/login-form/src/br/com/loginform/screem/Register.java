@@ -2,6 +2,7 @@ package br.com.loginform.screem;
 
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -45,6 +46,14 @@ public class Register extends javax.swing.JDialog {
         lblPointDescTitle = new javax.swing.JLabel();
         lblPointDescSubTitle = new javax.swing.JLabel();
         lblPointDescNext = new br.com.loginform.components.JLabelRoundedBorder();
+        jpPointAddress = new br.com.loginform.components.JPanelRoundedBorder();
+        lblPointAddressTitle = new javax.swing.JLabel();
+        lblPointAddressSubTitle = new javax.swing.JLabel();
+        lblPointAddressNext = new br.com.loginform.components.JLabelRoundedBorder();
+        jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
+        lblPointItensTitle = new javax.swing.JLabel();
+        lblPointItensSubTitle = new javax.swing.JLabel();
+        lblPointItensNext = new br.com.loginform.components.JLabelRoundedBorder();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de pontos de coletas");
@@ -140,6 +149,9 @@ public class Register extends javax.swing.JDialog {
         lblPointImageNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
         lblPointImageNext.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblPointImageNext.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPointImageNextMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblPointImageNextMouseEntered(evt);
             }
@@ -150,7 +162,7 @@ public class Register extends javax.swing.JDialog {
         jpPointImage.add(lblPointImageNext);
         lblPointImageNext.setBounds(626, 376, 36, 36);
 
-        jpMain.add(jpPointImage, "card2");
+        jpMain.add(jpPointImage, "cardImage");
 
         lblPointDescTitle.setText("Descrição do ponto");
 
@@ -162,6 +174,9 @@ public class Register extends javax.swing.JDialog {
         lblPointDescNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
         lblPointDescNext.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblPointDescNext.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPointDescNextMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblPointDescNextMouseEntered(evt);
             }
@@ -174,37 +189,136 @@ public class Register extends javax.swing.JDialog {
         jpPointDesc.setLayout(jpPointDescLayout);
         jpPointDescLayout.setHorizontalGroup(
             jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-            .addGroup(jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jpPointDescLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpPointDescLayout.createSequentialGroup()
-                            .addComponent(lblPointDescTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(160, 160, 160)
-                            .addComponent(lblPointDescSubTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jpPointDescLayout.createSequentialGroup()
-                            .addGap(606, 606, 606)
-                            .addComponent(lblPointDescNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jpPointDescLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPointDescLayout.createSequentialGroup()
+                        .addComponent(lblPointDescTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(160, 160, 160)
+                        .addComponent(lblPointDescSubTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpPointDescLayout.createSequentialGroup()
+                        .addGap(606, 606, 606)
+                        .addComponent(lblPointDescNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jpPointDescLayout.setVerticalGroup(
             jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
-            .addGroup(jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jpPointDescLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblPointDescTitle)
-                        .addGroup(jpPointDescLayout.createSequentialGroup()
-                            .addGap(4, 4, 4)
-                            .addComponent(lblPointDescSubTitle)))
-                    .addGap(336, 336, 336)
-                    .addComponent(lblPointDescNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jpPointDescLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPointDescTitle)
+                    .addGroup(jpPointDescLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(lblPointDescSubTitle)))
+                .addGap(336, 336, 336)
+                .addComponent(lblPointDescNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jpMain.add(jpPointDesc, "card3");
+        jpMain.add(jpPointDesc, "cardDescription");
+
+        lblPointAddressTitle.setText("Endereço do ponto");
+
+        lblPointAddressSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblPointAddressSubTitle.setText("Insira o cep para preencher alguns campos");
+
+        lblPointAddressNext.setBackground(new java.awt.Color(255, 255, 255));
+        lblPointAddressNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPointAddressNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
+        lblPointAddressNext.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPointAddressNext.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPointAddressNextMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblPointAddressNextMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblPointAddressNextMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpPointAddressLayout = new javax.swing.GroupLayout(jpPointAddress);
+        jpPointAddress.setLayout(jpPointAddressLayout);
+        jpPointAddressLayout.setHorizontalGroup(
+            jpPointAddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpPointAddressLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jpPointAddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPointAddressLayout.createSequentialGroup()
+                        .addComponent(lblPointAddressTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(160, 160, 160)
+                        .addComponent(lblPointAddressSubTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpPointAddressLayout.createSequentialGroup()
+                        .addGap(606, 606, 606)
+                        .addComponent(lblPointAddressNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jpPointAddressLayout.setVerticalGroup(
+            jpPointAddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpPointAddressLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jpPointAddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPointAddressTitle)
+                    .addGroup(jpPointAddressLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(lblPointAddressSubTitle)))
+                .addGap(336, 336, 336)
+                .addComponent(lblPointAddressNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jpMain.add(jpPointAddress, "cardAddress");
+
+        lblPointItensTitle.setText("Itens de coleta");
+
+        lblPointItensSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblPointItensSubTitle.setText("Selecione os itens que o ponto coleta");
+
+        lblPointItensNext.setBackground(new java.awt.Color(255, 255, 255));
+        lblPointItensNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPointItensNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
+        lblPointItensNext.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPointItensNext.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblPointItensNextMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblPointItensNextMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpPointItensLayout = new javax.swing.GroupLayout(jpPointItens);
+        jpPointItens.setLayout(jpPointItensLayout);
+        jpPointItensLayout.setHorizontalGroup(
+            jpPointItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpPointItensLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jpPointItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpPointItensLayout.createSequentialGroup()
+                        .addComponent(lblPointItensTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(160, 160, 160)
+                        .addComponent(lblPointItensSubTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpPointItensLayout.createSequentialGroup()
+                        .addGap(606, 606, 606)
+                        .addComponent(lblPointItensNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jpPointItensLayout.setVerticalGroup(
+            jpPointItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpPointItensLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jpPointItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPointItensTitle)
+                    .addGroup(jpPointItensLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(lblPointItensSubTitle)))
+                .addGap(336, 336, 336)
+                .addComponent(lblPointItensNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jpMain.add(jpPointItens, "cardItens");
 
         getContentPane().add(jpMain);
         jpMain.setBounds(177, 120, 670, 420);
@@ -242,24 +356,60 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointImageNextMouseExited
 
     private void lblPointDescNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseEntered
-        // TODO add your handling code here:
+        lblPointDescNext.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointDescNextMouseEntered
 
     private void lblPointDescNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseExited
-        // TODO add your handling code here:
+        lblPointDescNext.setBackground(null);
     }//GEN-LAST:event_lblPointDescNextMouseExited
+
+    private void lblPointAddressNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseEntered
+        lblPointAddressNext.setBackground(new Color(214, 245, 228));
+    }//GEN-LAST:event_lblPointAddressNextMouseEntered
+
+    private void lblPointAddressNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseExited
+        lblPointAddressNext.setBackground(null);
+    }//GEN-LAST:event_lblPointAddressNextMouseExited
+
+    private void lblPointItensNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensNextMouseEntered
+        lblPointItensNext.setBackground(new Color(214, 245, 228));
+    }//GEN-LAST:event_lblPointItensNextMouseEntered
+
+    private void lblPointItensNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensNextMouseExited
+        lblPointItensNext.setBackground(null);
+    }//GEN-LAST:event_lblPointItensNextMouseExited
+
+    private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardDescription");
+    }//GEN-LAST:event_lblPointImageNextMouseClicked
+
+    private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardAddress");
+    }//GEN-LAST:event_lblPointDescNextMouseClicked
+
+    private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardItens");
+    }//GEN-LAST:event_lblPointAddressNextMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
+    private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
     private br.com.loginform.components.JPanelRoundedBorder jpPointDesc;
     private br.com.loginform.components.JPanelRoundedBorder jpPointImage;
     private br.com.loginform.components.JPanelRoundedBorder jpPointImageDropzone;
+    private br.com.loginform.components.JPanelRoundedBorder jpPointItens;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
     private javax.swing.JLabel lblGoBack;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblMinimize;
+    private br.com.loginform.components.JLabelRoundedBorder lblPointAddressNext;
+    private javax.swing.JLabel lblPointAddressSubTitle;
+    private javax.swing.JLabel lblPointAddressTitle;
     private br.com.loginform.components.JLabelRoundedBorder lblPointDescNext;
     private javax.swing.JLabel lblPointDescSubTitle;
     private javax.swing.JLabel lblPointDescTitle;
@@ -267,5 +417,8 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JLabelRoundedBorder lblPointImageNext;
     private javax.swing.JLabel lblPointImageSubTitle;
     private javax.swing.JLabel lblPointImageTitle;
+    private br.com.loginform.components.JLabelRoundedBorder lblPointItensNext;
+    private javax.swing.JLabel lblPointItensSubTitle;
+    private javax.swing.JLabel lblPointItensTitle;
     // End of variables declaration//GEN-END:variables
 }
