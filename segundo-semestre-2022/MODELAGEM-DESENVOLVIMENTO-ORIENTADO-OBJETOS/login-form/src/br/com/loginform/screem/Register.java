@@ -113,11 +113,11 @@ public class Register extends javax.swing.JDialog {
         getContentPane().add(lblLogo);
         lblLogo.setBounds(60, 60, 112, 32);
 
-        lblGoBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-left.png"))); // NOI18N
+        lblGoBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-left-10x.png"))); // NOI18N
         lblGoBack.setText("Voltar");
         lblGoBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(lblGoBack);
-        lblGoBack.setBounds(899, 71, 90, 18);
+        lblGoBack.setBounds(899, 71, 90, 16);
 
         jpMain.setLayout(new java.awt.CardLayout());
 
@@ -277,7 +277,7 @@ public class Register extends javax.swing.JDialog {
 
         lblPointItensNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointItensNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPointItensNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
+        lblPointItensNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/save.png"))); // NOI18N
         lblPointItensNext.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblPointItensNext.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
