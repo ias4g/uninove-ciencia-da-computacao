@@ -2,7 +2,6 @@ package br.com.loginform.screem;
 
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -22,7 +21,7 @@ public class Register extends javax.swing.JDialog {
         lblFaviconDescription.setFont(PTSans_Bold_12);
         lblGoBack.setFont(PTSans_Regular_16);
 
-        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
+//        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
     }
 
     @SuppressWarnings("unchecked")
@@ -101,7 +100,6 @@ public class Register extends javax.swing.JDialog {
         getContentPane().add(lblGoBack);
         lblGoBack.setBounds(899, 71, 90, 18);
 
-        jpMain.setBackground(new java.awt.Color(0, 0, 0));
         jpMain.setLayout(new java.awt.CardLayout());
         getContentPane().add(jpMain);
         jpMain.setBounds(177, 120, 670, 420);
