@@ -20,7 +20,6 @@ public class Register extends javax.swing.JDialog {
         Font Ubuntu_Bold_16 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 16f);
 
         lblFaviconDescription.setFont(PTSans_Bold_12);
-        lblGoBack.setFont(PTSans_Regular_16);
 
 //        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
     }
@@ -30,11 +29,9 @@ public class Register extends javax.swing.JDialog {
     private void initComponents() {
 
         lblClose = new javax.swing.JLabel();
-        lblMinimize = new javax.swing.JLabel();
         lblFaviconDescription = new javax.swing.JLabel();
         lblFavicon = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
-        lblGoBack = new javax.swing.JLabel();
         jpMain = new br.com.loginform.components.JPanelRoundedBorder();
         jpPointImage = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointImageTitle = new javax.swing.JLabel();
@@ -64,7 +61,6 @@ public class Register extends javax.swing.JDialog {
         setSize(new java.awt.Dimension(1024, 590));
         getContentPane().setLayout(null);
 
-        lblClose.setBackground(new java.awt.Color(248, 248, 228));
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/close.png"))); // NOI18N
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -84,22 +80,6 @@ public class Register extends javax.swing.JDialog {
         getContentPane().add(lblClose);
         lblClose.setBounds(974, 0, 50, 25);
 
-        lblMinimize.setBackground(new java.awt.Color(248, 248, 228));
-        lblMinimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/minimize.png"))); // NOI18N
-        lblMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblMinimize.setOpaque(true);
-        lblMinimize.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblMinimizeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblMinimizeMouseExited(evt);
-            }
-        });
-        getContentPane().add(lblMinimize);
-        lblMinimize.setBounds(924, 0, 50, 25);
-
         lblFaviconDescription.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblFaviconDescription.setText("Ecoleta | Cadastro de ponto");
         getContentPane().add(lblFaviconDescription);
@@ -112,12 +92,6 @@ public class Register extends javax.swing.JDialog {
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(60, 60, 112, 32);
-
-        lblGoBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-left-10x.png"))); // NOI18N
-        lblGoBack.setText("Voltar");
-        lblGoBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(lblGoBack);
-        lblGoBack.setBounds(899, 71, 90, 16);
 
         jpMain.setLayout(new java.awt.CardLayout());
 
@@ -164,10 +138,16 @@ public class Register extends javax.swing.JDialog {
 
         jpMain.add(jpPointImage, "cardImage");
 
+        jpPointDesc.setLayout(null);
+
         lblPointDescTitle.setText("Descrição do ponto");
+        jpPointDesc.add(lblPointDescTitle);
+        lblPointDescTitle.setBounds(20, 20, 170, 16);
 
         lblPointDescSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPointDescSubTitle.setText("Insira a descrição do ponto de coleta");
+        jpPointDesc.add(lblPointDescSubTitle);
+        lblPointDescSubTitle.setBounds(350, 24, 300, 16);
 
         lblPointDescNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointDescNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -184,43 +164,21 @@ public class Register extends javax.swing.JDialog {
                 lblPointDescNextMouseExited(evt);
             }
         });
-
-        javax.swing.GroupLayout jpPointDescLayout = new javax.swing.GroupLayout(jpPointDesc);
-        jpPointDesc.setLayout(jpPointDescLayout);
-        jpPointDescLayout.setHorizontalGroup(
-            jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPointDescLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpPointDescLayout.createSequentialGroup()
-                        .addComponent(lblPointDescTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(160, 160, 160)
-                        .addComponent(lblPointDescSubTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpPointDescLayout.createSequentialGroup()
-                        .addGap(606, 606, 606)
-                        .addComponent(lblPointDescNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jpPointDescLayout.setVerticalGroup(
-            jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPointDescLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jpPointDescLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPointDescTitle)
-                    .addGroup(jpPointDescLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lblPointDescSubTitle)))
-                .addGap(336, 336, 336)
-                .addComponent(lblPointDescNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jpPointDesc.add(lblPointDescNext);
+        lblPointDescNext.setBounds(626, 376, 36, 36);
 
         jpMain.add(jpPointDesc, "cardDescription");
 
+        jpPointAddress.setLayout(null);
+
         lblPointAddressTitle.setText("Endereço do ponto");
+        jpPointAddress.add(lblPointAddressTitle);
+        lblPointAddressTitle.setBounds(20, 20, 170, 16);
 
         lblPointAddressSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPointAddressSubTitle.setText("Insira o cep para preencher alguns campos");
+        jpPointAddress.add(lblPointAddressSubTitle);
+        lblPointAddressSubTitle.setBounds(350, 24, 300, 16);
 
         lblPointAddressNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointAddressNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -237,43 +195,21 @@ public class Register extends javax.swing.JDialog {
                 lblPointAddressNextMouseExited(evt);
             }
         });
-
-        javax.swing.GroupLayout jpPointAddressLayout = new javax.swing.GroupLayout(jpPointAddress);
-        jpPointAddress.setLayout(jpPointAddressLayout);
-        jpPointAddressLayout.setHorizontalGroup(
-            jpPointAddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPointAddressLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jpPointAddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpPointAddressLayout.createSequentialGroup()
-                        .addComponent(lblPointAddressTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(160, 160, 160)
-                        .addComponent(lblPointAddressSubTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpPointAddressLayout.createSequentialGroup()
-                        .addGap(606, 606, 606)
-                        .addComponent(lblPointAddressNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jpPointAddressLayout.setVerticalGroup(
-            jpPointAddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPointAddressLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jpPointAddressLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPointAddressTitle)
-                    .addGroup(jpPointAddressLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lblPointAddressSubTitle)))
-                .addGap(336, 336, 336)
-                .addComponent(lblPointAddressNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jpPointAddress.add(lblPointAddressNext);
+        lblPointAddressNext.setBounds(626, 376, 36, 36);
 
         jpMain.add(jpPointAddress, "cardAddress");
 
+        jpPointItens.setLayout(null);
+
         lblPointItensTitle.setText("Itens de coleta");
+        jpPointItens.add(lblPointItensTitle);
+        lblPointItensTitle.setBounds(20, 20, 170, 16);
 
         lblPointItensSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPointItensSubTitle.setText("Selecione os itens que o ponto coleta");
+        jpPointItens.add(lblPointItensSubTitle);
+        lblPointItensSubTitle.setBounds(350, 24, 300, 16);
 
         lblPointItensNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointItensNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -287,36 +223,8 @@ public class Register extends javax.swing.JDialog {
                 lblPointItensNextMouseExited(evt);
             }
         });
-
-        javax.swing.GroupLayout jpPointItensLayout = new javax.swing.GroupLayout(jpPointItens);
-        jpPointItens.setLayout(jpPointItensLayout);
-        jpPointItensLayout.setHorizontalGroup(
-            jpPointItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPointItensLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jpPointItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpPointItensLayout.createSequentialGroup()
-                        .addComponent(lblPointItensTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(160, 160, 160)
-                        .addComponent(lblPointItensSubTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpPointItensLayout.createSequentialGroup()
-                        .addGap(606, 606, 606)
-                        .addComponent(lblPointItensNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jpPointItensLayout.setVerticalGroup(
-            jpPointItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPointItensLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jpPointItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPointItensTitle)
-                    .addGroup(jpPointItensLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lblPointItensSubTitle)))
-                .addGap(336, 336, 336)
-                .addComponent(lblPointItensNext, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jpPointItens.add(lblPointItensNext);
+        lblPointItensNext.setBounds(626, 376, 36, 36);
 
         jpMain.add(jpPointItens, "cardItens");
 
@@ -338,14 +246,6 @@ public class Register extends javax.swing.JDialog {
     private void lblCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseExited
         lblClose.setBackground(null);
     }//GEN-LAST:event_lblCloseMouseExited
-
-    private void lblMinimizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizeMouseEntered
-        lblMinimize.setBackground(new Color(192, 213, 255));
-    }//GEN-LAST:event_lblMinimizeMouseEntered
-
-    private void lblMinimizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizeMouseExited
-        lblMinimize.setBackground(null);
-    }//GEN-LAST:event_lblMinimizeMouseExited
 
     private void lblPointImageNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseEntered
         lblPointImageNext.setBackground(new Color(214, 245, 228));
@@ -404,9 +304,7 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
-    private javax.swing.JLabel lblGoBack;
     private javax.swing.JLabel lblLogo;
-    private javax.swing.JLabel lblMinimize;
     private br.com.loginform.components.JLabelRoundedBorder lblPointAddressNext;
     private javax.swing.JLabel lblPointAddressSubTitle;
     private javax.swing.JLabel lblPointAddressTitle;

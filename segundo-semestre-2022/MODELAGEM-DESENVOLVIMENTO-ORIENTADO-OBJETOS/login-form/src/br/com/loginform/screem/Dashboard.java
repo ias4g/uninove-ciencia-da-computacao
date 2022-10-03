@@ -71,7 +71,6 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblFaviconDescription);
         lblFaviconDescription.setBounds(30, 10, 250, 14);
 
-        lblClose.setBackground(new java.awt.Color(248, 248, 228));
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/close.png"))); // NOI18N
         lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -91,7 +90,6 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblClose);
         lblClose.setBounds(974, 0, 50, 25);
 
-        lblMinimize.setBackground(new java.awt.Color(248, 248, 228));
         lblMinimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/minimize.png"))); // NOI18N
         lblMinimize.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
