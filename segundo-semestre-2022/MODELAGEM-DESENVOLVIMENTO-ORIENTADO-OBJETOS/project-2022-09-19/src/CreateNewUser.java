@@ -224,16 +224,11 @@ public class CreateNewUser extends javax.swing.JFrame {
 
                 st.setString(1, txtId.getText());
 
-                int rs = st.executeUpdate();
+                st.executeUpdate();
 
-                if (rs > 0) {
-                    JOptionPane.showMessageDialog(
-                            null, "Usuário excluido com sucesso"
-                    );
-                }
+                JOptionPane.showMessageDialog(null, "Usuário excluido com sucesso");
 
                 conn.close();
-
                 dispose();
 
             } catch (ClassNotFoundException ex) {
