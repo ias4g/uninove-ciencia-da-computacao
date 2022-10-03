@@ -50,7 +50,11 @@ public class Register extends javax.swing.JDialog {
         jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointItensTitle = new javax.swing.JLabel();
         lblPointItensSubTitle = new javax.swing.JLabel();
-        lblPointItensNext = new br.com.loginform.components.JLabelRoundedBorder();
+        lblPointItensSave = new br.com.loginform.components.JLabelRoundedBorder();
+        jpSucess = new br.com.loginform.components.JPanelRoundedBorder();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        lblCloseSuccess = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de pontos de coletas");
@@ -112,6 +116,7 @@ public class Register extends javax.swing.JDialog {
         lblPointImageDropzone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPointImageDropzone.setText("Clique aqui para selecionar uma imagem.");
         lblPointImageDropzone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(52, 203, 121)));
+        lblPointImageDropzone.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         jpPointImageDropzone.add(lblPointImageDropzone);
         lblPointImageDropzone.setBounds(35, 24, 500, 252);
 
@@ -211,22 +216,51 @@ public class Register extends javax.swing.JDialog {
         jpPointItens.add(lblPointItensSubTitle);
         lblPointItensSubTitle.setBounds(350, 24, 300, 16);
 
-        lblPointItensNext.setBackground(new java.awt.Color(255, 255, 255));
-        lblPointItensNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPointItensNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/save.png"))); // NOI18N
-        lblPointItensNext.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblPointItensNext.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblPointItensSave.setBackground(new java.awt.Color(255, 255, 255));
+        lblPointItensSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPointItensSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/save.png"))); // NOI18N
+        lblPointItensSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPointItensSave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPointItensSaveMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblPointItensNextMouseEntered(evt);
+                lblPointItensSaveMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblPointItensNextMouseExited(evt);
+                lblPointItensSaveMouseExited(evt);
             }
         });
-        jpPointItens.add(lblPointItensNext);
-        lblPointItensNext.setBounds(626, 376, 36, 36);
+        jpPointItens.add(lblPointItensSave);
+        lblPointItensSave.setBounds(626, 376, 36, 36);
 
         jpMain.add(jpPointItens, "cardItens");
+
+        jpSucess.setBackground(new java.awt.Color(214, 245, 228));
+        jpSucess.setLayout(null);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/successful.png"))); // NOI18N
+        jpSucess.add(jLabel2);
+        jLabel2.setBounds(303, 152, 64, 64);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Cadastro concluído");
+        jpSucess.add(jLabel1);
+        jLabel1.setBounds(185, 232, 300, 30);
+
+        lblCloseSuccess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCloseSuccess.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/close-modal.png"))); // NOI18N
+        lblCloseSuccess.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCloseSuccess.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCloseSuccessMouseClicked(evt);
+            }
+        });
+        jpSucess.add(lblCloseSuccess);
+        lblCloseSuccess.setBounds(618, 20, 32, 32);
+
+        jpMain.add(jpSucess, "cardSuccess");
 
         getContentPane().add(jpMain);
         jpMain.setBounds(177, 120, 670, 420);
@@ -271,13 +305,13 @@ public class Register extends javax.swing.JDialog {
         lblPointAddressNext.setBackground(null);
     }//GEN-LAST:event_lblPointAddressNextMouseExited
 
-    private void lblPointItensNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensNextMouseEntered
-        lblPointItensNext.setBackground(new Color(214, 245, 228));
-    }//GEN-LAST:event_lblPointItensNextMouseEntered
+    private void lblPointItensSaveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseEntered
+        lblPointItensSave.setBackground(new Color(214, 245, 228));
+    }//GEN-LAST:event_lblPointItensSaveMouseEntered
 
-    private void lblPointItensNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensNextMouseExited
-        lblPointItensNext.setBackground(null);
-    }//GEN-LAST:event_lblPointItensNextMouseExited
+    private void lblPointItensSaveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseExited
+        lblPointItensSave.setBackground(null);
+    }//GEN-LAST:event_lblPointItensSaveMouseExited
 
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
         CardLayout cl = (CardLayout) jpMain.getLayout();
@@ -294,14 +328,28 @@ public class Register extends javax.swing.JDialog {
         cl.show(jpMain, "cardItens");
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
 
+    private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardSuccess");
+    }//GEN-LAST:event_lblPointItensSaveMouseClicked
+
+    private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardImage");
+    }//GEN-LAST:event_lblCloseSuccessMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
     private br.com.loginform.components.JPanelRoundedBorder jpPointDesc;
     private br.com.loginform.components.JPanelRoundedBorder jpPointImage;
     private br.com.loginform.components.JPanelRoundedBorder jpPointImageDropzone;
     private br.com.loginform.components.JPanelRoundedBorder jpPointItens;
+    private br.com.loginform.components.JPanelRoundedBorder jpSucess;
     private javax.swing.JLabel lblClose;
+    private javax.swing.JLabel lblCloseSuccess;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
     private javax.swing.JLabel lblLogo;
@@ -315,7 +363,7 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JLabelRoundedBorder lblPointImageNext;
     private javax.swing.JLabel lblPointImageSubTitle;
     private javax.swing.JLabel lblPointImageTitle;
-    private br.com.loginform.components.JLabelRoundedBorder lblPointItensNext;
+    private br.com.loginform.components.JLabelRoundedBorder lblPointItensSave;
     private javax.swing.JLabel lblPointItensSubTitle;
     private javax.swing.JLabel lblPointItensTitle;
     // End of variables declaration//GEN-END:variables
