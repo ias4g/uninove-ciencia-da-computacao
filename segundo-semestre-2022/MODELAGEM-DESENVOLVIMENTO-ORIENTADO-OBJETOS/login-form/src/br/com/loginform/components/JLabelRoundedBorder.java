@@ -1,6 +1,7 @@
 package br.com.loginform.components;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -10,6 +11,7 @@ public class JLabelRoundedBorder extends javax.swing.JLabel {
     public JLabelRoundedBorder() {
         initComponents();
         setOpaque(false);
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
         setBackground(new Color(0, 0, 0));
     }
 
