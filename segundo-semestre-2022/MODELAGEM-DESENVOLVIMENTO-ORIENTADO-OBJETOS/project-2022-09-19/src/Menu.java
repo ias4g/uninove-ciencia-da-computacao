@@ -54,6 +54,7 @@ public class Menu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(640, 426));
         setName("jfDashboard"); // NOI18N
         setPreferredSize(new java.awt.Dimension(640, 426));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblSaudacao.setBackground(new java.awt.Color(255, 255, 255));

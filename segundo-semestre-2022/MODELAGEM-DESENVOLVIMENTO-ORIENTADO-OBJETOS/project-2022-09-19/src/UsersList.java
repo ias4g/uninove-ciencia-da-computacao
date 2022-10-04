@@ -16,6 +16,7 @@ public class UsersList extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
         setPreferredSize(new java.awt.Dimension(640, 426));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         tblUsers.setModel(new javax.swing.table.DefaultTableModel(
@@ -37,7 +38,7 @@ public class UsersList extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblUsers);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(22, 20, 600, 380);
+        jScrollPane1.setBounds(22, 20, 600, 320);
 
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
