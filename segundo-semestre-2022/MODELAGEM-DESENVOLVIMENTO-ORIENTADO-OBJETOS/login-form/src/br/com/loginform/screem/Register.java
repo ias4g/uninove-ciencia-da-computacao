@@ -586,25 +586,25 @@ public class Register extends javax.swing.JDialog {
         isSelected = !isSelected;
 
         if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
+            lblElectronicWaste.setBackground(new Color(52, 203, 121));
         } else {
-            lblBatteries.setBackground(new Color(214, 245, 228));
+            lblElectronicWaste.setBackground(new Color(214, 245, 228));
         }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
 
     private void lblElectronicWasteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseEntered
         if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
+            lblElectronicWaste.setBackground(new Color(52, 203, 121));
         } else {
-            hoverLabel(lblBatteries);
+            hoverLabel(lblElectronicWaste);
         }
     }//GEN-LAST:event_lblElectronicWasteMouseEntered
 
     private void lblElectronicWasteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseExited
         if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
+            lblElectronicWaste.setBackground(new Color(52, 203, 121));
         } else {
-            lblBatteries.setBackground(new Color(244, 244, 244));
+            lblElectronicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblElectronicWasteMouseExited
 
@@ -612,25 +612,25 @@ public class Register extends javax.swing.JDialog {
         isSelected = !isSelected;
 
         if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
+            lblLamps.setBackground(new Color(52, 203, 121));
         } else {
-            lblBatteries.setBackground(new Color(214, 245, 228));
+            lblLamps.setBackground(new Color(214, 245, 228));
         }
     }//GEN-LAST:event_lblLampsMouseClicked
 
     private void lblLampsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseEntered
         if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
+            lblLamps.setBackground(new Color(52, 203, 121));
         } else {
-            hoverLabel(lblBatteries);
+            hoverLabel(lblLamps);
         }
     }//GEN-LAST:event_lblLampsMouseEntered
 
     private void lblLampsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseExited
         if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
+            lblLamps.setBackground(new Color(52, 203, 121));
         } else {
-            lblBatteries.setBackground(new Color(244, 244, 244));
+            lblLamps.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblLampsMouseExited
 
@@ -638,25 +638,25 @@ public class Register extends javax.swing.JDialog {
         isSelected = !isSelected;
 
         if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
+            lblOrganicWaste.setBackground(new Color(52, 203, 121));
         } else {
-            lblBatteries.setBackground(new Color(214, 245, 228));
+            lblOrganicWaste.setBackground(new Color(214, 245, 228));
         }
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
 
     private void lblOrganicWasteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseEntered
         if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
+            lblOrganicWaste.setBackground(new Color(52, 203, 121));
         } else {
-            hoverLabel(lblBatteries);
+            hoverLabel(lblOrganicWaste);
         }
     }//GEN-LAST:event_lblOrganicWasteMouseEntered
 
     private void lblOrganicWasteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseExited
         if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
+            lblOrganicWaste.setBackground(new Color(52, 203, 121));
         } else {
-            lblBatteries.setBackground(new Color(244, 244, 244));
+            lblOrganicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblOrganicWasteMouseExited
 
