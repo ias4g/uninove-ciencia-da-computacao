@@ -469,11 +469,9 @@ public class Register extends javax.swing.JDialog {
     private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
         dispose();
     }//GEN-LAST:event_lblCloseMouseClicked
-
     private void lblCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseEntered
         lblClose.setBackground(Color.red);
     }//GEN-LAST:event_lblCloseMouseEntered
-
     private void lblCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseExited
         lblClose.setBackground(null);
     }//GEN-LAST:event_lblCloseMouseExited
@@ -482,7 +480,6 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseEntered
         lblPointImageNext.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointImageNextMouseEntered
-
     private void lblPointImageNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseExited
         lblPointImageNext.setBackground(null);
     }//GEN-LAST:event_lblPointImageNextMouseExited
@@ -491,7 +488,6 @@ public class Register extends javax.swing.JDialog {
     private void lblPointDescNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseEntered
         lblPointDescNext.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointDescNextMouseEntered
-
     private void lblPointDescNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseExited
         lblPointDescNext.setBackground(null);
     }//GEN-LAST:event_lblPointDescNextMouseExited
@@ -508,18 +504,15 @@ public class Register extends javax.swing.JDialog {
     private void lblPointItensSaveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseEntered
         lblPointItensSave.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointItensSaveMouseEntered
-
     private void lblPointItensSaveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseExited
         lblPointItensSave.setBackground(null);
     }//GEN-LAST:event_lblPointItensSaveMouseExited
-
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardDescription");
 
         txtName.requestFocus();
     }//GEN-LAST:event_lblPointImageNextMouseClicked
-
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
 
         if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
@@ -535,7 +528,6 @@ public class Register extends javax.swing.JDialog {
             cl.show(jpMain, "cardAddress");
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
-
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
         if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione") || txtPhone.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
@@ -564,12 +556,9 @@ public class Register extends javax.swing.JDialog {
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardImage");
     }//GEN-LAST:event_lblCloseSuccessMouseClicked
-
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
         selectImage();
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
-
-
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
         isSelectedlamps = !isSelectedlamps;
 
@@ -582,7 +571,6 @@ public class Register extends javax.swing.JDialog {
 
         }
     }//GEN-LAST:event_lblLampsMouseClicked
-
     private void lblOrganicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseClicked
         isSelectedOrganicWaste = !isSelectedOrganicWaste;
 
@@ -594,7 +582,6 @@ public class Register extends javax.swing.JDialog {
             lblOrganicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
-
     private void lblKitchenOilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKitchenOilMouseClicked
         isSelectedKitchenOil = !isSelectedKitchenOil;
 
@@ -606,7 +593,6 @@ public class Register extends javax.swing.JDialog {
             lblKitchenOil.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblKitchenOilMouseClicked
-
     private void lblPapersCardboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPapersCardboardMouseClicked
         isSelectedPapersCardboard = !isSelectedPapersCardboard;
 
@@ -629,7 +615,6 @@ public class Register extends javax.swing.JDialog {
             lblBatteries.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblBatteriesMouseClicked
-
     private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
         isSelectedElectronicWaste = !isSelectedElectronicWaste;
 
@@ -641,11 +626,9 @@ public class Register extends javax.swing.JDialog {
             lblElectronicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println(itensSelected);
     }//GEN-LAST:event_jButton1ActionPerformed
-
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
