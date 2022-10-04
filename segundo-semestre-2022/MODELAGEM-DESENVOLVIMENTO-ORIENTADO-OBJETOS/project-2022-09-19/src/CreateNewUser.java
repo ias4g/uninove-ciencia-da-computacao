@@ -23,6 +23,13 @@ public class CreateNewUser extends javax.swing.JFrame {
         lblId.setVisible(true);
         txtId.setVisible(true);
 
+        txtUser.setEditable(false);
+        txtPass.setEditable(false);
+        txtName.setEditable(false);
+        txtLastname.setEditable(false);
+        txtEmail.setEditable(false);
+        cmbJob.setEnabled(false);
+
         txtId.setText(String.valueOf(id));
         txtUser.setText(user);
         txtPass.setText(password);
@@ -41,20 +48,20 @@ public class CreateNewUser extends javax.swing.JFrame {
 
         lblUser = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
+        lblId = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
         lblPass = new javax.swing.JLabel();
         txtPass = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         lblJob = new javax.swing.JLabel();
         cmbJob = new javax.swing.JComboBox<>();
-        btnDelete = new javax.swing.JButton();
         lblLastname = new javax.swing.JLabel();
         txtLastname = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
-        txtId = new javax.swing.JTextField();
-        lblId = new javax.swing.JLabel();
+        btnDelete = new javax.swing.JButton();
 
         setTitle("User Control");
         setMaximumSize(new java.awt.Dimension(640, 426));
@@ -70,6 +77,15 @@ public class CreateNewUser extends javax.swing.JFrame {
         txtUser.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(txtUser);
         txtUser.setBounds(90, 20, 290, 40);
+
+        lblId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblId.setText("Id");
+        getContentPane().add(lblId);
+        lblId.setBounds(430, 25, 20, 25);
+
+        txtId.setEditable(false);
+        getContentPane().add(txtId);
+        txtId.setBounds(460, 20, 40, 40);
 
         lblPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblPass.setText("Senha");
@@ -97,17 +113,6 @@ public class CreateNewUser extends javax.swing.JFrame {
         cmbJob.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um cargo", "Analista", "Gerente", "Vendedor", "Estagiário", "Segurança", "Programador", "Administrador" }));
         getContentPane().add(cmbJob);
         cmbJob.setBounds(90, 260, 230, 40);
-
-        btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnDelete.setText("Excluir");
-        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnDelete);
-        btnDelete.setBounds(280, 320, 230, 40);
 
         lblLastname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblLastname.setText("Sobrenome");
@@ -138,15 +143,16 @@ public class CreateNewUser extends javax.swing.JFrame {
         getContentPane().add(btnSave);
         btnSave.setBounds(20, 320, 230, 40);
 
-        txtId.setEditable(false);
-        txtId.setEnabled(false);
-        getContentPane().add(txtId);
-        txtId.setBounds(460, 20, 40, 40);
-
-        lblId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblId.setText("Id");
-        getContentPane().add(lblId);
-        lblId.setBounds(430, 25, 20, 25);
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnDelete.setText("Excluir");
+        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnDelete);
+        btnDelete.setBounds(20, 320, 230, 40);
 
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
