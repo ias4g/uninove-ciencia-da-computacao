@@ -10,15 +10,20 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
-    
-    private boolean isSelected = false;
-    
+
+    private boolean isSelectedBatteries = false;
+    private boolean isSelectedElectronicWaste = false;
+    private boolean isSelectedlamps = false;
+    private boolean isSelectedOrganicWaste = false;
+    private boolean isSelectedKitchenOil = false;
+    private boolean isSelectedPapersCardboard = false;
+
     public Register(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+
         Utilities.insertIconDialog(this);
-        
+
         Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
 //        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
 
@@ -26,11 +31,8 @@ public class Register extends javax.swing.JDialog {
         lblFaviconDescription.setFont(PTSans_Bold_12);
 
 //        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
-        if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
-        }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -448,6 +450,7 @@ public class Register extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
         dispose();
     }//GEN-LAST:event_lblCloseMouseClicked
@@ -520,32 +523,74 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
         selectImage();
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
-    
+
 
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
-        hoverLabel(lblLamps);
+        isSelectedlamps = !isSelectedlamps;
+
+        if (isSelectedlamps) {
+            lblLamps.setBackground(new Color(214, 245, 228));
+            System.out.println(lblLamps.getText());
+        } else {
+            lblLamps.setBackground(new Color(244, 244, 244));
+        }
     }//GEN-LAST:event_lblLampsMouseClicked
 
     private void lblOrganicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseClicked
-        hoverLabel(lblOrganicWaste);
+        isSelectedOrganicWaste = !isSelectedOrganicWaste;
+
+        if (isSelectedOrganicWaste) {
+            lblOrganicWaste.setBackground(new Color(214, 245, 228));
+            System.out.println(lblOrganicWaste.getText());
+        } else {
+            lblOrganicWaste.setBackground(new Color(244, 244, 244));
+        }
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
 
     private void lblKitchenOilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKitchenOilMouseClicked
-        hoverLabel(lblKitchenOil);
+        isSelectedKitchenOil = !isSelectedKitchenOil;
+
+        if (isSelectedKitchenOil) {
+            lblKitchenOil.setBackground(new Color(214, 245, 228));
+            System.out.println(lblKitchenOil.getText());
+        } else {
+            lblKitchenOil.setBackground(new Color(244, 244, 244));
+        }
     }//GEN-LAST:event_lblKitchenOilMouseClicked
 
     private void lblPapersCardboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPapersCardboardMouseClicked
-        hoverLabel(lblPapersCardboard);
+        isSelectedPapersCardboard = !isSelectedPapersCardboard;
+
+        if (isSelectedPapersCardboard) {
+            lblPapersCardboard.setBackground(new Color(214, 245, 228));
+            System.out.println(lblPapersCardboard.getText());
+        } else {
+            lblPapersCardboard.setBackground(new Color(244, 244, 244));
+        }
     }//GEN-LAST:event_lblPapersCardboardMouseClicked
 
     private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
-        hoverLabel(lblBatteries);
+        isSelectedBatteries = !isSelectedBatteries;
+
+        if (isSelectedBatteries) {
+            lblBatteries.setBackground(new Color(214, 245, 228));
+            System.out.println(lblBatteries.getText());
+        } else {
+            lblBatteries.setBackground(new Color(244, 244, 244));
+        }
     }//GEN-LAST:event_lblBatteriesMouseClicked
 
     private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
-        hoverLabel(lblElectronicWaste);
+        isSelectedElectronicWaste = !isSelectedElectronicWaste;
+
+        if (isSelectedElectronicWaste) {
+            lblElectronicWaste.setBackground(new Color(214, 245, 228));
+            System.out.println(lblElectronicWaste.getText());
+        } else {
+            lblElectronicWaste.setBackground(new Color(244, 244, 244));
+        }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
-    
+
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -554,20 +599,10 @@ public class Register extends javax.swing.JDialog {
         fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
         fileChooser.setCurrentDirectory(new File("/"));
         fileChooser.showOpenDialog(this);
-        
+
         return fileChooser.getSelectedFile();
     }
-    
-    private void hoverLabel(javax.swing.JLabel l) {
-        isSelected = !isSelected;
-        
-        if (isSelected) {
-            l.setBackground(new Color(214, 245, 228));
-            System.out.println(l.getText());
-        } else {
-            l.setBackground(new Color(244, 244, 244));
-        }
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox3;
