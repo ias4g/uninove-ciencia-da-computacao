@@ -41,9 +41,9 @@ public class Register extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblClose = new javax.swing.JLabel();
-        lblFaviconDescription = new javax.swing.JLabel();
         lblFavicon = new javax.swing.JLabel();
+        lblFaviconDescription = new javax.swing.JLabel();
+        lblClose = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         jpMain = new br.com.loginform.components.JPanelRoundedBorder();
         jpPointImage = new br.com.loginform.components.JPanelRoundedBorder();
@@ -55,33 +55,32 @@ public class Register extends javax.swing.JDialog {
         jpPointDesc = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointDescTitle = new javax.swing.JLabel();
         lblPointDescSubTitle = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        txtName = new br.com.loginform.components.JTextFieldCustom();
+        lblEmail = new javax.swing.JLabel();
+        txtEmail = new br.com.loginform.components.JTextFieldCustom();
+        lblWhatsApp = new javax.swing.JLabel();
+        txtWhatsApp = new br.com.loginform.components.JTextFieldCustom();
         lblPointDescNext = new br.com.loginform.components.JLabelRoundedBorder();
-        jTextFieldCustom1 = new br.com.loginform.components.JTextFieldCustom();
-        jTextFieldCustom2 = new br.com.loginform.components.JTextFieldCustom();
-        jTextFieldCustom3 = new br.com.loginform.components.JTextFieldCustom();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jpPointAddress = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointAddressTitle = new javax.swing.JLabel();
         lblPointAddressSubTitle = new javax.swing.JLabel();
+        lblCep = new javax.swing.JLabel();
+        txtCep = new br.com.loginform.components.JTextFieldCustom();
+        lblAddress = new javax.swing.JLabel();
+        txtAddress = new br.com.loginform.components.JTextFieldCustom();
+        lblNumber = new javax.swing.JLabel();
+        txtNumber = new br.com.loginform.components.JTextFieldCustom();
+        lblUf = new javax.swing.JLabel();
+        cmbUf = new javax.swing.JComboBox<>();
+        lblCity = new javax.swing.JLabel();
+        cmbCity = new javax.swing.JComboBox<>();
+        lblPhone = new javax.swing.JLabel();
+        txtPhone = new br.com.loginform.components.JTextFieldCustom();
         lblPointAddressNext = new br.com.loginform.components.JLabelRoundedBorder();
-        jTextFieldCustom5 = new br.com.loginform.components.JTextFieldCustom();
-        jTextFieldCustom6 = new br.com.loginform.components.JTextFieldCustom();
-        jTextFieldCustom7 = new br.com.loginform.components.JTextFieldCustom();
-        jTextFieldCustom8 = new br.com.loginform.components.JTextFieldCustom();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointItensTitle = new javax.swing.JLabel();
         lblPointItensSubTitle = new javax.swing.JLabel();
-        lblPointItensSave = new br.com.loginform.components.JLabelRoundedBorder();
         jpItens = new javax.swing.JPanel();
         lblBatteries = new br.com.loginform.components.JLabelRoundedBorder();
         lblElectronicWaste = new br.com.loginform.components.JLabelRoundedBorder();
@@ -90,9 +89,10 @@ public class Register extends javax.swing.JDialog {
         lblKitchenOil = new br.com.loginform.components.JLabelRoundedBorder();
         lblPapersCardboard = new br.com.loginform.components.JLabelRoundedBorder();
         jButton1 = new javax.swing.JButton();
+        lblPointItensSave = new br.com.loginform.components.JLabelRoundedBorder();
         jpSucess = new br.com.loginform.components.JPanelRoundedBorder();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblIconSuccess = new javax.swing.JLabel();
+        lblSuccess = new javax.swing.JLabel();
         lblCloseSuccess = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -103,6 +103,15 @@ public class Register extends javax.swing.JDialog {
         setResizable(false);
         setSize(new java.awt.Dimension(1024, 590));
         getContentPane().setLayout(null);
+
+        lblFavicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/favicon.png"))); // NOI18N
+        getContentPane().add(lblFavicon);
+        lblFavicon.setBounds(10, 10, 13, 16);
+
+        lblFaviconDescription.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblFaviconDescription.setText("Ecoleta | Cadastro de ponto");
+        getContentPane().add(lblFaviconDescription);
+        lblFaviconDescription.setBounds(30, 10, 250, 14);
 
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/close.png"))); // NOI18N
@@ -122,15 +131,6 @@ public class Register extends javax.swing.JDialog {
         });
         getContentPane().add(lblClose);
         lblClose.setBounds(974, 0, 50, 25);
-
-        lblFaviconDescription.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        lblFaviconDescription.setText("Ecoleta | Cadastro de ponto");
-        getContentPane().add(lblFaviconDescription);
-        lblFaviconDescription.setBounds(30, 10, 250, 14);
-
-        lblFavicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/favicon.png"))); // NOI18N
-        getContentPane().add(lblFavicon);
-        lblFavicon.setBounds(10, 10, 13, 16);
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
@@ -198,6 +198,24 @@ public class Register extends javax.swing.JDialog {
         jpPointDesc.add(lblPointDescSubTitle);
         lblPointDescSubTitle.setBounds(350, 24, 300, 16);
 
+        lblName.setText("Nome do ponto");
+        jpPointDesc.add(lblName);
+        lblName.setBounds(50, 75, 210, 16);
+        jpPointDesc.add(txtName);
+        txtName.setBounds(50, 96, 570, 56);
+
+        lblEmail.setText("E-mail");
+        jpPointDesc.add(lblEmail);
+        lblEmail.setBounds(50, 184, 120, 16);
+        jpPointDesc.add(txtEmail);
+        txtEmail.setBounds(50, 205, 570, 56);
+
+        lblWhatsApp.setText("WhatsApp");
+        jpPointDesc.add(lblWhatsApp);
+        lblWhatsApp.setBounds(50, 293, 110, 16);
+        jpPointDesc.add(txtWhatsApp);
+        txtWhatsApp.setBounds(50, 314, 570, 56);
+
         lblPointDescNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointDescNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPointDescNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/arrow-right-10x.png"))); // NOI18N
@@ -215,24 +233,6 @@ public class Register extends javax.swing.JDialog {
         });
         jpPointDesc.add(lblPointDescNext);
         lblPointDescNext.setBounds(626, 376, 36, 36);
-        jpPointDesc.add(jTextFieldCustom1);
-        jTextFieldCustom1.setBounds(50, 314, 570, 56);
-        jpPointDesc.add(jTextFieldCustom2);
-        jTextFieldCustom2.setBounds(50, 96, 570, 56);
-        jpPointDesc.add(jTextFieldCustom3);
-        jTextFieldCustom3.setBounds(50, 205, 570, 56);
-
-        jLabel3.setText("WhatsApp");
-        jpPointDesc.add(jLabel3);
-        jLabel3.setBounds(50, 293, 110, 16);
-
-        jLabel4.setText("Nome do ponto");
-        jpPointDesc.add(jLabel4);
-        jLabel4.setBounds(50, 75, 210, 16);
-
-        jLabel5.setText("E-mail");
-        jpPointDesc.add(jLabel5);
-        jLabel5.setBounds(50, 184, 120, 16);
 
         jpMain.add(jpPointDesc, "cardDescription");
 
@@ -246,6 +246,46 @@ public class Register extends javax.swing.JDialog {
         lblPointAddressSubTitle.setText("Insira o cep para preencher alguns campos");
         jpPointAddress.add(lblPointAddressSubTitle);
         lblPointAddressSubTitle.setBounds(350, 24, 300, 16);
+
+        lblCep.setText("Cep");
+        jpPointAddress.add(lblCep);
+        lblCep.setBounds(50, 75, 60, 16);
+        jpPointAddress.add(txtCep);
+        txtCep.setBounds(50, 96, 144, 56);
+
+        lblAddress.setText("Endereço");
+        jpPointAddress.add(lblAddress);
+        lblAddress.setBounds(202, 75, 120, 16);
+        jpPointAddress.add(txtAddress);
+        txtAddress.setBounds(202, 96, 418, 56);
+
+        lblNumber.setText("Número");
+        jpPointAddress.add(lblNumber);
+        lblNumber.setBounds(50, 176, 110, 16);
+        jpPointAddress.add(txtNumber);
+        txtNumber.setBounds(50, 197, 117, 56);
+
+        lblUf.setText("Estado(UF)");
+        jpPointAddress.add(lblUf);
+        lblUf.setBounds(175, 176, 110, 16);
+
+        cmbUf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jpPointAddress.add(cmbUf);
+        cmbUf.setBounds(175, 197, 146, 56);
+
+        lblCity.setText("Cidade");
+        jpPointAddress.add(lblCity);
+        lblCity.setBounds(329, 176, 110, 16);
+
+        cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jpPointAddress.add(cmbCity);
+        cmbCity.setBounds(329, 197, 291, 56);
+
+        lblPhone.setText("Telefone");
+        jpPointAddress.add(lblPhone);
+        lblPhone.setBounds(50, 277, 110, 16);
+        jpPointAddress.add(txtPhone);
+        txtPhone.setBounds(50, 298, 570, 56);
 
         lblPointAddressNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointAddressNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -264,46 +304,6 @@ public class Register extends javax.swing.JDialog {
         });
         jpPointAddress.add(lblPointAddressNext);
         lblPointAddressNext.setBounds(626, 376, 36, 36);
-        jpPointAddress.add(jTextFieldCustom5);
-        jTextFieldCustom5.setBounds(50, 298, 570, 56);
-        jpPointAddress.add(jTextFieldCustom6);
-        jTextFieldCustom6.setBounds(50, 96, 144, 56);
-        jpPointAddress.add(jTextFieldCustom7);
-        jTextFieldCustom7.setBounds(202, 96, 418, 56);
-        jpPointAddress.add(jTextFieldCustom8);
-        jTextFieldCustom8.setBounds(50, 197, 117, 56);
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jpPointAddress.add(jComboBox3);
-        jComboBox3.setBounds(329, 197, 291, 56);
-
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jpPointAddress.add(jComboBox4);
-        jComboBox4.setBounds(175, 197, 146, 56);
-
-        jLabel9.setText("Cidade");
-        jpPointAddress.add(jLabel9);
-        jLabel9.setBounds(50, 277, 110, 16);
-
-        jLabel10.setText("Cep");
-        jpPointAddress.add(jLabel10);
-        jLabel10.setBounds(50, 75, 60, 16);
-
-        jLabel11.setText("Endereço");
-        jpPointAddress.add(jLabel11);
-        jLabel11.setBounds(202, 75, 120, 16);
-
-        jLabel12.setText("Número");
-        jpPointAddress.add(jLabel12);
-        jLabel12.setBounds(50, 176, 110, 16);
-
-        jLabel13.setText("Estado(UF)");
-        jpPointAddress.add(jLabel13);
-        jLabel13.setBounds(175, 176, 110, 16);
-
-        jLabel14.setText("Cidade");
-        jpPointAddress.add(jLabel14);
-        jLabel14.setBounds(329, 176, 110, 16);
 
         jpMain.add(jpPointAddress, "cardAddress");
 
@@ -317,24 +317,6 @@ public class Register extends javax.swing.JDialog {
         lblPointItensSubTitle.setText("Selecione os itens que o ponto coleta");
         jpPointItens.add(lblPointItensSubTitle);
         lblPointItensSubTitle.setBounds(350, 24, 300, 16);
-
-        lblPointItensSave.setBackground(new java.awt.Color(255, 255, 255));
-        lblPointItensSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPointItensSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/save.png"))); // NOI18N
-        lblPointItensSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblPointItensSave.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPointItensSaveMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblPointItensSaveMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblPointItensSaveMouseExited(evt);
-            }
-        });
-        jpPointItens.add(lblPointItensSave);
-        lblPointItensSave.setBounds(626, 376, 36, 36);
 
         jpItens.setBackground(new java.awt.Color(255, 255, 255));
         jpItens.setLayout(new java.awt.GridLayout(2, 3, 10, 10));
@@ -429,20 +411,38 @@ public class Register extends javax.swing.JDialog {
         jpPointItens.add(jButton1);
         jButton1.setBounds(290, 370, 130, 30);
 
+        lblPointItensSave.setBackground(new java.awt.Color(255, 255, 255));
+        lblPointItensSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPointItensSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/save.png"))); // NOI18N
+        lblPointItensSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPointItensSave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPointItensSaveMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblPointItensSaveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblPointItensSaveMouseExited(evt);
+            }
+        });
+        jpPointItens.add(lblPointItensSave);
+        lblPointItensSave.setBounds(626, 376, 36, 36);
+
         jpMain.add(jpPointItens, "cardItens");
 
         jpSucess.setBackground(new java.awt.Color(214, 245, 228));
         jpSucess.setLayout(null);
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/successful.png"))); // NOI18N
-        jpSucess.add(jLabel2);
-        jLabel2.setBounds(303, 152, 64, 64);
+        lblIconSuccess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIconSuccess.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/successful.png"))); // NOI18N
+        jpSucess.add(lblIconSuccess);
+        lblIconSuccess.setBounds(303, 152, 64, 64);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Cadastro concluído");
-        jpSucess.add(jLabel1);
-        jLabel1.setBounds(185, 232, 300, 30);
+        lblSuccess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSuccess.setText("Cadastro concluído");
+        jpSucess.add(lblSuccess);
+        lblSuccess.setBounds(185, 232, 300, 30);
 
         lblCloseSuccess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCloseSuccess.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/close-modal.png"))); // NOI18N
@@ -627,27 +627,9 @@ public class Register extends javax.swing.JDialog {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbCity;
+    private javax.swing.JComboBox<String> cmbUf;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
-    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom1;
-    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom2;
-    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom3;
-    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom5;
-    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom6;
-    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom7;
-    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom8;
     private javax.swing.JPanel jpItens;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
@@ -656,17 +638,25 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JPanelRoundedBorder jpPointImageDropzone;
     private br.com.loginform.components.JPanelRoundedBorder jpPointItens;
     private br.com.loginform.components.JPanelRoundedBorder jpSucess;
+    private javax.swing.JLabel lblAddress;
     private br.com.loginform.components.JLabelRoundedBorder lblBatteries;
+    private javax.swing.JLabel lblCep;
+    private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblCloseSuccess;
     private br.com.loginform.components.JLabelRoundedBorder lblElectronicWaste;
+    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
+    private javax.swing.JLabel lblIconSuccess;
     private br.com.loginform.components.JLabelRoundedBorder lblKitchenOil;
     private br.com.loginform.components.JLabelRoundedBorder lblLamps;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNumber;
     private br.com.loginform.components.JLabelRoundedBorder lblOrganicWaste;
     private br.com.loginform.components.JLabelRoundedBorder lblPapersCardboard;
+    private javax.swing.JLabel lblPhone;
     private br.com.loginform.components.JLabelRoundedBorder lblPointAddressNext;
     private javax.swing.JLabel lblPointAddressSubTitle;
     private javax.swing.JLabel lblPointAddressTitle;
@@ -680,5 +670,15 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JLabelRoundedBorder lblPointItensSave;
     private javax.swing.JLabel lblPointItensSubTitle;
     private javax.swing.JLabel lblPointItensTitle;
+    private javax.swing.JLabel lblSuccess;
+    private javax.swing.JLabel lblUf;
+    private javax.swing.JLabel lblWhatsApp;
+    private br.com.loginform.components.JTextFieldCustom txtAddress;
+    private br.com.loginform.components.JTextFieldCustom txtCep;
+    private br.com.loginform.components.JTextFieldCustom txtEmail;
+    private br.com.loginform.components.JTextFieldCustom txtName;
+    private br.com.loginform.components.JTextFieldCustom txtNumber;
+    private br.com.loginform.components.JTextFieldCustom txtPhone;
+    private br.com.loginform.components.JTextFieldCustom txtWhatsApp;
     // End of variables declaration//GEN-END:variables
 }
