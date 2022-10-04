@@ -45,6 +45,7 @@ public class Menu extends javax.swing.JFrame {
         itmDeleteUser = new javax.swing.JMenuItem();
         itmDeleteAllUser = new javax.swing.JMenuItem();
         itmAddNewUser = new javax.swing.JMenuItem();
+        itmUsersList = new javax.swing.JMenuItem();
         mnuHelp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,6 +131,10 @@ public class Menu extends javax.swing.JFrame {
         });
         mnuAdministrative.add(itmAddNewUser);
 
+        itmUsersList.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmUsersList.setText("Listar Usuários");
+        mnuAdministrative.add(itmUsersList);
+
         jmbMain.add(mnuAdministrative);
 
         mnuHelp.setText("Ajuda");
@@ -198,6 +203,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmExit;
     private javax.swing.JMenuItem itmRegister;
     private javax.swing.JMenuItem itmReports;
+    private javax.swing.JMenuItem itmUsersList;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenuBar jmbMain;
     private javax.swing.JLabel lblBackground;
