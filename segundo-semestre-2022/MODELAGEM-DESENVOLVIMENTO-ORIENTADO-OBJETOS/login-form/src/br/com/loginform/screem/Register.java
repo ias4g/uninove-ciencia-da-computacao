@@ -7,10 +7,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
+
+    private boolean isSelected = false;
 
     public Register(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -19,13 +20,15 @@ public class Register extends javax.swing.JDialog {
         Utilities.insertIconDialog(this);
 
         Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
-        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
+//        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
 
-        Font Ubuntu_Bold_16 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 16f);
-
+//        Font Ubuntu_Bold_16 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 16f);
         lblFaviconDescription.setFont(PTSans_Bold_12);
 
 //        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -74,8 +77,8 @@ public class Register extends javax.swing.JDialog {
         lblPointItensSubTitle = new javax.swing.JLabel();
         lblPointItensSave = new br.com.loginform.components.JLabelRoundedBorder();
         jPanel1 = new javax.swing.JPanel();
-        jLabelRoundedBorder5 = new br.com.loginform.components.JLabelRoundedBorder();
-        jLabelRoundedBorder1 = new br.com.loginform.components.JLabelRoundedBorder();
+        lblBatteries = new br.com.loginform.components.JLabelRoundedBorder();
+        lblElectronicWaste = new br.com.loginform.components.JLabelRoundedBorder();
         jLabelRoundedBorder2 = new br.com.loginform.components.JLabelRoundedBorder();
         jLabelRoundedBorder3 = new br.com.loginform.components.JLabelRoundedBorder();
         jLabelRoundedBorder6 = new br.com.loginform.components.JLabelRoundedBorder();
@@ -329,21 +332,32 @@ public class Register extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.GridLayout(2, 3, 10, 10));
 
-        jLabelRoundedBorder5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/baterias.png"))); // NOI18N
-        jLabelRoundedBorder5.setText("Pilhase Baterias");
-        jLabelRoundedBorder5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder5.setIconTextGap(12);
-        jLabelRoundedBorder5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabelRoundedBorder5);
+        lblBatteries.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBatteries.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/baterias.png"))); // NOI18N
+        lblBatteries.setText("Pilhas e Baterias");
+        lblBatteries.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblBatteries.setIconTextGap(12);
+        lblBatteries.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblBatteries.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBatteriesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblBatteriesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblBatteriesMouseExited(evt);
+            }
+        });
+        jPanel1.add(lblBatteries);
 
-        jLabelRoundedBorder1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/eletronicos.png"))); // NOI18N
-        jLabelRoundedBorder1.setText("Resíduos Eletrônicos");
-        jLabelRoundedBorder1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder1.setIconTextGap(12);
-        jLabelRoundedBorder1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabelRoundedBorder1);
+        lblElectronicWaste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblElectronicWaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/eletronicos.png"))); // NOI18N
+        lblElectronicWaste.setText("Resíduos Eletrônicos");
+        lblElectronicWaste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblElectronicWaste.setIconTextGap(12);
+        lblElectronicWaste.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(lblElectronicWaste);
 
         jLabelRoundedBorder2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelRoundedBorder2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/lampadas.png"))); // NOI18N
@@ -488,6 +502,32 @@ public class Register extends javax.swing.JDialog {
         selectImage();
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
 
+    private void lblBatteriesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseEntered
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            hoverLabel(lblBatteries);
+        }
+    }//GEN-LAST:event_lblBatteriesMouseEntered
+
+    private void lblBatteriesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseExited
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            lblBatteries.setBackground(new Color(244, 244, 244));
+        }
+    }//GEN-LAST:event_lblBatteriesMouseExited
+
+    private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
+        isSelected = !isSelected;
+
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            lblBatteries.setBackground(new Color(214, 245, 228));
+        }
+    }//GEN-LAST:event_lblBatteriesMouseClicked
+
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -498,6 +538,10 @@ public class Register extends javax.swing.JDialog {
         fileChooser.showOpenDialog(this);
 
         return fileChooser.getSelectedFile();
+    }
+
+    private void hoverLabel(javax.swing.JLabel l) {
+        l.setBackground(new Color(214, 245, 228));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -514,11 +558,9 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
-    private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder1;
     private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder2;
     private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder3;
     private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder4;
-    private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder5;
     private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder6;
     private javax.swing.JPanel jPanel1;
     private br.com.loginform.components.JTextFieldCustom jTextFieldCustom1;
@@ -535,8 +577,10 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JPanelRoundedBorder jpPointImageDropzone;
     private br.com.loginform.components.JPanelRoundedBorder jpPointItens;
     private br.com.loginform.components.JPanelRoundedBorder jpSucess;
+    private br.com.loginform.components.JLabelRoundedBorder lblBatteries;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblCloseSuccess;
+    private br.com.loginform.components.JLabelRoundedBorder lblElectronicWaste;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
     private javax.swing.JLabel lblLogo;
