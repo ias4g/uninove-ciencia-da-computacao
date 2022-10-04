@@ -543,9 +543,10 @@ public class Register extends javax.swing.JDialog {
         if (isSelectedlamps) {
             itensSelected.add(lblLamps.getText());
             lblLamps.setBackground(new Color(214, 245, 228));
-//            System.out.println(lblLamps.getText());
         } else {
+            itensSelected.remove(lblLamps.getText());
             lblLamps.setBackground(new Color(244, 244, 244));
+
         }
     }//GEN-LAST:event_lblLampsMouseClicked
 
@@ -555,8 +556,8 @@ public class Register extends javax.swing.JDialog {
         if (isSelectedOrganicWaste) {
             itensSelected.add(lblOrganicWaste.getText());
             lblOrganicWaste.setBackground(new Color(214, 245, 228));
-//            System.out.println(lblOrganicWaste.getText());
         } else {
+            itensSelected.remove(lblOrganicWaste.getText());
             lblOrganicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
@@ -567,8 +568,8 @@ public class Register extends javax.swing.JDialog {
         if (isSelectedKitchenOil) {
             itensSelected.add(lblKitchenOil.getText());
             lblKitchenOil.setBackground(new Color(214, 245, 228));
-//            System.out.println(lblKitchenOil.getText());
         } else {
+            itensSelected.remove(lblKitchenOil.getText());
             lblKitchenOil.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblKitchenOilMouseClicked
@@ -579,8 +580,8 @@ public class Register extends javax.swing.JDialog {
         if (isSelectedPapersCardboard) {
             itensSelected.add(lblPapersCardboard.getText());
             lblPapersCardboard.setBackground(new Color(214, 245, 228));
-//            System.out.println(lblPapersCardboard.getText());
         } else {
+            itensSelected.remove(lblPapersCardboard.getText());
             lblPapersCardboard.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblPapersCardboardMouseClicked
@@ -590,8 +591,8 @@ public class Register extends javax.swing.JDialog {
         if (isSelectedBatteries) {
             itensSelected.add(lblBatteries.getText());
             lblBatteries.setBackground(new Color(214, 245, 228));
-//            System.out.println(lblBatteries.getText());
         } else {
+            itensSelected.remove(lblBatteries.getText());
             lblBatteries.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblBatteriesMouseClicked
@@ -601,10 +602,9 @@ public class Register extends javax.swing.JDialog {
 
         if (isSelectedElectronicWaste) {
             itensSelected.add(lblElectronicWaste.getText());
-
             lblElectronicWaste.setBackground(new Color(214, 245, 228));
-//            System.out.println(lblElectronicWaste.getText());
         } else {
+            itensSelected.remove(lblElectronicWaste.getText());
             lblElectronicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
