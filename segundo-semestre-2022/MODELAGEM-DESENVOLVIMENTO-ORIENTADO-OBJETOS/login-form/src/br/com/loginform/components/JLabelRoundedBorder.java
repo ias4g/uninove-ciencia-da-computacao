@@ -12,7 +12,7 @@ public class JLabelRoundedBorder extends javax.swing.JLabel {
         initComponents();
         setOpaque(false);
         setCursor(new Cursor(Cursor.HAND_CURSOR));
-        setBackground(new Color(0, 0, 0));
+        setBackground(new Color(244, 244, 244));
     }
 
     @SuppressWarnings("unchecked")

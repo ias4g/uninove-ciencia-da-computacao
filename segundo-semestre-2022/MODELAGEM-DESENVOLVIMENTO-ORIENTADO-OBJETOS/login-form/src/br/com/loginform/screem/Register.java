@@ -47,8 +47,6 @@ public class Register extends javax.swing.JDialog {
         lblPointDescTitle = new javax.swing.JLabel();
         lblPointDescSubTitle = new javax.swing.JLabel();
         lblPointDescNext = new br.com.loginform.components.JLabelRoundedBorder();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        combobox1 = new br.com.loginform.components.Combobox();
         jpPointAddress = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointAddressTitle = new javax.swing.JLabel();
         lblPointAddressSubTitle = new javax.swing.JLabel();
@@ -182,17 +180,6 @@ public class Register extends javax.swing.JDialog {
         });
         jpPointDesc.add(lblPointDescNext);
         lblPointDescNext.setBounds(626, 376, 36, 36);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setSelectedIndex(-1);
-        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpPointDesc.add(jComboBox1);
-        jComboBox1.setBounds(40, 310, 200, 30);
-
-        combobox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4", "Item 1", "Item 2", "Item 3", "Item 4" }));
-        combobox1.setSelectedIndex(-1);
-        jpPointDesc.add(combobox1);
-        combobox1.setBounds(110, 110, 260, 50);
 
         jpMain.add(jpPointDesc, "cardDescription");
 
@@ -377,8 +364,6 @@ public class Register extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private br.com.loginform.components.Combobox combobox1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
