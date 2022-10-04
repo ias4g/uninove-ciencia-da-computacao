@@ -6,6 +6,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -18,8 +19,11 @@ public class Register extends javax.swing.JDialog {
     private boolean isSelectedKitchenOil = false;
     private boolean isSelectedPapersCardboard = false;
 
+    ArrayList<String> itensSelected;
+
     public Register(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        this.itensSelected = new ArrayList();
         initComponents();
 
         Utilities.insertIconDialog(this);
