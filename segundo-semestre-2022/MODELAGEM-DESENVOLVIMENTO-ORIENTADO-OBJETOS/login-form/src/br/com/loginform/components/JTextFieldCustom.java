@@ -11,7 +11,7 @@ import javax.swing.border.EmptyBorder;
 
 public class JTextFieldCustom extends JTextField {
 
-    private final Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
+//    private final Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
     private final Color backgroundColor = new Color(244, 244, 244);
 //    private final Color backgroundColor = Color.WHITE;
 
@@ -20,7 +20,7 @@ public class JTextFieldCustom extends JTextField {
 //        setBackground(new Color(255, 255, 255, 0));
         setOpaque(false);
         setBorder(new EmptyBorder(10, 10, 10, 50));
-        setFont(PTSans_Regular_16);
+//        setFont(PTSans_Regular_16);
 //        setFont(new java.awt.Font("sansserif", 0, 14));
         setSelectionColor(new Color(80, 199, 255));
     }

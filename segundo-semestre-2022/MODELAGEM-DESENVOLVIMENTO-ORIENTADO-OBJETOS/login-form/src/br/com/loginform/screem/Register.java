@@ -47,6 +47,18 @@ public class Register extends javax.swing.JDialog {
         lblPointDescTitle = new javax.swing.JLabel();
         lblPointDescSubTitle = new javax.swing.JLabel();
         lblPointDescNext = new br.com.loginform.components.JLabelRoundedBorder();
+        jTextFieldCustom1 = new br.com.loginform.components.JTextFieldCustom();
+        jTextFieldCustom2 = new br.com.loginform.components.JTextFieldCustom();
+        jTextFieldCustom3 = new br.com.loginform.components.JTextFieldCustom();
+        jTextFieldCustom4 = new br.com.loginform.components.JTextFieldCustom();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jpPointAddress = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointAddressTitle = new javax.swing.JLabel();
         lblPointAddressSubTitle = new javax.swing.JLabel();
@@ -180,6 +192,46 @@ public class Register extends javax.swing.JDialog {
         });
         jpPointDesc.add(lblPointDescNext);
         lblPointDescNext.setBounds(626, 376, 36, 36);
+        jpPointDesc.add(jTextFieldCustom1);
+        jTextFieldCustom1.setBounds(50, 314, 570, 56);
+        jpPointDesc.add(jTextFieldCustom2);
+        jTextFieldCustom2.setBounds(50, 112, 144, 56);
+        jpPointDesc.add(jTextFieldCustom3);
+        jTextFieldCustom3.setBounds(202, 112, 418, 56);
+        jpPointDesc.add(jTextFieldCustom4);
+        jTextFieldCustom4.setBounds(50, 213, 117, 56);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jpPointDesc.add(jComboBox1);
+        jComboBox1.setBounds(329, 213, 291, 56);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jpPointDesc.add(jComboBox2);
+        jComboBox2.setBounds(175, 213, 146, 56);
+
+        jLabel3.setText("Cidade");
+        jpPointDesc.add(jLabel3);
+        jLabel3.setBounds(50, 293, 110, 16);
+
+        jLabel4.setText("Cep");
+        jpPointDesc.add(jLabel4);
+        jLabel4.setBounds(50, 91, 60, 16);
+
+        jLabel5.setText("Endereço");
+        jpPointDesc.add(jLabel5);
+        jLabel5.setBounds(202, 91, 120, 16);
+
+        jLabel6.setText("Número");
+        jpPointDesc.add(jLabel6);
+        jLabel6.setBounds(50, 192, 110, 16);
+
+        jLabel7.setText("Estado(UF)");
+        jpPointDesc.add(jLabel7);
+        jLabel7.setBounds(175, 192, 110, 16);
+
+        jLabel8.setText("Cidade");
+        jpPointDesc.add(jLabel8);
+        jLabel8.setBounds(329, 192, 110, 16);
 
         jpMain.add(jpPointDesc, "cardDescription");
 
@@ -364,8 +416,20 @@ public class Register extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom1;
+    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom2;
+    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom3;
+    private br.com.loginform.components.JTextFieldCustom jTextFieldCustom4;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
     private br.com.loginform.components.JPanelRoundedBorder jpPointDesc;
