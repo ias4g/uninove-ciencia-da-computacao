@@ -2,22 +2,13 @@ package br.com.loginform.screem;
 
 public class ShowDetails extends javax.swing.JFrame {
 
-    public ShowDetails(
-            String name;
-            String name;
-            String email;
-            String whatsapp;
-            String cep;
-            String address;
-            String Number;
-            String uf;
-            String city;
-            String phone;
-            String[] itens;    
-        ) {
+    public ShowDetails() {
         initComponents();
     }
 
+//    public ShowDetails(String name, String name, String email, String whatsapp, String cep, String address, String Number, String uf, String city, String phone) {
+//        initComponents();
+//    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

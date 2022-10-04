@@ -95,6 +95,7 @@ public class Register extends javax.swing.JDialog {
         lblIconSuccess = new javax.swing.JLabel();
         lblSuccess = new javax.swing.JLabel();
         lblCloseSuccess = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de pontos de coletas");
@@ -270,7 +271,7 @@ public class Register extends javax.swing.JDialog {
         jpPointAddress.add(lblUf);
         lblUf.setBounds(175, 176, 110, 16);
 
-        cmbUf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", " " }));
+        cmbUf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "SP", "BA" }));
         jpPointAddress.add(cmbUf);
         cmbUf.setBounds(175, 197, 146, 56);
 
@@ -278,7 +279,7 @@ public class Register extends javax.swing.JDialog {
         jpPointAddress.add(lblCity);
         lblCity.setBounds(329, 176, 110, 16);
 
-        cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione" }));
+        cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "São Paulo", "Engenheiro Coelho" }));
         jpPointAddress.add(cmbCity);
         cmbCity.setBounds(329, 197, 291, 56);
 
@@ -461,6 +462,15 @@ public class Register extends javax.swing.JDialog {
         getContentPane().add(jpMain);
         jpMain.setBounds(177, 120, 670, 420);
 
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(430, 30, 75, 22);
+
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -547,8 +557,10 @@ public class Register extends javax.swing.JDialog {
         if (itensSelected.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Selecione pelo menos um item.");
         } else {
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardSuccess");
+            new ShowDetails().setVisible(true);
+
+//            CardLayout cl = (CardLayout) jpMain.getLayout();
+//            cl.show(jpMain, "cardSuccess");
         }
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
@@ -629,6 +641,10 @@ public class Register extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println(itensSelected);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new ShowDetails().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -646,6 +662,7 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> cmbCity;
     private javax.swing.JComboBox<String> cmbUf;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jpItens;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
