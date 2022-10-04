@@ -76,13 +76,13 @@ public class Register extends javax.swing.JDialog {
         lblPointItensTitle = new javax.swing.JLabel();
         lblPointItensSubTitle = new javax.swing.JLabel();
         lblPointItensSave = new br.com.loginform.components.JLabelRoundedBorder();
-        jPanel1 = new javax.swing.JPanel();
+        jpItens = new javax.swing.JPanel();
         lblBatteries = new br.com.loginform.components.JLabelRoundedBorder();
         lblElectronicWaste = new br.com.loginform.components.JLabelRoundedBorder();
-        jLabelRoundedBorder2 = new br.com.loginform.components.JLabelRoundedBorder();
-        jLabelRoundedBorder3 = new br.com.loginform.components.JLabelRoundedBorder();
-        jLabelRoundedBorder6 = new br.com.loginform.components.JLabelRoundedBorder();
-        jLabelRoundedBorder4 = new br.com.loginform.components.JLabelRoundedBorder();
+        lblLamps = new br.com.loginform.components.JLabelRoundedBorder();
+        lblOrganicWaste = new br.com.loginform.components.JLabelRoundedBorder();
+        lblKitchenOil = new br.com.loginform.components.JLabelRoundedBorder();
+        lblPapersCardboard = new br.com.loginform.components.JLabelRoundedBorder();
         jpSucess = new br.com.loginform.components.JPanelRoundedBorder();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -329,8 +329,8 @@ public class Register extends javax.swing.JDialog {
         jpPointItens.add(lblPointItensSave);
         lblPointItensSave.setBounds(626, 376, 36, 36);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new java.awt.GridLayout(2, 3, 10, 10));
+        jpItens.setBackground(new java.awt.Color(255, 255, 255));
+        jpItens.setLayout(new java.awt.GridLayout(2, 3, 10, 10));
 
         lblBatteries.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBatteries.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/baterias.png"))); // NOI18N
@@ -349,7 +349,7 @@ public class Register extends javax.swing.JDialog {
                 lblBatteriesMouseExited(evt);
             }
         });
-        jPanel1.add(lblBatteries);
+        jpItens.add(lblBatteries);
 
         lblElectronicWaste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblElectronicWaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/eletronicos.png"))); // NOI18N
@@ -357,42 +357,97 @@ public class Register extends javax.swing.JDialog {
         lblElectronicWaste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblElectronicWaste.setIconTextGap(12);
         lblElectronicWaste.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(lblElectronicWaste);
+        lblElectronicWaste.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblElectronicWasteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblElectronicWasteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblElectronicWasteMouseExited(evt);
+            }
+        });
+        jpItens.add(lblElectronicWaste);
 
-        jLabelRoundedBorder2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/lampadas.png"))); // NOI18N
-        jLabelRoundedBorder2.setText("Lâmpadas");
-        jLabelRoundedBorder2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder2.setIconTextGap(12);
-        jLabelRoundedBorder2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabelRoundedBorder2);
+        lblLamps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLamps.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/lampadas.png"))); // NOI18N
+        lblLamps.setText("Lâmpadas");
+        lblLamps.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblLamps.setIconTextGap(12);
+        lblLamps.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblLamps.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLampsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblLampsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblLampsMouseExited(evt);
+            }
+        });
+        jpItens.add(lblLamps);
 
-        jLabelRoundedBorder3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/organicos.png"))); // NOI18N
-        jLabelRoundedBorder3.setText("Resíduos Orgânicos");
-        jLabelRoundedBorder3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder3.setIconTextGap(12);
-        jLabelRoundedBorder3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabelRoundedBorder3);
+        lblOrganicWaste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblOrganicWaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/organicos.png"))); // NOI18N
+        lblOrganicWaste.setText("Resíduos Orgânicos");
+        lblOrganicWaste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblOrganicWaste.setIconTextGap(12);
+        lblOrganicWaste.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblOrganicWaste.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblOrganicWasteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblOrganicWasteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblOrganicWasteMouseExited(evt);
+            }
+        });
+        jpItens.add(lblOrganicWaste);
 
-        jLabelRoundedBorder6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/oleo.png"))); // NOI18N
-        jLabelRoundedBorder6.setText("Óleo de cozinha");
-        jLabelRoundedBorder6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder6.setIconTextGap(12);
-        jLabelRoundedBorder6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabelRoundedBorder6);
+        lblKitchenOil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblKitchenOil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/oleo.png"))); // NOI18N
+        lblKitchenOil.setText("Óleo de cozinha");
+        lblKitchenOil.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblKitchenOil.setIconTextGap(12);
+        lblKitchenOil.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblKitchenOil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblOrganicWasteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblOrganicWasteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblOrganicWasteMouseExited(evt);
+            }
+        });
+        jpItens.add(lblKitchenOil);
 
-        jLabelRoundedBorder4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/papeis-papelao.png"))); // NOI18N
-        jLabelRoundedBorder4.setText("Papéis e Papelão");
-        jLabelRoundedBorder4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder4.setIconTextGap(12);
-        jLabelRoundedBorder4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabelRoundedBorder4);
+        lblPapersCardboard.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPapersCardboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/papeis-papelao.png"))); // NOI18N
+        lblPapersCardboard.setText("Papéis e Papelão");
+        lblPapersCardboard.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPapersCardboard.setIconTextGap(12);
+        lblPapersCardboard.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblPapersCardboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblOrganicWasteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblOrganicWasteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblOrganicWasteMouseExited(evt);
+            }
+        });
+        jpItens.add(lblPapersCardboard);
 
-        jpPointItens.add(jPanel1);
-        jPanel1.setBounds(50, 75, 570, 264);
+        jpPointItens.add(jpItens);
+        jpItens.setBounds(50, 75, 570, 264);
 
         jpMain.add(jpPointItens, "cardItens");
 
@@ -501,7 +556,6 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
         selectImage();
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
-
     private void lblBatteriesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseEntered
         if (isSelected) {
             lblBatteries.setBackground(new Color(52, 203, 121));
@@ -527,6 +581,84 @@ public class Register extends javax.swing.JDialog {
             lblBatteries.setBackground(new Color(214, 245, 228));
         }
     }//GEN-LAST:event_lblBatteriesMouseClicked
+
+    private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
+        isSelected = !isSelected;
+
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            lblBatteries.setBackground(new Color(214, 245, 228));
+        }
+    }//GEN-LAST:event_lblElectronicWasteMouseClicked
+
+    private void lblElectronicWasteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseEntered
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            hoverLabel(lblBatteries);
+        }
+    }//GEN-LAST:event_lblElectronicWasteMouseEntered
+
+    private void lblElectronicWasteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseExited
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            lblBatteries.setBackground(new Color(244, 244, 244));
+        }
+    }//GEN-LAST:event_lblElectronicWasteMouseExited
+
+    private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
+        isSelected = !isSelected;
+
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            lblBatteries.setBackground(new Color(214, 245, 228));
+        }
+    }//GEN-LAST:event_lblLampsMouseClicked
+
+    private void lblLampsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseEntered
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            hoverLabel(lblBatteries);
+        }
+    }//GEN-LAST:event_lblLampsMouseEntered
+
+    private void lblLampsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseExited
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            lblBatteries.setBackground(new Color(244, 244, 244));
+        }
+    }//GEN-LAST:event_lblLampsMouseExited
+
+    private void lblOrganicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseClicked
+        isSelected = !isSelected;
+
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            lblBatteries.setBackground(new Color(214, 245, 228));
+        }
+    }//GEN-LAST:event_lblOrganicWasteMouseClicked
+
+    private void lblOrganicWasteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseEntered
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            hoverLabel(lblBatteries);
+        }
+    }//GEN-LAST:event_lblOrganicWasteMouseEntered
+
+    private void lblOrganicWasteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseExited
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            lblBatteries.setBackground(new Color(244, 244, 244));
+        }
+    }//GEN-LAST:event_lblOrganicWasteMouseExited
 
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
@@ -558,11 +690,6 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
-    private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder2;
-    private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder3;
-    private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder4;
-    private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder6;
-    private javax.swing.JPanel jPanel1;
     private br.com.loginform.components.JTextFieldCustom jTextFieldCustom1;
     private br.com.loginform.components.JTextFieldCustom jTextFieldCustom2;
     private br.com.loginform.components.JTextFieldCustom jTextFieldCustom3;
@@ -570,6 +697,7 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JTextFieldCustom jTextFieldCustom6;
     private br.com.loginform.components.JTextFieldCustom jTextFieldCustom7;
     private br.com.loginform.components.JTextFieldCustom jTextFieldCustom8;
+    private javax.swing.JPanel jpItens;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
     private br.com.loginform.components.JPanelRoundedBorder jpPointDesc;
@@ -583,7 +711,11 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JLabelRoundedBorder lblElectronicWaste;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
+    private br.com.loginform.components.JLabelRoundedBorder lblKitchenOil;
+    private br.com.loginform.components.JLabelRoundedBorder lblLamps;
     private javax.swing.JLabel lblLogo;
+    private br.com.loginform.components.JLabelRoundedBorder lblOrganicWaste;
+    private br.com.loginform.components.JLabelRoundedBorder lblPapersCardboard;
     private br.com.loginform.components.JLabelRoundedBorder lblPointAddressNext;
     private javax.swing.JLabel lblPointAddressSubTitle;
     private javax.swing.JLabel lblPointAddressTitle;
