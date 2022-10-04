@@ -89,6 +89,7 @@ public class Register extends javax.swing.JDialog {
         lblOrganicWaste = new br.com.loginform.components.JLabelRoundedBorder();
         lblKitchenOil = new br.com.loginform.components.JLabelRoundedBorder();
         lblPapersCardboard = new br.com.loginform.components.JLabelRoundedBorder();
+        jButton1 = new javax.swing.JButton();
         jpSucess = new br.com.loginform.components.JPanelRoundedBorder();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -419,6 +420,15 @@ public class Register extends javax.swing.JDialog {
         jpPointItens.add(jpItens);
         jpItens.setBounds(50, 75, 570, 264);
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jpPointItens.add(jButton1);
+        jButton1.setBounds(290, 370, 130, 30);
+
         jpMain.add(jpPointItens, "cardItens");
 
         jpSucess.setBackground(new java.awt.Color(214, 245, 228));
@@ -486,7 +496,6 @@ public class Register extends javax.swing.JDialog {
     private void lblPointAddressNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseEntered
         lblPointAddressNext.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointAddressNextMouseEntered
-
     private void lblPointAddressNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseExited
         lblPointAddressNext.setBackground(null);
     }//GEN-LAST:event_lblPointAddressNextMouseExited
@@ -513,7 +522,6 @@ public class Register extends javax.swing.JDialog {
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardItens");
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
-
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardSuccess");
@@ -533,8 +541,9 @@ public class Register extends javax.swing.JDialog {
         isSelectedlamps = !isSelectedlamps;
 
         if (isSelectedlamps) {
+            itensSelected.add(lblLamps.getText());
             lblLamps.setBackground(new Color(214, 245, 228));
-            System.out.println(lblLamps.getText());
+//            System.out.println(lblLamps.getText());
         } else {
             lblLamps.setBackground(new Color(244, 244, 244));
         }
@@ -544,8 +553,9 @@ public class Register extends javax.swing.JDialog {
         isSelectedOrganicWaste = !isSelectedOrganicWaste;
 
         if (isSelectedOrganicWaste) {
+            itensSelected.add(lblOrganicWaste.getText());
             lblOrganicWaste.setBackground(new Color(214, 245, 228));
-            System.out.println(lblOrganicWaste.getText());
+//            System.out.println(lblOrganicWaste.getText());
         } else {
             lblOrganicWaste.setBackground(new Color(244, 244, 244));
         }
@@ -555,8 +565,9 @@ public class Register extends javax.swing.JDialog {
         isSelectedKitchenOil = !isSelectedKitchenOil;
 
         if (isSelectedKitchenOil) {
+            itensSelected.add(lblKitchenOil.getText());
             lblKitchenOil.setBackground(new Color(214, 245, 228));
-            System.out.println(lblKitchenOil.getText());
+//            System.out.println(lblKitchenOil.getText());
         } else {
             lblKitchenOil.setBackground(new Color(244, 244, 244));
         }
@@ -566,19 +577,20 @@ public class Register extends javax.swing.JDialog {
         isSelectedPapersCardboard = !isSelectedPapersCardboard;
 
         if (isSelectedPapersCardboard) {
+            itensSelected.add(lblPapersCardboard.getText());
             lblPapersCardboard.setBackground(new Color(214, 245, 228));
-            System.out.println(lblPapersCardboard.getText());
+//            System.out.println(lblPapersCardboard.getText());
         } else {
             lblPapersCardboard.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblPapersCardboardMouseClicked
-
     private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
         isSelectedBatteries = !isSelectedBatteries;
 
         if (isSelectedBatteries) {
+            itensSelected.add(lblBatteries.getText());
             lblBatteries.setBackground(new Color(214, 245, 228));
-            System.out.println(lblBatteries.getText());
+//            System.out.println(lblBatteries.getText());
         } else {
             lblBatteries.setBackground(new Color(244, 244, 244));
         }
@@ -588,12 +600,18 @@ public class Register extends javax.swing.JDialog {
         isSelectedElectronicWaste = !isSelectedElectronicWaste;
 
         if (isSelectedElectronicWaste) {
+            itensSelected.add(lblElectronicWaste.getText());
+
             lblElectronicWaste.setBackground(new Color(214, 245, 228));
-            System.out.println(lblElectronicWaste.getText());
+//            System.out.println(lblElectronicWaste.getText());
         } else {
             lblElectronicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.out.println(itensSelected);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
@@ -609,6 +627,7 @@ public class Register extends javax.swing.JDialog {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
