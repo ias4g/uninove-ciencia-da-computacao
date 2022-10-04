@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
@@ -269,7 +270,7 @@ public class Register extends javax.swing.JDialog {
         jpPointAddress.add(lblUf);
         lblUf.setBounds(175, 176, 110, 16);
 
-        cmbUf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbUf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", " " }));
         jpPointAddress.add(cmbUf);
         cmbUf.setBounds(175, 197, 146, 56);
 
@@ -277,7 +278,7 @@ public class Register extends javax.swing.JDialog {
         jpPointAddress.add(lblCity);
         lblCity.setBounds(329, 176, 110, 16);
 
-        cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione" }));
         jpPointAddress.add(cmbCity);
         cmbCity.setBounds(329, 197, 291, 56);
 
@@ -477,6 +478,7 @@ public class Register extends javax.swing.JDialog {
         lblClose.setBackground(null);
     }//GEN-LAST:event_lblCloseMouseExited
 
+
     private void lblPointImageNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseEntered
         lblPointImageNext.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointImageNextMouseEntered
@@ -484,6 +486,7 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseExited
         lblPointImageNext.setBackground(null);
     }//GEN-LAST:event_lblPointImageNextMouseExited
+
 
     private void lblPointDescNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseEntered
         lblPointDescNext.setBackground(new Color(214, 245, 228));
@@ -493,12 +496,14 @@ public class Register extends javax.swing.JDialog {
         lblPointDescNext.setBackground(null);
     }//GEN-LAST:event_lblPointDescNextMouseExited
 
+
     private void lblPointAddressNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseEntered
         lblPointAddressNext.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointAddressNextMouseEntered
     private void lblPointAddressNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseExited
         lblPointAddressNext.setBackground(null);
     }//GEN-LAST:event_lblPointAddressNextMouseExited
+
 
     private void lblPointItensSaveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseEntered
         lblPointItensSave.setBackground(new Color(214, 245, 228));
@@ -511,20 +516,48 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardDescription");
+
+        txtName.requestFocus();
     }//GEN-LAST:event_lblPointImageNextMouseClicked
 
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardAddress");
+
+        if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+        } else {
+            String name = txtName.getText();
+            String email = txtEmail.getText();
+            String whatsapp = txtWhatsApp.getText();
+
+            txtCep.requestFocus();
+
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardAddress");
+        }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
 
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardItens");
+        if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione") || txtPhone.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+        } else {
+            String cep = txtCep.getName();
+            String address = txtAddress.getText();
+            String Number = txtNumber.getText();
+            String uf = String.valueOf(cmbUf.getSelectedItem());
+            String city = String.valueOf(cmbCity.getSelectedItem());
+            String phone = txtPhone.getText();
+
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardItens");
+        }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardSuccess");
+        if (itensSelected.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Selecione pelo menos um item.");
+        } else {
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardSuccess");
+        }
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
