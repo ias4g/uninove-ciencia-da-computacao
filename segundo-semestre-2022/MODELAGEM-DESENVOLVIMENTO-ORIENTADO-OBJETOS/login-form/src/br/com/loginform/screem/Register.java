@@ -342,12 +342,6 @@ public class Register extends javax.swing.JDialog {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblBatteriesMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblBatteriesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblBatteriesMouseExited(evt);
-            }
         });
         jpItens.add(lblBatteries);
 
@@ -360,12 +354,6 @@ public class Register extends javax.swing.JDialog {
         lblElectronicWaste.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblElectronicWasteMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblElectronicWasteMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblElectronicWasteMouseExited(evt);
             }
         });
         jpItens.add(lblElectronicWaste);
@@ -380,12 +368,6 @@ public class Register extends javax.swing.JDialog {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblLampsMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblLampsMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblLampsMouseExited(evt);
-            }
         });
         jpItens.add(lblLamps);
 
@@ -399,12 +381,6 @@ public class Register extends javax.swing.JDialog {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblOrganicWasteMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblOrganicWasteMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblOrganicWasteMouseExited(evt);
-            }
         });
         jpItens.add(lblOrganicWaste);
 
@@ -416,13 +392,7 @@ public class Register extends javax.swing.JDialog {
         lblKitchenOil.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lblKitchenOil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblOrganicWasteMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblOrganicWasteMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblOrganicWasteMouseExited(evt);
+                lblKitchenOilMouseClicked(evt);
             }
         });
         jpItens.add(lblKitchenOil);
@@ -435,13 +405,7 @@ public class Register extends javax.swing.JDialog {
         lblPapersCardboard.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lblPapersCardboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblOrganicWasteMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblOrganicWasteMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblOrganicWasteMouseExited(evt);
+                lblPapersCardboardMouseClicked(evt);
             }
         });
         jpItens.add(lblPapersCardboard);
@@ -556,58 +520,9 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
         selectImage();
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
-    private void lblBatteriesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseEntered
-        if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
-        } else {
-            hoverLabel(lblBatteries);
-        }
-    }//GEN-LAST:event_lblBatteriesMouseEntered
 
-    private void lblBatteriesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseExited
-        if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
-        } else {
-            lblBatteries.setBackground(new Color(244, 244, 244));
-        }
-    }//GEN-LAST:event_lblBatteriesMouseExited
-
-    private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
-        isSelected = !isSelected;
-
-        if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
-        } else {
-            lblBatteries.setBackground(new Color(214, 245, 228));
-        }
-    }//GEN-LAST:event_lblBatteriesMouseClicked
-
-    private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
-        isSelected = !isSelected;
-
-        if (isSelected) {
-            lblElectronicWaste.setBackground(new Color(52, 203, 121));
-        } else {
-            lblElectronicWaste.setBackground(new Color(214, 245, 228));
-        }
-    }//GEN-LAST:event_lblElectronicWasteMouseClicked
-
-    private void lblElectronicWasteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseEntered
-        if (isSelected) {
-            lblElectronicWaste.setBackground(new Color(52, 203, 121));
-        } else {
-            hoverLabel(lblElectronicWaste);
-        }
-    }//GEN-LAST:event_lblElectronicWasteMouseEntered
-
-    private void lblElectronicWasteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseExited
-        if (isSelected) {
-            lblElectronicWaste.setBackground(new Color(52, 203, 121));
-        } else {
-            lblElectronicWaste.setBackground(new Color(244, 244, 244));
-        }
-    }//GEN-LAST:event_lblElectronicWasteMouseExited
-
+    
+    
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
         isSelected = !isSelected;
 
@@ -617,22 +532,6 @@ public class Register extends javax.swing.JDialog {
             lblLamps.setBackground(new Color(214, 245, 228));
         }
     }//GEN-LAST:event_lblLampsMouseClicked
-
-    private void lblLampsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseEntered
-        if (isSelected) {
-            lblLamps.setBackground(new Color(52, 203, 121));
-        } else {
-            hoverLabel(lblLamps);
-        }
-    }//GEN-LAST:event_lblLampsMouseEntered
-
-    private void lblLampsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseExited
-        if (isSelected) {
-            lblLamps.setBackground(new Color(52, 203, 121));
-        } else {
-            lblLamps.setBackground(new Color(244, 244, 244));
-        }
-    }//GEN-LAST:event_lblLampsMouseExited
 
     private void lblOrganicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseClicked
         isSelected = !isSelected;
@@ -644,22 +543,36 @@ public class Register extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
 
-    private void lblOrganicWasteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseEntered
-        if (isSelected) {
-            lblOrganicWaste.setBackground(new Color(52, 203, 121));
-        } else {
-            hoverLabel(lblOrganicWaste);
-        }
-    }//GEN-LAST:event_lblOrganicWasteMouseEntered
+    private void lblKitchenOilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKitchenOilMouseClicked
+        isSelected = !isSelected;
 
-    private void lblOrganicWasteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseExited
         if (isSelected) {
-            lblOrganicWaste.setBackground(new Color(52, 203, 121));
+            lblBatteries.setBackground(new Color(52, 203, 121));
         } else {
-            lblOrganicWaste.setBackground(new Color(244, 244, 244));
+            lblBatteries.setBackground(new Color(214, 245, 228));
         }
-    }//GEN-LAST:event_lblOrganicWasteMouseExited
+    }//GEN-LAST:event_lblKitchenOilMouseClicked
 
+    private void lblPapersCardboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPapersCardboardMouseClicked
+        isSelected = !isSelected;
+
+        if (isSelected) {
+            lblBatteries.setBackground(new Color(52, 203, 121));
+        } else {
+            lblBatteries.setBackground(new Color(214, 245, 228));
+        }
+    }//GEN-LAST:event_lblPapersCardboardMouseClicked
+
+    private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBatteriesMouseClicked
+
+    private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblElectronicWasteMouseClicked
+
+    
+    
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
