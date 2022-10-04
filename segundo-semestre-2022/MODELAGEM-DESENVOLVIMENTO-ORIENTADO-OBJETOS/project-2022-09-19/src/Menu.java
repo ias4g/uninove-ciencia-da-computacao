@@ -133,6 +133,11 @@ public class Menu extends javax.swing.JFrame {
 
         itmUsersList.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itmUsersList.setText("Listar Usuários");
+        itmUsersList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmUsersListActionPerformed(evt);
+            }
+        });
         mnuAdministrative.add(itmUsersList);
 
         jmbMain.add(mnuAdministrative);
@@ -192,6 +197,10 @@ public class Menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Você errou nos dados da conexão com o banco de dados");
         }
     }//GEN-LAST:event_itmDeleteUserActionPerformed
+
+    private void itmUsersListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUsersListActionPerformed
+        new UsersList().setVisible(true);
+    }//GEN-LAST:event_itmUsersListActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itmAddNewUser;

@@ -113,6 +113,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Listar Usu&#xe1;rios"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmUsersListActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
