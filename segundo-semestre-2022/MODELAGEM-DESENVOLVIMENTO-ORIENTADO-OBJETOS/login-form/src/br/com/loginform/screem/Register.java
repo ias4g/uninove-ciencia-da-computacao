@@ -10,15 +10,15 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
-
+    
     private boolean isSelected = false;
-
+    
     public Register(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-
+        
         Utilities.insertIconDialog(this);
-
+        
         Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
 //        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
 
@@ -30,7 +30,7 @@ public class Register extends javax.swing.JDialog {
             lblBatteries.setBackground(new Color(52, 203, 121));
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -520,56 +520,32 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
         selectImage();
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
-
+    
 
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
-        isSelected = !isSelected;
-
-        if (isSelected) {
-            lblLamps.setBackground(new Color(52, 203, 121));
-        } else {
-            lblLamps.setBackground(new Color(214, 245, 228));
-        }
+        hoverLabel(lblLamps);
     }//GEN-LAST:event_lblLampsMouseClicked
 
     private void lblOrganicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseClicked
-        isSelected = !isSelected;
-
-        if (isSelected) {
-            lblOrganicWaste.setBackground(new Color(52, 203, 121));
-        } else {
-            lblOrganicWaste.setBackground(new Color(214, 245, 228));
-        }
+        hoverLabel(lblOrganicWaste);
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
 
     private void lblKitchenOilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKitchenOilMouseClicked
-        isSelected = !isSelected;
-
-        if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
-        } else {
-            lblBatteries.setBackground(new Color(214, 245, 228));
-        }
+        hoverLabel(lblKitchenOil);
     }//GEN-LAST:event_lblKitchenOilMouseClicked
 
     private void lblPapersCardboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPapersCardboardMouseClicked
-        isSelected = !isSelected;
-
-        if (isSelected) {
-            lblBatteries.setBackground(new Color(52, 203, 121));
-        } else {
-            lblBatteries.setBackground(new Color(214, 245, 228));
-        }
+        hoverLabel(lblPapersCardboard);
     }//GEN-LAST:event_lblPapersCardboardMouseClicked
 
     private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
-        // TODO add your handling code here:
+        hoverLabel(lblBatteries);
     }//GEN-LAST:event_lblBatteriesMouseClicked
 
     private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
         hoverLabel(lblElectronicWaste);
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
-
+    
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -578,13 +554,13 @@ public class Register extends javax.swing.JDialog {
         fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
         fileChooser.setCurrentDirectory(new File("/"));
         fileChooser.showOpenDialog(this);
-
+        
         return fileChooser.getSelectedFile();
     }
-
+    
     private void hoverLabel(javax.swing.JLabel l) {
         isSelected = !isSelected;
-
+        
         if (isSelected) {
             l.setBackground(new Color(214, 245, 228));
             System.out.println(l.getText());
