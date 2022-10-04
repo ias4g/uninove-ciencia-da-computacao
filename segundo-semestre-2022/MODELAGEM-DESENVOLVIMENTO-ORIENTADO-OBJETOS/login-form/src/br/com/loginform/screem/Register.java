@@ -521,8 +521,7 @@ public class Register extends javax.swing.JDialog {
         selectImage();
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
 
-    
-    
+
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
         isSelected = !isSelected;
 
@@ -568,11 +567,9 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblBatteriesMouseClicked
 
     private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
-        // TODO add your handling code here:
+        hoverLabel(lblElectronicWaste);
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
 
-    
-    
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -586,7 +583,14 @@ public class Register extends javax.swing.JDialog {
     }
 
     private void hoverLabel(javax.swing.JLabel l) {
-        l.setBackground(new Color(214, 245, 228));
+        isSelected = !isSelected;
+
+        if (isSelected) {
+            l.setBackground(new Color(214, 245, 228));
+            System.out.println(l.getText());
+        } else {
+            l.setBackground(new Color(244, 244, 244));
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
