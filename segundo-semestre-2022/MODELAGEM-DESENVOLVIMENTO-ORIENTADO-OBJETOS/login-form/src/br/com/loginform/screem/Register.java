@@ -13,6 +13,16 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
 
+    String name;
+    String email;
+    String whatsapp;
+    String cep;
+    String address;
+    String Number;
+    String uf;
+    String city;
+    String phone;
+
     private boolean isSelectedBatteries = false;
     private boolean isSelectedElectronicWaste = false;
     private boolean isSelectedlamps = false;
@@ -95,7 +105,6 @@ public class Register extends javax.swing.JDialog {
         lblIconSuccess = new javax.swing.JLabel();
         lblSuccess = new javax.swing.JLabel();
         lblCloseSuccess = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de pontos de coletas");
@@ -462,15 +471,6 @@ public class Register extends javax.swing.JDialog {
         getContentPane().add(jpMain);
         jpMain.setBounds(177, 120, 670, 420);
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(430, 30, 75, 22);
-
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -528,26 +528,26 @@ public class Register extends javax.swing.JDialog {
         if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
         } else {
-            String name = txtName.getText();
-            String email = txtEmail.getText();
-            String whatsapp = txtWhatsApp.getText();
-
-            txtCep.requestFocus();
+            name = txtName.getText();
+            email = txtEmail.getText();
+            whatsapp = txtWhatsApp.getText();
 
             CardLayout cl = (CardLayout) jpMain.getLayout();
             cl.show(jpMain, "cardAddress");
+
+            txtCep.requestFocus();
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
         if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione") || txtPhone.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
         } else {
-            String cep = txtCep.getName();
-            String address = txtAddress.getText();
-            String Number = txtNumber.getText();
-            String uf = String.valueOf(cmbUf.getSelectedItem());
-            String city = String.valueOf(cmbCity.getSelectedItem());
-            String phone = txtPhone.getText();
+            cep = txtCep.getText();
+            address = txtAddress.getText();
+            Number = txtNumber.getText();
+            uf = String.valueOf(cmbUf.getSelectedItem());
+            city = String.valueOf(cmbCity.getSelectedItem());
+            phone = txtPhone.getText();
 
             CardLayout cl = (CardLayout) jpMain.getLayout();
             cl.show(jpMain, "cardItens");
@@ -557,7 +557,8 @@ public class Register extends javax.swing.JDialog {
         if (itensSelected.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Selecione pelo menos um item.");
         } else {
-            new ShowDetails().setVisible(true);
+            dispose();
+            new Details(new javax.swing.JFrame(), true, name, email, whatsapp, cep, address, Number, uf, city, phone, itensSelected).setVisible(true);
 
 //            CardLayout cl = (CardLayout) jpMain.getLayout();
 //            cl.show(jpMain, "cardSuccess");
@@ -642,9 +643,6 @@ public class Register extends javax.swing.JDialog {
         System.out.println(itensSelected);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new ShowDetails().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -662,7 +660,6 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> cmbCity;
     private javax.swing.JComboBox<String> cmbUf;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jpItens;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
