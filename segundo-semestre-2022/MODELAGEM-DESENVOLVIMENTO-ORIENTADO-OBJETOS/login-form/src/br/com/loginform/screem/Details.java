@@ -1,8 +1,11 @@
 package br.com.loginform.screem;
 
 import java.util.ArrayList;
+import javax.swing.JLabel;
 
 public class Details extends javax.swing.JDialog {
+
+    private JLabel label;
 
     public Details(
             java.awt.Frame parent,
@@ -32,9 +35,10 @@ public class Details extends javax.swing.JDialog {
         lblPhone.setText(phone);
         lblItens.setText(String.valueOf(itens));
 
-        for (Object item : itens) {
-            System.out.println(item);
-        }
+//        for (Object item : itens) {
+//            label = new JLabel(String.valueOf(item));
+//            jpItens.add(label);
+//        }
     }
 
     @SuppressWarnings("unchecked")
@@ -48,7 +52,6 @@ public class Details extends javax.swing.JDialog {
         lblEmail = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         lblWhatsApp = new javax.swing.JLabel();
-        lblResp = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         lblCep = new javax.swing.JLabel();
@@ -63,7 +66,6 @@ public class Details extends javax.swing.JDialog {
         jLabel17 = new javax.swing.JLabel();
         lblPhone = new javax.swing.JLabel();
         jpItens = new javax.swing.JPanel();
-        lblItens = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Detalhes");
@@ -85,8 +87,6 @@ public class Details extends javax.swing.JDialog {
 
         lblWhatsApp.setText("jLabel2");
 
-        lblResp.setText("jLabel2");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -106,13 +106,10 @@ public class Details extends javax.swing.JDialog {
                                 .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblWhatsApp, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblResp, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 27, Short.MAX_VALUE))))
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblWhatsApp, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,9 +126,7 @@ public class Details extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(lblWhatsApp))
-                .addGap(18, 18, 18)
-                .addComponent(lblResp)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Endereço do ponto de coleta", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
@@ -225,23 +220,15 @@ public class Details extends javax.swing.JDialog {
 
         jpItens.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Itens que o ponto coleta", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
-        lblItens.setText("jLabel2");
-
         javax.swing.GroupLayout jpItensLayout = new javax.swing.GroupLayout(jpItens);
         jpItens.setLayout(jpItensLayout);
         jpItensLayout.setHorizontalGroup(
             jpItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpItensLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(lblItens, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 564, Short.MAX_VALUE)
         );
         jpItensLayout.setVerticalGroup(
             jpItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpItensLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblItens, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+            .addGap(0, 102, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -289,11 +276,9 @@ public class Details extends javax.swing.JDialog {
     private javax.swing.JLabel lblCep;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblEmail;
-    private javax.swing.JLabel lblItens;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNumber;
     private javax.swing.JLabel lblPhone;
-    private javax.swing.JLabel lblResp;
     private javax.swing.JLabel lblUf;
     private javax.swing.JLabel lblWhatsApp;
     // End of variables declaration//GEN-END:variables
