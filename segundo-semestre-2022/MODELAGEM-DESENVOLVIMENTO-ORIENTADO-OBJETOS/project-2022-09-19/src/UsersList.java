@@ -1,8 +1,55 @@
 
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 public class UsersList extends javax.swing.JFrame {
+
+    private Connection conn = null;
 
     public UsersList() {
         initComponents();
+        tableFill();
+    }
+
+    private void tableFill() {
+        try {
+            //2 - Conectar no banco de dados sistemabd;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+
+            //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers");
+            ResultSet resultado = st.executeQuery();
+
+            //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
+            if (resultado.next()) {
+                String name;
+                String job;
+
+                name = resultado.getString("name");
+                job = resultado.getString("job");
+
+                //Abrir o formulário Menu.java
+                new Menu(name, job).setVisible(true);
+
+                this.dispose();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
+            }
+
+            //5 - Desconectar.
+            conn.close();
+
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Driver não está na library");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Você errou nos dados da conexão com o banco de dados");
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -38,7 +85,7 @@ public class UsersList extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblUsers);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(22, 20, 600, 320);
+        jScrollPane1.setBounds(12, 20, 620, 340);
 
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);

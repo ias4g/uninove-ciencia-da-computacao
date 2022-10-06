@@ -86,8 +86,6 @@ public class Register extends javax.swing.JDialog {
         cmbUf = new javax.swing.JComboBox<>();
         lblCity = new javax.swing.JLabel();
         cmbCity = new javax.swing.JComboBox<>();
-        lblPhone = new javax.swing.JLabel();
-        txtPhone = new br.com.loginform.components.JTextFieldCustom();
         lblPointAddressNext = new br.com.loginform.components.JLabelRoundedBorder();
         jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointItensTitle = new javax.swing.JLabel();
@@ -291,12 +289,6 @@ public class Register extends javax.swing.JDialog {
         cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "São Paulo", "Engenheiro Coelho" }));
         jpPointAddress.add(cmbCity);
         cmbCity.setBounds(329, 197, 291, 56);
-
-        lblPhone.setText("Telefone");
-        jpPointAddress.add(lblPhone);
-        lblPhone.setBounds(50, 277, 110, 16);
-        jpPointAddress.add(txtPhone);
-        txtPhone.setBounds(50, 298, 570, 56);
 
         lblPointAddressNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointAddressNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -532,33 +524,32 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointImageNextMouseClicked
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
 
-//        if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
-//            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
-//        } else {
-        name = txtName.getText();
-        email = txtEmail.getText();
-        whatsapp = txtWhatsApp.getText();
+        if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+        } else {
+            name = txtName.getText();
+            email = txtEmail.getText();
+            whatsapp = txtWhatsApp.getText();
 
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardAddress");
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardAddress");
 
-        txtCep.requestFocus();
-//        }
+            txtCep.requestFocus();
+        }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
-//        if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione") || txtPhone.getText().isEmpty()) {
-//            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
-//        } else {
-        cep = txtCep.getText();
-        address = txtAddress.getText();
-        Number = txtNumber.getText();
-        uf = String.valueOf(cmbUf.getSelectedItem());
-        city = String.valueOf(cmbCity.getSelectedItem());
-        phone = txtPhone.getText();
+        if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione")) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+        } else {
+            cep = txtCep.getText();
+            address = txtAddress.getText();
+            Number = txtNumber.getText();
+            uf = String.valueOf(cmbUf.getSelectedItem());
+            city = String.valueOf(cmbCity.getSelectedItem());
 
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardItens");
-//        }
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardItens");
+        }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
         if (itensSelected.isEmpty()) {
@@ -647,7 +638,7 @@ public class Register extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println(itensSelected);
+        JOptionPane.showMessageDialog(null, itensSelected);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public File selectImage() {
@@ -693,7 +684,6 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JLabel lblNumber;
     private br.com.loginform.components.JLabelRoundedBorder lblOrganicWaste;
     private br.com.loginform.components.JLabelRoundedBorder lblPapersCardboard;
-    private javax.swing.JLabel lblPhone;
     private br.com.loginform.components.JLabelRoundedBorder lblPointAddressNext;
     private javax.swing.JLabel lblPointAddressSubTitle;
     private javax.swing.JLabel lblPointAddressTitle;
@@ -715,7 +705,6 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JTextFieldCustom txtEmail;
     private br.com.loginform.components.JTextFieldCustom txtName;
     private br.com.loginform.components.JTextFieldCustom txtNumber;
-    private br.com.loginform.components.JTextFieldCustom txtPhone;
     private br.com.loginform.components.JTextFieldCustom txtWhatsApp;
     // End of variables declaration//GEN-END:variables
 }
