@@ -24,7 +24,7 @@ public class UsersList extends javax.swing.JFrame {
                     "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
             );
 
-            PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers");
+            stmt = conn.prepareStatement("SELECT * FROM tbusers");
             ResultSet resultado = stmt.executeQuery();
 
             if (resultado.next()) {
