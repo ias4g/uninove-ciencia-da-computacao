@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 public class UsersList extends javax.swing.JFrame {
 
     private Connection conn = null;
+    private PreparedStatement stmt = null;
 
     public UsersList() {
         initComponents();
@@ -17,14 +18,14 @@ public class UsersList extends javax.swing.JFrame {
 
     private void tableFill() {
         try {
-            //2 - Conectar no banco de dados sistemabd;
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
             );
 
             PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers");
-            ResultSet resultado = st.executeQuery();
+            ResultSet resultado = stmt.executeQuery();
 
             if (resultado.next()) {
 
