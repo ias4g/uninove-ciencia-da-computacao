@@ -33,12 +33,20 @@ public class Details extends javax.swing.JDialog {
         lblUf.setText(uf);
         lblCity.setText(city);
         lblPhone.setText(phone);
-        lblItens.setText(String.valueOf(itens));
+//        lblItens.setText(String.valueOf(itens));
 
-//        for (Object item : itens) {
-//            label = new JLabel(String.valueOf(item));
-//            jpItens.add(label);
-//        }
+        for (Object item : itens) {
+            label = new JLabel();
+
+            label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/" + item + ".png")));
+            label.setText(String.valueOf(item));
+            label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+            label.setIconTextGap(10);
+            label.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+            jpItens.add(label);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -109,7 +117,7 @@ public class Details extends javax.swing.JDialog {
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblWhatsApp, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 27, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,17 +227,7 @@ public class Details extends javax.swing.JDialog {
         );
 
         jpItens.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Itens que o ponto coleta", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
-
-        javax.swing.GroupLayout jpItensLayout = new javax.swing.GroupLayout(jpItens);
-        jpItens.setLayout(jpItensLayout);
-        jpItensLayout.setHorizontalGroup(
-            jpItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
-        );
-        jpItensLayout.setVerticalGroup(
-            jpItensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 102, Short.MAX_VALUE)
-        );
+        jpItens.setLayout(new java.awt.GridLayout(0, 3, 20, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -252,10 +250,10 @@ public class Details extends javax.swing.JDialog {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jpItens, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(602, 599));
+        setSize(new java.awt.Dimension(602, 640));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

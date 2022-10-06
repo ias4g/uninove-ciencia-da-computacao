@@ -549,13 +549,17 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/loginform/assets/baterias.png"/>
+                      <Image iconType="3" name="/br/com/loginform/assets/pilhas-baterias.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Pilhas e Baterias"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="iconTextGap" type="int" value="12"/>
+                    <Property name="name" type="java.lang.String" value="pilhas-baterias" noResource="true"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
+                  <AccessibilityProperties>
+                    <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="pilhas"/>
+                  </AccessibilityProperties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBatteriesMouseClicked"/>
                   </Events>
@@ -569,6 +573,7 @@
                     <Property name="text" type="java.lang.String" value="Res&#xed;duos Eletr&#xf4;nicos"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="iconTextGap" type="int" value="12"/>
+                    <Property name="name" type="java.lang.String" value="eletronicos" noResource="true"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
@@ -584,6 +589,7 @@
                     <Property name="text" type="java.lang.String" value="L&#xe2;mpadas"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="iconTextGap" type="int" value="12"/>
+                    <Property name="name" type="java.lang.String" value="lampadas" noResource="true"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
@@ -599,6 +605,7 @@
                     <Property name="text" type="java.lang.String" value="Res&#xed;duos Org&#xe2;nicos"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="iconTextGap" type="int" value="12"/>
+                    <Property name="name" type="java.lang.String" value="organicos" noResource="true"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
@@ -614,6 +621,7 @@
                     <Property name="text" type="java.lang.String" value="&#xd3;leo de cozinha"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="iconTextGap" type="int" value="12"/>
+                    <Property name="name" type="java.lang.String" value="oleo" noResource="true"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
@@ -629,6 +637,7 @@
                     <Property name="text" type="java.lang.String" value="Pap&#xe9;is e Papel&#xe3;o"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="iconTextGap" type="int" value="12"/>
+                    <Property name="name" type="java.lang.String" value="papeis-papelao" noResource="true"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>

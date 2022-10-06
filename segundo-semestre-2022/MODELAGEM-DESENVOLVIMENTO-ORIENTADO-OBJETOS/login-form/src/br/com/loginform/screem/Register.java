@@ -333,10 +333,11 @@ public class Register extends javax.swing.JDialog {
         jpItens.setLayout(new java.awt.GridLayout(2, 3, 10, 10));
 
         lblBatteries.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblBatteries.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/baterias.png"))); // NOI18N
+        lblBatteries.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/pilhas-baterias.png"))); // NOI18N
         lblBatteries.setText("Pilhas e Baterias");
         lblBatteries.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblBatteries.setIconTextGap(12);
+        lblBatteries.setName("pilhas-baterias"); // NOI18N
         lblBatteries.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lblBatteries.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -344,12 +345,14 @@ public class Register extends javax.swing.JDialog {
             }
         });
         jpItens.add(lblBatteries);
+        lblBatteries.getAccessibleContext().setAccessibleDescription("pilhas");
 
         lblElectronicWaste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblElectronicWaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/eletronicos.png"))); // NOI18N
         lblElectronicWaste.setText("Resíduos Eletrônicos");
         lblElectronicWaste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblElectronicWaste.setIconTextGap(12);
+        lblElectronicWaste.setName("eletronicos"); // NOI18N
         lblElectronicWaste.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lblElectronicWaste.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -363,6 +366,7 @@ public class Register extends javax.swing.JDialog {
         lblLamps.setText("Lâmpadas");
         lblLamps.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblLamps.setIconTextGap(12);
+        lblLamps.setName("lampadas"); // NOI18N
         lblLamps.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lblLamps.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -376,6 +380,7 @@ public class Register extends javax.swing.JDialog {
         lblOrganicWaste.setText("Resíduos Orgânicos");
         lblOrganicWaste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblOrganicWaste.setIconTextGap(12);
+        lblOrganicWaste.setName("organicos"); // NOI18N
         lblOrganicWaste.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lblOrganicWaste.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -389,6 +394,7 @@ public class Register extends javax.swing.JDialog {
         lblKitchenOil.setText("Óleo de cozinha");
         lblKitchenOil.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblKitchenOil.setIconTextGap(12);
+        lblKitchenOil.setName("oleo"); // NOI18N
         lblKitchenOil.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lblKitchenOil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -402,6 +408,7 @@ public class Register extends javax.swing.JDialog {
         lblPapersCardboard.setText("Papéis e Papelão");
         lblPapersCardboard.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblPapersCardboard.setIconTextGap(12);
+        lblPapersCardboard.setName("papeis-papelao"); // NOI18N
         lblPapersCardboard.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lblPapersCardboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -525,33 +532,33 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointImageNextMouseClicked
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
 
-        if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
-        } else {
-            name = txtName.getText();
-            email = txtEmail.getText();
-            whatsapp = txtWhatsApp.getText();
+//        if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
+//            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+//        } else {
+        name = txtName.getText();
+        email = txtEmail.getText();
+        whatsapp = txtWhatsApp.getText();
 
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardAddress");
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardAddress");
 
-            txtCep.requestFocus();
-        }
+        txtCep.requestFocus();
+//        }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
-        if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione") || txtPhone.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
-        } else {
-            cep = txtCep.getText();
-            address = txtAddress.getText();
-            Number = txtNumber.getText();
-            uf = String.valueOf(cmbUf.getSelectedItem());
-            city = String.valueOf(cmbCity.getSelectedItem());
-            phone = txtPhone.getText();
+//        if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione") || txtPhone.getText().isEmpty()) {
+//            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+//        } else {
+        cep = txtCep.getText();
+        address = txtAddress.getText();
+        Number = txtNumber.getText();
+        uf = String.valueOf(cmbUf.getSelectedItem());
+        city = String.valueOf(cmbCity.getSelectedItem());
+        phone = txtPhone.getText();
 
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardItens");
-        }
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardItens");
+//        }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
         if (itensSelected.isEmpty()) {
@@ -576,10 +583,10 @@ public class Register extends javax.swing.JDialog {
         isSelectedlamps = !isSelectedlamps;
 
         if (isSelectedlamps) {
-            itensSelected.add(lblLamps.getText());
+            itensSelected.add(lblLamps.getName());
             lblLamps.setBackground(new Color(214, 245, 228));
         } else {
-            itensSelected.remove(lblLamps.getText());
+            itensSelected.remove(lblLamps.getName());
             lblLamps.setBackground(new Color(244, 244, 244));
 
         }
@@ -588,10 +595,10 @@ public class Register extends javax.swing.JDialog {
         isSelectedOrganicWaste = !isSelectedOrganicWaste;
 
         if (isSelectedOrganicWaste) {
-            itensSelected.add(lblOrganicWaste.getText());
+            itensSelected.add(lblOrganicWaste.getName());
             lblOrganicWaste.setBackground(new Color(214, 245, 228));
         } else {
-            itensSelected.remove(lblOrganicWaste.getText());
+            itensSelected.remove(lblOrganicWaste.getName());
             lblOrganicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
@@ -599,10 +606,10 @@ public class Register extends javax.swing.JDialog {
         isSelectedKitchenOil = !isSelectedKitchenOil;
 
         if (isSelectedKitchenOil) {
-            itensSelected.add(lblKitchenOil.getText());
+            itensSelected.add(lblKitchenOil.getName());
             lblKitchenOil.setBackground(new Color(214, 245, 228));
         } else {
-            itensSelected.remove(lblKitchenOil.getText());
+            itensSelected.remove(lblKitchenOil.getName());
             lblKitchenOil.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblKitchenOilMouseClicked
@@ -610,10 +617,10 @@ public class Register extends javax.swing.JDialog {
         isSelectedPapersCardboard = !isSelectedPapersCardboard;
 
         if (isSelectedPapersCardboard) {
-            itensSelected.add(lblPapersCardboard.getText());
+            itensSelected.add(lblPapersCardboard.getName());
             lblPapersCardboard.setBackground(new Color(214, 245, 228));
         } else {
-            itensSelected.remove(lblPapersCardboard.getText());
+            itensSelected.remove(lblPapersCardboard.getName());
             lblPapersCardboard.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblPapersCardboardMouseClicked
@@ -621,10 +628,10 @@ public class Register extends javax.swing.JDialog {
         isSelectedBatteries = !isSelectedBatteries;
 
         if (isSelectedBatteries) {
-            itensSelected.add(lblBatteries.getText());
+            itensSelected.add(lblBatteries.getName());
             lblBatteries.setBackground(new Color(214, 245, 228));
         } else {
-            itensSelected.remove(lblBatteries.getText());
+            itensSelected.remove(lblBatteries.getName());
             lblBatteries.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblBatteriesMouseClicked
@@ -632,10 +639,10 @@ public class Register extends javax.swing.JDialog {
         isSelectedElectronicWaste = !isSelectedElectronicWaste;
 
         if (isSelectedElectronicWaste) {
-            itensSelected.add(lblElectronicWaste.getText());
+            itensSelected.add(lblElectronicWaste.getName());
             lblElectronicWaste.setBackground(new Color(214, 245, 228));
         } else {
-            itensSelected.remove(lblElectronicWaste.getText());
+            itensSelected.remove(lblElectronicWaste.getName());
             lblElectronicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
