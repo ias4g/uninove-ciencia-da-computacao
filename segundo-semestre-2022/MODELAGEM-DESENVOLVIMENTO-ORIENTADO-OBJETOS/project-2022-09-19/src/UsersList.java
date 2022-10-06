@@ -35,11 +35,9 @@ public class UsersList extends javax.swing.JFrame {
 
             conn.close();
 
-        } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "Driver não está na library");
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(
-                    null, "Você errou nos dados da conexão com o banco de dados"
+                    null, "Algo de errado não está certo -> " + ex.getMessage()
             );
         }
     }
