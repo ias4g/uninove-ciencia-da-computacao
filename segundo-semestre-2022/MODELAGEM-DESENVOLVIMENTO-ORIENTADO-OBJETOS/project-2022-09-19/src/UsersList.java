@@ -23,28 +23,15 @@ public class UsersList extends javax.swing.JFrame {
                     "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
             );
 
-            //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
             PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers");
             ResultSet resultado = st.executeQuery();
 
-            //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
             if (resultado.next()) {
-                String name;
-                String job;
-
-                name = resultado.getString("name");
-                job = resultado.getString("job");
-
-                //Abrir o formulário Menu.java
-                new Menu(name, job).setVisible(true);
-
-                this.dispose();
 
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
             }
 
-            //5 - Desconectar.
             conn.close();
 
         } catch (ClassNotFoundException ex) {
