@@ -33,7 +33,14 @@ public class UsersList extends javax.swing.JFrame {
             tableModel = (DefaultTableModel) tblUsers.getModel();
 
             while (rs.next()) {
-
+                Object datas[] = {
+                    rs.getString("id"),
+                    rs.getString("user"),
+                    rs.getString("password"),
+                    rs.getString("lastname"),
+                    rs.getString("email"),
+                    rs.getString("job")
+                };
             }
 
             conn.close();
