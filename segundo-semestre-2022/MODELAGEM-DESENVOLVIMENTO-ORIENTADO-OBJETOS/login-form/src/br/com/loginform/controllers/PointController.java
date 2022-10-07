@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 public class PointController {
 
@@ -21,7 +20,6 @@ public class PointController {
     }
 
     public String createPoint(Point point) {
-
         try {
             String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
 
@@ -32,23 +30,18 @@ public class PointController {
             stmt.setString(4, point.getWhatsapp());
 
             return String.valueOf(stmt.executeUpdate());
-
         } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, ex.getMessage());
             return ex.getMessage();
         } finally {
             DBConnection.closeConn();
         }
-
     }
 
     public List<Point> ReadPoint() {
-
         String sql = "SELECT * FROM tb_points";
         List<Point> pt = new ArrayList<>();
 
         try {
-
             stmt = conn.prepareStatement(sql);
             rs = stmt.executeQuery();
 
@@ -62,15 +55,12 @@ public class PointController {
                 point.setWhatsapp(rs.getString("whatsapp"));
 
                 pt.add(point);
-
             }
-
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
 
         return pt;
-
     }
 
     public void updatePoint(Point point) {
@@ -88,7 +78,7 @@ public class PointController {
 
             stmt.setInt(5, point.getId());
 
-            stmt.executeQuery();
+            stmt.executeUpdate();
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
