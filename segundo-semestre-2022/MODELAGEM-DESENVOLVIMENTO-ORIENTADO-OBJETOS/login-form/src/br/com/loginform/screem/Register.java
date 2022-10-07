@@ -542,43 +542,47 @@ public class Register extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
-        if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione")) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
-        } else {
-            cep = txtCep.getText();
-            address = txtAddress.getText();
-            Number = txtNumber.getText();
-            uf = String.valueOf(cmbUf.getSelectedItem());
-            city = String.valueOf(cmbCity.getSelectedItem());
+//        if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione")) {
+//            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+//        } else {
+        cep = txtCep.getText();
+        address = txtAddress.getText();
+        Number = txtNumber.getText();
+        uf = String.valueOf(cmbUf.getSelectedItem());
+        city = String.valueOf(cmbCity.getSelectedItem());
 
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardItens");
-        }
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardItens");
+//        }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
 
         if (DBConnection.getConn() != null) {
 
-            if (itensSelected.isEmpty()) {
+            Point pt = new Point();
+            pt.setName(name);
+            pt.setEmail(email);
+            pt.setWhatsapp(whatsapp);
 
-                JOptionPane.showMessageDialog(null, "Selecione pelo menos um item.");
+            PointController pc = new PointController();
+            pc.createPoint(pt);
 
-            } else {
+            JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
 
-                Point pt = new Point();
-                pt.setName(name);
-                pt.setEmail(email);
-                pt.setWhatsapp(whatsapp);
+            dispose();
 
-                PointController pc = new PointController();
-                pc.createPoint(pt);
-
-                //dispose();
-                //new Details(new javax.swing.JFrame(), true, name, email, whatsapp, cep, address, Number, uf, city, phone, itensSelected).setVisible(true);
-                //CardLayout cl = (CardLayout) jpMain.getLayout();
-                //cl.show(jpMain, "cardSuccess");
-            }
-
+//            if (itensSelected.isEmpty()) {
+//
+//                JOptionPane.showMessageDialog(null, "Selecione pelo menos um item.");
+//
+//            } else {
+//
+//                //new Details(new javax.swing.JFrame(), true, name, email, whatsapp, cep, address, Number, uf, city, phone, itensSelected).setVisible(true);
+//                //CardLayout cl = (CardLayout) jpMain.getLayout();
+//                //cl.show(jpMain, "cardSuccess");
+//            }
+        }else{
+            
         }
 
     }//GEN-LAST:event_lblPointItensSaveMouseClicked

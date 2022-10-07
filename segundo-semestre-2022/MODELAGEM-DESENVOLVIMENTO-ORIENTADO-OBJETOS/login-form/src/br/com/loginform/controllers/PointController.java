@@ -31,7 +31,8 @@ public class PointController {
             stmt.setBytes(3, point.getImage());
             stmt.setString(4, point.getWhatsapp());
 
-            stmt.executeUpdate();
+            System.out.println(stmt.executeUpdate());
+
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         } finally {
