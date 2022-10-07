@@ -12,7 +12,7 @@ public class UsersList extends javax.swing.JFrame {
     private Connection conn = null;
     private PreparedStatement stmt = null;
     private ResultSet rs = null;
-    DefaultTableModel tableModel;
+    private DefaultTableModel tableModel;
 
     public UsersList() {
         initComponents();
@@ -29,6 +29,8 @@ public class UsersList extends javax.swing.JFrame {
 
             stmt = conn.prepareStatement("SELECT * FROM tbusers");
             rs = stmt.executeQuery();
+
+            tableModel = (DefaultTableModel) tblUsers.getModel();
 
             if (rs.next()) {
 
