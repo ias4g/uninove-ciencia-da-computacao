@@ -178,6 +178,10 @@ public class Menu extends javax.swing.JFrame {
             st.setString(1, u);
             ResultSet resultado = st.executeQuery();
 
+            if (u.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Preencha o nome do usuário!");
+            }
+
             if (resultado.next()) {
                 int id = Integer.parseInt(resultado.getString("id"));
                 String user = resultado.getString("user");
