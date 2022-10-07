@@ -14,11 +14,12 @@ public class DBConnection {
 
     public static Connection getConn() {
         try {
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(BD_URL, BD_USER, BD_PASSWORD);
 
         } catch (ClassNotFoundException | SQLException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("Erro de conexão no metodo getConn() da Class DBConnection | Error " + ex.getMessage());
         }
 
         return conn;
@@ -28,7 +29,7 @@ public class DBConnection {
         try {
             conn.close();
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("Erro ao tentar fechar a conexão no metodo closeConn() da Class DBConnection |Error " + ex.getMessage());
         }
     }
 }

@@ -37,7 +37,7 @@ public class PointController {
                 DBConnection.closeConn();
             }
         } else {
-            return "Conexão com o banco não estabelecida!";
+            return "Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.";
         }
     }
 
