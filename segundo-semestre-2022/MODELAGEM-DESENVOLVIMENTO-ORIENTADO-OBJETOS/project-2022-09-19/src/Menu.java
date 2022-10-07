@@ -166,51 +166,47 @@ public class Menu extends javax.swing.JFrame {
 
         System.out.println(u);
 
-        if (u == null) {
-            JOptionPane.showMessageDialog(null, "Preencha o nome do usuário!");
-        } else {
-            try {
-                //2 - Conectar no banco de dados sistemabd;
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
-                );
+        try {
+            //2 - Conectar no banco de dados sistemabd;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
+            );
 
-                PreparedStatement st = conn.prepareStatement(
-                        "SELECT * FROM tbusers WHERE user = ?"
-                );
+            PreparedStatement st = conn.prepareStatement(
+                    "SELECT * FROM tbusers WHERE user = ?"
+            );
 
-                st.setString(1, u);
-                ResultSet resultado = st.executeQuery();
+            st.setString(1, u);
+            ResultSet resultado = st.executeQuery();
 
-                if (resultado.next()) {
-                    int id = Integer.parseInt(resultado.getString("id"));
-                    String user = resultado.getString("user");
-                    String password = resultado.getString("password");
-                    String name = resultado.getString("name");
-                    String lastname = resultado.getString("lastname");
-                    String email = resultado.getString("email");
-                    String job = resultado.getString("job");
+            if (resultado.next()) {
+                int id = Integer.parseInt(resultado.getString("id"));
+                String user = resultado.getString("user");
+                String password = resultado.getString("password");
+                String name = resultado.getString("name");
+                String lastname = resultado.getString("lastname");
+                String email = resultado.getString("email");
+                String job = resultado.getString("job");
 
-                    //Abrir o formulário Menu.java
-                    new CreateNewUser(
-                            id, user, password, name, lastname, email, job
-                    ).setVisible(true);
+                //Abrir o formulário Menu.java
+                new CreateNewUser(
+                        id, user, password, name, lastname, email, job
+                ).setVisible(true);
 
-                } else {
-                    JOptionPane.showMessageDialog(null, "Usuário não encontrado");
-                }
-
-                //5 - Desconectar.
-                conn.close();
-
-            } catch (ClassNotFoundException ex) {
-                JOptionPane.showMessageDialog(null, "Driver não está na library");
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(
-                        null, "Você errou nos dados da conexão com o banco de dados"
-                );
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário não encontrado");
             }
+
+            //5 - Desconectar.
+            conn.close();
+
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Driver não está na library");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(
+                    null, "Você errou nos dados da conexão com o banco de dados"
+            );
         }
     }//GEN-LAST:event_itmDeleteUserActionPerformed
 
