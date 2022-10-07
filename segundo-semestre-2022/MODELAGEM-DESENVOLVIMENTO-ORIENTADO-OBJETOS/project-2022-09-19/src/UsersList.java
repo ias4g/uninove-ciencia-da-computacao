@@ -5,11 +5,14 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class UsersList extends javax.swing.JFrame {
 
     private Connection conn = null;
     private PreparedStatement stmt = null;
+    private ResultSet rs = null;
+    DefaultTableModel tableModel;
 
     public UsersList() {
         initComponents();
@@ -25,9 +28,9 @@ public class UsersList extends javax.swing.JFrame {
             );
 
             stmt = conn.prepareStatement("SELECT * FROM tbusers");
-            ResultSet resultado = stmt.executeQuery();
+            rs = stmt.executeQuery();
 
-            if (resultado.next()) {
+            if (rs.next()) {
 
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
