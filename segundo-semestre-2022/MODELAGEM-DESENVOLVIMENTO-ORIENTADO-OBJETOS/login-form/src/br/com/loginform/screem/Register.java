@@ -566,7 +566,7 @@ public class Register extends javax.swing.JDialog {
         PointController pc = new PointController();
         String res = pc.createPoint(pt);
 
-        System.out.println(res);
+        JOptionPane.showMessageDialog(null, res);
 
         dispose();
 
