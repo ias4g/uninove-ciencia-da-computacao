@@ -8,30 +8,30 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class UsersList extends javax.swing.JFrame {
-
+    
     private Connection conn = null;
     private PreparedStatement stmt = null;
     private ResultSet rs = null;
     private DefaultTableModel tableModel;
-
+    
     public UsersList() {
         initComponents();
         tableFill();
     }
-
+    
     private void tableFill() {
         try {
-
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
             );
-
+            
             stmt = conn.prepareStatement("SELECT * FROM tbusers");
             rs = stmt.executeQuery();
-
+            
             tableModel = (DefaultTableModel) tblUsers.getModel();
-
+            
             while (rs.next()) {
                 Object datas[] = {
                     rs.getString("id"),
@@ -41,17 +41,19 @@ public class UsersList extends javax.swing.JFrame {
                     rs.getString("email"),
                     rs.getString("job")
                 };
+                
+                tableModel.addRow(datas);
             }
-
+            
             conn.close();
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(
                     null, "Algo de errado não está certo -> " + ex.getMessage()
             );
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
