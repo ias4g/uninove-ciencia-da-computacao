@@ -20,20 +20,24 @@ public class PointController {
     }
 
     public String createPoint(Point point) {
-        try {
-            String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
+        if (conn != null) {
+            try {
+                String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
 
-            stmt = conn.prepareStatement(sql);
-            stmt.setString(1, point.getName());
-            stmt.setString(2, point.getEmail());
-            stmt.setBytes(3, point.getImage());
-            stmt.setString(4, point.getWhatsapp());
+                stmt = conn.prepareStatement(sql);
+                stmt.setString(1, point.getName());
+                stmt.setString(2, point.getEmail());
+                stmt.setBytes(3, point.getImage());
+                stmt.setString(4, point.getWhatsapp());
 
-            return String.valueOf(stmt.executeUpdate());
-        } catch (SQLException ex) {
-            return ex.getMessage();
-        } finally {
-            DBConnection.closeConn();
+                return String.valueOf(stmt.executeUpdate());
+            } catch (SQLException ex) {
+                return ex.getMessage();
+            } finally {
+                DBConnection.closeConn();
+            }
+        } else {
+            return "Conexão com o banco não estabelecida!";
         }
     }
 

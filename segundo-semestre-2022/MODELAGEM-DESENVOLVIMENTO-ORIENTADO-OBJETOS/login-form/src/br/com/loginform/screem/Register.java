@@ -557,20 +557,18 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
 
-        if (DBConnection.getConn() != null) {
+        Point pt = new Point();
 
-            Point pt = new Point();
-            pt.setName(name);
-            pt.setEmail(email);
-            pt.setWhatsapp(whatsapp);
+        pt.setName(name);
+        pt.setEmail(email);
+        pt.setWhatsapp(whatsapp);
 
-            PointController pc = new PointController();
-            String res = pc.createPoint(pt);
+        PointController pc = new PointController();
+        String res = pc.createPoint(pt);
 
-            System.out.println(res);
+        System.out.println(res);
 
-//            JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
-            dispose();
+        dispose();
 
 //            if (itensSelected.isEmpty()) {
 //
@@ -582,10 +580,6 @@ public class Register extends javax.swing.JDialog {
 //                //CardLayout cl = (CardLayout) jpMain.getLayout();
 //                //cl.show(jpMain, "cardSuccess");
 //            }
-        } else {
-
-        }
-
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
