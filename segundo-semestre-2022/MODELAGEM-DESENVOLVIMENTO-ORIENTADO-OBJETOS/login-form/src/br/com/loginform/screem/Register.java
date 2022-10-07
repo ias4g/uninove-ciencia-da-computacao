@@ -565,10 +565,11 @@ public class Register extends javax.swing.JDialog {
             pt.setWhatsapp(whatsapp);
 
             PointController pc = new PointController();
-            pc.createPoint(pt);
+            String res = pc.createPoint(pt);
 
-            JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
+            System.out.println(res);
 
+//            JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
             dispose();
 
 //            if (itensSelected.isEmpty()) {
@@ -581,8 +582,8 @@ public class Register extends javax.swing.JDialog {
 //                //CardLayout cl = (CardLayout) jpMain.getLayout();
 //                //cl.show(jpMain, "cardSuccess");
 //            }
-        }else{
-            
+        } else {
+
         }
 
     }//GEN-LAST:event_lblPointItensSaveMouseClicked

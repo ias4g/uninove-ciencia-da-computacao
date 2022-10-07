@@ -20,7 +20,7 @@ public class PointController {
         conn = DBConnection.getConn();
     }
 
-    public void createPoint(Point point) {
+    public String createPoint(Point point) {
 
         try {
             String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
@@ -31,10 +31,11 @@ public class PointController {
             stmt.setBytes(3, point.getImage());
             stmt.setString(4, point.getWhatsapp());
 
-            System.out.println(stmt.executeUpdate());
+            return String.valueOf(stmt.executeUpdate());
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+//            JOptionPane.showMessageDialog(null, ex.getMessage());
+            return ex.getMessage();
         } finally {
             DBConnection.closeConn();
         }
