@@ -1,6 +1,6 @@
 package br.com.loginform.model;
 
-public class Points {
+public class Point {
 
     private int id;
     private String name;

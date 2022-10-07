@@ -1,5 +1,8 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.controllers.PointController;
+import br.com.loginform.dao.DBConnection;
+import br.com.loginform.model.Point;
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import java.awt.CardLayout;
@@ -13,6 +16,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
 
+//    DBConnection conn = new DBConnection();
     String name;
     String email;
     String whatsapp;
@@ -552,15 +556,31 @@ public class Register extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
-        if (itensSelected.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Selecione pelo menos um item.");
-        } else {
-            dispose();
-            new Details(new javax.swing.JFrame(), true, name, email, whatsapp, cep, address, Number, uf, city, phone, itensSelected).setVisible(true);
 
-//            CardLayout cl = (CardLayout) jpMain.getLayout();
-//            cl.show(jpMain, "cardSuccess");
+        if (DBConnection.getConn() != null) {
+
+            if (itensSelected.isEmpty()) {
+
+                JOptionPane.showMessageDialog(null, "Selecione pelo menos um item.");
+
+            } else {
+
+                Point pt = new Point();
+                pt.setName(name);
+                pt.setEmail(email);
+                pt.setWhatsapp(whatsapp);
+
+                PointController pc = new PointController();
+                pc.createPoint(pt);
+
+                //dispose();
+                //new Details(new javax.swing.JFrame(), true, name, email, whatsapp, cep, address, Number, uf, city, phone, itensSelected).setVisible(true);
+                //CardLayout cl = (CardLayout) jpMain.getLayout();
+                //cl.show(jpMain, "cardSuccess");
+            }
+
         }
+
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
