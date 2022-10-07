@@ -32,10 +32,8 @@ public class UsersList extends javax.swing.JFrame {
 
             tableModel = (DefaultTableModel) tblUsers.getModel();
 
-            if (rs.next()) {
+            while (rs.next()) {
 
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
             }
 
             conn.close();
