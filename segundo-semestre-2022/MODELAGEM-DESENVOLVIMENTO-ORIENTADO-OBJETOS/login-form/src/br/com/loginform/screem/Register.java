@@ -566,13 +566,17 @@ public class Register extends javax.swing.JDialog {
         PointController pc = new PointController();
         String res = pc.createPoint(pt);
 
-        if (res.equalsIgnoreCase("1")) {
-            JOptionPane.showMessageDialog(null, "Ponto cadastrado com sucesso!");
-        } else {
-            JOptionPane.showMessageDialog(null, "Error: " + res);
-        }
-
         dispose();
+
+        if (res.equalsIgnoreCase("1")) {
+//            JOptionPane.showMessageDialog(null, "Ponto cadastrado com sucesso!");
+
+            new Message(new javax.swing.JFrame(), true, "success", "Ponto cadastrado com sucesso!").setVisible(true);
+        } else {
+//            JOptionPane.showMessageDialog(null, "Error: " + res);
+
+            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
+        }
 
 //            if (itensSelected.isEmpty()) {
 //
