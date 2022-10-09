@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PointController {
 
@@ -28,6 +30,8 @@ public class PointController {
             try {
                 String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
 
+                conn.setAutoCommit(false);
+
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, point.getName());
                 stmt.setString(2, point.getEmail());
@@ -36,7 +40,7 @@ public class PointController {
 
                 if (stmt.executeUpdate() == 1) {
 
-                    String getLastedId = "SELECT MAX(isd) as id FROM tb_points";
+                    String getLastedId = "SELECT MAX(id) as id FROM tb_points";
 
                     stmt = conn.prepareStatement(getLastedId);
                     rs = stmt.executeQuery();
@@ -46,11 +50,19 @@ public class PointController {
                     }
                 }
 
+                conn.commit();
+
                 return a;
 
             } catch (SQLException ex) {
-                a.add(ex.getMessage());
-                return a;
+                try {
+                    conn.rollback();
+                    a.add(ex.getMessage());
+                    return a;
+                } catch (SQLException ex1) {
+                    a.add(ex1.getMessage());
+                    return a;
+                }
             } finally {
                 DBConnection.closeConn();
             }
