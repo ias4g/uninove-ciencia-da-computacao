@@ -38,7 +38,7 @@ public class PointController {
 //                return stmt.executeUpdate();
                 if (stmt.executeUpdate() == 1) {
 
-                    String getLastedId = "SELECT MAX(id) as id FROM tb_points";
+                    String getLastedId = "SELECT MAX(id as id FROM tb_points";
 
                     stmt = conn.prepareStatement(getLastedId);
                     rs = stmt.executeQuery();
