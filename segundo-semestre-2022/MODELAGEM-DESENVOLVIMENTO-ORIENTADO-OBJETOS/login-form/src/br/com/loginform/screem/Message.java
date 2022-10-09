@@ -3,46 +3,28 @@ package br.com.loginform.screem;
 import br.com.loginform.utils.FontManager;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Toolkit;
 
 public class Message extends javax.swing.JDialog {
 
     public Message(java.awt.Frame parent, boolean modal, String status, String Message) {
         super(parent, modal);
         initComponents();
-        setFont();
 
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage("src/br/com/loginform/assets/icon-system.png"));
-        this.getContentPane().setBackground(new Color(255, 255, 255));
+        setFont();
 
         jtaMessage.setText(Message);
 
         switch (status) {
             case "success" -> {
-                lblStatus.setText("Sucesso");
-                lblOk.setBackground(new Color(45, 174, 104));
-                jpMain.setBackground(new Color(255, 255, 255));
-                jpHeader.setBackground(new Color(45, 174, 104));
-                jpSeparator.setBackground(new Color(56, 161, 104));
-                lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/bg-icon-success.png")));
+                setSuccess();
             }
 
             case "error" -> {
-                lblStatus.setText("Erro");
-                lblOk.setBackground(new Color(212, 86, 89));
-                jpMain.setBackground(new Color(255, 255, 255));
-                jpHeader.setBackground(new Color(212, 86, 89));
-                jpSeparator.setBackground(new Color(234, 135, 138));
-                lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/bg-icon-error.png")));
+                setError();
             }
 
             case "warning" -> {
-                lblStatus.setText("Atenção");
-                lblOk.setBackground(new Color(212, 86, 89));
-                jpMain.setBackground(new Color(255, 255, 255));
-                jpHeader.setBackground(new Color(212, 86, 89));
-                jpSeparator.setBackground(new Color(234, 135, 138));
-                lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/bg-icon-error.png")));
+                setWarning();
             }
         }
     }
@@ -52,111 +34,111 @@ public class Message extends javax.swing.JDialog {
     private void initComponents() {
 
         jpMain = new javax.swing.JPanel();
-        jpHeader = new javax.swing.JPanel();
-        lblStatus = new javax.swing.JLabel();
-        jpSeparator = new javax.swing.JPanel();
-        jtaMessage = new javax.swing.JTextArea();
         lblIcon = new javax.swing.JLabel();
-        lblOk = new br.com.loginform.components.JLabelRoundedBorder();
+        lblStatus = new javax.swing.JLabel();
+        jtaMessage = new javax.swing.JTextArea();
+        lblButtonOk = new br.com.loginform.components.JLabelRoundedBorder();
 
-        setMaximumSize(new java.awt.Dimension(360, 250));
-        setMinimumSize(new java.awt.Dimension(360, 250));
+        setMaximumSize(new java.awt.Dimension(300, 260));
+        setMinimumSize(new java.awt.Dimension(300, 260));
         setModal(true);
         setUndecorated(true);
         setResizable(false);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new java.awt.CardLayout());
 
-        jpMain.setBackground(new java.awt.Color(52, 203, 121));
+        jpMain.setBackground(new java.awt.Color(255, 255, 255));
+        jpMain.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(45, 174, 104), 4));
         jpMain.setLayout(null);
 
-        jpHeader.setBackground(new java.awt.Color(45, 174, 104));
-        jpHeader.setLayout(null);
+        lblIcon.setBackground(new java.awt.Color(45, 174, 104));
+        lblIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/img-success.png"))); // NOI18N
+        lblIcon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblIcon.setOpaque(true);
+        jpMain.add(lblIcon);
+        lblIcon.setBounds(0, 0, 300, 96);
 
-        lblStatus.setForeground(new java.awt.Color(255, 255, 255));
+        lblStatus.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lblStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblStatus.setText("Sucesso");
-        lblStatus.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jpHeader.add(lblStatus);
-        lblStatus.setBounds(20, 16, 190, 30);
-
-        jpSeparator.setBackground(new java.awt.Color(56, 161, 104));
-
-        javax.swing.GroupLayout jpSeparatorLayout = new javax.swing.GroupLayout(jpSeparator);
-        jpSeparator.setLayout(jpSeparatorLayout);
-        jpSeparatorLayout.setHorizontalGroup(
-            jpSeparatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
-        );
-        jpSeparatorLayout.setVerticalGroup(
-            jpSeparatorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1, Short.MAX_VALUE)
-        );
-
-        jpHeader.add(jpSeparator);
-        jpSeparator.setBounds(0, 50, 360, 1);
+        lblStatus.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jpMain.add(lblStatus);
+        lblStatus.setBounds(0, 110, 300, 20);
 
         jtaMessage.setEditable(false);
-        jtaMessage.setColumns(20);
-        jtaMessage.setForeground(new java.awt.Color(255, 255, 255));
+        jtaMessage.setBackground(new java.awt.Color(255, 255, 255));
         jtaMessage.setLineWrap(true);
-        jtaMessage.setRows(5);
-        jtaMessage.setText("\n");
         jtaMessage.setWrapStyleWord(true);
         jtaMessage.setBorder(null);
-        jtaMessage.setMaximumSize(new java.awt.Dimension(317, 105));
-        jtaMessage.setMinimumSize(new java.awt.Dimension(317, 105));
-        jtaMessage.setOpaque(false);
-        jtaMessage.setPreferredSize(new java.awt.Dimension(317, 105));
-        jpHeader.add(jtaMessage);
-        jtaMessage.setBounds(22, 62, 317, 105);
+        jtaMessage.setFocusable(false);
+        jtaMessage.setVerifyInputWhenFocusTarget(false);
+        jpMain.add(jtaMessage);
+        jtaMessage.setBounds(16, 136, 268, 62);
 
-        lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/bg-icon-success.png"))); // NOI18N
-        jpHeader.add(lblIcon);
-        lblIcon.setBounds(0, 0, 360, 180);
-
-        jpMain.add(jpHeader);
-        jpHeader.setBounds(0, 0, 360, 180);
-
-        lblOk.setBackground(new java.awt.Color(52, 203, 121));
-        lblOk.setForeground(new java.awt.Color(255, 255, 255));
-        lblOk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOk.setText("OK");
-        lblOk.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblOk.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblButtonOk.setBackground(new java.awt.Color(45, 174, 104));
+        lblButtonOk.setForeground(new java.awt.Color(255, 255, 255));
+        lblButtonOk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonOk.setText("OK");
+        lblButtonOk.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblButtonOk.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblButtonOk.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblOkMouseClicked(evt);
+                lblButtonOkMouseClicked(evt);
             }
         });
-        jpMain.add(lblOk);
-        lblOk.setBounds(270, 200, 70, 30);
+        jpMain.add(lblButtonOk);
+        lblButtonOk.setBounds(112, 216, 76, 22);
 
-        getContentPane().add(jpMain);
-        jpMain.setBounds(0, 0, 360, 250);
+        getContentPane().add(jpMain, "card2");
 
-        setSize(new java.awt.Dimension(360, 250));
+        setSize(new java.awt.Dimension(300, 260));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOkMouseClicked
+    private void lblButtonOkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonOkMouseClicked
         dispose();
-    }//GEN-LAST:event_lblOkMouseClicked
+    }//GEN-LAST:event_lblButtonOkMouseClicked
 
     private void setFont() {
+
         Font Ubuntu_Bold_24 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 24f);
-        Font Ubuntu_Bold_16 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 16f);
         Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
 
         lblStatus.setFont(Ubuntu_Bold_24);
         jtaMessage.setFont(PTSans_Regular_16);
-        lblOk.setFont(Ubuntu_Bold_16);
+        lblButtonOk.setFont(PTSans_Regular_16);
+
+    }
+
+    private void setSuccess() {
+        lblStatus.setText("Sucesso");
+        lblButtonOk.setBackground(new Color(45, 174, 104));
+        lblIcon.setBackground(new java.awt.Color(45, 174, 104));
+        jpMain.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(45, 174, 104), 4));
+        lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/img-success.png")));
+    }
+
+    private void setError() {
+        lblStatus.setText("Erro");
+        lblButtonOk.setBackground(new Color(246, 86, 86));
+        lblIcon.setBackground(new java.awt.Color(246, 86, 86));
+        jpMain.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(246, 86, 86), 4));
+        lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/img-error.png")));
+    }
+
+    private void setWarning() {
+        lblStatus.setText("Aviso");
+        lblButtonOk.setBackground(new Color(248, 177, 35));
+        lblIcon.setBackground(new java.awt.Color(248, 177, 35));
+        jpMain.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(248, 177, 35), 4));
+        lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/img-warning.png")));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jpHeader;
     private javax.swing.JPanel jpMain;
-    private javax.swing.JPanel jpSeparator;
     private javax.swing.JTextArea jtaMessage;
+    private br.com.loginform.components.JLabelRoundedBorder lblButtonOk;
     private javax.swing.JLabel lblIcon;
-    private br.com.loginform.components.JLabelRoundedBorder lblOk;
     private javax.swing.JLabel lblStatus;
     // End of variables declaration//GEN-END:variables
 }
