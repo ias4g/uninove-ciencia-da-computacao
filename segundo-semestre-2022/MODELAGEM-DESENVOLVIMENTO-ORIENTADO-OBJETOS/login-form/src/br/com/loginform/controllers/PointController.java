@@ -22,7 +22,8 @@ public class PointController {
 
     public Object createPoint(Point point) {
 
-        String result = "";
+        ArrayList<Object> a = new ArrayList();
+        int result = 0;
 
         if (conn != null) {
 
@@ -38,17 +39,18 @@ public class PointController {
 //                return stmt.executeUpdate();
                 if (stmt.executeUpdate() == 1) {
 
-                    String getLastedId = "SELECT MAX(id as id FROM tb_points";
+                    String getLastedId = "SELECT MAX(id) as id FROM tb_points";
 
                     stmt = conn.prepareStatement(getLastedId);
                     rs = stmt.executeQuery();
 
                     while (rs.next()) {
-                        result = rs.getString("id");
+//                        result = Integer.parseInt(rs.getString("id"));
+                        a.add(rs.getInt("id"));
                     }
                 }
 
-                return result;
+                return a;
 
             } catch (SQLException ex) {
                 return ex.getMessage();

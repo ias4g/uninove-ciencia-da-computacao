@@ -4,6 +4,7 @@ import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
 
 public class Dashboard extends javax.swing.JFrame {
 
