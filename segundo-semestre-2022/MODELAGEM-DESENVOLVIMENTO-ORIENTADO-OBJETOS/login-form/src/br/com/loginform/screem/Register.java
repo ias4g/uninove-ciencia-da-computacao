@@ -557,9 +557,9 @@ public class Register extends javax.swing.JDialog {
         uf = String.valueOf(cmbUf.getSelectedItem());
         city = String.valueOf(cmbCity.getSelectedItem());
 
-//        CardLayout cl = (CardLayout) jpMain.getLayout();
-//        cl.show(jpMain, "cardItens");
-        System.out.println(cep);
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardItens");
+//        System.out.println(cep);
 //        }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
@@ -575,16 +575,17 @@ public class Register extends javax.swing.JDialog {
 
         dispose();
 
-        if (res.equalsIgnoreCase("1")) {
-//            JOptionPane.showMessageDialog(null, "Ponto cadastrado com sucesso!");
+        System.out.println(res);
 
-            new Message(new javax.swing.JFrame(), true, "success", "Ponto cadastrado com sucesso!").setVisible(true);
-        } else {
-//            JOptionPane.showMessageDialog(null, "Error: " + res);
-
-            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
-        }
-
+//        if (res.equalsIgnoreCase("1")) {
+////            JOptionPane.showMessageDialog(null, "Ponto cadastrado com sucesso!");
+//
+//            new Message(new javax.swing.JFrame(), true, "success", "Ponto cadastrado com sucesso!").setVisible(true);
+//        } else {
+////            JOptionPane.showMessageDialog(null, "Error: " + res);
+//
+//            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
+//        }
 //            if (itensSelected.isEmpty()) {
 //
 //                JOptionPane.showMessageDialog(null, "Selecione pelo menos um item.");

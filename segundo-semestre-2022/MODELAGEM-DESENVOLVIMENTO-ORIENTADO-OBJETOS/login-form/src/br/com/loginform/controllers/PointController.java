@@ -20,9 +20,12 @@ public class PointController {
     }
 
     public String createPoint(Point point) {
+        String id = "0";
+
         if (conn != null) {
             try {
-                String sql = "INSERT INTO tb_ponts(name, email, image, whatsapp) values(?, ?, ?, ?)";
+                String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
+                String getLastedId = "SELECT MAX(id) as id FROM tb_points";
 
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, point.getName());
@@ -30,7 +33,18 @@ public class PointController {
                 stmt.setBytes(3, point.getImage());
                 stmt.setString(4, point.getWhatsapp());
 
-                return String.valueOf(stmt.executeUpdate());
+//                return String.valueOf(stmt.executeUpdate());
+                if (stmt.executeUpdate() == 1) {
+                    stmt = conn.prepareStatement(getLastedId);
+                    rs = stmt.executeQuery();
+
+                    while (rs.next()) {
+                        id = rs.getString("id");
+                    }
+                }
+
+                return id;
+
             } catch (SQLException ex) {
                 return ex.getMessage();
             } finally {
