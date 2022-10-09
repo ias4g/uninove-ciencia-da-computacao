@@ -2,6 +2,7 @@ package br.com.loginform.screem;
 
 import br.com.loginform.controllers.PointController;
 import br.com.loginform.dao.DBConnection;
+import br.com.loginform.model.Address;
 import br.com.loginform.model.Point;
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
@@ -565,6 +566,7 @@ public class Register extends javax.swing.JDialog {
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
 
         Point pt = new Point();
+        Address ad = new Address();
 
         pt.setName(name);
         pt.setEmail(email);
@@ -576,6 +578,7 @@ public class Register extends javax.swing.JDialog {
         dispose();
 
         System.out.println(res);
+        System.out.println("Isto vem da class Address " + ad.getId());
 
 //        if (res.equalsIgnoreCase("1")) {
 ////            JOptionPane.showMessageDialog(null, "Ponto cadastrado com sucesso!");

@@ -1,6 +1,7 @@
 package br.com.loginform.controllers;
 
 import br.com.loginform.dao.DBConnection;
+import br.com.loginform.model.Address;
 import br.com.loginform.model.Point;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -20,12 +21,13 @@ public class PointController {
     }
 
     public String createPoint(Point point) {
-        String id = "0";
+
+        String id = "";
 
         if (conn != null) {
+
             try {
                 String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
-                String getLastedId = "SELECT MAX(id) as id FROM tb_points";
 
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, point.getName());
@@ -33,14 +35,8 @@ public class PointController {
                 stmt.setBytes(3, point.getImage());
                 stmt.setString(4, point.getWhatsapp());
 
-//                return String.valueOf(stmt.executeUpdate());
                 if (stmt.executeUpdate() == 1) {
-                    stmt = conn.prepareStatement(getLastedId);
-                    rs = stmt.executeQuery();
-
-                    while (rs.next()) {
-                        id = rs.getString("id");
-                    }
+                    id = getLastedId();
                 }
 
                 return id;
@@ -119,6 +115,35 @@ public class PointController {
             System.out.println(ex.getMessage());
         }
 
+    }
+
+    public String getLastedId() {
+
+        String result = "";
+
+        if (conn != null) {
+
+            try {
+                String getLastedId = "SELECT MAX(id) as id FROM tb_points";
+
+                stmt = conn.prepareStatement(getLastedId);
+                rs = stmt.executeQuery();
+
+                while (rs.next()) {
+                    result = rs.getString("id");
+                }
+
+                return result;
+
+            } catch (SQLException ex) {
+                return ex.getMessage();
+            } finally {
+                DBConnection.closeConn();
+            }
+
+        } else {
+            return "Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.";
+        }
     }
 
 }
