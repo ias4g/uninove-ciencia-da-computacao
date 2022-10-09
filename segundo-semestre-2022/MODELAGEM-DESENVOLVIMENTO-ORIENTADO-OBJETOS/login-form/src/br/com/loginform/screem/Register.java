@@ -573,12 +573,11 @@ public class Register extends javax.swing.JDialog {
         pt.setWhatsapp(whatsapp);
 
         PointController pc = new PointController();
-        Object res = pc.createPoint(pt);
+        ArrayList<Object> res = new ArrayList();
+        res = pc.createPoint(pt);
 
-        if (res instanceof String) {
-            System.out.println("É String: " + res);
-        } else {
-            System.out.println("Não é String: " + res);
+        for (Object i : res) {
+            System.out.println(i);
         }
 
         dispose();

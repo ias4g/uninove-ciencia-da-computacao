@@ -20,7 +20,7 @@ public class PointController {
         conn = DBConnection.getConn();
     }
 
-    public Object createPoint(Point point) {
+    public ArrayList createPoint(Point point) {
 
         ArrayList<Object> a = new ArrayList();
         int result = 0;
@@ -53,12 +53,17 @@ public class PointController {
                 return a;
 
             } catch (SQLException ex) {
-                return ex.getMessage();
+//                return ex.getMessage();
+
+                a.add(ex.getMessage());
+
+                return a;
             } finally {
                 DBConnection.closeConn();
             }
         } else {
-            return "Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.";
+            a.add("Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.");
+            return a;
         }
     }
 
