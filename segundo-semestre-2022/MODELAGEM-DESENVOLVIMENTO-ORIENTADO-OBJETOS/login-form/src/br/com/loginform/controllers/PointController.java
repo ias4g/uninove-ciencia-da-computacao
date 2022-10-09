@@ -16,7 +16,7 @@ public class PointController {
     private ResultSet rs;
 
     public PointController() {
-        conn = DBConnection.getConn();
+        this.conn = DBConnection.getConn();
     }
 
     public ArrayList createPoint(Point point) {
