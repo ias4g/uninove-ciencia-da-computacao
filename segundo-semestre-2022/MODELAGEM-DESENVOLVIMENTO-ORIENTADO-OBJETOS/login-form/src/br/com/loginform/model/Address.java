@@ -5,7 +5,7 @@ public class Address {
     private int id;
     private String zipcode;
     private int number;
-    private char uf;
+    private String uf;
     private String city;
     private int pointId;
 
@@ -33,11 +33,11 @@ public class Address {
         this.number = number;
     }
 
-    public char getUf() {
+    public String getUf() {
         return uf;
     }
 
-    public void setUf(char uf) {
+    public void setUf(String uf) {
         this.uf = uf;
     }
 
