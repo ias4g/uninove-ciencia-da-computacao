@@ -17,15 +17,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Register extends javax.swing.JDialog {
 
 //    DBConnection conn = new DBConnection();
-    String name;
-    String email;
-    String whatsapp;
-    String cep;
-    String address;
-    String Number;
-    String uf;
-    String city;
-    String phone;
+    private String name;
+    private String email;
+    private String whatsapp;
+    private String cep;
+    private String address;
+    private String number;
+    private String uf;
+    private String city;
 
     private boolean isSelectedBatteries = false;
     private boolean isSelectedElectronicWaste = false;
@@ -81,7 +80,6 @@ public class Register extends javax.swing.JDialog {
         lblPointAddressTitle = new javax.swing.JLabel();
         lblPointAddressSubTitle = new javax.swing.JLabel();
         lblCep = new javax.swing.JLabel();
-        txtCep = new br.com.loginform.components.JTextFieldCustom();
         lblAddress = new javax.swing.JLabel();
         txtAddress = new br.com.loginform.components.JTextFieldCustom();
         lblNumber = new javax.swing.JLabel();
@@ -91,6 +89,7 @@ public class Register extends javax.swing.JDialog {
         lblCity = new javax.swing.JLabel();
         cmbCity = new javax.swing.JComboBox<>();
         lblPointAddressNext = new br.com.loginform.components.JLabelRoundedBorder();
+        txtCep = new br.com.loginform.components.JFormattedFieldCustom();
         jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointItensTitle = new javax.swing.JLabel();
         lblPointItensSubTitle = new javax.swing.JLabel();
@@ -263,8 +262,6 @@ public class Register extends javax.swing.JDialog {
         lblCep.setText("Cep");
         jpPointAddress.add(lblCep);
         lblCep.setBounds(50, 75, 60, 16);
-        jpPointAddress.add(txtCep);
-        txtCep.setBounds(50, 96, 144, 56);
 
         lblAddress.setText("Endereço");
         jpPointAddress.add(lblAddress);
@@ -311,6 +308,14 @@ public class Register extends javax.swing.JDialog {
         });
         jpPointAddress.add(lblPointAddressNext);
         lblPointAddressNext.setBounds(626, 376, 36, 36);
+
+        try {
+            txtCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jpPointAddress.add(txtCep);
+        txtCep.setBounds(50, 96, 144, 56);
 
         jpMain.add(jpPointAddress, "cardAddress");
 
@@ -548,12 +553,13 @@ public class Register extends javax.swing.JDialog {
 //        } else {
         cep = txtCep.getText();
         address = txtAddress.getText();
-        Number = txtNumber.getText();
+        number = txtNumber.getText();
         uf = String.valueOf(cmbUf.getSelectedItem());
         city = String.valueOf(cmbCity.getSelectedItem());
 
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardItens");
+//        CardLayout cl = (CardLayout) jpMain.getLayout();
+//        cl.show(jpMain, "cardItens");
+        System.out.println(cep);
 //        }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
@@ -729,7 +735,7 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JLabel lblUf;
     private javax.swing.JLabel lblWhatsApp;
     private br.com.loginform.components.JTextFieldCustom txtAddress;
-    private br.com.loginform.components.JTextFieldCustom txtCep;
+    private br.com.loginform.components.JFormattedFieldCustom txtCep;
     private br.com.loginform.components.JTextFieldCustom txtEmail;
     private br.com.loginform.components.JTextFieldCustom txtName;
     private br.com.loginform.components.JTextFieldCustom txtNumber;
