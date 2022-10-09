@@ -31,6 +31,7 @@ public class PointController {
                 conn.setAutoCommit(false);
 
                 stmt = conn.prepareStatement(sql);
+
                 stmt.setString(1, point.getName());
                 stmt.setString(2, point.getEmail());
                 stmt.setBytes(3, point.getImage());
@@ -46,9 +47,11 @@ public class PointController {
                     while (rs.next()) {
                         a.add(rs.getInt("id"));
                     }
+
+                    conn.commit();
+
                 }
 
-//                conn.commit();
                 return a;
 
             } catch (SQLException ex) {

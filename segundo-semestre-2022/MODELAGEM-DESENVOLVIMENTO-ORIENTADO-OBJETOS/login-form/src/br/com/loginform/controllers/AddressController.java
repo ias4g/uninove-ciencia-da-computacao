@@ -23,6 +23,8 @@ public class AddressController {
 
                 String sql = "INSERT INTO tb_address(zipcode, number, uf, city, point_id) values(?, ?, ?, ?, ?)";
 
+                conn.setAutoCommit(false);
+
                 stmt = conn.prepareStatement(sql);
 
                 stmt.setString(1, address.getZipcode());
@@ -38,10 +40,12 @@ public class AddressController {
             } catch (SQLException ex) {
                 try {
                     conn.rollback();
-                    return "=> Erro de SQL na class createAddress.\n=>Error: " + ex.getMessage();
                 } catch (SQLException ex1) {
-                    return "=>Error: " + ex.getMessage();
+                    return "=> Erro no rollback do metodo cretaeAddress da class AddressController\n=> Error: " + ex.getMessage();
                 }
+
+                return "=> Erro de SQL na class createAddress.\n=>Error: " + ex.getMessage();
+
             } finally {
                 DBConnection.closeConn();
             }
