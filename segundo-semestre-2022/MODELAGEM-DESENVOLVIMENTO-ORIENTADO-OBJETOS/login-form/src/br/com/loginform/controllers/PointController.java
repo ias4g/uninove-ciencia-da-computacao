@@ -1,7 +1,6 @@
 package br.com.loginform.controllers;
 
 import br.com.loginform.dao.DBConnection;
-import br.com.loginform.model.Address;
 import br.com.loginform.model.Point;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -23,7 +22,6 @@ public class PointController {
     public ArrayList createPoint(Point point) {
 
         ArrayList<Object> a = new ArrayList();
-        int result = 0;
 
         if (conn != null) {
 
@@ -36,16 +34,14 @@ public class PointController {
                 stmt.setBytes(3, point.getImage());
                 stmt.setString(4, point.getWhatsapp());
 
-//                return stmt.executeUpdate();
                 if (stmt.executeUpdate() == 1) {
 
-                    String getLastedId = "SELECT MAX(id) as id FROM tb_points";
+                    String getLastedId = "SELECT MAX(isd) as id FROM tb_points";
 
                     stmt = conn.prepareStatement(getLastedId);
                     rs = stmt.executeQuery();
 
                     while (rs.next()) {
-//                        result = Integer.parseInt(rs.getString("id"));
                         a.add(rs.getInt("id"));
                     }
                 }
@@ -53,10 +49,7 @@ public class PointController {
                 return a;
 
             } catch (SQLException ex) {
-//                return ex.getMessage();
-
                 a.add(ex.getMessage());
-
                 return a;
             } finally {
                 DBConnection.closeConn();
@@ -131,34 +124,6 @@ public class PointController {
             System.out.println(ex.getMessage());
         }
 
-    }
-
-    public String getLastedId() {
-
-        String result = "";
-
-        if (conn != null) {
-
-            try {
-                String getLastedId = "SELECT MAX(id) as id FROM tb_points";
-
-                stmt = conn.prepareStatement(getLastedId);
-                rs = stmt.executeQuery();
-
-                while (rs.next()) {
-                    result = rs.getString("id");
-                }
-
-                return result;
-
-            } catch (SQLException ex) {
-                return ex.getMessage();
-            } finally {
-                DBConnection.closeConn();
-            }
-        } else {
-            return "Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.";
-        }
     }
 
 }

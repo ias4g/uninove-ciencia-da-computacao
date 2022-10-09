@@ -577,7 +577,7 @@ public class Register extends javax.swing.JDialog {
         res = pc.createPoint(pt);
 
         for (Object i : res) {
-            System.out.println(i);
+            System.out.println(i + " : " + i.getClass());
         }
 
         dispose();
