@@ -1,5 +1,6 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.controllers.AddressController;
 import br.com.loginform.controllers.PointController;
 import br.com.loginform.dao.DBConnection;
 import br.com.loginform.model.Address;
@@ -587,7 +588,13 @@ public class Register extends javax.swing.JDialog {
                 ad.setNumber(number);
                 ad.setUf(uf);
                 ad.setCity(city);
-                ad.setPointId(WIDTH);
+                ad.setPointId(Integer.parseInt(i.toString()));
+
+                AddressController ac = new AddressController();
+                String resAd = ac.createAddress(ad);
+
+                new Message(new javax.swing.JFrame(), true, "warning", resAd).setVisible(true);
+
             } else {
                 new Message(new javax.swing.JFrame(), true, "error", i.toString()).setVisible(true);
             }

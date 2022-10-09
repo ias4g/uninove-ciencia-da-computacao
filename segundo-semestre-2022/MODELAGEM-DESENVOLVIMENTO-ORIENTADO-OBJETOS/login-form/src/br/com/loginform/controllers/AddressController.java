@@ -5,15 +5,13 @@ import br.com.loginform.model.Address;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class AddressController {
 
     private final Connection conn;
     private PreparedStatement stmt;
 
-    public AddressController(Connection conn) {
+    public AddressController() {
         this.conn = DBConnection.getConn();
     }
 
