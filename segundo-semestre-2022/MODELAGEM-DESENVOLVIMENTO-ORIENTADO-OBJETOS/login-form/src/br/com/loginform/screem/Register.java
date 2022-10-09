@@ -529,7 +529,8 @@ public class Register extends javax.swing.JDialog {
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
 
         if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+//            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
         } else {
             name = txtName.getText();
             email = txtEmail.getText();
