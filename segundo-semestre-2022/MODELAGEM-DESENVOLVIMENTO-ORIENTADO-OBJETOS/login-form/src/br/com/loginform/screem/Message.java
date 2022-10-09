@@ -36,14 +36,14 @@ public class Message extends javax.swing.JDialog {
                 lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/bg-icon-error.png")));
             }
 
-//            case "info" -> {
-//                lblStatus.setText("Erro");
-//                lblOk.setBackground(new Color(212, 86, 89));
-//                jpMain.setBackground(new Color(255, 255, 255));
-//                jpHeader.setBackground(new Color(212, 86, 89));
-//                jpSeparator.setBackground(new Color(234, 135, 138));
-//                lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/bg-icon-error.png")));
-//            }
+            case "warning" -> {
+                lblStatus.setText("Atenção");
+                lblOk.setBackground(new Color(212, 86, 89));
+                jpMain.setBackground(new Color(255, 255, 255));
+                jpHeader.setBackground(new Color(212, 86, 89));
+                jpSeparator.setBackground(new Color(234, 135, 138));
+                lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/bg-icon-error.png")));
+            }
         }
     }
 
