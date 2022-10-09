@@ -19,7 +19,7 @@ public class DBConnection {
             conn = DriverManager.getConnection(BD_URL, BD_USER, BD_PASSWORD);
 
         } catch (ClassNotFoundException | SQLException ex) {
-            System.out.println("Erro de conexão no metodo getConn() da Class DBConnection | Error " + ex.getMessage());
+            System.out.print("Erro de conexão no metodo getConn() da Class DBConnection | Error: " + ex.getMessage());
         }
 
         return conn;
