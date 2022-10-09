@@ -19,7 +19,7 @@ public class DBConnection {
             conn = DriverManager.getConnection(BD_URL, BD_USER, BD_PASSWORD);
 
         } catch (ClassNotFoundException | SQLException ex) {
-            System.out.print("Erro de conexão no metodo getConn() da Class DBConnection | Error: " + ex.getMessage());
+            System.out.println("=> Erro de conexão no metodo getConn() da Class DBConnection \n=> Error: " + ex.getMessage());
         }
 
         return conn;
@@ -29,7 +29,7 @@ public class DBConnection {
         try {
             conn.close();
         } catch (SQLException ex) {
-            System.out.println("Erro ao tentar fechar a conexão no metodo closeConn() da Class DBConnection |Error " + ex.getMessage());
+            System.out.println("=> Erro ao tentar fechar a conexão no metodo closeConn() da Class DBConnection\n=> Error " + ex.getMessage());
         }
     }
 }
