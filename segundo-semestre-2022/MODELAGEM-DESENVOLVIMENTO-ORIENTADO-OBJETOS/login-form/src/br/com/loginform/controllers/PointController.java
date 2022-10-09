@@ -37,23 +37,19 @@ public class PointController {
 
 //                return stmt.executeUpdate();
                 if (stmt.executeUpdate() == 1) {
-                    try {
 
-                        String getLastedId = "SELECT MAX(id) as id FROM tb_points";
+                    String getLastedId = "SELECT MAX(id) as id FROM tb_points";
 
-                        stmt = conn.prepareStatement(getLastedId);
-                        rs = stmt.executeQuery();
+                    stmt = conn.prepareStatement(getLastedId);
+                    rs = stmt.executeQuery();
 
-                        while (rs.next()) {
-                            result = rs.getString("id");
-                        }
-
-                        return result;
-
-                    } catch (SQLException ex) {
-                        return ex.getMessage();
+                    while (rs.next()) {
+                        result = rs.getString("id");
                     }
                 }
+
+                return result;
+
             } catch (SQLException ex) {
                 return ex.getMessage();
             } finally {
