@@ -22,7 +22,7 @@ public class PointController {
     public String createPoint(Point point) {
         if (conn != null) {
             try {
-                String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
+                String sql = "INSERT INTO tb_ponts(name, email, image, whatsapp) values(?, ?, ?, ?)";
 
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, point.getName());
