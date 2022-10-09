@@ -21,9 +21,9 @@ public class Register extends javax.swing.JDialog {
     private String name;
     private String email;
     private String whatsapp;
-    private String cep;
+    private String zipcode;
     private String address;
-    private String number;
+    private int number;
     private String uf;
     private String city;
 
@@ -90,7 +90,7 @@ public class Register extends javax.swing.JDialog {
         lblCity = new javax.swing.JLabel();
         cmbCity = new javax.swing.JComboBox<>();
         lblPointAddressNext = new br.com.loginform.components.JLabelRoundedBorder();
-        txtCep = new br.com.loginform.components.JFormattedFieldCustom();
+        txtZipcode = new br.com.loginform.components.JFormattedFieldCustom();
         jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointItensTitle = new javax.swing.JLabel();
         lblPointItensSubTitle = new javax.swing.JLabel();
@@ -311,12 +311,12 @@ public class Register extends javax.swing.JDialog {
         lblPointAddressNext.setBounds(626, 376, 36, 36);
 
         try {
-            txtCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
+            txtZipcode.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jpPointAddress.add(txtCep);
-        txtCep.setBounds(50, 96, 144, 56);
+        jpPointAddress.add(txtZipcode);
+        txtZipcode.setBounds(50, 96, 144, 56);
 
         jpMain.add(jpPointAddress, "cardAddress");
 
@@ -545,31 +545,34 @@ public class Register extends javax.swing.JDialog {
             CardLayout cl = (CardLayout) jpMain.getLayout();
             cl.show(jpMain, "cardAddress");
 
-            txtCep.requestFocus();
+            txtZipcode.requestFocus();
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
-//        if (txtCep.getText().isEmpty() || txtAddress.getText().isEmpty() || txtNumber.getText().isEmpty() || cmbUf.getSelectedItem().equals("Selecione") || cmbCity.getSelectedItem().equals("Selecione")) {
-//            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
-//        } else {
-        cep = txtCep.getText();
-        address = txtAddress.getText();
-        number = txtNumber.getText();
-        uf = String.valueOf(cmbUf.getSelectedItem());
-        city = String.valueOf(cmbCity.getSelectedItem());
+        if (txtZipcode.getText().isEmpty()
+                || txtAddress.getText().isEmpty()
+                || txtNumber.getText().isEmpty()
+                || cmbUf.getSelectedItem().equals("Selecione")
+                || cmbCity.getSelectedItem().equals("Selecione")) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+        } else {
+            zipcode = txtZipcode.getText();
+            address = txtAddress.getText();
+            number = Integer.parseInt(txtNumber.getText());
+            uf = String.valueOf(cmbUf.getSelectedItem());
+            city = String.valueOf(cmbCity.getSelectedItem());
 
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardItens");
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardItens");
 //        System.out.println(cep);
-//        }
+        }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
 
         Point pt = new Point();
-        Address ad = new Address();
-
         pt.setName(name);
         pt.setEmail(email);
+        //pt.setImage(image);
         pt.setWhatsapp(whatsapp);
 
         PointController pc = new PointController();
@@ -577,7 +580,17 @@ public class Register extends javax.swing.JDialog {
         res = pc.createPoint(pt);
 
         for (Object i : res) {
-            System.out.println(i + " : " + i.getClass());
+
+            if (i instanceof Integer) {
+                Address ad = new Address();
+                ad.setZipcode(zipcode);
+                ad.setNumber(number);
+                ad.setUf(uf);
+                ad.setCity(city);
+                ad.setPointId(WIDTH);
+            } else {
+                new Message(new javax.swing.JFrame(), true, "error", i.toString()).setVisible(true);
+            }
         }
 
         dispose();
@@ -741,10 +754,10 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JLabel lblUf;
     private javax.swing.JLabel lblWhatsApp;
     private br.com.loginform.components.JTextFieldCustom txtAddress;
-    private br.com.loginform.components.JFormattedFieldCustom txtCep;
     private br.com.loginform.components.JTextFieldCustom txtEmail;
     private br.com.loginform.components.JTextFieldCustom txtName;
     private br.com.loginform.components.JTextFieldCustom txtNumber;
     private br.com.loginform.components.JTextFieldCustom txtWhatsApp;
+    private br.com.loginform.components.JFormattedFieldCustom txtZipcode;
     // End of variables declaration//GEN-END:variables
 }

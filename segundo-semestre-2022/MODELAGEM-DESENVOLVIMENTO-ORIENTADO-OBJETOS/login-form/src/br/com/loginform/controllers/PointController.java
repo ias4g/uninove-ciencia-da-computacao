@@ -48,8 +48,7 @@ public class PointController {
                     }
                 }
 
-                conn.commit();
-
+//                conn.commit();
                 return a;
 
             } catch (SQLException ex) {

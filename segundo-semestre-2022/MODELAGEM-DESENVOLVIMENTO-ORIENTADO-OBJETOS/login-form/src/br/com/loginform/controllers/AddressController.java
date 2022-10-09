@@ -5,6 +5,8 @@ import br.com.loginform.model.Address;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AddressController {
 
@@ -24,16 +26,24 @@ public class AddressController {
                 String sql = "INSERT INTO tb_address(zipcode, number, uf, city, point_id) values(?, ?, ?, ?, ?)";
 
                 stmt = conn.prepareStatement(sql);
+
                 stmt.setString(1, address.getZipcode());
                 stmt.setString(2, String.valueOf(address.getNumber()));
                 stmt.setString(3, address.getUf());
                 stmt.setString(4, address.getCity());
                 stmt.setString(5, String.valueOf(address.getPointId()));
 
+                conn.commit();
+
                 return String.valueOf(stmt.executeUpdate());
 
             } catch (SQLException ex) {
-                return "=> Erro de SQL na class createAddress.\n=>Error: " + ex.getMessage();
+                try {
+                    conn.rollback();
+                    return "=> Erro de SQL na class createAddress.\n=>Error: " + ex.getMessage();
+                } catch (SQLException ex1) {
+                    return "=>Error: " + ex.getMessage();
+                }
             } finally {
                 DBConnection.closeConn();
             }
