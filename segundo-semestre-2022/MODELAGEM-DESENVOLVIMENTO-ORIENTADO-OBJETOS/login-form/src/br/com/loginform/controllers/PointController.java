@@ -20,9 +20,9 @@ public class PointController {
         conn = DBConnection.getConn();
     }
 
-    public String createPoint(Point point) {
+    public Object createPoint(Point point) {
 
-        String id = "";
+        String result = "";
 
         if (conn != null) {
 
@@ -35,12 +35,25 @@ public class PointController {
                 stmt.setBytes(3, point.getImage());
                 stmt.setString(4, point.getWhatsapp());
 
+//                return stmt.executeUpdate();
                 if (stmt.executeUpdate() == 1) {
-                    id = getLastedId();
+                    try {
+
+                        String getLastedId = "SELECT MAX(id) as id FROM tb_points";
+
+                        stmt = conn.prepareStatement(getLastedId);
+                        rs = stmt.executeQuery();
+
+                        while (rs.next()) {
+                            result = rs.getString("id");
+                        }
+
+                        return result;
+
+                    } catch (SQLException ex) {
+                        return ex.getMessage();
+                    }
                 }
-
-                return id;
-
             } catch (SQLException ex) {
                 return ex.getMessage();
             } finally {
@@ -140,7 +153,6 @@ public class PointController {
             } finally {
                 DBConnection.closeConn();
             }
-
         } else {
             return "Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.";
         }

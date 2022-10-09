@@ -573,12 +573,11 @@ public class Register extends javax.swing.JDialog {
         pt.setWhatsapp(whatsapp);
 
         PointController pc = new PointController();
-        String res = pc.createPoint(pt);
+        Object res = pc.createPoint(pt);
+
+        System.out.println(res.toString());
 
         dispose();
-
-        System.out.println(res);
-        System.out.println("Isto vem da class Address " + ad.getId());
 
 //        if (res.equalsIgnoreCase("1")) {
 ////            JOptionPane.showMessageDialog(null, "Ponto cadastrado com sucesso!");
