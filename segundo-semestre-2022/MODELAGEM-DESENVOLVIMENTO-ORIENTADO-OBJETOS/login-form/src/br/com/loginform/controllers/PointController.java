@@ -55,7 +55,7 @@ public class PointController {
             } catch (SQLException ex) {
                 try {
                     conn.rollback();
-                    a.add(ex.getMessage());
+                    a.add("=> Erro de SQL na class createPoint.\n=>Error: " + ex.getMessage());
                     return a;
                 } catch (SQLException ex1) {
                     a.add(ex1.getMessage());
@@ -65,7 +65,7 @@ public class PointController {
                 DBConnection.closeConn();
             }
         } else {
-            a.add("Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.");
+            a.add("=> Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.");
             return a;
         }
     }
