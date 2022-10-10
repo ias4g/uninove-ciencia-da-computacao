@@ -164,6 +164,10 @@ public class Menu extends javax.swing.JFrame {
                 "Digite o nome do usuário a ser excluido!"
         );
 
+        if (u == null) {
+            return;
+        }
+
         System.out.println(u);
 
         try {
