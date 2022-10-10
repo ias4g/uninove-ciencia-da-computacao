@@ -572,9 +572,9 @@ public class Register extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
+        Connection conn = DBConnection.getConn();
 
         try {
-            Connection conn = DBConnection.getConn();
 
             conn.setAutoCommit(false);
 
@@ -603,13 +603,14 @@ public class Register extends javax.swing.JDialog {
                     AddressController ac = new AddressController();
                     String resAd = ac.createAddress(ad);
 
-//                    new Message(new javax.swing.JFrame(), true, "warning", resAd).setVisible(true);
-                    System.out.println(resAd.getClass());
-                    conn.commit();
-
                     if (resAd.equalsIgnoreCase("1")) {
+                        conn.commit();
                         CardLayout cl = (CardLayout) jpMain.getLayout();
                         cl.show(jpMain, "cardSuccess");
+                    } else {
+                        conn.rollback();
+                        new Message(new javax.swing.JFrame(), true, "error", resAd).setVisible(true);
+                        dispose();
                     }
 
                 } else {
@@ -617,11 +618,6 @@ public class Register extends javax.swing.JDialog {
                     new Message(new javax.swing.JFrame(), true, "error", i.toString()).setVisible(true);
                 }
             }
-
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardSuccess");
-
-//            dispose();
         } catch (SQLException ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         }
