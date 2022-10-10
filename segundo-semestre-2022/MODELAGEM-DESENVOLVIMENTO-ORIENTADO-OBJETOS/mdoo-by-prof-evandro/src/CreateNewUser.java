@@ -33,6 +33,9 @@ public class CreateNewUser extends javax.swing.JFrame {
 
         lblId.setVisible(true);
         txtId.setVisible(true);
+        btnDelete.setVisible(true);
+        btnSave.setVisible(false);
+        btnSaveChange.setVisible(false);
 
         txtUser.setEnabled(false);
         txtPass.setEnabled(false);
@@ -149,7 +152,6 @@ public class CreateNewUser extends javax.swing.JFrame {
         btnSaveChange.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnSaveChange.setText("Salvar Alteração");
         btnSaveChange.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSaveChange.setEnabled(false);
         btnSaveChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveChangeActionPerformed(evt);
@@ -160,7 +162,6 @@ public class CreateNewUser extends javax.swing.JFrame {
         btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnDelete.setText("Excluir");
         btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -171,7 +172,6 @@ public class CreateNewUser extends javax.swing.JFrame {
         btnSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnSave.setText("Salvar");
         btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSave.setEnabled(false);
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);

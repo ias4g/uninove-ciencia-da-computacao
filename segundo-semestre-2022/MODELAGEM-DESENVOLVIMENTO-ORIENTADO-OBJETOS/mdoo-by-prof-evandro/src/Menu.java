@@ -161,7 +161,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmAddNewUserActionPerformed
 
     private void itmDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteUserActionPerformed
-        openUserScreem();
+        openUserScreem("delete");
     }//GEN-LAST:event_itmDeleteUserActionPerformed
 
     private void itmUsersListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmUsersListActionPerformed
@@ -169,13 +169,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmUsersListActionPerformed
 
     private void itmChangeUserDatasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmChangeUserDatasActionPerformed
-        openUserScreem();
+        openUserScreem("alterar");
     }//GEN-LAST:event_itmChangeUserDatasActionPerformed
 
-    private void openUserScreem() {
+    private void openUserScreem(String op) {
         Connection conn;
         String u = JOptionPane.showInputDialog(
-                null, "Digite o nome do usuário!", "Usuário", 1
+                null, "Digite o nome do usuário a !" + op, "Usuário", 1
         );
 
         if (u == null) {
