@@ -68,13 +68,16 @@
             <Property name="text" type="java.lang.String" value="Admin"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="itmChangeUserPass">
+            <MenuItem class="javax.swing.JMenuItem" name="itmChangeUserDatas">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Shift+X"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Alterar Senha de Usu&#xe1;rio"/>
+                <Property name="text" type="java.lang.String" value="Alterar Dados do Usu&#xe1;rio"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmChangeUserDatasActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itmDeleteUser">
               <Properties>

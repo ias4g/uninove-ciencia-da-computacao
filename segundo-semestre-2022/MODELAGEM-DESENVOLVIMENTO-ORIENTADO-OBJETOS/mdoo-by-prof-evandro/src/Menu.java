@@ -41,7 +41,7 @@ public class Menu extends javax.swing.JFrame {
         mnuCustomers = new javax.swing.JMenu();
         mnuEmployee = new javax.swing.JMenu();
         mnuAdministrative = new javax.swing.JMenu();
-        itmChangeUserPass = new javax.swing.JMenuItem();
+        itmChangeUserDatas = new javax.swing.JMenuItem();
         itmDeleteUser = new javax.swing.JMenuItem();
         itmDeleteAllUser = new javax.swing.JMenuItem();
         itmAddNewUser = new javax.swing.JMenuItem();
@@ -50,10 +50,8 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu do sistema");
-        setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
         setName("jfDashboard"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(640, 426));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -106,9 +104,14 @@ public class Menu extends javax.swing.JFrame {
 
         mnuAdministrative.setText("Admin");
 
-        itmChangeUserPass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        itmChangeUserPass.setText("Alterar Senha de Usuário");
-        mnuAdministrative.add(itmChangeUserPass);
+        itmChangeUserDatas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itmChangeUserDatas.setText("Alterar Dados do Usuário");
+        itmChangeUserDatas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmChangeUserDatasActionPerformed(evt);
+            }
+        });
+        mnuAdministrative.add(itmChangeUserDatas);
 
         itmDeleteUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itmDeleteUser.setText("Excluir Usuário");
@@ -219,10 +222,67 @@ public class Menu extends javax.swing.JFrame {
         new UsersList().setVisible(true);
     }//GEN-LAST:event_itmUsersListActionPerformed
 
+    private void itmChangeUserDatasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmChangeUserDatasActionPerformed
+        Connection conn;
+        String u = JOptionPane.showInputDialog(
+                "Digite o nome do usuário a ser alterado!"
+        );
+
+        if (u == null) {
+            JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
+            return;
+        }
+
+        try {
+            //2 - Conectar no banco de dados sistemabd;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            conn = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
+            );
+
+            PreparedStatement st = conn.prepareStatement(
+                    "SELECT * FROM tbusers WHERE user = ?"
+            );
+
+            st.setString(1, u);
+
+            ResultSet resultado = st.executeQuery();
+
+            if (resultado.next()) {
+                int id = Integer.parseInt(resultado.getString("id"));
+                String user = resultado.getString("user");
+                String password = resultado.getString("password");
+                String name = resultado.getString("name");
+                String lastname = resultado.getString("lastname");
+                String email = resultado.getString("email");
+                String job = resultado.getString("job");
+
+                //Abrir o formulário Menu.java
+                new CreateNewUser(
+                        id, user, password, name, lastname, email, job
+                ).setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário não encontrado");
+            }
+
+            //5 - Desconectar.
+            conn.close();
+
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Driver não está na library");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(
+                    null, "Você errou nos dados da conexão com o banco de dados"
+            );
+        }
+    }//GEN-LAST:event_itmChangeUserDatasActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itmAddNewUser;
     private javax.swing.JMenuItem itmChange;
-    private javax.swing.JMenuItem itmChangeUserPass;
+    private javax.swing.JMenuItem itmChangeUserDatas;
     private javax.swing.JMenuItem itmDelete;
     private javax.swing.JMenuItem itmDeleteAllUser;
     private javax.swing.JMenuItem itmDeleteUser;

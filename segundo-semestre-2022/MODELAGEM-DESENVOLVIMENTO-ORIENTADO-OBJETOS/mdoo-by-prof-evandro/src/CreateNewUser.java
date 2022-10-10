@@ -65,13 +65,13 @@ public class CreateNewUser extends javax.swing.JFrame {
         txtLastname = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
-        btnSave = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        btnSaveChange = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
 
         setTitle("User Control");
-        setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
-        setPreferredSize(new java.awt.Dimension(640, 426));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -138,16 +138,17 @@ public class CreateNewUser extends javax.swing.JFrame {
         getContentPane().add(txtEmail);
         txtEmail.setBounds(90, 200, 350, 40);
 
-        btnSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnSave.setText("Salvar");
-        btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setLayout(new java.awt.CardLayout());
+
+        btnSaveChange.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnSaveChange.setText("Salvar Alteração");
+        btnSaveChange.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSaveChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
+                btnSaveChangeActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSave);
-        btnSave.setBounds(20, 320, 230, 40);
+        jPanel1.add(btnSaveChange, "card2");
 
         btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnDelete.setText("Excluir");
@@ -157,8 +158,20 @@ public class CreateNewUser extends javax.swing.JFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDelete);
-        btnDelete.setBounds(20, 320, 230, 40);
+        jPanel1.add(btnDelete, "card3");
+
+        btnSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnSave.setText("Salvar");
+        btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSave, "card4");
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(90, 320, 230, 50);
 
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
@@ -257,10 +270,16 @@ public class CreateNewUser extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnDeleteActionPerformed
 
+    private void btnSaveChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeActionPerformed
+
+    }//GEN-LAST:event_btnSaveChangeActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnSaveChange;
     private javax.swing.JComboBox<String> cmbJob;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblJob;
