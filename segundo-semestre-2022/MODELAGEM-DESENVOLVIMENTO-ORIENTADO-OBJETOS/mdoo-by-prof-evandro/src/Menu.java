@@ -165,14 +165,14 @@ public class Menu extends javax.swing.JFrame {
         );
 
         if (u == null) {
+            JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
             return;
         }
-
-        System.out.println(u);
 
         try {
             //2 - Conectar no banco de dados sistemabd;
             Class.forName("com.mysql.cj.jdbc.Driver");
+
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
             );
@@ -182,6 +182,7 @@ public class Menu extends javax.swing.JFrame {
             );
 
             st.setString(1, u);
+
             ResultSet resultado = st.executeQuery();
 
             if (resultado.next()) {
