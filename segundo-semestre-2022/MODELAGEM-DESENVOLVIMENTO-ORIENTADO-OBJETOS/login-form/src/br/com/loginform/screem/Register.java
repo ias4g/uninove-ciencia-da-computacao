@@ -15,10 +15,13 @@ import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Register extends javax.swing.JDialog {
 
-//    DBConnection conn = new DBConnection();
     private String name;
     private String email;
     private String whatsapp;
@@ -570,62 +573,62 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
 
-        Point pt = new Point();
-        pt.setName(name);
-        pt.setEmail(email);
-        //pt.setImage(image);
-        pt.setWhatsapp(whatsapp);
+        try {
+            Connection conn = DBConnection.getConn();
 
-        PointController pc = new PointController();
-        ArrayList<Object> res = new ArrayList();
-        res = pc.createPoint(pt);
+            conn.setAutoCommit(false);
 
-        for (Object i : res) {
+            Point pt = new Point();
+            pt.setName(name);
+            pt.setEmail(email);
+            //pt.setImage(image);
+            pt.setWhatsapp(whatsapp);
 
-            if (i instanceof Integer) {
-                Address ad = new Address();
-                ad.setZipcode(zipcode);
-                ad.setNumber(number);
-                ad.setUf(uf);
-                ad.setCity(city);
-                ad.setPointId(Integer.parseInt(i.toString()));
+            PointController pc = new PointController();
+            ArrayList<Object> res = new ArrayList();
+            res = pc.createPoint(pt);
 
-                AddressController ac = new AddressController();
-                String resAd = ac.createAddress(ad);
+            for (Object i : res) {
 
-                new Message(new javax.swing.JFrame(), true, "warning", resAd).setVisible(true);
+                if (i instanceof Integer) {
 
-            } else {
-                new Message(new javax.swing.JFrame(), true, "error", i.toString()).setVisible(true);
+                    Address ad = new Address();
+                    ad.setZipcode(zipcode);
+                    ad.setAddress(address);
+                    ad.setNumber(number);
+                    ad.setUf(uf);
+                    ad.setCity(city);
+                    ad.setPointId(Integer.parseInt(i.toString()));
+
+                    AddressController ac = new AddressController();
+                    String resAd = ac.createAddress(ad);
+
+//                    new Message(new javax.swing.JFrame(), true, "warning", resAd).setVisible(true);
+                    System.out.println(resAd.getClass());
+                    conn.commit();
+
+                    if (resAd.equalsIgnoreCase("1")) {
+                        CardLayout cl = (CardLayout) jpMain.getLayout();
+                        cl.show(jpMain, "cardSuccess");
+                    }
+
+                } else {
+                    conn.rollback();
+                    new Message(new javax.swing.JFrame(), true, "error", i.toString()).setVisible(true);
+                }
             }
+
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardSuccess");
+
+//            dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        dispose();
-
-//        if (res.equalsIgnoreCase("1")) {
-////            JOptionPane.showMessageDialog(null, "Ponto cadastrado com sucesso!");
-//
-//            new Message(new javax.swing.JFrame(), true, "success", "Ponto cadastrado com sucesso!").setVisible(true);
-//        } else {
-////            JOptionPane.showMessageDialog(null, "Error: " + res);
-//
-//            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
-//        }
-//            if (itensSelected.isEmpty()) {
-//
-//                JOptionPane.showMessageDialog(null, "Selecione pelo menos um item.");
-//
-//            } else {
-//
-//                //new Details(new javax.swing.JFrame(), true, name, email, whatsapp, cep, address, Number, uf, city, phone, itensSelected).setVisible(true);
-//                //CardLayout cl = (CardLayout) jpMain.getLayout();
-//                //cl.show(jpMain, "cardSuccess");
-//            }
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardImage");
+        dispose();
     }//GEN-LAST:event_lblCloseSuccessMouseClicked
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
         selectImage();

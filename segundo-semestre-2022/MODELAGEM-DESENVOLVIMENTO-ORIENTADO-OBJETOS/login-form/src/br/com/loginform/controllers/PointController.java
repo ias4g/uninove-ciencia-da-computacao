@@ -28,8 +28,7 @@ public class PointController {
             try {
                 String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
 
-                conn.setAutoCommit(false);
-
+//                conn.setAutoCommit(false);
                 stmt = conn.prepareStatement(sql);
 
                 stmt.setString(1, point.getName());
@@ -48,21 +47,23 @@ public class PointController {
                         a.add(rs.getInt("id"));
                     }
 
-                    conn.commit();
-
+//                    conn.commit();
                 }
 
                 return a;
 
             } catch (SQLException ex) {
-                try {
-                    conn.rollback();
-                    a.add("=> Erro de SQL na class createPoint.\n=>Error: " + ex.getMessage());
-                    return a;
-                } catch (SQLException ex1) {
-                    a.add(ex1.getMessage());
-                    return a;
-                }
+//                try {
+//                    conn.rollback();
+//
+//                } catch (SQLException ex1) {
+//                    a.add(ex1.getMessage());
+//                    return a;
+//                }
+
+                a.add("=> Erro de SQL na class createPoint.\n=>Error: " + ex.getMessage());
+                return a;
+
             } finally {
                 DBConnection.closeConn();
             }
