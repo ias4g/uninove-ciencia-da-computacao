@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class PointController {
 
@@ -20,6 +21,9 @@ public class PointController {
     }
 
     public ArrayList createPoint(Point point) {
+
+        final UUID uuid;
+        uuid = UUID.randomUUID();
 
         ArrayList<Object> a = new ArrayList();
 
