@@ -14,8 +14,10 @@ public class CreateNewUser extends javax.swing.JFrame {
 
         lblId.setVisible(false);
         txtId.setVisible(false);
+
         btnDelete.setVisible(false);
         btnSaveChange.setVisible(false);
+        btnSave.setVisible(true);
 
         this.setTitle("Cadastrando novo usuário");
     }
@@ -27,15 +29,13 @@ public class CreateNewUser extends javax.swing.JFrame {
             String name,
             String lastname,
             String email,
-            String job
+            String job,
+            String op
     ) {
         initComponents();
 
         lblId.setVisible(true);
         txtId.setVisible(true);
-        btnDelete.setVisible(true);
-        btnSave.setVisible(false);
-        btnSaveChange.setVisible(false);
 
         txtUser.setEnabled(false);
         txtPass.setEnabled(false);
@@ -52,7 +52,31 @@ public class CreateNewUser extends javax.swing.JFrame {
         txtEmail.setText(email);
         cmbJob.setSelectedItem(job);
 
-        this.setTitle("Excluindo um usuário");
+        switch (op) {
+
+            case "delete" -> {
+                btnDelete.setVisible(true);
+                btnSave.setVisible(false);
+                btnSaveChange.setVisible(false);
+
+                this.setTitle("Excluindo um usuário");
+            }
+            case "alterar" -> {
+                txtUser.setEnabled(true);
+                txtPass.setEnabled(true);
+                txtName.setEnabled(true);
+                txtLastname.setEnabled(true);
+                txtEmail.setEnabled(true);
+                cmbJob.setEnabled(true);
+
+                btnDelete.setVisible(false);
+                btnSave.setVisible(false);
+                btnSaveChange.setVisible(true);
+
+                this.setTitle("Alterando um usuário");
+            }
+
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -79,7 +103,9 @@ public class CreateNewUser extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
 
         setTitle("User Control");
+        setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
+        setPreferredSize(new java.awt.Dimension(640, 426));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -94,6 +120,7 @@ public class CreateNewUser extends javax.swing.JFrame {
 
         lblId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblId.setText("Id");
+        lblId.setEnabled(false);
         getContentPane().add(lblId);
         lblId.setBounds(430, 25, 20, 25);
 
@@ -280,7 +307,58 @@ public class CreateNewUser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSaveChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeActionPerformed
+        String user;
+        String pass;
+        String name;
+        String lastname;
+        String email;
+        String job;
+        int id;
 
+        int rs;
+
+        user = txtUser.getText();
+        pass = txtPass.getText();
+        name = txtName.getText();
+        lastname = txtLastname.getText();
+        email = txtEmail.getText();
+        job = cmbJob.getSelectedItem().toString();
+        id = Integer.parseInt(txtId.getText());
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
+
+            PreparedStatement st = conn.prepareStatement("UPDATE tbusers SET user = ?, password = ?, name = ?, lastname = ?, email = ?, job = ? WHERE id = ?");
+
+            st.setString(1, user);
+            st.setString(2, pass);
+            st.setString(3, name);
+            st.setString(4, lastname);
+            st.setString(5, email);
+            st.setString(6, job);
+            st.setInt(7, id);
+
+            rs = st.executeUpdate();
+
+            if (rs > 0) {
+                JOptionPane.showMessageDialog(null, "Alterado com sucesso");
+            }
+
+            conn.close();
+            dispose();
+
+            new UsersList().setVisible(true);
+
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (SQLException ex) {
+            if (ex.getErrorCode() == 1062) {
+                JOptionPane.showMessageDialog(null, "Usuário já cadastrado.");
+            } else {
+                JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n Message: " + ex.getMessage() + "\n Código do erro: " + ex.getErrorCode());
+            }
+        }
     }//GEN-LAST:event_btnSaveChangeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

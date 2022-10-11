@@ -210,7 +210,7 @@ public class Menu extends javax.swing.JFrame {
 
                 //Abrir o formulário Menu.java
                 new CreateNewUser(
-                        id, user, password, name, lastname, email, job
+                        id, user, password, name, lastname, email, job, op
                 ).setVisible(true);
 
             } else {
