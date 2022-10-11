@@ -1,7 +1,5 @@
 package br.com.loginform.screem;
 
-import br.com.loginform.controllers.ItemsController;
-import br.com.loginform.controllers.RegisterController;
 import br.com.loginform.model.AddressModel;
 import br.com.loginform.model.PointModel;
 import br.com.loginform.utils.FontManager;
@@ -11,8 +9,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -22,7 +18,6 @@ public class Register extends javax.swing.JDialog {
     private String email;
     private String whatsapp;
     private String zipcode;
-    private String address;
     private int number;
     private String uf;
     private String city;
@@ -50,7 +45,6 @@ public class Register extends javax.swing.JDialog {
         lblFaviconDescription.setFont(PTSans_Bold_12);
 
 //        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
-        ItemsController ic = new ItemsController();
     }
 
     @SuppressWarnings("unchecked")
@@ -562,7 +556,6 @@ public class Register extends javax.swing.JDialog {
             new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
         } else {
             zipcode = txtZipcode.getText();
-            address = txtAddress.getText();
             number = Integer.parseInt(txtNumber.getText());
             uf = String.valueOf(cmbUf.getSelectedItem());
             city = String.valueOf(cmbCity.getSelectedItem());
@@ -587,17 +580,6 @@ public class Register extends javax.swing.JDialog {
         am.setNumber(number);
         am.setUf(uf);
         am.setCity(city);
-
-        RegisterController rc = new RegisterController();
-        res = rc.createRegister(pm, am);
-
-        if (res.equalsIgnoreCase("ok")) {
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardSuccess");
-        } else {
-            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
-            this.dispose();
-        }
 
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
