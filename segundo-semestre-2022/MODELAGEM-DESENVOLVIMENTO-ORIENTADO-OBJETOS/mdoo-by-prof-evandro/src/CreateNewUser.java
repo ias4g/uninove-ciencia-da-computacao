@@ -307,29 +307,29 @@ public class CreateNewUser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSaveChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeActionPerformed
-        String user;
-        String pass;
-        String name;
-        String lastname;
-        String email;
-        String job;
-        int id;
-
         int rs;
-
-        user = txtUser.getText();
-        pass = txtPass.getText();
-        name = txtName.getText();
-        lastname = txtLastname.getText();
-        email = txtEmail.getText();
-        job = cmbJob.getSelectedItem().toString();
-        id = Integer.parseInt(txtId.getText());
+        String user = txtUser.getText();
+        String pass = txtPass.getText();
+        String name = txtName.getText();
+        String lastname = txtLastname.getText();
+        String email = txtEmail.getText();
+        String job = cmbJob.getSelectedItem().toString();
+        int id = Integer.parseInt(txtId.getText());
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
-            PreparedStatement st = conn.prepareStatement("UPDATE tbusers SET user = ?, password = ?, name = ?, lastname = ?, email = ?, job = ? WHERE id = ?");
+            PreparedStatement st = conn.prepareStatement(
+                    "UPDATE tbusers"
+                    + "SET user = ?,"
+                    + " password = ?,"
+                    + " name = ?, "
+                    + "lastname = ?,"
+                    + " email = ?, "
+                    + "job = ?"
+                    + " WHERE id = ?"
+            );
 
             st.setString(1, user);
             st.setString(2, pass);
@@ -346,19 +346,11 @@ public class CreateNewUser extends javax.swing.JFrame {
             }
 
             conn.close();
-
             dispose();
-
             new UsersList().setVisible(true);
 
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (SQLException ex) {
-            if (ex.getErrorCode() == 1062) {
-                JOptionPane.showMessageDialog(null, "Usuário já cadastrado.");
-            } else {
-                JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n Message: " + ex.getMessage() + "\n Código do erro: " + ex.getErrorCode());
-            }
         }
     }//GEN-LAST:event_btnSaveChangeActionPerformed
 
