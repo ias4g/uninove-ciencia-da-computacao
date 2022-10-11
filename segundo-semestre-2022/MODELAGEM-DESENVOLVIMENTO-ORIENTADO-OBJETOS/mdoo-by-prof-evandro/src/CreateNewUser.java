@@ -6,22 +6,22 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class CreateNewUser extends javax.swing.JFrame {
-
+    
     Connection conn;
-
+    
     public CreateNewUser() {
         initComponents();
-
+        
         lblId.setVisible(false);
         txtId.setVisible(false);
-
+        
         btnDelete.setVisible(false);
         btnSaveChange.setVisible(false);
         btnSave.setVisible(true);
-
+        
         this.setTitle("Cadastrando novo usuário");
     }
-
+    
     public CreateNewUser(
             int id,
             String user,
@@ -33,17 +33,17 @@ public class CreateNewUser extends javax.swing.JFrame {
             String op
     ) {
         initComponents();
-
+        
         lblId.setVisible(true);
         txtId.setVisible(true);
-
+        
         txtUser.setEnabled(false);
         txtPass.setEnabled(false);
         txtName.setEnabled(false);
         txtLastname.setEnabled(false);
         txtEmail.setEnabled(false);
         cmbJob.setEnabled(false);
-
+        
         txtId.setText(String.valueOf(id));
         txtUser.setText(user);
         txtPass.setText(password);
@@ -51,14 +51,14 @@ public class CreateNewUser extends javax.swing.JFrame {
         txtLastname.setText(lastname);
         txtEmail.setText(email);
         cmbJob.setSelectedItem(job);
-
+        
         switch (op) {
-
+            
             case "delete" -> {
                 btnDelete.setVisible(true);
                 btnSave.setVisible(false);
                 btnSaveChange.setVisible(false);
-
+                
                 this.setTitle("Excluindo um usuário");
             }
             case "alterar" -> {
@@ -68,17 +68,17 @@ public class CreateNewUser extends javax.swing.JFrame {
                 txtLastname.setEnabled(true);
                 txtEmail.setEnabled(true);
                 cmbJob.setEnabled(true);
-
+                
                 btnDelete.setVisible(false);
                 btnSave.setVisible(false);
                 btnSaveChange.setVisible(true);
-
+                
                 this.setTitle("Alterando um usuário");
             }
-
+            
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -220,44 +220,44 @@ public class CreateNewUser extends javax.swing.JFrame {
         String lastname;
         String email;
         String job;
-
+        
         int rs;
-
+        
         user = txtUser.getText();
         pass = txtPass.getText();
         name = txtName.getText();
         lastname = txtLastname.getText();
         email = txtEmail.getText();
         job = cmbJob.getSelectedItem().toString();
-
+        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
-
+            
             PreparedStatement st = conn.prepareStatement("INSERT INTO tbusers (user, password, name, lastname, email, job) VALUES (?, ?, ?, ?, ?, ?)");
-
+            
             st.setString(1, user);
             st.setString(2, pass);
             st.setString(3, name);
             st.setString(4, lastname);
             st.setString(5, email);
             st.setString(6, job);
-
+            
             rs = st.executeUpdate();
-
+            
             if (rs > 0) {
                 JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
             }
-
+            
             txtUser.setText(null);
             txtPass.setText(null);
             txtName.setText(null);
             txtLastname.setText(null);
             txtEmail.setText(null);
             cmbJob.setSelectedIndex(0);
-
+            
             conn.close();
-
+            
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         } catch (SQLException ex) {
@@ -271,38 +271,38 @@ public class CreateNewUser extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este usuário?", "Confirmação", 0);
-
+        
         if (resp == 0) {
-
+            
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
                 );
-
+                
                 PreparedStatement st = conn.prepareStatement(
                         "DELETE FROM tbusers WHERE id = ?"
                 );
-
+                
                 st.setString(1, txtId.getText());
-
+                
                 st.executeUpdate();
-
+                
                 JOptionPane.showMessageDialog(null, "Usuário excluido com sucesso");
-
+                
                 conn.close();
                 dispose();
-
+                
             } catch (ClassNotFoundException | SQLException ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
             }
-
+            
         } else {
-
+            
             dispose();
-
+            
         }
-
+        
 
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -313,13 +313,13 @@ public class CreateNewUser extends javax.swing.JFrame {
         String name = txtName.getText();
         String lastname = txtLastname.getText();
         String email = txtEmail.getText();
-        String job = cmbJob.getSelectedItem().toString();
+        String job = String.valueOf(cmbJob.getSelectedItem());
         int id = Integer.parseInt(txtId.getText());
-
+        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
-
+            
             PreparedStatement st = conn.prepareStatement(
                     "UPDATE tbusers"
                     + "SET user = ?,"
@@ -330,7 +330,7 @@ public class CreateNewUser extends javax.swing.JFrame {
                     + "job = ?"
                     + " WHERE id = ?"
             );
-
+            
             st.setString(1, user);
             st.setString(2, pass);
             st.setString(3, name);
@@ -338,17 +338,17 @@ public class CreateNewUser extends javax.swing.JFrame {
             st.setString(5, email);
             st.setString(6, job);
             st.setInt(7, id);
-
+            
             rs = st.executeUpdate();
-
+            
             if (rs > 0) {
                 JOptionPane.showMessageDialog(null, "Alterado com sucesso");
             }
-
+            
             conn.close();
             dispose();
             new UsersList().setVisible(true);
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
