@@ -47,7 +47,7 @@ public class RegisterController {
                 String amSQL = "INSERT INTO tb_address(zipcode, number, uf, city, point_id) values(?, ?, ?, ?, ?)";
                 stmt_address = conn.prepareStatement(amSQL);
 
-                stmt_address.setString(1, am.getAddress());
+                stmt_address.setString(1, am.getZipcode());
                 stmt_address.setInt(2, am.getNumber());
                 stmt_address.setString(3, am.getUf());
                 stmt_address.setString(4, am.getCity());

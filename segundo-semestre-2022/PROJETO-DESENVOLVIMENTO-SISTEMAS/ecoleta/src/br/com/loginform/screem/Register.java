@@ -577,7 +577,6 @@ public class Register extends javax.swing.JDialog {
         pm.setWhatsapp(whatsapp);
 
         am.setZipcode(zipcode);
-        am.setAddress(address);
         am.setNumber(number);
         am.setUf(uf);
         am.setCity(city);
