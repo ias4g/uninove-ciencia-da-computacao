@@ -601,14 +601,13 @@ public class Register extends javax.swing.JDialog {
             AddressController ac = new AddressController();
             res = ac.createAddress(ad);
 
-            if (resAd.equalsIgnoreCase("1")) {
+            if (res.equals("1")) {
                 CardLayout cl = (CardLayout) jpMain.getLayout();
                 cl.show(jpMain, "cardSuccess");
             } else {
-                new Message(new javax.swing.JFrame(), true, "error", resAd).setVisible(true);
+                new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
                 dispose();
             }
-            new Message(new javax.swing.JFrame(), true, "success", res).setVisible(true);
         } else {
             new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
         }
