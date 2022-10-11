@@ -346,6 +346,7 @@ public class CreateNewUser extends javax.swing.JFrame {
             }
 
             conn.close();
+
             dispose();
 
             new UsersList().setVisible(true);
