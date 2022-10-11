@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class RegisterController {
 
@@ -20,7 +22,7 @@ public class RegisterController {
         this.conn = DBConnection.getConn();
     }
 
-    public String createRegister(PointModel pm, AddressModel am, PointItemsModel pim) {
+    public String createRegister(PointModel pm, AddressModel am) {
 
         final UUID uuid = UUID.randomUUID();
 
@@ -32,7 +34,6 @@ public class RegisterController {
 
                 // INSERINDO DADOS NA TABELA TB_POINTS -------------------------------------------------------------------------------
                 String pmSQL = "INSERT INTO tb_points(id, name, email, image, whatsapp) values(?, ?, ?, ?, ?)";
-
                 stmt = conn.prepareStatement(pmSQL);
 
                 stmt.setString(1, String.valueOf(uuid));
@@ -47,6 +48,8 @@ public class RegisterController {
 
                 // INSERINDO DADOS NA TABELA TB_ADDRESS ------------------------------------------------------------------------------
                 String amSQL = "INSERT INTO tb_address(zipcode, number, uf, city, point_id) values(?, ?, ?, ?, ?)";
+                stmt = conn.prepareStatement(amSQL);
+
                 stmt.setString(1, am.getAddress());
                 stmt.setInt(2, am.getNumber());
                 stmt.setString(3, am.getUf());
@@ -56,10 +59,21 @@ public class RegisterController {
 
                 // INSERINDO DADOS NA TABELA TB_POINT_ITEMS -------------------------------------------------------------------------
                 String pimSQL = "INSERT INTO tb_point_items(point_id, item_id) values(?, ?)";
+                stmt = conn.prepareStatement(pimSQL);
+                stmt.setString(1, String.valueOf(uuid));
+                stmt.setInt(2, 1);
                 // END TB_POINT_ITEMS
+
+                conn.commit();
 
                 return "Dados cadastrados com sucesso";
             } catch (SQLException ex) {
+                try {
+                    conn.rollback();
+                } catch (SQLException ex1) {
+                    return "=> Erro no rollback na class createPoint.\n=>Error: " + ex.getMessage();
+                }
+
                 return "=> Erro de SQL na class createPoint.\n=>Error: " + ex.getMessage();
             } finally {
                 DBConnection.closeConn();
