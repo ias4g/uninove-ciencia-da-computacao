@@ -2,7 +2,6 @@ package br.com.loginform.screem;
 
 import br.com.loginform.controllers.AddressController;
 import br.com.loginform.controllers.PointController;
-import br.com.loginform.dao.DBConnection;
 import br.com.loginform.model.Address;
 import br.com.loginform.model.Point;
 import br.com.loginform.utils.FontManager;
@@ -15,11 +14,7 @@ import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Register extends javax.swing.JDialog {
 

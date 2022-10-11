@@ -4,18 +4,12 @@ import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.UUID;
 
 public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {
         initComponents();
         customComponents();
-
-        for (int i = 0; i <= 10; i++) {
-            UUID uuid = UUID.randomUUID();
-            System.out.println(uuid);
-        }
     }
 
     private void customComponents() {

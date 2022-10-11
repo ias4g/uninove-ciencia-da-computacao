@@ -29,7 +29,7 @@ public class AddressController {
                 stmt.setString(2, String.valueOf(address.getNumber()));
                 stmt.setString(3, address.getUf());
                 stmt.setString(4, address.getCity());
-                stmt.setString(8, String.valueOf(address.getPointId()));
+                stmt.setString(5, String.valueOf(address.getPointId()));
 
                 return String.valueOf(stmt.executeUpdate());
 
