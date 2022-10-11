@@ -1,6 +1,6 @@
 package br.com.loginform.model;
 
-public class Address {
+public class AddressModel {
 
     private int id;
     private String zipcode;

@@ -1,7 +1,7 @@
 package br.com.loginform.controllers;
 
 import br.com.loginform.dao.DBConnection;
-import br.com.loginform.model.Point;
+import br.com.loginform.model.PointModel;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
@@ -19,7 +19,7 @@ public class PointController {
         this.conn = DBConnection.getConn();
     }
 
-    public String createPoint(Point point) {
+    public String createPoint(PointModel point) {
 
         if (conn != null) {
 
@@ -47,16 +47,16 @@ public class PointController {
         }
     }
 
-    public List<Point> ReadPoint() {
+    public List<PointModel> ReadPoint() {
         String sql = "SELECT * FROM tb_points";
-        List<Point> pt = new ArrayList<>();
+        List<PointModel> pt = new ArrayList<>();
 
         try {
             stmt = conn.prepareStatement(sql);
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Point point = new Point();
+                PointModel point = new PointModel();
 
                 point.setId(rs.getString("id"));
                 point.setName(rs.getString("name"));
@@ -73,7 +73,7 @@ public class PointController {
         return pt;
     }
 
-    public void updatePoint(Point point) {
+    public void updatePoint(PointModel point) {
 
         String sql = "UPDATE tb_points name = ?, email = ?, image = ?, whatsapp = ? WHERE id = ?)";
 
@@ -96,7 +96,7 @@ public class PointController {
 
     }
 
-    public void deletePoint(Point point) {
+    public void deletePoint(PointModel point) {
 
         String sql = "DELETE FROM tb_points WHERE id = ?";
 

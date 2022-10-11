@@ -2,8 +2,8 @@ package br.com.loginform.screem;
 
 import br.com.loginform.controllers.AddressController;
 import br.com.loginform.controllers.PointController;
-import br.com.loginform.model.Address;
-import br.com.loginform.model.Point;
+import br.com.loginform.model.AddressModel;
+import br.com.loginform.model.PointModel;
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import java.awt.CardLayout;
@@ -570,7 +570,7 @@ public class Register extends javax.swing.JDialog {
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
 
         final UUID uuid = UUID.randomUUID();
-        Point pt = new Point();
+        PointModel pt = new PointModel();
         String res;
 
         pt.setId(String.valueOf(uuid));
@@ -584,7 +584,7 @@ public class Register extends javax.swing.JDialog {
 
         if (res.equals("1")) {
 
-            Address ad = new Address();
+            AddressModel ad = new AddressModel();
 
             ad.setZipcode(zipcode);
             ad.setAddress(address);

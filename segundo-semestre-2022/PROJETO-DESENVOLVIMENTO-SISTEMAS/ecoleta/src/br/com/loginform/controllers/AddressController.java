@@ -1,7 +1,7 @@
 package br.com.loginform.controllers;
 
 import br.com.loginform.dao.DBConnection;
-import br.com.loginform.model.Address;
+import br.com.loginform.model.AddressModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -15,7 +15,7 @@ public class AddressController {
         this.conn = DBConnection.getConn();
     }
 
-    public String createAddress(Address address) {
+    public String createAddress(AddressModel address) {
 
         if (conn != null) {
 
