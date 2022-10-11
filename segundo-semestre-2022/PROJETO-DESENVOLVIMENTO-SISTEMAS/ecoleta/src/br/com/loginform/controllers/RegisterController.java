@@ -2,15 +2,12 @@ package br.com.loginform.controllers;
 
 import br.com.loginform.dao.DBConnection;
 import br.com.loginform.model.AddressModel;
-import br.com.loginform.model.PointItemsModel;
 import br.com.loginform.model.PointModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class RegisterController {
 

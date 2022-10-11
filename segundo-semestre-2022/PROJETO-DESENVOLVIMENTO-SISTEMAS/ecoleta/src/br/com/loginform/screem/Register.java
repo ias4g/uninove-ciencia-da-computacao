@@ -2,6 +2,7 @@ package br.com.loginform.screem;
 
 import br.com.loginform.controllers.AddressController;
 import br.com.loginform.controllers.PointController;
+import br.com.loginform.controllers.RegisterController;
 import br.com.loginform.model.AddressModel;
 import br.com.loginform.model.PointModel;
 import br.com.loginform.utils.FontManager;
@@ -569,43 +570,25 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
 
-        final UUID uuid = UUID.randomUUID();
-        PointModel pt = new PointModel();
         String res;
+        PointModel pm = new PointModel();
+        AddressModel am = new AddressModel();
 
-        pt.setId(String.valueOf(uuid));
-        pt.setName(name);
-        pt.setEmail(email);
-        //pt.setImage(image);
-        pt.setWhatsapp(whatsapp);
+        pm.setName(name);
+        pm.setEmail(email);
+        //pm.setImage(image);
+        pm.setWhatsapp(whatsapp);
 
-        PointController pc = new PointController();
-        res = pc.createPoint(pt);
+        am.setZipcode(zipcode);
+        am.setAddress(address);
+        am.setNumber(number);
+        am.setUf(uf);
+        am.setCity(city);
 
-        if (res.equals("1")) {
+        RegisterController rc = new RegisterController();
+        res = rc.createRegister(pm, am);
 
-            AddressModel ad = new AddressModel();
-
-            ad.setZipcode(zipcode);
-            ad.setAddress(address);
-            ad.setNumber(number);
-            ad.setUf(uf);
-            ad.setCity(city);
-            ad.setPointId(String.valueOf(uuid));
-
-            AddressController ac = new AddressController();
-            res = ac.createAddress(ad);
-
-            if (res.equals("1")) {
-                CardLayout cl = (CardLayout) jpMain.getLayout();
-                cl.show(jpMain, "cardSuccess");
-            } else {
-                new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
-                dispose();
-            }
-        } else {
-            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
-        }
+        new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
