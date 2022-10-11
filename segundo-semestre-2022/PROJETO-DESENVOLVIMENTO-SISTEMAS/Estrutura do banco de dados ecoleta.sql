@@ -64,3 +64,12 @@ CREATE TABLE `tb_point_items` (
   CONSTRAINT `fk_from_items_to_pointitems` FOREIGN KEY (`item_id`) REFERENCES `tb_items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_from_points_to_pointitems` FOREIGN KEY (`point_id`) REFERENCES `tb_points` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*
+*	insert into tb_items(title, slug) values("Pilhas e Baterias", "pilhas-e-baterias");
+*	insert into tb_items(title, slug) values("Resíduos Eletrônicos", "residuos-eletronicos");
+*	insert into tb_items(title, slug) values("Lâmpadas", "lampadas");
+*	insert into tb_items(title, slug) values("Resíduos Orgânicos", "residuos-organicos");
+*	insert into tb_items(title, slug) values("Óleo de Cozinha", "oleo-de-cozinha");
+*	insert into tb_items(title, slug) values("Papéis e Papelão", "papeis-e-papelao");
+*/
