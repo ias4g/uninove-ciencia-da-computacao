@@ -8,7 +8,7 @@ public class Address {
     private int number;
     private String uf;
     private String city;
-    private int pointId;
+    private String pointId;
 
     public int getId() {
         return id;
@@ -58,11 +58,11 @@ public class Address {
         this.city = city;
     }
 
-    public int getPointId() {
+    public String getPointId() {
         return pointId;
     }
 
-    public void setPointId(int pointId) {
+    public void setPointId(String pointId) {
         this.pointId = pointId;
     }
 }

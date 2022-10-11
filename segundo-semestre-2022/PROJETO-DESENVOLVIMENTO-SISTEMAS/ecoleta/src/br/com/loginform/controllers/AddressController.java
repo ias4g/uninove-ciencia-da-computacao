@@ -23,8 +23,6 @@ public class AddressController {
 
                 String sql = "INSERT INTO tb_address(zipcode, number, uf, city, point_id) values(?, ?, ?, ?, ?)";
 
-//                conn.setAutoCommit(false);
-
                 stmt = conn.prepareStatement(sql);
 
                 stmt.setString(1, address.getZipcode());
@@ -33,23 +31,13 @@ public class AddressController {
                 stmt.setString(4, address.getCity());
                 stmt.setString(8, String.valueOf(address.getPointId()));
 
-//                conn.commit();
-
                 return String.valueOf(stmt.executeUpdate());
 
             } catch (SQLException ex) {
-//                try {
-//                    conn.rollback();
-//                } catch (SQLException ex1) {
-//                    return "=> Erro no rollback do metodo cretaeAddress da class AddressController\n=> Error: " + ex.getMessage();
-//                }
-
                 return "=> Erro de SQL na class createAddress.\n=>Error: " + ex.getMessage();
-
             } finally {
                 DBConnection.closeConn();
             }
-
         } else {
             return "=> Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.";
         }

@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Register extends javax.swing.JDialog {
-    
+
     private String name;
     private String email;
     private String whatsapp;
@@ -31,23 +31,23 @@ public class Register extends javax.swing.JDialog {
     private int number;
     private String uf;
     private String city;
-    
+
     private boolean isSelectedBatteries = false;
     private boolean isSelectedElectronicWaste = false;
     private boolean isSelectedlamps = false;
     private boolean isSelectedOrganicWaste = false;
     private boolean isSelectedKitchenOil = false;
     private boolean isSelectedPapersCardboard = false;
-    
+
     ArrayList<String> itensSelected;
-    
+
     public Register(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.itensSelected = new ArrayList();
         initComponents();
-        
+
         Utilities.insertIconDialog(this);
-        
+
         Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
 //        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
 
@@ -56,7 +56,7 @@ public class Register extends javax.swing.JDialog {
 
 //        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -499,7 +499,7 @@ public class Register extends javax.swing.JDialog {
     private void lblCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseExited
         lblClose.setBackground(null);
     }//GEN-LAST:event_lblCloseMouseExited
-    
+
 
     private void lblPointImageNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseEntered
         lblPointImageNext.setBackground(new Color(214, 245, 228));
@@ -507,7 +507,7 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseExited
         lblPointImageNext.setBackground(null);
     }//GEN-LAST:event_lblPointImageNextMouseExited
-    
+
 
     private void lblPointDescNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseEntered
         lblPointDescNext.setBackground(new Color(214, 245, 228));
@@ -515,7 +515,7 @@ public class Register extends javax.swing.JDialog {
     private void lblPointDescNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseExited
         lblPointDescNext.setBackground(null);
     }//GEN-LAST:event_lblPointDescNextMouseExited
-    
+
 
     private void lblPointAddressNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseEntered
         lblPointAddressNext.setBackground(new Color(214, 245, 228));
@@ -523,7 +523,7 @@ public class Register extends javax.swing.JDialog {
     private void lblPointAddressNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseExited
         lblPointAddressNext.setBackground(null);
     }//GEN-LAST:event_lblPointAddressNextMouseExited
-    
+
 
     private void lblPointItensSaveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseEntered
         lblPointItensSave.setBackground(new Color(214, 245, 228));
@@ -534,11 +534,11 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardDescription");
-        
+
         txtName.requestFocus();
     }//GEN-LAST:event_lblPointImageNextMouseClicked
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
-        
+
         if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
 //            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
             new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
@@ -546,10 +546,10 @@ public class Register extends javax.swing.JDialog {
             name = txtName.getText();
             email = txtEmail.getText();
             whatsapp = txtWhatsApp.getText();
-            
+
             CardLayout cl = (CardLayout) jpMain.getLayout();
             cl.show(jpMain, "cardAddress");
-            
+
             txtZipcode.requestFocus();
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
@@ -566,53 +566,51 @@ public class Register extends javax.swing.JDialog {
             number = Integer.parseInt(txtNumber.getText());
             uf = String.valueOf(cmbUf.getSelectedItem());
             city = String.valueOf(cmbCity.getSelectedItem());
-            
+
             CardLayout cl = (CardLayout) jpMain.getLayout();
             cl.show(jpMain, "cardItens");
 //        System.out.println(cep);
         }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
-        
+
         final UUID uuid = UUID.randomUUID();
         Point pt = new Point();
-        
+        String res;
+
         pt.setId(String.valueOf(uuid));
         pt.setName(name);
         pt.setEmail(email);
         //pt.setImage(image);
         pt.setWhatsapp(whatsapp);
-        
+
         PointController pc = new PointController();
-        ArrayList<Object> res = new ArrayList();
         res = pc.createPoint(pt);
-        
-        for (Object i : res) {
-            
-            if (i instanceof Integer) {
-                
-                Address ad = new Address();
-                ad.setZipcode(zipcode);
-                ad.setAddress(address);
-                ad.setNumber(number);
-                ad.setUf(uf);
-                ad.setCity(city);
-                ad.setPointId(Integer.parseInt(i.toString()));
-                
-                AddressController ac = new AddressController();
-                String resAd = ac.createAddress(ad);
-                
-                if (resAd.equalsIgnoreCase("1")) {
-                    CardLayout cl = (CardLayout) jpMain.getLayout();
-                    cl.show(jpMain, "cardSuccess");
-                } else {
-                    new Message(new javax.swing.JFrame(), true, "error", resAd).setVisible(true);
-                    dispose();
-                }
-                
+
+        if (res.equals("1")) {
+
+            Address ad = new Address();
+
+            ad.setZipcode(zipcode);
+            ad.setAddress(address);
+            ad.setNumber(number);
+            ad.setUf(uf);
+            ad.setCity(city);
+            ad.setPointId(String.valueOf(uuid));
+
+            AddressController ac = new AddressController();
+            res = ac.createAddress(ad);
+
+            if (resAd.equalsIgnoreCase("1")) {
+                CardLayout cl = (CardLayout) jpMain.getLayout();
+                cl.show(jpMain, "cardSuccess");
             } else {
-                new Message(new javax.swing.JFrame(), true, "error", i.toString()).setVisible(true);
+                new Message(new javax.swing.JFrame(), true, "error", resAd).setVisible(true);
+                dispose();
             }
+            new Message(new javax.swing.JFrame(), true, "success", res).setVisible(true);
+        } else {
+            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
         }
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
@@ -624,19 +622,19 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
         isSelectedlamps = !isSelectedlamps;
-        
+
         if (isSelectedlamps) {
             itensSelected.add(lblLamps.getName());
             lblLamps.setBackground(new Color(214, 245, 228));
         } else {
             itensSelected.remove(lblLamps.getName());
             lblLamps.setBackground(new Color(244, 244, 244));
-            
+
         }
     }//GEN-LAST:event_lblLampsMouseClicked
     private void lblOrganicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseClicked
         isSelectedOrganicWaste = !isSelectedOrganicWaste;
-        
+
         if (isSelectedOrganicWaste) {
             itensSelected.add(lblOrganicWaste.getName());
             lblOrganicWaste.setBackground(new Color(214, 245, 228));
@@ -647,7 +645,7 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
     private void lblKitchenOilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKitchenOilMouseClicked
         isSelectedKitchenOil = !isSelectedKitchenOil;
-        
+
         if (isSelectedKitchenOil) {
             itensSelected.add(lblKitchenOil.getName());
             lblKitchenOil.setBackground(new Color(214, 245, 228));
@@ -658,7 +656,7 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblKitchenOilMouseClicked
     private void lblPapersCardboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPapersCardboardMouseClicked
         isSelectedPapersCardboard = !isSelectedPapersCardboard;
-        
+
         if (isSelectedPapersCardboard) {
             itensSelected.add(lblPapersCardboard.getName());
             lblPapersCardboard.setBackground(new Color(214, 245, 228));
@@ -669,7 +667,7 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPapersCardboardMouseClicked
     private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
         isSelectedBatteries = !isSelectedBatteries;
-        
+
         if (isSelectedBatteries) {
             itensSelected.add(lblBatteries.getName());
             lblBatteries.setBackground(new Color(214, 245, 228));
@@ -680,7 +678,7 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblBatteriesMouseClicked
     private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
         isSelectedElectronicWaste = !isSelectedElectronicWaste;
-        
+
         if (isSelectedElectronicWaste) {
             itensSelected.add(lblElectronicWaste.getName());
             lblElectronicWaste.setBackground(new Color(214, 245, 228));
@@ -692,7 +690,7 @@ public class Register extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(null, itensSelected);
     }//GEN-LAST:event_jButton1ActionPerformed
-    
+
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -701,7 +699,7 @@ public class Register extends javax.swing.JDialog {
         fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
         fileChooser.setCurrentDirectory(new File("/"));
         fileChooser.showOpenDialog(this);
-        
+
         return fileChooser.getSelectedFile();
     }
 
