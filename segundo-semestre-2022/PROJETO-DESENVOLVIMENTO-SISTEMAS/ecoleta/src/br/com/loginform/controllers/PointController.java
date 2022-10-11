@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class PointController {
 
@@ -22,17 +21,14 @@ public class PointController {
 
     public ArrayList createPoint(Point point) {
 
-        final UUID uuid;
-        uuid = UUID.randomUUID();
-
         ArrayList<Object> a = new ArrayList();
 
         if (conn != null) {
 
             try {
+
                 String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
 
-//                conn.setAutoCommit(false);
                 stmt = conn.prepareStatement(sql);
 
                 stmt.setString(1, point.getName());
@@ -50,8 +46,6 @@ public class PointController {
                     while (rs.next()) {
                         a.add(rs.getInt("id"));
                     }
-
-//                    conn.commit();
                 }
 
                 return a;
@@ -88,7 +82,7 @@ public class PointController {
             while (rs.next()) {
                 Point point = new Point();
 
-                point.setId(rs.getInt("id"));
+                point.setId(rs.getString("id"));
                 point.setName(rs.getString("name"));
                 point.setEmail(rs.getString("email"));
                 point.setImage(rs.getBytes("image"));
@@ -116,7 +110,7 @@ public class PointController {
             stmt.setBytes(3, point.getImage());
             stmt.setString(4, point.getWhatsapp());
 
-            stmt.setInt(5, point.getId());
+            stmt.setString(5, point.getId());
 
             stmt.executeUpdate();
 
@@ -133,7 +127,7 @@ public class PointController {
         try {
 
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, point.getId());
+            stmt.setString(1, point.getId());
 
             stmt.executeUpdate();
 
