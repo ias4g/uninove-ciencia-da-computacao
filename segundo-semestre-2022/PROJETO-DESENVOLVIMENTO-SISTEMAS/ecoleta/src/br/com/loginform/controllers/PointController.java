@@ -27,14 +27,15 @@ public class PointController {
 
             try {
 
-                String sql = "INSERT INTO tb_points(name, email, image, whatsapp) values(?, ?, ?, ?)";
+                String sql = "INSERT INTO tb_points(id, name, email, image, whatsapp) values(?, ?, ?, ?, ?)";
 
                 stmt = conn.prepareStatement(sql);
 
-                stmt.setString(1, point.getName());
-                stmt.setString(2, point.getEmail());
-                stmt.setBytes(3, point.getImage());
-                stmt.setString(4, point.getWhatsapp());
+                stmt.setString(1, point.getId());
+                stmt.setString(2, point.getName());
+                stmt.setString(3, point.getEmail());
+                stmt.setBytes(4, point.getImage());
+                stmt.setString(5, point.getWhatsapp());
 
                 if (stmt.executeUpdate() == 1) {
 
