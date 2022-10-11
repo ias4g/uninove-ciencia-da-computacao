@@ -1,7 +1,5 @@
 package br.com.loginform.screem;
 
-import br.com.loginform.controllers.AddressController;
-import br.com.loginform.controllers.PointController;
 import br.com.loginform.controllers.RegisterController;
 import br.com.loginform.model.AddressModel;
 import br.com.loginform.model.PointModel;
@@ -15,7 +13,6 @@ import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.util.UUID;
 
 public class Register extends javax.swing.JDialog {
 
@@ -588,7 +585,14 @@ public class Register extends javax.swing.JDialog {
         RegisterController rc = new RegisterController();
         res = rc.createRegister(pm, am);
 
-        new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
+        if (res.equalsIgnoreCase("ok")) {
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardSuccess");
+        } else {
+            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
+            this.dispose();
+        }
+
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
