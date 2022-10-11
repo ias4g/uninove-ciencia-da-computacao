@@ -1,5 +1,6 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.controllers.ItemsController;
 import br.com.loginform.controllers.RegisterController;
 import br.com.loginform.model.AddressModel;
 import br.com.loginform.model.PointModel;
@@ -10,8 +11,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
@@ -48,6 +50,7 @@ public class Register extends javax.swing.JDialog {
         lblFaviconDescription.setFont(PTSans_Bold_12);
 
 //        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
+        ItemsController ic = new ItemsController();
     }
 
     @SuppressWarnings("unchecked")
@@ -73,8 +76,8 @@ public class Register extends javax.swing.JDialog {
         lblEmail = new javax.swing.JLabel();
         txtEmail = new br.com.loginform.components.JTextFieldCustom();
         lblWhatsApp = new javax.swing.JLabel();
-        txtWhatsApp = new br.com.loginform.components.JTextFieldCustom();
         lblPointDescNext = new br.com.loginform.components.JLabelRoundedBorder();
+        txtWhatsApp = new br.com.loginform.components.JFormattedFieldCustom();
         jpPointAddress = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointAddressTitle = new javax.swing.JLabel();
         lblPointAddressSubTitle = new javax.swing.JLabel();
@@ -82,13 +85,13 @@ public class Register extends javax.swing.JDialog {
         lblAddress = new javax.swing.JLabel();
         txtAddress = new br.com.loginform.components.JTextFieldCustom();
         lblNumber = new javax.swing.JLabel();
-        txtNumber = new br.com.loginform.components.JTextFieldCustom();
         lblUf = new javax.swing.JLabel();
         cmbUf = new javax.swing.JComboBox<>();
         lblCity = new javax.swing.JLabel();
         cmbCity = new javax.swing.JComboBox<>();
         lblPointAddressNext = new br.com.loginform.components.JLabelRoundedBorder();
-        txtZipcode = new br.com.loginform.components.JFormattedFieldCustom();
+        txtZipcode = new br.com.loginform.components.JTextFieldCustom();
+        txtNumber = new br.com.loginform.components.JTextFieldCustom();
         jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointItensTitle = new javax.swing.JLabel();
         lblPointItensSubTitle = new javax.swing.JLabel();
@@ -99,7 +102,6 @@ public class Register extends javax.swing.JDialog {
         lblOrganicWaste = new br.com.loginform.components.JLabelRoundedBorder();
         lblKitchenOil = new br.com.loginform.components.JLabelRoundedBorder();
         lblPapersCardboard = new br.com.loginform.components.JLabelRoundedBorder();
-        jButton1 = new javax.swing.JButton();
         lblPointItensSave = new br.com.loginform.components.JLabelRoundedBorder();
         jpSucess = new br.com.loginform.components.JPanelRoundedBorder();
         lblIconSuccess = new javax.swing.JLabel();
@@ -224,8 +226,6 @@ public class Register extends javax.swing.JDialog {
         lblWhatsApp.setText("WhatsApp");
         jpPointDesc.add(lblWhatsApp);
         lblWhatsApp.setBounds(50, 293, 110, 16);
-        jpPointDesc.add(txtWhatsApp);
-        txtWhatsApp.setBounds(50, 314, 570, 56);
 
         lblPointDescNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointDescNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -244,6 +244,14 @@ public class Register extends javax.swing.JDialog {
         });
         jpPointDesc.add(lblPointDescNext);
         lblPointDescNext.setBounds(626, 376, 36, 36);
+
+        try {
+            txtWhatsApp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+55 (##) # ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jpPointDesc.add(txtWhatsApp);
+        txtWhatsApp.setBounds(50, 314, 570, 56);
 
         jpMain.add(jpPointDesc, "cardDescription");
 
@@ -271,8 +279,6 @@ public class Register extends javax.swing.JDialog {
         lblNumber.setText("Número");
         jpPointAddress.add(lblNumber);
         lblNumber.setBounds(50, 176, 110, 16);
-        jpPointAddress.add(txtNumber);
-        txtNumber.setBounds(50, 197, 117, 56);
 
         lblUf.setText("Estado(UF)");
         jpPointAddress.add(lblUf);
@@ -308,13 +314,21 @@ public class Register extends javax.swing.JDialog {
         jpPointAddress.add(lblPointAddressNext);
         lblPointAddressNext.setBounds(626, 376, 36, 36);
 
-        try {
-            txtZipcode.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtZipcode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtZipcodeKeyTyped(evt);
+            }
+        });
         jpPointAddress.add(txtZipcode);
         txtZipcode.setBounds(50, 96, 144, 56);
+
+        txtNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumberKeyTyped(evt);
+            }
+        });
+        jpPointAddress.add(txtNumber);
+        txtNumber.setBounds(50, 197, 117, 56);
 
         jpMain.add(jpPointAddress, "cardAddress");
 
@@ -419,15 +433,6 @@ public class Register extends javax.swing.JDialog {
 
         jpPointItens.add(jpItens);
         jpItens.setBounds(50, 75, 570, 264);
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jpPointItens.add(jButton1);
-        jButton1.setBounds(290, 370, 130, 30);
 
         lblPointItensSave.setBackground(new java.awt.Color(255, 255, 255));
         lblPointItensSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -547,11 +552,13 @@ public class Register extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
+
         if (txtZipcode.getText().isEmpty()
                 || txtAddress.getText().isEmpty()
                 || txtNumber.getText().isEmpty()
                 || cmbUf.getSelectedItem().equals("Selecione")
                 || cmbCity.getSelectedItem().equals("Selecione")) {
+
             new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
         } else {
             zipcode = txtZipcode.getText();
@@ -667,9 +674,20 @@ public class Register extends javax.swing.JDialog {
             lblElectronicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(null, itensSelected);
-    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtZipcodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtZipcodeKeyTyped
+        char ch = evt.getKeyChar();
+        if (!Character.isDigit(ch)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtZipcodeKeyTyped
+
+    private void txtNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumberKeyTyped
+        char ch = evt.getKeyChar();
+        if (!Character.isDigit(ch)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNumberKeyTyped
 
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
@@ -687,7 +705,6 @@ public class Register extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbCity;
     private javax.swing.JComboBox<String> cmbUf;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jpItens;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
@@ -734,7 +751,7 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JTextFieldCustom txtEmail;
     private br.com.loginform.components.JTextFieldCustom txtName;
     private br.com.loginform.components.JTextFieldCustom txtNumber;
-    private br.com.loginform.components.JTextFieldCustom txtWhatsApp;
-    private br.com.loginform.components.JFormattedFieldCustom txtZipcode;
+    private br.com.loginform.components.JFormattedFieldCustom txtWhatsApp;
+    private br.com.loginform.components.JTextFieldCustom txtZipcode;
     // End of variables declaration//GEN-END:variables
 }
