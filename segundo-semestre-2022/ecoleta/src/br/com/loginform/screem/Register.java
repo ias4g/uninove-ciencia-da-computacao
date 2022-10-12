@@ -11,34 +11,25 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
 
-    private String name;
-    private String email;
-    private String whatsapp;
-    private String zipcode;
-    private String address;
-    private int number;
-    private String uf;
-    private String city;
+    private File image;
 
-    private boolean isSelectedBatteries = false;
-    private boolean isSelectedElectronicWaste = false;
+    private final ArrayList<String> data = new ArrayList();
+    private final ArrayList<String> itensSelected = new ArrayList();
+
     private boolean isSelectedlamps = false;
-    private boolean isSelectedOrganicWaste = false;
+    private boolean isSelectedBatteries = false;
     private boolean isSelectedKitchenOil = false;
+    private boolean isSelectedOrganicWaste = false;
+    private boolean isSelectedElectronicWaste = false;
     private boolean isSelectedPapersCardboard = false;
-
-    ArrayList<String> itensSelected;
 
     public Register(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.itensSelected = new ArrayList();
         initComponents();
 
         Utilities.insertIconDialog(this);
@@ -491,13 +482,14 @@ public class Register extends javax.swing.JDialog {
     private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
         dispose();
     }//GEN-LAST:event_lblCloseMouseClicked
+
     private void lblCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseEntered
         lblClose.setBackground(Color.red);
     }//GEN-LAST:event_lblCloseMouseEntered
+
     private void lblCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseExited
         lblClose.setBackground(null);
     }//GEN-LAST:event_lblCloseMouseExited
-
 
     private void lblPointImageNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseEntered
         lblPointImageNext.setBackground(new Color(214, 245, 228));
@@ -506,51 +498,53 @@ public class Register extends javax.swing.JDialog {
         lblPointImageNext.setBackground(null);
     }//GEN-LAST:event_lblPointImageNextMouseExited
 
-
     private void lblPointDescNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseEntered
         lblPointDescNext.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointDescNextMouseEntered
+
     private void lblPointDescNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseExited
         lblPointDescNext.setBackground(null);
     }//GEN-LAST:event_lblPointDescNextMouseExited
 
-
     private void lblPointAddressNextMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseEntered
         lblPointAddressNext.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointAddressNextMouseEntered
+
     private void lblPointAddressNextMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseExited
         lblPointAddressNext.setBackground(null);
     }//GEN-LAST:event_lblPointAddressNextMouseExited
 
-
     private void lblPointItensSaveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseEntered
         lblPointItensSave.setBackground(new Color(214, 245, 228));
     }//GEN-LAST:event_lblPointItensSaveMouseEntered
+
     private void lblPointItensSaveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseExited
         lblPointItensSave.setBackground(null);
     }//GEN-LAST:event_lblPointItensSaveMouseExited
+
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardDescription");
 
         txtName.requestFocus();
     }//GEN-LAST:event_lblPointImageNextMouseClicked
+
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
 
-        if (txtName.getText().isEmpty() || txtEmail.getText().isEmpty() || txtWhatsApp.getText().isEmpty()) {
-//            JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
+        String name = txtName.getText();
+        String email = txtEmail.getText();
+        String whatsapp = txtWhatsApp.getText();
+
+        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
             new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
         } else {
-            name = txtName.getText();
-            email = txtEmail.getText();
-            whatsapp = txtWhatsApp.getText();
-
             CardLayout cl = (CardLayout) jpMain.getLayout();
             cl.show(jpMain, "cardAddress");
 
             txtZipcode.requestFocus();
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
+
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
 
         if (txtZipcode.getText().isEmpty()
@@ -572,6 +566,7 @@ public class Register extends javax.swing.JDialog {
 //        System.out.println(cep);
         }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
+
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
 
         String res;
@@ -604,9 +599,11 @@ public class Register extends javax.swing.JDialog {
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
         dispose();
     }//GEN-LAST:event_lblCloseSuccessMouseClicked
+
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
         selectImage();
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
+
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
         isSelectedlamps = !isSelectedlamps;
 
@@ -619,6 +616,7 @@ public class Register extends javax.swing.JDialog {
 
         }
     }//GEN-LAST:event_lblLampsMouseClicked
+
     private void lblOrganicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseClicked
         isSelectedOrganicWaste = !isSelectedOrganicWaste;
 
@@ -630,6 +628,7 @@ public class Register extends javax.swing.JDialog {
             lblOrganicWaste.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
+
     private void lblKitchenOilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKitchenOilMouseClicked
         isSelectedKitchenOil = !isSelectedKitchenOil;
 
@@ -641,6 +640,7 @@ public class Register extends javax.swing.JDialog {
             lblKitchenOil.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblKitchenOilMouseClicked
+
     private void lblPapersCardboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPapersCardboardMouseClicked
         isSelectedPapersCardboard = !isSelectedPapersCardboard;
 
@@ -652,6 +652,7 @@ public class Register extends javax.swing.JDialog {
             lblPapersCardboard.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblPapersCardboardMouseClicked
+
     private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
         isSelectedBatteries = !isSelectedBatteries;
 
@@ -663,6 +664,7 @@ public class Register extends javax.swing.JDialog {
             lblBatteries.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblBatteriesMouseClicked
+
     private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
         isSelectedElectronicWaste = !isSelectedElectronicWaste;
 
