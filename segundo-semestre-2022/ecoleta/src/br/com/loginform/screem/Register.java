@@ -1,5 +1,6 @@
 package br.com.loginform.screem;
 
+import Atxy2k.CustomTextField.RestrictedTextField;
 import br.com.loginform.controllers.ItemsController;
 import br.com.loginform.controllers.RegisterController;
 import br.com.loginform.model.AddressModel;
@@ -50,7 +51,7 @@ public class Register extends javax.swing.JDialog {
         lblFaviconDescription.setFont(PTSans_Bold_12);
 
 //        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
-        ItemsController ic = new ItemsController();
+        fieldRestricted();
     }
 
     @SuppressWarnings("unchecked")
@@ -313,20 +314,8 @@ public class Register extends javax.swing.JDialog {
         });
         jpPointAddress.add(lblPointAddressNext);
         lblPointAddressNext.setBounds(626, 376, 36, 36);
-
-        txtZipcode.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtZipcodeKeyTyped(evt);
-            }
-        });
         jpPointAddress.add(txtZipcode);
         txtZipcode.setBounds(50, 96, 144, 56);
-
-        txtNumber.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNumberKeyTyped(evt);
-            }
-        });
         jpPointAddress.add(txtNumber);
         txtNumber.setBounds(50, 197, 117, 56);
 
@@ -695,20 +684,6 @@ public class Register extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
 
-    private void txtZipcodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtZipcodeKeyTyped
-        char ch = evt.getKeyChar();
-        if (!Character.isDigit(ch)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtZipcodeKeyTyped
-
-    private void txtNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumberKeyTyped
-        char ch = evt.getKeyChar();
-        if (!Character.isDigit(ch)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtNumberKeyTyped
-
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -771,6 +746,16 @@ public class Register extends javax.swing.JDialog {
         } else if (src instanceof byte[]) {
             ImageIcon icon = new ImageIcon();
         }
+    }
+
+    private void fieldRestricted() {
+        RestrictedTextField validZipcode = new RestrictedTextField(txtZipcode);
+        RestrictedTextField validNumber = new RestrictedTextField(txtNumber);
+
+        validZipcode.setOnlyNums(true);
+        validZipcode.setLimit(8);
+
+        validNumber.setOnlyNums(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
