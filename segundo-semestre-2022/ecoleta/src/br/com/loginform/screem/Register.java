@@ -15,14 +15,21 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 
 public class Register extends javax.swing.JDialog {
 
@@ -314,6 +321,12 @@ public class Register extends javax.swing.JDialog {
         });
         jpPointAddress.add(lblPointAddressNext);
         lblPointAddressNext.setBounds(626, 376, 36, 36);
+
+        txtZipcode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtZipcodeKeyPressed(evt);
+            }
+        });
         jpPointAddress.add(txtZipcode);
         txtZipcode.setBounds(50, 96, 144, 56);
         jpPointAddress.add(txtNumber);
@@ -684,6 +697,12 @@ public class Register extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
 
+    private void txtZipcodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtZipcodeKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            cepSearch();
+        }
+    }//GEN-LAST:event_txtZipcodeKeyPressed
+
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -756,6 +775,29 @@ public class Register extends javax.swing.JDialog {
         validZipcode.setLimit(8);
 
         validNumber.setOnlyNums(true);
+    }
+
+    private void cepSearch() {
+        try {
+            String res;
+            String logradouro;
+            String tipologradouro;
+            String zipcode = txtZipcode.getText();
+
+            URL url = new URL("http://cep.republicavirtual.com.br/web_cep.php?cep=" + zipcode + "&formato=xml");
+            SAXReader xml = new SAXReader();
+            Document doc = xml.read(url);
+            Element root = doc.getRootElement();
+
+            for (Iterator<Element> it = root.elementIterator(); it.hasNext();) {
+                Element el = it.next();
+                if (el.getQualifiedName().equals("cidade")) {
+                    txtAddress.setText(el.getText());
+                }
+            }
+        } catch (MalformedURLException | DocumentException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
