@@ -15,9 +15,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -577,8 +579,6 @@ public class Register extends javax.swing.JDialog {
 
             CardLayout cl = (CardLayout) jpMain.getLayout();
             cl.show(jpMain, "cardItens");
-
-            System.out.println(data.get(0));
         }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
 
@@ -590,7 +590,7 @@ public class Register extends javax.swing.JDialog {
 
         pm.setName(data.get(0));
         pm.setEmail(data.get(1));
-        //pm.setImage(image);
+//        pm.setImage(getImageFile());
         pm.setWhatsapp(data.get(2));
 
         am.setZipcode(data.get(3));
@@ -617,7 +617,9 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblCloseSuccessMouseClicked
 
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
-        selectImage();
+        imageFile = selectImage();
+
+        opemImage(imageFile);
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
 
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
@@ -719,7 +721,7 @@ public class Register extends javax.swing.JDialog {
         return fileChooser.getSelectedFile();
     }
 
-    private byte[] getImage() {
+    private byte[] getImageFile() {
         boolean isPng = false;
 
         if (imageFile != null) {
@@ -736,9 +738,9 @@ public class Register extends javax.swing.JDialog {
                     type = BufferedImage.BITMASK;
                 }
 
-                BufferedImage newImage = new BufferedImage(jpPointImageDropzone.getWidth() - 5, jpPointImageDropzone.getHeight() - 10, type);
+                BufferedImage newImage = new BufferedImage(400, 400, type);
                 Graphics2D g = newImage.createGraphics();
-                g.drawImage(image, 0, 0, jpPointImageDropzone.getWidth() - 5, jpPointImageDropzone.getHeight() - 10, null);
+                g.drawImage(image, 0, 0, 400, 400, null);
 
                 if (isPng) {
                     ImageIO.write(newImage, "png", out);
@@ -760,6 +762,16 @@ public class Register extends javax.swing.JDialog {
         return null;
     }
 
+    private void opemImage(Object src) {
+        if (src instanceof File) {
+            ImageIcon icon = new ImageIcon(imageFile.getAbsolutePath());
+            icon.setImage(icon.getImage().getScaledInstance(400, 400, 100));
+            lblPointImageDropzone.setText(null);
+            lblPointImageDropzone.setIcon(icon);
+        } else if (src instanceof byte[]) {
+            ImageIcon icon = new ImageIcon();
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbCity;
