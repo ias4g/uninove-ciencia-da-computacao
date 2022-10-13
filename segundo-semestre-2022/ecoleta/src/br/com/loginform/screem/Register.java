@@ -9,14 +9,21 @@ import br.com.loginform.utils.Utilities;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Register extends javax.swing.JDialog {
 
-    private File image;
+    private File imageFile;
 
     private final ArrayList<String> data = new ArrayList();
     private final ArrayList<String> itensSelected = new ArrayList();
@@ -706,10 +713,46 @@ public class Register extends javax.swing.JDialog {
         fileChooser.addChoosableFileFilter(filter);
         fileChooser.setAcceptAllFileFilterUsed(false);
         fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
-        fileChooser.setCurrentDirectory(new File("/"));
+        fileChooser.setCurrentDirectory(new File("/Images"));
         fileChooser.showOpenDialog(this);
 
         return fileChooser.getSelectedFile();
+    }
+
+    private byte[] getImage() {
+        boolean isPng = false;
+
+        if (imageFile != null) {
+            try {
+                isPng = imageFile.getName().endsWith("png");
+                BufferedImage image = ImageIO.read(imageFile);
+                ByteArrayOutputStream out = new ByteArrayOutputStream();
+                int type = BufferedImage.TYPE_INT_RGB;
+
+                if (isPng) {
+                    type = BufferedImage.BITMASK;
+                }
+
+                BufferedImage newImage = new BufferedImage(jpPointImageDropzone.getWidth() - 5, jpPointImageDropzone.getHeight() - 10, type);
+                Graphics2D g = newImage.createGraphics();
+                g.drawImage(image, 0, 0, jpPointImageDropzone.getWidth() - 5, jpPointImageDropzone.getHeight() - 10, null);
+
+                if (isPng) {
+                    ImageIO.write(newImage, "png", out);
+                } else {
+                    ImageIO.write(newImage, "jpg", out);
+                }
+
+                out.flush();
+                byte[] arraybyte = out.toByteArray();
+                out.close();
+
+                return arraybyte;
+
+            } catch (IOException ex) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
 
