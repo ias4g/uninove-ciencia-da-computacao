@@ -725,8 +725,11 @@ public class Register extends javax.swing.JDialog {
         if (imageFile != null) {
             try {
                 isPng = imageFile.getName().endsWith("png");
+
                 BufferedImage image = ImageIO.read(imageFile);
+
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
+
                 int type = BufferedImage.TYPE_INT_RGB;
 
                 if (isPng) {
@@ -753,6 +756,8 @@ public class Register extends javax.swing.JDialog {
                 Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+
+        return null;
     }
 
 
