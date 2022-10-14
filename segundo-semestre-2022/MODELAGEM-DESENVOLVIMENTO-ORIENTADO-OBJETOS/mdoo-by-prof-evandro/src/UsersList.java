@@ -19,7 +19,7 @@ public class UsersList extends javax.swing.JFrame {
         tableFill();
     }
 
-    private void tableFill() {
+    private void tableFill(String param) {
         try {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
