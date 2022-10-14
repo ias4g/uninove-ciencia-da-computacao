@@ -9,6 +9,7 @@ import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -51,13 +52,47 @@ public class Register extends javax.swing.JDialog {
 
         Utilities.insertIconDialog(this);
 
-        Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
-//        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
+        Font Ubuntu_Bold_24 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 24f);
+        Font PTSans_Bold_16 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 16f);
+        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
 
-//        Font Ubuntu_Bold_16 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 16f);
-        lblFaviconDescription.setFont(PTSans_Bold_12);
+        lblFaviconDescription.setFont(PTSans_Bold_16);
 
-//        lblTitleImagePoint.setFont(Ubuntu_Bold_16);
+        lblPointImageTitle.setFont(Ubuntu_Bold_24);
+        lblPointImageSubTitle.setFont(PTSans_Regular_16);
+        lblPointImageDropzone.setFont(PTSans_Regular_16);
+
+        lblPointDescTitle.setFont(Ubuntu_Bold_24);
+        lblPointDescSubTitle.setFont(PTSans_Regular_16);
+        lblName.setFont(PTSans_Bold_16);
+        txtName.setFont(PTSans_Regular_16);
+        lblEmail.setFont(PTSans_Bold_16);
+        txtEmail.setFont(PTSans_Regular_16);
+        lblWhatsApp.setFont(PTSans_Bold_16);
+        txtWhatsApp.setFont(PTSans_Regular_16);
+
+        lblPointAddressTitle.setFont(Ubuntu_Bold_24);
+        lblPointAddressSubTitle.setFont(PTSans_Regular_16);
+        lblZipcode.setFont(PTSans_Bold_16);
+        txtZipcode.setFont(PTSans_Regular_16);
+        lblAddress.setFont(PTSans_Bold_16);
+        txtAddress.setFont(PTSans_Regular_16);
+        lblNumber.setFont(PTSans_Bold_16);
+        txtNumber.setFont(PTSans_Regular_16);
+        lblUf.setFont(PTSans_Bold_16);
+        cmbUf.setFont(PTSans_Regular_16);
+        lblCity.setFont(PTSans_Bold_16);
+        cmbCity.setFont(PTSans_Regular_16);
+
+        lblPointItensTitle.setFont(Ubuntu_Bold_24);
+        lblPointItensSubTitle.setFont(PTSans_Regular_16);
+        lblBatteries.setFont(PTSans_Regular_16);
+        lblElectronicWaste.setFont(PTSans_Regular_16);
+        lblLamps.setFont(PTSans_Regular_16);
+        lblOrganicWaste.setFont(PTSans_Regular_16);
+        lblKitchenOil.setFont(PTSans_Regular_16);
+        lblPapersCardboard.setFont(PTSans_Regular_16);
+
         fieldRestricted();
     }
 
@@ -89,17 +124,17 @@ public class Register extends javax.swing.JDialog {
         jpPointAddress = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointAddressTitle = new javax.swing.JLabel();
         lblPointAddressSubTitle = new javax.swing.JLabel();
-        lblCep = new javax.swing.JLabel();
+        lblZipcode = new javax.swing.JLabel();
+        txtZipcode = new br.com.loginform.components.JTextFieldCustom();
         lblAddress = new javax.swing.JLabel();
         txtAddress = new br.com.loginform.components.JTextFieldCustom();
         lblNumber = new javax.swing.JLabel();
+        txtNumber = new br.com.loginform.components.JTextFieldCustom();
         lblUf = new javax.swing.JLabel();
         cmbUf = new javax.swing.JComboBox<>();
         lblCity = new javax.swing.JLabel();
         cmbCity = new javax.swing.JComboBox<>();
         lblPointAddressNext = new br.com.loginform.components.JLabelRoundedBorder();
-        txtZipcode = new br.com.loginform.components.JTextFieldCustom();
-        txtNumber = new br.com.loginform.components.JTextFieldCustom();
         jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointItensTitle = new javax.swing.JLabel();
         lblPointItensSubTitle = new javax.swing.JLabel();
@@ -151,7 +186,7 @@ public class Register extends javax.swing.JDialog {
             }
         });
         getContentPane().add(lblClose);
-        lblClose.setBounds(974, 0, 50, 25);
+        lblClose.setBounds(988, 0, 36, 28);
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
@@ -161,32 +196,39 @@ public class Register extends javax.swing.JDialog {
 
         jpPointImage.setLayout(null);
 
+        lblPointImageTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblPointImageTitle.setText("Imagem do ponto");
+        lblPointImageTitle.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jpPointImage.add(lblPointImageTitle);
-        lblPointImageTitle.setBounds(20, 20, 170, 16);
+        lblPointImageTitle.setBounds(50, 20, 270, 28);
 
+        lblPointImageSubTitle.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         lblPointImageSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPointImageSubTitle.setText("Insira a imagem do ponto de coleta");
         jpPointImage.add(lblPointImageSubTitle);
-        lblPointImageSubTitle.setBounds(350, 24, 300, 16);
+        lblPointImageSubTitle.setBounds(320, 26, 300, 19);
 
         jpPointImageDropzone.setBackground(new java.awt.Color(214, 245, 228));
         jpPointImageDropzone.setLayout(null);
 
+        lblPointImageDropzone.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblPointImageDropzone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPointImageDropzone.setText("Clique aqui para selecionar uma imagem.");
+        lblPointImageDropzone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/upload-icon.png"))); // NOI18N
+        lblPointImageDropzone.setText("Imagem do estabelecimento");
         lblPointImageDropzone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(52, 203, 121)));
-        lblPointImageDropzone.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        lblPointImageDropzone.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPointImageDropzone.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPointImageDropzone.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         lblPointImageDropzone.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblPointImageDropzoneMouseClicked(evt);
             }
         });
         jpPointImageDropzone.add(lblPointImageDropzone);
-        lblPointImageDropzone.setBounds(35, 24, 500, 252);
+        lblPointImageDropzone.setBounds(22, 22, 256, 256);
 
         jpPointImage.add(jpPointImageDropzone);
-        jpPointImageDropzone.setBounds(50, 68, 570, 300);
+        jpPointImageDropzone.setBounds(175, 90, 300, 300);
 
         lblPointImageNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointImageNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -204,36 +246,48 @@ public class Register extends javax.swing.JDialog {
             }
         });
         jpPointImage.add(lblPointImageNext);
-        lblPointImageNext.setBounds(626, 376, 36, 36);
+        lblPointImageNext.setBounds(584, 404, 36, 36);
 
         jpMain.add(jpPointImage, "cardImage");
 
         jpPointDesc.setLayout(null);
 
+        lblPointDescTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblPointDescTitle.setText("Descrição do ponto");
+        lblPointDescTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jpPointDesc.add(lblPointDescTitle);
-        lblPointDescTitle.setBounds(20, 20, 170, 16);
+        lblPointDescTitle.setBounds(50, 20, 270, 30);
 
+        lblPointDescSubTitle.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         lblPointDescSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPointDescSubTitle.setText("Insira a descrição do ponto de coleta");
         jpPointDesc.add(lblPointDescSubTitle);
-        lblPointDescSubTitle.setBounds(350, 24, 300, 16);
+        lblPointDescSubTitle.setBounds(320, 26, 300, 19);
 
+        lblName.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblName.setText("Nome do ponto");
         jpPointDesc.add(lblName);
-        lblName.setBounds(50, 75, 210, 16);
-        jpPointDesc.add(txtName);
-        txtName.setBounds(50, 96, 570, 56);
+        lblName.setBounds(50, 90, 210, 19);
 
+        txtName.setForeground(new java.awt.Color(120, 120, 120));
+        txtName.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jpPointDesc.add(txtName);
+        txtName.setBounds(50, 112, 570, 56);
+
+        lblEmail.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblEmail.setText("E-mail");
         jpPointDesc.add(lblEmail);
-        lblEmail.setBounds(50, 184, 120, 16);
-        jpPointDesc.add(txtEmail);
-        txtEmail.setBounds(50, 205, 570, 56);
+        lblEmail.setBounds(50, 199, 120, 19);
 
+        txtEmail.setForeground(new java.awt.Color(120, 120, 120));
+        txtEmail.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jpPointDesc.add(txtEmail);
+        txtEmail.setBounds(50, 221, 570, 56);
+
+        lblWhatsApp.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblWhatsApp.setText("WhatsApp");
         jpPointDesc.add(lblWhatsApp);
-        lblWhatsApp.setBounds(50, 293, 110, 16);
+        lblWhatsApp.setBounds(50, 308, 110, 19);
 
         lblPointDescNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointDescNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -251,58 +305,90 @@ public class Register extends javax.swing.JDialog {
             }
         });
         jpPointDesc.add(lblPointDescNext);
-        lblPointDescNext.setBounds(626, 376, 36, 36);
+        lblPointDescNext.setBounds(584, 404, 36, 36);
 
+        txtWhatsApp.setForeground(new java.awt.Color(120, 120, 120));
+        txtWhatsApp.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         try {
             txtWhatsApp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+55 (##) # ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         jpPointDesc.add(txtWhatsApp);
-        txtWhatsApp.setBounds(50, 314, 570, 56);
+        txtWhatsApp.setBounds(50, 330, 570, 56);
 
         jpMain.add(jpPointDesc, "cardDescription");
 
         jpPointAddress.setLayout(null);
 
+        lblPointAddressTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblPointAddressTitle.setText("Endereço do ponto");
+        lblPointAddressTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jpPointAddress.add(lblPointAddressTitle);
-        lblPointAddressTitle.setBounds(20, 20, 170, 16);
+        lblPointAddressTitle.setBounds(50, 20, 290, 30);
 
+        lblPointAddressSubTitle.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         lblPointAddressSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPointAddressSubTitle.setText("Insira o cep para preencher alguns campos");
         jpPointAddress.add(lblPointAddressSubTitle);
-        lblPointAddressSubTitle.setBounds(350, 24, 300, 16);
+        lblPointAddressSubTitle.setBounds(320, 26, 300, 19);
 
-        lblCep.setText("Cep");
-        jpPointAddress.add(lblCep);
-        lblCep.setBounds(50, 75, 60, 16);
+        lblZipcode.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lblZipcode.setText("Cep");
+        jpPointAddress.add(lblZipcode);
+        lblZipcode.setBounds(50, 90, 60, 19);
 
+        txtZipcode.setForeground(new java.awt.Color(120, 120, 120));
+        txtZipcode.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        txtZipcode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtZipcodeKeyPressed(evt);
+            }
+        });
+        jpPointAddress.add(txtZipcode);
+        txtZipcode.setBounds(50, 112, 144, 56);
+
+        lblAddress.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblAddress.setText("Endereço");
         jpPointAddress.add(lblAddress);
-        lblAddress.setBounds(202, 75, 120, 16);
-        jpPointAddress.add(txtAddress);
-        txtAddress.setBounds(202, 96, 418, 56);
+        lblAddress.setBounds(202, 90, 120, 19);
 
+        txtAddress.setForeground(new java.awt.Color(120, 120, 120));
+        txtAddress.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jpPointAddress.add(txtAddress);
+        txtAddress.setBounds(202, 112, 418, 56);
+
+        lblNumber.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblNumber.setText("Número");
         jpPointAddress.add(lblNumber);
-        lblNumber.setBounds(50, 176, 110, 16);
+        lblNumber.setBounds(50, 191, 110, 19);
 
+        txtNumber.setForeground(new java.awt.Color(120, 120, 120));
+        txtNumber.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jpPointAddress.add(txtNumber);
+        txtNumber.setBounds(50, 213, 117, 56);
+
+        lblUf.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblUf.setText("Estado(UF)");
         jpPointAddress.add(lblUf);
-        lblUf.setBounds(175, 176, 110, 16);
+        lblUf.setBounds(175, 191, 110, 19);
 
+        cmbUf.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        cmbUf.setForeground(new java.awt.Color(120, 120, 120));
         cmbUf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "SP", "BA" }));
         jpPointAddress.add(cmbUf);
-        cmbUf.setBounds(175, 197, 146, 56);
+        cmbUf.setBounds(175, 213, 146, 56);
 
+        lblCity.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblCity.setText("Cidade");
         jpPointAddress.add(lblCity);
-        lblCity.setBounds(329, 176, 110, 16);
+        lblCity.setBounds(329, 191, 110, 19);
 
+        cmbCity.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        cmbCity.setForeground(new java.awt.Color(120, 120, 120));
         cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "São Paulo", "Engenheiro Coelho" }));
         jpPointAddress.add(cmbCity);
-        cmbCity.setBounds(329, 197, 291, 56);
+        cmbCity.setBounds(329, 213, 291, 56);
 
         lblPointAddressNext.setBackground(new java.awt.Color(255, 255, 255));
         lblPointAddressNext.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -320,30 +406,23 @@ public class Register extends javax.swing.JDialog {
             }
         });
         jpPointAddress.add(lblPointAddressNext);
-        lblPointAddressNext.setBounds(626, 376, 36, 36);
-
-        txtZipcode.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtZipcodeKeyPressed(evt);
-            }
-        });
-        jpPointAddress.add(txtZipcode);
-        txtZipcode.setBounds(50, 96, 144, 56);
-        jpPointAddress.add(txtNumber);
-        txtNumber.setBounds(50, 197, 117, 56);
+        lblPointAddressNext.setBounds(584, 404, 36, 36);
 
         jpMain.add(jpPointAddress, "cardAddress");
 
         jpPointItens.setLayout(null);
 
+        lblPointItensTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblPointItensTitle.setText("Itens de coleta");
+        lblPointItensTitle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jpPointItens.add(lblPointItensTitle);
-        lblPointItensTitle.setBounds(20, 20, 170, 16);
+        lblPointItensTitle.setBounds(50, 20, 270, 30);
 
+        lblPointItensSubTitle.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         lblPointItensSubTitle.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblPointItensSubTitle.setText("Selecione os itens que o ponto coleta");
         jpPointItens.add(lblPointItensSubTitle);
-        lblPointItensSubTitle.setBounds(350, 24, 300, 16);
+        lblPointItensSubTitle.setBounds(320, 26, 300, 19);
 
         jpItens.setBackground(new java.awt.Color(255, 255, 255));
         jpItens.setLayout(new java.awt.GridLayout(2, 3, 10, 10));
@@ -434,7 +513,7 @@ public class Register extends javax.swing.JDialog {
         jpItens.add(lblPapersCardboard);
 
         jpPointItens.add(jpItens);
-        jpItens.setBounds(50, 75, 570, 264);
+        jpItens.setBounds(50, 90, 570, 264);
 
         lblPointItensSave.setBackground(new java.awt.Color(255, 255, 255));
         lblPointItensSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -452,7 +531,7 @@ public class Register extends javax.swing.JDialog {
             }
         });
         jpPointItens.add(lblPointItensSave);
-        lblPointItensSave.setBounds(626, 376, 36, 36);
+        lblPointItensSave.setBounds(584, 404, 36, 36);
 
         jpMain.add(jpPointItens, "cardItens");
 
@@ -483,7 +562,7 @@ public class Register extends javax.swing.JDialog {
         jpMain.add(jpSucess, "cardSuccess");
 
         getContentPane().add(jpMain);
-        jpMain.setBounds(177, 120, 670, 420);
+        jpMain.setBounds(177, 120, 670, 480);
 
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
@@ -586,6 +665,8 @@ public class Register extends javax.swing.JDialog {
 
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
 
+        lblPointItensSave.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+
         String res;
         PointModel pm = new PointModel();
         AddressModel am = new AddressModel();
@@ -612,6 +693,7 @@ public class Register extends javax.swing.JDialog {
             this.dispose();
         }
 
+        lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
@@ -813,7 +895,6 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JPanelRoundedBorder jpSucess;
     private javax.swing.JLabel lblAddress;
     private br.com.loginform.components.JLabelRoundedBorder lblBatteries;
-    private javax.swing.JLabel lblCep;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblCloseSuccess;
@@ -845,6 +926,7 @@ public class Register extends javax.swing.JDialog {
     private javax.swing.JLabel lblSuccess;
     private javax.swing.JLabel lblUf;
     private javax.swing.JLabel lblWhatsApp;
+    private javax.swing.JLabel lblZipcode;
     private br.com.loginform.components.JTextFieldCustom txtAddress;
     private br.com.loginform.components.JTextFieldCustom txtEmail;
     private br.com.loginform.components.JTextFieldCustom txtName;

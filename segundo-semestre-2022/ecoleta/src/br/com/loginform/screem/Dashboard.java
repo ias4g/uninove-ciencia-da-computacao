@@ -15,9 +15,8 @@ public class Dashboard extends javax.swing.JFrame {
     private void customComponents() {
         Utilities.insertIconFrame(this);
 
-        Font Ubuntu_Bold_32 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 32f);
-
         Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
+        Font Ubuntu_Bold_32 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 32f);
         Font PTSans_Bold_16 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 16f);
         Font PTSans_Regular_24 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 24f);
 
@@ -89,7 +88,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
         getContentPane().add(lblClose);
-        lblClose.setBounds(974, 0, 50, 25);
+        lblClose.setBounds(988, 0, 36, 28);
 
         lblMinimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/minimize.png"))); // NOI18N
@@ -104,7 +103,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
         getContentPane().add(lblMinimize);
-        lblMinimize.setBounds(924, 0, 50, 25);
+        lblMinimize.setBounds(952, 0, 36, 28);
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
