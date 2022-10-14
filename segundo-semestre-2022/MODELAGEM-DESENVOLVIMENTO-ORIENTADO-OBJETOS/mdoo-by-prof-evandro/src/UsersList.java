@@ -31,6 +31,7 @@ public class UsersList extends javax.swing.JFrame {
             rs = stmt.executeQuery();
 
             tableModel = (DefaultTableModel) tblUsers.getModel();
+            tableModel.setRowCount(0);
 
             while (rs.next()) {
                 Object datas[] = {
@@ -125,27 +126,28 @@ public class UsersList extends javax.swing.JFrame {
 
             if (cmbJob.getSelectedIndex() == 0) {
                 tableFill();
-            } else {
-                stmt = conn.prepareStatement("SELECT * FROM tbusers WHERE job = ?");
-                stmt.setString(1, cargo);
-                rs = stmt.executeQuery();
+                return;
+            }
 
-                tableModel = (DefaultTableModel) tblUsers.getModel();
-                tableModel.setRowCount(0);
+            stmt = conn.prepareStatement("SELECT * FROM tbusers WHERE job = ?");
+            stmt.setString(1, cargo);
+            rs = stmt.executeQuery();
 
-                while (rs.next()) {
-                    Object datas[] = {
-                        rs.getString("id"),
-                        rs.getString("user"),
-                        rs.getString("password"),
-                        rs.getString("name"),
-                        rs.getString("lastname"),
-                        rs.getString("email"),
-                        rs.getString("job")
-                    };
+            tableModel = (DefaultTableModel) tblUsers.getModel();
+            tableModel.setRowCount(0);
 
-                    tableModel.addRow(datas);
-                }
+            while (rs.next()) {
+                Object datas[] = {
+                    rs.getString("id"),
+                    rs.getString("user"),
+                    rs.getString("password"),
+                    rs.getString("name"),
+                    rs.getString("lastname"),
+                    rs.getString("email"),
+                    rs.getString("job")
+                };
+
+                tableModel.addRow(datas);
             }
 
             conn.close();
