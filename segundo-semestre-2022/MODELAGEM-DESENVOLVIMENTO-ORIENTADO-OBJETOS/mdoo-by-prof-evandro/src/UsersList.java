@@ -96,7 +96,7 @@ public class UsersList extends javax.swing.JFrame {
         getContentPane().add(lblJob);
         lblJob.setBounds(10, 20, 50, 16);
 
-        cmbJob.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um cargo", "Analista", "Gerente", "Vendedor", "Estagiário", "Segurança", "Programador", "Administrador" }));
+        cmbJob.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mostrar todos", "Analista", "Gerente", "Vendedor", "Estagiário", "Segurança", "Programador", "Administrador" }));
         cmbJob.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbJobActionPerformed(evt);
@@ -110,10 +110,12 @@ public class UsersList extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbJobActionPerformed
-        System.out.println(cmbJob.getSelectedItem());
+        search();
     }//GEN-LAST:event_cmbJobActionPerformed
 
     private void search() {
+        String cargo = String.valueOf(cmbJob.getSelectedItem());
+
         try {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -121,23 +123,29 @@ public class UsersList extends javax.swing.JFrame {
                     "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
             );
 
-            stmt = conn.prepareStatement("SELECT * FROM tbusers WHERE LIKE");
-            rs = stmt.executeQuery();
+            if (cmbJob.getSelectedIndex() == 0) {
+                tableFill();
+            } else {
+                stmt = conn.prepareStatement("SELECT * FROM tbusers WHERE job = ?");
+                stmt.setString(1, cargo);
+                rs = stmt.executeQuery();
 
-            tableModel = (DefaultTableModel) tblUsers.getModel();
+                tableModel = (DefaultTableModel) tblUsers.getModel();
+                tableModel.setRowCount(0);
 
-            while (rs.next()) {
-                Object datas[] = {
-                    rs.getString("id"),
-                    rs.getString("user"),
-                    rs.getString("password"),
-                    rs.getString("name"),
-                    rs.getString("lastname"),
-                    rs.getString("email"),
-                    rs.getString("job")
-                };
+                while (rs.next()) {
+                    Object datas[] = {
+                        rs.getString("id"),
+                        rs.getString("user"),
+                        rs.getString("password"),
+                        rs.getString("name"),
+                        rs.getString("lastname"),
+                        rs.getString("email"),
+                        rs.getString("job")
+                    };
 
-                tableModel.addRow(datas);
+                    tableModel.addRow(datas);
+                }
             }
 
             conn.close();
