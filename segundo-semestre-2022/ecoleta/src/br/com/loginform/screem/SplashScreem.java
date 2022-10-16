@@ -1,12 +1,11 @@
 package br.com.loginform.screem;
 
-import br.com.loginform.utils.FontManager;
-import br.com.loginform.utils.Utilities;
 import java.awt.Font;
-
+import javax.swing.UIManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.UIManager;
+import br.com.loginform.utils.Utilities;
+import br.com.loginform.utils.FontManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class SplashScreem extends javax.swing.JFrame {

@@ -16,6 +16,8 @@ public class ConsumidorAPI {
 
     private static final String URL_BASE = "https://servicodados.ibge.gov.br/api/v1/localidades/";
 
+    // GET para pegar as Ufs -> estados
+    // GET para pegar os municipios -> estados/{UF}/municipios
     private static ConsumidorAPI instance;
 
     private final CloseableHttpClient clientHttp;

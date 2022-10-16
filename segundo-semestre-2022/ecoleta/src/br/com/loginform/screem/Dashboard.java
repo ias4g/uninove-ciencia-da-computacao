@@ -1,5 +1,6 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.services.ConsumidorAPI;
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
@@ -10,6 +11,10 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard() {
         initComponents();
         customComponents();
+
+        ConsumidorAPI consumidor = ConsumidorAPI.getInstance();
+
+        System.out.println(consumidor.doRequest("estados").getClass());
     }
 
     private void customComponents() {
