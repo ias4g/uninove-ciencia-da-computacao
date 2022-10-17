@@ -657,7 +657,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/loginform/assets/pilhas-baterias.png"/>
+                      <Image iconType="3" name="/br/com/loginform/assets/pilhas-e-baterias.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Pilhas e Baterias"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -676,7 +676,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/loginform/assets/eletronicos.png"/>
+                      <Image iconType="3" name="/br/com/loginform/assets/residuos-eletronicos.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Res&#xed;duos Eletr&#xf4;nicos"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -700,6 +700,9 @@
                     <Property name="name" type="java.lang.String" value="lampadas" noResource="true"/>
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
+                  <AccessibilityProperties>
+                    <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+                  </AccessibilityProperties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLampsMouseClicked"/>
                   </Events>
@@ -708,7 +711,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/loginform/assets/organicos.png"/>
+                      <Image iconType="3" name="/br/com/loginform/assets/residuos-organicos.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Res&#xed;duos Org&#xe2;nicos"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -724,7 +727,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/loginform/assets/oleo.png"/>
+                      <Image iconType="3" name="/br/com/loginform/assets/oleo-de-cozinha.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&#xd3;leo de cozinha"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -740,7 +743,7 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/loginform/assets/papeis-papelao.png"/>
+                      <Image iconType="3" name="/br/com/loginform/assets/papeis-e-papelao.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Pap&#xe9;is e Papel&#xe3;o"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>

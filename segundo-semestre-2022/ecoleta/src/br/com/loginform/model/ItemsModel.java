@@ -1,16 +1,27 @@
 package br.com.loginform.model;
 
+import javax.swing.JLabel;
+
 public class ItemsModel {
 
-    private int id;
+    private String id;
     private String title;
     private String slug;
+    private JLabel lbl;
 
-    public int getId() {
+    public JLabel getLbl() {
+        return lbl;
+    }
+
+    public void setLbl(JLabel lbl) {
+        this.lbl = lbl;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ItemsController {
 
@@ -18,9 +19,9 @@ public class ItemsController {
         this.conn = DBConnection.getConn();
     }
 
-    public ArrayList<ItemsModel> ReadItems() {
+    public List<ItemsModel> ReadItems() {
 
-        ArrayList<ItemsModel> pt = new ArrayList<>();
+        List<ItemsModel> pt = new ArrayList<>();
         String sql = "SELECT * FROM tb_items";
 
         try {
@@ -30,7 +31,7 @@ public class ItemsController {
             while (rs.next()) {
                 ItemsModel item = new ItemsModel();
 
-                item.setId(rs.getInt("id"));
+                item.setId(String.valueOf(rs.getInt("id")));
                 item.setTitle(rs.getString("title"));
                 item.setSlug(rs.getString("slug"));
 

@@ -3,6 +3,7 @@ package br.com.loginform.screem;
 import Atxy2k.CustomTextField.RestrictedTextField;
 import br.com.loginform.controllers.RegisterController;
 import br.com.loginform.model.AddressModel;
+import br.com.loginform.model.ItemsModel;
 import br.com.loginform.model.PointModel;
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
@@ -20,11 +21,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -36,7 +39,7 @@ public class Register extends javax.swing.JDialog {
     private File imageFile;
 
     private final ArrayList<String> data = new ArrayList();
-    private final ArrayList<String> itensSelected = new ArrayList();
+    private final List<ItemsModel> itensSelected = new ArrayList();
 
     private boolean isSelectedlamps = false;
     private boolean isSelectedBatteries = false;
@@ -434,7 +437,7 @@ public class Register extends javax.swing.JDialog {
         jpItens.setLayout(new java.awt.GridLayout(2, 3, 10, 10));
 
         lblBatteries.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblBatteries.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/pilhas-baterias.png"))); // NOI18N
+        lblBatteries.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/pilhas-e-baterias.png"))); // NOI18N
         lblBatteries.setText("Pilhas e Baterias");
         lblBatteries.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblBatteries.setIconTextGap(12);
@@ -449,7 +452,7 @@ public class Register extends javax.swing.JDialog {
         lblBatteries.getAccessibleContext().setAccessibleDescription("pilhas");
 
         lblElectronicWaste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblElectronicWaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/eletronicos.png"))); // NOI18N
+        lblElectronicWaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/residuos-eletronicos.png"))); // NOI18N
         lblElectronicWaste.setText("Resíduos Eletrônicos");
         lblElectronicWaste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblElectronicWaste.setIconTextGap(12);
@@ -475,9 +478,10 @@ public class Register extends javax.swing.JDialog {
             }
         });
         jpItens.add(lblLamps);
+        lblLamps.getAccessibleContext().setAccessibleDescription("");
 
         lblOrganicWaste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOrganicWaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/organicos.png"))); // NOI18N
+        lblOrganicWaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/residuos-organicos.png"))); // NOI18N
         lblOrganicWaste.setText("Resíduos Orgânicos");
         lblOrganicWaste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblOrganicWaste.setIconTextGap(12);
@@ -491,7 +495,7 @@ public class Register extends javax.swing.JDialog {
         jpItens.add(lblOrganicWaste);
 
         lblKitchenOil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblKitchenOil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/oleo.png"))); // NOI18N
+        lblKitchenOil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/oleo-de-cozinha.png"))); // NOI18N
         lblKitchenOil.setText("Óleo de cozinha");
         lblKitchenOil.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblKitchenOil.setIconTextGap(12);
@@ -505,7 +509,7 @@ public class Register extends javax.swing.JDialog {
         jpItens.add(lblKitchenOil);
 
         lblPapersCardboard.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPapersCardboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/papeis-papelao.png"))); // NOI18N
+        lblPapersCardboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/papeis-e-papelao.png"))); // NOI18N
         lblPapersCardboard.setText("Papéis e Papelão");
         lblPapersCardboard.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblPapersCardboard.setIconTextGap(12);
@@ -632,18 +636,20 @@ public class Register extends javax.swing.JDialog {
         String email = txtEmail.getText();
         String whatsapp = txtWhatsApp.getText();
 
-        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
-            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
-        } else {
-            data.add(name);
-            data.add(email);
-            data.add(whatsapp);
-
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardAddress");
-
-            txtZipcode.requestFocus();
-        }
+//        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
+//            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+//        } else {
+//            data.add(name);
+//            data.add(email);
+//            data.add(whatsapp);
+//            
+//            CardLayout cl = (CardLayout) jpMain.getLayout();
+//            cl.show(jpMain, "cardAddress");
+//            
+//            txtZipcode.requestFocus();
+//        }
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardAddress");
     }//GEN-LAST:event_lblPointDescNextMouseClicked
 
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
@@ -654,19 +660,21 @@ public class Register extends javax.swing.JDialog {
         String uf = String.valueOf(cmbUf.getSelectedItem());
         String city = String.valueOf(cmbCity.getSelectedItem());
 
-        if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
-            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
-        } else {
-
-            data.add(zipcode);
-            data.add(address);
-            data.add(number);
-            data.add(uf);
-            data.add(city);
-
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardItens");
-        }
+//        if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
+//            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+//        } else {
+//            
+//            data.add(zipcode);
+//            data.add(address);
+//            data.add(number);
+//            data.add(uf);
+//            data.add(city);
+//            
+//            CardLayout cl = (CardLayout) jpMain.getLayout();
+//            cl.show(jpMain, "cardItens");
+//        }
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardItens");
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
 
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
@@ -700,6 +708,7 @@ public class Register extends javax.swing.JDialog {
 //        }
 //        
 //        lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        new Details(new javax.swing.JFrame(), true, itensSelected).setVisible(true);
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
@@ -714,74 +723,89 @@ public class Register extends javax.swing.JDialog {
 
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
         isSelectedlamps = !isSelectedlamps;
+        JLabel lblLamp = null;
 
         if (isSelectedlamps) {
-            itensSelected.add(lblLamps.getName());
+            ItemsModel im = new ItemsModel();
+            im.setId("1");
+            im.setTitle(lblLamps.getText());
+            im.setSlug(lblLamps.getName());
+            im.setLbl(lblLamp);
+
+            itensSelected.add(im);
+//            itensSelected.add(lblLamps.getName());
             lblLamps.setBackground(new Color(214, 245, 228));
         } else {
-            itensSelected.remove(lblLamps.getName());
-            lblLamps.setBackground(new Color(244, 244, 244));
+//            itensSelected.remove(1);
+//            lblLamps.setBackground(new Color(244, 244, 244));
 
         }
     }//GEN-LAST:event_lblLampsMouseClicked
-
+//
     private void lblOrganicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseClicked
-        isSelectedOrganicWaste = !isSelectedOrganicWaste;
-
-        if (isSelectedOrganicWaste) {
-            itensSelected.add(lblOrganicWaste.getName());
-            lblOrganicWaste.setBackground(new Color(214, 245, 228));
-        } else {
-            itensSelected.remove(lblOrganicWaste.getName());
-            lblOrganicWaste.setBackground(new Color(244, 244, 244));
-        }
+//        isSelectedOrganicWaste = !isSelectedOrganicWaste;
+//
+//        if (isSelectedOrganicWaste) {
+//
+//            ItemsModel im = new ItemsModel();
+//            im.setId("2");
+//            im.setTitle(lblOrganicWaste.getText());
+//            im.setSlug(lblOrganicWaste.getName());
+//
+//            itensSelected.add(im);
+//
+//            lblOrganicWaste.setBackground(new Color(214, 245, 228));
+//        } else {
+////            boolean remove = itensSelected.contains("2");
+////            lblOrganicWaste.setBackground(new Color(244, 244, 244));
+//        }
     }//GEN-LAST:event_lblOrganicWasteMouseClicked
 
     private void lblKitchenOilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKitchenOilMouseClicked
-        isSelectedKitchenOil = !isSelectedKitchenOil;
-
-        if (isSelectedKitchenOil) {
-            itensSelected.add(lblKitchenOil.getName());
-            lblKitchenOil.setBackground(new Color(214, 245, 228));
-        } else {
-            itensSelected.remove(lblKitchenOil.getName());
-            lblKitchenOil.setBackground(new Color(244, 244, 244));
-        }
+//        isSelectedKitchenOil = !isSelectedKitchenOil;
+//        
+//        if (isSelectedKitchenOil) {
+//            itensSelected.add(lblKitchenOil.getName());
+//            lblKitchenOil.setBackground(new Color(214, 245, 228));
+//        } else {
+//            itensSelected.remove(lblKitchenOil.getName());
+//            lblKitchenOil.setBackground(new Color(244, 244, 244));
+//        }
     }//GEN-LAST:event_lblKitchenOilMouseClicked
 
     private void lblPapersCardboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPapersCardboardMouseClicked
-        isSelectedPapersCardboard = !isSelectedPapersCardboard;
-
-        if (isSelectedPapersCardboard) {
-            itensSelected.add(lblPapersCardboard.getName());
-            lblPapersCardboard.setBackground(new Color(214, 245, 228));
-        } else {
-            itensSelected.remove(lblPapersCardboard.getName());
-            lblPapersCardboard.setBackground(new Color(244, 244, 244));
-        }
+//        isSelectedPapersCardboard = !isSelectedPapersCardboard;
+//        
+//        if (isSelectedPapersCardboard) {
+//            itensSelected.add(lblPapersCardboard.getName());
+//            lblPapersCardboard.setBackground(new Color(214, 245, 228));
+//        } else {
+//            itensSelected.remove(lblPapersCardboard.getName());
+//            lblPapersCardboard.setBackground(new Color(244, 244, 244));
+//        }
     }//GEN-LAST:event_lblPapersCardboardMouseClicked
     private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
-        isSelectedBatteries = !isSelectedBatteries;
-
-        if (isSelectedBatteries) {
-            itensSelected.add(lblBatteries.getName());
-            lblBatteries.setBackground(new Color(214, 245, 228));
-        } else {
-            itensSelected.remove(lblBatteries.getName());
-            lblBatteries.setBackground(new Color(244, 244, 244));
-        }
+//        isSelectedBatteries = !isSelectedBatteries;
+//        
+//        if (isSelectedBatteries) {
+//            itensSelected.add(lblBatteries.getName());
+//            lblBatteries.setBackground(new Color(214, 245, 228));
+//        } else {
+//            itensSelected.remove(lblBatteries.getName());
+//            lblBatteries.setBackground(new Color(244, 244, 244));
+//        }
     }//GEN-LAST:event_lblBatteriesMouseClicked
 
     private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
-        isSelectedElectronicWaste = !isSelectedElectronicWaste;
-
-        if (isSelectedElectronicWaste) {
-            itensSelected.add(lblElectronicWaste.getName());
-            lblElectronicWaste.setBackground(new Color(214, 245, 228));
-        } else {
-            itensSelected.remove(lblElectronicWaste.getName());
-            lblElectronicWaste.setBackground(new Color(244, 244, 244));
-        }
+//        isSelectedElectronicWaste = !isSelectedElectronicWaste;
+//        
+//        if (isSelectedElectronicWaste) {
+//            itensSelected.add(lblElectronicWaste.getName());
+//            lblElectronicWaste.setBackground(new Color(214, 245, 228));
+//        } else {
+//            itensSelected.remove(lblElectronicWaste.getName());
+//            lblElectronicWaste.setBackground(new Color(244, 244, 244));
+//        }
     }//GEN-LAST:event_lblElectronicWasteMouseClicked
 
     private void txtZipcodeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtZipcodeKeyPressed

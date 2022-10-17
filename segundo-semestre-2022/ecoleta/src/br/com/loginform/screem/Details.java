@@ -1,49 +1,54 @@
 package br.com.loginform.screem;
 
+import br.com.loginform.controllers.ItemsController;
+import br.com.loginform.model.ItemsModel;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Details extends javax.swing.JDialog {
 
-    private JLabel label;
+    private boolean isSelectedlamps = false;
+    private boolean isSelectedBatteries = false;
+
+    private final ArrayList<String> itensSelected = new ArrayList();
 
     public Details(
             java.awt.Frame parent,
             boolean modal,
-            String name,
-            String email,
-            String whatsapp,
-            String cep,
-            String address,
-            String Number,
-            String uf,
-            String city,
-            String phone,
-            ArrayList itens
+            List<ItemsModel> itens
     ) {
         super(parent, modal);
         initComponents();
 
-        lblName.setText(name);
-        lblEmail.setText(email);
-        lblWhatsApp.setText(whatsapp);
-        lblCep.setText(cep);
-        lblAddress.setText(address);
-        lblNumber.setText(Number);
-        lblUf.setText(uf);
-        lblCity.setText(city);
-        lblPhone.setText(phone);
-//        lblItens.setText(String.valueOf(itens));
+        ItemsController ic = new ItemsController();
+        List<ItemsModel> ics = ic.ReadItems();
 
-        for (Object item : itens) {
-            label = new JLabel();
+        for (ItemsModel item : ics) {
+            //System.out.println("Id => " + item.getId() + " - Title => " + item.getTitle() + " - Slug => " + item.getSlug());
+            JLabel label = item.getLbl();
 
             label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/" + item + ".png")));
-            label.setText(String.valueOf(item));
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/" + item.getSlug() + ".png")));
+            label.setText(item.getTitle());
+            label.setName(item.getId());
             label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
             label.setIconTextGap(10);
             label.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+            label.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    JOptionPane.showMessageDialog(null, label.getName());
+                }
+
+            });
 
             jpItens.add(label);
         }
