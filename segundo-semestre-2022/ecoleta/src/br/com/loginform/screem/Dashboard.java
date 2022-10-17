@@ -3,7 +3,9 @@ package br.com.loginform.screem;
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
+import static java.lang.Thread.sleep;
 
 public class Dashboard extends javax.swing.JFrame {
 
@@ -226,7 +228,9 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lblButtonEnterMouseExited
 
     private void lblButtonEnterIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIconMouseClicked
+
         new Register(this, true).setVisible(true);
+
     }//GEN-LAST:event_lblButtonEnterIconMouseClicked
 
     private void lblButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterMouseClicked
