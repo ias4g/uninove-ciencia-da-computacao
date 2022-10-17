@@ -102,10 +102,11 @@ public class Message extends javax.swing.JDialog {
     private void setFont() {
 
         Font Ubuntu_Bold_24 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 24f);
+        Font PTSans_Regular_12 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 12f);
         Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
 
         lblStatus.setFont(Ubuntu_Bold_24);
-        jtaMessage.setFont(PTSans_Regular_16);
+        jtaMessage.setFont(PTSans_Regular_12);
         lblButtonOk.setFont(PTSans_Regular_16);
 
     }

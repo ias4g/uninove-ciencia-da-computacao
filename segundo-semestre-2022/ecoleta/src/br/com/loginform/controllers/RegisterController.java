@@ -60,7 +60,7 @@ public class RegisterController {
                 String pimSQL = "INSERT INTO tb_point_items(point_id, item_id) values(?, ?)";
                 stmt_point_items = conn.prepareStatement(pimSQL);
                 stmt_point_items.setString(1, String.valueOf(uuid));
-                stmt_point_items.setInt(2, 9);
+                stmt_point_items.setInt(2, 1);
 
                 stmt_point_items.executeUpdate();
                 // END TB_POINT_ITEMS
@@ -75,7 +75,7 @@ public class RegisterController {
                     return "=> Erro no rollback na class createPoint.\n=>Error: " + ex.getMessage();
                 }
 
-                return "=> Erro de SQL na class createPoint.\n=>Error: " + ex.getMessage();
+                return "=> Erro de SQL na class RegisterController, no metodo createPoint(). Error: " + ex.getMessage();
             } finally {
                 DBConnection.closeConn();
             }
