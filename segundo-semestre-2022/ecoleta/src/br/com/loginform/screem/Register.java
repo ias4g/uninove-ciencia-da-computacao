@@ -32,35 +32,35 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 public class Register extends javax.swing.JDialog {
-    
+
     private File imageFile;
-    
+
     private final ArrayList<String> data = new ArrayList();
     private final ArrayList<String> itensSelected = new ArrayList();
-    
+
     private boolean isSelectedlamps = false;
     private boolean isSelectedBatteries = false;
     private boolean isSelectedKitchenOil = false;
     private boolean isSelectedOrganicWaste = false;
     private boolean isSelectedElectronicWaste = false;
     private boolean isSelectedPapersCardboard = false;
-    
+
     public Register(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+
         Utilities.insertIconDialog(this);
-        
+
         Font Ubuntu_Bold_24 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 24f);
         Font PTSans_Bold_16 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 16f);
         Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
-        
+
         lblFaviconDescription.setFont(PTSans_Bold_16);
-        
+
         lblPointImageTitle.setFont(Ubuntu_Bold_24);
         lblPointImageSubTitle.setFont(PTSans_Regular_16);
         lblPointImageDropzone.setFont(PTSans_Regular_16);
-        
+
         lblPointDescTitle.setFont(Ubuntu_Bold_24);
         lblPointDescSubTitle.setFont(PTSans_Regular_16);
         lblName.setFont(PTSans_Bold_16);
@@ -69,7 +69,7 @@ public class Register extends javax.swing.JDialog {
         txtEmail.setFont(PTSans_Regular_16);
         lblWhatsApp.setFont(PTSans_Bold_16);
         txtWhatsApp.setFont(PTSans_Regular_16);
-        
+
         lblPointAddressTitle.setFont(Ubuntu_Bold_24);
         lblPointAddressSubTitle.setFont(PTSans_Regular_16);
         lblZipcode.setFont(PTSans_Bold_16);
@@ -82,7 +82,7 @@ public class Register extends javax.swing.JDialog {
         cmbUf.setFont(PTSans_Regular_16);
         lblCity.setFont(PTSans_Bold_16);
         cmbCity.setFont(PTSans_Regular_16);
-        
+
         lblPointItensTitle.setFont(Ubuntu_Bold_24);
         lblPointItensSubTitle.setFont(PTSans_Regular_16);
         lblBatteries.setFont(PTSans_Regular_16);
@@ -91,12 +91,12 @@ public class Register extends javax.swing.JDialog {
         lblOrganicWaste.setFont(PTSans_Regular_16);
         lblKitchenOil.setFont(PTSans_Regular_16);
         lblPapersCardboard.setFont(PTSans_Regular_16);
-        
+
         fieldRestricted();
-        
+
         Utils.deserializeUf(cmbUf);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -622,84 +622,84 @@ public class Register extends javax.swing.JDialog {
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardDescription");
-        
+
         txtName.requestFocus();
     }//GEN-LAST:event_lblPointImageNextMouseClicked
 
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
-        
+
         String name = txtName.getText();
         String email = txtEmail.getText();
         String whatsapp = txtWhatsApp.getText();
-        
+
         if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
             new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
         } else {
             data.add(name);
             data.add(email);
             data.add(whatsapp);
-            
+
             CardLayout cl = (CardLayout) jpMain.getLayout();
             cl.show(jpMain, "cardAddress");
-            
+
             txtZipcode.requestFocus();
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
 
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
-        
+
         String zipcode = txtZipcode.getText();
         String address = txtAddress.getText();
         String number = txtNumber.getText();
         String uf = String.valueOf(cmbUf.getSelectedItem());
         String city = String.valueOf(cmbCity.getSelectedItem());
-        
+
         if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
             new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
         } else {
-            
+
             data.add(zipcode);
             data.add(address);
             data.add(number);
             data.add(uf);
             data.add(city);
-            
+
             CardLayout cl = (CardLayout) jpMain.getLayout();
             cl.show(jpMain, "cardItens");
         }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
 
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
-        
-        lblPointItensSave.setCursor(new Cursor(Cursor.WAIT_CURSOR));
-        
-        String res;
-        PointModel pm = new PointModel();
-        AddressModel am = new AddressModel();
-        
-        pm.setName(data.get(0));
-        pm.setEmail(data.get(1));
-//        pm.setImage(getImageFile());
-        pm.setWhatsapp(data.get(2));
-        
-        am.setZipcode(data.get(3));
-        am.setAddress(data.get(4));
-        am.setNumber(Integer.parseInt(data.get(5)));
-        am.setUf(data.get(6));
-        am.setCity(data.get(7));
-        
-        RegisterController rc = new RegisterController();
-        res = rc.createRegister(pm, am);
-        
-        if (res.equalsIgnoreCase("ok")) {
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardSuccess");
-        } else {
-            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
-            this.dispose();
-        }
-        
-        lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+//        lblPointItensSave.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+//        
+//        String res;
+//        PointModel pm = new PointModel();
+//        AddressModel am = new AddressModel();
+//        
+//        pm.setName(data.get(0));
+//        pm.setEmail(data.get(1));
+////        pm.setImage(getImageFile());
+//        pm.setWhatsapp(data.get(2));
+//        
+//        am.setZipcode(data.get(3));
+//        am.setAddress(data.get(4));
+//        am.setNumber(Integer.parseInt(data.get(5)));
+//        am.setUf(data.get(6));
+//        am.setCity(data.get(7));
+//        
+//        RegisterController rc = new RegisterController();
+//        res = rc.createRegister(pm, am);
+//        
+//        if (res.equalsIgnoreCase("ok")) {
+//            CardLayout cl = (CardLayout) jpMain.getLayout();
+//            cl.show(jpMain, "cardSuccess");
+//        } else {
+//            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
+//            this.dispose();
+//        }
+//        
+//        lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
@@ -708,26 +708,26 @@ public class Register extends javax.swing.JDialog {
 
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
         imageFile = selectImage();
-        
+
         opemImage(imageFile);
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
 
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
         isSelectedlamps = !isSelectedlamps;
-        
+
         if (isSelectedlamps) {
             itensSelected.add(lblLamps.getName());
             lblLamps.setBackground(new Color(214, 245, 228));
         } else {
             itensSelected.remove(lblLamps.getName());
             lblLamps.setBackground(new Color(244, 244, 244));
-            
+
         }
     }//GEN-LAST:event_lblLampsMouseClicked
 
     private void lblOrganicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrganicWasteMouseClicked
         isSelectedOrganicWaste = !isSelectedOrganicWaste;
-        
+
         if (isSelectedOrganicWaste) {
             itensSelected.add(lblOrganicWaste.getName());
             lblOrganicWaste.setBackground(new Color(214, 245, 228));
@@ -739,7 +739,7 @@ public class Register extends javax.swing.JDialog {
 
     private void lblKitchenOilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKitchenOilMouseClicked
         isSelectedKitchenOil = !isSelectedKitchenOil;
-        
+
         if (isSelectedKitchenOil) {
             itensSelected.add(lblKitchenOil.getName());
             lblKitchenOil.setBackground(new Color(214, 245, 228));
@@ -751,7 +751,7 @@ public class Register extends javax.swing.JDialog {
 
     private void lblPapersCardboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPapersCardboardMouseClicked
         isSelectedPapersCardboard = !isSelectedPapersCardboard;
-        
+
         if (isSelectedPapersCardboard) {
             itensSelected.add(lblPapersCardboard.getName());
             lblPapersCardboard.setBackground(new Color(214, 245, 228));
@@ -760,10 +760,9 @@ public class Register extends javax.swing.JDialog {
             lblPapersCardboard.setBackground(new Color(244, 244, 244));
         }
     }//GEN-LAST:event_lblPapersCardboardMouseClicked
-
     private void lblBatteriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatteriesMouseClicked
         isSelectedBatteries = !isSelectedBatteries;
-        
+
         if (isSelectedBatteries) {
             itensSelected.add(lblBatteries.getName());
             lblBatteries.setBackground(new Color(214, 245, 228));
@@ -775,7 +774,7 @@ public class Register extends javax.swing.JDialog {
 
     private void lblElectronicWasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElectronicWasteMouseClicked
         isSelectedElectronicWaste = !isSelectedElectronicWaste;
-        
+
         if (isSelectedElectronicWaste) {
             itensSelected.add(lblElectronicWaste.getName());
             lblElectronicWaste.setBackground(new Color(214, 245, 228));
@@ -794,7 +793,7 @@ public class Register extends javax.swing.JDialog {
     private void cmbUfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUfActionPerformed
         addMunicipos();
     }//GEN-LAST:event_cmbUfActionPerformed
-    
+
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -803,51 +802,51 @@ public class Register extends javax.swing.JDialog {
         fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
         fileChooser.setCurrentDirectory(new File("/Images"));
         fileChooser.showOpenDialog(this);
-        
+
         return fileChooser.getSelectedFile();
     }
-    
+
     private byte[] getImageFile() {
         boolean isPng = false;
-        
+
         if (imageFile != null) {
             try {
                 isPng = imageFile.getName().endsWith("png");
-                
+
                 BufferedImage image = ImageIO.read(imageFile);
-                
+
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
-                
+
                 int type = BufferedImage.TYPE_INT_RGB;
-                
+
                 if (isPng) {
                     type = BufferedImage.BITMASK;
                 }
-                
+
                 BufferedImage newImage = new BufferedImage(400, 400, type);
                 Graphics2D g = newImage.createGraphics();
                 g.drawImage(image, 0, 0, 400, 400, null);
-                
+
                 if (isPng) {
                     ImageIO.write(newImage, "png", out);
                 } else {
                     ImageIO.write(newImage, "jpg", out);
                 }
-                
+
                 out.flush();
                 byte[] arraybyte = out.toByteArray();
                 out.close();
-                
+
                 return arraybyte;
-                
+
             } catch (IOException ex) {
                 Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+
         return null;
     }
-    
+
     private void opemImage(Object src) {
         if (src instanceof File) {
             ImageIcon icon = new ImageIcon(imageFile.getAbsolutePath());
@@ -858,60 +857,60 @@ public class Register extends javax.swing.JDialog {
             ImageIcon icon = new ImageIcon();
         }
     }
-    
+
     private void fieldRestricted() {
         RestrictedTextField validZipcode = new RestrictedTextField(txtZipcode);
         RestrictedTextField validNumber = new RestrictedTextField(txtNumber);
-        
+
         validZipcode.setOnlyNums(true);
         validZipcode.setLimit(8);
-        
+
         validNumber.setOnlyNums(true);
     }
-    
+
     private void cepSearch() {
         String result;
         String bairro = null;
         String logradouro = null;
         String tipologradouro = null;
         String zipcode = txtZipcode.getText();
-        
+
         try {
-            
+
             URL url = new URL("http://cep.republicavirtual.com.br/web_cep.php?cep=" + zipcode + "&formato=xml");
             SAXReader xml = new SAXReader();
             Document doc = xml.read(url);
             Element root = doc.getRootElement();
-            
+
             for (Iterator<Element> it = root.elementIterator(); it.hasNext();) {
                 Element el = it.next();
                 if (el.getQualifiedName().equals("uf")) {
                     cmbUf.setSelectedItem(el.getText());
                 }
-                
+
                 if (el.getQualifiedName().equals("cidade")) {
                     cmbCity.setSelectedItem(el.getText());
                 }
-                
+
                 if (el.getQualifiedName().equals("bairro")) {
                     bairro = el.getText();
                 }
-                
+
                 if (el.getQualifiedName().equals("tipo_logradouro")) {
                     tipologradouro = el.getText();
                 }
-                
+
                 if (el.getQualifiedName().equals("logradouro")) {
                     logradouro = el.getText();
                 }
             }
-            
+
             txtAddress.setText(tipologradouro + " " + logradouro + " " + bairro);
         } catch (MalformedURLException | DocumentException ex) {
             System.out.println(ex.getMessage());
         }
     }
-    
+
     private void addMunicipos() {
         cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecione"}));
         Utils.deserializeMunicipios(cmbCity, cmbUf.getSelectedItem().toString());
