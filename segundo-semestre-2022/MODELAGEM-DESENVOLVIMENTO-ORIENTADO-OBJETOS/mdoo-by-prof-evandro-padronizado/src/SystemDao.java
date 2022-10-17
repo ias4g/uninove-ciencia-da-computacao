@@ -20,6 +20,20 @@ public class SystemDao {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         conectado = DriverManager.getConnection(URL, USER, PASS);
+
+    }
+
+    private ResultSet ValidarUsuario(String usuario, String senha) throws SQLException {
+        st = conectado.prepareStatement(
+                "SELECT * FROM tbusers WHERE user = ? AND password = ?"
+        );
+
+        st.setString(1, usuario);
+        st.setString(2, senha);
+
+        resultado = st.executeQuery();
+
+        return resultado;
     }
 
 }
