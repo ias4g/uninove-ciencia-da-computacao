@@ -1,12 +1,12 @@
 package br.com.loginform.screem;
 
 import Atxy2k.CustomTextField.RestrictedTextField;
-import br.com.loginform.controllers.ItemsController;
 import br.com.loginform.controllers.RegisterController;
 import br.com.loginform.model.AddressModel;
 import br.com.loginform.model.PointModel;
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
+import br.com.loginform.utils.Utils;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -19,7 +19,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -637,6 +636,7 @@ public class Register extends javax.swing.JDialog {
             cl.show(jpMain, "cardAddress");
 
             txtZipcode.requestFocus();
+            Utils.deserializeUf(cmbUf);
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
 

@@ -52,7 +52,7 @@ public class ConsumidorAPI {
             };
 
             responseBody = this.clientHttp.execute(httpGet, responseHandler);
-            System.out.println("------------------------------------------------------------------------");
+
         } catch (IOException ex) {
             Logger.getLogger(ConsumidorAPI.class.getName()).log(Level.SEVERE, null, ex);
         }
