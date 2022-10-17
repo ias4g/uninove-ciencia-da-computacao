@@ -23,7 +23,10 @@ public class SystemDao {
 
     }
 
-    private ResultSet ValidarUsuario(String usuario, String senha) throws SQLException {
+    private ResultSet ValidarUsuario(String usuario, String senha) throws SQLException, ClassNotFoundException {
+
+        conectar();
+
         st = conectado.prepareStatement(
                 "SELECT * FROM tbusers WHERE user = ? AND password = ?"
         );
@@ -34,6 +37,7 @@ public class SystemDao {
         resultado = st.executeQuery();
 
         return resultado;
+
     }
 
 }
