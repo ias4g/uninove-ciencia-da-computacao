@@ -7,13 +7,13 @@ import java.sql.ResultSet;
 
 public class SystemDao {
 
+    private ResultSet resultado;
     private Connection conectado;
     private PreparedStatement st;
-    private ResultSet resultado;
 
-    private final String URL = "jdbc:mysql://localhost:3306/bdsystem";
-    private final String PASS = "Izael@student";
     private final String USER = "student";
+    private final String PASS = "Izael@student";
+    private final String URL = "jdbc:mysql://localhost:3306/bdsystem";
 
     private void conectar() throws ClassNotFoundException, SQLException {
 
