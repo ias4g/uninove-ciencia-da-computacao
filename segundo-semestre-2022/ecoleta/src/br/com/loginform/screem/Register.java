@@ -93,6 +93,8 @@ public class Register extends javax.swing.JDialog {
         lblPapersCardboard.setFont(PTSans_Regular_16);
 
         fieldRestricted();
+
+        Utils.deserializeUf(cmbUf);
     }
 
     @SuppressWarnings("unchecked")
@@ -374,7 +376,12 @@ public class Register extends javax.swing.JDialog {
 
         cmbUf.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         cmbUf.setForeground(new java.awt.Color(120, 120, 120));
-        cmbUf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "SP", "BA" }));
+        cmbUf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione" }));
+        cmbUf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbUfActionPerformed(evt);
+            }
+        });
         jpPointAddress.add(cmbUf);
         cmbUf.setBounds(175, 213, 146, 56);
 
@@ -385,7 +392,7 @@ public class Register extends javax.swing.JDialog {
 
         cmbCity.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         cmbCity.setForeground(new java.awt.Color(120, 120, 120));
-        cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "São Paulo", "Engenheiro Coelho" }));
+        cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione" }));
         jpPointAddress.add(cmbCity);
         cmbCity.setBounds(329, 213, 291, 56);
 
@@ -636,7 +643,6 @@ public class Register extends javax.swing.JDialog {
             cl.show(jpMain, "cardAddress");
 
             txtZipcode.requestFocus();
-            Utils.deserializeUf(cmbUf);
         }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
 
@@ -785,6 +791,10 @@ public class Register extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtZipcodeKeyPressed
 
+    private void cmbUfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUfActionPerformed
+        addMunicipos();
+    }//GEN-LAST:event_cmbUfActionPerformed
+
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -860,11 +870,13 @@ public class Register extends javax.swing.JDialog {
     }
 
     private void cepSearch() {
+        String result;
+        String bairro = null;
+        String logradouro = null;
+        String tipologradouro = null;
+        String zipcode = txtZipcode.getText();
+
         try {
-            String res;
-            String logradouro;
-            String tipologradouro;
-            String zipcode = txtZipcode.getText();
 
             URL url = new URL("http://cep.republicavirtual.com.br/web_cep.php?cep=" + zipcode + "&formato=xml");
             SAXReader xml = new SAXReader();
@@ -873,13 +885,36 @@ public class Register extends javax.swing.JDialog {
 
             for (Iterator<Element> it = root.elementIterator(); it.hasNext();) {
                 Element el = it.next();
+                if (el.getQualifiedName().equals("uf")) {
+                    cmbUf.setSelectedItem(el.getText());
+                }
+
                 if (el.getQualifiedName().equals("cidade")) {
-                    txtAddress.setText(el.getText());
+                    cmbCity.setSelectedItem(el.getText());
+                }
+
+                if (el.getQualifiedName().equals("bairro")) {
+                    bairro = el.getText();
+                }
+
+                if (el.getQualifiedName().equals("tipo_logradouro")) {
+                    tipologradouro = el.getText();
+                }
+
+                if (el.getQualifiedName().equals("logradouro")) {
+                    logradouro = el.getText();
                 }
             }
+
+            txtAddress.setText(tipologradouro + " " + logradouro + " " + bairro);
         } catch (MalformedURLException | DocumentException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    private void addMunicipos() {
+        cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecione"}));
+        Utils.deserializeMunicipios(cmbCity, cmbUf.getSelectedItem().toString());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

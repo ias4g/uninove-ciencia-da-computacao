@@ -518,13 +518,14 @@
                   <Color blue="78" green="78" red="78" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
+                  <StringArray count="1">
                     <StringItem index="0" value="Selecione"/>
-                    <StringItem index="1" value="SP"/>
-                    <StringItem index="2" value="BA"/>
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbUfActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -556,10 +557,8 @@
                   <Color blue="78" green="78" red="78" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
+                  <StringArray count="1">
                     <StringItem index="0" value="Selecione"/>
-                    <StringItem index="1" value="S&#xe3;o Paulo"/>
-                    <StringItem index="2" value="Engenheiro Coelho"/>
                   </StringArray>
                 </Property>
               </Properties>
