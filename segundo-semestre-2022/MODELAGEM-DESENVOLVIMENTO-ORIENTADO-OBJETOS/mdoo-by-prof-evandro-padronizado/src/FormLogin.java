@@ -118,7 +118,10 @@ public class FormLogin extends javax.swing.JFrame {
         String senha = txtPass.getText();
 
         if (txtUser.getText().isEmpty() || txtPass.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+
+            JOptionPane.showMessageDialog(
+                    null, "Preencha todos os campos!"
+            );
 
             txtUser.setText(null);
             txtPass.setText(null);
@@ -129,7 +132,9 @@ public class FormLogin extends javax.swing.JFrame {
 
             try {
 
-                resultado = new SystemDao().validarUsuario(usuario, senha);
+                resultado = new SystemDao().validarUsuario(
+                        usuario, senha
+                );
 
                 if (resultado.next()) {
                     String name;
@@ -144,6 +149,7 @@ public class FormLogin extends javax.swing.JFrame {
                     this.dispose();
 
                 } else {
+
                     JOptionPane.showMessageDialog(
                             null, "Usuário e/ou senha inválidos"
                     );
@@ -152,6 +158,7 @@ public class FormLogin extends javax.swing.JFrame {
                     txtPass.setText("");
 
                     txtUser.requestFocus();
+
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
