@@ -1,12 +1,11 @@
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class FormLogin extends javax.swing.JFrame {
+
+    private ResultSet resultado;
 
     public FormLogin() {
         initComponents();
@@ -115,10 +114,8 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPassKeyPressed
 
     private void enterSystem() {
-        String usuario, senha;
-        usuario = txtUser.getText();
-        senha = txtPass.getText();
-        Connection conn;
+        String usuario = txtUser.getText();
+        String senha = txtPass.getText();
 
         if (txtUser.getText().isEmpty() || txtPass.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
@@ -127,8 +124,12 @@ public class FormLogin extends javax.swing.JFrame {
             txtPass.setText(null);
 
             txtUser.requestFocus();
+
         } else {
             try {
+
+                resultado = new SystemDao().validarUsuario(usuario, senha);
+
                 if (resultado.next()) {
                     String name;
                     String job;
@@ -149,9 +150,6 @@ public class FormLogin extends javax.swing.JFrame {
 
                     txtUser.requestFocus();
                 }
-
-                //5 - Desconectar.
-                conn.close();
 
             } catch (ClassNotFoundException ex) {
                 JOptionPane.showMessageDialog(null, "Driver não está na library");

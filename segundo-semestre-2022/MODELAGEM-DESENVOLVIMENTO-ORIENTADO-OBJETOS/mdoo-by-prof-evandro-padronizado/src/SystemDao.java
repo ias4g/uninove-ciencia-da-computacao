@@ -23,7 +23,7 @@ public class SystemDao {
 
     }
 
-    private ResultSet ValidarUsuario(String usuario, String senha) throws SQLException, ClassNotFoundException {
+    public ResultSet validarUsuario(String usuario, String senha) throws SQLException, ClassNotFoundException {
 
         conectar();
 
