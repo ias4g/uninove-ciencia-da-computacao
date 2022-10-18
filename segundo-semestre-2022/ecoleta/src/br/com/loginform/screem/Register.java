@@ -723,14 +723,12 @@ public class Register extends javax.swing.JDialog {
 
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
         isSelectedlamps = !isSelectedlamps;
-        JLabel lblLamp = null;
 
         if (isSelectedlamps) {
             ItemsModel im = new ItemsModel();
             im.setId("1");
             im.setTitle(lblLamps.getText());
             im.setSlug(lblLamps.getName());
-            im.setLbl(lblLamp);
 
             itensSelected.add(im);
 //            itensSelected.add(lblLamps.getName());
