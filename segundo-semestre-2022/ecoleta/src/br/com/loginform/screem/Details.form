@@ -133,6 +133,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+          </AccessibilityProperties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>

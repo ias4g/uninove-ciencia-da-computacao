@@ -19,11 +19,7 @@ public class Details extends javax.swing.JDialog {
 
     private final ArrayList<String> itensSelected = new ArrayList();
 
-    public Details(
-            java.awt.Frame parent,
-            boolean modal,
-            List<ItemsModel> itens
-    ) {
+    public Details(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
 
@@ -31,13 +27,17 @@ public class Details extends javax.swing.JDialog {
         List<ItemsModel> ics = ic.ReadItems();
 
         for (ItemsModel item : ics) {
-            //System.out.println("Id => " + item.getId() + " - Title => " + item.getTitle() + " - Slug => " + item.getSlug());
-            JLabel label = item.getLbl();
+            System.out.println("Id => " + item.getId() + " - Title => " + item.getTitle() + " - Slug => " + item.getSlug());
+
+            JLabel label = new JLabel();
 
             label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/" + item.getSlug() + ".png")));
-            label.setText(item.getTitle());
+
             label.setName(item.getId());
+            label.setText(item.getTitle());
+            label.setToolTipText(item.getSlug());
+
             label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
             label.setIconTextGap(10);
             label.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -45,7 +45,8 @@ public class Details extends javax.swing.JDialog {
             label.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    JOptionPane.showMessageDialog(null, label.getName());
+                    JOptionPane.showMessageDialog(
+                            null, "Id: " + label.getName() + "\nTitle: " + label.getText() + "\nSlug: " + label.getToolTipText());
                 }
 
             });
@@ -141,6 +142,8 @@ public class Details extends javax.swing.JDialog {
                     .addComponent(lblWhatsApp))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
+
+        lblName.getAccessibleContext().setAccessibleDescription("");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Endereço do ponto de coleta", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 

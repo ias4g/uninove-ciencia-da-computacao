@@ -708,7 +708,7 @@ public class Register extends javax.swing.JDialog {
 //        }
 //        
 //        lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        new Details(new javax.swing.JFrame(), true, itensSelected).setVisible(true);
+        new Details(new javax.swing.JFrame(), true).setVisible(true);
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
