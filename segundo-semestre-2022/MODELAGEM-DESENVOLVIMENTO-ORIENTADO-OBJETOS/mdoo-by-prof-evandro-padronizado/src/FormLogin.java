@@ -126,6 +126,7 @@ public class FormLogin extends javax.swing.JFrame {
             txtUser.requestFocus();
 
         } else {
+
             try {
 
                 resultado = new SystemDao().validarUsuario(usuario, senha);
@@ -143,7 +144,9 @@ public class FormLogin extends javax.swing.JFrame {
                     this.dispose();
 
                 } else {
-                    JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
+                    JOptionPane.showMessageDialog(
+                            null, "Usuário e/ou senha inválidos"
+                    );
 
                     txtUser.setText("");
                     txtPass.setText("");
@@ -151,10 +154,8 @@ public class FormLogin extends javax.swing.JFrame {
                     txtUser.requestFocus();
                 }
 
-            } catch (ClassNotFoundException ex) {
-                JOptionPane.showMessageDialog(null, "Driver não está na library");
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Você errou nos dados da conexão com o banco de dados");
+            } catch (ClassNotFoundException | SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage());
             }
         }
     }
