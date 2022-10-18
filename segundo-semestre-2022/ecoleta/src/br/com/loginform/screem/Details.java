@@ -2,51 +2,46 @@ package br.com.loginform.screem;
 
 import br.com.loginform.controllers.ItemsController;
 import br.com.loginform.model.ItemsModel;
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class Details extends javax.swing.JDialog {
 
-    private boolean isSelectedlamps = false;
-    private boolean isSelectedBatteries = false;
-
-    private final ArrayList<String> itensSelected = new ArrayList();
+    ItemsController ic = new ItemsController();
+    List<ItemsModel> ics = ic.ReadItems();
 
     public Details(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
 
-        ItemsController ic = new ItemsController();
-        List<ItemsModel> ics = ic.ReadItems();
-
         for (ItemsModel item : ics) {
+
             System.out.println("Id => " + item.getId() + " - Title => " + item.getTitle() + " - Slug => " + item.getSlug());
 
             JLabel label = new JLabel();
 
-            label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/" + item.getSlug() + ".png")));
-
+            label.setIconTextGap(10);
             label.setName(item.getId());
             label.setText(item.getTitle());
             label.setToolTipText(item.getSlug());
-
-            label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-            label.setIconTextGap(10);
+            label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             label.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+            label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+            label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/" + item.getSlug() + ".png")));
 
             label.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
+
                     JOptionPane.showMessageDialog(
-                            null, "Id: " + label.getName() + "\nTitle: " + label.getText() + "\nSlug: " + label.getToolTipText());
+                            null, "Id: " + label.getName()
+                            + "\nTitle: " + label.getText()
+                            + "\nSlug: " + label.getToolTipText()
+                    );
+
                 }
 
             });
