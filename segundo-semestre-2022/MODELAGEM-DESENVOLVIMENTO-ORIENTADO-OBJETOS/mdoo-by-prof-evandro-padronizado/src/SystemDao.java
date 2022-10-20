@@ -40,8 +40,19 @@ public class SystemDao {
 
     }
 
-    public void salvarUsuario(int id, String user, String password, String name, String lastname, String email, String job) throws ClassNotFoundException, SQLException {
+    public void salvarUsuario(String user, String pass, String name, String lastname, String email, String job) throws ClassNotFoundException, SQLException {
         conectar();
+
+        st = conectado.prepareStatement("INSERT INTO tbusers (user, password, name, lastname, email, job) VALUES (?, ?, ?, ?, ?, ?)");
+
+        st.setString(1, user);
+        st.setString(2, pass);
+        st.setString(3, name);
+        st.setString(4, lastname);
+        st.setString(5, email);
+        st.setString(6, job);
+
+        st.executeUpdate();
     }
 
 }

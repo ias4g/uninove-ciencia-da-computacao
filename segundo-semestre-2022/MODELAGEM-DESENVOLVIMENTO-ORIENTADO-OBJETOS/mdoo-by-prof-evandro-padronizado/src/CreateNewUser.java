@@ -12,7 +12,7 @@ public class CreateNewUser extends javax.swing.JFrame {
     public CreateNewUser() {
         initComponents();
         activeFields();
-        
+
         btnSave.setVisible(true);
         btnSave.setEnabled(true);
         this.setTitle("Cadastrando novo usuário");
@@ -201,40 +201,16 @@ public class CreateNewUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        String user;
-        String pass;
-        String name;
-        String lastname;
-        String email;
-        String job;
-
-        int rs;
-
-        user = txtUser.getText();
-        pass = txtPass.getText();
-        name = txtName.getText();
-        lastname = txtLastname.getText();
-        email = txtEmail.getText();
-        job = cmbJob.getSelectedItem().toString();
+        String user = txtUser.getText();
+        String pass = txtPass.getText();
+        String name = txtName.getText();
+        String lastname = txtLastname.getText();
+        String email = txtEmail.getText();
+        String job = cmbJob.getSelectedItem().toString();
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
-            PreparedStatement st = conn.prepareStatement("INSERT INTO tbusers (user, password, name, lastname, email, job) VALUES (?, ?, ?, ?, ?, ?)");
-
-            st.setString(1, user);
-            st.setString(2, pass);
-            st.setString(3, name);
-            st.setString(4, lastname);
-            st.setString(5, email);
-            st.setString(6, job);
-
-            rs = st.executeUpdate();
-
-            if (rs > 0) {
-                JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
-            }
+            new SystemDao().salvarUsuario(user, pass, name, lastname, email, job);
 
             txtUser.setText(null);
             txtPass.setText(null);
@@ -243,16 +219,8 @@ public class CreateNewUser extends javax.swing.JFrame {
             txtEmail.setText(null);
             cmbJob.setSelectedIndex(0);
 
-            conn.close();
-
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (SQLException ex) {
-            if (ex.getErrorCode() == 1062) {
-                JOptionPane.showMessageDialog(null, "Usuário já cadastrado.");
-            } else {
-                JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n Message: " + ex.getMessage() + "\n Código do erro: " + ex.getErrorCode());
-            }
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
