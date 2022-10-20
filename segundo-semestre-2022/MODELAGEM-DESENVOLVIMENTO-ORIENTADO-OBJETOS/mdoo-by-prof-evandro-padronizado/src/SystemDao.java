@@ -40,4 +40,8 @@ public class SystemDao {
 
     }
 
+    public void salvarUsuario(int id, String user, String password, String name, String lastname, String email, String job) throws ClassNotFoundException, SQLException {
+        conectar();
+    }
+
 }
