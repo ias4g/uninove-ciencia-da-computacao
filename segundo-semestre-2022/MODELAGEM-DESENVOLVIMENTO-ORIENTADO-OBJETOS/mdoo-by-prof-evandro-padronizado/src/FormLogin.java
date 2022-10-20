@@ -114,6 +114,7 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPassKeyPressed
 
     private void enterSystem() {
+        
         String usuario = txtUser.getText();
         String senha = txtPass.getText();
 

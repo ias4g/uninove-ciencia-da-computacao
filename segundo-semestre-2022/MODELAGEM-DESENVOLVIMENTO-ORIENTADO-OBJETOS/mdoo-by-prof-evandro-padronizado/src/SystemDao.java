@@ -55,4 +55,30 @@ public class SystemDao {
         st.executeUpdate();
     }
 
+    public ResultSet listarUsuario(String usuario) throws ClassNotFoundException, SQLException {
+
+        conectar();
+
+        st = conectado.prepareStatement(
+                "SELECT * FROM tbusers WHERE user = ?"
+        );
+
+        st.setString(1, usuario);
+
+        resultado = st.executeQuery();
+
+        return resultado;
+    }
+
+    public void deletarUsuario(String id) throws ClassNotFoundException, SQLException {
+
+        conectar();
+        st = conectado.prepareStatement(
+                "DELETE FROM tbusers WHERE id = ?"
+        );
+
+        st.setString(1, id);
+
+        st.executeUpdate();
+    }
 }

@@ -1,12 +1,11 @@
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
+
+    private ResultSet resultado;
 
     public Menu(String name, String job) {
         initComponents();
@@ -173,7 +172,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmChangeUserDatasActionPerformed
 
     private void openUserScreem(String op) {
-        Connection conn;
+
         String u = JOptionPane.showInputDialog(
                 null, "Digite o nome do usuário a !" + op, "Usuário", 1
         );
@@ -184,20 +183,8 @@ public class Menu extends javax.swing.JFrame {
         }
 
         try {
-            //2 - Conectar no banco de dados sistemabd;
-            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
-            );
-
-            PreparedStatement st = conn.prepareStatement(
-                    "SELECT * FROM tbusers WHERE user = ?"
-            );
-
-            st.setString(1, u);
-
-            ResultSet resultado = st.executeQuery();
+            resultado = new SystemDao().listarUsuario(u);
 
             if (resultado.next()) {
                 int id = Integer.parseInt(resultado.getString("id"));
@@ -217,15 +204,8 @@ public class Menu extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado");
             }
 
-            //5 - Desconectar.
-            conn.close();
-
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(
-                    null, "Você errou nos dados da conexão com o banco de dados"
-            );
         }
     }
 
