@@ -70,6 +70,29 @@ public class SystemDao {
         return resultado;
     }
 
+    public ResultSet listarUsuarios() throws ClassNotFoundException, SQLException {
+        conectar();
+
+        st = conectado.prepareStatement(
+                "SELECT * FROM tbusers"
+        );
+
+        resultado = st.executeQuery();
+
+        return resultado;
+    }
+
+    public ResultSet listarUsuarioPeloCargo(String cargo) throws ClassNotFoundException, SQLException {
+        conectar();
+
+        st = conectado.prepareStatement("SELECT * FROM tbusers WHERE job = ?");
+        st.setString(1, cargo);
+
+        resultado = st.executeQuery();
+
+        return resultado;
+    }
+
     public void deletarUsuario(String id) throws ClassNotFoundException, SQLException {
 
         conectar();
