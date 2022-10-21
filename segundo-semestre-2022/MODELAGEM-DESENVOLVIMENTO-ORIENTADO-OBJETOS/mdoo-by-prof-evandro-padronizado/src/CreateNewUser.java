@@ -218,23 +218,17 @@ public class CreateNewUser extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_btnSaveActionPerformed
-
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este usuário?", "Confirmação", 0);
 
         if (resp == 0) {
 
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
-                );
 
                 new SystemDao().deletarUsuario(txtId.getText());
 
                 JOptionPane.showMessageDialog(null, "Usuário excluido com sucesso");
 
-                conn.close();
                 dispose();
 
             } catch (ClassNotFoundException | SQLException ex) {
@@ -249,9 +243,7 @@ public class CreateNewUser extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnDeleteActionPerformed
-
     private void btnSaveChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeActionPerformed
-        int rs;
         int id = Integer.parseInt(txtId.getText());
         String user = txtUser.getText();
         String pass = txtPass.getText();
@@ -261,27 +253,11 @@ public class CreateNewUser extends javax.swing.JFrame {
         String job = String.valueOf(cmbJob.getSelectedItem());
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
-            PreparedStatement st = conn.prepareStatement("UPDATE tbusers SET user = ?, password = ?, name = ?, lastname = ?, email = ?, job = ? WHERE id = ?");
+            new SystemDao().alterarUsuario(user, pass, name, lastname, email, job, id);
 
-            st.setString(1, user);
-            st.setString(2, pass);
-            st.setString(3, name);
-            st.setString(4, lastname);
-            st.setString(5, email);
-            st.setString(6, job);
-            st.setInt(7, id);
-
-            rs = st.executeUpdate();
-
-            if (rs > 0) {
-                JOptionPane.showMessageDialog(null, "Alterado com sucesso");
-            }
-
-            conn.close();
             dispose();
+
             new UsersList().setVisible(true);
 
         } catch (ClassNotFoundException | SQLException ex) {
@@ -289,6 +265,7 @@ public class CreateNewUser extends javax.swing.JFrame {
             System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_btnSaveChangeActionPerformed
+
     private void activeFields() {
         txtUser.setEnabled(true);
         txtPass.setEnabled(true);

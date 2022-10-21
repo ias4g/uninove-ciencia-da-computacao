@@ -81,4 +81,20 @@ public class SystemDao {
 
         st.executeUpdate();
     }
+
+    public void alterarUsuario(String user, String pass, String name, String lastname, String email, String job, int id) throws ClassNotFoundException, SQLException {
+        conectar();
+
+        st = conectado.prepareStatement("UPDATE tbusers SET user = ?, password = ?, name = ?, lastname = ?, email = ?, job = ? WHERE id = ?");
+
+        st.setString(1, user);
+        st.setString(2, pass);
+        st.setString(3, name);
+        st.setString(4, lastname);
+        st.setString(5, email);
+        st.setString(6, job);
+        st.setInt(7, id);
+
+        st.executeUpdate();
+    }
 }
