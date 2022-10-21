@@ -1,3 +1,5 @@
+package view;
+
 
 import dados.SystemDao;
 import java.sql.ResultSet;
@@ -23,7 +25,6 @@ public class FormLogin extends javax.swing.JFrame {
         btnEnter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(295, 162));
         setMinimumSize(new java.awt.Dimension(295, 162));
         setResizable(false);
 

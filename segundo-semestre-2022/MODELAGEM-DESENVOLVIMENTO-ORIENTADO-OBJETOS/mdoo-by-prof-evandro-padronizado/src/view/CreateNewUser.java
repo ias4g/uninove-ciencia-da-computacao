@@ -1,3 +1,5 @@
+package view;
+
 
 import dados.SystemDao;
 import java.sql.SQLException;
@@ -72,9 +74,7 @@ public class CreateNewUser extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
 
         setTitle("User Control");
-        setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
-        setPreferredSize(new java.awt.Dimension(640, 426));
         setResizable(false);
         getContentPane().setLayout(null);
 

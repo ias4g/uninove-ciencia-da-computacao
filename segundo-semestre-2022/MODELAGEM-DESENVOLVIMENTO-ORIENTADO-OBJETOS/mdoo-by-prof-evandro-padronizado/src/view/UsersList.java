@@ -1,3 +1,5 @@
+package view;
+
 
 import dados.SystemDao;
 import java.sql.ResultSet;
@@ -25,9 +27,7 @@ public class UsersList extends javax.swing.JFrame {
         cmbJob = new javax.swing.JComboBox<>();
 
         setTitle("Relatórios de usuários");
-        setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
-        setPreferredSize(new java.awt.Dimension(640, 426));
         setResizable(false);
         getContentPane().setLayout(null);
 
