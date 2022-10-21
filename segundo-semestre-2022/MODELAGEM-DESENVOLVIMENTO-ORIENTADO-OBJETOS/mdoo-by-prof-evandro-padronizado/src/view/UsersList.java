@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class UsersList extends javax.swing.JFrame {
 
+    int quant = 0;
     private ResultSet rs = null;
     private DefaultTableModel tableModel;
 
@@ -24,6 +25,7 @@ public class UsersList extends javax.swing.JFrame {
         tblUsers = new javax.swing.JTable();
         lblJob = new javax.swing.JLabel();
         cmbJob = new javax.swing.JComboBox<>();
+        lblQtd = new javax.swing.JLabel();
 
         setTitle("Relatórios de usuários");
         setMinimumSize(new java.awt.Dimension(640, 426));
@@ -64,6 +66,11 @@ public class UsersList extends javax.swing.JFrame {
         getContentPane().add(cmbJob);
         cmbJob.setBounds(60, 10, 230, 40);
 
+        lblQtd.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblQtd.setText("jLabel1");
+        getContentPane().add(lblQtd);
+        lblQtd.setBounds(317, 20, 310, 16);
+
         setSize(new java.awt.Dimension(656, 434));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -71,9 +78,11 @@ public class UsersList extends javax.swing.JFrame {
     private void cmbJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbJobActionPerformed
         search();
     }//GEN-LAST:event_cmbJobActionPerformed
+
     private void search() {
 
         String cargo = String.valueOf(cmbJob.getSelectedItem());
+        quant = 0;
 
         try {
 
@@ -100,7 +109,10 @@ public class UsersList extends javax.swing.JFrame {
                 };
 
                 tableModel.addRow(datas);
+                quant++;
             }
+
+            lblQtd.setText("Resultados encontrados: " + quant);
 
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(
@@ -130,7 +142,10 @@ public class UsersList extends javax.swing.JFrame {
                 };
 
                 tableModel.addRow(datas);
+                quant++;
             }
+
+            lblQtd.setText("Resultados encontrados: " + quant);
 
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(
@@ -144,6 +159,7 @@ public class UsersList extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbJob;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblJob;
+    private javax.swing.JLabel lblQtd;
     private javax.swing.JTable tblUsers;
     // End of variables declaration//GEN-END:variables
 }
