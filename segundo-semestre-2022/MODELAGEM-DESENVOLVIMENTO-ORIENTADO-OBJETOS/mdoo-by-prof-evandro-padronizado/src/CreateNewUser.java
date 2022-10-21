@@ -1,13 +1,8 @@
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class CreateNewUser extends javax.swing.JFrame {
-
-    Connection conn;
 
     public CreateNewUser() {
         initComponents();
@@ -207,6 +202,8 @@ public class CreateNewUser extends javax.swing.JFrame {
 
             new SystemDao().salvarUsuario(user, pass, name, lastname, email, job);
 
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+
             txtUser.setText(null);
             txtPass.setText(null);
             txtName.setText(null);
@@ -256,16 +253,14 @@ public class CreateNewUser extends javax.swing.JFrame {
 
             new SystemDao().alterarUsuario(user, pass, name, lastname, email, job, id);
 
-            dispose();
+            JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
 
-            new UsersList().setVisible(true);
+            dispose();
 
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
-            System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_btnSaveChangeActionPerformed
-
     private void activeFields() {
         txtUser.setEnabled(true);
         txtPass.setEnabled(true);
