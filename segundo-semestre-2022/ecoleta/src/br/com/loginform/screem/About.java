@@ -3,14 +3,14 @@ package br.com.loginform.screem;
 import java.awt.CardLayout;
 import java.awt.Color;
 
-public class test extends javax.swing.JDialog {
-    
-    public test(java.awt.Frame parent, boolean modal) {
+public class About extends javax.swing.JDialog {
+
+    public About(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         getContentPane().setBackground(new Color(242, 242, 242));
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -501,31 +501,31 @@ public class test extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblEcoletaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEcoletaMouseClicked
-        
+
         lblEcoleta.setBackground(Color.WHITE);
         lblCompilation.setBackground(new Color(242, 242, 242));
         lblLegais.setBackground(new Color(242, 242, 242));
-        
+
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardEcoleta");
     }//GEN-LAST:event_lblEcoletaMouseClicked
 
     private void lblCompilationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCompilationMouseClicked
-        
+
         lblCompilation.setBackground(Color.WHITE);
         lblEcoleta.setBackground(new Color(242, 242, 242));
         lblLegais.setBackground(new Color(242, 242, 242));
-        
+
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardCompilation");
     }//GEN-LAST:event_lblCompilationMouseClicked
 
     private void lblLegaisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLegaisMouseClicked
-        
+
         lblLegais.setBackground(Color.WHITE);
         lblEcoleta.setBackground(new Color(242, 242, 242));
         lblCompilation.setBackground(new Color(242, 242, 242));
-        
+
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardLegais");
     }//GEN-LAST:event_lblLegaisMouseClicked
@@ -534,45 +534,7 @@ public class test extends javax.swing.JDialog {
 //        dispose();
         System.exit(0);
     }//GEN-LAST:event_lblCloseMouseClicked
-    
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                test dialog = new test(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
