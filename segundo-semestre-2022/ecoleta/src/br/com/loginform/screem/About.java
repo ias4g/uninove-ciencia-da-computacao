@@ -8,7 +8,7 @@ public class About extends javax.swing.JDialog {
     public About(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        getContentPane().setBackground(new Color(242, 242, 242));
+        getContentPane().setBackground(new Color(102, 102, 102));
     }
 
     @SuppressWarnings("unchecked")
@@ -72,7 +72,7 @@ public class About extends javax.swing.JDialog {
         lblClose = new br.com.loginform.components.JLabelRoundedBorder();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(102, 102, 102));
         setMaximumSize(new java.awt.Dimension(500, 400));
         setMinimumSize(new java.awt.Dimension(500, 400));
         setModal(true);
