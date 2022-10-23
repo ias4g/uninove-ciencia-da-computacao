@@ -52,6 +52,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblTitle1 = new javax.swing.JLabel();
         lblTitle3 = new javax.swing.JLabel();
         lblSubTitle1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial");
@@ -187,6 +188,16 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblSubTitle1);
         lblSubTitle1.setBounds(60, 325, 500, 30);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/question.png"))); // NOI18N
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(916, 0, 36, 28);
+
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -237,7 +248,12 @@ public class Dashboard extends javax.swing.JFrame {
         new Register(this, true).setVisible(true);
     }//GEN-LAST:event_lblButtonEnterMouseClicked
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        new About(this, true).setVisible(true);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private br.com.loginform.components.JPanelButton jpButtonEnter;
     private javax.swing.JLabel lblButtonEnter;
     private javax.swing.JLabel lblButtonEnterIcon;
