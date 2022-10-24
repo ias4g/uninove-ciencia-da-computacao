@@ -8,6 +8,7 @@ import br.com.loginform.model.PointModel;
 import br.com.loginform.utils.FontManager;
 import br.com.loginform.utils.Utilities;
 import br.com.loginform.utils.Utils;
+import java.awt.AlphaComposite;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -52,52 +53,10 @@ public class Register extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-        Utilities.insertIconDialog(this);
-
-        Font Ubuntu_Bold_24 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 24f);
-        Font PTSans_Bold_16 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 16f);
-        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
-
-        lblFaviconDescription.setFont(PTSans_Bold_16);
-
-        lblPointImageTitle.setFont(Ubuntu_Bold_24);
-        lblPointImageSubTitle.setFont(PTSans_Regular_16);
-        lblPointImageDropzone.setFont(PTSans_Regular_16);
-
-        lblPointDescTitle.setFont(Ubuntu_Bold_24);
-        lblPointDescSubTitle.setFont(PTSans_Regular_16);
-        lblName.setFont(PTSans_Bold_16);
-        txtName.setFont(PTSans_Regular_16);
-        lblEmail.setFont(PTSans_Bold_16);
-        txtEmail.setFont(PTSans_Regular_16);
-        lblWhatsApp.setFont(PTSans_Bold_16);
-        txtWhatsApp.setFont(PTSans_Regular_16);
-
-        lblPointAddressTitle.setFont(Ubuntu_Bold_24);
-        lblPointAddressSubTitle.setFont(PTSans_Regular_16);
-        lblZipcode.setFont(PTSans_Bold_16);
-        txtZipcode.setFont(PTSans_Regular_16);
-        lblAddress.setFont(PTSans_Bold_16);
-        txtAddress.setFont(PTSans_Regular_16);
-        lblNumber.setFont(PTSans_Bold_16);
-        txtNumber.setFont(PTSans_Regular_16);
-        lblUf.setFont(PTSans_Bold_16);
-        cmbUf.setFont(PTSans_Regular_16);
-        lblCity.setFont(PTSans_Bold_16);
-        cmbCity.setFont(PTSans_Regular_16);
-
-        lblPointItensTitle.setFont(Ubuntu_Bold_24);
-        lblPointItensSubTitle.setFont(PTSans_Regular_16);
-        lblBatteries.setFont(PTSans_Regular_16);
-        lblElectronicWaste.setFont(PTSans_Regular_16);
-        lblLamps.setFont(PTSans_Regular_16);
-        lblOrganicWaste.setFont(PTSans_Regular_16);
-        lblKitchenOil.setFont(PTSans_Regular_16);
-        lblPapersCardboard.setFont(PTSans_Regular_16);
-
+        setFonts();
         fieldRestricted();
-
         Utils.deserializeUf(cmbUf);
+        Utilities.insertIconDialog(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -624,90 +583,97 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointItensSaveMouseExited
 
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardDescription");
+        if (imageFile == null) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Para prosseguir selecione um arquivo!").setVisible(true);
+        } else {
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardDescription");
 
-        txtName.requestFocus();
+            txtName.requestFocus();
+        }
+
     }//GEN-LAST:event_lblPointImageNextMouseClicked
 
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
-
         String name = txtName.getText();
         String email = txtEmail.getText();
         String whatsapp = txtWhatsApp.getText();
 
-//        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
-//            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
-//        } else {
-//            data.add(name);
-//            data.add(email);
-//            data.add(whatsapp);
-//            
-//            CardLayout cl = (CardLayout) jpMain.getLayout();
-//            cl.show(jpMain, "cardAddress");
-//            
-//            txtZipcode.requestFocus();
-//        }
+        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+        } else {
+            data.add(name);
+            data.add(email);
+            data.add(whatsapp);
+
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardAddress");
+
+            txtZipcode.requestFocus();
+        }
+
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardAddress");
+
     }//GEN-LAST:event_lblPointDescNextMouseClicked
 
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
-
         String zipcode = txtZipcode.getText();
         String address = txtAddress.getText();
         String number = txtNumber.getText();
         String uf = String.valueOf(cmbUf.getSelectedItem());
         String city = String.valueOf(cmbCity.getSelectedItem());
 
-//        if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
-//            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
-//        } else {
-//            
-//            data.add(zipcode);
-//            data.add(address);
-//            data.add(number);
-//            data.add(uf);
-//            data.add(city);
-//            
-//            CardLayout cl = (CardLayout) jpMain.getLayout();
-//            cl.show(jpMain, "cardItens");
-//        }
+        if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+        } else {
+
+            data.add(zipcode);
+            data.add(address);
+            data.add(number);
+            data.add(uf);
+            data.add(city);
+
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardItens");
+        }
+
         CardLayout cl = (CardLayout) jpMain.getLayout();
         cl.show(jpMain, "cardItens");
+
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
 
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
+        lblPointItensSave.setCursor(new Cursor(Cursor.WAIT_CURSOR));
 
-//        lblPointItensSave.setCursor(new Cursor(Cursor.WAIT_CURSOR));
-//        
-//        String res;
-//        PointModel pm = new PointModel();
-//        AddressModel am = new AddressModel();
-//        
-//        pm.setName(data.get(0));
-//        pm.setEmail(data.get(1));
-////        pm.setImage(getImageFile());
-//        pm.setWhatsapp(data.get(2));
-//        
-//        am.setZipcode(data.get(3));
-//        am.setAddress(data.get(4));
-//        am.setNumber(Integer.parseInt(data.get(5)));
-//        am.setUf(data.get(6));
-//        am.setCity(data.get(7));
-//        
-//        RegisterController rc = new RegisterController();
-//        res = rc.createRegister(pm, am);
-//        
-//        if (res.equalsIgnoreCase("ok")) {
-//            CardLayout cl = (CardLayout) jpMain.getLayout();
-//            cl.show(jpMain, "cardSuccess");
-//        } else {
-//            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
-//            this.dispose();
-//        }
-//        
-//        lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        String res;
+        PointModel pm = new PointModel();
+        AddressModel am = new AddressModel();
+
+        pm.setName(data.get(0));
+        pm.setEmail(data.get(1));
+        pm.setImage(getImageFile());
+        pm.setWhatsapp(data.get(2));
+
+        am.setZipcode(data.get(3));
+        am.setAddress(data.get(4));
+        am.setNumber(Integer.parseInt(data.get(5)));
+        am.setUf(data.get(6));
+        am.setCity(data.get(7));
+
+        RegisterController rc = new RegisterController();
+        res = rc.createRegister(pm, am);
+
+        if (res.equalsIgnoreCase("ok")) {
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardSuccess");
+        } else {
+            new Message(new javax.swing.JFrame(), true, "error", res).setVisible(true);
+            this.dispose();
+        }
+
+        lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
         new Details(new javax.swing.JFrame(), true).setVisible(true);
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
@@ -716,11 +682,13 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblCloseSuccessMouseClicked
 
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
-
         lblPointImageDropzone.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+
         imageFile = selectImage();
-        opemImage(imageFile);
+        openImage(imageFile);
+
         lblPointImageDropzone.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
 
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked
@@ -824,7 +792,7 @@ public class Register extends javax.swing.JDialog {
         fileChooser.addChoosableFileFilter(filter);
         fileChooser.setAcceptAllFileFilterUsed(false);
         fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
-        fileChooser.setCurrentDirectory(new File("/Images"));
+        fileChooser.setCurrentDirectory(new File("/"));
         fileChooser.showOpenDialog(this);
 
         return fileChooser.getSelectedFile();
@@ -834,13 +802,13 @@ public class Register extends javax.swing.JDialog {
         boolean isPng = false;
 
         if (imageFile != null) {
+
+            isPng = imageFile.getName().endsWith("png");
+
             try {
-                isPng = imageFile.getName().endsWith("png");
 
                 BufferedImage image = ImageIO.read(imageFile);
-
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
-
                 int type = BufferedImage.TYPE_INT_RGB;
 
                 if (isPng) {
@@ -849,6 +817,7 @@ public class Register extends javax.swing.JDialog {
 
                 BufferedImage newImage = new BufferedImage(400, 400, type);
                 Graphics2D g = newImage.createGraphics();
+                g.setComposite(AlphaComposite.Src);
                 g.drawImage(image, 0, 0, 400, 400, null);
 
                 if (isPng) {
@@ -871,7 +840,7 @@ public class Register extends javax.swing.JDialog {
         return null;
     }
 
-    private void opemImage(Object src) {
+    private void openImage(Object src) {
         if (src instanceof File) {
             ImageIcon icon = new ImageIcon(imageFile.getAbsolutePath());
             icon.setImage(icon.getImage().getScaledInstance(400, 400, 100));
@@ -938,6 +907,55 @@ public class Register extends javax.swing.JDialog {
     private void addMunicipos() {
         cmbCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecione"}));
         Utils.deserializeMunicipios(cmbCity, cmbUf.getSelectedItem().toString());
+    }
+
+    private void setFonts() {
+        Font Ubuntu_Bold_24 = FontManager.Loading("Ubuntu-Bold.ttf", Font.BOLD, 24f);
+
+        Font PTSans_Bold_12 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 12f);
+        Font PTSans_Bold_16 = FontManager.Loading("PTSans-Bold.ttf", Font.BOLD, 16f);
+        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
+
+        lblFaviconDescription.setFont(PTSans_Bold_12);
+
+        //panel point image
+        lblPointImageTitle.setFont(Ubuntu_Bold_24);
+        lblPointImageSubTitle.setFont(PTSans_Regular_16);
+        lblPointImageDropzone.setFont(PTSans_Regular_16);
+
+        //panel point description
+        lblPointDescTitle.setFont(Ubuntu_Bold_24);
+        lblPointDescSubTitle.setFont(PTSans_Regular_16);
+        lblName.setFont(PTSans_Bold_16);
+        txtName.setFont(PTSans_Regular_16);
+        lblEmail.setFont(PTSans_Bold_16);
+        txtEmail.setFont(PTSans_Regular_16);
+        lblWhatsApp.setFont(PTSans_Bold_16);
+        txtWhatsApp.setFont(PTSans_Regular_16);
+
+        //panel point address
+        lblPointAddressTitle.setFont(Ubuntu_Bold_24);
+        lblPointAddressSubTitle.setFont(PTSans_Regular_16);
+        lblZipcode.setFont(PTSans_Bold_16);
+        txtZipcode.setFont(PTSans_Regular_16);
+        lblAddress.setFont(PTSans_Bold_16);
+        txtAddress.setFont(PTSans_Regular_16);
+        lblNumber.setFont(PTSans_Bold_16);
+        txtNumber.setFont(PTSans_Regular_16);
+        lblUf.setFont(PTSans_Bold_16);
+        cmbUf.setFont(PTSans_Regular_16);
+        lblCity.setFont(PTSans_Bold_16);
+        cmbCity.setFont(PTSans_Regular_16);
+
+        //panel point items
+        lblPointItensTitle.setFont(Ubuntu_Bold_24);
+        lblPointItensSubTitle.setFont(PTSans_Regular_16);
+        lblBatteries.setFont(PTSans_Regular_16);
+        lblElectronicWaste.setFont(PTSans_Regular_16);
+        lblLamps.setFont(PTSans_Regular_16);
+        lblOrganicWaste.setFont(PTSans_Regular_16);
+        lblKitchenOil.setFont(PTSans_Regular_16);
+        lblPapersCardboard.setFont(PTSans_Regular_16);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

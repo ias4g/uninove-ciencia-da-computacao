@@ -5,7 +5,6 @@ import br.com.loginform.utils.Utilities;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
-import static java.lang.Thread.sleep;
 
 public class Dashboard extends javax.swing.JFrame {
 
