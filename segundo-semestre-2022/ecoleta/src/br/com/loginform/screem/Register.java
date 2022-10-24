@@ -716,9 +716,11 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblCloseSuccessMouseClicked
 
     private void lblPointImageDropzoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageDropzoneMouseClicked
-        imageFile = selectImage();
 
+        lblPointImageDropzone.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+        imageFile = selectImage();
         opemImage(imageFile);
+        lblPointImageDropzone.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_lblPointImageDropzoneMouseClicked
 
     private void lblLampsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampsMouseClicked

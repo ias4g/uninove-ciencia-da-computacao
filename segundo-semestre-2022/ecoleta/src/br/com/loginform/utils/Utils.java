@@ -5,7 +5,11 @@ import br.com.loginform.model.Ufs;
 import br.com.loginform.services.ConsumidorAPI;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import java.awt.Desktop;
+import java.io.IOException;
 import java.lang.reflect.Type;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JComboBox;
@@ -50,5 +54,11 @@ public class Utils {
         for (String item : names) {
             combo.addItem(item);
         }
+    }
+
+    public static void openUrl(String url) throws URISyntaxException, IOException {
+        Desktop desktop = Desktop.getDesktop();
+        URI uri = new URI(url);
+        desktop.browse(uri);
     }
 }

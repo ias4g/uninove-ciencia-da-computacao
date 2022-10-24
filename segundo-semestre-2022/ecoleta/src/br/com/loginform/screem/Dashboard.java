@@ -239,13 +239,19 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lblButtonEnterMouseExited
 
     private void lblButtonEnterIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIconMouseClicked
+        lblButtonEnterIcon.setCursor(new Cursor(Cursor.WAIT_CURSOR));
 
         new Register(this, true).setVisible(true);
 
+        lblButtonEnterIcon.setCursor(new Cursor(Cursor.WAIT_CURSOR));
     }//GEN-LAST:event_lblButtonEnterIconMouseClicked
 
     private void lblButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterMouseClicked
+        lblButtonEnter.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+
         new Register(this, true).setVisible(true);
+
+        lblButtonEnter.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_lblButtonEnterMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
