@@ -19,7 +19,7 @@ public class Details extends javax.swing.JDialog {
 
         for (ItemsModel item : ics) {
 
-            System.out.println("Id => " + item.getId() + " - Title => " + item.getTitle() + " - Slug => " + item.getSlug());
+//            System.out.println("Id => " + item.getId() + " - Title => " + item.getTitle() + " - Slug => " + item.getSlug());
 
             JLabel label = new JLabel();
 
