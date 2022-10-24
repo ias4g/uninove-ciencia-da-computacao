@@ -1,6 +1,7 @@
 package br.com.loginform.screem;
 
 import Atxy2k.CustomTextField.RestrictedTextField;
+import br.com.loginform.components.JLabelRoundedBorder;
 import br.com.loginform.controllers.ItemsController;
 import br.com.loginform.controllers.RegisterController;
 import br.com.loginform.model.AddressModel;
@@ -15,6 +16,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.Label;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -24,6 +26,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
@@ -49,24 +52,16 @@ public class Register extends javax.swing.JDialog {
     private final ArrayList<String> data = new ArrayList();
     private final List<ItemsModel> itensSelected = new ArrayList();
 
-    private boolean isSelectedlamps = false;
-    private boolean isSelectedBatteries = false;
-    private boolean isSelectedKitchenOil = false;
-    private boolean isSelectedOrganicWaste = false;
-    private boolean isSelectedElectronicWaste = false;
-    private boolean isSelectedPapersCardboard = false;
-
     public Register(java.awt.Frame parent, boolean modal) {
 
         super(parent, modal);
         initComponents();
 
         setFonts();
+        setItems();
         fieldRestricted();
         Utils.deserializeUf(cmbUf);
         Utilities.insertIconDialog(this);
-
-        setItems();
 
     }
 
@@ -455,7 +450,6 @@ public class Register extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-
     private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
         dispose();
     }//GEN-LAST:event_lblCloseMouseClicked
@@ -501,63 +495,66 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointItensSaveMouseExited
 
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
-        if (imageFile == null) {
-            new Message(new javax.swing.JFrame(), true, "warning", "Para prosseguir selecione um arquivo!").setVisible(true);
-        } else {
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardDescription");
+//        if (imageFile == null) {
+//            new Message(new javax.swing.JFrame(), true, "warning", "Para prosseguir selecione um arquivo!").setVisible(true);
+//        } else {
+//            CardLayout cl = (CardLayout) jpMain.getLayout();
+//            cl.show(jpMain, "cardDescription");
+//
+//            txtName.requestFocus();
+//        }
 
-            txtName.requestFocus();
-        }
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardDescription");
 
     }//GEN-LAST:event_lblPointImageNextMouseClicked
 
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
-        String name = txtName.getText();
-        String email = txtEmail.getText();
-        String whatsapp = txtWhatsApp.getText();
+//        String name = txtName.getText();
+//        String email = txtEmail.getText();
+//        String whatsapp = txtWhatsApp.getText();
+//
+//        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
+//            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+//        } else {
+//            data.add(name);
+//            data.add(email);
+//            data.add(whatsapp);
+//
+//            CardLayout cl = (CardLayout) jpMain.getLayout();
+//            cl.show(jpMain, "cardAddress");
+//
+//            txtZipcode.requestFocus();
+//        }
 
-        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
-            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
-        } else {
-            data.add(name);
-            data.add(email);
-            data.add(whatsapp);
-
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardAddress");
-
-            txtZipcode.requestFocus();
-        }
-
-//        CardLayout cl = (CardLayout) jpMain.getLayout();
-//        cl.show(jpMain, "cardAddress");
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardAddress");
 
     }//GEN-LAST:event_lblPointDescNextMouseClicked
 
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
-        String zipcode = txtZipcode.getText();
-        String address = txtAddress.getText();
-        String number = txtNumber.getText();
-        String uf = String.valueOf(cmbUf.getSelectedItem());
-        String city = String.valueOf(cmbCity.getSelectedItem());
+//        String zipcode = txtZipcode.getText();
+//        String address = txtAddress.getText();
+//        String number = txtNumber.getText();
+//        String uf = String.valueOf(cmbUf.getSelectedItem());
+//        String city = String.valueOf(cmbCity.getSelectedItem());
+//
+//        if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
+//            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+//        } else {
+//
+//            data.add(zipcode);
+//            data.add(address);
+//            data.add(number);
+//            data.add(uf);
+//            data.add(city);
+//
+//            CardLayout cl = (CardLayout) jpMain.getLayout();
+//            cl.show(jpMain, "cardItens");
+//        }
 
-        if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
-            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
-        } else {
-
-            data.add(zipcode);
-            data.add(address);
-            data.add(number);
-            data.add(uf);
-            data.add(city);
-
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardItens");
-        }
-
-//        CardLayout cl = (CardLayout) jpMain.getLayout();
-//        cl.show(jpMain, "cardItens");
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardItens");
 
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
 
@@ -783,47 +780,67 @@ public class Register extends javax.swing.JDialog {
         //panel point items
         lblPointItensTitle.setFont(Ubuntu_Bold_24);
         lblPointItensSubTitle.setFont(PTSans_Regular_16);
-        lblBatteries.setFont(PTSans_Regular_16);
-        lblElectronicWaste.setFont(PTSans_Regular_16);
-        lblLamps.setFont(PTSans_Regular_16);
-        lblOrganicWaste.setFont(PTSans_Regular_16);
-        lblKitchenOil.setFont(PTSans_Regular_16);
-        lblPapersCardboard.setFont(PTSans_Regular_16);
+//        lblBatteries.setFont(PTSans_Regular_16);
+//        lblElectronicWaste.setFont(PTSans_Regular_16);
+//        lblLamps.setFont(PTSans_Regular_16);
+//        lblOrganicWaste.setFont(PTSans_Regular_16);
+//        lblKitchenOil.setFont(PTSans_Regular_16);
+//        lblPapersCardboard.setFont(PTSans_Regular_16);
     }
 
     private void setItems() {
+
+        List<Boolean> isSelectedItem = new ArrayList<>();
+
         for (ItemsModel item : ics) {
 
-//            System.out.println("Id => " + item.getId() + " - Title => " + item.getTitle() + " - Slug => " + item.getSlug());
-            JLabel label = new JLabel();
+            JLabel label = new JLabelRoundedBorder();
+            isSelectedItem.add(false);
 
             label.setIconTextGap(10);
             label.setName(item.getId());
             label.setText(item.getTitle());
             label.setToolTipText(item.getSlug());
+            label.setBackground(new Color(244, 244, 244));
             label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             label.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
             label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
             label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/" + item.getSlug() + ".png")));
 
             label.addMouseListener(new MouseAdapter() {
+
                 @Override
                 public void mouseClicked(MouseEvent e) {
+                    ItemsModel im = new ItemsModel();
+                    int i = Integer.parseInt(label.getName()) - 1;
+                    boolean j = !isSelectedItem.get(i);
 
-                    JOptionPane.showMessageDialog(
-                            null, "Id: " + label.getName()
-                            + "\nTitle: " + label.getText()
-                            + "\nSlug: " + label.getToolTipText()
-                    );
+                    isSelectedItem.set(i, j);
 
+//                    System.out.println(isSelectedItem.get(i));
+                    if (isSelectedItem.get(i)) {
+                        im.setId(label.getName());
+                        im.setTitle(label.getText());
+                        im.setSlug(label.getToolTipText());
+
+                        itensSelected.add(im);
+
+                        label.setBackground(new Color(214, 245, 228));
+
+                    } else {
+                        System.out.println(itensSelected.contains(im));
+                        label.setBackground(null);
+//                        System.out.println(itensSelected.toString());
+                    }
+
+//                    System.out.println(im);
                 }
-
             });
 
             jpItens.add(label);
         }
-    }
 
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbCity;
     private javax.swing.JComboBox<String> cmbUf;
