@@ -811,14 +811,14 @@ public class Register extends javax.swing.JDialog {
 
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    ItemsModel im = new ItemsModel();
+
                     int i = Integer.parseInt(label.getName()) - 1;
                     boolean j = !isSelectedItem.get(i);
-
                     isSelectedItem.set(i, j);
 
 //                    System.out.println(isSelectedItem.get(i));
                     if (isSelectedItem.get(i)) {
+                        ItemsModel im = new ItemsModel();
                         im.setId(label.getName());
                         im.setTitle(label.getText());
                         im.setSlug(label.getToolTipText());
@@ -827,10 +827,23 @@ public class Register extends javax.swing.JDialog {
 
                         label.setBackground(new Color(214, 245, 228));
 
+                        System.out.println(itensSelected);
+
                     } else {
-                        System.out.println(itensSelected.contains(im));
-                        label.setBackground(null);
-//                        System.out.println(itensSelected.toString());
+
+                        for (ItemsModel itemsModel : itensSelected) {
+                            System.out.println(itemsModel.getId());
+                            System.out.println(itemsModel.getTitle());
+                            System.out.println(itemsModel.getSlug());
+
+                            if (itemsModel.getId().equalsIgnoreCase("3")) {
+                                itensSelected.remove(itemsModel);
+                            }
+
+                            System.out.println("---------------------------\n");
+                        }
+
+                        System.out.println(itensSelected);
                     }
 
 //                    System.out.println(im);
