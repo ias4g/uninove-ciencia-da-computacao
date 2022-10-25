@@ -9,8 +9,6 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class About extends javax.swing.JDialog {
