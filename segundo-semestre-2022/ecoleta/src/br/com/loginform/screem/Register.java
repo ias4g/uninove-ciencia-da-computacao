@@ -816,25 +816,33 @@ public class Register extends javax.swing.JDialog {
                     boolean j = !isSelectedItem.get(i);
                     isSelectedItem.set(i, j);
 
-                    System.out.println(isSelectedItem.toString());
-
-                    System.out.println(isSelectedItem.get(i));
-
+//                    System.out.println(isSelectedItem.toString());
+//
 //                    System.out.println(isSelectedItem.get(i));
-//                    if (isSelectedItem.get(i)) {
 //
-//                        ItemsModel im = new ItemsModel();
-//                        im.setId(label.getName());
-//                        im.setTitle(label.getText());
-//                        im.setSlug(label.getToolTipText());
-//
-//                        itensSelected.add(im);
-//
-//                        label.setBackground(new Color(214, 245, 228));
-//
-//                        System.out.println(itensSelected);
-//
-//                    }
+//                    System.out.println(isSelectedItem.get(i));
+
+                    boolean toggle = isSelectedItem.get(i);
+
+                    if (toggle) {
+
+                        ItemsModel im = new ItemsModel();
+                        im.setId(label.getName());
+                        im.setTitle(label.getText());
+                        im.setSlug(label.getToolTipText());
+
+                        itensSelected.add(im);
+
+                        label.setBackground(new Color(214, 245, 228));
+
+                    } else {
+                      
+                        
+                        
+                        label.setBackground(new Color(244, 244, 244));
+                    }
+
+                    System.out.println(itensSelected);
                 }
             });
 
