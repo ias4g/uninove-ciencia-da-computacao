@@ -20,7 +20,7 @@ public class RegisterController {
         this.conn = DBConnection.getConn();
     }
 
-    public String createRegister(PointModel pm, AddressModel am, List<Object> items) {
+    public String createRegister(PointModel pm, AddressModel am, List<String> items) {
 
         final UUID uuid = UUID.randomUUID();
 
@@ -61,10 +61,10 @@ public class RegisterController {
                 String pimSQL = "INSERT INTO tb_point_items(point_id, item_id) values(?, ?)";
                 stmt_point_items = conn.prepareStatement(pimSQL);
 
-                for (Object it : items) {
+                for (String it : items) {
                     if (it != null) {
                         stmt_point_items.setString(1, String.valueOf(uuid));
-                        stmt_point_items.setInt(2, (int) it);
+                        stmt_point_items.setInt(2, Integer.parseInt(it));
                     }
                 }
 

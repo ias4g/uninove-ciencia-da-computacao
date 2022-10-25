@@ -33,7 +33,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -48,7 +47,7 @@ public class Register extends javax.swing.JDialog {
     List<ItemsModel> ics = ic.ReadItems();
 
     private final ArrayList<String> data = new ArrayList();
-    private final List<Object> itensSelected = new ArrayList();
+    private final List<String> itensSelected = new ArrayList();
 
     public Register(java.awt.Frame parent, boolean modal) {
 
