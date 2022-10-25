@@ -100,7 +100,7 @@ public class Register extends javax.swing.JDialog {
         lblCity = new javax.swing.JLabel();
         cmbCity = new javax.swing.JComboBox<>();
         lblPointAddressNext = new br.com.loginform.components.JLabelRoundedBorder();
-        jLabelRoundedBorder1 = new br.com.loginform.components.JLabelRoundedBorder();
+        lblSearch = new br.com.loginform.components.JLabelRoundedBorder();
         jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointItensTitle = new javax.swing.JLabel();
         lblPointItensSubTitle = new javax.swing.JLabel();
@@ -374,16 +374,16 @@ public class Register extends javax.swing.JDialog {
         jpPointAddress.add(lblPointAddressNext);
         lblPointAddressNext.setBounds(584, 404, 36, 36);
 
-        jLabelRoundedBorder1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/search-icon.png"))); // NOI18N
-        jLabelRoundedBorder1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabelRoundedBorder1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblSearch.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/search-icon.png"))); // NOI18N
+        lblSearch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelRoundedBorder1MouseClicked(evt);
+                lblSearchMouseClicked(evt);
             }
         });
-        jpPointAddress.add(jLabelRoundedBorder1);
-        jLabelRoundedBorder1.setBounds(196, 112, 56, 56);
+        jpPointAddress.add(lblSearch);
+        lblSearch.setBounds(196, 112, 56, 56);
 
         jpMain.add(jpPointAddress, "cardAddress");
 
@@ -630,9 +630,11 @@ public class Register extends javax.swing.JDialog {
         addMunicipos();
     }//GEN-LAST:event_cmbUfActionPerformed
 
-    private void jLabelRoundedBorder1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRoundedBorder1MouseClicked
+    private void lblSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSearchMouseClicked
+        lblPointItensSave.setCursor(new Cursor(Cursor.WAIT_CURSOR));
         cepSearch();
-    }//GEN-LAST:event_jLabelRoundedBorder1MouseClicked
+        lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_lblSearchMouseClicked
 
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
@@ -881,7 +883,6 @@ public class Register extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbCity;
     private javax.swing.JComboBox<String> cmbUf;
-    private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder1;
     private javax.swing.JPanel jpItens;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
@@ -914,6 +915,7 @@ public class Register extends javax.swing.JDialog {
     private br.com.loginform.components.JLabelRoundedBorder lblPointItensSave;
     private javax.swing.JLabel lblPointItensSubTitle;
     private javax.swing.JLabel lblPointItensTitle;
+    private br.com.loginform.components.JLabelRoundedBorder lblSearch;
     private javax.swing.JLabel lblSuccess;
     private javax.swing.JLabel lblUf;
     private javax.swing.JLabel lblWhatsApp;
