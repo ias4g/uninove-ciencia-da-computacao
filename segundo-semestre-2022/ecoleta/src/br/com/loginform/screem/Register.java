@@ -33,6 +33,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -550,6 +551,19 @@ public class Register extends javax.swing.JDialog {
 
         lblPointItensSave.setCursor(new Cursor(Cursor.WAIT_CURSOR));
 
+        int hasValue = 0;
+
+        for (Object it : itensSelected) {
+            if (it != null) {
+                hasValue++;
+            }
+        }
+
+        if (hasValue <= 0) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Marue pelo menos um item!").setVisible(true);
+            return;
+        }
+
         String res;
         PointModel pm = new PointModel();
         AddressModel am = new AddressModel();
@@ -578,7 +592,7 @@ public class Register extends javax.swing.JDialog {
 
         lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        new Details(new javax.swing.JFrame(), true).setVisible(true);
+//        new Details(new javax.swing.JFrame(), true).setVisible(true);
     }//GEN-LAST:event_lblPointItensSaveMouseClicked
 
     private void lblCloseSuccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseSuccessMouseClicked
