@@ -58,17 +58,17 @@ public class RegisterController {
                 // END TB_ADDRESS ---------------------------------------------------------------------------------------------------
 
                 // INSERINDO DADOS NA TABELA TB_POINT_ITEMS -------------------------------------------------------------------------
+                String pimSQL = "INSERT INTO tb_point_items(point_id, item_id) values(?, ?)";
+                stmt_point_items = conn.prepareStatement(pimSQL);
                 for (String it : items) {
-                    if (it != null) {
-                        String pimSQL = "INSERT INTO tb_point_items(point_id, item_id) values(?, ?)";
-                        stmt_point_items = conn.prepareStatement(pimSQL);
 
+                    if (it != null) {
                         stmt_point_items.setString(1, String.valueOf(uuid));
                         stmt_point_items.setInt(2, Integer.parseInt(it));
+
+                        stmt_point_items.executeUpdate();
                     }
                 }
-
-                stmt_point_items.executeUpdate();
                 // END TB_POINT_ITEMS
 
                 conn.commit();
