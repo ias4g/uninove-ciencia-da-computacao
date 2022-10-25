@@ -559,6 +559,7 @@ public class Register extends javax.swing.JDialog {
         }
 
         if (hasValue <= 0) {
+            lblPointItensSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
             new Message(new javax.swing.JFrame(), true, "warning", "Marue pelo menos um item!").setVisible(true);
             return;
         }
