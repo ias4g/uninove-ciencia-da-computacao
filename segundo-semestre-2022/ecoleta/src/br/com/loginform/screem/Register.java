@@ -707,7 +707,9 @@ public class Register extends javax.swing.JDialog {
             Element root = doc.getRootElement();
 
             for (Iterator<Element> it = root.elementIterator(); it.hasNext();) {
+
                 Element el = it.next();
+
                 if (el.getQualifiedName().equals("uf")) {
                     cmbUf.setSelectedItem(el.getText());
                 }
@@ -727,6 +729,7 @@ public class Register extends javax.swing.JDialog {
                 if (el.getQualifiedName().equals("logradouro")) {
                     logradouro = el.getText();
                 }
+
             }
 
             txtAddress.setText(tipologradouro + " " + logradouro + " " + bairro);
