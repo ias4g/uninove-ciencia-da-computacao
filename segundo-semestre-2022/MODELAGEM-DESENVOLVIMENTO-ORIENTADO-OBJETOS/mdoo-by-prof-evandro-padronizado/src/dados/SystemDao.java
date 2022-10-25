@@ -1,6 +1,5 @@
 package dados;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -119,6 +118,19 @@ public class SystemDao {
         st.setString(5, email);
         st.setString(6, job);
         st.setInt(7, id);
+
+        st.executeUpdate();
+    }
+
+    public void salvarProduct(String id, String name, String brand, Float price) throws ClassNotFoundException, SQLException {
+        conectar();
+
+        st = conectado.prepareStatement("INSERT INTO tbproducts (id, name, brand, price) VALUES (?, ?, ?, ?)");
+
+        st.setString(1, id);
+        st.setString(2, name);
+        st.setString(3, brand);
+        st.setFloat(4, price);
 
         st.executeUpdate();
     }

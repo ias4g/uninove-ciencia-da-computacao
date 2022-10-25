@@ -1,30 +1,29 @@
 package view;
 
-
 import dados.SystemDao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
-
+    
     private ResultSet resultado;
-
+    
     public Menu(String name, String job) {
         initComponents();
-
+        
         mnuAdministrative.setVisible(false);
-
+        
         lblSaudacao.setText("Bem vindo: " + name);
         lblUserLogged.setText("Usuário logado: " + job);
-
+        
         if (job.equalsIgnoreCase("Administrador")) {
             mnuAdministrative.setVisible(true);
         } else if (job.equalsIgnoreCase("Estagiário")) {
             itmDelete.setEnabled(false);
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -81,6 +80,11 @@ public class Menu extends javax.swing.JFrame {
 
         itmRegister.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmRegister.setText("Cadastrar");
+        itmRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmRegisterActionPerformed(evt);
+            }
+        });
         mnuProducts.add(itmRegister);
 
         itmDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -174,21 +178,25 @@ public class Menu extends javax.swing.JFrame {
         openUserScreem("alterar");
     }//GEN-LAST:event_itmChangeUserDatasActionPerformed
 
+    private void itmRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmRegisterActionPerformed
+        new ProductScreem().setVisible(true);
+    }//GEN-LAST:event_itmRegisterActionPerformed
+    
     private void openUserScreem(String op) {
-
+        
         String u = JOptionPane.showInputDialog(
                 null, "Digite o nome do usuário a !" + op, "Usuário", 1
         );
-
+        
         if (u == null) {
             JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
             return;
         }
-
+        
         try {
-
+            
             resultado = new SystemDao().listarUsuario(u);
-
+            
             if (resultado.next()) {
                 int id = Integer.parseInt(resultado.getString("id"));
                 String user = resultado.getString("user");
@@ -202,11 +210,11 @@ public class Menu extends javax.swing.JFrame {
                 new CreateNewUser(
                         id, user, password, name, lastname, email, job, op
                 ).setVisible(true);
-
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado");
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         }
