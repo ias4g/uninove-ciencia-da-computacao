@@ -13,11 +13,9 @@ import br.com.loginform.utils.Utils;
 import java.awt.AlphaComposite;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics2D;
-import java.awt.Label;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -27,7 +25,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
@@ -36,7 +33,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -58,20 +54,11 @@ public class Register extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-//        itensSelected.add(null);
-//        itensSelected.add(null);
-//        itensSelected.add(null);
-//        itensSelected.add(null);
-//        itensSelected.add(null);
-//        itensSelected.add(null);
-        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
         setFonts();
         setItems();
         fieldRestricted();
         Utils.deserializeUf(cmbUf);
         Utilities.insertIconDialog(this);
-
-        JOptionPane.showMessageDialog(null, itensSelected);
     }
 
     @SuppressWarnings("unchecked")
