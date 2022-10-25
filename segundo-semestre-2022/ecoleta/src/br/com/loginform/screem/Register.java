@@ -13,6 +13,7 @@ import br.com.loginform.utils.Utils;
 import java.awt.AlphaComposite;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -57,12 +58,19 @@ public class Register extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
+//        itensSelected.add(null);
+//        itensSelected.add(null);
+//        itensSelected.add(null);
+//        itensSelected.add(null);
+//        itensSelected.add(null);
+//        itensSelected.add(null);
         setFonts();
         setItems();
         fieldRestricted();
         Utils.deserializeUf(cmbUf);
         Utilities.insertIconDialog(this);
 
+        JOptionPane.showMessageDialog(null, itensSelected);
     }
 
     @SuppressWarnings("unchecked")
@@ -794,8 +802,9 @@ public class Register extends javax.swing.JDialog {
 
         for (ItemsModel item : ics) {
 
-            JLabel label = new JLabelRoundedBorder();
+            itensSelected.add(null);
             isSelectedItem.add(false);
+            JLabel label = new JLabelRoundedBorder();
 
             label.setIconTextGap(10);
             label.setName(item.getId());
@@ -816,12 +825,6 @@ public class Register extends javax.swing.JDialog {
                     boolean j = !isSelectedItem.get(i);
                     isSelectedItem.set(i, j);
 
-//                    System.out.println(isSelectedItem.toString());
-//
-//                    System.out.println(isSelectedItem.get(i));
-//
-//                    System.out.println(isSelectedItem.get(i));
-
                     boolean toggle = isSelectedItem.get(i);
 
                     if (toggle) {
@@ -831,18 +834,22 @@ public class Register extends javax.swing.JDialog {
                         im.setTitle(label.getText());
                         im.setSlug(label.getToolTipText());
 
-                        itensSelected.add(im);
+                        itensSelected.set(i, im);
 
                         label.setBackground(new Color(214, 245, 228));
 
                     } else {
-                      
-                        
-                        
+                        itensSelected.set(i, null);
                         label.setBackground(new Color(244, 244, 244));
                     }
 
-                    System.out.println(itensSelected);
+//                    for (ItemsModel item : itensSelected) {
+//                        if (item != null) {
+//                            System.out.println(item.getId());
+//                            System.out.println(item.getTitle());
+//                            System.out.println(item.getSlug());
+//                        }
+//                    }
                 }
             });
 
@@ -850,6 +857,7 @@ public class Register extends javax.swing.JDialog {
         }
 
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbCity;
     private javax.swing.JComboBox<String> cmbUf;
