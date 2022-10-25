@@ -77,15 +77,15 @@ public class SplashScreem extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/splash/splash-sreem-image.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/splash-screem-image.png"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(163, 30, 200, 219);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/splash/splash-screem-line.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/splash-screem-line.png"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(163, 248, 200, 1);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/splash/splash-screem-logo.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/splash-screem-logo.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(225, 278, 75, 18);
 
@@ -109,7 +109,7 @@ public class SplashScreem extends javax.swing.JFrame {
         getContentPane().add(lblLoading);
         lblLoading.setBounds(10, 330, 290, 14);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/splash/splash-screem-bg.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/splash-screem-bg.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 530, 370);
 

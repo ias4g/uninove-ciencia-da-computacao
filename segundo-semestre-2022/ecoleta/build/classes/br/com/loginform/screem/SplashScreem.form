@@ -36,7 +36,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/loginform/assets/splash/splash-sreem-image.png"/>
+          <Image iconType="3" name="/br/com/loginform/assets/splash-screem-image.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -48,7 +48,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/loginform/assets/splash/splash-screem-line.png"/>
+          <Image iconType="3" name="/br/com/loginform/assets/splash-screem-line.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -60,7 +60,7 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/loginform/assets/splash/splash-screem-logo.png"/>
+          <Image iconType="3" name="/br/com/loginform/assets/splash-screem-logo.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -124,7 +124,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/loginform/assets/splash/splash-screem-bg.png"/>
+          <Image iconType="3" name="/br/com/loginform/assets/splash-screem-bg.png"/>
         </Property>
       </Properties>
       <Constraints>
