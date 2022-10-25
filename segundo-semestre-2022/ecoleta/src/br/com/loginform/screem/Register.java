@@ -816,37 +816,25 @@ public class Register extends javax.swing.JDialog {
                     boolean j = !isSelectedItem.get(i);
                     isSelectedItem.set(i, j);
 
+                    System.out.println(isSelectedItem.toString());
+
+                    System.out.println(isSelectedItem.get(i));
+
 //                    System.out.println(isSelectedItem.get(i));
-                    if (isSelectedItem.get(i)) {
-                        ItemsModel im = new ItemsModel();
-                        im.setId(label.getName());
-                        im.setTitle(label.getText());
-                        im.setSlug(label.getToolTipText());
-
-                        itensSelected.add(im);
-
-                        label.setBackground(new Color(214, 245, 228));
-
-                        System.out.println(itensSelected);
-
-                    } else {
-
-                        for (ItemsModel itemsModel : itensSelected) {
-                            System.out.println(itemsModel.getId());
-                            System.out.println(itemsModel.getTitle());
-                            System.out.println(itemsModel.getSlug());
-
-                            if (itemsModel.getId().equalsIgnoreCase("3")) {
-                                itensSelected.remove(itemsModel);
-                            }
-
-                            System.out.println("---------------------------\n");
-                        }
-
-                        System.out.println(itensSelected);
-                    }
-
-//                    System.out.println(im);
+//                    if (isSelectedItem.get(i)) {
+//
+//                        ItemsModel im = new ItemsModel();
+//                        im.setId(label.getName());
+//                        im.setTitle(label.getText());
+//                        im.setSlug(label.getToolTipText());
+//
+//                        itensSelected.add(im);
+//
+//                        label.setBackground(new Color(214, 245, 228));
+//
+//                        System.out.println(itensSelected);
+//
+//                    }
                 }
             });
 
