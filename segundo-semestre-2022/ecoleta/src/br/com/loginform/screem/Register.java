@@ -64,6 +64,7 @@ public class Register extends javax.swing.JDialog {
 //        itensSelected.add(null);
 //        itensSelected.add(null);
 //        itensSelected.add(null);
+        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
         setFonts();
         setItems();
         fieldRestricted();
@@ -798,6 +799,8 @@ public class Register extends javax.swing.JDialog {
 
     private void setItems() {
 
+        Font PTSans_Regular_16 = FontManager.Loading("PTSans-Regular.ttf", Font.PLAIN, 16f);
+
         List<Boolean> isSelectedItem = new ArrayList<>();
 
         for (ItemsModel item : ics) {
@@ -809,6 +812,7 @@ public class Register extends javax.swing.JDialog {
             label.setIconTextGap(10);
             label.setName(item.getId());
             label.setText(item.getTitle());
+            label.setFont(PTSans_Regular_16);
             label.setToolTipText(item.getSlug());
             label.setBackground(new Color(244, 244, 244));
             label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -842,14 +846,6 @@ public class Register extends javax.swing.JDialog {
                         itensSelected.set(i, null);
                         label.setBackground(new Color(244, 244, 244));
                     }
-
-//                    for (ItemsModel item : itensSelected) {
-//                        if (item != null) {
-//                            System.out.println(item.getId());
-//                            System.out.println(item.getTitle());
-//                            System.out.println(item.getSlug());
-//                        }
-//                    }
                 }
             });
 
