@@ -492,14 +492,10 @@ public class Register extends javax.swing.JDialog {
 
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
 
-        if (imageFile == null) {
-            new Message(new javax.swing.JFrame(), true, "warning", "Para prosseguir selecione um arquivo!").setVisible(true);
-        } else {
-            CardLayout cl = (CardLayout) jpMain.getLayout();
-            cl.show(jpMain, "cardDescription");
+        CardLayout cl = (CardLayout) jpMain.getLayout();
+        cl.show(jpMain, "cardDescription");
 
-            txtName.requestFocus();
-        }
+        txtName.requestFocus();
 
     }//GEN-LAST:event_lblPointImageNextMouseClicked
 
@@ -509,7 +505,7 @@ public class Register extends javax.swing.JDialog {
         String email = txtEmail.getText();
         String whatsapp = txtWhatsApp.getText();
 
-        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
+        if (name.isEmpty() || whatsapp.isEmpty()) {
             new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
         } else {
             data.add(name);
