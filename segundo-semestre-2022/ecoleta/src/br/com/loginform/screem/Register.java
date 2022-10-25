@@ -33,7 +33,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -101,6 +100,7 @@ public class Register extends javax.swing.JDialog {
         lblCity = new javax.swing.JLabel();
         cmbCity = new javax.swing.JComboBox<>();
         lblPointAddressNext = new br.com.loginform.components.JLabelRoundedBorder();
+        jLabelRoundedBorder1 = new br.com.loginform.components.JLabelRoundedBorder();
         jpPointItens = new br.com.loginform.components.JPanelRoundedBorder();
         lblPointItensTitle = new javax.swing.JLabel();
         lblPointItensSubTitle = new javax.swing.JLabel();
@@ -294,11 +294,10 @@ public class Register extends javax.swing.JDialog {
         lblPointAddressSubTitle.setBounds(320, 26, 300, 19);
 
         lblZipcode.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        lblZipcode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/check-cep.png"))); // NOI18N
         lblZipcode.setText("Cep");
         lblZipcode.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         jpPointAddress.add(lblZipcode);
-        lblZipcode.setBounds(50, 89, 60, 20);
+        lblZipcode.setBounds(50, 89, 60, 19);
 
         txtZipcode.setForeground(new java.awt.Color(120, 120, 120));
         txtZipcode.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -313,12 +312,12 @@ public class Register extends javax.swing.JDialog {
         lblAddress.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblAddress.setText("Endereço");
         jpPointAddress.add(lblAddress);
-        lblAddress.setBounds(202, 90, 120, 19);
+        lblAddress.setBounds(260, 90, 120, 19);
 
         txtAddress.setForeground(new java.awt.Color(120, 120, 120));
         txtAddress.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jpPointAddress.add(txtAddress);
-        txtAddress.setBounds(202, 112, 418, 56);
+        txtAddress.setBounds(260, 112, 360, 56);
 
         lblNumber.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblNumber.setText("Número");
@@ -374,6 +373,17 @@ public class Register extends javax.swing.JDialog {
         });
         jpPointAddress.add(lblPointAddressNext);
         lblPointAddressNext.setBounds(584, 404, 36, 36);
+
+        jLabelRoundedBorder1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelRoundedBorder1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/search-icon.png"))); // NOI18N
+        jLabelRoundedBorder1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabelRoundedBorder1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelRoundedBorder1MouseClicked(evt);
+            }
+        });
+        jpPointAddress.add(jLabelRoundedBorder1);
+        jLabelRoundedBorder1.setBounds(196, 112, 56, 56);
 
         jpMain.add(jpPointAddress, "cardAddress");
 
@@ -530,8 +540,8 @@ public class Register extends javax.swing.JDialog {
         String uf = String.valueOf(cmbUf.getSelectedItem());
         String city = String.valueOf(cmbCity.getSelectedItem());
 
-        if (zipcode.isEmpty()) {
-            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+        if ((zipcode.isEmpty()) || (zipcode.length() < 8)) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Dados inválidos e/ou campos vazios!").setVisible(true);
         } else {
 
             data.add(zipcode);
@@ -620,6 +630,10 @@ public class Register extends javax.swing.JDialog {
         addMunicipos();
     }//GEN-LAST:event_cmbUfActionPerformed
 
+    private void jLabelRoundedBorder1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRoundedBorder1MouseClicked
+        cepSearch();
+    }//GEN-LAST:event_jLabelRoundedBorder1MouseClicked
+
     public File selectImage() {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagens em JPEG  e PNG", "jpg", "png");
@@ -696,11 +710,17 @@ public class Register extends javax.swing.JDialog {
     }
 
     private void cepSearch() {
-        String result;
+
+        String resultCep;
         String bairro = null;
         String logradouro = null;
         String tipologradouro = null;
         String zipcode = txtZipcode.getText();
+
+        if (zipcode.isEmpty() || zipcode.length() < 8) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Cep inválido...").setVisible(true);
+            return;
+        }
 
         try {
 
@@ -734,13 +754,13 @@ public class Register extends javax.swing.JDialog {
                 }
 
                 if (el.getQualifiedName().equals("resultado")) {
-                    result = el.getText();
+                    resultCep = el.getText();
 
-                    if (result.equals("1")) {
+                    if (resultCep.equals("1")) {
                         lblZipcode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/check-cep.png")));
                     } else {
                         lblZipcode.setIcon(null);
-                        new Message(new javax.swing.JFrame(), true, "error", "Cep não encontrado ou inválido!").setVisible(true);
+                        new Message(new javax.swing.JFrame(), true, "warning", "Cep não encontrado ou inválido!").setVisible(true);
                     }
                 }
 
@@ -861,6 +881,7 @@ public class Register extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbCity;
     private javax.swing.JComboBox<String> cmbUf;
+    private br.com.loginform.components.JLabelRoundedBorder jLabelRoundedBorder1;
     private javax.swing.JPanel jpItens;
     private br.com.loginform.components.JPanelRoundedBorder jpMain;
     private br.com.loginform.components.JPanelRoundedBorder jpPointAddress;
