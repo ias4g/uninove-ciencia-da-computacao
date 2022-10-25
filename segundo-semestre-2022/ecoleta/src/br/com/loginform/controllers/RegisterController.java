@@ -6,6 +6,7 @@ import br.com.loginform.model.PointModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.UUID;
 
 public class RegisterController {
@@ -19,7 +20,7 @@ public class RegisterController {
         this.conn = DBConnection.getConn();
     }
 
-    public String createRegister(PointModel pm, AddressModel am) {
+    public String createRegister(PointModel pm, AddressModel am, List<Object> items) {
 
         final UUID uuid = UUID.randomUUID();
 
@@ -59,8 +60,13 @@ public class RegisterController {
                 // INSERINDO DADOS NA TABELA TB_POINT_ITEMS -------------------------------------------------------------------------
                 String pimSQL = "INSERT INTO tb_point_items(point_id, item_id) values(?, ?)";
                 stmt_point_items = conn.prepareStatement(pimSQL);
-                stmt_point_items.setString(1, String.valueOf(uuid));
-                stmt_point_items.setInt(2, 1);
+
+                for (Object it : items) {
+                    if (it != null) {
+                        stmt_point_items.setString(1, String.valueOf(uuid));
+                        stmt_point_items.setInt(2, (int) it);
+                    }
+                }
 
                 stmt_point_items.executeUpdate();
                 // END TB_POINT_ITEMS
@@ -68,6 +74,7 @@ public class RegisterController {
                 conn.commit();
 
                 return "ok";
+
             } catch (SQLException ex) {
                 try {
                     conn.rollback();

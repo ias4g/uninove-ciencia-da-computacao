@@ -47,7 +47,7 @@ public class Register extends javax.swing.JDialog {
     List<ItemsModel> ics = ic.ReadItems();
 
     private final ArrayList<String> data = new ArrayList();
-    private final List<ItemsModel> itensSelected = new ArrayList();
+    private final List<Object> itensSelected = new ArrayList();
 
     public Register(java.awt.Frame parent, boolean modal) {
 
@@ -566,7 +566,7 @@ public class Register extends javax.swing.JDialog {
         am.setCity(data.get(7));
 
         RegisterController rc = new RegisterController();
-        res = rc.createRegister(pm, am);
+        res = rc.createRegister(pm, am, itensSelected);
 
         if (res.equalsIgnoreCase("ok")) {
             CardLayout cl = (CardLayout) jpMain.getLayout();
@@ -813,14 +813,8 @@ public class Register extends javax.swing.JDialog {
 
                     if (toggle) {
 
-                        ItemsModel im = new ItemsModel();
-                        im.setId(label.getName());
-                        im.setTitle(label.getText());
-                        im.setSlug(label.getToolTipText());
-
-                        itensSelected.set(i, im);
-
                         label.setBackground(new Color(214, 245, 228));
+                        itensSelected.set(i, label.getName());
 
                     } else {
                         itensSelected.set(i, null);
