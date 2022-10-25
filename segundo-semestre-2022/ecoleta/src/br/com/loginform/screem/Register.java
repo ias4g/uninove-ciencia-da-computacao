@@ -491,70 +491,63 @@ public class Register extends javax.swing.JDialog {
     }//GEN-LAST:event_lblPointItensSaveMouseExited
 
     private void lblPointImageNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointImageNextMouseClicked
-//        if (imageFile == null) {
-//            new Message(new javax.swing.JFrame(), true, "warning", "Para prosseguir selecione um arquivo!").setVisible(true);
-//        } else {
-//            CardLayout cl = (CardLayout) jpMain.getLayout();
-//            cl.show(jpMain, "cardDescription");
-//
-//            txtName.requestFocus();
-//        }
 
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardDescription");
+        if (imageFile == null) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Para prosseguir selecione um arquivo!").setVisible(true);
+        } else {
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardDescription");
+
+            txtName.requestFocus();
+        }
 
     }//GEN-LAST:event_lblPointImageNextMouseClicked
 
     private void lblPointDescNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointDescNextMouseClicked
-//        String name = txtName.getText();
-//        String email = txtEmail.getText();
-//        String whatsapp = txtWhatsApp.getText();
-//
-//        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
-//            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
-//        } else {
-//            data.add(name);
-//            data.add(email);
-//            data.add(whatsapp);
-//
-//            CardLayout cl = (CardLayout) jpMain.getLayout();
-//            cl.show(jpMain, "cardAddress");
-//
-//            txtZipcode.requestFocus();
-//        }
 
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardAddress");
+        String name = txtName.getText();
+        String email = txtEmail.getText();
+        String whatsapp = txtWhatsApp.getText();
 
+        if (name.isEmpty() || email.isEmpty() || whatsapp.isEmpty()) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+        } else {
+            data.add(name);
+            data.add(email);
+            data.add(whatsapp);
+
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardAddress");
+
+            txtZipcode.requestFocus();
+        }
     }//GEN-LAST:event_lblPointDescNextMouseClicked
 
     private void lblPointAddressNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointAddressNextMouseClicked
-//        String zipcode = txtZipcode.getText();
-//        String address = txtAddress.getText();
-//        String number = txtNumber.getText();
-//        String uf = String.valueOf(cmbUf.getSelectedItem());
-//        String city = String.valueOf(cmbCity.getSelectedItem());
-//
-//        if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
-//            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
-//        } else {
-//
-//            data.add(zipcode);
-//            data.add(address);
-//            data.add(number);
-//            data.add(uf);
-//            data.add(city);
-//
-//            CardLayout cl = (CardLayout) jpMain.getLayout();
-//            cl.show(jpMain, "cardItens");
-//        }
 
-        CardLayout cl = (CardLayout) jpMain.getLayout();
-        cl.show(jpMain, "cardItens");
+        String zipcode = txtZipcode.getText();
+        String address = txtAddress.getText();
+        String number = txtNumber.getText();
+        String uf = String.valueOf(cmbUf.getSelectedItem());
+        String city = String.valueOf(cmbCity.getSelectedItem());
 
+        if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
+            new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
+        } else {
+
+            data.add(zipcode);
+            data.add(address);
+            data.add(number);
+            data.add(uf);
+            data.add(city);
+
+            CardLayout cl = (CardLayout) jpMain.getLayout();
+            cl.show(jpMain, "cardItens");
+        }
     }//GEN-LAST:event_lblPointAddressNextMouseClicked
 
     private void lblPointItensSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPointItensSaveMouseClicked
+
         lblPointItensSave.setCursor(new Cursor(Cursor.WAIT_CURSOR));
 
         String res;
