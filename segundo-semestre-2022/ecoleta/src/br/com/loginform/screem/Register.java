@@ -531,7 +531,7 @@ public class Register extends javax.swing.JDialog {
         String uf = String.valueOf(cmbUf.getSelectedItem());
         String city = String.valueOf(cmbCity.getSelectedItem());
 
-        if (zipcode.isEmpty() || address.isEmpty() || address.isBlank() || number.isEmpty() || uf.equalsIgnoreCase("Selecione") || city.equalsIgnoreCase("Selecione")) {
+        if (zipcode.isEmpty()) {
             new Message(new javax.swing.JFrame(), true, "warning", "Preencha todos os campos!").setVisible(true);
         } else {
 
@@ -563,6 +563,8 @@ public class Register extends javax.swing.JDialog {
             new Message(new javax.swing.JFrame(), true, "warning", "Marue pelo menos um item!").setVisible(true);
             return;
         }
+
+        System.out.println(data);
 
         String res;
         PointModel pm = new PointModel();

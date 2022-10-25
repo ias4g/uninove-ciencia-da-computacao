@@ -45,14 +45,15 @@ public class RegisterController {
                 // END TB_POINTS -----------------------------------------------------------------------------------------------------
 
                 // INSERINDO DADOS NA TABELA TB_ADDRESS ------------------------------------------------------------------------------
-                String amSQL = "INSERT INTO tb_address(zipcode, number, uf, city, point_id) values(?, ?, ?, ?, ?)";
+                String amSQL = "INSERT INTO tb_address(zipcode, address, number, uf, city, point_id) values(?, ?, ?, ?, ?, ?)";
                 stmt_address = conn.prepareStatement(amSQL);
 
                 stmt_address.setString(1, am.getZipcode());
-                stmt_address.setInt(2, am.getNumber());
-                stmt_address.setString(3, am.getUf());
-                stmt_address.setString(4, am.getCity());
-                stmt_address.setString(5, String.valueOf(uuid));
+                stmt_address.setString(2, am.getAddress());
+                stmt_address.setInt(3, am.getNumber());
+                stmt_address.setString(4, am.getUf());
+                stmt_address.setString(5, am.getCity());
+                stmt_address.setString(6, String.valueOf(uuid));
 
                 stmt_address.executeUpdate();
                 // END TB_ADDRESS ---------------------------------------------------------------------------------------------------
