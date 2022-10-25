@@ -33,6 +33,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -293,9 +294,11 @@ public class Register extends javax.swing.JDialog {
         lblPointAddressSubTitle.setBounds(320, 26, 300, 19);
 
         lblZipcode.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        lblZipcode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/check-cep.png"))); // NOI18N
         lblZipcode.setText("Cep");
+        lblZipcode.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         jpPointAddress.add(lblZipcode);
-        lblZipcode.setBounds(50, 90, 60, 19);
+        lblZipcode.setBounds(50, 89, 60, 20);
 
         txtZipcode.setForeground(new java.awt.Color(120, 120, 120));
         txtZipcode.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -730,9 +733,21 @@ public class Register extends javax.swing.JDialog {
                     logradouro = el.getText();
                 }
 
+                if (el.getQualifiedName().equals("resultado")) {
+                    result = el.getText();
+
+                    if (result.equals("1")) {
+                        lblZipcode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/check-cep.png")));
+                    } else {
+                        lblZipcode.setIcon(null);
+                        new Message(new javax.swing.JFrame(), true, "error", "Cep não encontrado ou inválido!").setVisible(true);
+                    }
+                }
+
             }
 
             txtAddress.setText(tipologradouro + " " + logradouro + " " + bairro);
+
         } catch (MalformedURLException | DocumentException ex) {
             System.out.println(ex.getMessage());
         }

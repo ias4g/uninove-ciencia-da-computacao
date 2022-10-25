@@ -414,11 +414,15 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="16" style="1"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/loginform/assets/check-cep.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cep"/>
+                <Property name="horizontalTextPosition" type="int" value="10"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="50" y="90" width="60" height="-1"/>
+                  <AbsoluteConstraints x="50" y="89" width="60" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
