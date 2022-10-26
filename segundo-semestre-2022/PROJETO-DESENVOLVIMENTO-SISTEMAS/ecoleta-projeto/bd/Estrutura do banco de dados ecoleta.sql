@@ -28,14 +28,15 @@ CREATE TABLE `tb_points` (
 CREATE TABLE `tb_address` (
   `id` int NOT NULL AUTO_INCREMENT,
   `zipcode` varchar(10) NOT NULL,
-  `number` int NOT NULL,
-  `uf` varchar(2) NOT NULL,
-  `city` varchar(45) NOT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `number` int DEFAULT NULL,
+  `uf` varchar(2) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
   `point_id` varchar(40) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_from_points_to_address_idx` (`point_id`),
   CONSTRAINT `fk_from_points_to_address` FOREIGN KEY (`point_id`) REFERENCES `tb_points` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 /****************************************************************************************************************************************************/
 
 
