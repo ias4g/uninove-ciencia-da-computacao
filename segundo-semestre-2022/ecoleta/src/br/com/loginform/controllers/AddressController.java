@@ -8,18 +8,16 @@ import java.sql.SQLException;
 
 public class AddressController {
 
-    private final Connection conn;
+    private Connection conn = null;
     private PreparedStatement stmt;
-
-    public AddressController() {
-        this.conn = DBConnection.getConn();
-    }
 
     public String createAddress(AddressModel address) {
 
         if (conn != null) {
 
             try {
+
+                conn = DBConnection.getConn();
 
                 String sql = "INSERT INTO tb_address(zipcode, number, uf, city, point_id) values(?, ?, ?, ?, ?)";
 
@@ -33,10 +31,8 @@ public class AddressController {
 
                 return String.valueOf(stmt.executeUpdate());
 
-            } catch (SQLException ex) {
+            } catch (ClassNotFoundException | SQLException ex) {
                 return "=> Erro de SQL na class createAddress.\n=>Error: " + ex.getMessage();
-            } finally {
-                DBConnection.closeConn();
             }
         } else {
             return "=> Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.";

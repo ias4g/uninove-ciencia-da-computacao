@@ -11,14 +11,10 @@ import java.util.UUID;
 
 public class RegisterController {
 
-    private final Connection conn;
+    private Connection conn = null;
     private PreparedStatement stmt;
     private PreparedStatement stmt_address;
     private PreparedStatement stmt_point_items;
-
-    public RegisterController() {
-        this.conn = DBConnection.getConn();
-    }
 
     public String createRegister(PointModel pm, AddressModel am, List<String> items) {
 
@@ -27,6 +23,8 @@ public class RegisterController {
         if (conn != null) {
 
             try {
+
+                conn = DBConnection.getConn();
 
                 conn.setAutoCommit(false);
 
@@ -76,7 +74,7 @@ public class RegisterController {
 
                 return "ok";
 
-            } catch (SQLException ex) {
+            } catch (ClassNotFoundException | SQLException ex) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex1) {
@@ -84,8 +82,6 @@ public class RegisterController {
                 }
 
                 return "=> Erro de SQL na class RegisterController, no metodo createPoint(). Error: " + ex.getMessage();
-            } finally {
-                DBConnection.closeConn();
             }
         } else {
             return "=> Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.";

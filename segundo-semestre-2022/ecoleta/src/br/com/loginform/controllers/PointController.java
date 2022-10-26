@@ -11,19 +11,17 @@ import java.util.List;
 
 public class PointController {
 
-    private final Connection conn;
+    private Connection conn = null;
     private PreparedStatement stmt;
     private ResultSet rs;
-
-    public PointController() {
-        this.conn = DBConnection.getConn();
-    }
 
     public String createPoint(PointModel point) {
 
         if (conn != null) {
 
             try {
+
+                conn = DBConnection.getConn();
 
                 String sql = "INSERT INTO tb_points(id, name, email, image, whatsapp) values(?, ?, ?, ?, ?)";
 
@@ -37,10 +35,8 @@ public class PointController {
 
                 return String.valueOf(stmt.executeUpdate());
 
-            } catch (SQLException ex) {
+            } catch (ClassNotFoundException | SQLException ex) {
                 return "=> Erro de SQL na class createPoint.\n=>Error: " + ex.getMessage();
-            } finally {
-                DBConnection.closeConn();
             }
         } else {
             return "=> Erro na tentativa de cadastrar o ponto, verifique a conexão com o BD.";

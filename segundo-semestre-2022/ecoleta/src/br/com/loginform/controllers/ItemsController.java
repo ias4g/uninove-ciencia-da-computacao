@@ -12,12 +12,8 @@ import java.util.List;
 public class ItemsController {
 
     private ResultSet rs;
-    private final Connection conn;
+    private Connection conn = null;
     private PreparedStatement stmt;
-
-    public ItemsController() {
-        this.conn = DBConnection.getConn();
-    }
 
     public List<ItemsModel> ReadItems() {
 
@@ -25,6 +21,9 @@ public class ItemsController {
         String sql = "SELECT * FROM tb_items";
 
         try {
+
+            conn = DBConnection.getConn();
+
             stmt = conn.prepareStatement(sql);
             rs = stmt.executeQuery();
 
@@ -37,7 +36,7 @@ public class ItemsController {
 
                 pt.add(item);
             }
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex.getMessage());
         }
 
