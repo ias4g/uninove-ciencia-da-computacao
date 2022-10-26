@@ -36,7 +36,7 @@ CREATE TABLE `tb_address` (
   PRIMARY KEY (`id`),
   KEY `fk_from_points_to_address_idx` (`point_id`),
   CONSTRAINT `fk_from_points_to_address` FOREIGN KEY (`point_id`) REFERENCES `tb_points` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /****************************************************************************************************************************************************/
 
 
