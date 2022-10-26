@@ -59,6 +59,8 @@ public class Register extends javax.swing.JDialog {
         fieldRestricted();
         Utils.deserializeUf(cmbUf);
         Utilities.insertIconDialog(this);
+        
+        System.out.println("eu");
     }
 
     @SuppressWarnings("unchecked")
