@@ -17,8 +17,8 @@ public class ProductScreem extends javax.swing.JFrame {
 
         txtId.setText(String.valueOf(uuid));
 
-        btnSave.setVisible(true);
-        btnSave.setEnabled(true);
+        btnSaveProduct.setVisible(true);
+        btnSaveProduct.setEnabled(true);
         this.setTitle("Cadastrando novo produto");
     }
 
@@ -32,22 +32,22 @@ public class ProductScreem extends javax.swing.JFrame {
 
                 activeFields();
 
-                btnSaveChange.setVisible(true);
-                btnSaveChange.setEnabled(true);
+                btnSaveChangeProduct.setVisible(true);
+                btnSaveChangeProduct.setEnabled(true);
 
-                btnDelete.setVisible(false);
-                btnSave.setVisible(false);
+                btnDeleteProduct.setVisible(false);
+                btnSaveProduct.setVisible(false);
 
                 this.setTitle("Alterando os dados do produto " + name);
             }
 
             case "delete" -> {
 
-                btnDelete.setVisible(true);
-                btnDelete.setEnabled(true);
+                btnDeleteProduct.setVisible(true);
+                btnDeleteProduct.setEnabled(true);
 
-                btnSave.setVisible(false);
-                btnSaveChange.setVisible(false);
+                btnSaveProduct.setVisible(false);
+                btnSaveChangeProduct.setVisible(false);
 
                 this.setTitle("Exclusão do produto " + name);
 
@@ -71,9 +71,9 @@ public class ProductScreem extends javax.swing.JFrame {
         lblPrice = new javax.swing.JLabel();
         txtPrice = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        btnSaveChange = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-        btnSave = new javax.swing.JButton();
+        btnSaveChangeProduct = new javax.swing.JButton();
+        btnDeleteProduct = new javax.swing.JButton();
+        btnSaveProduct = new javax.swing.JButton();
 
         setTitle("User Control");
         setMinimumSize(new java.awt.Dimension(640, 426));
@@ -121,38 +121,38 @@ public class ProductScreem extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.CardLayout());
 
-        btnSaveChange.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnSaveChange.setText("Salvar Alteração");
-        btnSaveChange.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSaveChange.setEnabled(false);
-        btnSaveChange.addActionListener(new java.awt.event.ActionListener() {
+        btnSaveChangeProduct.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnSaveChangeProduct.setText("Salvar Alteração");
+        btnSaveChangeProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSaveChangeProduct.setEnabled(false);
+        btnSaveChangeProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveChangeActionPerformed(evt);
+                btnSaveChangeProductActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSaveChange, "card2");
+        jPanel1.add(btnSaveChangeProduct, "card2");
 
-        btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnDelete.setText("Excluir");
-        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDelete.setEnabled(false);
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteProduct.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnDeleteProduct.setText("Excluir");
+        btnDeleteProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDeleteProduct.setEnabled(false);
+        btnDeleteProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
+                btnDeleteProductActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDelete, "card3");
+        jPanel1.add(btnDeleteProduct, "card3");
 
-        btnSave.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnSave.setText("Salvar");
-        btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSave.setEnabled(false);
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
+        btnSaveProduct.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnSaveProduct.setText("Salvar");
+        btnSaveProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSaveProduct.setEnabled(false);
+        btnSaveProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
+                btnSaveProductActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSave, "card4");
+        jPanel1.add(btnSaveProduct, "card4");
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(20, 220, 230, 50);
@@ -161,7 +161,7 @@ public class ProductScreem extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+    private void btnSaveProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveProductActionPerformed
 
         String id = txtId.getText();
         String name = txtName.getText();
@@ -181,9 +181,9 @@ public class ProductScreem extends javax.swing.JFrame {
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
-    }//GEN-LAST:event_btnSaveActionPerformed
+    }//GEN-LAST:event_btnSaveProductActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void btnDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteProductActionPerformed
 
         int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este produto?", "Confirmação", 0);
 
@@ -208,9 +208,9 @@ public class ProductScreem extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_btnDeleteProductActionPerformed
 
-    private void btnSaveChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeActionPerformed
+    private void btnSaveChangeProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeProductActionPerformed
         String id = txtId.getText();
         String name = txtName.getText();
         String brand = txtBrand.getText();
@@ -227,7 +227,7 @@ public class ProductScreem extends javax.swing.JFrame {
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
-    }//GEN-LAST:event_btnSaveChangeActionPerformed
+    }//GEN-LAST:event_btnSaveChangeProductActionPerformed
 
     private void activeFields() {
 //        txtId.setEnabled(true);
@@ -235,9 +235,9 @@ public class ProductScreem extends javax.swing.JFrame {
         txtPrice.setEnabled(true);
         txtName.setEnabled(true);
 
-        btnDelete.setVisible(false);
-        btnSave.setVisible(false);
-        btnSaveChange.setVisible(false);
+        btnDeleteProduct.setVisible(false);
+        btnSaveProduct.setVisible(false);
+        btnSaveChangeProduct.setVisible(false);
     }
 
     private void fillFields(String id, String name, String brand, float price) {
@@ -248,9 +248,9 @@ public class ProductScreem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnSaveChange;
+    private javax.swing.JButton btnDeleteProduct;
+    private javax.swing.JButton btnSaveChangeProduct;
+    private javax.swing.JButton btnSaveProduct;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBrand;
     private javax.swing.JLabel lblId;
