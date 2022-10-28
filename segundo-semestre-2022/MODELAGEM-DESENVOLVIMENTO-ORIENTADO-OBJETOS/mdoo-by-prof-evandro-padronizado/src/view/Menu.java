@@ -20,7 +20,7 @@ public class Menu extends javax.swing.JFrame {
         if (job.equalsIgnoreCase("Administrador")) {
             mnuAdministrative.setVisible(true);
         } else if (job.equalsIgnoreCase("Estagiário")) {
-            itmDelete.setEnabled(false);
+            itmDeleteProduct.setEnabled(false);
         }
     }
 
@@ -33,10 +33,10 @@ public class Menu extends javax.swing.JFrame {
         lblBackground = new javax.swing.JLabel();
         jmbMain = new javax.swing.JMenuBar();
         mnuProducts = new javax.swing.JMenu();
-        itmRegister = new javax.swing.JMenuItem();
-        itmChange = new javax.swing.JMenuItem();
-        itmDelete = new javax.swing.JMenuItem();
-        itmReports = new javax.swing.JMenuItem();
+        itmRegisterProduct = new javax.swing.JMenuItem();
+        itmChangeProduct = new javax.swing.JMenuItem();
+        itmDeleteProduct = new javax.swing.JMenuItem();
+        itmReportsProducts = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         itmExit = new javax.swing.JMenuItem();
         mnuCustomers = new javax.swing.JMenu();
@@ -74,36 +74,36 @@ public class Menu extends javax.swing.JFrame {
 
         mnuProducts.setText("Produtos");
 
-        itmRegister.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itmRegister.setText("Cadastrar");
-        itmRegister.addActionListener(new java.awt.event.ActionListener() {
+        itmRegisterProduct.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmRegisterProduct.setText("Cadastrar");
+        itmRegisterProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmRegisterActionPerformed(evt);
+                itmRegisterProductActionPerformed(evt);
             }
         });
-        mnuProducts.add(itmRegister);
+        mnuProducts.add(itmRegisterProduct);
 
-        itmChange.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itmChange.setText("Alterar");
-        itmChange.addActionListener(new java.awt.event.ActionListener() {
+        itmChangeProduct.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmChangeProduct.setText("Alterar");
+        itmChangeProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmChangeActionPerformed(evt);
+                itmChangeProductActionPerformed(evt);
             }
         });
-        mnuProducts.add(itmChange);
+        mnuProducts.add(itmChangeProduct);
 
-        itmDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itmDelete.setText("Excluir");
-        itmDelete.addActionListener(new java.awt.event.ActionListener() {
+        itmDeleteProduct.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmDeleteProduct.setText("Excluir");
+        itmDeleteProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmDeleteActionPerformed(evt);
+                itmDeleteProductActionPerformed(evt);
             }
         });
-        mnuProducts.add(itmDelete);
+        mnuProducts.add(itmDeleteProduct);
 
-        itmReports.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itmReports.setText("Relatórios");
-        mnuProducts.add(itmReports);
+        itmReportsProducts.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmReportsProducts.setText("Relatórios");
+        mnuProducts.add(itmReportsProducts);
         mnuProducts.add(jSeparator1);
 
         itmExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -188,17 +188,17 @@ public class Menu extends javax.swing.JFrame {
         openUserScreem("alterar");
     }//GEN-LAST:event_itmChangeUserDatasActionPerformed
 
-    private void itmRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmRegisterActionPerformed
+    private void itmRegisterProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmRegisterProductActionPerformed
         new ProductScreem().setVisible(true);
-    }//GEN-LAST:event_itmRegisterActionPerformed
+    }//GEN-LAST:event_itmRegisterProductActionPerformed
 
-    private void itmChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmChangeActionPerformed
+    private void itmChangeProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmChangeProductActionPerformed
         openProductScreem("alterar");
-    }//GEN-LAST:event_itmChangeActionPerformed
+    }//GEN-LAST:event_itmChangeProductActionPerformed
 
-    private void itmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteActionPerformed
+    private void itmDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteProductActionPerformed
         openProductScreem("delete");
-    }//GEN-LAST:event_itmDeleteActionPerformed
+    }//GEN-LAST:event_itmDeleteProductActionPerformed
 
     private void openUserScreem(String op) {
 
@@ -274,14 +274,14 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itmAddNewUser;
-    private javax.swing.JMenuItem itmChange;
+    private javax.swing.JMenuItem itmChangeProduct;
     private javax.swing.JMenuItem itmChangeUserDatas;
-    private javax.swing.JMenuItem itmDelete;
     private javax.swing.JMenuItem itmDeleteAllUser;
+    private javax.swing.JMenuItem itmDeleteProduct;
     private javax.swing.JMenuItem itmDeleteUser;
     private javax.swing.JMenuItem itmExit;
-    private javax.swing.JMenuItem itmRegister;
-    private javax.swing.JMenuItem itmReports;
+    private javax.swing.JMenuItem itmRegisterProduct;
+    private javax.swing.JMenuItem itmReportsProducts;
     private javax.swing.JMenuItem itmUsersList;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenuBar jmbMain;
