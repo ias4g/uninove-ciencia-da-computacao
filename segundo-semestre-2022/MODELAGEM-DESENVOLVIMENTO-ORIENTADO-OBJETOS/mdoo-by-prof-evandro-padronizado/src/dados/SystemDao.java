@@ -98,11 +98,35 @@ public class SystemDao {
         return resultado;
     }
 
+    public ResultSet listarProducts() throws ClassNotFoundException, SQLException {
+
+        conectar();
+
+        st = conectado.prepareStatement(
+                "SELECT * FROM tbproducts"
+        );
+
+        resultado = st.executeQuery();
+
+        return resultado;
+    }
+
     public ResultSet listarUsuarioPeloCargo(String cargo) throws ClassNotFoundException, SQLException {
         conectar();
 
         st = conectado.prepareStatement("SELECT * FROM tbusers WHERE job = ?");
         st.setString(1, cargo);
+
+        resultado = st.executeQuery();
+
+        return resultado;
+    }
+
+    public ResultSet listProductsForName(String search) throws ClassNotFoundException, SQLException {
+
+        conectar();
+
+        st = conectado.prepareStatement("SELECT * FROM tbproducts LIKE name = %" + search + "%");
 
         resultado = st.executeQuery();
 

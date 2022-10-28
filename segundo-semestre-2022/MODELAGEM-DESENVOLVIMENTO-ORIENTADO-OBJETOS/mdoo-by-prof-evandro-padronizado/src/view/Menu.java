@@ -103,6 +103,11 @@ public class Menu extends javax.swing.JFrame {
 
         itmReportsProducts.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmReportsProducts.setText("Relatórios");
+        itmReportsProducts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmReportsProductsActionPerformed(evt);
+            }
+        });
         mnuProducts.add(itmReportsProducts);
         mnuProducts.add(jSeparator1);
 
@@ -199,6 +204,10 @@ public class Menu extends javax.swing.JFrame {
     private void itmDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteProductActionPerformed
         openProductScreem("delete");
     }//GEN-LAST:event_itmDeleteProductActionPerformed
+
+    private void itmReportsProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReportsProductsActionPerformed
+        new ProductsList().setVisible(true);
+    }//GEN-LAST:event_itmReportsProductsActionPerformed
 
     private void openUserScreem(String op) {
 
