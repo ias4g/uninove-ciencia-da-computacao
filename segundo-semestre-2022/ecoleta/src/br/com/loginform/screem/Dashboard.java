@@ -30,7 +30,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblSubTitle1.setFont(PTSans_Regular_24);
         lblSubTitle2.setFont(PTSans_Regular_24);
 
-        lblButtonEnter.setFont(PTSans_Bold_16);
+        lblButtonRegister.setFont(PTSans_Bold_16);
     }
 
     @SuppressWarnings("unchecked")
@@ -46,11 +46,11 @@ public class Dashboard extends javax.swing.JFrame {
         lblImage = new javax.swing.JLabel();
         lblSubTitle2 = new javax.swing.JLabel();
         jpButtonRegister = new br.com.loginform.components.JPanelButton();
-        lblButtonEnterIcon = new javax.swing.JLabel();
-        lblButtonEnter = new javax.swing.JLabel();
+        lblButtonRegisterIcon = new javax.swing.JLabel();
+        lblButtonRegister = new javax.swing.JLabel();
         jpButtonChange = new br.com.loginform.components.JPanelButton();
-        lblButtonEnterIcon1 = new javax.swing.JLabel();
-        lblButtonEnter1 = new javax.swing.JLabel();
+        lblButtonChangeIcon = new javax.swing.JLabel();
+        lblButtonChange = new javax.swing.JLabel();
         lblTitle1 = new javax.swing.JLabel();
         lblTitle3 = new javax.swing.JLabel();
         lblSubTitle1 = new javax.swing.JLabel();
@@ -132,81 +132,81 @@ public class Dashboard extends javax.swing.JFrame {
 
         jpButtonRegister.setLayout(null);
 
-        lblButtonEnterIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/icon-button-enter.png"))); // NOI18N
-        lblButtonEnterIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblButtonEnterIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblButtonRegisterIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/icon-button-enter.png"))); // NOI18N
+        lblButtonRegisterIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonRegisterIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblButtonEnterIconMouseClicked(evt);
+                lblButtonRegisterIconMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblButtonEnterIconMouseEntered(evt);
+                lblButtonRegisterIconMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblButtonEnterIconMouseExited(evt);
+                lblButtonRegisterIconMouseExited(evt);
             }
         });
-        jpButtonRegister.add(lblButtonEnterIcon);
-        lblButtonEnterIcon.setBounds(0, 0, 56, 56);
+        jpButtonRegister.add(lblButtonRegisterIcon);
+        lblButtonRegisterIcon.setBounds(0, 0, 56, 56);
 
-        lblButtonEnter.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblButtonEnter.setForeground(new java.awt.Color(255, 255, 255));
-        lblButtonEnter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblButtonEnter.setText("Cadastre um ponto de coleta");
-        lblButtonEnter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblButtonEnter.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblButtonRegister.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblButtonRegister.setForeground(new java.awt.Color(255, 255, 255));
+        lblButtonRegister.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonRegister.setText("Cadastre um ponto de coleta");
+        lblButtonRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonRegister.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblButtonEnterMouseClicked(evt);
+                lblButtonRegisterMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblButtonEnterMouseEntered(evt);
+                lblButtonRegisterMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblButtonEnterMouseExited(evt);
+                lblButtonRegisterMouseExited(evt);
             }
         });
-        jpButtonRegister.add(lblButtonEnter);
-        lblButtonEnter.setBounds(56, 0, 236, 56);
+        jpButtonRegister.add(lblButtonRegister);
+        lblButtonRegister.setBounds(56, 0, 236, 56);
 
         getContentPane().add(jpButtonRegister);
         jpButtonRegister.setBounds(60, 420, 292, 56);
 
-        jpButtonChange.setBackground(new java.awt.Color(204, 204, 204));
+        jpButtonChange.setBackground(new java.awt.Color(102, 51, 204));
         jpButtonChange.setLayout(null);
 
-        lblButtonEnterIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/icon-button-enter.png"))); // NOI18N
-        lblButtonEnterIcon1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblButtonEnterIcon1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblButtonChangeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/icon-button-enter.png"))); // NOI18N
+        lblButtonChangeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonChangeIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblButtonEnterIcon1MouseClicked(evt);
+                lblButtonChangeIconMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblButtonEnterIcon1MouseEntered(evt);
+                lblButtonChangeIconMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblButtonEnterIcon1MouseExited(evt);
+                lblButtonChangeIconMouseExited(evt);
             }
         });
-        jpButtonChange.add(lblButtonEnterIcon1);
-        lblButtonEnterIcon1.setBounds(0, 0, 56, 56);
+        jpButtonChange.add(lblButtonChangeIcon);
+        lblButtonChangeIcon.setBounds(0, 0, 56, 56);
 
-        lblButtonEnter1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblButtonEnter1.setForeground(new java.awt.Color(255, 255, 255));
-        lblButtonEnter1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblButtonEnter1.setText("Cadastre um ponto de coleta");
-        lblButtonEnter1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblButtonEnter1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblButtonChange.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblButtonChange.setForeground(new java.awt.Color(255, 255, 255));
+        lblButtonChange.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonChange.setText("Cadastre um ponto de coleta");
+        lblButtonChange.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonChange.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblButtonEnter1MouseClicked(evt);
+                lblButtonChangeMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblButtonEnter1MouseEntered(evt);
+                lblButtonChangeMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblButtonEnter1MouseExited(evt);
+                lblButtonChangeMouseExited(evt);
             }
         });
-        jpButtonChange.add(lblButtonEnter1);
-        lblButtonEnter1.setBounds(56, 0, 236, 56);
+        jpButtonChange.add(lblButtonChange);
+        lblButtonChange.setBounds(56, 0, 236, 56);
 
         getContentPane().add(jpButtonChange);
         jpButtonChange.setBounds(60, 484, 292, 56);
@@ -265,74 +265,74 @@ public class Dashboard extends javax.swing.JFrame {
         lblMinimize.setBackground(null);
     }//GEN-LAST:event_lblMinimizeMouseExited
 
-    private void lblButtonEnterIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIconMouseEntered
+    private void lblButtonRegisterIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterIconMouseEntered
         jpButtonRegister.setBackground(new Color(36, 143, 85));
-    }//GEN-LAST:event_lblButtonEnterIconMouseEntered
+    }//GEN-LAST:event_lblButtonRegisterIconMouseEntered
 
-    private void lblButtonEnterIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIconMouseExited
+    private void lblButtonRegisterIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterIconMouseExited
         jpButtonRegister.setBackground(new Color(52, 203, 121));
-    }//GEN-LAST:event_lblButtonEnterIconMouseExited
+    }//GEN-LAST:event_lblButtonRegisterIconMouseExited
 
-    private void lblButtonEnterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterMouseEntered
+    private void lblButtonRegisterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterMouseEntered
         jpButtonRegister.setBackground(new Color(36, 143, 85));
-    }//GEN-LAST:event_lblButtonEnterMouseEntered
+    }//GEN-LAST:event_lblButtonRegisterMouseEntered
 
-    private void lblButtonEnterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterMouseExited
+    private void lblButtonRegisterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterMouseExited
         jpButtonRegister.setBackground(new Color(52, 203, 121));
-    }//GEN-LAST:event_lblButtonEnterMouseExited
+    }//GEN-LAST:event_lblButtonRegisterMouseExited
 
-    private void lblButtonEnterIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIconMouseClicked
-        lblButtonEnterIcon.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+    private void lblButtonRegisterIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterIconMouseClicked
+        lblButtonRegisterIcon.setCursor(new Cursor(Cursor.WAIT_CURSOR));
 
         new Register(this, true).setVisible(true);
 
-        lblButtonEnterIcon.setCursor(new Cursor(Cursor.WAIT_CURSOR));
-    }//GEN-LAST:event_lblButtonEnterIconMouseClicked
+        lblButtonRegisterIcon.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+    }//GEN-LAST:event_lblButtonRegisterIconMouseClicked
 
-    private void lblButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterMouseClicked
-        lblButtonEnter.setCursor(new Cursor(Cursor.WAIT_CURSOR));
+    private void lblButtonRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterMouseClicked
+        lblButtonRegister.setCursor(new Cursor(Cursor.WAIT_CURSOR));
 
         new Register(this, true).setVisible(true);
 
-        lblButtonEnter.setCursor(new Cursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_lblButtonEnterMouseClicked
+        lblButtonRegister.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_lblButtonRegisterMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         new About(this, true).setVisible(true);
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void lblButtonEnterIcon1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIcon1MouseClicked
+    private void lblButtonChangeIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeIconMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblButtonEnterIcon1MouseClicked
+    }//GEN-LAST:event_lblButtonChangeIconMouseClicked
 
-    private void lblButtonEnterIcon1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIcon1MouseEntered
+    private void lblButtonChangeIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeIconMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblButtonEnterIcon1MouseEntered
+    }//GEN-LAST:event_lblButtonChangeIconMouseEntered
 
-    private void lblButtonEnterIcon1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIcon1MouseExited
+    private void lblButtonChangeIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeIconMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblButtonEnterIcon1MouseExited
+    }//GEN-LAST:event_lblButtonChangeIconMouseExited
 
-    private void lblButtonEnter1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnter1MouseClicked
+    private void lblButtonChangeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblButtonEnter1MouseClicked
+    }//GEN-LAST:event_lblButtonChangeMouseClicked
 
-    private void lblButtonEnter1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnter1MouseEntered
+    private void lblButtonChangeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblButtonEnter1MouseEntered
+    }//GEN-LAST:event_lblButtonChangeMouseEntered
 
-    private void lblButtonEnter1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnter1MouseExited
+    private void lblButtonChangeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblButtonEnter1MouseExited
+    }//GEN-LAST:event_lblButtonChangeMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private br.com.loginform.components.JPanelButton jpButtonChange;
     private br.com.loginform.components.JPanelButton jpButtonRegister;
-    private javax.swing.JLabel lblButtonEnter;
-    private javax.swing.JLabel lblButtonEnter1;
-    private javax.swing.JLabel lblButtonEnterIcon;
-    private javax.swing.JLabel lblButtonEnterIcon1;
+    private javax.swing.JLabel lblButtonChange;
+    private javax.swing.JLabel lblButtonChangeIcon;
+    private javax.swing.JLabel lblButtonRegister;
+    private javax.swing.JLabel lblButtonRegisterIcon;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
