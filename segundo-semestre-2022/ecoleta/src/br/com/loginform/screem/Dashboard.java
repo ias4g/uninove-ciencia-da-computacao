@@ -54,7 +54,7 @@ public class Dashboard extends javax.swing.JFrame {
         lblTitle1 = new javax.swing.JLabel();
         lblTitle3 = new javax.swing.JLabel();
         lblSubTitle1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblAbout = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial");
@@ -231,15 +231,15 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblSubTitle1);
         lblSubTitle1.setBounds(60, 325, 500, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/question.png"))); // NOI18N
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/question.png"))); // NOI18N
+        lblAbout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAbout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                lblAboutMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(916, 0, 36, 28);
+        getContentPane().add(lblAbout);
+        lblAbout.setBounds(916, 0, 36, 28);
 
         setSize(new java.awt.Dimension(1024, 590));
         setLocationRelativeTo(null);
@@ -266,7 +266,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMinimizeMouseExited
 
     private void lblButtonRegisterIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterIconMouseEntered
-        jpButtonRegister.setBackground(new Color(36, 143, 85));
+        jpButtonRegister.setBackground(new Color(55, 178, 111));
     }//GEN-LAST:event_lblButtonRegisterIconMouseEntered
 
     private void lblButtonRegisterIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterIconMouseExited
@@ -274,7 +274,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lblButtonRegisterIconMouseExited
 
     private void lblButtonRegisterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterMouseEntered
-        jpButtonRegister.setBackground(new Color(36, 143, 85));
+        jpButtonRegister.setBackground(new Color(55, 178, 111));
     }//GEN-LAST:event_lblButtonRegisterMouseEntered
 
     private void lblButtonRegisterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonRegisterMouseExited
@@ -297,20 +297,20 @@ public class Dashboard extends javax.swing.JFrame {
         lblButtonRegister.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_lblButtonRegisterMouseClicked
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void lblAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAboutMouseClicked
         new About(this, true).setVisible(true);
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_lblAboutMouseClicked
 
     private void lblButtonChangeIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeIconMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lblButtonChangeIconMouseClicked
 
     private void lblButtonChangeIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeIconMouseEntered
-        // TODO add your handling code here:
+        jpButtonChange.setBackground(new Color(85, 42, 172));
     }//GEN-LAST:event_lblButtonChangeIconMouseEntered
 
     private void lblButtonChangeIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeIconMouseExited
-        // TODO add your handling code here:
+        jpButtonChange.setBackground(new Color(102, 51, 204));
     }//GEN-LAST:event_lblButtonChangeIconMouseExited
 
     private void lblButtonChangeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeMouseClicked
@@ -318,17 +318,17 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lblButtonChangeMouseClicked
 
     private void lblButtonChangeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeMouseEntered
-        // TODO add your handling code here:
+        jpButtonChange.setBackground(new Color(85, 42, 172));
     }//GEN-LAST:event_lblButtonChangeMouseEntered
 
     private void lblButtonChangeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonChangeMouseExited
-        // TODO add your handling code here:
+        jpButtonChange.setBackground(new Color(102, 51, 204));
     }//GEN-LAST:event_lblButtonChangeMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private br.com.loginform.components.JPanelButton jpButtonChange;
     private br.com.loginform.components.JPanelButton jpButtonRegister;
+    private javax.swing.JLabel lblAbout;
     private javax.swing.JLabel lblButtonChange;
     private javax.swing.JLabel lblButtonChangeIcon;
     private javax.swing.JLabel lblButtonRegister;
