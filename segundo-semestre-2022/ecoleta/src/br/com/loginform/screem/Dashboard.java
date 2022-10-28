@@ -45,9 +45,12 @@ public class Dashboard extends javax.swing.JFrame {
         lblTitle2 = new javax.swing.JLabel();
         lblImage = new javax.swing.JLabel();
         lblSubTitle2 = new javax.swing.JLabel();
-        jpButtonEnter = new br.com.loginform.components.JPanelButton();
+        jpButtonRegister = new br.com.loginform.components.JPanelButton();
         lblButtonEnterIcon = new javax.swing.JLabel();
         lblButtonEnter = new javax.swing.JLabel();
+        jpButtonChange = new br.com.loginform.components.JPanelButton();
+        lblButtonEnterIcon1 = new javax.swing.JLabel();
+        lblButtonEnter1 = new javax.swing.JLabel();
         lblTitle1 = new javax.swing.JLabel();
         lblTitle3 = new javax.swing.JLabel();
         lblSubTitle1 = new javax.swing.JLabel();
@@ -127,7 +130,7 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(lblSubTitle2);
         lblSubTitle2.setBounds(60, 366, 460, 30);
 
-        jpButtonEnter.setLayout(null);
+        jpButtonRegister.setLayout(null);
 
         lblButtonEnterIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/icon-button-enter.png"))); // NOI18N
         lblButtonEnterIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -142,7 +145,7 @@ public class Dashboard extends javax.swing.JFrame {
                 lblButtonEnterIconMouseExited(evt);
             }
         });
-        jpButtonEnter.add(lblButtonEnterIcon);
+        jpButtonRegister.add(lblButtonEnterIcon);
         lblButtonEnterIcon.setBounds(0, 0, 56, 56);
 
         lblButtonEnter.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -161,11 +164,52 @@ public class Dashboard extends javax.swing.JFrame {
                 lblButtonEnterMouseExited(evt);
             }
         });
-        jpButtonEnter.add(lblButtonEnter);
+        jpButtonRegister.add(lblButtonEnter);
         lblButtonEnter.setBounds(56, 0, 236, 56);
 
-        getContentPane().add(jpButtonEnter);
-        jpButtonEnter.setBounds(60, 455, 292, 56);
+        getContentPane().add(jpButtonRegister);
+        jpButtonRegister.setBounds(60, 420, 292, 56);
+
+        jpButtonChange.setBackground(new java.awt.Color(204, 204, 204));
+        jpButtonChange.setLayout(null);
+
+        lblButtonEnterIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/loginform/assets/icon-button-enter.png"))); // NOI18N
+        lblButtonEnterIcon1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonEnterIcon1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblButtonEnterIcon1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblButtonEnterIcon1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblButtonEnterIcon1MouseExited(evt);
+            }
+        });
+        jpButtonChange.add(lblButtonEnterIcon1);
+        lblButtonEnterIcon1.setBounds(0, 0, 56, 56);
+
+        lblButtonEnter1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblButtonEnter1.setForeground(new java.awt.Color(255, 255, 255));
+        lblButtonEnter1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblButtonEnter1.setText("Cadastre um ponto de coleta");
+        lblButtonEnter1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblButtonEnter1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblButtonEnter1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblButtonEnter1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblButtonEnter1MouseExited(evt);
+            }
+        });
+        jpButtonChange.add(lblButtonEnter1);
+        lblButtonEnter1.setBounds(56, 0, 236, 56);
+
+        getContentPane().add(jpButtonChange);
+        jpButtonChange.setBounds(60, 484, 292, 56);
 
         lblTitle1.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         lblTitle1.setText("Seu marketplace");
@@ -222,19 +266,19 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMinimizeMouseExited
 
     private void lblButtonEnterIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIconMouseEntered
-        jpButtonEnter.setBackground(new Color(36, 143, 85));
+        jpButtonRegister.setBackground(new Color(36, 143, 85));
     }//GEN-LAST:event_lblButtonEnterIconMouseEntered
 
     private void lblButtonEnterIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIconMouseExited
-        jpButtonEnter.setBackground(new Color(52, 203, 121));
+        jpButtonRegister.setBackground(new Color(52, 203, 121));
     }//GEN-LAST:event_lblButtonEnterIconMouseExited
 
     private void lblButtonEnterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterMouseEntered
-        jpButtonEnter.setBackground(new Color(36, 143, 85));
+        jpButtonRegister.setBackground(new Color(36, 143, 85));
     }//GEN-LAST:event_lblButtonEnterMouseEntered
 
     private void lblButtonEnterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterMouseExited
-        jpButtonEnter.setBackground(new Color(52, 203, 121));
+        jpButtonRegister.setBackground(new Color(52, 203, 121));
     }//GEN-LAST:event_lblButtonEnterMouseExited
 
     private void lblButtonEnterIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIconMouseClicked
@@ -257,11 +301,38 @@ public class Dashboard extends javax.swing.JFrame {
         new About(this, true).setVisible(true);
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void lblButtonEnterIcon1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIcon1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblButtonEnterIcon1MouseClicked
+
+    private void lblButtonEnterIcon1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIcon1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblButtonEnterIcon1MouseEntered
+
+    private void lblButtonEnterIcon1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnterIcon1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblButtonEnterIcon1MouseExited
+
+    private void lblButtonEnter1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnter1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblButtonEnter1MouseClicked
+
+    private void lblButtonEnter1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnter1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblButtonEnter1MouseEntered
+
+    private void lblButtonEnter1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblButtonEnter1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblButtonEnter1MouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private br.com.loginform.components.JPanelButton jpButtonEnter;
+    private br.com.loginform.components.JPanelButton jpButtonChange;
+    private br.com.loginform.components.JPanelButton jpButtonRegister;
     private javax.swing.JLabel lblButtonEnter;
+    private javax.swing.JLabel lblButtonEnter1;
     private javax.swing.JLabel lblButtonEnterIcon;
+    private javax.swing.JLabel lblButtonEnterIcon1;
     private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblFavicon;
     private javax.swing.JLabel lblFaviconDescription;
