@@ -1,6 +1,5 @@
 package view;
 
-
 import dados.SystemDao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -116,11 +115,11 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPassKeyPressed
 
     private void enterSystem() {
-        
+
         String usuario = txtUser.getText();
         String senha = txtPass.getText();
 
-        if (txtUser.getText().isEmpty() || txtPass.getText().isEmpty()) {
+        if (usuario.isEmpty() || senha.isEmpty()) {
 
             JOptionPane.showMessageDialog(
                     null, "Preencha todos os campos!"
@@ -139,15 +138,19 @@ public class FormLogin extends javax.swing.JFrame {
                         usuario, senha
                 );
 
-                if (resultado.next()) {
-                    String name;
-                    String job;
+                System.out.println(resultado.toString());
 
-                    name = resultado.getString("name");
-                    job = resultado.getString("job");
+                if (resultado.next()) {
 
                     //Abrir o formulário Menu.java
-                    new Menu(name, job).setVisible(true);
+                    new Menu(
+                            Integer.parseInt(resultado.getString("id")),
+                            resultado.getString("user"),
+                            resultado.getString("name"),
+                            resultado.getString("lastname"),
+                            resultado.getString("email"),
+                            resultado.getString("job")
+                    ).setVisible(true);
 
                     this.dispose();
 

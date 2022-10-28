@@ -6,29 +6,46 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
-
+    
     private ResultSet resultado;
-
-    public Menu(String name, String job) {
+    
+    public Menu(int id, String user, String name, String lastname, String email, String job) {
         initComponents();
-
+        
         mnuAdministrative.setVisible(false);
-
-        lblSaudacao.setText("Bem vindo: " + name);
-        lblUserLogged.setText("Usuário logado: " + job);
-
+        
+        lblResId.setText(String.valueOf(id));
+        lblResUser.setText(user);
+        lblResName.setText(name);
+        lblResLastname.setText(lastname);
+        lblResEmail.setText(email);
+        lblResJob.setText(job);
+        
+        lblUserLogged.setText("Logado como: " + user);
+        
         if (job.equalsIgnoreCase("Administrador")) {
             mnuAdministrative.setVisible(true);
         } else if (job.equalsIgnoreCase("Estagiário")) {
             itmDeleteProduct.setEnabled(false);
         }
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblSaudacao = new javax.swing.JLabel();
+        lblId = new javax.swing.JLabel();
+        lblUser = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblLastname = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        lblJob = new javax.swing.JLabel();
+        lblResId = new javax.swing.JLabel();
+        lblResUser = new javax.swing.JLabel();
+        lblResName = new javax.swing.JLabel();
+        lblResLastname = new javax.swing.JLabel();
+        lblResEmail = new javax.swing.JLabel();
+        lblResJob = new javax.swing.JLabel();
         lblUserLogged = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
         jmbMain = new javax.swing.JMenuBar();
@@ -54,23 +71,109 @@ public class Menu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(640, 426));
         setName("jfDashboard"); // NOI18N
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
-        lblSaudacao.setBackground(new java.awt.Color(255, 255, 255));
-        lblSaudacao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblSaudacao.setForeground(new java.awt.Color(255, 255, 255));
-        lblSaudacao.setText("Saudação");
-        getContentPane().add(lblSaudacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 230, -1));
+        lblId.setBackground(new java.awt.Color(255, 255, 255));
+        lblId.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblId.setForeground(new java.awt.Color(255, 255, 255));
+        lblId.setText("Identificação");
+        getContentPane().add(lblId);
+        lblId.setBounds(20, 20, 230, 25);
 
-        lblUserLogged.setBackground(new java.awt.Color(255, 255, 255));
-        lblUserLogged.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblUser.setBackground(new java.awt.Color(255, 255, 255));
+        lblUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblUser.setForeground(new java.awt.Color(255, 255, 255));
+        lblUser.setText("Usuário");
+        getContentPane().add(lblUser);
+        lblUser.setBounds(20, 50, 230, 25);
+
+        lblName.setBackground(new java.awt.Color(255, 255, 255));
+        lblName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        lblName.setText("Nome");
+        getContentPane().add(lblName);
+        lblName.setBounds(20, 80, 230, 25);
+
+        lblLastname.setBackground(new java.awt.Color(255, 255, 255));
+        lblLastname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblLastname.setForeground(new java.awt.Color(255, 255, 255));
+        lblLastname.setText("Sobre nome");
+        getContentPane().add(lblLastname);
+        lblLastname.setBounds(20, 270, 230, 25);
+
+        lblEmail.setBackground(new java.awt.Color(255, 255, 255));
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
+        lblEmail.setText("Email");
+        getContentPane().add(lblEmail);
+        lblEmail.setBounds(20, 300, 230, 25);
+
+        lblJob.setBackground(new java.awt.Color(255, 255, 255));
+        lblJob.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblJob.setForeground(new java.awt.Color(255, 255, 255));
+        lblJob.setText("Cargo");
+        getContentPane().add(lblJob);
+        lblJob.setBounds(20, 330, 230, 25);
+
+        lblResId.setBackground(new java.awt.Color(255, 255, 255));
+        lblResId.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblResId.setForeground(new java.awt.Color(255, 255, 255));
+        lblResId.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblResId.setText("Id");
+        getContentPane().add(lblResId);
+        lblResId.setBounds(310, 20, 310, 25);
+
+        lblResUser.setBackground(new java.awt.Color(255, 255, 255));
+        lblResUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblResUser.setForeground(new java.awt.Color(255, 255, 255));
+        lblResUser.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblResUser.setText("User");
+        getContentPane().add(lblResUser);
+        lblResUser.setBounds(310, 50, 310, 25);
+
+        lblResName.setBackground(new java.awt.Color(255, 255, 255));
+        lblResName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblResName.setForeground(new java.awt.Color(255, 255, 255));
+        lblResName.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblResName.setText("Name");
+        getContentPane().add(lblResName);
+        lblResName.setBounds(310, 80, 310, 25);
+
+        lblResLastname.setBackground(new java.awt.Color(255, 255, 255));
+        lblResLastname.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblResLastname.setForeground(new java.awt.Color(255, 255, 255));
+        lblResLastname.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblResLastname.setText("Lastname");
+        getContentPane().add(lblResLastname);
+        lblResLastname.setBounds(310, 270, 310, 25);
+
+        lblResEmail.setBackground(new java.awt.Color(255, 255, 255));
+        lblResEmail.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblResEmail.setForeground(new java.awt.Color(255, 255, 255));
+        lblResEmail.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblResEmail.setText("Email");
+        getContentPane().add(lblResEmail);
+        lblResEmail.setBounds(310, 300, 310, 25);
+
+        lblResJob.setBackground(new java.awt.Color(255, 255, 255));
+        lblResJob.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblResJob.setForeground(new java.awt.Color(255, 255, 255));
+        lblResJob.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        lblResJob.setText("Job");
+        getContentPane().add(lblResJob);
+        lblResJob.setBounds(310, 330, 310, 25);
+
+        lblUserLogged.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         lblUserLogged.setForeground(new java.awt.Color(255, 255, 255));
-        lblUserLogged.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        lblUserLogged.setText("Logado");
-        getContentPane().add(lblUserLogged, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 400, -1));
+        lblUserLogged.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUserLogged.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(lblUserLogged);
+        lblUserLogged.setBounds(10, 140, 620, 100);
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/fundo.jpg"))); // NOI18N
-        getContentPane().add(lblBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 403));
+        lblBackground.setOpaque(true);
+        getContentPane().add(lblBackground);
+        lblBackground.setBounds(0, 0, 640, 403);
 
         mnuProducts.setText("Produtos");
 
@@ -178,7 +281,6 @@ public class Menu extends javax.swing.JFrame {
 
     private void itmAddNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAddNewUserActionPerformed
         new CreateNewUser().setVisible(true);
-
     }//GEN-LAST:event_itmAddNewUserActionPerformed
 
     private void itmDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteUserActionPerformed
@@ -208,22 +310,22 @@ public class Menu extends javax.swing.JFrame {
     private void itmReportsProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReportsProductsActionPerformed
         new ProductsList().setVisible(true);
     }//GEN-LAST:event_itmReportsProductsActionPerformed
-
+    
     private void openUserScreem(String op) {
-
+        
         String u = JOptionPane.showInputDialog(
                 null, "Digite o nome do usuário a !" + op, "Usuário", 1
         );
-
+        
         if (u == null) {
             JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
             return;
         }
-
+        
         try {
-
+            
             resultado = new SystemDao().listarUsuario(u);
-
+            
             if (resultado.next()) {
                 int id = Integer.parseInt(resultado.getString("id"));
                 String user = resultado.getString("user");
@@ -237,45 +339,45 @@ public class Menu extends javax.swing.JFrame {
                 new CreateNewUser(
                         id, user, password, name, lastname, email, job, op
                 ).setVisible(true);
-
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado");
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         }
     }
-
+    
     private void openProductScreem(String op) {
-
+        
         String u = JOptionPane.showInputDialog(
                 null, "Digite o id do usuário a " + op, "Usuário", 1
         );
-
+        
         if (u == null) {
             JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
             return;
         }
-
+        
         try {
-
+            
             resultado = new SystemDao().listarProduct(u);
-
+            
             if (resultado.next()) {
                 String id = resultado.getString("id");
                 String name = resultado.getString("name");
                 String brand = resultado.getString("brand");
                 float price = Float.valueOf(resultado.getString("price"));
-
+                
                 new ProductScreem(
                         id, name, brand, price, op
                 ).setVisible(true);
-
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Produto não encontrado");
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         }
@@ -295,7 +397,18 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenuBar jmbMain;
     private javax.swing.JLabel lblBackground;
-    private javax.swing.JLabel lblSaudacao;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblJob;
+    private javax.swing.JLabel lblLastname;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblResEmail;
+    private javax.swing.JLabel lblResId;
+    private javax.swing.JLabel lblResJob;
+    private javax.swing.JLabel lblResLastname;
+    private javax.swing.JLabel lblResName;
+    private javax.swing.JLabel lblResUser;
+    private javax.swing.JLabel lblUser;
     private javax.swing.JLabel lblUserLogged;
     private javax.swing.JMenu mnuAdministrative;
     private javax.swing.JMenu mnuCustomers;
