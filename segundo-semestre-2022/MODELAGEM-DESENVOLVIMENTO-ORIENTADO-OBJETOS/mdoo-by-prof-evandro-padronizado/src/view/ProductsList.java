@@ -99,12 +99,9 @@ public class ProductsList extends javax.swing.JFrame {
             while (rs.next()) {
                 Object datas[] = {
                     rs.getString("id"),
-                    rs.getString("user"),
-                    rs.getString("password"),
                     rs.getString("name"),
-                    rs.getString("lastname"),
-                    rs.getString("email"),
-                    rs.getString("job")
+                    rs.getString("brand"),
+                    rs.getString("price")
                 };
 
                 tableModel.addRow(datas);
