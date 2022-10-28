@@ -71,6 +71,21 @@ public class SystemDao {
         return resultado;
     }
 
+    public ResultSet listarProduct(String id) throws ClassNotFoundException, SQLException {
+
+        conectar();
+
+        st = conectado.prepareStatement(
+                "SELECT * FROM tbproducts WHERE id = ?"
+        );
+
+        st.setString(1, id);
+
+        resultado = st.executeQuery();
+
+        return resultado;
+    }
+
     public ResultSet listarUsuarios() throws ClassNotFoundException, SQLException {
         conectar();
 
@@ -106,6 +121,19 @@ public class SystemDao {
         st.executeUpdate();
     }
 
+    public void deletarProduct(String id) throws ClassNotFoundException, SQLException {
+
+        conectar();
+
+        st = conectado.prepareStatement(
+                "DELETE FROM tbproducts WHERE id = ?"
+        );
+
+        st.setString(1, id);
+
+        st.executeUpdate();
+    }
+
     public void alterarUsuario(String user, String pass, String name, String lastname, String email, String job, int id) throws ClassNotFoundException, SQLException {
         conectar();
 
@@ -118,6 +146,20 @@ public class SystemDao {
         st.setString(5, email);
         st.setString(6, job);
         st.setInt(7, id);
+
+        st.executeUpdate();
+    }
+
+    public void alterarProduct(String id, String name, String brand, float price) throws ClassNotFoundException, SQLException {
+
+        conectar();
+
+        st = conectado.prepareStatement("UPDATE tbproducts SET name = ?, brand = ?, price = ? WHERE id = ?");
+
+        st.setString(1, name);
+        st.setString(2, brand);
+        st.setFloat(3, price);
+        st.setString(4, id);
 
         st.executeUpdate();
     }

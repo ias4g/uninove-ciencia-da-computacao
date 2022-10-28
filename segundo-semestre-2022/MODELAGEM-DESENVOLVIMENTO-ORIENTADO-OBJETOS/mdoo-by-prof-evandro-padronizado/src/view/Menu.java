@@ -6,24 +6,24 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
-    
+
     private ResultSet resultado;
-    
+
     public Menu(String name, String job) {
         initComponents();
-        
+
         mnuAdministrative.setVisible(false);
-        
+
         lblSaudacao.setText("Bem vindo: " + name);
         lblUserLogged.setText("Usuário logado: " + job);
-        
+
         if (job.equalsIgnoreCase("Administrador")) {
             mnuAdministrative.setVisible(true);
         } else if (job.equalsIgnoreCase("Estagiário")) {
             itmDelete.setEnabled(false);
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,8 +33,8 @@ public class Menu extends javax.swing.JFrame {
         lblBackground = new javax.swing.JLabel();
         jmbMain = new javax.swing.JMenuBar();
         mnuProducts = new javax.swing.JMenu();
-        itmChange = new javax.swing.JMenuItem();
         itmRegister = new javax.swing.JMenuItem();
+        itmChange = new javax.swing.JMenuItem();
         itmDelete = new javax.swing.JMenuItem();
         itmReports = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
@@ -74,10 +74,6 @@ public class Menu extends javax.swing.JFrame {
 
         mnuProducts.setText("Produtos");
 
-        itmChange.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itmChange.setText("Alterar");
-        mnuProducts.add(itmChange);
-
         itmRegister.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmRegister.setText("Cadastrar");
         itmRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -87,8 +83,22 @@ public class Menu extends javax.swing.JFrame {
         });
         mnuProducts.add(itmRegister);
 
+        itmChange.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itmChange.setText("Alterar");
+        itmChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmChangeActionPerformed(evt);
+            }
+        });
+        mnuProducts.add(itmChange);
+
         itmDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmDelete.setText("Excluir");
+        itmDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmDeleteActionPerformed(evt);
+            }
+        });
         mnuProducts.add(itmDelete);
 
         itmReports.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -181,22 +191,30 @@ public class Menu extends javax.swing.JFrame {
     private void itmRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmRegisterActionPerformed
         new ProductScreem().setVisible(true);
     }//GEN-LAST:event_itmRegisterActionPerformed
-    
+
+    private void itmChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmChangeActionPerformed
+        openProductScreem("alterar");
+    }//GEN-LAST:event_itmChangeActionPerformed
+
+    private void itmDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteActionPerformed
+        openProductScreem("delete");
+    }//GEN-LAST:event_itmDeleteActionPerformed
+
     private void openUserScreem(String op) {
-        
+
         String u = JOptionPane.showInputDialog(
                 null, "Digite o nome do usuário a !" + op, "Usuário", 1
         );
-        
+
         if (u == null) {
             JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
             return;
         }
-        
+
         try {
-            
+
             resultado = new SystemDao().listarUsuario(u);
-            
+
             if (resultado.next()) {
                 int id = Integer.parseInt(resultado.getString("id"));
                 String user = resultado.getString("user");
@@ -210,11 +228,45 @@ public class Menu extends javax.swing.JFrame {
                 new CreateNewUser(
                         id, user, password, name, lastname, email, job, op
                 ).setVisible(true);
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado");
             }
-            
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Driver não está na library");
+        }
+    }
+
+    private void openProductScreem(String op) {
+
+        String u = JOptionPane.showInputDialog(
+                null, "Digite o id do usuário a " + op, "Usuário", 1
+        );
+
+        if (u == null) {
+            JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
+            return;
+        }
+
+        try {
+
+            resultado = new SystemDao().listarProduct(u);
+
+            if (resultado.next()) {
+                String id = resultado.getString("id");
+                String name = resultado.getString("name");
+                String brand = resultado.getString("brand");
+                float price = Float.valueOf(resultado.getString("price"));
+
+                new ProductScreem(
+                        id, name, brand, price, op
+                ).setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Produto não encontrado");
+            }
+
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         }
