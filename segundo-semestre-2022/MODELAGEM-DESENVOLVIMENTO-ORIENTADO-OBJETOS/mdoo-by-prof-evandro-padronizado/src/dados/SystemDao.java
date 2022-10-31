@@ -86,6 +86,19 @@ public class SystemDao {
         return resultado;
     }
 
+    public ResultSet listarProductsId() throws ClassNotFoundException, SQLException {
+
+        conectar();
+
+        st = conectado.prepareStatement(
+                "SELECT id FROM tbproducts"
+        );
+
+        resultado = st.executeQuery();
+
+        return resultado;
+    }
+
     public ResultSet listarUsuarios() throws ClassNotFoundException, SQLException {
         conectar();
 

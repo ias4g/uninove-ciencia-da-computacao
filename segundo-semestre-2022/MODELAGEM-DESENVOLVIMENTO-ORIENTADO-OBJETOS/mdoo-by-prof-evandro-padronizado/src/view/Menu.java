@@ -6,30 +6,30 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
-    
+
     private ResultSet resultado;
-    
+
     public Menu(int id, String user, String name, String lastname, String email, String job) {
         initComponents();
-        
+
         mnuAdministrative.setVisible(false);
-        
+
         lblResId.setText(String.valueOf(id));
         lblResUser.setText(user);
         lblResName.setText(name);
         lblResLastname.setText(lastname);
         lblResEmail.setText(email);
         lblResJob.setText(job);
-        
+
         lblUserLogged.setText("Logado como: " + user);
-        
+
         if (job.equalsIgnoreCase("Administrador")) {
             mnuAdministrative.setVisible(true);
         } else if (job.equalsIgnoreCase("Estagiário")) {
             itmDeleteProduct.setEnabled(false);
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -300,7 +300,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmRegisterProductActionPerformed
 
     private void itmChangeProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmChangeProductActionPerformed
-        openProductScreem("alterar");
+//        openProductScreem("alterar");
+
+        new Checkbox(this, true).setVisible(true);
     }//GEN-LAST:event_itmChangeProductActionPerformed
 
     private void itmDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteProductActionPerformed
@@ -310,22 +312,22 @@ public class Menu extends javax.swing.JFrame {
     private void itmReportsProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReportsProductsActionPerformed
         new ProductsList().setVisible(true);
     }//GEN-LAST:event_itmReportsProductsActionPerformed
-    
+
     private void openUserScreem(String op) {
-        
+
         String u = JOptionPane.showInputDialog(
                 null, "Digite o nome do usuário a !" + op, "Usuário", 1
         );
-        
+
         if (u == null) {
             JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
             return;
         }
-        
+
         try {
-            
+
             resultado = new SystemDao().listarUsuario(u);
-            
+
             if (resultado.next()) {
                 int id = Integer.parseInt(resultado.getString("id"));
                 String user = resultado.getString("user");
@@ -339,45 +341,45 @@ public class Menu extends javax.swing.JFrame {
                 new CreateNewUser(
                         id, user, password, name, lastname, email, job, op
                 ).setVisible(true);
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado");
             }
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         }
     }
-    
+
     private void openProductScreem(String op) {
-        
+
         String u = JOptionPane.showInputDialog(
                 null, "Digite o id do usuário a " + op, "Usuário", 1
         );
-        
+
         if (u == null) {
             JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
             return;
         }
-        
+
         try {
-            
+
             resultado = new SystemDao().listarProduct(u);
-            
+
             if (resultado.next()) {
                 String id = resultado.getString("id");
                 String name = resultado.getString("name");
                 String brand = resultado.getString("brand");
                 float price = Float.valueOf(resultado.getString("price"));
-                
+
                 new ProductScreem(
                         id, name, brand, price, op
                 ).setVisible(true);
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "Produto não encontrado");
             }
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         }
