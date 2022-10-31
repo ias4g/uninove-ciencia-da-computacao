@@ -1,12 +1,37 @@
 package view;
 
+import dados.SystemDao;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 public class Checkbox extends javax.swing.JDialog {
+
+    private ResultSet resultado;
 
     public Checkbox(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+
+        fillComboBox();
+
+    }
+
+    private void fillComboBox() {
+
         cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecione"}));
+
+        try {
+            resultado = new SystemDao().listarProductsId();
+
+            while (resultado.next()) {
+                cmbId.addItem(resultado.getString("id"));
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+
     }
 
     @SuppressWarnings("unchecked")
