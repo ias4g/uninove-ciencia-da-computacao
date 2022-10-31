@@ -29,7 +29,7 @@ public class SplashScreem extends javax.swing.JFrame {
             public void run() {
                 for (int i = 1; i <= 100; i++) {
                     try {
-                        sleep(10);
+                        sleep(100);
 
                         lblPercent.setText(i + "%");
 
