@@ -48,7 +48,19 @@ public class ProductsList extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblProducts.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblProducts);
+        if (tblProducts.getColumnModel().getColumnCount() > 0) {
+            tblProducts.getColumnModel().getColumn(1).setMinWidth(200);
+            tblProducts.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblProducts.getColumnModel().getColumn(1).setMaxWidth(200);
+            tblProducts.getColumnModel().getColumn(2).setMinWidth(100);
+            tblProducts.getColumnModel().getColumn(2).setPreferredWidth(100);
+            tblProducts.getColumnModel().getColumn(2).setMaxWidth(100);
+            tblProducts.getColumnModel().getColumn(3).setMinWidth(50);
+            tblProducts.getColumnModel().getColumn(3).setPreferredWidth(50);
+            tblProducts.getColumnModel().getColumn(3).setMaxWidth(50);
+        }
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(10, 70, 620, 290);
