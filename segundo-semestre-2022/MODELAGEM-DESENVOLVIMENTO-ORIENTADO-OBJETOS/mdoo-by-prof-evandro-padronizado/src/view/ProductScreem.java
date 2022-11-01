@@ -28,7 +28,7 @@ public class ProductScreem extends javax.swing.JFrame {
 
         switch (op) {
 
-            case "alterar" -> {
+            case "update" -> {
 
                 activeFields();
 

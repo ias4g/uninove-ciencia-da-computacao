@@ -301,17 +301,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmRegisterProductActionPerformed
 
     private void itmChangeProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmChangeProductActionPerformed
-//        openProductScreem("alterar");
-
-        new Checkbox(this, true).setVisible(true);
-
-        IdProduct idproduct = new IdProduct();
-
-        System.out.println(idproduct.getIdProduct());
+        new Checkbox(this, true, "update").setVisible(true);
     }//GEN-LAST:event_itmChangeProductActionPerformed
 
     private void itmDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteProductActionPerformed
-        openProductScreem("delete");
+        new Checkbox(this, true, "delete").setVisible(true);
     }//GEN-LAST:event_itmDeleteProductActionPerformed
 
     private void itmReportsProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmReportsProductsActionPerformed
@@ -349,40 +343,6 @@ public class Menu extends javax.swing.JFrame {
 
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado");
-            }
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Driver não está na library");
-        }
-    }
-
-    private void openProductScreem(String op) {
-
-        String u = JOptionPane.showInputDialog(
-                null, "Digite o id do usuário a " + op, "Usuário", 1
-        );
-
-        if (u == null) {
-            JOptionPane.showMessageDialog(this, "Preencha o nome do usuário!");
-            return;
-        }
-
-        try {
-
-            resultado = new SystemDao().listarProduct(u);
-
-            if (resultado.next()) {
-                String id = resultado.getString("id");
-                String name = resultado.getString("name");
-                String brand = resultado.getString("brand");
-                float price = Float.valueOf(resultado.getString("price"));
-
-                new ProductScreem(
-                        id, name, brand, price, op
-                ).setVisible(true);
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Produto não encontrado");
             }
 
         } catch (ClassNotFoundException | SQLException ex) {

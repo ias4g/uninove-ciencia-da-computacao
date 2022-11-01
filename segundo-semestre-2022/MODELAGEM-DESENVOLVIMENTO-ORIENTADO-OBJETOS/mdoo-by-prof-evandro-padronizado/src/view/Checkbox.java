@@ -1,6 +1,5 @@
 package view;
 
-import dados.IdProduct;
 import dados.SystemDao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,29 +8,15 @@ import javax.swing.JOptionPane;
 public class Checkbox extends javax.swing.JDialog {
 
     private ResultSet resultado;
+    private final String OPERATION;
 
-    public Checkbox(java.awt.Frame parent, boolean modal) {
+    public Checkbox(java.awt.Frame parent, boolean modal, String op) {
+
         super(parent, modal);
         initComponents();
 
         fillComboBox();
-
-    }
-
-    private void fillComboBox() {
-
-        cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecione"}));
-
-        try {
-            resultado = new SystemDao().listarProductsId();
-
-            while (resultado.next()) {
-                cmbId.addItem(resultado.getString("id"));
-            }
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
+        OPERATION = op;
 
     }
 
@@ -110,7 +95,7 @@ public class Checkbox extends javax.swing.JDialog {
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.WEST);
 
-        cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um ID" }));
+        cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione uma opção" }));
         cmbId.setBorder(null);
         cmbId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,11 +109,56 @@ public class Checkbox extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbIdActionPerformed
-        IdProduct idproduct = new IdProduct();
-        idproduct.setIdProduct(String.valueOf(cmbId.getSelectedItem()));
-
+        openProductScreem(OPERATION);
         this.dispose();
     }//GEN-LAST:event_cmbIdActionPerformed
+
+    private void fillComboBox() {
+
+//        cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecione"}));
+        try {
+            resultado = new SystemDao().listarProductsId();
+
+            while (resultado.next()) {
+                cmbId.addItem(resultado.getString("id"));
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+
+    }
+
+    private void openProductScreem(String op) {
+
+        if (cmbId.getSelectedItem().equals("Selecione uma opção")) {
+            JOptionPane.showMessageDialog(null, "Selecione um ID");
+            return;
+        }
+
+        try {
+
+            resultado = new SystemDao().listarProduct(String.valueOf(cmbId.getSelectedItem()));
+
+            if (resultado.next()) {
+                String id = resultado.getString("id");
+                String name = resultado.getString("name");
+                String brand = resultado.getString("brand");
+                float price = Float.valueOf(resultado.getString("price"));
+
+                new ProductScreem(
+                        id, name, brand, price, op
+                ).setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Produto não encontrado");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Driver não está na library");
+        }
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbId;
