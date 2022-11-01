@@ -18,6 +18,8 @@ public class Checkbox extends javax.swing.JDialog {
         fillComboBox();
         OPERATION = op;
 
+        System.out.println(op);
+
     }
 
     @SuppressWarnings("unchecked")
