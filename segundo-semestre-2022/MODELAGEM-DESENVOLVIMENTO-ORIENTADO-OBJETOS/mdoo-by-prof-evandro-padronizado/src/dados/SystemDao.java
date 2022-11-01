@@ -139,8 +139,8 @@ public class SystemDao {
 
         conectar();
 
-        st = conectado.prepareStatement("SELECT * FROM tbproducts WHERE name LIKE '%?%'");
-        st.setString(1, search);
+        st = conectado.prepareStatement("SELECT * FROM tbproducts WHERE name LIKE ?");
+        st.setString(1, "%" + search + "%");
 
         resultado = st.executeQuery();
 

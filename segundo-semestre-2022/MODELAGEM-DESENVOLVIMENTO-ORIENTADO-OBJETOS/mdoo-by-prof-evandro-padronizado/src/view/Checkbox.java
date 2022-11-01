@@ -28,6 +28,7 @@ public class Checkbox extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         cmbId = new javax.swing.JComboBox<>();
@@ -54,15 +55,27 @@ public class Checkbox extends javax.swing.JDialog {
 
         jPanel4.setPreferredSize(new java.awt.Dimension(0, 20));
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(219, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.SOUTH);
@@ -111,9 +124,41 @@ public class Checkbox extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbIdActionPerformed
-        openProductScreem(OPERATION);
+
+//        if (cmbId.getSelectedItem().equals("Selecione uma opção")) {
+//            JOptionPane.showMessageDialog(null, "Selecione um ID");
+//            return;
+//        }
+//
+//        try {
+//
+//            resultado = new SystemDao().listarProduct(String.valueOf(cmbId.getSelectedItem()));
+//
+//            if (resultado.next()) {
+//                String id = resultado.getString("id");
+//                String name = resultado.getString("name");
+//                String brand = resultado.getString("brand");
+//                float price = Float.valueOf(resultado.getString("price"));
+//
+//                new ProductScreem(
+//                        id, name, brand, price, OPERATION
+//                ).setVisible(true);
+//
+//            } else {
+//                JOptionPane.showMessageDialog(null, "Produto não encontrado");
+//            }
+//
+//        } catch (ClassNotFoundException | SQLException ex) {
+//            JOptionPane.showMessageDialog(null, "Driver não está na library");
+//        }
+        new ProductScreem().setVisible(true);
+
         this.dispose();
     }//GEN-LAST:event_cmbIdActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new ProductScreem().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void fillComboBox() {
 
@@ -131,39 +176,9 @@ public class Checkbox extends javax.swing.JDialog {
 
     }
 
-    private void openProductScreem(String op) {
-
-        if (cmbId.getSelectedItem().equals("Selecione uma opção")) {
-            JOptionPane.showMessageDialog(null, "Selecione um ID");
-            return;
-        }
-
-        try {
-
-            resultado = new SystemDao().listarProduct(String.valueOf(cmbId.getSelectedItem()));
-
-            if (resultado.next()) {
-                String id = resultado.getString("id");
-                String name = resultado.getString("name");
-                String brand = resultado.getString("brand");
-                float price = Float.valueOf(resultado.getString("price"));
-
-                new ProductScreem(
-                        id, name, brand, price, op
-                ).setVisible(true);
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Produto não encontrado");
-            }
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Driver não está na library");
-        }
-
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbId;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
