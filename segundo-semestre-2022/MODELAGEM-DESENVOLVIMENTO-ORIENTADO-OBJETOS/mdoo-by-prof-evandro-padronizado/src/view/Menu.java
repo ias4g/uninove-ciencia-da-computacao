@@ -1,5 +1,6 @@
 package view;
 
+import dados.IdProduct;
 import dados.SystemDao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -303,6 +304,10 @@ public class Menu extends javax.swing.JFrame {
 //        openProductScreem("alterar");
 
         new Checkbox(this, true).setVisible(true);
+
+        IdProduct idproduct = new IdProduct();
+
+        System.out.println(idproduct.getIdProduct());
     }//GEN-LAST:event_itmChangeProductActionPerformed
 
     private void itmDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmDeleteProductActionPerformed

@@ -1,5 +1,6 @@
 package view;
 
+import dados.IdProduct;
 import dados.SystemDao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -111,11 +112,23 @@ public class Checkbox extends javax.swing.JDialog {
 
         cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um ID" }));
         cmbId.setBorder(null);
+        cmbId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbIdActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmbId, java.awt.BorderLayout.CENTER);
 
         setSize(new java.awt.Dimension(316, 108));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmbIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbIdActionPerformed
+        IdProduct idproduct = new IdProduct();
+        idproduct.setIdProduct(String.valueOf(cmbId.getSelectedItem()));
+
+        this.dispose();
+    }//GEN-LAST:event_cmbIdActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbId;
