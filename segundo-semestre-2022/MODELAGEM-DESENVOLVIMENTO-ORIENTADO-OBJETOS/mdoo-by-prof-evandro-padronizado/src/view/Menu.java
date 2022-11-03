@@ -296,7 +296,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmChangeUserDatasActionPerformed
 
     private void itmRegisterProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmRegisterProductActionPerformed
-        new ProductScreem().setVisible(true);
+        new Products(new javax.swing.JFrame(), true).setVisible(true);
     }//GEN-LAST:event_itmRegisterProductActionPerformed
 
     private void itmChangeProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmChangeProductActionPerformed

@@ -5,15 +5,16 @@ import java.sql.SQLException;
 import java.util.UUID;
 import javax.swing.JOptionPane;
 
-public class ProductScreem extends javax.swing.JFrame {
+public class Products extends javax.swing.JDialog {
 
-    UUID uuid;
+    private UUID uuid;
 
-    public ProductScreem() {
+    public Products(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
 
-        uuid = UUID.randomUUID();
         activeFields();
+        uuid = UUID.randomUUID();
 
         txtId.setText(String.valueOf(uuid));
 
@@ -22,9 +23,11 @@ public class ProductScreem extends javax.swing.JFrame {
         this.setTitle("Cadastrando novo produto");
     }
 
-    public ProductScreem(String id, String name, String brand, float price, String op) {
+    public Products(java.awt.Frame parent, boolean modal, String id, String name, String brand, float price, String op) {
 
         initComponents();
+
+        fillFields(id, name, brand, price);
 
         switch (op) {
 
@@ -55,7 +58,6 @@ public class ProductScreem extends javax.swing.JFrame {
 
         }
 
-        fillFields(id, name, brand, price);
     }
 
     @SuppressWarnings("unchecked")
@@ -75,9 +77,9 @@ public class ProductScreem extends javax.swing.JFrame {
         btnDeleteProduct = new javax.swing.JButton();
         btnSaveProduct = new javax.swing.JButton();
 
-        setTitle("User Control");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
-        setResizable(false);
         getContentPane().setLayout(null);
 
         lblId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -157,31 +159,27 @@ public class ProductScreem extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(20, 220, 230, 50);
 
-        setSize(new java.awt.Dimension(656, 434));
-        setLocationRelativeTo(null);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSaveProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveProductActionPerformed
-
+    private void btnSaveChangeProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeProductActionPerformed
         String id = txtId.getText();
         String name = txtName.getText();
         String brand = txtBrand.getText();
-        float price = Float.parseFloat(txtPrice.getText());
+        float price = Float.valueOf(txtPrice.getText());
 
         try {
 
-            new SystemDao().salvarProduct(id, name, brand, price);
+            new SystemDao().alterarProduct(id, name, brand, price);
 
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+            JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
 
-            txtId.setText(null);
-            txtBrand.setText(null);
-            txtPrice.setText(null);
+            dispose();
 
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
-    }//GEN-LAST:event_btnSaveProductActionPerformed
+    }//GEN-LAST:event_btnSaveChangeProductActionPerformed
 
     private void btnDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteProductActionPerformed
 
@@ -207,27 +205,29 @@ public class ProductScreem extends javax.swing.JFrame {
 
         }
 
-
     }//GEN-LAST:event_btnDeleteProductActionPerformed
 
-    private void btnSaveChangeProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeProductActionPerformed
+    private void btnSaveProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveProductActionPerformed
+
         String id = txtId.getText();
         String name = txtName.getText();
         String brand = txtBrand.getText();
-        float price = Float.valueOf(txtPrice.getText());
+        float price = Float.parseFloat(txtPrice.getText());
 
         try {
 
-            new SystemDao().alterarProduct(id, name, brand, price);
+            new SystemDao().salvarProduct(id, name, brand, price);
 
-            JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
 
-            dispose();
+            txtId.setText(null);
+            txtBrand.setText(null);
+            txtPrice.setText(null);
 
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
-    }//GEN-LAST:event_btnSaveChangeProductActionPerformed
+    }//GEN-LAST:event_btnSaveProductActionPerformed
 
     private void activeFields() {
 //        txtId.setEnabled(true);
@@ -246,6 +246,7 @@ public class ProductScreem extends javax.swing.JFrame {
         txtBrand.setText(brand);
         txtPrice.setText(String.valueOf(price));
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeleteProduct;

@@ -18,8 +18,6 @@ public class Checkbox extends javax.swing.JDialog {
         fillComboBox();
         OPERATION = op;
 
-        System.out.println(op);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -34,9 +32,9 @@ public class Checkbox extends javax.swing.JDialog {
         cmbId = new javax.swing.JComboBox<>();
 
         setTitle("Identificação de produtos");
-        setMaximumSize(new java.awt.Dimension(300, 100));
-        setMinimumSize(new java.awt.Dimension(300, 100));
-        setPreferredSize(new java.awt.Dimension(300, 100));
+        setMaximumSize(new java.awt.Dimension(300, 108));
+        setMinimumSize(new java.awt.Dimension(300, 108));
+        setPreferredSize(new java.awt.Dimension(300, 108));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(502, 20));
 
@@ -48,34 +46,30 @@ public class Checkbox extends javax.swing.JDialog {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
 
-        jPanel4.setPreferredSize(new java.awt.Dimension(0, 20));
+        jPanel4.setPreferredSize(new java.awt.Dimension(0, 50));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jButton1.setText("OK");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(219, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.SOUTH);
@@ -90,7 +84,7 @@ public class Checkbox extends javax.swing.JDialog {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 38, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.EAST);
@@ -105,13 +99,14 @@ public class Checkbox extends javax.swing.JDialog {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 38, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.WEST);
 
         cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione uma opção" }));
         cmbId.setBorder(null);
+        cmbId.setPreferredSize(new java.awt.Dimension(145, 40));
         cmbId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbIdActionPerformed(evt);
@@ -119,51 +114,48 @@ public class Checkbox extends javax.swing.JDialog {
         });
         getContentPane().add(cmbId, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(316, 108));
+        setSize(new java.awt.Dimension(316, 116));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbIdActionPerformed
 
-//        if (cmbId.getSelectedItem().equals("Selecione uma opção")) {
-//            JOptionPane.showMessageDialog(null, "Selecione um ID");
-//            return;
-//        }
-//
-//        try {
-//
-//            resultado = new SystemDao().listarProduct(String.valueOf(cmbId.getSelectedItem()));
-//
-//            if (resultado.next()) {
-//                String id = resultado.getString("id");
-//                String name = resultado.getString("name");
-//                String brand = resultado.getString("brand");
-//                float price = Float.valueOf(resultado.getString("price"));
-//
-//                new ProductScreem(
-//                        id, name, brand, price, OPERATION
-//                ).setVisible(true);
-//
-//            } else {
-//                JOptionPane.showMessageDialog(null, "Produto não encontrado");
-//            }
-//
-//        } catch (ClassNotFoundException | SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Driver não está na library");
-//        }
-        new ProductScreem().setVisible(true);
+        if (cmbId.getSelectedItem().equals("Selecione uma opção")) {
+            JOptionPane.showMessageDialog(null, "Selecione um ID");
+            return;
+        }
 
-        this.dispose();
+        try {
+
+            resultado = new SystemDao().listarProduct(String.valueOf(cmbId.getSelectedItem()));
+
+            if (resultado.next()) {
+                String id = resultado.getString("id");
+                String name = resultado.getString("name");
+                String brand = resultado.getString("brand");
+                float price = Float.valueOf(resultado.getString("price"));
+
+                new Products(
+                        new javax.swing.JFrame(), true, id, name, brand, price, OPERATION
+                ).setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Produto não encontrado");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Driver não está na library");
+        }
+        new Products(new javax.swing.JFrame(), true).setVisible(true);
+
+        dispose();
     }//GEN-LAST:event_cmbIdActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new ProductScreem().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void fillComboBox() {
 
 //        cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Selecione"}));
         try {
+
             resultado = new SystemDao().listarProductsId();
 
             while (resultado.next()) {
