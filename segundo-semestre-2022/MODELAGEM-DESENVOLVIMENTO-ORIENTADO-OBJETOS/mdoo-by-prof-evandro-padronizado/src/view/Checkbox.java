@@ -119,14 +119,16 @@ public class Checkbox extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        if (cmbId.getSelectedItem().equals("Selecione uma opção")) {
+        String idselected = (String) cmbId.getSelectedItem();
+
+        if (idselected.equals("Selecione uma opção")) {
             JOptionPane.showMessageDialog(null, "Selecione um ID");
             return;
         }
 
         try {
 
-            resultado = new SystemDao().listarProduct(String.valueOf(cmbId.getSelectedItem()));
+            resultado = new SystemDao().listarProduct(idselected);
 
             if (resultado.next()) {
                 String id = resultado.getString("id");

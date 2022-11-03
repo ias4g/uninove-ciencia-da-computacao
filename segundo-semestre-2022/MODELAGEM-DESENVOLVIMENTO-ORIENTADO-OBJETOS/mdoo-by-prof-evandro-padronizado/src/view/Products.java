@@ -80,6 +80,7 @@ public class Products extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
+        setModal(true);
         getContentPane().setLayout(null);
 
         lblId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
