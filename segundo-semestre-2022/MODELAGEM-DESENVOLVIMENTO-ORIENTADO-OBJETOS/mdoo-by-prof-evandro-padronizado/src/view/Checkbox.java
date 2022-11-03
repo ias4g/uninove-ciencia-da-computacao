@@ -26,7 +26,7 @@ public class Checkbox extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnOk = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         cmbId = new javax.swing.JComboBox<>();
@@ -53,7 +53,12 @@ public class Checkbox extends javax.swing.JDialog {
 
         jPanel4.setPreferredSize(new java.awt.Dimension(0, 50));
 
-        jButton1.setText("OK");
+        btnOk.setText("OK");
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOkActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -61,14 +66,14 @@ public class Checkbox extends javax.swing.JDialog {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addComponent(btnOk, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(btnOk, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -84,7 +89,7 @@ public class Checkbox extends javax.swing.JDialog {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.EAST);
@@ -99,7 +104,7 @@ public class Checkbox extends javax.swing.JDialog {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.WEST);
@@ -107,19 +112,13 @@ public class Checkbox extends javax.swing.JDialog {
         cmbId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione uma opção" }));
         cmbId.setBorder(null);
         cmbId.setPreferredSize(new java.awt.Dimension(145, 40));
-        cmbId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbIdActionPerformed(evt);
-            }
-        });
         getContentPane().add(cmbId, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(316, 116));
+        setSize(new java.awt.Dimension(316, 136));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbIdActionPerformed
-
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
         if (cmbId.getSelectedItem().equals("Selecione uma opção")) {
             JOptionPane.showMessageDialog(null, "Selecione um ID");
             return;
@@ -146,10 +145,10 @@ public class Checkbox extends javax.swing.JDialog {
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         }
-        new Products(new javax.swing.JFrame(), true).setVisible(true);
 
         dispose();
-    }//GEN-LAST:event_cmbIdActionPerformed
+
+    }//GEN-LAST:event_btnOkActionPerformed
 
     private void fillComboBox() {
 
@@ -169,8 +168,8 @@ public class Checkbox extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOk;
     private javax.swing.JComboBox<String> cmbId;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

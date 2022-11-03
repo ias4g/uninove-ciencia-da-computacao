@@ -159,7 +159,8 @@ public class Products extends javax.swing.JDialog {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(20, 220, 230, 50);
 
-        pack();
+        setSize(new java.awt.Dimension(656, 434));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveChangeProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeProductActionPerformed
