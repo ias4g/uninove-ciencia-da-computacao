@@ -1,12 +1,13 @@
+package view;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import dados.SystemDao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class FormLogin extends javax.swing.JFrame {
+
+    private ResultSet resultado;
 
     public FormLogin() {
         initComponents();
@@ -23,7 +24,6 @@ public class FormLogin extends javax.swing.JFrame {
         btnEnter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(295, 162));
         setMinimumSize(new java.awt.Dimension(295, 162));
         setResizable(false);
 
@@ -115,59 +115,60 @@ public class FormLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPassKeyPressed
 
     private void enterSystem() {
-        String usuario, senha;
-        usuario = txtUser.getText();
-        senha = txtPass.getText();
-        Connection conn;
 
-        if (txtUser.getText().isEmpty() || txtPass.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+        String usuario = txtUser.getText();
+        String senha = txtPass.getText();
+
+        if (usuario.isEmpty() || senha.isEmpty()) {
+
+            JOptionPane.showMessageDialog(
+                    null, "Preencha todos os campos!"
+            );
 
             txtUser.setText(null);
             txtPass.setText(null);
 
             txtUser.requestFocus();
+
         } else {
+
             try {
-                //2 - Conectar no banco de dados sistemabd;
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
-                //3 - Buscar o usuário digitado na tabela usuario do banco de dados sistemabd;
-                PreparedStatement st = conn.prepareStatement("SELECT * FROM tbusers WHERE user = ? AND password = ?");
-                st.setString(1, usuario);
-                st.setString(2, senha);
-                ResultSet resultado = st.executeQuery();
+                resultado = new SystemDao().validarUsuario(
+                        usuario, senha
+                );
 
-                //4 - Verificar se o usuário foi encontrado na tabela usuario do banco de dados.
+                System.out.println(resultado.toString());
+
                 if (resultado.next()) {
-                    String name;
-                    String job;
-
-                    name = resultado.getString("name");
-                    job = resultado.getString("job");
 
                     //Abrir o formulário Menu.java
-                    new Menu(name, job).setVisible(true);
+                    new Menu(
+                            Integer.parseInt(resultado.getString("id")),
+                            resultado.getString("user"),
+                            resultado.getString("name"),
+                            resultado.getString("lastname"),
+                            resultado.getString("email"),
+                            resultado.getString("job")
+                    ).setVisible(true);
 
                     this.dispose();
 
                 } else {
-                    JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
+
+                    JOptionPane.showMessageDialog(
+                            null, "Usuário e/ou senha inválidos"
+                    );
 
                     txtUser.setText("");
                     txtPass.setText("");
 
                     txtUser.requestFocus();
+
                 }
 
-                //5 - Desconectar.
-                conn.close();
-
-            } catch (ClassNotFoundException ex) {
-                JOptionPane.showMessageDialog(null, "Driver não está na library");
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Você errou nos dados da conexão com o banco de dados");
+            } catch (ClassNotFoundException | SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage());
             }
         }
     }

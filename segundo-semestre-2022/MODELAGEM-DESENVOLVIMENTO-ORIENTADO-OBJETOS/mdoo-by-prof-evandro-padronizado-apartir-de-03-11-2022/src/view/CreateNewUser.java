@@ -1,60 +1,53 @@
+package view;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+
+import dados.SystemDao;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class CreateNewUser extends javax.swing.JFrame {
 
-    Connection conn;
-
     public CreateNewUser() {
         initComponents();
         activeFields();
-        
+
         btnSave.setVisible(true);
         btnSave.setEnabled(true);
         this.setTitle("Cadastrando novo usuário");
     }
 
-    public CreateNewUser(
-            int id,
-            String user,
-            String password,
-            String name,
-            String lastname,
-            String email,
-            String job,
-            String op
-    ) {
+    public CreateNewUser(int id, String user, String password, String name, String lastname, String email, String job, String op) {
         initComponents();
 
         switch (op) {
 
             case "delete" -> {
+
                 btnDelete.setVisible(true);
+                btnDelete.setEnabled(true);
+
                 btnSave.setVisible(false);
                 btnSaveChange.setVisible(false);
 
                 this.setTitle("Excluindo um usuário");
+
             }
             case "alterar" -> {
-                txtUser.setEnabled(true);
-                txtPass.setEnabled(true);
-                txtName.setEnabled(true);
-                txtLastname.setEnabled(true);
-                txtEmail.setEnabled(true);
-                cmbJob.setEnabled(true);
+
+                activeFields();
+
+                btnSaveChange.setVisible(true);
+                btnSaveChange.setEnabled(true);
 
                 btnDelete.setVisible(false);
                 btnSave.setVisible(false);
-                btnSaveChange.setVisible(true);
 
                 this.setTitle("Alterando um usuário");
             }
 
         }
+
+        fillFields(id, user, password, name, lastname, email, job);
     }
 
     @SuppressWarnings("unchecked")
@@ -81,9 +74,7 @@ public class CreateNewUser extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
 
         setTitle("User Control");
-        setMaximumSize(new java.awt.Dimension(640, 426));
         setMinimumSize(new java.awt.Dimension(640, 426));
-        setPreferredSize(new java.awt.Dimension(640, 426));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -201,40 +192,18 @@ public class CreateNewUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        String user;
-        String pass;
-        String name;
-        String lastname;
-        String email;
-        String job;
-
-        int rs;
-
-        user = txtUser.getText();
-        pass = txtPass.getText();
-        name = txtName.getText();
-        lastname = txtLastname.getText();
-        email = txtEmail.getText();
-        job = cmbJob.getSelectedItem().toString();
+        String user = txtUser.getText();
+        String pass = txtPass.getText();
+        String name = txtName.getText();
+        String lastname = txtLastname.getText();
+        String email = txtEmail.getText();
+        String job = cmbJob.getSelectedItem().toString();
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
-            PreparedStatement st = conn.prepareStatement("INSERT INTO tbusers (user, password, name, lastname, email, job) VALUES (?, ?, ?, ?, ?, ?)");
+            new SystemDao().salvarUsuario(user, pass, name, lastname, email, job);
 
-            st.setString(1, user);
-            st.setString(2, pass);
-            st.setString(3, name);
-            st.setString(4, lastname);
-            st.setString(5, email);
-            st.setString(6, job);
-
-            rs = st.executeUpdate();
-
-            if (rs > 0) {
-                JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
-            }
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
 
             txtUser.setText(null);
             txtPass.setText(null);
@@ -243,41 +212,21 @@ public class CreateNewUser extends javax.swing.JFrame {
             txtEmail.setText(null);
             cmbJob.setSelectedIndex(0);
 
-            conn.close();
-
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (SQLException ex) {
-            if (ex.getErrorCode() == 1062) {
-                JOptionPane.showMessageDialog(null, "Usuário já cadastrado.");
-            } else {
-                JOptionPane.showMessageDialog(null, "Entre em contato com o administrador.\n Message: " + ex.getMessage() + "\n Código do erro: " + ex.getErrorCode());
-            }
         }
     }//GEN-LAST:event_btnSaveActionPerformed
-
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este usuário?", "Confirmação", 0);
 
         if (resp == 0) {
 
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student"
-                );
 
-                PreparedStatement st = conn.prepareStatement(
-                        "DELETE FROM tbusers WHERE id = ?"
-                );
-
-                st.setString(1, txtId.getText());
-
-                st.executeUpdate();
+                new SystemDao().deletarUsuario(txtId.getText());
 
                 JOptionPane.showMessageDialog(null, "Usuário excluido com sucesso");
 
-                conn.close();
                 dispose();
 
             } catch (ClassNotFoundException | SQLException ex) {
@@ -292,55 +241,27 @@ public class CreateNewUser extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnDeleteActionPerformed
-
     private void btnSaveChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeActionPerformed
-        int rs;
+        int id = Integer.parseInt(txtId.getText());
         String user = txtUser.getText();
         String pass = txtPass.getText();
         String name = txtName.getText();
         String lastname = txtLastname.getText();
         String email = txtEmail.getText();
         String job = String.valueOf(cmbJob.getSelectedItem());
-        int id = Integer.parseInt(txtId.getText());
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdsystem", "student", "Izael@student");
 
-            PreparedStatement st = conn.prepareStatement(
-                    "UPDATE tbusers"
-                    + "SET user = ?,"
-                    + " password = ?,"
-                    + " name = ?, "
-                    + "lastname = ?,"
-                    + " email = ?, "
-                    + "job = ?"
-                    + " WHERE id = ?"
-            );
+            new SystemDao().alterarUsuario(user, pass, name, lastname, email, job, id);
 
-            st.setString(1, user);
-            st.setString(2, pass);
-            st.setString(3, name);
-            st.setString(4, lastname);
-            st.setString(5, email);
-            st.setString(6, job);
-            st.setInt(7, id);
+            JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
 
-            rs = st.executeUpdate();
-
-            if (rs > 0) {
-                JOptionPane.showMessageDialog(null, "Alterado com sucesso");
-            }
-
-            conn.close();
             dispose();
-            new UsersList().setVisible(true);
 
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_btnSaveChangeActionPerformed
-
     private void activeFields() {
         txtUser.setEnabled(true);
         txtPass.setEnabled(true);
@@ -355,6 +276,19 @@ public class CreateNewUser extends javax.swing.JFrame {
         btnDelete.setVisible(false);
         btnSave.setVisible(false);
         btnSaveChange.setVisible(false);
+    }
+
+    private void fillFields(int id, String user, String password, String name, String lastname, String email, String job) {
+        txtId.setText(String.valueOf(id));
+        txtUser.setText(user);
+        txtPass.setText(password);
+        txtName.setText(name);
+        txtLastname.setText(lastname);
+        txtEmail.setText(email);
+        cmbJob.setSelectedItem(job);
+
+        lblId.setVisible(true);
+        txtId.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

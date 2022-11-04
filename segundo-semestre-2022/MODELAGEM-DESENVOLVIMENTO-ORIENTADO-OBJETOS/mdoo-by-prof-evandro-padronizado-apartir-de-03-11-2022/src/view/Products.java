@@ -1,66 +1,65 @@
 package view;
 
-import dados.Product;
 import dados.SystemDao;
 import java.sql.SQLException;
 import java.util.UUID;
 import javax.swing.JOptionPane;
 
 public class Products extends javax.swing.JDialog {
-    
+
     private UUID uuid;
-    
+
     public Products(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+
         activeFields();
         uuid = UUID.randomUUID();
-        
+
         txtId.setText(String.valueOf(uuid));
-        
+
         btnSaveProduct.setVisible(true);
         btnSaveProduct.setEnabled(true);
         this.setTitle("Cadastrando novo produto");
     }
-    
+
     public Products(java.awt.Frame parent, boolean modal, String id, String name, String brand, float price, String op) {
-        
+
         initComponents();
-        
+
         fillFields(id, name, brand, price);
-        
+
         switch (op) {
-            
+
             case "update" -> {
-                
+
                 activeFields();
-                
+
                 btnSaveChangeProduct.setVisible(true);
                 btnSaveChangeProduct.setEnabled(true);
-                
+
                 btnDeleteProduct.setVisible(false);
                 btnSaveProduct.setVisible(false);
-                
+
                 this.setTitle("Alterando os dados do produto " + name);
             }
-            
+
             case "delete" -> {
-                
+
                 btnDeleteProduct.setVisible(true);
                 btnDeleteProduct.setEnabled(true);
-                
+
                 btnSaveProduct.setVisible(false);
                 btnSaveChangeProduct.setVisible(false);
-                
+
                 this.setTitle("Exclusão do produto " + name);
-                
+
             }
-            
+
         }
-        
+
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -169,86 +168,80 @@ public class Products extends javax.swing.JDialog {
         String id = txtId.getText();
         String name = txtName.getText();
         String brand = txtBrand.getText();
-        double price = Float.valueOf(txtPrice.getText());
-        
-        Product product = new Product();
-        product.setId(id);
-        product.setName(name);
-        product.setBrand(brand);
-        product.setPrice(price);
-        
+        float price = Float.valueOf(txtPrice.getText());
+
         try {
-            
+
             new SystemDao().alterarProduct(id, name, brand, price);
-            
+
             JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
-            
+
             dispose();
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_btnSaveChangeProductActionPerformed
 
     private void btnDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteProductActionPerformed
-        
+
         int resp = JOptionPane.showConfirmDialog(null, "Tem certeza que quer excluir este produto?", "Confirmação", 0);
-        
+
         if (resp == 0) {
-            
+
             try {
-                
+
                 new SystemDao().deletarProduct(txtId.getText());
-                
+
                 JOptionPane.showMessageDialog(null, "Produto excluido com sucesso");
-                
+
                 dispose();
-                
+
             } catch (ClassNotFoundException | SQLException ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
             }
-            
+
         } else {
-            
+
             dispose();
-            
+
         }
 
     }//GEN-LAST:event_btnDeleteProductActionPerformed
 
     private void btnSaveProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveProductActionPerformed
-        
+
         String id = txtId.getText();
         String name = txtName.getText();
         String brand = txtBrand.getText();
         float price = Float.parseFloat(txtPrice.getText());
-        
+
         try {
-            
+
             new SystemDao().salvarProduct(id, name, brand, price);
-            
+
             JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
-            
+
             txtId.setText(null);
             txtBrand.setText(null);
             txtPrice.setText(null);
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_btnSaveProductActionPerformed
-    
+
     private void activeFields() {
 //        txtId.setEnabled(true);
         txtBrand.setEnabled(true);
         txtPrice.setEnabled(true);
         txtName.setEnabled(true);
-        
+
         btnDeleteProduct.setVisible(false);
         btnSaveProduct.setVisible(false);
         btnSaveChangeProduct.setVisible(false);
     }
-    
+
     private void fillFields(String id, String name, String brand, float price) {
         txtId.setText(id);
         txtName.setText(name);

@@ -188,7 +188,7 @@ public class SystemDao {
         st.executeUpdate();
     }
 
-    public void alterarProduct(String id, String name, String brand, double price) throws ClassNotFoundException, SQLException {
+    public void alterarProduct(String id, String name, String brand, float price) throws ClassNotFoundException, SQLException {
 
         conectar();
 
@@ -196,7 +196,7 @@ public class SystemDao {
 
         st.setString(1, name);
         st.setString(2, brand);
-        st.setDouble(3, price);
+        st.setFloat(3, price);
         st.setString(4, id);
 
         st.executeUpdate();
