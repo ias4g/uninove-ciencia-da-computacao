@@ -174,7 +174,7 @@ public class Products extends javax.swing.JDialog {
 
         try {
 
-            new SystemDao().alterarProduct(id, name, brand, price);
+            new SystemDao().alterarProduct(product);
 
             JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
 
@@ -212,15 +212,15 @@ public class Products extends javax.swing.JDialog {
     }//GEN-LAST:event_btnDeleteProductActionPerformed
 
     private void btnSaveProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveProductActionPerformed
-
-        String id = txtId.getText();
-        String name = txtName.getText();
-        String brand = txtBrand.getText();
-        float price = Float.parseFloat(txtPrice.getText());
+        Product product = new Product();
+        product.setId(txtId.getText());
+        product.setName(txtName.getText());
+        product.setBrand(txtBrand.getText());
+        product.setPrice(Double.parseDouble(txtPrice.getText()));
 
         try {
 
-            new SystemDao().salvarProduct(id, name, brand, price);
+            new SystemDao().salvarProduct(product);
 
             JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
 

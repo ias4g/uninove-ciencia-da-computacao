@@ -1,7 +1,7 @@
 package view;
 
-
 import dados.SystemDao;
+import dados.User;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -192,16 +192,17 @@ public class CreateNewUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        String user = txtUser.getText();
-        String pass = txtPass.getText();
-        String name = txtName.getText();
-        String lastname = txtLastname.getText();
-        String email = txtEmail.getText();
-        String job = cmbJob.getSelectedItem().toString();
+        User user = new User();
+        user.setUser(txtUser.getText());
+        user.setPassword(txtPass.getText());
+        user.setName(txtName.getText());
+        user.setLastname(txtLastname.getText());
+        user.setEmail(txtEmail.getText());
+        user.setJob(cmbJob.getSelectedItem().toString());
 
         try {
 
-            new SystemDao().salvarUsuario(user, pass, name, lastname, email, job);
+            new SystemDao().salvarUsuario(user);
 
             JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
 

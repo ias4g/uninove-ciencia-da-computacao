@@ -41,17 +41,17 @@ public class SystemDao {
 
     }
 
-    public void salvarUsuario(String user, String pass, String name, String lastname, String email, String job) throws ClassNotFoundException, SQLException {
+    public void salvarUsuario(User user) throws ClassNotFoundException, SQLException {
         conectar();
 
         st = conectado.prepareStatement("INSERT INTO tbusers (user, password, name, lastname, email, job) VALUES (?, ?, ?, ?, ?, ?)");
 
-        st.setString(1, user);
-        st.setString(2, pass);
-        st.setString(3, name);
-        st.setString(4, lastname);
-        st.setString(5, email);
-        st.setString(6, job);
+        st.setString(1, user.getUser());
+        st.setString(2, user.getPassword());
+        st.setString(3, user.getName());
+        st.setString(4, user.getLastname());
+        st.setString(5, user.getEmail());
+        st.setString(6, user.getJob());
 
         st.executeUpdate();
     }
@@ -188,29 +188,29 @@ public class SystemDao {
         st.executeUpdate();
     }
 
-    public void alterarProduct(String id, String name, String brand, double price) throws ClassNotFoundException, SQLException {
+    public void alterarProduct(Product product) throws ClassNotFoundException, SQLException {
 
         conectar();
 
         st = conectado.prepareStatement("UPDATE tbproducts SET name = ?, brand = ?, price = ? WHERE id = ?");
 
-        st.setString(1, name);
-        st.setString(2, brand);
-        st.setDouble(3, price);
-        st.setString(4, id);
+        st.setString(1, product.getName());
+        st.setString(2, product.getBrand());
+        st.setDouble(3, product.getPrice());
+        st.setString(4, product.getId());
 
         st.executeUpdate();
     }
 
-    public void salvarProduct(String id, String name, String brand, Float price) throws ClassNotFoundException, SQLException {
+    public void salvarProduct(Product product) throws ClassNotFoundException, SQLException {
         conectar();
 
         st = conectado.prepareStatement("INSERT INTO tbproducts (id, name, brand, price) VALUES (?, ?, ?, ?)");
 
-        st.setString(1, id);
-        st.setString(2, name);
-        st.setString(3, brand);
-        st.setFloat(4, price);
+        st.setString(1, product.getId());
+        st.setString(2, product.getName());
+        st.setString(3, product.getBrand());
+        st.setDouble(4, product.getPrice());
 
         st.executeUpdate();
     }
