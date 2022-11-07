@@ -119,12 +119,15 @@ public class Checkbox extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+
         String idselected = (String) cmbId.getSelectedItem();
 
         if (idselected.equals("Selecione uma opção")) {
             JOptionPane.showMessageDialog(null, "Selecione um ID");
             return;
         }
+
+        dispose();
 
         try {
 
@@ -147,8 +150,6 @@ public class Checkbox extends javax.swing.JDialog {
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
         }
-
-        dispose();
 
     }//GEN-LAST:event_btnOkActionPerformed
 
