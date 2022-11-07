@@ -242,18 +242,20 @@ public class CreateNewUser extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnDeleteActionPerformed
+
     private void btnSaveChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveChangeActionPerformed
-        int id = Integer.parseInt(txtId.getText());
-        String user = txtUser.getText();
-        String pass = txtPass.getText();
-        String name = txtName.getText();
-        String lastname = txtLastname.getText();
-        String email = txtEmail.getText();
-        String job = String.valueOf(cmbJob.getSelectedItem());
+
+        User user = new User();
+        user.setUser(txtUser.getText());
+        user.setPassword(txtPass.getText());
+        user.setName(txtName.getText());
+        user.setLastname(txtLastname.getText());
+        user.setEmail(txtEmail.getText());
+        user.setJob(cmbJob.getSelectedItem().toString());
 
         try {
 
-            new SystemDao().alterarUsuario(user, pass, name, lastname, email, job, id);
+            new SystemDao().alterarUsuario(user);
 
             JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
 
