@@ -573,8 +573,6 @@ public class Register extends javax.swing.JDialog {
             return;
         }
 
-        System.out.println(data);
-
         String res;
         PointModel pm = new PointModel();
         AddressModel am = new AddressModel();
