@@ -181,6 +181,9 @@ public class Products extends javax.swing.JDialog {
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
+
+        dispose();
+
     }//GEN-LAST:event_btnSaveChangeProductActionPerformed
 
     private void btnDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteProductActionPerformed
@@ -229,6 +232,9 @@ public class Products extends javax.swing.JDialog {
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
+
+        dispose();
+
     }//GEN-LAST:event_btnSaveProductActionPerformed
 
     private void activeFields() {
