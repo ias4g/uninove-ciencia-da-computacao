@@ -268,6 +268,7 @@ public class CreateNewUser extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_btnSaveChangeActionPerformed
+
     private void activeFields() {
         txtUser.setEnabled(true);
         txtPass.setEnabled(true);
