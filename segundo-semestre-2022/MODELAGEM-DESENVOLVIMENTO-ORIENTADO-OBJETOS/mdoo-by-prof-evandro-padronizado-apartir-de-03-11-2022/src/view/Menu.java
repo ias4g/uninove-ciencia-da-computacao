@@ -1,13 +1,11 @@
 package view;
 
 import dados.SystemDao;
-import java.sql.ResultSet;
+import dados.User;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
-
-    private ResultSet resultado;
 
     public Menu(int id, String user, String name, String lastname, String email, String job) {
         initComponents();
@@ -324,25 +322,9 @@ public class Menu extends javax.swing.JFrame {
 
         try {
 
-            resultado = new SystemDao().listarUsuario(u);
+            User resultado = new SystemDao().listarUsuario(u);
 
-            if (resultado.next()) {
-                int id = Integer.parseInt(resultado.getString("id"));
-                String user = resultado.getString("user");
-                String password = resultado.getString("password");
-                String name = resultado.getString("name");
-                String lastname = resultado.getString("lastname");
-                String email = resultado.getString("email");
-                String job = resultado.getString("job");
-
-                //Abrir o formulário Menu.java
-                new CreateNewUser(
-                        id, user, password, name, lastname, email, job, op
-                ).setVisible(true);
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuário não encontrado");
-            }
+            new CreateNewUser(resultado, op).setVisible(true);
 
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, "Driver não está na library");
