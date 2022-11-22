@@ -17,6 +17,8 @@ CREATE TABLE `tb_points` (
   `email` varchar(45) NOT NULL,
   `image` longblob,
   `whatsapp` varchar(20) NOT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /****************************************************************************************************************************************************/
@@ -30,6 +32,7 @@ CREATE TABLE `tb_address` (
   `zipcode` varchar(10) NOT NULL,
   `address` varchar(50) DEFAULT NULL,
   `number` int DEFAULT NULL,
+  `complement` varchar(45) DEFAULT NULL,
   `uf` varchar(2) DEFAULT NULL,
   `city` varchar(45) DEFAULT NULL,
   `point_id` varchar(40) NOT NULL,

@@ -18,29 +18,34 @@ USE `db_ecoleta`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tb_points`
+-- Table structure for table `tb_address`
 --
 
-DROP TABLE IF EXISTS `tb_points`;
+DROP TABLE IF EXISTS `tb_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tb_points` (
-  `id` varchar(40) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `image` longblob,
-  `whatsapp` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tb_address` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `zipcode` varchar(10) NOT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `number` int DEFAULT NULL,
+  `complement` varchar(45) DEFAULT NULL,
+  `uf` varchar(2) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `point_id` varchar(40) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_from_points_to_address_idx` (`point_id`),
+  CONSTRAINT `fk_from_points_to_address` FOREIGN KEY (`point_id`) REFERENCES `tb_points` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tb_points`
+-- Dumping data for table `tb_address`
 --
 
-LOCK TABLES `tb_points` WRITE;
-/*!40000 ALTER TABLE `tb_points` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tb_points` ENABLE KEYS */;
+LOCK TABLES `tb_address` WRITE;
+/*!40000 ALTER TABLE `tb_address` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_address` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-29 20:13:51
+-- Dump completed on 2022-11-12 17:55:48
