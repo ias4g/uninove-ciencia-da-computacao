@@ -442,6 +442,7 @@
                                           <Color id="Hand Cursor"/>
                                         </Property>
                                         <Property name="iconTextGap" type="int" value="0"/>
+                                        <Property name="name" type="java.lang.String" value="" noResource="true"/>
                                       </Properties>
                                       <Events>
                                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl7MouseClicked"/>

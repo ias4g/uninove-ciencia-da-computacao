@@ -1,3 +1,5 @@
+package edu.uni9.mdoo.heranca.models;
+
 
 public class Pessoa {
 

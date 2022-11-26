@@ -273,6 +273,7 @@ public class About extends javax.swing.JDialog {
         lbl7.setText("/deyzy");
         lbl7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbl7.setIconTextGap(0);
+        lbl7.setName(""); // NOI18N
         lbl7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl7MouseClicked(evt);
