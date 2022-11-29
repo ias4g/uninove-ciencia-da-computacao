@@ -281,7 +281,7 @@ public class FrmFuncionario extends javax.swing.JDialog {
         try {
             new EmpresaDao().salvarFuncionario(func);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FrmFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
 
         cleanFields();
