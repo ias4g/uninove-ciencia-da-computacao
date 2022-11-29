@@ -126,6 +126,11 @@ public class FrmFuncionario extends javax.swing.JDialog {
         btnSalvar.setText("Salvar");
         btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalvar.setEnabled(false);
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpBackgroundLayout = new javax.swing.GroupLayout(jpBackground);
         jpBackground.setLayout(jpBackgroundLayout);
@@ -255,6 +260,33 @@ public class FrmFuncionario extends javax.swing.JDialog {
             btnSalvar.setEnabled(false);
         }
     }//GEN-LAST:event_txtCargoKeyPressed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        cleanFields();
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void cleanFields() {
+
+        txtNome.setText(null);
+
+        txtEndereco.setText(null);
+        txtEndereco.setEnabled(false);
+
+        txtTelefone.setText(null);
+        txtTelefone.setEnabled(false);
+
+        txtEmail.setText(null);
+        txtEmail.setEnabled(false);
+
+        txtSalario.setText(null);
+        txtSalario.setEnabled(false);
+
+        txtCargo.setText(null);
+        txtCargo.setEnabled(false);
+
+        btnSalvar.setEnabled(false);
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalvar;

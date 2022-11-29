@@ -301,12 +301,26 @@ public class FrmCliente extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCupomDescontoKeyPressed
 
     private void cleanFields() {
+
         txtNome.setText(null);
+
         txtEndereco.setText(null);
+        txtEndereco.setEnabled(false);
+
         txtTelefone.setText(null);
+        txtTelefone.setEnabled(false);
+
         txtEmail.setText(null);
+        txtEmail.setEnabled(false);
+
         txtDataCompra.setText(null);
+        txtDataCompra.setEnabled(false);
+
         txtCupomDesconto.setText(null);
+        txtCupomDesconto.setEnabled(false);
+
+        btnSalvar.setEnabled(false);
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
