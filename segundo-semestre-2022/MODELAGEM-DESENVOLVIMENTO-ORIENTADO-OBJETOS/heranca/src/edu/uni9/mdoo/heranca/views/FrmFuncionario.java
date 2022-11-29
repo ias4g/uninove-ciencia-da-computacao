@@ -104,7 +104,7 @@ public class FrmFuncionario extends javax.swing.JDialog {
 
         lblCargo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblCargo.setForeground(new java.awt.Color(255, 255, 255));
-        lblCargo.setText("Salário");
+        lblCargo.setText("Cargo");
         lblCargo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtCargo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
