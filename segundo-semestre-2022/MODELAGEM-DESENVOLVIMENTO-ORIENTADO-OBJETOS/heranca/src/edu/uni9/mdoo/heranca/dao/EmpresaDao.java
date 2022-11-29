@@ -1,6 +1,7 @@
 package edu.uni9.mdoo.heranca.dao;
 
 import edu.uni9.mdoo.heranca.models.Cliente;
+import edu.uni9.mdoo.heranca.models.Funcionario;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -35,6 +36,25 @@ public class EmpresaDao {
         stmt.setString(4, cliente.getEmail());
         stmt.setString(5, cliente.getDataPrimeiroCompra());
         stmt.setString(6, cliente.getCupomDesconto());
+
+        stmt.executeUpdate();
+
+    }
+
+    public void salvarFuncionario(Funcionario func) throws ClassNotFoundException, SQLException {
+
+        getConn();
+
+        String sql = "INSERT INTO cliente(nome, endereco, telefone, email, cargo, salario) values(?, ?, ?, ?, ?, ?)";
+
+        stmt = conn.prepareStatement(sql);
+
+        stmt.setString(1, func.getNome());
+        stmt.setString(2, func.getEndereco());
+        stmt.setString(3, func.getTelefone());
+        stmt.setString(4, func.getEmail());
+        stmt.setString(5, func.getCargo());
+        stmt.setDouble(6, func.getSalario());
 
         stmt.executeUpdate();
 
