@@ -1,21 +1,19 @@
 package edu.uni9.mdoo.heranca.models;
 
-
 public class Funcionario extends Pessoa {
 
     private String cargo;
     private Double salario;
 
-    public Funcionario(int id, String nome, String endereco, String telefone, String email) {
-        super(id, nome, endereco, telefone, email);
-    }
-
-    public Funcionario(String cargo, Double salario, int id, String nome, String endereco, String telefone, String email) {
-        super(id, nome, endereco, telefone, email);
-        this.cargo = cargo;
-        this.salario = salario;
-    }
-
+//    public Funcionario(int id, String nome, String endereco, String telefone, String email) {
+//        super(id, nome, endereco, telefone, email);
+//    }
+//
+//    public Funcionario(String cargo, Double salario, int id, String nome, String endereco, String telefone, String email) {
+//        super(id, nome, endereco, telefone, email);
+//        this.cargo = cargo;
+//        this.salario = salario;
+//    }
     public String getCargo() {
         return cargo;
     }
