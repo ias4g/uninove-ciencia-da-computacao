@@ -1,11 +1,11 @@
 package edu.uni9.mdoo.heranca.views;
 
 public class TelaMenu extends javax.swing.JFrame {
-
+    
     public TelaMenu() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -58,15 +58,15 @@ public class TelaMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioActionPerformed
-        new TelaFuncionario().setVisible(true);
+        new FrmFuncionario(this, true).setVisible(true);
     }//GEN-LAST:event_btnFuncionarioActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        new TelaCliente().setVisible(true);
+        new FrmCliente(this, true).setVisible(true);
     }//GEN-LAST:event_btnClienteActionPerformed
-
+    
     public static void main(String args[]) {
-
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -77,7 +77,7 @@ public class TelaMenu extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
+        
         java.awt.EventQueue.invokeLater(() -> {
             new TelaMenu().setVisible(true);
         });

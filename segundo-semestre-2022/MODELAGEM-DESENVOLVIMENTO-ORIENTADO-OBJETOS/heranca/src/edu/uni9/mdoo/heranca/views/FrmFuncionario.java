@@ -1,8 +1,9 @@
 package edu.uni9.mdoo.heranca.views;
 
-public class TelaFuncionario extends javax.swing.JFrame {
+public class FrmFuncionario extends javax.swing.JDialog {
 
-    public TelaFuncionario() {
+    public FrmFuncionario(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
@@ -10,12 +11,6 @@ public class TelaFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblCargo = new javax.swing.JLabel();
-        lblSalario = new javax.swing.JLabel();
-        btnSalvar = new javax.swing.JButton();
-        txtTelefone = new javax.swing.JTextField();
-        txtEndereco = new javax.swing.JTextField();
-        txtId = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         txtCargo = new javax.swing.JTextField();
         txtSalario = new javax.swing.JTextField();
@@ -25,14 +20,15 @@ public class TelaFuncionario extends javax.swing.JFrame {
         lblTelefone = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
+        lblCargo = new javax.swing.JLabel();
+        lblSalario = new javax.swing.JLabel();
+        btnSalvar = new javax.swing.JButton();
+        txtTelefone = new javax.swing.JTextField();
+        txtEndereco = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
 
-        setTitle("Controle de funcionários");
-
-        lblCargo.setText("Cargo");
-
-        lblSalario.setText("Salário");
-
-        btnSalvar.setText("Salvar");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tela para cadastro de funcionários");
 
         lblId.setText("ID");
 
@@ -43,6 +39,12 @@ public class TelaFuncionario extends javax.swing.JFrame {
         lblTelefone.setText("Telefone");
 
         lblEmail.setText("Email");
+
+        lblCargo.setText("Cargo");
+
+        lblSalario.setText("Salário");
+
+        btnSalvar.setText("Salvar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,10 +120,8 @@ public class TelaFuncionario extends javax.swing.JFrame {
                 .addGap(100, 100, 100))
         );
 
-        setSize(new java.awt.Dimension(554, 656));
-        setLocationRelativeTo(null);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel lblCargo;

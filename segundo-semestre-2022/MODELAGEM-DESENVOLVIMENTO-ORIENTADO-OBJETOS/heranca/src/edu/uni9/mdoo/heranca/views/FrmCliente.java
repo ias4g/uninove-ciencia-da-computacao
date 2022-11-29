@@ -5,9 +5,10 @@ import edu.uni9.mdoo.heranca.models.Cliente;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class TelaCliente extends javax.swing.JFrame {
+public class FrmCliente extends javax.swing.JDialog {
 
-    public TelaCliente() {
+    public FrmCliente(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
@@ -16,9 +17,13 @@ public class TelaCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         lblId = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
         lblNome = new javax.swing.JLabel();
+        txtDataCompra = new javax.swing.JTextField();
         lblEndereco = new javax.swing.JLabel();
+        txtCupomDesconto = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         lblDataCompra = new javax.swing.JLabel();
         lblCupomDesconto = new javax.swing.JLabel();
@@ -26,12 +31,9 @@ public class TelaCliente extends javax.swing.JFrame {
         txtTelefone = new javax.swing.JTextField();
         txtEndereco = new javax.swing.JTextField();
         txtId = new javax.swing.JTextField();
-        txtNome = new javax.swing.JTextField();
-        txtDataCompra = new javax.swing.JTextField();
-        txtCupomDesconto = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
 
-        setTitle("Controle de Clientes");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tela para cadastro de clientes");
 
         lblId.setText(" ID");
 
@@ -59,7 +61,7 @@ public class TelaCliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(169, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,13 +89,13 @@ public class TelaCliente extends javax.swing.JFrame {
                             .addComponent(lblEmail)
                             .addComponent(lblCupomDesconto)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addContainerGap(135, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblId)
                     .addComponent(lblNome))
                 .addGap(0, 0, 0)
@@ -122,15 +124,17 @@ public class TelaCliente extends javax.swing.JFrame {
                 .addComponent(txtCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(660, 452));
+        setSize(new java.awt.Dimension(898, 622));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+
         try {
+
             Cliente cl = new Cliente();
 
             cl.setNome(txtNome.getText());
