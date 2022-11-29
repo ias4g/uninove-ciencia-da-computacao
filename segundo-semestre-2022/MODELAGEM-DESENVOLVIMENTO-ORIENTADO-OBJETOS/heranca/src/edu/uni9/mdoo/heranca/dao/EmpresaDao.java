@@ -36,7 +36,7 @@ public class EmpresaDao {
         stmt.setString(5, cliente.getDataPrimeiroCompra());
         stmt.setString(6, cliente.getCupomDesconto());
 
-        stmt.executeQuery();
+        stmt.executeUpdate();
 
     }
 
