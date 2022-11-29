@@ -22,13 +22,22 @@ public class EmpresaDao {
     }
 
     public int salvarCliente(Cliente cliente) throws ClassNotFoundException, SQLException {
+
         getConn();
 
-        String sql = "INSERT INTO cliente(nome, email, image, whatsapp, createdAt) values(?, ?, ?, ?, ?, current_timestamp())";
+        String sql = "INSERT INTO cliente(nome, endereco, telefone, email, dataCompra, cupomDesconto) values(?, ?, ?, ?, ?, ?)";
+
         stmt = conn.prepareStatement(sql);
-        stmt.setString(1, id);
+
+        stmt.setString(1, cliente.getNome());
+        stmt.setString(2, cliente.getEndereco());
+        stmt.setString(3, cliente.getTelefone());
+        stmt.setString(4, cliente.getEmail());
+        stmt.setString(5, cliente.getDataPrimeiroCompra());
+        stmt.setString(6, cliente.getCupomDesconto());
 
         return 1;
+
     }
 
 }
