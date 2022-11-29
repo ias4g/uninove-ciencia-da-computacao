@@ -35,6 +35,9 @@ public class FrmCliente extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela para cadastro de clientes");
         setAlwaysOnTop(true);
+        setMaximumSize(new java.awt.Dimension(816, 652));
+        setMinimumSize(new java.awt.Dimension(816, 652));
+        setResizable(false);
         getContentPane().setLayout(new java.awt.CardLayout());
 
         background1.setForeground(new java.awt.Color(255, 255, 255));
@@ -44,14 +47,23 @@ public class FrmCliente extends javax.swing.JDialog {
         lblEmail.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Email");
+        lblEmail.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblEmail.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblEmail.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         lblDataCompra.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblDataCompra.setForeground(new java.awt.Color(255, 255, 255));
         lblDataCompra.setText("Data da compra");
+        lblDataCompra.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblDataCompra.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblDataCompra.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         lblCupomDesconto.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblCupomDesconto.setForeground(new java.awt.Color(255, 255, 255));
         lblCupomDesconto.setText("Cupom de desconto");
+        lblCupomDesconto.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblCupomDesconto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblCupomDesconto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnSalvar.setText("Salvar");
@@ -69,6 +81,9 @@ public class FrmCliente extends javax.swing.JDialog {
         lblNome.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblNome.setForeground(new java.awt.Color(255, 255, 255));
         lblNome.setText("Nome");
+        lblNome.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblNome.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblNome.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         txtEndereco.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
 
@@ -77,15 +92,27 @@ public class FrmCliente extends javax.swing.JDialog {
         lblEndereco.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEndereco.setForeground(new java.awt.Color(255, 255, 255));
         lblEndereco.setText("Endereço");
+        lblEndereco.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblEndereco.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblEndereco.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         txtCupomDesconto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
 
         lblTelefone.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblTelefone.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefone.setText("Telefone");
+        lblTelefone.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblTelefone.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblTelefone.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/client.png"))); // NOI18N
+        jLabel1.setText("Cadastro de clientes");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIconTextGap(5);
+        jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
         background1.setLayout(background1Layout);
@@ -97,28 +124,28 @@ public class FrmCliente extends javax.swing.JDialog {
                     .addGroup(background1Layout.createSequentialGroup()
                         .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEndereco))
+                            .addComponent(lblEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNome)))
+                            .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(background1Layout.createSequentialGroup()
                         .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTelefone)
+                            .addComponent(lblTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEmail)))
+                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(background1Layout.createSequentialGroup()
                         .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDataCompra))
+                            .addComponent(lblDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCupomDesconto)))
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(100, 100, 100))
         );
@@ -126,45 +153,45 @@ public class FrmCliente extends javax.swing.JDialog {
             background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(background1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(jLabel1)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background1Layout.createSequentialGroup()
-                        .addComponent(lblEndereco)
+                        .addComponent(lblEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, background1Layout.createSequentialGroup()
-                        .addComponent(lblNome)
+                        .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16)
                 .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(background1Layout.createSequentialGroup()
-                        .addComponent(lblTelefone)
+                        .addComponent(lblTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(background1Layout.createSequentialGroup()
-                        .addComponent(lblEmail)
+                        .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(txtDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16)
                 .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(background1Layout.createSequentialGroup()
-                        .addComponent(lblDataCompra)
+                        .addComponent(lblDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(background1Layout.createSequentialGroup()
-                        .addComponent(lblCupomDesconto)
+                        .addComponent(lblCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(txtCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32)
+                .addGap(33, 33, 33)
                 .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
         );
 
         getContentPane().add(background1, "card2");
 
-        setSize(new java.awt.Dimension(832, 607));
+        setSize(new java.awt.Dimension(832, 660));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
