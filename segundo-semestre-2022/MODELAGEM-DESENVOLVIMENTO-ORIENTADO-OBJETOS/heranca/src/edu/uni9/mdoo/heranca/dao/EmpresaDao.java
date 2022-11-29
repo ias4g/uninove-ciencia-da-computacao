@@ -1,5 +1,6 @@
 package edu.uni9.mdoo.heranca.dao;
 
+import edu.uni9.mdoo.heranca.models.Cliente;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,6 +19,16 @@ public class EmpresaDao {
     private void getConn() throws ClassNotFoundException, SQLException {
         Class.forName(BD_DRIVER);
         conn = DriverManager.getConnection(BD_URL, BD_USER, BD_PASSWORD);
+    }
+
+    public int salvarCliente(Cliente cliente) throws ClassNotFoundException, SQLException {
+        getConn();
+
+        String sql = "INSERT INTO cliente(nome, email, image, whatsapp, createdAt) values(?, ?, ?, ?, ?, current_timestamp())";
+        stmt = conn.prepareStatement(sql);
+        stmt.setString(1, id);
+
+        return 1;
     }
 
 }
