@@ -1,5 +1,12 @@
 package edu.uni9.mdoo.heranca.views;
 
+import edu.uni9.mdoo.heranca.dao.EmpresaDao;
+import edu.uni9.mdoo.heranca.models.Funcionario;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 public class FrmFuncionario extends javax.swing.JDialog {
 
     public FrmFuncionario(java.awt.Frame parent, boolean modal) {
@@ -262,7 +269,23 @@ public class FrmFuncionario extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCargoKeyPressed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+
+        Funcionario func = new Funcionario();
+        func.setNome(txtNome.getText());
+        func.setEndereco(txtEndereco.getText());
+        func.setTelefone(txtTelefone.getText());
+        func.setEmail(txtEmail.getText());
+        func.setSalario(Double.valueOf(txtSalario.getText()));
+        func.setCargo(txtCargo.getText());
+
+        try {
+            new EmpresaDao().salvarFuncionario(func);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(FrmFuncionario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         cleanFields();
+
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void cleanFields() {
