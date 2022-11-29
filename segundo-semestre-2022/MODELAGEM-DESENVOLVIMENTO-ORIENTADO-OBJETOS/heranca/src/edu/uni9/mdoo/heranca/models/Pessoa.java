@@ -1,6 +1,5 @@
 package edu.uni9.mdoo.heranca.models;
 
-
 public class Pessoa {
 
     private int id;
@@ -9,13 +8,16 @@ public class Pessoa {
     private String telefone;
     private String email;
 
-//    public Pessoa(int id, String nome, String endereco, String telefone, String email) {
-//        this.id = id;
-//        this.nome = nome;
-//        this.endereco = endereco;
-//        this.telefone = telefone;
-//        this.email = email;
-//    }
+    public Pessoa() {
+    }
+
+    public Pessoa(int id, String nome, String endereco, String telefone, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.email = email;
+    }
 
     public int getId() {
         return id;
