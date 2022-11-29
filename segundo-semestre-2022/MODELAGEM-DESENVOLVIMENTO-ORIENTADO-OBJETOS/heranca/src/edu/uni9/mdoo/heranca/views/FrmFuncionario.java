@@ -1,15 +1,20 @@
 package edu.uni9.mdoo.heranca.views;
 
+import java.awt.Cursor;
+
 public class FrmFuncionario extends javax.swing.JDialog {
 
     public FrmFuncionario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+
+        activateButton();
     }
-    
-    private void activateButton(){
-        if(btnSalvar.setEnabled()==true){
-            
+
+    private void activateButton() {
+        if (btnSalvar.isEnabled() == false) {
+            System.out.println(btnSalvar.isEnabled());
+            btnSalvar.setCursor(new Cursor(Cursor.HAND_CURSOR));
         }
     }
 
