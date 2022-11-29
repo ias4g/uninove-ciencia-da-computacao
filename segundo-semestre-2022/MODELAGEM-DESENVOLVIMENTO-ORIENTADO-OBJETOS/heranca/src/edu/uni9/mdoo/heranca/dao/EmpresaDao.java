@@ -45,7 +45,7 @@ public class EmpresaDao {
 
         getConn();
 
-        String sql = "INSERT INTO cliente(nome, endereco, telefone, email, cargo, salario) values(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO funcionario(nome, endereco, telefone, email, cargo, salario) values(?, ?, ?, ?, ?, ?)";
 
         stmt = conn.prepareStatement(sql);
 

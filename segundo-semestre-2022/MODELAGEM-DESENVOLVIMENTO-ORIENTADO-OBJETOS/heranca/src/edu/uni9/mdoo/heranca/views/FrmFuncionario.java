@@ -28,10 +28,10 @@ public class FrmFuncionario extends javax.swing.JDialog {
         txtTelefone = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
-        lblSalario = new javax.swing.JLabel();
-        txtSalario = new javax.swing.JTextField();
         lblCargo = new javax.swing.JLabel();
         txtCargo = new javax.swing.JTextField();
+        lblSalario = new javax.swing.JLabel();
+        txtSalario = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -102,6 +102,19 @@ public class FrmFuncionario extends javax.swing.JDialog {
             }
         });
 
+        lblCargo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        lblCargo.setForeground(new java.awt.Color(255, 255, 255));
+        lblCargo.setText("Salário");
+        lblCargo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        txtCargo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtCargo.setEnabled(false);
+        txtCargo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCargoKeyPressed(evt);
+            }
+        });
+
         lblSalario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblSalario.setForeground(new java.awt.Color(255, 255, 255));
         lblSalario.setText("Salário");
@@ -112,19 +125,6 @@ public class FrmFuncionario extends javax.swing.JDialog {
         txtSalario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtSalarioKeyPressed(evt);
-            }
-        });
-
-        lblCargo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        lblCargo.setForeground(new java.awt.Color(255, 255, 255));
-        lblCargo.setText("Cargo");
-        lblCargo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        txtCargo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtCargo.setEnabled(false);
-        txtCargo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCargoKeyPressed(evt);
             }
         });
 
@@ -165,12 +165,12 @@ public class FrmFuncionario extends javax.swing.JDialog {
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jpBackgroundLayout.createSequentialGroup()
                         .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(100, 100, 100))
         );
@@ -202,13 +202,13 @@ public class FrmFuncionario extends javax.swing.JDialog {
                 .addGap(16, 16, 16)
                 .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpBackgroundLayout.createSequentialGroup()
-                        .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpBackgroundLayout.createSequentialGroup()
                         .addComponent(lblSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpBackgroundLayout.createSequentialGroup()
+                        .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32)
                 .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
@@ -246,27 +246,27 @@ public class FrmFuncionario extends javax.swing.JDialog {
 
     private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
         if (txtEmail.getText().length() > 0) {
-            txtSalario.setEnabled(true);
-        } else {
-            txtSalario.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtEmailKeyPressed
-
-    private void txtSalarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyPressed
-        if (txtSalario.getText().length() > 0) {
             txtCargo.setEnabled(true);
         } else {
             txtCargo.setEnabled(false);
         }
-    }//GEN-LAST:event_txtSalarioKeyPressed
+    }//GEN-LAST:event_txtEmailKeyPressed
 
     private void txtCargoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCargoKeyPressed
         if (txtCargo.getText().length() > 0) {
+            txtSalario.setEnabled(true);
+        } else {
+            txtSalario.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtCargoKeyPressed
+
+    private void txtSalarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyPressed
+        if (txtSalario.getText().length() > 0) {
             btnSalvar.setEnabled(true);
         } else {
             btnSalvar.setEnabled(false);
         }
-    }//GEN-LAST:event_txtCargoKeyPressed
+    }//GEN-LAST:event_txtSalarioKeyPressed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
@@ -275,8 +275,8 @@ public class FrmFuncionario extends javax.swing.JDialog {
         func.setEndereco(txtEndereco.getText());
         func.setTelefone(txtTelefone.getText());
         func.setEmail(txtEmail.getText());
-        func.setSalario(Double.valueOf(txtSalario.getText()));
         func.setCargo(txtCargo.getText());
+        func.setSalario(Double.valueOf(txtSalario.getText()));
 
         try {
             new EmpresaDao().salvarFuncionario(func);
@@ -301,11 +301,11 @@ public class FrmFuncionario extends javax.swing.JDialog {
         txtEmail.setText(null);
         txtEmail.setEnabled(false);
 
-        txtSalario.setText(null);
-        txtSalario.setEnabled(false);
-
         txtCargo.setText(null);
         txtCargo.setEnabled(false);
+
+        txtSalario.setText(null);
+        txtSalario.setEnabled(false);
 
         btnSalvar.setEnabled(false);
 
