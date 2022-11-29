@@ -30,6 +30,7 @@ public class FrmCliente extends javax.swing.JDialog {
         lblEndereco = new javax.swing.JLabel();
         txtCupomDesconto = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela para cadastro de clientes");
@@ -83,6 +84,9 @@ public class FrmCliente extends javax.swing.JDialog {
         lblTelefone.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefone.setText("Telefone");
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/client.png"))); // NOI18N
+
         javax.swing.GroupLayout background1Layout = new javax.swing.GroupLayout(background1);
         background1.setLayout(background1Layout);
         background1Layout.setHorizontalGroup(
@@ -114,13 +118,16 @@ public class FrmCliente extends javax.swing.JDialog {
                         .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblCupomDesconto)))
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(100, 100, 100))
         );
         background1Layout.setVerticalGroup(
             background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(background1Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addGap(50, 50, 50)
+                .addComponent(jLabel1)
+                .addGap(32, 32, 32)
                 .addGroup(background1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(background1Layout.createSequentialGroup()
                         .addComponent(lblEndereco)
@@ -157,7 +164,7 @@ public class FrmCliente extends javax.swing.JDialog {
 
         getContentPane().add(background1, "card2");
 
-        setSize(new java.awt.Dimension(914, 494));
+        setSize(new java.awt.Dimension(832, 607));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -185,6 +192,7 @@ public class FrmCliente extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private edu.uni9.mdoo.heranca.swing.Background background1;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCupomDesconto;
     private javax.swing.JLabel lblDataCompra;
     private javax.swing.JLabel lblEmail;
