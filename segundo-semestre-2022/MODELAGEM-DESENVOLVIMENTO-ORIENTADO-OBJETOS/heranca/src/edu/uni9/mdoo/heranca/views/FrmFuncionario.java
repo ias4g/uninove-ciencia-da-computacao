@@ -1,21 +1,10 @@
 package edu.uni9.mdoo.heranca.views;
 
-import java.awt.Cursor;
-
 public class FrmFuncionario extends javax.swing.JDialog {
 
     public FrmFuncionario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-
-        activateButton();
-    }
-
-    private void activateButton() {
-        if (btnSalvar.isEnabled() == false) {
-            System.out.println(btnSalvar.isEnabled());
-            btnSalvar.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        }
     }
 
     @SuppressWarnings("unchecked")
@@ -61,6 +50,11 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblNome.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtNome.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeKeyPressed(evt);
+            }
+        });
 
         lblEndereco.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEndereco.setForeground(new java.awt.Color(255, 255, 255));
@@ -68,6 +62,12 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblEndereco.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtEndereco.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtEndereco.setEnabled(false);
+        txtEndereco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEnderecoKeyPressed(evt);
+            }
+        });
 
         lblTelefone.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblTelefone.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,6 +75,12 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblTelefone.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtTelefone.setEnabled(false);
+        txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefoneKeyPressed(evt);
+            }
+        });
 
         lblEmail.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
@@ -82,6 +88,12 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblEmail.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtEmail.setEnabled(false);
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmailKeyPressed(evt);
+            }
+        });
 
         lblSalario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblSalario.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,6 +101,12 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblSalario.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtSalario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtSalario.setEnabled(false);
+        txtSalario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSalarioKeyPressed(evt);
+            }
+        });
 
         lblCargo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblCargo.setForeground(new java.awt.Color(255, 255, 255));
@@ -96,6 +114,12 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblCargo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtCargo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtCargo.setEnabled(false);
+        txtCargo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCargoKeyPressed(evt);
+            }
+        });
 
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/save.png"))); // NOI18N
@@ -183,6 +207,55 @@ public class FrmFuncionario extends javax.swing.JDialog {
         setSize(new java.awt.Dimension(832, 660));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
+        if (txtNome.getText().length() > 0) {
+            txtEndereco.setEnabled(true);
+        } else {
+            txtEndereco.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtNomeKeyPressed
+
+    private void txtEnderecoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEnderecoKeyPressed
+        if (txtEndereco.getText().length() > 0) {
+            txtTelefone.setEnabled(true);
+        } else {
+            txtTelefone.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtEnderecoKeyPressed
+
+    private void txtTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefoneKeyPressed
+        if (txtTelefone.getText().length() > 0) {
+            txtEmail.setEnabled(true);
+        } else {
+            txtEmail.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtTelefoneKeyPressed
+
+    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
+        if (txtEmail.getText().length() > 0) {
+            txtSalario.setEnabled(true);
+        } else {
+            txtSalario.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtEmailKeyPressed
+
+    private void txtSalarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyPressed
+        if (txtSalario.getText().length() > 0) {
+            txtCargo.setEnabled(true);
+        } else {
+            txtCargo.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtSalarioKeyPressed
+
+    private void txtCargoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCargoKeyPressed
+        if (txtCargo.getText().length() > 0) {
+            btnSalvar.setEnabled(true);
+        } else {
+            btnSalvar.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtCargoKeyPressed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalvar;
     private edu.uni9.mdoo.heranca.swing.Background jpBackground;

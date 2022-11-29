@@ -59,6 +59,11 @@ public class FrmCliente extends javax.swing.JDialog {
         lblNome.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         txtNome.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeKeyPressed(evt);
+            }
+        });
 
         lblEndereco.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEndereco.setForeground(new java.awt.Color(255, 255, 255));
@@ -68,6 +73,12 @@ public class FrmCliente extends javax.swing.JDialog {
         lblEndereco.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         txtEndereco.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtEndereco.setEnabled(false);
+        txtEndereco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEnderecoKeyPressed(evt);
+            }
+        });
 
         lblTelefone.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblTelefone.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,6 +88,12 @@ public class FrmCliente extends javax.swing.JDialog {
         lblTelefone.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtTelefone.setEnabled(false);
+        txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefoneKeyPressed(evt);
+            }
+        });
 
         lblEmail.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
@@ -86,6 +103,12 @@ public class FrmCliente extends javax.swing.JDialog {
         lblEmail.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtEmail.setEnabled(false);
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmailKeyPressed(evt);
+            }
+        });
 
         lblDataCompra.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblDataCompra.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,6 +118,12 @@ public class FrmCliente extends javax.swing.JDialog {
         lblDataCompra.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         txtDataCompra.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtDataCompra.setEnabled(false);
+        txtDataCompra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDataCompraKeyPressed(evt);
+            }
+        });
 
         lblCupomDesconto.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblCupomDesconto.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,6 +133,12 @@ public class FrmCliente extends javax.swing.JDialog {
         lblCupomDesconto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         txtCupomDesconto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtCupomDesconto.setEnabled(false);
+        txtCupomDesconto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCupomDescontoKeyPressed(evt);
+            }
+        });
 
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/save.png"))); // NOI18N
@@ -199,24 +234,80 @@ public class FrmCliente extends javax.swing.JDialog {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
+        Cliente cl = new Cliente();
+        cl.setNome(txtEndereco.getText());
+        cl.setEndereco(txtNome.getText());
+        cl.setTelefone(txtTelefone.getText());
+        cl.setEmail(txtDataCompra.getText());
+        cl.setDataPrimeiroCompra(txtEmail.getText());
+        cl.setCupomDesconto(txtCupomDesconto.getText());
+
         try {
-
-            Cliente cl = new Cliente();
-
-            cl.setNome(txtEndereco.getText());
-            cl.setEndereco(txtNome.getText());
-            cl.setTelefone(txtTelefone.getText());
-            cl.setEmail(txtDataCompra.getText());
-            cl.setDataPrimeiroCompra(txtEmail.getText());
-            cl.setCupomDesconto(txtCupomDesconto.getText());
-
             new EmpresaDao().salvarCliente(cl);
-
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
 
+        cleanFields();
+
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
+        if (txtNome.getText().length() > 0) {
+            txtEndereco.setEnabled(true);
+        } else {
+            txtEndereco.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtNomeKeyPressed
+
+    private void txtEnderecoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEnderecoKeyPressed
+        if (txtEndereco.getText().length() > 0) {
+            txtTelefone.setEnabled(true);
+        } else {
+            txtTelefone.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtEnderecoKeyPressed
+
+    private void txtTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefoneKeyPressed
+        if (txtTelefone.getText().length() > 0) {
+            txtEmail.setEnabled(true);
+        } else {
+            txtEmail.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtTelefoneKeyPressed
+
+    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
+        if (txtEmail.getText().length() > 0) {
+            txtDataCompra.setEnabled(true);
+        } else {
+            txtDataCompra.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtEmailKeyPressed
+
+    private void txtDataCompraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDataCompraKeyPressed
+        if (txtDataCompra.getText().length() > 0) {
+            txtCupomDesconto.setEnabled(true);
+        } else {
+            txtCupomDesconto.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtDataCompraKeyPressed
+
+    private void txtCupomDescontoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCupomDescontoKeyPressed
+        if (txtCupomDesconto.getText().length() > 0) {
+            btnSalvar.setEnabled(true);
+        } else {
+            btnSalvar.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtCupomDescontoKeyPressed
+
+    private void cleanFields() {
+        txtNome.setText(null);
+        txtEndereco.setText(null);
+        txtTelefone.setText(null);
+        txtEmail.setText(null);
+        txtDataCompra.setText(null);
+        txtCupomDesconto.setText(null);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalvar;

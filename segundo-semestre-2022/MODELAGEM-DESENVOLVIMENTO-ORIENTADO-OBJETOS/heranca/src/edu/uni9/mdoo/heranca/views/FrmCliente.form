@@ -181,6 +181,9 @@
               <Font name="Roboto" size="18" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNomeKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblEndereco">
           <Properties>
@@ -201,7 +204,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto" size="18" style="0"/>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEnderecoKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblTelefone">
           <Properties>
@@ -222,7 +229,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto" size="18" style="0"/>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefoneKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblEmail">
           <Properties>
@@ -243,7 +254,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto" size="18" style="0"/>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEmailKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblDataCompra">
           <Properties>
@@ -264,7 +279,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto" size="18" style="0"/>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDataCompraKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCupomDesconto">
           <Properties>
@@ -285,7 +304,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto" size="18" style="0"/>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCupomDescontoKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnSalvar">
           <Properties>
