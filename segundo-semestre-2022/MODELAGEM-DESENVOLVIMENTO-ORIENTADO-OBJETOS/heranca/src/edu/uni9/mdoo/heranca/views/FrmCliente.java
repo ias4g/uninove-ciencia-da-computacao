@@ -27,9 +27,9 @@ public class FrmCliente extends javax.swing.JDialog {
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lblDataCompra = new javax.swing.JLabel();
-        txtDataCompra = new javax.swing.JTextField();
+        txtDataCompra = new javax.swing.JFormattedTextField();
         lblCupomDesconto = new javax.swing.JLabel();
-        txtCupomDesconto = new javax.swing.JTextField();
+        txtCupomDesconto = new javax.swing.JFormattedTextField();
         btnSalvar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -117,13 +117,13 @@ public class FrmCliente extends javax.swing.JDialog {
         lblDataCompra.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblDataCompra.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        txtDataCompra.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        try {
+            txtDataCompra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         txtDataCompra.setEnabled(false);
-        txtDataCompra.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtDataCompraKeyPressed(evt);
-            }
-        });
+        txtDataCompra.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
 
         lblCupomDesconto.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblCupomDesconto.setForeground(new java.awt.Color(255, 255, 255));
@@ -132,13 +132,13 @@ public class FrmCliente extends javax.swing.JDialog {
         lblCupomDesconto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblCupomDesconto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        txtCupomDesconto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        try {
+            txtCupomDesconto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         txtCupomDesconto.setEnabled(false);
-        txtCupomDesconto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCupomDescontoKeyPressed(evt);
-            }
-        });
+        txtCupomDesconto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
 
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/save.png"))); // NOI18N
@@ -157,7 +157,7 @@ public class FrmCliente extends javax.swing.JDialog {
             jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpBackgroundLayout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpBackgroundLayout.createSequentialGroup()
                         .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,17 +174,20 @@ public class FrmCliente extends javax.swing.JDialog {
                         .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIconTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpBackgroundLayout.createSequentialGroup()
                         .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16)
+                            .addComponent(lblDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIconTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(100, 100, 100))
+                            .addGroup(jpBackgroundLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(txtCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpBackgroundLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(lblCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(110, 110, 110))
         );
         jpBackgroundLayout.setVerticalGroup(
             jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,16 +215,16 @@ public class FrmCliente extends javax.swing.JDialog {
                         .addGap(0, 0, 0)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16)
-                .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jpBackgroundLayout.createSequentialGroup()
-                        .addComponent(lblDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(txtDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpBackgroundLayout.createSequentialGroup()
                         .addComponent(lblCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(txtCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33)
+                        .addComponent(txtCupomDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpBackgroundLayout.createSequentialGroup()
+                        .addComponent(lblDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(txtDataCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
                 .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
         );
@@ -238,7 +241,7 @@ public class FrmCliente extends javax.swing.JDialog {
         cl.setNome(txtEndereco.getText());
         cl.setEndereco(txtNome.getText());
         cl.setTelefone(txtTelefone.getText());
-        cl.setEmail(txtDataCompra.getText());
+        cl.setEmail(txtCupomDesconto.getText());
         cl.setDataPrimeiroCompra(txtEmail.getText());
         cl.setCupomDesconto(txtCupomDesconto.getText());
 
@@ -278,27 +281,11 @@ public class FrmCliente extends javax.swing.JDialog {
 
     private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
         if (txtEmail.getText().length() > 0) {
-            txtDataCompra.setEnabled(true);
-        } else {
-            txtDataCompra.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtEmailKeyPressed
-
-    private void txtDataCompraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDataCompraKeyPressed
-        if (txtDataCompra.getText().length() > 0) {
             txtCupomDesconto.setEnabled(true);
         } else {
             txtCupomDesconto.setEnabled(false);
         }
-    }//GEN-LAST:event_txtDataCompraKeyPressed
-
-    private void txtCupomDescontoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCupomDescontoKeyPressed
-        if (txtCupomDesconto.getText().length() > 0) {
-            btnSalvar.setEnabled(true);
-        } else {
-            btnSalvar.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtCupomDescontoKeyPressed
+    }//GEN-LAST:event_txtEmailKeyPressed
 
     private void cleanFields() {
 
@@ -313,8 +300,8 @@ public class FrmCliente extends javax.swing.JDialog {
         txtEmail.setText(null);
         txtEmail.setEnabled(false);
 
-        txtDataCompra.setText(null);
-        txtDataCompra.setEnabled(false);
+        txtCupomDesconto.setText(null);
+        txtCupomDesconto.setEnabled(false);
 
         txtCupomDesconto.setText(null);
         txtCupomDesconto.setEnabled(false);
@@ -333,8 +320,8 @@ public class FrmCliente extends javax.swing.JDialog {
     private javax.swing.JLabel lblIconTitle;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTelefone;
-    private javax.swing.JTextField txtCupomDesconto;
-    private javax.swing.JTextField txtDataCompra;
+    private javax.swing.JFormattedTextField txtCupomDesconto;
+    private javax.swing.JFormattedTextField txtDataCompra;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNome;
