@@ -21,7 +21,7 @@ public class EmpresaDao {
         conn = DriverManager.getConnection(BD_URL, BD_USER, BD_PASSWORD);
     }
 
-    public int salvarCliente(Cliente cliente) throws ClassNotFoundException, SQLException {
+    public void salvarCliente(Cliente cliente) throws ClassNotFoundException, SQLException {
 
         getConn();
 
@@ -36,7 +36,7 @@ public class EmpresaDao {
         stmt.setString(5, cliente.getDataPrimeiroCompra());
         stmt.setString(6, cliente.getCupomDesconto());
 
-        return 1;
+        stmt.executeQuery();
 
     }
 
