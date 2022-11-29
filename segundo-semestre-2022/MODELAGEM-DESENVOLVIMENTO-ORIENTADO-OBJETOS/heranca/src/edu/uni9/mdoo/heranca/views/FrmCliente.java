@@ -106,8 +106,10 @@ public class FrmCliente extends javax.swing.JDialog {
         txtCupomDesconto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
 
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/save.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalvar.setEnabled(false);
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);

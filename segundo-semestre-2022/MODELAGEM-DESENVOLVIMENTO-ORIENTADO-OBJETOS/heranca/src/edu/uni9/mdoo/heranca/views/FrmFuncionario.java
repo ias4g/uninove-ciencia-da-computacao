@@ -6,6 +6,12 @@ public class FrmFuncionario extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    private void activateButton(){
+        if(btnSalvar.setEnabled()==true){
+            
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -87,8 +93,10 @@ public class FrmFuncionario extends javax.swing.JDialog {
         txtCargo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
 
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/save.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalvar.setEnabled(false);
 
         javax.swing.GroupLayout jpBackgroundLayout = new javax.swing.GroupLayout(jpBackground);
         jpBackground.setLayout(jpBackgroundLayout);
