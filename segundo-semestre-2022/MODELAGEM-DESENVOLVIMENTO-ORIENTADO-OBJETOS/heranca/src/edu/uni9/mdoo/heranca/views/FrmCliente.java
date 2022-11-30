@@ -124,6 +124,11 @@ public class FrmCliente extends javax.swing.JDialog {
         }
         txtDataCompra.setEnabled(false);
         txtDataCompra.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtDataCompra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDataCompraKeyPressed(evt);
+            }
+        });
 
         lblCupomDesconto.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblCupomDesconto.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,12 +138,17 @@ public class FrmCliente extends javax.swing.JDialog {
         lblCupomDesconto.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         try {
-            txtCupomDesconto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtCupomDesconto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UUU-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         txtCupomDesconto.setEnabled(false);
         txtCupomDesconto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtCupomDesconto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCupomDescontoKeyPressed(evt);
+            }
+        });
 
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/save.png"))); // NOI18N
@@ -281,11 +291,27 @@ public class FrmCliente extends javax.swing.JDialog {
 
     private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
         if (txtEmail.getText().length() > 0) {
+            txtDataCompra.setEnabled(true);
+        } else {
+            txtDataCompra.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtEmailKeyPressed
+
+    private void txtDataCompraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDataCompraKeyPressed
+        if (txtDataCompra.getText().length() > 0) {
             txtCupomDesconto.setEnabled(true);
         } else {
             txtCupomDesconto.setEnabled(false);
         }
-    }//GEN-LAST:event_txtEmailKeyPressed
+    }//GEN-LAST:event_txtDataCompraKeyPressed
+
+    private void txtCupomDescontoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCupomDescontoKeyPressed
+        if (txtCupomDesconto.getText().length() > 0) {
+            btnSalvar.setEnabled(true);
+        } else {
+            btnSalvar.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtCupomDescontoKeyPressed
 
     private void cleanFields() {
 
@@ -300,8 +326,8 @@ public class FrmCliente extends javax.swing.JDialog {
         txtEmail.setText(null);
         txtEmail.setEnabled(false);
 
-        txtCupomDesconto.setText(null);
-        txtCupomDesconto.setEnabled(false);
+        txtDataCompra.setText(null);
+        txtDataCompra.setEnabled(false);
 
         txtCupomDesconto.setText(null);
         txtCupomDesconto.setEnabled(false);

@@ -3,8 +3,6 @@ package edu.uni9.mdoo.heranca.views;
 import edu.uni9.mdoo.heranca.dao.EmpresaDao;
 import edu.uni9.mdoo.heranca.models.Funcionario;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class FrmFuncionario extends javax.swing.JDialog {
@@ -31,8 +29,8 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblCargo = new javax.swing.JLabel();
         txtCargo = new javax.swing.JTextField();
         lblSalario = new javax.swing.JLabel();
-        txtSalario = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
+        txtSalario = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela para cadastro de funcionários");
@@ -120,14 +118,6 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblSalario.setText("Salário");
         lblSalario.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
-        txtSalario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtSalario.setEnabled(false);
-        txtSalario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtSalarioKeyPressed(evt);
-            }
-        });
-
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/save.png"))); // NOI18N
         btnSalvar.setText("Salvar");
@@ -136,6 +126,20 @@ public class FrmFuncionario extends javax.swing.JDialog {
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
+            }
+        });
+
+        try {
+            txtSalario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###0#.##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtSalario.setDragEnabled(true);
+        txtSalario.setEnabled(false);
+        txtSalario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtSalario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSalarioKeyPressed(evt);
             }
         });
 
@@ -169,8 +173,10 @@ public class FrmFuncionario extends javax.swing.JDialog {
                             .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jpBackgroundLayout.createSequentialGroup()
+                                .addGap(0, 0, 0)
+                                .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(100, 100, 100))
         );
@@ -260,14 +266,6 @@ public class FrmFuncionario extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtCargoKeyPressed
 
-    private void txtSalarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyPressed
-        if (txtSalario.getText().length() > 0) {
-            btnSalvar.setEnabled(true);
-        } else {
-            btnSalvar.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtSalarioKeyPressed
-
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
         Funcionario func = new Funcionario();
@@ -287,6 +285,14 @@ public class FrmFuncionario extends javax.swing.JDialog {
         cleanFields();
 
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void txtSalarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyPressed
+        if (txtSalario.getText().length() > 0) {
+            btnSalvar.setEnabled(true);
+        } else {
+            btnSalvar.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtSalarioKeyPressed
 
     private void cleanFields() {
 
@@ -325,7 +331,7 @@ public class FrmFuncionario extends javax.swing.JDialog {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtSalario;
+    private javax.swing.JFormattedTextField txtSalario;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
