@@ -154,11 +154,16 @@ public class FrmCliente extends javax.swing.JDialog {
         });
 
         try {
-            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+(##) ## # ####-####")));
+            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+55 (##) # ####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefoneKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpBackgroundLayout = new javax.swing.GroupLayout(jpBackground);
         jpBackground.setLayout(jpBackgroundLayout);
@@ -308,6 +313,14 @@ public class FrmCliente extends javax.swing.JDialog {
             btnSalvar.setEnabled(false);
         }
     }//GEN-LAST:event_txtCupomDescontoKeyPressed
+
+    private void txtTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefoneKeyPressed
+        if (txtTelefone.getText().length() > 0) {
+            txtEmail.setEnabled(true);
+        } else {
+            txtEmail.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtTelefoneKeyPressed
 
     private void cleanFields() {
 
