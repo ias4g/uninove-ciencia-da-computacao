@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 public class EmpresaDao {
 
@@ -22,7 +23,7 @@ public class EmpresaDao {
         conn = DriverManager.getConnection(BD_URL, BD_USER, BD_PASSWORD);
     }
 
-    public void salvarCliente(Cliente cliente) throws ClassNotFoundException, SQLException {
+    public void salvarCliente(Cliente cl) throws ClassNotFoundException, SQLException {
 
         getConn();
 
@@ -30,12 +31,12 @@ public class EmpresaDao {
 
         stmt = conn.prepareStatement(sql);
 
-        stmt.setString(1, cliente.getNome());
-        stmt.setString(2, cliente.getEndereco());
-        stmt.setString(3, cliente.getTelefone());
-        stmt.setString(4, cliente.getEmail());
-        stmt.setString(5, cliente.getDataPrimeiroCompra());
-        stmt.setString(6, cliente.getCupomDesconto());
+        stmt.setString(1, cl.getNome());
+        stmt.setString(2, cl.getEndereco());
+        stmt.setString(3, cl.getTelefone());
+        stmt.setString(4, cl.getEmail());
+        stmt.setString(5, cl.getDataPrimeiroCompra());
+        stmt.setString(6, cl.getCupomDesconto());
 
         stmt.executeUpdate();
 
@@ -55,6 +56,82 @@ public class EmpresaDao {
         stmt.setString(4, func.getEmail());
         stmt.setString(5, func.getCargo());
         stmt.setDouble(6, func.getSalario());
+
+        stmt.executeUpdate();
+
+    }
+
+    public List<Cliente> buscarTodosClientes(int id) {
+        return null;
+    }
+
+    public List<Funcionario> buscarTodosFuncionarios(int id) {
+        return null;
+    }
+
+    public void alterarCliente(Cliente cl) throws ClassNotFoundException, SQLException {
+
+        getConn();
+
+        String sql = "UPDATES cliente SET nome = ?, endereco = ?, telefone = ?, email = ?, dataCompra = ?, cupomDesconto = ? WHERE id = ?";
+
+        stmt = conn.prepareStatement(sql);
+
+        stmt.setString(1, cl.getNome());
+        stmt.setString(2, cl.getEndereco());
+        stmt.setString(3, cl.getTelefone());
+        stmt.setString(4, cl.getEmail());
+        stmt.setString(5, cl.getDataPrimeiroCompra());
+        stmt.setString(6, cl.getCupomDesconto());
+        stmt.setInt(7, cl.getId());
+
+        stmt.executeUpdate();
+
+    }
+
+    public void alterarFuncionario(Funcionario func) throws ClassNotFoundException, SQLException {
+
+        getConn();
+
+        String sql = "UPDATE funcionario SET nome = ?, endereco = ?, telefone = ?, email = ?, cargo = ?, salario = ? WHERE id = ?";
+
+        stmt = conn.prepareStatement(sql);
+
+        stmt.setString(1, func.getNome());
+        stmt.setString(2, func.getEndereco());
+        stmt.setString(3, func.getTelefone());
+        stmt.setString(4, func.getEmail());
+        stmt.setString(5, func.getCargo());
+        stmt.setDouble(6, func.getSalario());
+        stmt.setInt(7, func.getId());
+
+        stmt.executeUpdate();
+
+    }
+
+    public void deleteCliente(int id) throws ClassNotFoundException, SQLException {
+
+        getConn();
+
+        String sql = "DELETE FROM cliente WHERE id = ?";
+
+        stmt = conn.prepareStatement(sql);
+
+        stmt.setInt(1, id);
+
+        stmt.executeUpdate();
+
+    }
+
+    public void deleteFuncionario(int id) throws ClassNotFoundException, SQLException {
+
+        getConn();
+
+        String sql = "DELETE FROM funcionario WHERE id = ?";
+
+        stmt = conn.prepareStatement(sql);
+
+        stmt.setInt(1, id);
 
         stmt.executeUpdate();
 

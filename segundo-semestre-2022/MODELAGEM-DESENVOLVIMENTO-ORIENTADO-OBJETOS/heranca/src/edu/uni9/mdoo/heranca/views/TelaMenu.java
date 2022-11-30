@@ -18,7 +18,6 @@ public class TelaMenu extends javax.swing.JFrame {
         setTitle("Tela de menu");
         setMaximumSize(new java.awt.Dimension(500, 324));
         setMinimumSize(new java.awt.Dimension(500, 324));
-        setPreferredSize(new java.awt.Dimension(500, 324));
         getContentPane().setLayout(new java.awt.CardLayout());
 
         btnFuncionario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
