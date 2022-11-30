@@ -6,10 +6,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmpresaDao {
 
+    private ResultSet rs = null;
     private Connection conn = null;
     private PreparedStatement stmt = null;
 
@@ -61,12 +64,134 @@ public class EmpresaDao {
 
     }
 
-    public List<Cliente> buscarTodosClientes(int id) {
-        return null;
+    public Cliente buscarClientePorId(int id) throws ClassNotFoundException, SQLException {
+
+        getConn();
+
+        Cliente cl = new Cliente();
+
+        String sql = "SELECT * FROM cliente WHERE id = ?";
+        stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, id);
+        rs = stmt.executeQuery();
+
+        if (rs == null) {
+            return null;
+        }
+
+        while (rs.next()) {
+
+            cl.setId(Integer.valueOf(rs.getString("id")));
+            cl.setNome(rs.getString("nome"));
+            cl.setEndereco(rs.getString("endereco"));
+            cl.setTelefone(rs.getString("telefone"));
+            cl.setEmail(rs.getString("email"));
+            cl.setDataCompra(rs.getString("dataCompra"));
+            cl.setCupomDesconto(rs.getString("cupomDesconto"));
+
+        }
+
+        return cl;
+
     }
 
-    public List<Funcionario> buscarTodosFuncionarios(int id) {
-        return null;
+    public List<Cliente> buscarTodosClientes() throws ClassNotFoundException, SQLException {
+
+        getConn();
+
+        List<Cliente> resultData = new ArrayList<>();
+
+        String sql = "SELECT * FROM cliente";
+        stmt = conn.prepareStatement(sql);
+        rs = stmt.executeQuery();
+
+        if (rs == null) {
+            return null;
+        }
+
+        while (rs.next()) {
+
+            Cliente cl = new Cliente();
+
+            cl.setId(Integer.valueOf(rs.getString("id")));
+            cl.setNome(rs.getString("nome"));
+            cl.setEndereco(rs.getString("endereco"));
+            cl.setTelefone(rs.getString("telefone"));
+            cl.setEmail(rs.getString("email"));
+            cl.setDataCompra(rs.getString("dataCompra"));
+            cl.setCupomDesconto(rs.getString("cupomDesconto"));
+
+            resultData.add(cl);
+
+        }
+
+        return resultData;
+
+    }
+
+    public Funcionario buscarFuncionarioPorId(int id) throws ClassNotFoundException, SQLException {
+
+        getConn();
+
+        Funcionario func = new Funcionario();
+
+        String sql = "SELECT * FROM funcionario WHERE id = ?";
+        stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, id);
+        rs = stmt.executeQuery();
+
+        if (rs == null) {
+            return null;
+        }
+
+        while (rs.next()) {
+
+            func.setId(Integer.valueOf(rs.getString("id")));
+            func.setNome(rs.getString("nome"));
+            func.setEndereco(rs.getString("endereco"));
+            func.setTelefone(rs.getString("telefone"));
+            func.setEmail(rs.getString("email"));
+            func.setCargo(rs.getString("cargo"));
+            func.setSalario(Double.valueOf(rs.getString("salario")));
+
+        }
+
+        return func;
+
+    }
+
+    public List<Funcionario> buscarTodosFuncionarios() throws ClassNotFoundException, SQLException {
+
+        getConn();
+
+        List<Funcionario> resultData = new ArrayList<>();
+
+        String sql = "SELECT * FROM funcionario";
+        stmt = conn.prepareStatement(sql);
+        rs = stmt.executeQuery();
+
+        if (rs == null) {
+            return null;
+        }
+
+        while (rs.next()) {
+
+            Funcionario func = new Funcionario();
+
+            func.setId(Integer.valueOf(rs.getString("id")));
+            func.setNome(rs.getString("nome"));
+            func.setEndereco(rs.getString("endereco"));
+            func.setTelefone(rs.getString("telefone"));
+            func.setEmail(rs.getString("email"));
+            func.setCargo(rs.getString("cargo"));
+            func.setSalario(Double.valueOf(rs.getString("salario")));
+
+            resultData.add(func);
+
+        }
+
+        return resultData;
+
     }
 
     public void alterarCliente(Cliente cl) throws ClassNotFoundException, SQLException {
@@ -81,7 +206,7 @@ public class EmpresaDao {
         stmt.setString(2, cl.getEndereco());
         stmt.setString(3, cl.getTelefone());
         stmt.setString(4, cl.getEmail());
-        stmt.setString(5, cl.getDataPrimeiroCompra());
+        stmt.setString(5, cl.getDataCompra());
         stmt.setString(6, cl.getCupomDesconto());
         stmt.setInt(7, cl.getId());
 
