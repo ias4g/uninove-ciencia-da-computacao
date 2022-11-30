@@ -106,7 +106,9 @@ public class TelaMenu extends javax.swing.JFrame {
                 case "Relatório" -> {
                     new FrmCadastro(this, true, "cli");
                 }
+
                 default -> {
+                    break;
                 }
             }
 
