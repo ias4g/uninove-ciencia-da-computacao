@@ -36,7 +36,6 @@ public class FrmFuncionario extends javax.swing.JDialog {
         setTitle("Tela para cadastro de funcionários");
         setMaximumSize(new java.awt.Dimension(816, 652));
         setMinimumSize(new java.awt.Dimension(816, 652));
-        setPreferredSize(new java.awt.Dimension(816, 652));
         setResizable(false);
         getContentPane().setLayout(new java.awt.CardLayout());
 
@@ -130,7 +129,7 @@ public class FrmFuncionario extends javax.swing.JDialog {
         });
 
         try {
-            txtSalario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###0#.##")));
+            txtSalario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####.##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -173,9 +172,7 @@ public class FrmFuncionario extends javax.swing.JDialog {
                             .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpBackgroundLayout.createSequentialGroup()
-                                .addGap(0, 0, 0)
-                                .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(100, 100, 100))
