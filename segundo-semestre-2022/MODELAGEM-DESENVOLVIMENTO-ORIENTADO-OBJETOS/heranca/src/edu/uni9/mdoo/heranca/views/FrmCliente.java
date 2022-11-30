@@ -252,7 +252,7 @@ public class FrmCliente extends javax.swing.JDialog {
         cl.setEndereco(txtNome.getText());
         cl.setTelefone(txtTelefone.getText());
         cl.setEmail(txtCupomDesconto.getText());
-        cl.setDataPrimeiroCompra(txtEmail.getText());
+        cl.setDataCompra(txtEmail.getText());
         cl.setCupomDesconto(txtCupomDesconto.getText());
 
         try {

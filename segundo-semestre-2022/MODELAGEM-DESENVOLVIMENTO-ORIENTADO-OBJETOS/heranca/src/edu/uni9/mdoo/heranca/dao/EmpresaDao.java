@@ -38,7 +38,7 @@ public class EmpresaDao {
         stmt.setString(2, cl.getEndereco());
         stmt.setString(3, cl.getTelefone());
         stmt.setString(4, cl.getEmail());
-        stmt.setString(5, cl.getDataPrimeiroCompra());
+        stmt.setString(5, cl.getDataCompra());
         stmt.setString(6, cl.getCupomDesconto());
 
         stmt.executeUpdate();
