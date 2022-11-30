@@ -55,6 +55,11 @@ public class FrmCadastro extends javax.swing.JDialog {
         lblNome.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtNome.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeKeyPressed(evt);
+            }
+        });
 
         lblEndereco.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEndereco.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,6 +68,11 @@ public class FrmCadastro extends javax.swing.JDialog {
 
         txtEndereco.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtEndereco.setEnabled(false);
+        txtEndereco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEnderecoKeyPressed(evt);
+            }
+        });
 
         lblTelefone.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblTelefone.setForeground(new java.awt.Color(255, 255, 255));
@@ -76,6 +86,11 @@ public class FrmCadastro extends javax.swing.JDialog {
 
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtEmail.setEnabled(false);
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmailKeyPressed(evt);
+            }
+        });
 
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/save.png"))); // NOI18N
@@ -90,6 +105,11 @@ public class FrmCadastro extends javax.swing.JDialog {
         }
         txtTelefone.setEnabled(false);
         txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefoneKeyPressed(evt);
+            }
+        });
 
         jPanel1.setOpaque(false);
         jPanel1.setPreferredSize(new java.awt.Dimension(616, 65));
@@ -279,6 +299,34 @@ public class FrmCadastro extends javax.swing.JDialog {
         setSize(new java.awt.Dimension(832, 660));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
+        if (txtNome.getText().length() > 0) {
+            txtEndereco.setEnabled(true);
+        } else {
+            txtEndereco.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtNomeKeyPressed
+
+    private void txtEnderecoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEnderecoKeyPressed
+        if (txtEndereco.getText().length() > 0) {
+            txtTelefone.setEnabled(true);
+        } else {
+            txtTelefone.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtEnderecoKeyPressed
+
+    private void txtTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefoneKeyPressed
+        if (txtTelefone.getText().length() > 0) {
+            txtEmail.setEnabled(true);
+        } else {
+            txtEmail.setEnabled(false);
+        }
+    }//GEN-LAST:event_txtTelefoneKeyPressed
+
+    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailKeyPressed
 
     private void cleanFields() {
 
