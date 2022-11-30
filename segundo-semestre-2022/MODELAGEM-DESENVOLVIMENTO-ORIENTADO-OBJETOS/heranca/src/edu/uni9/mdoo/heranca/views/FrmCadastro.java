@@ -25,7 +25,7 @@ public class FrmCadastro extends javax.swing.JDialog {
         txtEmail = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
         txtTelefone = new javax.swing.JFormattedTextField();
-        jPanel1 = new javax.swing.JPanel();
+        jpOpcao = new javax.swing.JPanel();
         jpCliente = new javax.swing.JPanel();
         lblDataCompra = new javax.swing.JLabel();
         txtDataCompra = new javax.swing.JFormattedTextField();
@@ -114,9 +114,9 @@ public class FrmCadastro extends javax.swing.JDialog {
             }
         });
 
-        jPanel1.setOpaque(false);
-        jPanel1.setPreferredSize(new java.awt.Dimension(616, 65));
-        jPanel1.setLayout(new java.awt.CardLayout());
+        jpOpcao.setOpaque(false);
+        jpOpcao.setPreferredSize(new java.awt.Dimension(616, 65));
+        jpOpcao.setLayout(new java.awt.CardLayout());
 
         jpCliente.setMaximumSize(new java.awt.Dimension(0, 0));
         jpCliente.setOpaque(false);
@@ -189,7 +189,7 @@ public class FrmCadastro extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jpCliente, "card2");
+        jpOpcao.add(jpCliente, "card2");
 
         jpFuncionario.setMaximumSize(new java.awt.Dimension(0, 0));
         jpFuncionario.setMinimumSize(new java.awt.Dimension(0, 0));
@@ -254,7 +254,7 @@ public class FrmCadastro extends javax.swing.JDialog {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jpFuncionario, "card3");
+        jpOpcao.add(jpFuncionario, "card3");
 
         javax.swing.GroupLayout jpBackgroundLayout = new javax.swing.GroupLayout(jpBackground);
         jpBackground.setLayout(jpBackgroundLayout);
@@ -265,7 +265,7 @@ public class FrmCadastro extends javax.swing.JDialog {
                 .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblIconTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jpOpcao, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpBackgroundLayout.createSequentialGroup()
                             .addGroup(jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -311,7 +311,7 @@ public class FrmCadastro extends javax.swing.JDialog {
                         .addGap(0, 0, 0)
                         .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(16, 16, 16)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpOpcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
@@ -415,10 +415,10 @@ public class FrmCadastro extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JPanel jPanel1;
     private edu.uni9.mdoo.heranca.swing.Background jpBackground;
     private javax.swing.JPanel jpCliente;
     private javax.swing.JPanel jpFuncionario;
+    private javax.swing.JPanel jpOpcao;
     private javax.swing.JLabel lblCargo;
     private javax.swing.JLabel lblCupomDesconto;
     private javax.swing.JLabel lblDataCompra;
