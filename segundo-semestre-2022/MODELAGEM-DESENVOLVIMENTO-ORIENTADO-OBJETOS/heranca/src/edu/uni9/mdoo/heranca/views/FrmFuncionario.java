@@ -23,7 +23,6 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblEndereco = new javax.swing.JLabel();
         txtEndereco = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
-        txtTelefone = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lblCargo = new javax.swing.JLabel();
@@ -31,6 +30,7 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblSalario = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
         txtSalario = new javax.swing.JFormattedTextField();
+        txtTelefone = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela para cadastro de funcionários");
@@ -77,14 +77,6 @@ public class FrmFuncionario extends javax.swing.JDialog {
         lblTelefone.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefone.setText("Telefone");
         lblTelefone.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtTelefone.setEnabled(false);
-        txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtTelefoneKeyPressed(evt);
-            }
-        });
 
         lblEmail.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
@@ -141,6 +133,13 @@ public class FrmFuncionario extends javax.swing.JDialog {
                 txtSalarioKeyPressed(evt);
             }
         });
+
+        try {
+            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+(##) ## # ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jpBackgroundLayout = new javax.swing.GroupLayout(jpBackground);
         jpBackground.setLayout(jpBackgroundLayout);
@@ -239,14 +238,6 @@ public class FrmFuncionario extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtEnderecoKeyPressed
 
-    private void txtTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefoneKeyPressed
-        if (txtTelefone.getText().length() > 0) {
-            txtEmail.setEnabled(true);
-        } else {
-            txtEmail.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtTelefoneKeyPressed
-
     private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
         if (txtEmail.getText().length() > 0) {
             txtCargo.setEnabled(true);
@@ -329,6 +320,6 @@ public class FrmFuncionario extends javax.swing.JDialog {
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNome;
     private javax.swing.JFormattedTextField txtSalario;
-    private javax.swing.JTextField txtTelefone;
+    private javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
