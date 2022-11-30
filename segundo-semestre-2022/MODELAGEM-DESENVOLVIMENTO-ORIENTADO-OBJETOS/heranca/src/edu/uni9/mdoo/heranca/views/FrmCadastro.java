@@ -133,6 +133,11 @@ public class FrmCadastro extends javax.swing.JDialog {
         }
         txtDataCompra.setEnabled(false);
         txtDataCompra.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtDataCompra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDataCompraKeyPressed(evt);
+            }
+        });
 
         lblCupomDesconto.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblCupomDesconto.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,6 +153,11 @@ public class FrmCadastro extends javax.swing.JDialog {
         }
         txtCupomDesconto.setEnabled(false);
         txtCupomDesconto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtCupomDesconto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCupomDescontoKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpClienteLayout = new javax.swing.GroupLayout(jpCliente);
         jpCliente.setLayout(jpClienteLayout);
@@ -190,6 +200,11 @@ public class FrmCadastro extends javax.swing.JDialog {
 
         txtCargo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtCargo.setEnabled(false);
+        txtCargo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCargoKeyPressed(evt);
+            }
+        });
 
         lblSalario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblSalario.setForeground(new java.awt.Color(255, 255, 255));
@@ -204,6 +219,11 @@ public class FrmCadastro extends javax.swing.JDialog {
         txtSalario.setDragEnabled(true);
         txtSalario.setEnabled(false);
         txtSalario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtSalario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSalarioKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpFuncionarioLayout = new javax.swing.GroupLayout(jpFuncionario);
         jpFuncionario.setLayout(jpFuncionarioLayout);
@@ -327,6 +347,22 @@ public class FrmCadastro extends javax.swing.JDialog {
     private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailKeyPressed
+
+    private void txtDataCompraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDataCompraKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDataCompraKeyPressed
+
+    private void txtCupomDescontoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCupomDescontoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCupomDescontoKeyPressed
+
+    private void txtCargoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCargoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCargoKeyPressed
+
+    private void txtSalarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSalarioKeyPressed
 
     private void cleanFields() {
 

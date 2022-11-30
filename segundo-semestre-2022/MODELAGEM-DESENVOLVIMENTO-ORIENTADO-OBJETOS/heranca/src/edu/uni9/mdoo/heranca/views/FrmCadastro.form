@@ -327,6 +327,9 @@
                       <Font name="Roboto" size="18" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDataCompraKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblCupomDesconto">
                   <Properties>
@@ -352,6 +355,9 @@
                       <Font name="Roboto" size="18" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCupomDescontoKeyPressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -426,6 +432,9 @@
                     </Property>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCargoKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblSalario">
                   <Properties>
@@ -450,6 +459,9 @@
                       <Font name="Roboto" size="18" style="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSalarioKeyPressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
