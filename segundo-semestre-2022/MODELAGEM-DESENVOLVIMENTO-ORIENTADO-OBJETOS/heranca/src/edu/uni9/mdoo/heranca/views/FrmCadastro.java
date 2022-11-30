@@ -1,5 +1,14 @@
 package edu.uni9.mdoo.heranca.views;
 
+import Funcionario;
+import edu.uni9.mdoo.heranca.dao.EmpresaDao;
+import edu.uni9.mdoo.heranca.models.Cliente;
+import edu.uni9.mdoo.heranca.models.Funcionario;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 public class FrmCadastro extends javax.swing.JDialog {
 
     private final String tela;
@@ -122,6 +131,11 @@ public class FrmCadastro extends javax.swing.JDialog {
         btnSalvar.setText("Salvar");
         btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalvar.setEnabled(false);
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         try {
             txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+55 (##) # ####-####")));
@@ -417,6 +431,48 @@ public class FrmCadastro extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtSalarioKeyPressed
 
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+
+        if (tela.equalsIgnoreCase("cli")) {
+
+            Cliente cl = new Cliente();
+
+            cl.setNome(txtNome.getText());
+            cl.setEndereco(txtEndereco.getText());
+            cl.setTelefone(txtTelefone.getText());
+            cl.setEmail(txtEmail.getText());
+            cl.setDataCompra(txtDataCompra.getText());
+            cl.setCupomDesconto(txtCupomDesconto.getText());
+
+            try {
+                new EmpresaDao().salvarCliente(cl);
+            } catch (ClassNotFoundException | SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage());
+            }
+
+        } else {
+
+            try {
+                Funcionario func = new Funcionario();
+
+                func.setNome(txtNome.getText());
+                func.setEndereco(txtEndereco.getText());
+                func.setTelefone(txtTelefone.getText());
+                func.setEmail(txtEmail.getText());
+                func.setCargo(txtCargo.getText());
+                func.setSalario(Double.valueOf(txtSalario.getText()));
+
+                new EmpresaDao().salvarFuncionario(func);
+            } catch (ClassNotFoundException | SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage());
+            }
+
+        }
+
+        cleanFields();
+
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
     private void cleanFields() {
 
         txtNome.setText(null);
@@ -436,29 +492,14 @@ public class FrmCadastro extends javax.swing.JDialog {
         txtSalario.setText(null);
         txtSalario.setEnabled(false);
 
+        txtDataCompra.setText(null);
+        txtDataCompra.setEnabled(false);
+
+        txtSalario.setText(null);
+        txtSalario.setEnabled(false);
+
         btnSalvar.setEnabled(false);
 
-//         if (txtNome.getText().length() > 0) {
-//            txtEndereco.setEnabled(true);
-//        } else {
-//            txtEndereco.setEnabled(false);
-//        }
-//         
-//          Funcionario func = new Funcionario();
-//        func.setNome(txtNome.getText());
-//        func.setEndereco(txtEndereco.getText());
-//        func.setTelefone(txtTelefone.getText());
-//        func.setEmail(txtEmail.getText());
-//        func.setCargo(txtCargo.getText());
-//        func.setSalario(Double.valueOf(txtSalario.getText()));
-//
-//        try {
-//            new EmpresaDao().salvarFuncionario(func);
-//        } catch (ClassNotFoundException | SQLException ex) {
-//            JOptionPane.showMessageDialog(null, ex.getMessage());
-//        }
-//
-//        cleanFields();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
