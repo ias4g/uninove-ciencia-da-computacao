@@ -93,9 +93,16 @@ public class TelaMenu extends javax.swing.JFrame {
 
     private void btnFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioActionPerformed
 
-        JOptionPane.showInternalInputDialog(this, "O que vc quer fazer?", "fff", JOptionPane.YES_NO_CANCEL_OPTION);
+        String op = pergunta("O que você quer fazer?", "Escolha uma opção abaixo!");
 
-//        new FrmFuncionario(this, true).setVisible(true);
+        if (op.equalsIgnoreCase("Cadastrar")) {
+            new FrmCliente(this, true).setVisible(true);
+        } else if (op.equalsIgnoreCase("Relatório")) {
+
+        }
+
+        System.out.println(op);
+
     }//GEN-LAST:event_btnFuncionarioActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
@@ -118,6 +125,18 @@ public class TelaMenu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new TelaMenu().setVisible(true);
         });
+    }
+
+    public String pergunta(String pergunta, String titulo) {
+
+        Object opcoes[] = {"Cadastrar", "Relatório", "Cancelar"};
+        int op = JOptionPane.showOptionDialog(null, pergunta, titulo, 1, 3, null, opcoes, null);
+
+        if (op != -1) {
+            return opcoes[op].toString();
+        }
+
+        return null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
