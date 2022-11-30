@@ -370,25 +370,51 @@ public class FrmCadastro extends javax.swing.JDialog {
     }//GEN-LAST:event_txtTelefoneKeyPressed
 
     private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
-        if (tela.equalsIgnoreCase("")) {
-
+        if (tela.equalsIgnoreCase("cli")) {
+            if (txtEmail.getText().length() > 0) {
+                txtDataCompra.setEnabled(true);
+            } else {
+                txtDataCompra.setEnabled(false);
+            }
+        } else {
+            if (txtEmail.getText().length() > 0) {
+                txtCargo.setEnabled(true);
+            } else {
+                txtCargo.setEnabled(false);
+            }
         }
     }//GEN-LAST:event_txtEmailKeyPressed
 
     private void txtDataCompraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDataCompraKeyPressed
-        // TODO add your handling code here:
+        if (txtDataCompra.getText().length() > 0) {
+            txtCupomDesconto.setEnabled(true);
+        } else {
+            txtCupomDesconto.setEnabled(false);
+        }
     }//GEN-LAST:event_txtDataCompraKeyPressed
 
     private void txtCupomDescontoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCupomDescontoKeyPressed
-        // TODO add your handling code here:
+        if (txtCupomDesconto.getText().length() > 0) {
+            btnSalvar.setEnabled(true);
+        } else {
+            btnSalvar.setEnabled(false);
+        }
     }//GEN-LAST:event_txtCupomDescontoKeyPressed
 
     private void txtCargoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCargoKeyPressed
-        // TODO add your handling code here:
+        if (txtCargo.getText().length() > 0) {
+            txtSalario.setEnabled(true);
+        } else {
+            txtSalario.setEnabled(false);
+        }
     }//GEN-LAST:event_txtCargoKeyPressed
 
     private void txtSalarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyPressed
-        // TODO add your handling code here:
+        if (txtSalario.getText().length() > 0) {
+            btnSalvar.setEnabled(true);
+        } else {
+            btnSalvar.setEnabled(false);
+        }
     }//GEN-LAST:event_txtSalarioKeyPressed
 
     private void cleanFields() {
