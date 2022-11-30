@@ -5,9 +5,19 @@ public class FrmCadastro extends javax.swing.JDialog {
     private final String tela;
 
     public FrmCadastro(java.awt.Frame parent, boolean modal, String tela) {
+
         super(parent, modal);
         initComponents();
         this.tela = tela;
+
+        if (tela.equalsIgnoreCase("cli")) {
+            jpCliente.setVisible(true);
+            jpFuncionario.setVisible(false);
+        } else {
+            jpCliente.setVisible(false);
+            jpFuncionario.setVisible(true);
+        }
+
     }
 
     @SuppressWarnings("unchecked")
