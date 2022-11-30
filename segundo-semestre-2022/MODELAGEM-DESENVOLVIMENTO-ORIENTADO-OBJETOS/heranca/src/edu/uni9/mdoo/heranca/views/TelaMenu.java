@@ -100,10 +100,11 @@ public class TelaMenu extends javax.swing.JFrame {
             switch (op) {
                 case "Cadastrar" -> {
 //                    new FrmFuncionario(this, true).setVisible(true);
-                    new FrmCadastro(this, true, "func");
+                    new FrmCadastro(this, true, "fun");
                 }
 
                 case "Relatório" -> {
+                    new FrmCadastro(this, true, "cli");
                 }
                 default -> {
                 }
