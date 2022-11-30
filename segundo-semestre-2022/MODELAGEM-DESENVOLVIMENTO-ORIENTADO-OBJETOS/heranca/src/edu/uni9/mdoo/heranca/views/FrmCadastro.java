@@ -2,9 +2,12 @@ package edu.uni9.mdoo.heranca.views;
 
 public class FrmCadastro extends javax.swing.JDialog {
 
-    public FrmCadastro(java.awt.Frame parent, boolean modal) {
+    private final String tela;
+
+    public FrmCadastro(java.awt.Frame parent, boolean modal, String tela) {
         super(parent, modal);
         initComponents();
+        this.tela = tela;
     }
 
     @SuppressWarnings("unchecked")
@@ -345,7 +348,9 @@ public class FrmCadastro extends javax.swing.JDialog {
     }//GEN-LAST:event_txtTelefoneKeyPressed
 
     private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
-        // TODO add your handling code here:
+        if (tela.equalsIgnoreCase("")) {
+
+        }
     }//GEN-LAST:event_txtEmailKeyPressed
 
     private void txtDataCompraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDataCompraKeyPressed

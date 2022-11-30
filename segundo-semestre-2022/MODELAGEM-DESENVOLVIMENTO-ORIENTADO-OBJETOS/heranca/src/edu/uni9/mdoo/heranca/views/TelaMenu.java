@@ -96,10 +96,11 @@ public class TelaMenu extends javax.swing.JFrame {
         String op = pergunta("O que você quer fazer?", "Escolha uma opção abaixo!");
 
         if (op != null) {
-            
+
             switch (op) {
                 case "Cadastrar" -> {
-                    new FrmFuncionario(this, true).setVisible(true);
+//                    new FrmFuncionario(this, true).setVisible(true);
+                    new FrmCadastro(this, true, "func");
                 }
 
                 case "Relatório" -> {
@@ -107,7 +108,7 @@ public class TelaMenu extends javax.swing.JFrame {
                 default -> {
                 }
             }
-            
+
         }
 
     }//GEN-LAST:event_btnFuncionarioActionPerformed
