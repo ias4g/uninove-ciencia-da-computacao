@@ -23,6 +23,7 @@ public class FrmCliente extends javax.swing.JDialog {
         lblEndereco = new javax.swing.JLabel();
         txtEndereco = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
+        txtTelefone = new javax.swing.JFormattedTextField();
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lblDataCompra = new javax.swing.JLabel();
@@ -30,7 +31,6 @@ public class FrmCliente extends javax.swing.JDialog {
         lblCupomDesconto = new javax.swing.JLabel();
         txtCupomDesconto = new javax.swing.JFormattedTextField();
         btnSalvar = new javax.swing.JButton();
-        txtTelefone = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela para cadastro de clientes");
@@ -86,6 +86,19 @@ public class FrmCliente extends javax.swing.JDialog {
         lblTelefone.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         lblTelefone.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblTelefone.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        try {
+            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+55 (##) # ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtTelefone.setEnabled(false);
+        txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefoneKeyPressed(evt);
+            }
+        });
 
         lblEmail.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,18 +163,6 @@ public class FrmCliente extends javax.swing.JDialog {
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
-            }
-        });
-
-        try {
-            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+55 (##) # ####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtTelefoneKeyPressed(evt);
             }
         });
 
@@ -257,11 +258,11 @@ public class FrmCliente extends javax.swing.JDialog {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
         Cliente cl = new Cliente();
-        cl.setNome(txtEndereco.getText());
-        cl.setEndereco(txtNome.getText());
+        cl.setNome(txtNome.getText());
+        cl.setEndereco(txtEndereco.getText());
         cl.setTelefone(txtTelefone.getText());
-        cl.setEmail(txtCupomDesconto.getText());
-        cl.setDataCompra(txtEmail.getText());
+        cl.setEmail(txtEmail.getText());
+        cl.setDataCompra(txtDataCompra.getText());
         cl.setCupomDesconto(txtCupomDesconto.getText());
 
         try {

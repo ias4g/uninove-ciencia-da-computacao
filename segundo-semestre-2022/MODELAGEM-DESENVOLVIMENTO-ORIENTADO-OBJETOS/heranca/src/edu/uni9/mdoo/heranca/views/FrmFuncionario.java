@@ -139,6 +139,7 @@ public class FrmFuncionario extends javax.swing.JDialog {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtTelefone.setEnabled(false);
         txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
