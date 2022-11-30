@@ -114,6 +114,18 @@ public class TelaMenu extends javax.swing.JFrame {
         new FrmCliente(this, true).setVisible(true);
     }//GEN-LAST:event_btnClienteActionPerformed
 
+    public String pergunta(String pergunta, String titulo) {
+
+        Object opcoes[] = {"Cadastrar", "Relatório", "Cancelar"};
+        int op = JOptionPane.showOptionDialog(null, pergunta, titulo, 1, 3, null, opcoes, null);
+
+        if (op != -1) {
+            return opcoes[op].toString();
+        }
+
+        return null;
+    }
+
     public static void main(String args[]) {
 
         try {
@@ -131,19 +143,6 @@ public class TelaMenu extends javax.swing.JFrame {
             new TelaMenu().setVisible(true);
         });
     }
-
-    public String pergunta(String pergunta, String titulo) {
-
-        Object opcoes[] = {"Cadastrar", "Relatório", "Cancelar"};
-        int op = JOptionPane.showOptionDialog(null, pergunta, titulo, 1, 3, null, opcoes, null);
-
-        if (op != -1) {
-            return opcoes[op].toString();
-        }
-
-        return null;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnFuncionario;
