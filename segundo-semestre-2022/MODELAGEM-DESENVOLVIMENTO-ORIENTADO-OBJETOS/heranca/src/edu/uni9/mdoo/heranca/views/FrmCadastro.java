@@ -1,10 +1,5 @@
 package edu.uni9.mdoo.heranca.views;
 
-import edu.uni9.mdoo.heranca.dao.EmpresaDao;
-import edu.uni9.mdoo.heranca.models.Funcionario;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-
 public class FrmCadastro extends javax.swing.JDialog {
 
     public FrmCadastro(java.awt.Frame parent, boolean modal) {
@@ -60,11 +55,6 @@ public class FrmCadastro extends javax.swing.JDialog {
         lblNome.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtNome.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNomeKeyPressed(evt);
-            }
-        });
 
         lblEndereco.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblEndereco.setForeground(new java.awt.Color(255, 255, 255));
@@ -73,11 +63,6 @@ public class FrmCadastro extends javax.swing.JDialog {
 
         txtEndereco.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtEndereco.setEnabled(false);
-        txtEndereco.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtEnderecoKeyPressed(evt);
-            }
-        });
 
         lblTelefone.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblTelefone.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,22 +76,12 @@ public class FrmCadastro extends javax.swing.JDialog {
 
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtEmail.setEnabled(false);
-        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtEmailKeyPressed(evt);
-            }
-        });
 
         btnSalvar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/save.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalvar.setEnabled(false);
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
-            }
-        });
 
         try {
             txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+55 (##) # ####-####")));
@@ -115,11 +90,6 @@ public class FrmCadastro extends javax.swing.JDialog {
         }
         txtTelefone.setEnabled(false);
         txtTelefone.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtTelefoneKeyPressed(evt);
-            }
-        });
 
         jPanel1.setOpaque(false);
         jPanel1.setPreferredSize(new java.awt.Dimension(616, 65));
@@ -143,16 +113,6 @@ public class FrmCadastro extends javax.swing.JDialog {
         }
         txtDataCompra.setEnabled(false);
         txtDataCompra.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtDataCompra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataCompraActionPerformed(evt);
-            }
-        });
-        txtDataCompra.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtDataCompraKeyPressed(evt);
-            }
-        });
 
         lblCupomDesconto.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblCupomDesconto.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,11 +128,6 @@ public class FrmCadastro extends javax.swing.JDialog {
         }
         txtCupomDesconto.setEnabled(false);
         txtCupomDesconto.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtCupomDesconto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCupomDescontoKeyPressed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jpClienteLayout = new javax.swing.GroupLayout(jpCliente);
         jpCliente.setLayout(jpClienteLayout);
@@ -215,11 +170,6 @@ public class FrmCadastro extends javax.swing.JDialog {
 
         txtCargo.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtCargo.setEnabled(false);
-        txtCargo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCargoKeyPressed(evt);
-            }
-        });
 
         lblSalario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblSalario.setForeground(new java.awt.Color(255, 255, 255));
@@ -234,11 +184,6 @@ public class FrmCadastro extends javax.swing.JDialog {
         txtSalario.setDragEnabled(true);
         txtSalario.setEnabled(false);
         txtSalario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        txtSalario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtSalarioKeyPressed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jpFuncionarioLayout = new javax.swing.GroupLayout(jpFuncionario);
         jpFuncionario.setLayout(jpFuncionarioLayout);
@@ -335,94 +280,6 @@ public class FrmCadastro extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
-        if (txtNome.getText().length() > 0) {
-            txtEndereco.setEnabled(true);
-        } else {
-            txtEndereco.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtNomeKeyPressed
-
-    private void txtEnderecoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEnderecoKeyPressed
-        if (txtEndereco.getText().length() > 0) {
-            txtTelefone.setEnabled(true);
-        } else {
-            txtTelefone.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtEnderecoKeyPressed
-
-    private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed
-        if (txtEmail.getText().length() > 0) {
-            txtCargo.setEnabled(true);
-        } else {
-            txtCargo.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtEmailKeyPressed
-
-    private void txtCargoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCargoKeyPressed
-        if (txtCargo.getText().length() > 0) {
-            txtSalario.setEnabled(true);
-        } else {
-            txtSalario.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtCargoKeyPressed
-
-    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-
-        Funcionario func = new Funcionario();
-        func.setNome(txtNome.getText());
-        func.setEndereco(txtEndereco.getText());
-        func.setTelefone(txtTelefone.getText());
-        func.setEmail(txtEmail.getText());
-        func.setCargo(txtCargo.getText());
-        func.setSalario(Double.valueOf(txtSalario.getText()));
-
-        try {
-            new EmpresaDao().salvarFuncionario(func);
-        } catch (ClassNotFoundException | SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-
-        cleanFields();
-
-    }//GEN-LAST:event_btnSalvarActionPerformed
-
-    private void txtSalarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSalarioKeyPressed
-        if (txtSalario.getText().length() > 0) {
-            btnSalvar.setEnabled(true);
-        } else {
-            btnSalvar.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtSalarioKeyPressed
-
-    private void txtTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefoneKeyPressed
-        if (txtSalario.getText().length() > 0) {
-            txtEmail.setEnabled(true);
-        } else {
-            txtEmail.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtTelefoneKeyPressed
-
-    private void txtDataCompraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDataCompraKeyPressed
-        if (txtDataCompra.getText().length() > 0) {
-            txtCupomDesconto.setEnabled(true);
-        } else {
-            txtCupomDesconto.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtDataCompraKeyPressed
-
-    private void txtCupomDescontoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCupomDescontoKeyPressed
-        if (txtCupomDesconto.getText().length() > 0) {
-            btnSalvar.setEnabled(true);
-        } else {
-            btnSalvar.setEnabled(false);
-        }
-    }//GEN-LAST:event_txtCupomDescontoKeyPressed
-
-    private void txtDataCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataCompraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataCompraActionPerformed
-
     private void cleanFields() {
 
         txtNome.setText(null);
@@ -444,6 +301,27 @@ public class FrmCadastro extends javax.swing.JDialog {
 
         btnSalvar.setEnabled(false);
 
+//         if (txtNome.getText().length() > 0) {
+//            txtEndereco.setEnabled(true);
+//        } else {
+//            txtEndereco.setEnabled(false);
+//        }
+//         
+//          Funcionario func = new Funcionario();
+//        func.setNome(txtNome.getText());
+//        func.setEndereco(txtEndereco.getText());
+//        func.setTelefone(txtTelefone.getText());
+//        func.setEmail(txtEmail.getText());
+//        func.setCargo(txtCargo.getText());
+//        func.setSalario(Double.valueOf(txtSalario.getText()));
+//
+//        try {
+//            new EmpresaDao().salvarFuncionario(func);
+//        } catch (ClassNotFoundException | SQLException ex) {
+//            JOptionPane.showMessageDialog(null, ex.getMessage());
+//        }
+//
+//        cleanFields();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
