@@ -100,11 +100,11 @@ public class TelaMenu extends javax.swing.JFrame {
             switch (op) {
                 case "Cadastrar" -> {
 //                    new FrmFuncionario(this, true).setVisible(true);
-                    new FrmCadastro(this, true, "fun");
+                    new FrmCadastro(this, true, "fun", op).setVisible(true);
                 }
 
                 case "Relatório" -> {
-                    new FrmCadastro(this, true, "cli");
+                    new FrmCadastro(this, true, "fun", op).setVisible(true);
                 }
 
                 default -> {
@@ -117,7 +117,28 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFuncionarioActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        new FrmCliente(this, true).setVisible(true);
+
+        String op = pergunta("O que você quer fazer?", "Escolha uma opção abaixo!");
+
+        if (op != null) {
+
+            switch (op) {
+                case "Cadastrar" -> {
+//                    new FrmFuncionario(this, true).setVisible(true);
+                    new FrmCadastro(this, true, "cli", op).setVisible(true);
+                }
+
+                case "Relatório" -> {
+                    new FrmCadastro(this, true, "cli", op).setVisible(true);
+                }
+
+                default -> {
+                    break;
+                }
+            }
+
+        }
+
     }//GEN-LAST:event_btnClienteActionPerformed
 
     public String pergunta(String pergunta, String titulo) {

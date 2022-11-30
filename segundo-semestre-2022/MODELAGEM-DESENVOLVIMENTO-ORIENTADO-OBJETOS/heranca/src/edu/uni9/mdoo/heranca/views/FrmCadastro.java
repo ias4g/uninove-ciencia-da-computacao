@@ -4,7 +4,7 @@ public class FrmCadastro extends javax.swing.JDialog {
 
     private final String tela;
 
-    public FrmCadastro(java.awt.Frame parent, boolean modal, String tela) {
+    public FrmCadastro(java.awt.Frame parent, boolean modal, String tela, String op) {
 
         super(parent, modal);
         initComponents();
@@ -13,9 +13,17 @@ public class FrmCadastro extends javax.swing.JDialog {
         if (tela.equalsIgnoreCase("cli")) {
             jpCliente.setVisible(true);
             jpFuncionario.setVisible(false);
+
+            lblIconTitle.setText("Cadastro de clientes");
+            setTitle("TELA PARA CADASTRO DE CLIENTES");
+            lblIconTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/client.png")));
         } else {
             jpCliente.setVisible(false);
             jpFuncionario.setVisible(true);
+
+            lblIconTitle.setText("Cadastro de funcionários");
+            setTitle("TELA PARA CADASTRO DE FUNCIONÁRIOS");
+            lblIconTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/employee.png")));
         }
 
     }
