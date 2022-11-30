@@ -84,14 +84,10 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                                   <Component id="lblTelefone" min="-2" pref="300" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                  <Component id="txtTelefone" min="-2" pref="300" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="txtTelefone" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtEmail" min="-2" pref="300" max="-2" attributes="0"/>
                               <Component id="lblEmail" min="-2" pref="300" max="-2" attributes="0"/>

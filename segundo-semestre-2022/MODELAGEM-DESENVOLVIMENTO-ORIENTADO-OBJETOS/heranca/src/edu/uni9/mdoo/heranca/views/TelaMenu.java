@@ -1,5 +1,7 @@
 package edu.uni9.mdoo.heranca.views;
 
+import javax.swing.JOptionPane;
+
 public class TelaMenu extends javax.swing.JFrame {
 
     public TelaMenu() {
@@ -90,7 +92,10 @@ public class TelaMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionarioActionPerformed
-        new FrmFuncionario(this, true).setVisible(true);
+
+        JOptionPane.showInternalInputDialog(this, "O que vc quer fazer?", "fff", JOptionPane.YES_NO_CANCEL_OPTION);
+
+//        new FrmFuncionario(this, true).setVisible(true);
     }//GEN-LAST:event_btnFuncionarioActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
