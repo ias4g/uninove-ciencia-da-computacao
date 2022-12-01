@@ -104,7 +104,7 @@ public class TelaMenu extends javax.swing.JFrame {
                 }
 
                 case "Relatório" -> {
-                    new FrmCadastro(this, true, "fun", op).setVisible(true);
+                    new FrmRelatorio(this, true, "fun", op).setVisible(true);
                 }
 
                 default -> {
@@ -129,7 +129,7 @@ public class TelaMenu extends javax.swing.JFrame {
                 }
 
                 case "Relatório" -> {
-                    new FrmCadastro(this, true, "cli", op).setVisible(true);
+                    new FrmRelatorio(this, true, "cli", op).setVisible(true);
                 }
 
                 default -> {
