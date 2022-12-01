@@ -21,17 +21,15 @@ public class TelaMenu extends javax.swing.JFrame {
         setTitle("Tela de menu");
         setMaximumSize(new java.awt.Dimension(574, 389));
         setMinimumSize(new java.awt.Dimension(574, 389));
-        setPreferredSize(new java.awt.Dimension(574, 389));
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        jpControleFuncionario.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Controle de Pessoas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Roboto", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
-        jpControleFuncionario.setMaximumSize(null);
-        jpControleFuncionario.setMinimumSize(null);
+        jpControleFuncionario.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Controles de Pessoas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jpControleFuncionario.setMaximumSize(new java.awt.Dimension(0, 0));
         jpControleFuncionario.setOpaque(false);
 
         btnFuncionario.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         btnFuncionario.setText("Funcionários");
-        btnFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFuncionarioActionPerformed(evt);
@@ -40,7 +38,7 @@ public class TelaMenu extends javax.swing.JFrame {
 
         btnCliente.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         btnCliente.setText("Clientes");
-        btnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClienteActionPerformed(evt);
@@ -80,9 +78,9 @@ public class TelaMenu extends javax.swing.JFrame {
         jpBackgroundLayout.setVerticalGroup(
             jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpBackgroundLayout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
+                .addContainerGap(103, Short.MAX_VALUE)
                 .addComponent(jpControleFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         getContentPane().add(jpBackground, "card2");
