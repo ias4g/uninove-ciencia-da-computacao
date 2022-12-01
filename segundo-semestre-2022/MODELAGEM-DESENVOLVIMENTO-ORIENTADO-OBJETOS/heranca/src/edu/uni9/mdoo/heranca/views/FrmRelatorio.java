@@ -31,7 +31,6 @@ public class FrmRelatorio extends javax.swing.JDialog {
         setTitle("TELA DE RELATÓRIOS");
         setMaximumSize(new java.awt.Dimension(700, 500));
         setMinimumSize(new java.awt.Dimension(700, 500));
-        setPreferredSize(new java.awt.Dimension(700, 500));
         setResizable(false);
         getContentPane().setLayout(new java.awt.CardLayout());
 
