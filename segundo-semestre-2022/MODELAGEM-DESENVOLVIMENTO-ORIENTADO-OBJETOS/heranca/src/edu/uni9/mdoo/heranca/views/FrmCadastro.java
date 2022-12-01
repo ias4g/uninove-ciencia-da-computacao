@@ -4,8 +4,6 @@ import edu.uni9.mdoo.heranca.dao.EmpresaDao;
 import edu.uni9.mdoo.heranca.models.Cliente;
 import edu.uni9.mdoo.heranca.models.Funcionario;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class FrmCadastro extends javax.swing.JDialog {
