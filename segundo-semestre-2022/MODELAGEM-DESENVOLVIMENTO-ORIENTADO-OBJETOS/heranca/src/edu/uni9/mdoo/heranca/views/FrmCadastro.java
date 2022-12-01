@@ -20,7 +20,7 @@ public class FrmCadastro extends javax.swing.JDialog {
 
             jpCliente.setVisible(true);
             jpFuncionario.setVisible(false);
-
+            btnSalvar.setText("Salvar Cliente");
             setTitle("TELA PARA CADASTRO DE CLIENTES");
             lblIconTitle.setText("Cadastro de clientes");
             lblIconTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/client.png")));
@@ -29,6 +29,7 @@ public class FrmCadastro extends javax.swing.JDialog {
 
             jpCliente.setVisible(false);
             jpFuncionario.setVisible(true);
+            btnSalvar.setText("Salvar Funcionário");
 
             setTitle("TELA PARA CADASTRO DE FUNCIONÁRIOS");
             lblIconTitle.setText("Cadastro de funcionários");
@@ -252,7 +253,6 @@ public class FrmCadastro extends javax.swing.JDialog {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtSalario.setDragEnabled(true);
         txtSalario.setEnabled(false);
         txtSalario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtSalario.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -492,8 +492,8 @@ public class FrmCadastro extends javax.swing.JDialog {
         txtDataCompra.setText(null);
         txtDataCompra.setEnabled(false);
 
-        txtSalario.setText(null);
-        txtSalario.setEnabled(false);
+        txtCupomDesconto.setText(null);
+        txtCupomDesconto.setEnabled(false);
 
         btnSalvar.setEnabled(false);
 
