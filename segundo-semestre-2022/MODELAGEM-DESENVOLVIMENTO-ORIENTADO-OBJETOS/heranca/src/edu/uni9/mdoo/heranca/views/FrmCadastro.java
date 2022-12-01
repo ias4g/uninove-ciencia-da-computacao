@@ -30,7 +30,6 @@ public class FrmCadastro extends javax.swing.JDialog {
             jpCliente.setVisible(false);
             jpFuncionario.setVisible(true);
             btnSalvar.setText("Salvar Funcionário");
-
             setTitle("TELA PARA CADASTRO DE FUNCIONÁRIOS");
             lblIconTitle.setText("Cadastro de funcionários");
             lblIconTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/uni9/mdoo/heranca/images/employee.png")));
