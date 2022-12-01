@@ -4,6 +4,8 @@ import edu.uni9.mdoo.heranca.dao.EmpresaDao;
 import edu.uni9.mdoo.heranca.models.Cliente;
 import edu.uni9.mdoo.heranca.models.Funcionario;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class FrmCadastro extends javax.swing.JDialog {
@@ -448,28 +450,17 @@ public class FrmCadastro extends javax.swing.JDialog {
 
         } else {
 
+            Funcionario func = new Funcionario();
+
+            func.setNome(txtNome.getText());
+            func.setEndereco(txtEndereco.getText());
+            func.setTelefone(txtTelefone.getText());
+            func.setEmail(txtEmail.getText());
+            func.setCargo(txtCargo.getText());
+            func.setSalario(Double.valueOf(txtSalario.getText()));
+
             try {
-//                Funcionario func = new Funcionario(
-//                        txtCargo.getText(),
-//                        Double.valueOf(txtSalario.getText()),
-//                        1,
-//                        txtNome.getText(),
-//                        txtEndereco.getText(),
-//                        txtTelefone.getText(),
-//                        txtEmail.getText()
-//                );
-
-                Funcionario func = new Funcionario();
-
-                func.setNome(txtNome.getText());
-                func.setEndereco(txtEndereco.getText());
-                func.setTelefone(txtTelefone.getText());
-                func.setEmail(txtEmail.getText());
-                func.setCargo(txtCargo.getText());
-                func.setSalario(Double.valueOf(txtSalario.getText()));
-
                 new EmpresaDao().salvarFuncionario(func);
-
             } catch (ClassNotFoundException | SQLException ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
             }
