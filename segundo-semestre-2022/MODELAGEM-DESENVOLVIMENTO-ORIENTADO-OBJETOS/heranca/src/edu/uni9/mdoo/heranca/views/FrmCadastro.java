@@ -449,6 +449,16 @@ public class FrmCadastro extends javax.swing.JDialog {
         } else {
 
             try {
+//                Funcionario func = new Funcionario(
+//                        txtCargo.getText(),
+//                        Double.valueOf(txtSalario.getText()),
+//                        1,
+//                        txtNome.getText(),
+//                        txtEndereco.getText(),
+//                        txtTelefone.getText(),
+//                        txtEmail.getText()
+//                );
+
                 Funcionario func = new Funcionario();
 
                 func.setNome(txtNome.getText());
@@ -459,6 +469,7 @@ public class FrmCadastro extends javax.swing.JDialog {
                 func.setSalario(Double.valueOf(txtSalario.getText()));
 
                 new EmpresaDao().salvarFuncionario(func);
+
             } catch (ClassNotFoundException | SQLException ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
             }
