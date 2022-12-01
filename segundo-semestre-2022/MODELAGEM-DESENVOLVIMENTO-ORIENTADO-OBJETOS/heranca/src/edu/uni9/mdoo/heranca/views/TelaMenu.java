@@ -96,6 +96,7 @@ public class TelaMenu extends javax.swing.JFrame {
         if (op != null) {
 
             switch (op) {
+
                 case "Cadastrar" -> {
 //                    new FrmFuncionario(this, true).setVisible(true);
                     new FrmCadastro(this, true, "fun", op).setVisible(true);
@@ -108,6 +109,7 @@ public class TelaMenu extends javax.swing.JFrame {
                 default -> {
                     break;
                 }
+
             }
 
         }
