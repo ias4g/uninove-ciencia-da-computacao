@@ -1,5 +1,7 @@
 package edu.uni9.mdoo.heranca.views;
 
+import javax.swing.table.DefaultTableModel;
+
 public class FrmRelatorio extends javax.swing.JDialog {
 
     public FrmRelatorio(java.awt.Frame parent, boolean modal, String tela, String op) {
@@ -11,6 +13,20 @@ public class FrmRelatorio extends javax.swing.JDialog {
 
             setTitle("EXIBINDO RELATÓRIO DE CLIENTES");
 
+//            tableModel = (DefaultTableModel) tblProducts.getModel();
+//            tableModel.setRowCount(0);
+//
+//            while (rs.next()) {
+//                Object datas[] = {
+//                    rs.getString("id"),
+//                    rs.getString("name"),
+//                    rs.getString("brand"),
+//                    rs.getString("price")
+//                };
+//
+//                tableModel.addRow(datas);
+//                quant++;
+//            }
         } else {
 
             setTitle("EXIBINDO RELATÓRIO DE FUNCIONÁRIOS");
@@ -36,16 +52,10 @@ public class FrmRelatorio extends javax.swing.JDialog {
 
         jtDatas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "NOME", "ENDEREÇO", "TELEFONE", "EMAIL", "CARGO", "SALÁRIO"
+
             }
         ));
         jtDatas.setPreferredSize(new java.awt.Dimension(500, 200));
@@ -73,7 +83,6 @@ public class FrmRelatorio extends javax.swing.JDialog {
         setSize(new java.awt.Dimension(822, 508));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
