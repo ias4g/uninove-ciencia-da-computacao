@@ -57,7 +57,7 @@ public class FrmRelatorio extends javax.swing.JDialog {
             jpBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpBackgroundLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50))
         );
         jpBackgroundLayout.setVerticalGroup(
@@ -70,7 +70,7 @@ public class FrmRelatorio extends javax.swing.JDialog {
 
         getContentPane().add(jpBackground, "card2");
 
-        setSize(new java.awt.Dimension(716, 508));
+        setSize(new java.awt.Dimension(822, 508));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
