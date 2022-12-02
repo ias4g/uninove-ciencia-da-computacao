@@ -429,43 +429,41 @@ public class FrmCadastro extends javax.swing.JDialog {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
-        if (tela.equalsIgnoreCase("cli")) {
+        try {
 
-            Cliente cl = new Cliente();
+            if (tela.equalsIgnoreCase("cli")) {
 
-            cl.setNome(txtNome.getText());
-            cl.setEndereco(txtEndereco.getText());
-            cl.setTelefone(txtTelefone.getText());
-            cl.setEmail(txtEmail.getText());
-            cl.setDataCompra(txtDataCompra.getText());
-            cl.setCupomDesconto(txtCupomDesconto.getText());
+                Cliente cl = new Cliente();
 
-            try {
+                cl.setNome(txtNome.getText());
+                cl.setEndereco(txtEndereco.getText());
+                cl.setTelefone(txtTelefone.getText());
+                cl.setEmail(txtEmail.getText());
+                cl.setDataCompra(txtDataCompra.getText());
+                cl.setCupomDesconto(txtCupomDesconto.getText());
+
                 new EmpresaDao().salvarCliente(cl);
-            } catch (ClassNotFoundException | SQLException ex) {
-                JOptionPane.showMessageDialog(null, ex.getMessage());
-            }
 
-        } else {
+            } else {
 
-            Funcionario func = new Funcionario();
+                Funcionario func = new Funcionario();
 
-            func.setNome(txtNome.getText());
-            func.setEndereco(txtEndereco.getText());
-            func.setTelefone(txtTelefone.getText());
-            func.setEmail(txtEmail.getText());
-            func.setCargo(txtCargo.getText());
-            func.setSalario(Double.valueOf(txtSalario.getText()));
+                func.setNome(txtNome.getText());
+                func.setEndereco(txtEndereco.getText());
+                func.setTelefone(txtTelefone.getText());
+                func.setEmail(txtEmail.getText());
+                func.setCargo(txtCargo.getText());
+                func.setSalario(Double.valueOf(txtSalario.getText()));
 
-            try {
                 new EmpresaDao().salvarFuncionario(func);
-            } catch (ClassNotFoundException | SQLException ex) {
-                JOptionPane.showMessageDialog(null, ex.getMessage());
+
             }
 
+        } catch (ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } finally {
+            cleanFields();
         }
-
-        cleanFields();
 
     }//GEN-LAST:event_btnSalvarActionPerformed
 
