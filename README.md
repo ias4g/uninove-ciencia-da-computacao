@@ -23,6 +23,7 @@
 # 🚀 Conteúdo
 * [Acessar conteúdo do 1º semestre.](./primeiro-semestre-2022)
 * [Acessar conteúdo do 2º semestre.](./segundo-semestre-2022/)
+* [Acessar conteúdo do 3º semestre.](./terceiro-semestre-2023//)
 
 <br>
 <br>
