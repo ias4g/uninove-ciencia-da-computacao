@@ -32,8 +32,18 @@
 * [Programação Web](./2023/1/pw/)
 * [Qualidade De Software](./2023/1/qs/)
 
-<br>
-<br>
+| Conteúdos do semestre   | Acesso direto às disciplinas atuais      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
+
+
+| Acesso aos conteúdos do semestre | Acesso direto às disciplinas atuais |
+|---|---|
+| [Acessar conteúdo do 1º semestre.](./2022/1/) |   |
+|   |   |
+|   |   |
 <hr>
 
 Feito com ♥ by Izael Silva 👋
