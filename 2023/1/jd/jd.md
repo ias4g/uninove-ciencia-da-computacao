@@ -1,0 +1,10 @@
+## 3º SEMESTRE | 2023
+***
+
+## `MATÉRIA`:
+##### JOGOS DIGITAIS
+
+***
+
+## `PROFESSOR(A)`:
+##### ROLFI CINTAS GOMES LUZ

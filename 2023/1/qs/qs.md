@@ -1,0 +1,10 @@
+## 3º SEMESTRE | 2023
+***
+
+## `MATÉRIA`:
+##### QUALIDADE DE SOFTWARE
+
+***
+
+## `PROFESSOR(A)`:
+##### KRISCIA VICENTE PROENCA
