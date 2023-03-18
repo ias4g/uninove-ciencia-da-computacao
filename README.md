@@ -15,7 +15,7 @@
 
 <br><br>
 
-| ⬇ Acesso aos conteúdos do semestre ⬇          | ⬇ Acesso direto às disciplinas atuais ⬇                         |
+| ⬇ Acesso aos conteúdos vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvdo semestre ⬇          | ⬇ Acesso direto às disciplinas atuais ⬇                         |
 |-----------------------------------------------|-----------------------------------------------------------------|
 | [Acessar conteúdo do 1º semestre.](./2022/1/) | [Computação Gráfica e Processamento de Imagens](./2023/1/cgpi/) |
 | [Acessar conteúdo do 2º semestre.](./2022/2/) | [Jogos Digitais](./2023/1/jd/)                                  |
