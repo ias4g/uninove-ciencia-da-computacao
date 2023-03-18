@@ -18,8 +18,8 @@
    | [Acessar conteúdo do 1º semestre.](./2022/1/) | [Computação Gráfica e Processamento de Imagens](./2023/1/cgpi/) |
    | [Acessar conteúdo do 2º semestre.](./2022/2/) | [Jogos Digitais](./2023/1/jd/)                                  |
    | [Acessar conteúdo do 3º semestre.](./2023/1/) | [Projeto em Sistemas Interativos](./2023/1/psi/)                |
-   |                                               | [Projeto em Sistemas Interativos](./2023/1/psi/)                |
-   |                                               | [Projeto em Sistemas Interativos](./2023/1/psi/)                |
+   | [Acessar conteúdo do 4º semestre.]() | [Programação Web](./2023/1/pw/)                                 |
+   | [Acessar conteúdo do 5º semestre.]() | [Qualidade de Software](./2023/1/qs/)                           |
 
    <br><br>
 
