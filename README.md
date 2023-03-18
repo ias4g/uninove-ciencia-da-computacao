@@ -25,4 +25,6 @@
 
 <hr>
 
-Feito com ♥ by Izael Silva 👋
+<div align="center">
+   Feito com ♥ by Izael Silva 👋
+</div>
