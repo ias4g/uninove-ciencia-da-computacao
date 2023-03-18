@@ -14,8 +14,9 @@
 </div>
 
 <br><br>
+<div align="center">
 
-| ⬇ Acesso aos conteúdos vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvdo semestre ⬇          | ⬇ Acesso direto às disciplinas atuais ⬇                         |
+| ⬇ Acesso aos conteúdos do semestre ⬇ | ⬇ Acesso direto às disciplinas atuais ⬇                         |
 |-----------------------------------------------|-----------------------------------------------------------------|
 | [Acessar conteúdo do 1º semestre.](./2022/1/) | [Computação Gráfica e Processamento de Imagens](./2023/1/cgpi/) |
 | [Acessar conteúdo do 2º semestre.](./2022/2/) | [Jogos Digitais](./2023/1/jd/)                                  |
@@ -25,6 +26,6 @@
 
 <hr>
 
-<div align="center">
+
    👋 Feito com ♥ by Izael Silva 👋
 </div>
