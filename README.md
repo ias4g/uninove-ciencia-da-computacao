@@ -1,4 +1,6 @@
-<div align="center">![banner](https://www.uninove.br/logo-uninove.svg)</div>
+<div align="center">
+![banner](https://www.uninove.br/logo-uninove.svg)
+</div>
 
 <h1 align="center">UNINOVE | Universidade Nove De Julho</h1>
    <h2 align="center">
