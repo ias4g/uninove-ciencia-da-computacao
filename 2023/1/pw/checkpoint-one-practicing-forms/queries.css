@@ -1,0 +1,15 @@
+@media (min-width: 678px) {
+    main {
+        max-width: 520px;
+        margin: auto;
+        margin-top: 9rem;
+        padding: 1rem;
+    }
+
+    main .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+}

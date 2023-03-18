@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./queries.css">
+
+  <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Formulary</title>
+</head>
+
+<body>
+  <header>
+    <h1>Checkpoint I - Praticando Formulários</h1>
+    <p>JOSE ROMUALDO DA COSTA FILHO - 13 de mar.</p>
+    <strong>100 pontos</strong>
+  </header>
+
+  <main>
+    <div class="buttons">
+      <button class="tab-btn active" onclick="openTab(event, 'tab1')">
+        First Form
+      </button>
+      <button class="tab-btn" onclick="openTab(event, 'tab2')">
+        Second Form
+      </button>
+      <button class="tab-btn" onclick="openTab(event, 'tab3')">
+        Third Form
+      </button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+      <p>Crie um formulário que tenha os campos abaixo: nome completo número do cartão CVV data de validade</p>
+      <form action="#">
+
+        <label for="name">Nome completo</label>
+        <input type="text" id="name" name="name">
+
+        <label for="card-number">Número do cartão</label>
+        <input type="number" id="card-number" name="card-number">
+
+        <div class="fields">
+          <div class="field-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" maxlength="3">
+          </div>
+          <div class="field-group flex-1">
+            <label for="validity">Data de validade</label>
+            <input type="date" id="validity" name="validity">
+          </div>
+        </div>
+
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+
+    <div id="tab2" class="tab-content">
+      <p>
+        Crie um formulário com os seguintes campos: cep rua bairro número complemento cidade estado tipo de endereço:
+        residencial/comercial (input radio)
+      </p>
+      <form action="#">
+        <div class="fields">
+          <div class="field-group">
+            <label for="zip-code">Cep</label>
+            <input type="text" id="zip-code" name="zip-code">
+          </div>
+          <div class="field-group flex-1">
+            <label for="street">Rua</label>
+            <input type="text" id="street" name="street">
+          </div>
+        </div>
+
+        <div class="fields">
+          <div class="field-group flex-1">
+            <label for="district">Bairro</label>
+            <input type="text" id="district" name="district">
+          </div>
+          <div class="field-group">
+            <label for="number">Número</label>
+            <input type="number" id="number" name="number">
+          </div>
+        </div>
+
+
+        <label for="complement">Complemento</label>
+        <input type="text" id="complement" name="complement">
+
+        <div class="fields">
+          <div class="field-group flex-1">
+            <label for="City">Cidade</label>
+            <input type="text" id="City" name="City">
+          </div>
+          <div class="field-group">
+            <label for="uf">Estado/UF</label>
+            <input type="text" id="uf" name="uf">
+          </div>
+        </div>
+
+        <label for="">dsdsd</label>
+
+        <div class="radios-group">
+          <input type="radio" id="Residential" name="Residential">
+          <label for="Residential">Residencial</label>
+        </div>
+        <div class="radios-group">
+          <input type="radio" id="Commercial" name="Commercial">
+          <label for="Commercial">Comercial</label>
+        </div>
+
+
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+
+    <div id="tab3" class="tab-content">
+      <p>
+        Crie um formulário com os seguintes campos: nome empresa em que trabalhou data de início data de saída currículo
+        (upload de arquivo)
+      </p>
+      <form action="#">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name">
+
+        <label for="company">Empresa em que trabalhou</label>
+        <input type="text" id="company" name="company">
+
+        <label for="start-date">Data de inicio</label>
+        <input type="date" id="start-date" name="start-date">
+
+        <label for="end-date">Data saída</label>
+        <input type="date" id="end-date" name="end-date">
+
+        <label for="curriculum">Curriculo</label>
+        <input type="file" id="curriculum" name="curriculum">
+
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>Desenvolvido por <a href="https://github.com/ias4g" target="_blank">Ias4g</a></p>
+  </footer>
+  <script type="text/javascript" src="./index.js" defer=""></script>
+</body>
+
+</html>

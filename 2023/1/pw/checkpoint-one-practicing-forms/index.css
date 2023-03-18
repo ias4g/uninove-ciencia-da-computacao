@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid rgb(18, 158, 175);
+  /* margin-bottom: 1rem; */
+  background: #fff;
+  box-shadow: 0 1rem 1rem rgb(255, 255, 255)
+}
+
+header h1 {
+  font-family: 'Product Sans', sans-serif;
+  color: #007b83;
+}
+
+/* Estilo para as labels */
+label {
+  display: block;
+  /* margin-top: 2rem; */
+  /* font-size: 1.2rem; */
+  color: #333;
+}
+
+/* Estilo para os inputs */
+input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  /* font-size: 1rem; */
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #ccc;
+}
+
+/* Estilo para o botão de enviar */
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: 0.2rem solid #333;
+  /* border: none; */
+  cursor: pointer;
+  margin-bottom: 0;
+  transition: filter 0.3s ease;
+}
+
+/* Estilo para o botão de enviar quando o mouse estiver em cima */
+input[type="submit"]:hover {
+  /* background-color: #555; */
+  filter: brightness(.7);
+}
+
+form div.fields {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.radios-group {
+  padding: 0;
+  margin: 0;
+  border: 1px solid #000;
+  display: inline-flex;
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+/* ############################################## */
+/* TABS */
+
+main {
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start; */
+  /* border: 1px solid #000; */
+  margin-top: 12rem;
+  padding: 1rem;
+}
+
+main .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  color: blue;
+}
+
+main .buttons button {
+  text-transform: uppercase;
+  color: rgb(180, 180, 180);
+}
+
+.tab-btn {
+  border: none;
+  background-color: white;
+  padding-bottom: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  /* font-size: 16px; */
+  /* margin-right: 10px; */
+}
+
+.buttons .tab-btn.active {
+  border-bottom: 2px solid black;
+  color: rgb(0, 0, 0);
+}
+
+.tab-content {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.tab-content p {
+  text-align: center;
+  line-height: 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  /* font-size: 2.5rem; */
+  color: #333;
+  margin: 2rem 0;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+footer {
+  padding: 1rem;
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #bebebe;
+}
