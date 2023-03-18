@@ -20,30 +20,22 @@
 <br>
 <br>
 
-# 🚀 Conteúdo
-* [Acessar conteúdo do 1º semestre.](./2022/1/)
-* [Acessar conteúdo do 2º semestre.](./2022/2/)
-* [Acessar conteúdo do 3º semestre.](./2023/1/)
 
 # 🚀 Acesso direto às disciplinas atuais
-* [Computação Gráfica e Processamento de Imagens](./2023/1/cgpi/)
-* [Jogos Digitais](./2023/1/jd/)
-* [Projeto em Sistemas Interativos](./2023/1/psi/)
+* 
+* 
+* 
 * [Programação Web](./2023/1/pw/)
 * [Qualidade De Software](./2023/1/qs/)
 
-| Conteúdos do semestre   | Acesso direto às disciplinas atuais      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
-
-
-| Acesso aos conteúdos do semestre | Acesso direto às disciplinas atuais |
+| ⬇ Acesso aos conteúdos do semestre ⬇       |        ⬇ Acesso direto às disciplinas atuais ⬇ |
 |---|---|
-| [Acessar conteúdo do 1º semestre.](./2022/1/) |   |
-|   |   |
-|   |   |
+| [Acessar conteúdo do 1º semestre.](./2022/1/) | [Computação Gráfica e Processamento de Imagens](./2023/1/cgpi/) |
+| [Acessar conteúdo do 2º semestre.](./2022/2/) | [Jogos Digitais](./2023/1/jd/) |
+| [Acessar conteúdo do 3º semestre.](./2023/1/) | [Projeto em Sistemas Interativos](./2023/1/psi/) |
+|                                               | [Projeto em Sistemas Interativos](./2023/1/psi/) |
+|                                               | [Projeto em Sistemas Interativos](./2023/1/psi/) |
+
 <hr>
 
 Feito com ♥ by Izael Silva 👋
