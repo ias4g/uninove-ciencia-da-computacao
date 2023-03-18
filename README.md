@@ -1,7 +1,6 @@
 <div align="center">
-            ![banner](https://www.uninove.br/logo-uninove.svg)
+   <img alt="GitHub" src="https://www.uninove.br/logo-uninove.svg"/>
 </div>
-![banner](https://www.uninove.br/logo-uninove.svg)
 
 <h1 align="center">UNINOVE | Universidade Nove De Julho</h1>
    <h2 align="center">
@@ -27,5 +26,5 @@
 <hr>
 
 <div align="center">
-   Feito com ♥ by Izael Silva 👋
+   👋 Feito com ♥ by Izael Silva 👋
 </div>
