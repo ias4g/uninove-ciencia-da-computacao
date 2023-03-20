@@ -97,20 +97,53 @@
             <label for="City">Cidade</label>
             <input type="text" id="City" name="City">
           </div>
-          <div class="field-group">
+          <div class="field-select">
             <label for="uf">Estado/UF</label>
-            <input type="text" id="uf" name="uf">
+            <select id="uf">
+              <option label="AC">AC</option>
+              <option label="AL">AL</option>
+              <option label="AP">AP</option>
+              <option label="AM">AM</option>
+              <option label="BA">BA</option>
+              <option label="CE">CE</option>
+              <option label="DF">DF</option>
+              <option label="ES">ES</option>
+              <option label="GO">GO</option>
+              <option label="MA">MA</option>
+              <option label="MT">MT</option>
+              <option label="MS">MS</option>
+              <option label="MG">MG</option>
+              <option label="PA">PA</option>
+              <option label="PB">PB</option>
+              <option label="PR">PR</option>
+              <option label="PE">PE</option>
+              <option label="PI">PI</option>
+              <option label="RJ">RJ</option>
+              <option label="RN">RN</option>
+              <option label="RS">RS</option>
+              <option label="RO">RO</option>
+              <option label="RR">RR</option>
+              <option label="SC">SC</option>
+              <option label="SP">SP</option>
+              <option label="SE">SE</option>
+              <option label="TO">TO</option>
+            </select>
           </div>
         </div>
-        <label for="">dsdsd</label>
-        <div class="radios-group">
-          <input type="radio" id="Residential" name="Residential">
-          <label for="Residential">Residencial</label>
-        </div>
-        <div class="radios-group">
-          <input type="radio" id="Commercial" name="Commercial">
-          <label for="Commercial">Comercial</label>
-        </div>
+
+        <fieldset>
+          <legend>Tipo de endereço:</legend>
+          <div class="radio">
+            <input type="radio" id="opcao1" name="opcoes">
+            <label for="opcao1">Residencial</label>
+          </div>
+
+          <div class="radio">
+            <input type="radio" id="opcao2" name="opcoes">
+            <label for="opcao2">Comercial</label>
+          </div>
+        </fieldset>
+
         <input type="submit" value="Enviar">
       </form>
     </div>
