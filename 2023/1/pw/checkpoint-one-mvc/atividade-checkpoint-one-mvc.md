@@ -53,7 +53,7 @@ namespace CheckPointMVC
 			if (ModelState.IsValid)
 			{
 				int idade = CalcularIdade(sampleViewModel.DataNascimento);
-				ViewBag.Mensagem = "Olá, {pessoa.NomeCompleto}! Você tem {idade} anos.";
+				ViewBag.Mensagem = "Olá " + sampleViewModel.NomeCompleto + "! Você tem " + idade + " anos.";
 			}
 
 			return View();
@@ -79,7 +79,7 @@ View:
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
