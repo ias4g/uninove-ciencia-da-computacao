@@ -115,8 +115,10 @@ View:
 
 <br>
 
-***👉 Para executar o código online:***
-[clique aqui](https://dotnetfiddle.net/FZPR2Y)
+<p align="center">
+	Para executar o código online
+	<a href="https://dotnetfiddle.net/FZPR2Y" target="_blank"> 👉 clique aqui</a>
+</p>
 
 <br>
 <br>
