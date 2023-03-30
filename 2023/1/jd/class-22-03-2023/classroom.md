@@ -133,3 +133,140 @@ EXEMPLO DE FUNÇÃO ANDANDO.
         posx = moverdiagonalA(posx)
         #imprimirpos(posx)
 ```
+
+```py
+    extends Node
+
+    func moverdireita(posx1):
+        if posx1+1 <=9:
+            return posx1+1;
+        else:
+            print("posicao invalida")
+            return posx1
+
+    func moveresquerda(posx1):
+        if posx1-1 >=1:
+            return posx1-1;
+        else:
+            print("posicao invalida")
+            return posx1
+        
+
+    func movercima(posy1):
+        if posy1 +3 <=9:
+            return posy1+3;
+        else:
+            print("posicao invalida")
+            return posy1
+
+    func moverbaixo(posy1):
+        if posy1 - 3 >=1:
+            return posy1-3;
+        else:
+            print("posicao invalida")
+            return posy1
+
+    func moverdiagonalA(posx1):
+    posx1=moverdireita(posx1)
+    posx1=moverbaixo(posx1)
+    return posx1;
+
+
+    func moverdiagonalB(posx1):
+    posx1=moverdireita(posx1)
+    posx1=movercima(posx1)
+    return posx1;
+
+    func moverdiagonalC(posx1):
+    posx1=moveresquerda(posx1)
+    posx1=movercima(posx1)
+    return posx1;
+
+    func moverdiagonalD(posx1):
+    posx1=moveresquerda(posx1)
+    posx1=moverbaixo(posx1)
+    return posx1;
+
+
+    func imprimirpos(pos):
+        print("posição:", pos)
+        
+    func _ready():
+        var posx = 5
+        imprimirpos(posx)
+        posx = moveresquerda(posx)
+        imprimirpos(posx)
+        posx = moveresquerda(posx)
+        imprimirpos(posx)
+        posx = moveresquerda(posx)
+        imprimirpos(posx)
+        posx = moveresquerda(posx)
+        imprimirpos(posx)
+        posx = moveresquerda(posx)
+        imprimirpos(posx)
+```
+
+### Condição IF/ELSE
+
+```py
+    extends Node
+
+    func _ready():
+        #atribuição - colocando valor na variável
+        var idade = 25 # cria um espaço em memória para qqr valor
+        # perguntando o valor da variável
+        # idade ????????
+        if idade >=18: #pergunta - CONDIÇÃO
+            print("Maior de Idade")
+        else:
+            print("Menor de Idade")
+```
+
+<br>
+
+## TESTE DE LÓGICA - ANDAR EM CASAS VÁLIDAS
+TESTE1  - PEDROSO(2023):
+```py
+        Func linha():
+        if posx >=1 or <=3:
+            Return 1
+        Elif posx >=4 or <=6:
+            Return 2
+        Else:
+    Return 3
+    Func linha(posx):
+        if posx >=1 or <=3:
+            Return 1
+        Elif posx >=4 or <=6:
+            Return 2
+        Else:
+    Return 3
+```
+
+<br>
+
+TESTE 2
+```py
+    extends Node
+
+    #MATRIZ
+    func teste2(p,a):
+        var arr=[p,a]
+        var arr2= [p,arr]
+        return arr2
+
+    #ARRAY
+    func teste(p,a):
+        var arr=[p,a]
+        return arr
+
+    func _ready():
+        print("Hello world!")
+        #print(teste(1,2))
+        var x=teste(1,2)
+        print(x[0])
+        print(x[1])
+        var y=teste2(1,2)
+        for i in y:
+            print(i)
+```
