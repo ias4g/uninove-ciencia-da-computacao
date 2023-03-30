@@ -1,70 +1,135 @@
-# Importando a biblioteca Node
 ```py
-extends Node
+    extends Node
+
+    #Return - retorno
+    func subtrair(a,b):
+    return a-b;
+
+    #procedimento - instruções que executam
+    func imprimir(nome):
+    print('O nome é:',nome)
+
+    func _ready():
+        print("Hello world!")
+        print( subtrair(3,1))
+        imprimir('teste')
 ```
 
-## Função:  um conjunto de códigos com um nome.
-### ```func _ready()``` - função principal que executa o script
-
 ```py
-func _ready():
-    #impresso na tela do texto
-    print("Hello world!")
-    print("Rolfi")
-    print("Teste")
+    Recursão:
+    Quando uma função/procedimento chama ou executa ela mesma.
 
-    var nome = "Ana"
-    print(nome)
+    PROCEDIMENTO X FUNÇÃO
 
-    var email = "Ana1@gmail.com"#AZaz0-9@.
-    print(email)
+    extends Node
 
-    #inteiro - int
-    var idade = 18
-    print(idade)
+    func teste():
+        print("teste")
+        var a=5
+        a=a+1;
+        print(a)
+    #return a
 
-    #real ou flutuante
-    var peso = 85.1
-    print(peso)
+    #Return - retorno
+    func subtrair(a,b):
+    #imprimir('rolfi')
+    var c= a-b;
+    return c; #tratamento "conta" - Processar
 
-    #array
-    var prateleiras = [67,10,-5,0.03,55,90,1111]
+    func somar(a,b):
+    return a+b;
 
-    #varivel
-    var gaveta= 15
-    print(prateleiras)
-    print(gaveta)
+    func dividir(a,b):
+    return a/b;
+
+    func multiplicar(a,b):
+    return a*b;
+
+    func _ready():
+        print("Hello world!")
+        print( subtrair(3,1))
+        print( somar(3,1))
+        print( multiplicar(4,5))
+        print(dividir(4,5))
+        print(teste())
 ```
 
 <br>
 
-```
-String - AZaz09@#$%¨&*())
-```
-***Ex: email, nome, endereço completo, razão social***
+EXEMPLO DE FUNÇÃO ANDANDO.
 
-<br>
+![](https://cultured-veil-1e2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd42e7b8b-c387-421c-8a1b-163a32236796%2FUntitled.png?id=40dc0b83-586e-4382-abef-e40cc0ca8d88&table=block&spaceId=a394d0d6-1d34-4f2b-9dbd-f5e1c51e5293&width=1950&userId=&cache=v2)
 
 ```py
-int - inteiro: 12 - 5 - 1750 - 6
+    extends Node
+
+    func moverdireita(posx1):
+        return posx1+1;
+
+    func moveresquerda(posx1):
+        return posx1-1;
+
+    func movercima(posy1):
+        return posy1+3;
+
+    func moverbaixo(posy1):
+        return posy1-3;
+
+    func moverdiagonalA(posx1):
+    posx1=moverdireita(posx1)
+    posx1=movercima(posx1)
+    return posx1;
+
+    func imprimirpos(pos):
+        print("posição:", pos)
+        
+    func _ready():
+        var posx = 5
+        imprimirpos(posx)
+        
+        posx = moverdiagonalA(posx)
+        
+        posx = moveresquerda(posx)
+        imprimirpos(posx)
+        posx = moverdireita(posx)
+        imprimirpos(posx)
+        posx = moverdireita(posx)
+        imprimirpos(posx)
+        posx = movercima(posx)
+        imprimirpos(posx)
+        posx = moverbaixo(posx)
+        imprimirpos(posx)
 ```
 
 ```py
-real - valores numéricos de 0-9.0-9
-"fracionados, flutuantes - quebrados"
-15.35 , 84.00 , 1.73 , 2.89
+    extends Node
+
+    func moverdireita(posx1):
+        return posx1+1;
+
+    func moveresquerda(posx1):
+        return posx1-1;
+
+    func movercima(posy1):
+        return posy1+3;
+
+    func moverbaixo(posy1):
+        return posy1-3;
+
+    func moverdiagonalA(posx1):
+    imprimirpos(posx1)
+    posx1=moverdireita(posx1)
+    imprimirpos(posx1)
+    posx1=moverbaixo(posx1)
+    imprimirpos(posx1)
+    return posx1;
+
+    func imprimirpos(pos):
+        print("posição:", pos)
+        
+    func _ready():
+        var posx = 5
+        #imprimirpos(posx)
+        posx = moverdiagonalA(posx)
+        #imprimirpos(posx)
 ```
-
-# Array
-```py
-var prateleiras = [67,10,-5,0.03,55,90,1111]
-```
-
-<br>
-
-# Variável
-```py
-var gaveta = 15
-```
-
-![img](https://cultured-veil-1e2.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F364228e8-93f7-43f7-a2c7-9e5e6acc6c01%2FUntitled.png?id=3800f596-bfd1-437a-af50-973ebe0a8ba8&table=block&spaceId=a394d0d6-1d34-4f2b-9dbd-f5e1c51e5293&width=2000&userId=&cache=v2)
