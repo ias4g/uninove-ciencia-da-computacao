@@ -143,9 +143,9 @@
 
 <br>
 
-## Exemplo tabuada
+## Exemplo tabuada do 2
 ```py
-    extends Node
+   extends Node
 
     func _ready():
         print("Hello world!")
@@ -153,6 +153,42 @@
         #LOOP - repetição
         for x in range(1,11):
             print("2 x ", x , "=", (2*x))
+
+
+    #OUTRO EXEMPLO
+
+    extends Node
+
+    func _ready():
+        print("Hello world!")
+        #print('1')
+        #LOOP - repetição
+        for x in range(0,10):
+            print("1 x ", x , "=", (1*x))
+        for x in range(0,10):
+            print("2 x ", x , "=", (2*x))
+        for x in range(0,10):
+            print("3 x ", x , "=", (3*x))
+        for x in range(0,10):
+            print("4 x ", x , "=", (4*x))
 ```
 
 <br>
+
+## Exemplo tabuada do 1 ao 10
+```py
+    extends Node
+
+    func _ready():
+        print("Hello world!")
+        #print('1')
+        #LOOP - repetição
+        for y in range(1,11):
+            for x in range(1,11):
+                print(y," x ", x , "=", (y*x))
+            print("--------------------")
+```
+
+<br>
+
+### A regra da programação: "Se é simples é complicado e se é complicado é simples"
