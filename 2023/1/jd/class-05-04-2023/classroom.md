@@ -1,5 +1,7 @@
 # Aula 05 | 05/04/2023
 
+<br>
+
 ## Vetor
 
 ```py
@@ -26,6 +28,8 @@
         moverdireita(posicao)
         moveresquerda(posicao)
 ```
+
+<br>
 
 ## VARIÁVEL GLOBAL : é uma variável que todo o programa consegue ler
 ```py
@@ -137,6 +141,8 @@
             print('B')
 ```
 
+<br>
+
 ## Exemplo tabuada
 ```py
     extends Node
@@ -148,3 +154,5 @@
         for x in range(1,11):
             print("2 x ", x , "=", (2*x))
 ```
+
+<br>
