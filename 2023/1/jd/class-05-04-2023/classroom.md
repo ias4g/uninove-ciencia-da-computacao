@@ -192,3 +192,7 @@
 <br>
 
 ### A regra da programação: "Se é simples é complicado e se é complicado é simples"
+
+<br>
+
+Notion: [Link da aula](https://cultured-veil-1e2.notion.site/Aula-005-2ec9d88fb5ba484abb537202b829ce51)
