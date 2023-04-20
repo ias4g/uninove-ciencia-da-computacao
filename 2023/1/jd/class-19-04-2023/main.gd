@@ -10,13 +10,18 @@ class Hero:
 	func get_name():
 		return name
 		pass
+	pass
 
 func _ready():
-	var h1 = Hero.new()
-	h1.name = "Superman"
-	print(h1.name)
+	var mario = Hero.new()
+	mario.name = "Superman"
+	print(mario.name)
 	
-	var h2 = Hero.new()
-	h2.name = "Sonic"
-	print(h2.name)
+	var sonic = Hero.new()
+	sonic.name = "Sonic"
+	print(sonic.name)
+	
+	var naruto = Hero.new()
+	naruto.name = "Naruto"
+	print(naruto.name)
 	pass
