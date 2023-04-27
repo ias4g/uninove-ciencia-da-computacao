@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -14,8 +15,22 @@ margin_right = 956.0
 margin_bottom = 259.0
 
 [node name="Button" type="Button" parent="."]
+modulate = Color( 0.619608, 0.741176, 0.14902, 1 )
+self_modulate = Color( 0.984314, 0.0666667, 0.0666667, 1 )
 margin_left = 394.0
 margin_top = 295.0
 margin_right = 645.0
 margin_bottom = 399.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 5
+size_flags_vertical = 7
 text = "Clique em mim"
+icon = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 51.0
+margin_top = 482.0
+margin_right = 981.0
+margin_bottom = 557.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
