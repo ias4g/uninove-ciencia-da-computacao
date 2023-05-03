@@ -11,9 +11,12 @@ func _process(delta):
 
 
 func _on_Button_pressed():
-	var res = Calculadora.new()
-	var rs = res.calculator.sum(int($TextEdit.text), int($TextEdit2.text))
+	var n1 = int($TextEdit.text)
+	var n2 = int($TextEdit2.text)
 	
+	var calc = Calculadora.new()
+	var rs = calc.sum(n1, n2)
+
 	print(rs)
-	#$Label.text=res
+	#$Label.text=rs
 	pass
