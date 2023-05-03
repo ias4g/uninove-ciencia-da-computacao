@@ -57,4 +57,14 @@ align = 1
 valign = 1
 uppercase = true
 
+[node name="Button5" type="Button" parent="."]
+anchor_right = 0.012
+anchor_bottom = 0.017
+margin_left = 66.0
+margin_top = 443.0
+margin_right = 240.712
+margin_bottom = 526.8
+text = "Chamar tela"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed_mudar_sena"]
