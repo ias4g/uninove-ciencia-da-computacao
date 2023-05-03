@@ -20,3 +20,8 @@ func _on_Button_pressed():
 	print(rs)
 	#$Label.text=rs
 	pass
+
+
+func _on_Button5_pressed_mudar_sena():
+	get_tree().change_scene("res://tela2.tscn")
+	pass
