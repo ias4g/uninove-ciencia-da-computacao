@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>CHECKPOINT PROGRAMAÇÃO WEB</title>
+</head>
+
+<body class="d-flex flex-column justify-content-between min-vh-100">
+    <main class="container py-4">
+
+        <header class=" pb-3 mb-5 border-bottom d-flex justify-content-between align-items-center">
+            <span class="fs-4 fw-bold">
+                Gestão de Drones
+            </span>
+            <span class="d-flex align-items-center">
+                <div class="d-flex flex-column px-3">
+                    <p class="small m-0">Izael alves da silva</p>
+                    <small class="fw-bold m-0">RA: 922114939</small>
+                </div>
+
+                <a href="https://github.com/ias4g" target="_blank" rel="noopener noreferrer">
+                    <img class="rounded-circle" src="https://github.com/ias4g.png" alt="" width="48" height="48">
+                </a>
+            </span>
+            </a>
+        </header>
+
+        <div class="container-fluid conn">
+            <form onsubmit="return validarFormulario()">
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="identificador" placeholder="Ex: Drone01">
+                    <label for="identificador">Identificador do Drone</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="modelo" placeholder="Ex: Parrot Anafi">
+                    <label for="modelo">Modelo do Drone</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="numeroSerie" placeholder="Ex: Df56354534r">
+                    <label for="numeroSerie">Número de Série</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="licencaVoar" placeholder="Ex: Numero da licença">
+                    <label for="licencaVoar">Licença para Voar</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="historicoVoo" placeholder="Ex: data, duração...">
+                    <label for="historicoVoo">Histórico de Voo</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="horasVoo" placeholder="Ex: 12h">
+                    <label for="horasVoo">Horas de Voo</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="capacidadeCarga" placeholder="Ex: 90kg">
+                    <label for="capacidadeCarga">Capacidade de Carga</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="capacidadeBateria" placeholder="Ex: 100mAh">
+                    <label for="capacidadeBateria">Capacidade da Bateria</label>
+                </div>
+
+                <button type="submit" class="btn btn-secondary btn-lg p-3 container-fluid">Enviar</button>
+            </form>
+        </div>
+
+    </main>
+
+    <footer class="container d-flex py-4 justify-content-between  align-items-center border-top">
+        <p class="small">Copyright © 2023</p>
+        <p class="small">
+            Feito com 💖 por <a href="https://github.com/ias4g" target="_blank">ias4g</a>
+        </p>
+    </footer>
+
+    <script>
+        function validarFormulario() {
+            // Validação do campo Identificador do Drone
+            var identificador = document.getElementById("identificador").value;
+            if (identificador === "") {
+                alert("Por favor, insira o identificador do drone.");
+                return false;
+            }
+
+            // Validação do campo Modelo do Drone
+            var modelo = document.getElementById("modelo").value;
+            if (modelo === "") {
+                alert("Por favor, insira o modelo do drone.");
+                return false;
+            }
+
+            // Validação do campo Número de Série
+            var numeroSerie = document.getElementById("numeroSerie").value;
+            if (numeroSerie === "") {
+                alert("Por favor, insira o número de série do drone.");
+                return false;
+            }
+
+            // Validação do campo Licença para Voar
+            var licencaVoar = document.getElementById("licencaVoar").value;
+            if (licencaVoar === "") {
+                alert("Por favor, insira as informações da licença para voar do drone.");
+                return false;
+            }
+
+            // Validação do campo Histórico de Voo
+            var historicoVoo = document.getElementById("historicoVoo").value;
+            if (historicoVoo === "") {
+                alert("Por favor, insira os dados do histórico de voo do drone.");
+                return false;
+            }
+
+            // Validação do campo Horas de Voo
+            var horasVoo = document.getElementById("horasVoo").value;
+            if (horasVoo === "") {
+                alert("Por favor, insira o total de horas de voo do drone.");
+                return false;
+            }
+
+            // Validação do campo Capacidade de Carga
+            var capacidadeCarga = document.getElementById("capacidadeCarga").value;
+            if (capacidadeCarga === "") {
+                alert("Por favor, insira a capacidade de carga do drone.");
+                return false;
+            }
+
+            // Validação do campo Capacidade da Bateria
+            var capacidadeBateria = document.getElementById("capacidadeBateria").value;
+            if (capacidadeBateria === "") {
+                alert("Por favor, insira a capacidade da bateria do drone.");
+                return false;
+            }
+
+            // Se todas as validações passarem, o formulário pode ser enviado
+            return (
+                alert(`Dados: ${identificador} - ${modelo} - ${numeroSerie} - ${licencaVoar} - ${historicoVoo} - ${horasVoo} - ${capacidadeCarga} - ${capacidadeBateria}`)
+            );
+        }
+    </script>
+</body>
+
+</html>
