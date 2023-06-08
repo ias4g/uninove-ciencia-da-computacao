@@ -1,2 +1,2 @@
-![image](.github/site.png)
-![image](.github/site-m.jpg)
+![image](./site.png)
+![image](./site-m.jpg)
