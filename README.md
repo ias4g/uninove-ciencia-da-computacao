@@ -15,11 +15,11 @@
 
    | ⬇ Acesso aos conteúdos do semestre ⬇ | ⬇ Acesso direto às disciplinas atuais ⬇                         |
    |-----------------------------------------------|-----------------------------------------------------------------|
-   | [Acessar conteúdo do 1º semestre](./2022/1/)  | [Computação Gráfica e Processamento de Imagens](./2023/1/cgpi/) |
-   | [Acessar conteúdo do 2º semestre](./2022/2/)  | [Jogos Digitais](./2023/1/jd/)                                  |
-   | [Acessar conteúdo do 3º semestre](./2023/1/)  | [Projeto em Sistemas Interativos](./2023/1/psi/)                |
-   | Acessar conteúdo do 4º semestre               | [Programação Web](./2023/1/pw/)                                 |
-   | Acessar conteúdo do 5º semestre               | [Qualidade de Software](./2023/1/qs/)                           |
+   | [Acessar conteúdo do 1º semestre](./2022/1/)  | [Internet das Coisas - IOT](./2023/2/IC(IOT)/) |
+   | [Acessar conteúdo do 2º semestre](./2022/2/)  | [Organização e Arquetetura de Computadores](./2023/2/OAC/)                                  |
+   | [Acessar conteúdo do 3º semestre](./2023/1/)  | [Projeto em Infraestrutura Computacional](./2023/2/PIC/)                |
+   | [Acessar conteúdo do 4º semestre](./2023/2/)               | [Rede de Computadores](./2023/2/RC/)                                 |
+   | Acessar conteúdo do 5º semestre               | [Sistemas Operacionais](./2023/2/SO/)                           |
    | Acessar conteúdo do 6º semestre               |                                                                 |
    | Acessar conteúdo do 7º semestre               |                                                                 |
    | Acessar conteúdo do 8º semestre               |                                                                 |
