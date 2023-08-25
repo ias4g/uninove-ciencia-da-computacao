@@ -1,7 +1,10 @@
 # Atividade Aula 03
+
 >PROFº FELIPE SANTOS DE JESUS
 
->INTERNET DAS COISAS (IOT) - TURMA 50 - MM
+>ALUNO: IZAEL ALVES DA SILVA - RA: 922114939
+
+>DISCIPLINA: INTERNET DAS COISAS (IOT) - TURMA 50 - MM
 
 <br>
 
@@ -27,7 +30,7 @@ int main() {
   average = calculateAverage(n1, n2);
 
   printf("\n\n**************************");
-  printf("\nMedia: %.2f\n", average);
+  printf("\nMedia: %.1f\n", average);
 
   if (average >= 6) {
     printf("Aluno Aprovado\n");
