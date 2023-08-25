@@ -1,0 +1,10 @@
+## 4º SEMESTRE | 2023
+***
+
+## `MATÉRIA`:
+##### REDE DE COMPUTADORES
+
+***
+
+## `PROFESSOR(A)`:
+##### PRISCILLA VIANA CUNHA
