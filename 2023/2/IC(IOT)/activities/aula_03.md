@@ -9,7 +9,6 @@
 <br>
 
 ## Desenvolva um algoritmo que receba duas notas. Me mostre a média e se o aluno foi aprovado ou reprovado. Média 6: Aprovado, abaixo de 6:: Reprovado.
-<hr>
 <br>
 
 ```c
