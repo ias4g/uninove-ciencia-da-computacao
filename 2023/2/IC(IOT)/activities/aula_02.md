@@ -9,7 +9,6 @@
 <br>
 
 ## Crie um algoritmo em C, que informe duas notas e o nome do aluno. Exiba o nome e a média das notas.
-<hr>
 <br>
 
 ```c
