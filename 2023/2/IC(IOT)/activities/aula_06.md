@@ -45,11 +45,13 @@ void sumNumber() {
 
     sum += number;
 
-    printf("\n\n-> Quer parar? digite <0>. Continuar digite <1>: ");
+    printf("\n-> Quer parar? digite <0>. Continuar digite <1>: ");
     scanf("%i", &option);
+    printf("\n\n");
   }
 
-  printf("\n\n=> A SOMA DOS NÚMEROS DIGITADOS É: %i\n", sum);
+  printf("\n-------------------------------------------------------\n");
+  printf("=> A SOMA DOS NÚMEROS DIGITADOS É: %i\n", sum);
 }
 ```
 
@@ -91,7 +93,7 @@ void sumImparPar() {
 
 ## Programa principal.
 ```c
-//  Este é o programa principal onde mostrará ummenu paraescolha de uma opção.
+//  Este é o programa principal onde mostrará um menu para escolha de uma opção.
 int main(void) {
 
   int option;
