@@ -354,4 +354,4 @@
 <br>
 <hr>
 
->Para executar o programa e fazer testes, clique neste link para ser redirecionando ao 🔗[Replit | Prova | Aula 7 | 20/09/2023](https://replit.com/@IZAELALVES/Internet-das-coisas-atividade-aula-6#main.c)
+>Para executar o programa e fazer testes, clique neste link para ser redirecionando ao 🔗[Replit | Prova | Aula 7 | 20/09/2023](https://replit.com/@IZAELALVES/Prova-or-aula-7-or-200923#main.c)
