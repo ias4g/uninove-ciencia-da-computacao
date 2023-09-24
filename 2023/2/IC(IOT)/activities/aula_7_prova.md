@@ -124,6 +124,99 @@
 3. Identificar o aluno com melhor nota.
 ```c
 
+  #include "questionTwo.h"
+  #include <stdio.h>
+  #include <stdlib.h>
+
+  // Structure to represent a student
+  struct Student {
+    int ra;
+    char name[50];
+    float grades[4];
+  };
+
+  // Function to calculate the average of a student's grades
+  float avgCalculate(struct Student student) {
+    float avg = 0;
+    float sum = 0;
+
+    for (int i = 0; i < 4; i++) {
+      sum += student.grades[i];
+    }
+
+    avg = sum / 4;
+
+    return avg;
+  }
+
+  // Function to find the student with the best grade
+  struct Student findBestStudent(struct Student students[], int qtdStudents) {
+    struct Student bestStudent = students[0];
+    float bestAvg = avgCalculate(students[0]);
+
+    for (int i = 1; i < qtdStudents; i++) {
+      float avg = avgCalculate(students[i]);
+      if (avg > bestAvg) {
+        bestStudent = students[i];
+      }
+    }
+
+    return bestStudent;
+  }
+
+  void questionTwo() {
+    int option;
+    int qtdStudents;
+
+    printf("\x1B[33m");
+    printf("\n\t+++++++++++++++++++++++++++++++++\n");
+    printf("\t+\t\t\t\t\t\t\t\t+\n");
+    printf("\t+\tVOCÊ ESTÁ NO EXERCÍCIO 02\t+\n");
+    printf("\t+\t\t\t\t\t\t\t\t+\n");
+    printf("\t+++++++++++++++++++++++++++++++++\n");
+
+    printf("\x1B[0m");
+
+    printf("\n\tInsira a quantidade de alunos: ");
+    scanf("%i", &qtdStudents);
+
+    printf("\n\n");
+
+    if (qtdStudents <= 0 || qtdStudents > 5) {
+      system("clear");
+      printf("\x1B[31m");
+      printf("\n\n\tQuantidade de alunos inválida!\n");
+      printf("\x1B[33m");
+      printf("\tVocê digitou %i, minimo (1), máximo (5).\n", qtdStudents);
+      return;
+    }
+
+    struct Student students[qtdStudents];
+
+    for (int i = 0; i < qtdStudents; i++) {
+      printf("\tDigite o nome do aluno %i: ", i + 1);
+      scanf("%s", students[i].name);
+
+      printf("\tDigite o RA do aluno %i: ", i + 1);
+      scanf("%i", &students[i].ra);
+
+      for (int j = 0; j < 4; j++) {
+        printf("\tDigite a nota 0%i do aluno 0%i: ", j + 1, i + 1);
+        scanf("%f", &students[i].grades[j]);
+      }
+
+      printf("\n");
+    }
+
+    struct Student bestStudent = findBestStudent(students, qtdStudents);
+
+    printf("\x1B[32m");
+    printf("\n\tO aluno com a melhor média é:\n");
+    printf("\tNome: %s\n", bestStudent.name);
+    printf("\tNúmero do aluno: %i\n", bestStudent.ra);
+    printf("\tMédia das notas: %.1f\n", avgCalculate(bestStudent));
+  }
+
 ```
 
 <br>
