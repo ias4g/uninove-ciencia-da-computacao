@@ -232,6 +232,64 @@
 - O programa deve continuar a coletar dados até que o usuário escolha parar. Após a parada, o programa deve exibir um resumo das informações coletadas, incluindo média, máxima e mínima.
 ```c
 
+  #include "questionThree.h"
+  #include <stdio.h>
+
+  void questionThree() {
+    int option;
+    int cont = 0;
+    float temperature;
+    float temp_min = 0;
+    float temp_max = 0;
+    float temp_sum = 0;
+    float temp_media = 0;
+
+    printf("\x1B[33m");
+    printf("\n\t+++++++++++++++++++++++++++++++++\n");
+    printf("\t+\t\t\t\t\t\t\t\t+\n");
+    printf("\t+\tVOCÊ ESTÁ NO EXERCÍCIO 03\t+\n");
+    printf("\t+\t\t\t\t\t\t\t\t+\n");
+    printf("\t+++++++++++++++++++++++++++++++++\n");
+
+    printf("\x1B[0m");
+
+    do {
+      printf("\n\t<?> Insira a temperatura: ");
+      scanf("%f", &temperature);
+
+      if (cont == 0) {
+        temp_min = temperature;
+        temp_max = temperature;
+      }
+
+      if (temperature < temp_min) {
+        temp_min = temperature;
+      }
+
+      if (temperature > temp_max) {
+        temp_max = temperature;
+      }
+
+      cont++;
+      temp_sum += temperature;
+      temp_media = temp_sum / cont;
+
+      printf("\n\tDeseja continuar?\n\tDigite <1> para encerrar digite <0>: ");
+      scanf("%i", &option);
+    } while (option != 0);
+
+    printf("\n\n\tVocê inseriu %i temperaturas.\n", cont);
+    printf("\tA soma delas é de %.2f\n", temp_sum);
+    printf("\tA temperatura mínima inserida foi %.2f graus\n", temp_min);
+    printf("\tA temperatura máxima inserida foi %.2f graus\n", temp_max);
+    printf("\tA temperatura média é de %.2f graus.\n\n", temp_media);
+
+    if (temperature > 35) {
+      printf("\x1B[31m");
+      printf("\t[cuidado]: temperatura muito elevada.\n");
+    }
+  }
+
 ```
 
 <br>
