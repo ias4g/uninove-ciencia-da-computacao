@@ -16,6 +16,103 @@
 4. Sair
 ```c
 
+  #include "questionOne.h"
+  #include <stdio.h>
+  #include <stdlib.h>
+
+  void questionOne() {
+    int op;
+    int account;
+    float values;
+    float balance = 0;
+
+    printf("\x1B[33m");
+    printf("\n\t+++++++++++++++++++++++++++++++++\n");
+    printf("\t+\t\t\t\t\t\t\t\t+\n");
+    printf("\t+\tVOCÊ ESTÁ NO EXERCÍCIO 01\t+\n");
+    printf("\t+\t\t\t\t\t\t\t\t+\n");
+    printf("\t+++++++++++++++++++++++++++++++++\n");
+
+    printf("\x1B[0m");
+    printf("\n\t<?> Insira o número da sua conta: ");
+    scanf("%i", &account);
+
+    if (account < 10000) {
+      system("clear");
+      printf("\x1B[31m");
+      printf("\n\n\t* Conta inválida!");
+      printf("\n\t* A conta precisa ter mais de 5 digitos.\n");
+
+      printf("\x1B[33m");
+      printf("\n\tPrograma encerrado... ");
+      printf("reinicie o programa\n");
+      return;
+    }
+
+    printf("\n\t++++++++++++++++++++++ M E N U ++++++++++++++++++++++\n");
+    printf("\t+\t\t\t\t\t\t\t\t\t\t\t\t\t+\n");
+    printf("\t+\t\tESCOLHA UMA OPÇÃO NO MENU ABAIXO.\t\t\t+\n");
+    printf("\t+\t\t\t\t\t\t\t\t\t\t\t\t\t+\n");
+    printf("\t+\t\t1. Verificar saldo da conta.\t\t\t\t+\n");
+    printf("\t+\t\t\t\t\t\t\t\t\t\t\t\t\t+\n");
+    printf("\t+\t\t2. Depositar dinheiro.(Adicionar\t\t\t+\n");
+    printf("\t+\t\t\tdinheiro e mostrar novo saldo)\t\t\t+\n");
+    printf("\t+\t\t\t\t\t\t\t\t\t\t\t\t\t+\n");
+    printf("\t+\t\t3. Sacar dinheiro(Retirar dinheiro\t\t\t+\n");
+    printf("\t+\t\te mostrar novo saldo)\t\t\t\t\t\t+\n");
+    printf("\t+\t\t\t\t\t\t\t\t\t\t\t\t\t+\n");
+    printf("\t+\t\t4. Sair\t\t\t\t\t\t\t\t\t\t+\n");
+    printf("\t+\t\t\t\t\t\t\t\t\t\t\t\t\t+\n");
+    printf("\t+++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n");
+
+    printf("\tQual sua opção? [1, 2, 3 ou 4]: ");
+    scanf("%i", &op);
+
+    switch (op) {
+    case 1:
+      system("clear");
+      printf("\n\tO valor atual da sua conta é R$%.2f\n", balance);
+      break;
+
+    case 2:
+      printf("\n\tDigite o valor do deposito: ");
+      scanf("%f", &values);
+
+      balance += values;
+
+      system("clear");
+      printf("\n\tNovo valor com o deposito ");
+      printf("\x1B[32m");
+      printf("R$%.2f\n", balance);
+      break;
+
+    case 3:
+      printf("\n\tDigite o valor do saque: ");
+      scanf("%f", &values);
+
+      balance -= values;
+
+      system("clear");
+      printf("\n\tNovo valor com o saque, sua conta está negativa ");
+      printf("\x1B[31m");
+      printf("R$%.2f\n", balance);
+      break;
+
+    case 4:
+      system("clear");
+      printf("\x1B[33m");
+      printf("\n\tPrograma encerrado... ");
+      printf("reinicie o programa\n");
+      break;
+
+    default:
+      system("clear");
+      printf("\x1B[33m");
+      printf("\n\tOpção inválida! -> ");
+      printf("reinicie o programa\n");
+    }
+  }
+
 ```
 
 <br>
