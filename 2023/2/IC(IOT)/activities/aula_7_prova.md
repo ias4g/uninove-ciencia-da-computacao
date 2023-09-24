@@ -8,7 +8,7 @@
 
 <br>
 
-## Exercício 01 | (0,5)
+## Exercício 01 | (0,5).
 **Crie um programa que simule o funcionamento de um caixa eletrônico. O programa deve pedir ao usuário que insira o número da conta e, em seguida, oferecer um menu com as seguintes opções: (Não utilizar Looping)**
 1. Verificar saldo
 2. Depositar dinheiro.(Adicionar dinheiro e mostrar novo saldo)
@@ -117,7 +117,7 @@
 
 <br>
 
-## Exercício 02 | (0,5)
+## Exercício 02 | (0,5).
 **Você foi designado para criar um sistema de gerenciamento de notas escolares para uma escola. O sistema deve ser capaz de fazer o seguinte:**
 1. Armazenar informações dos alunos, incluindo nome, número de aluno.
 2. Calcular a média das notas de cada aluno.
@@ -221,7 +221,7 @@
 
 <br>
 
-## Exercício 03 | (1,0)
+## Exercício 03 | (1,0).
 **Você foi contratado por uma empresa de monitoramento climático para criar um programa que analise dados de temperatura. O programa deve ser capaz de processar uma série de leituras de temperatura e fornecer informações úteis. Você deve criar um programa em que os usuários possam inserir leituras de temperatura em um loop contínuo. O programa deve ser capaz de realizar as seguintes tarefas:**
 
 1. Calcular a temperatura média com base nas leituras inseridas até o momento.
@@ -291,6 +291,10 @@
   }
 
 ```
+
+<br>
+
+## Programa principal.
 
 <br>
 <br>
