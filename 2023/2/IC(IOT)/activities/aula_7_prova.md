@@ -294,7 +294,60 @@
 
 <br>
 
-## Programa principal.
+## Programa principal (main).
+```c
+
+  #include "questionOne/questionOne.h"
+  #include "questionThree/questionThree.h"
+  #include "questionTwo/questionTwo.h"
+  #include <stdio.h>
+  #include <stdlib.h>
+
+  int main(void) {
+    int op;
+
+    printf("\n-- M E N U ------------------------------------------\n");
+    printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+    printf("|\t\tESCOLHA UMA OPÇÃO NO MENU ABAIXO.\t\t\t|\n");
+    printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+    printf("|\t\t1. Executa o exercicio 01.\t\t\t\t\t|\n");
+    printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+    printf("|\t\t2. Executa o exercicio 02\t\t\t\t\t|\n");
+    printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+    printf("|\t\t3. Executa o exercicio 03\t\t\t\t\t|\n");
+    printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+    printf("-----------------------------------------------------\n\n");
+
+    printf("Qual sua opção? [1, 2 ou 3]: ");
+    scanf("%i", &op);
+
+    switch (op) {
+    case 1:
+      system("clear");
+      questionOne();
+      break;
+
+    case 2:
+      system("clear");
+      questionTwo();
+      break;
+
+    case 3:
+      system("clear");
+      questionThree();
+      break;
+
+    default:
+      system("clear");
+      printf("\x1B[33m");
+      printf("\n\tOpção inválida! -> ");
+      printf("reinicie o programa\n");
+    }
+
+    return 0;
+  }
+
+```
 
 <br>
 <br>
