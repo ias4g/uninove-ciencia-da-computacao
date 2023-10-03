@@ -8,7 +8,7 @@
 
 <br>
 
-## 1. Determine a expressão e a tabela verdade do circuito da imagem.
+## 1. Determine a expressão e a tabela verdade do circuito da imagem abaixo.
 
  <img alt="Circuito" src="../contents/exercicio_21.png"/>
 
