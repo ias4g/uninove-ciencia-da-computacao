@@ -13,7 +13,7 @@
    | Aula 07        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-7-Prova-1-20-09-2023-f777d1cfabfa456ebee4df68f3d5398d)                                                   |
    | Aula 08        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-8-Procedimento-e-Fun-o-27-09-2023-2f02f3b1d533409cad07c7eb6a4bcf5f)                                      |
    | Aula 09        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-9-TinkerCad-04-10-2023-225ec1aca63347a1853a73c86cfc20cc)                                                 |
-   | Aula 10        | [Indisponivel 🔗](#)                                                                                                                                                 |
+   | Aula 10        | Indisponivel                                                                                                                                                         |
    | Todas as aulas | [Link🔗](https://sponge-dryosaurus-50f.notion.site/Quarta-Internet-das-Coisas-IoT-MM-a68cae0708674630866f02729a011ddc)                                               |
 
    <br>
