@@ -10,4 +10,8 @@
 
 ## 1. Desenhe o circuito lógico equivalente a: ```S = !(A+B).C+(A+C).!B```
 
- <img alt="Circuito" src="../contents/circuito.PNG"/>
+ <img alt="Circuito" src="../contents/images/exercicio_11.PNG"/>
+
+ <br/>
+
+  Para testar o circuito acesse este link: [CircuitVerse🔗](https://circuitverse.org/simulator/embed/exercicio-11-circuito?theme=night-sky&display_title=false&clock_time=false&fullscreen=false&zoom_in_out=true)
