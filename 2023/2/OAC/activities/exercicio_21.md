@@ -10,7 +10,7 @@
 
 ## 1. Determine a expressão e a tabela verdade do circuito da imagem abaixo.
 
- <img alt="Circuito" src="../contents/exercicio_21.png"/>
+ <img alt="Circuito" src="../contents/images/exercicio_21.png"/>
 
  <br>
 
