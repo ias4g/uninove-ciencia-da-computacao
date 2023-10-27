@@ -68,4 +68,4 @@
 <br>
 <hr>
 
->Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad - Atividade - Aula 09](https://www.tinkercad.com/things/0v6VwpBmZl6-fantabulous-gogo/editel?sharecode=1Zxu9HGKFz4iTWsze7FnJ8ofRrauai3CqwgJTfU8fAc)
+>Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad - Atividade - Aula 09](https://www.tinkercad.com/things/0v6VwpBmZl6)
