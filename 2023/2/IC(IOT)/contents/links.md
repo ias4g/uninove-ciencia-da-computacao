@@ -12,8 +12,11 @@
    | Aula 06        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-6-While-e-Do-While-13-09-2023-764c329691754d3aa44d016428f9267d)                                          |
    | Aula 07        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-7-Prova-1-20-09-2023-f777d1cfabfa456ebee4df68f3d5398d)                                                   |
    | Aula 08        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-8-Procedimento-e-Fun-o-27-09-2023-2f02f3b1d533409cad07c7eb6a4bcf5f)                                      |
-   | Aula 09        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-9-TinkerCad-04-10-2023-225ec1aca63347a1853a73c86cfc20cc)                                                 |
-   | Aula 10        | Indisponivel                                                                                                                                                         |
+   | Aula 09        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-9-e-10-TinkerCad-04-10-2023-e-11-10-2023-225ec1aca63347a1853a73c86cfc20cc)                               |         
+   | Aula 11        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-11-Continua-o-LED-s-ebd743b7b94645e18c23cdf3bd49b4bc)                                                    |
+   | Aula 12        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-12-Sensor-de-Proximidade-e-interruptor-DIP-25-10-2023-ad833efbf55f4df4b514921fd1ae7374)                  |
+   | Aula 13        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-13-Display-LCD-Sensor-de-Temperatura-Visor-de-7-segmentos-a1317b3e6c5b4a3383b2b79cf21e4eb6)              |
+   | Aula 14        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-14-Decodificador-de-7-segmentos-5958e4a1ea924a709c2583cd22ada2dd)                                        |
    | Todas as aulas | [Link🔗](https://sponge-dryosaurus-50f.notion.site/Quarta-Internet-das-Coisas-IoT-MM-a68cae0708674630866f02729a011ddc)                                               |
 
    <br>
