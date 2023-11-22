@@ -40,8 +40,8 @@
 **Código em Java 👇**
 ```java
 
-  import java.util.ArrayList;
   import java.util.Scanner;
+  import java.util.ArrayList;
 
   public class Main {
 
@@ -57,14 +57,14 @@
       ArrayList<Float> notas = new ArrayList<>();
 
       do {
-        System.out.printf("Insira sua %d nota: ", i + 1);
+        System.out.printf("Insira sua %dª nota: ", i + 1);
         n = sc.nextFloat();
 
         if (n >= 0 && n <= 10) {
           notas.add(n);
           i++;
         } else {
-          System.out.println("Nota inválida! (entre 0 e 10)");
+          System.out.printf("%sNota inválida! (entre 0 e 10)%s\n\n", ANSI_RED, ANSI_RESET);
         }
       } while (notas.size() < 3 || (n < 0 || n > 10));
 
@@ -87,9 +87,11 @@
         System.out.printf("\n\n%sShêêê... você foi reprovado com média %.2f%s\n\n", ANSI_RED, media, ANSI_RESET);
       }
 
-      System.out.printf("Porque esta média? porque %.2f (soma) dividido por %d (quantidade) é %.2f\n\n", soma, notas.size(), media);
+      System.out.printf("Porque esta média? porque %.2f (soma) dividido por %d (quantidade) é %.2f\n\n", soma,
+          notas.size(), media);
+
     }
-  }                     
+  }
 
 ```
 
