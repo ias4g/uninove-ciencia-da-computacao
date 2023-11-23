@@ -17,6 +17,8 @@
    | Aula 12        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-12-Sensor-de-Proximidade-e-interruptor-DIP-25-10-2023-ad833efbf55f4df4b514921fd1ae7374)                  |
    | Aula 13        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-13-Display-LCD-Sensor-de-Temperatura-Visor-de-7-segmentos-a1317b3e6c5b4a3383b2b79cf21e4eb6)              |
    | Aula 14        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-14-Decodificador-de-7-segmentos-5958e4a1ea924a709c2583cd22ada2dd)                                        |
+   | Aula 15        | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Aula-15-Protocolo-MQTT-2e4fe4019204479b9a67fabffc7bb8ae)                                                      |
+   | AV2 CONTEÚDO   | [Acessar 🔗](https://sponge-dryosaurus-50f.notion.site/Conte-do-para-estudar-para-AV2-0205c9547c404e01b564e1daaaf77a21)                                              |
    | Todas as aulas | [Link🔗](https://sponge-dryosaurus-50f.notion.site/Quarta-Internet-das-Coisas-IoT-MM-a68cae0708674630866f02729a011ddc)                                               |
 
    <br>
