@@ -34,7 +34,7 @@ MENU
 
 ![Circuito image](../contents/images/pergunta_01.gif)
 
->Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad | prova 2 valendo 3 pontos questão 01]()
+>Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad | prova 2 valendo 3 pontos questão 01](https://www.tinkercad.com/things/418WBhTuBGW-pergunta01?sharecode=lkOWdcbCERf0kp17loHpTOpyR01A2oe0BsNl9DuWP1A)
 
 </div>
 
@@ -78,7 +78,7 @@ MENU
 
 ![Circuito image](../contents/images/pergunta_02.gif)
 
->Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad | prova 2 valendo 3 pontos pergunta 02]()
+>Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad | prova 2 valendo 3 pontos pergunta 02](https://www.tinkercad.com/things/fYJnMpGPYmv-pergunta02?sharecode=g8BCd4-b8_obBprW-a585zzaMWoWJy0uEAaSw5m_Dcs)
 
 </div>
 
@@ -129,7 +129,7 @@ Código em C++ 👇
 
 ![Circuito image](../contents/images/pergunta_03.gif)
 
->Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad | prova 2 valendo 3 pontos pergunta 03]()
+>Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad | prova 2 valendo 3 pontos pergunta 03](https://www.tinkercad.com/things/8af9RsFDzNI-pergunta03?sharecode=N16zX1RlOlFjETM3w6rh8XlHJM2edmkYwtt8FASxyQ4)
 </div>
 <br/>
 
