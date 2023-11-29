@@ -12,7 +12,7 @@
 ---
 MENU
 
-[Pergunta 01](#pergunta-01---integre-um-sensor-de-temperatura-ao-seu-projeto-arduino-conectando-o-ao-pino-analógico-a0-desenvolva-um-código-que-leia-os-dados-do-sensor-e-exiba-a-temperatura-atual-em-celsius-e-em-fahrenheits-um-em-cada-linha-no-painel-de-lcd16x6cristal-líquido) | [Pergunta 02](#2---explore-a-versatilidade-de-um-led-rgb-com-arduino-conectando-os-pinos-correspondentes-aos-canais-de-vermelho-verde-e-azul-em-um-interruptor-dip-com-4-botões-cada-botão-liga-uma-cor) | [Pergunta 03](#3---incorpore-um-sensor-de-aproximação-ao-seu-projeto-arduino-conectando-o-a-um-pino-digital-elabore-um-código-que-detecte-a-proximidade-de-objetos-e-acione-um-led-rgb-e-mude-cor-de-acordo-com-a-aproximação--alterne-entre-4-cores)
+[Pergunta 01](#pergunta-01---integre-um-sensor-de-temperatura-ao-seu-projeto-arduino-conectando-o-ao-pino-analógico-a0-desenvolva-um-código-que-leia-os-dados-do-sensor-e-exiba-a-temperatura-atual-em-celsius-e-em-fahrenheits-um-em-cada-linha-no-painel-de-lcd16x6cristal-líquido) | [Pergunta 02](#pergunta-02---explore-a-versatilidade-de-um-led-rgb-com-arduino-conectando-os-pinos-correspondentes-aos-canais-de-vermelho-verde-e-azul-em-um-interruptor-dip-com-4-botões-cada-botão-liga-uma-cor) | [Pergunta 03](#pergunta-03---incorpore-um-sensor-de-aproximação-ao-seu-projeto-arduino-conectando-o-a-um-pino-digital-elabore-um-código-que-detecte-a-proximidade-de-objetos-e-acione-um-led-rgb-e-mude-cor-de-acordo-com-a-aproximação--alterne-entre-4-cores)
 
 ---
 
