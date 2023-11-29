@@ -1,3 +1,5 @@
+<div align="center">
+
 # Prova 2 - Valendo 3 pontos | 29/11/2023
 ### Avaliação IoT - 2 - Valendo 3 pontos | 29/11/2023
 
@@ -6,7 +8,6 @@
 >DISCIPLINA: INTERNET DAS COISAS (IOT) - TURMA 50 - MM
 
 <br>
-<div align="center">
 
 ---
 MENU
@@ -14,7 +15,6 @@ MENU
 [Pergunta 01](#1-integre-um-sensor-de-temperatura-ao-seu-projeto-arduino-conectando-o-ao-pino-analógico-a0-desenvolva-um-código-que-leia-os-dados-do-sensor-e-exiba-a-temperatura-atual-em-celsius-e-em-fahrenheits-um-em-cada-linha-no-painel-de-lcd16x6cristal-líquido) | [Pergunta 02](#2---explore-a-versatilidade-de-um-led-rgb-com-arduino-conectando-os-pinos-correspondentes-aos-canais-de-vermelho-verde-e-azul-em-um-interruptor-dip-com-4-botões-cada-botão-liga-uma-cor) | [Pergunta 03](#3---incorpore-um-sensor-de-aproximação-ao-seu-projeto-arduino-conectando-o-a-um-pino-digital-elabore-um-código-que-detecte-a-proximidade-de-objetos-e-acione-um-led-rgb-e-mude-cor-de-acordo-com-a-aproximação--alterne-entre-4-cores)
 
 ---
-</div>
 
 <br>
 
@@ -27,6 +27,7 @@ MENU
 | Izael Alves Da Silva                | 922114939 |
 | Paulo Roberto da Silva Soares Filho | 921116535 |
 
+
 <br>
 
 #### Pergunta 01 - Integre um Sensor de Temperatura ao seu projeto Arduino, conectando-o ao pino analógico A0. Desenvolva um código que leia os dados do sensor e exiba a temperatura atual em Celsius e em Fahrenheits, um em cada linha no Painel de LCD(16x6)(Cristal Líquido).
@@ -34,6 +35,8 @@ MENU
 ![Circuito image](../contents/images/pergunta_01.gif)
 
 >Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad | prova 2 valendo 3 pontos questão 01]()
+
+</div>
 
 **Código em C++ 👇**
 ```c++
@@ -69,11 +72,15 @@ MENU
 ---
 <br>
 
+<div align="center">
+
 #### Pergunta 02 - Explore a versatilidade de um LED RGB com Arduino, conectando os pinos correspondentes aos canais de vermelho, verde e azul, em um interruptor DIP com 4 botões. Cada botão liga uma cor.
 
 ![Circuito image](../contents/images/pergunta_02.gif)
 
 >Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad | prova 2 valendo 3 pontos pergunta 02]()
+
+</div>
 
 Código em C++ 👇
 ```c++
@@ -114,6 +121,8 @@ Código em C++ 👇
 
 <br/>
 
+<div align="center">
+
 #### Pergunta 03 - Incorpore um Sensor de Aproximação ao seu projeto Arduino, conectando-o a um pino digital. Elabore um código que detecte a proximidade de objetos e acione um LED RGB e mude cor de acordo com a aproximação , alterne entre 4 cores.
 
 <br/>
@@ -121,7 +130,7 @@ Código em C++ 👇
 ![Circuito image](../contents/images/pergunta_03.gif)
 
 >Para executar o circuito e fazer testes, clique neste link para ser redirecionando ao 🔗[Tinkedcad | prova 2 valendo 3 pontos pergunta 03]()
-
+</div>
 <br/>
 
 **Código em C++ 👇**
