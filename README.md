@@ -13,16 +13,16 @@
 
    <br><br>
 
-   | ⬇ Acesso aos conteúdos do semestre ⬇ | ⬇ Acesso direto às disciplinas atuais ⬇                         |
-   |-----------------------------------------------|-----------------------------------------------------------------|
-   | [Acessar conteúdo do 1º semestre](./2022/1/)  | [Internet das Coisas - IOT](./2023/2/IC(IOT)/) |
-   | [Acessar conteúdo do 2º semestre](./2022/2/)  | [Organização e Arquetetura de Computadores](./2023/2/OAC/)                                  |
-   | [Acessar conteúdo do 3º semestre](./2023/1/)  | [Projeto em Infraestrutura Computacional](./2023/2/PIC/)                |
-   | [Acessar conteúdo do 4º semestre](./2023/2/)               | [Rede de Computadores](./2023/2/RC/)                                 |
-   | Acessar conteúdo do 5º semestre               | [Sistemas Operacionais](./2023/2/SO/)                           |
-   | Acessar conteúdo do 6º semestre               |                                                                 |
-   | Acessar conteúdo do 7º semestre               |                                                                 |
-   | Acessar conteúdo do 8º semestre               |                                                                 |
+   | ⬇ Acesso aos conteúdos do semestre ⬇ | ⬇ Acesso direto às disciplinas atuais ⬇                                           |
+   |-----------------------------------------------|--------------------------------------------------------------------------|
+   | [Acessar conteúdo do 1º semestre](./2022/1/)  | [Aplicações Orientadas a Objetos](./2024/1/AOO/)                         |
+   | [Acessar conteúdo do 2º semestre](./2022/2/)  | [Ciência de Dados](./2024/1/CD/)                                         |
+   | [Acessar conteúdo do 3º semestre](./2023/1/)  | [Programação Para Banco De Dados](./2024/1/PPBD/)                        |
+   | [Acessar conteúdo do 4º semestre](./2023/2/)  | [Programação Visual](./2024/1/PV/)                                       |
+   | [Acessar conteúdo do 5º semestre](./2024/1/)  | [Projeto De Desenvolvimento De Aplicações multiplataforma](./2023/2/SO/) |
+   | Acessar conteúdo do 6º semestre               |                                                                          |
+   | Acessar conteúdo do 7º semestre               |                                                                          |
+   | Acessar conteúdo do 8º semestre               |                                                                          |
 
    <br><br>
 
