@@ -1,0 +1,10 @@
+## 5º SEMESTRE | 2024
+***
+
+## `MATÉRIA`:
+##### CIÊNCIA DE DADOS
+
+***
+
+## `PROFESSOR(A)`:
+##### SOLANGE KANSO EL GHAOURI
