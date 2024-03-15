@@ -22,7 +22,6 @@ public class Aluno {
 
     public void setNota1(float nota1) {
         this.nota1 = nota1;
-        calcMedia();
     }
 
     public float getNota2() {
@@ -31,7 +30,6 @@ public class Aluno {
 
     public void setNota2(float nota2) {
         this.nota2 = nota2;
-        calcMedia();
     }
 
     public float getMedia() {
@@ -50,16 +48,6 @@ public class Aluno {
         this.situacao = situacao;
     }
     
-    private void calcMedia(){
-        this.media = (this.nota1 + this.nota2) / 2;
-        
-        this.situacao = this.media < 6 ? "Reprovado" : "Aprovado";
-        
-        if(media >= 6){
-            situacao += ". <b>Parabéns! 😍</b>";
-        }else{
-            situacao += ", <i>quem sabe um 10 da proxima vez! ☹☹</i>";
-        }
-    }
+    
     
 }

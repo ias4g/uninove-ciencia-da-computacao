@@ -1,6 +1,5 @@
 package controller;
 
-import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -8,7 +7,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Aluno;
 
 @WebServlet(name = "Controle", urlPatterns = {"/Controle"})
 public class Controle extends HttpServlet {
@@ -16,17 +14,15 @@ public class Controle extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            Aluno a = new Aluno();
-            
-            a.setNome(request.getParameter("name"));
-            a.setNota1(Float.parseFloat(request.getParameter("n1")));
-            a.setNota2(Float.parseFloat(request.getParameter("n2")));
-            
-            request.setAttribute("return_student", a);
-            
-            RequestDispatcher disp = request.getRequestDispatcher("cadastro_resp.jsp");
-            disp.forward(request, response);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Controle</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Controle at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
