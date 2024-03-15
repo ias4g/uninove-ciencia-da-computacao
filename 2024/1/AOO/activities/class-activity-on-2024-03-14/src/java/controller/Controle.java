@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Aluno;
 
-@WebServlet(name = "Controle", urlPatterns = {"/Controle"})
+@WebServlet(name = "Controle", urlPatterns = {"/controller"})
 public class Controle extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
