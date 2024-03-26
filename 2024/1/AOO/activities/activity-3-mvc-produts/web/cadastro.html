@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Cadastro | Servlet</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class="bg-zinc-200">
+        <form action="Controle" method="POST" class="max-w-lg m-auto py-12 flex flex-col content-center items-center">
+            <h2 class="text-xl font-semibold leading-7 text-gray-900 uppercase">Formulário</h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600">Cadastre seu produto</p>
+
+            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                <div class="col-span-full">
+                    <label for="name" class="block text-sm font-medium leading-6 text-gray-900">
+                        Nome do produto
+                    </label>
+                    <div class="mt-2">
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        >
+                    </div>
+                </div>
+
+                <div class="col-span-full">
+                    <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Descrição</label>
+                    <div class="mt-2">
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="3"
+                            class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <div class="sm:col-span-3">
+                    <label for="category" class="block text-sm font-medium leading-6 text-gray-900">Categoria do produto</label>
+                    <div class="mt-2">
+                        <select id="category" name="category" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                            <option disabled selected>Selecione uma categoria</option>
+                            <option>Eletrônicos</option>
+                            <option>Automotivos</option>
+                            <option>Equipamentos</option>
+                            <option>Saude e Beleza</option>
+                            <option>Esporte e Fitness</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sm:col-span-3">
+                    <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Preço do produto</label>
+                    <div class="mt-2">
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="price"
+                            id="price"
+                            class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        >
+                    </div>
+                </div>
+
+                <div class="sm:col-span-2 sm:col-start-1">
+                    <label for="stock" class="block text-sm font-medium leading-6 text-gray-900">Estoque</label>
+                    <div class="mt-2">
+                        <input
+                            type="number"
+                            name="stock"
+                            id="stock"
+                            class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        >
+                    </div>
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label for="sku" class="block text-sm font-medium leading-6 text-gray-900">Sku</label>
+                    <div class="mt-2">
+                        <input
+                            type="text"
+                            name="sku" id="sku"
+                            class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        >
+                    </div>
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label for="supplier" class="block text-sm font-medium leading-6 text-gray-900">Fornecedor</label>
+                    <div class="mt-2">
+                        <input
+                            type="text"
+                            name="supplier"
+                            id="supplier"
+                            class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        >
+                    </div>
+                </div>
+
+                <div class="sm:col-span-3">
+                    <label for="imageUrl" class="block text-sm font-medium leading-6 text-gray-900">URL da imagem do produto</label>
+                    <div class="mt-2">
+                        <input
+                            type="url"
+                            name="imageUrl"
+                            id="imageUrl"
+                            placeholder="https://www.meusite.com/imagem"
+                            class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        >
+                    </div>
+                </div>
+
+                <div class="sm:col-span-3">
+                    <label for="expirationDate" class="block text-sm font-medium leading-6 text-gray-900">Data de vencimento</label>
+                    <div class="mt-2">
+                        <input
+                            id="expirationDate"
+                            name="expirationDate"
+                            type="date"
+                            class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        >
+                    </div>
+                </div>
+
+                <div class="col-span-full">
+                    <button
+                        type="submit"
+                        class="w-full rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                        Cadastrar
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+    </body>
+</html>
