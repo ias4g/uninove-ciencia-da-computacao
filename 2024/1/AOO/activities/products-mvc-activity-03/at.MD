@@ -732,5 +732,42 @@ public class Product {
 
 ```
 
+
+<br>
+<br>
+
 * Projeto compactado em .ZIP
 [Clique aqui](products-mvc-activity-03-final.zip)
+
+---
+
+<br>
+<br>
+
+* Tela inicial
+
+![alt text](image.png)
+
+---
+
+<br>
+<br>
+* Tela de cadastro
+
+![alt text](image-1.png)
+
+---
+
+<br>
+<br>
+* Tela de listagem
+
+![alt text](image-2.png)
+
+---
+
+<br>
+<br>
+* Tela de detalhes
+
+![alt text](image-3.png)
