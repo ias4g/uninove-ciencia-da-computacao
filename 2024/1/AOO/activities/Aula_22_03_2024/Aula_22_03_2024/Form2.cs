@@ -49,7 +49,7 @@ namespace Aula_22_03_2024
             foreach (var nota in notas)
             {
 
-                if(nota < m_number)
+                if (nota < m_number)
                 {
                     m_number = nota;
                 }
