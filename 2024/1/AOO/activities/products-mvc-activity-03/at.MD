@@ -752,6 +752,7 @@ public class Product {
 
 <br>
 <br>
+
 * Tela de cadastro
 
 ![alt text](image-1.png)
@@ -760,6 +761,7 @@ public class Product {
 
 <br>
 <br>
+
 * Tela de listagem
 
 ![alt text](image-2.png)
@@ -768,6 +770,7 @@ public class Product {
 
 <br>
 <br>
+
 * Tela de detalhes
 
 ![alt text](image-3.png)
