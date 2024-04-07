@@ -56,7 +56,7 @@
             this.btnCalcular.TabIndex = 14;
             this.btnCalcular.Text = "CALCULAR";
             this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
             // panel1
             // 
@@ -177,8 +177,8 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(360, 21);
             this.txtName.TabIndex = 23;
-            this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
-            this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
+            this.txtName.Enter += new System.EventHandler(this.TxtName_Enter);
+            this.txtName.Leave += new System.EventHandler(this.TxtName_Leave);
             // 
             // lbl1
             // 
@@ -216,7 +216,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CÁLCULO DE MÉDIA";
-            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

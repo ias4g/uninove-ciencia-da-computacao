@@ -4,52 +4,47 @@ using System.Windows.Forms;
 
 namespace Aula_22_03_2024
 {
-    public partial class frmBoletim : Form
+    public partial class FrmBoletim : Form
     {
 
-        private string _name;
-        private float _nota1;
-        private float _nota2;
-        private float _nota3;
-        private float _nota4;
+        private readonly string name;
+        private float nota1;
+        private float nota2;
+        private float nota3;
+        private float nota4;
 
         private string res;
 
-        public frmBoletim(string name, float n1, float n2, float n3, float n4)
+        public FrmBoletim(string name, float n1, float n2, float n3, float n4)
         {
             InitializeComponent();
 
-            this._name = name;
-            this._nota1 = n1;
-            this._nota2 = n2;
-            this._nota3 = n3;
-            this._nota4 = n4;
+            this.name = name;
+            this.nota1 = n1;
+            this.nota2 = n2;
+            this.nota3 = n3;
+            this.nota4 = n4;
 
-            showDatas();
+            ShowDatas();
         }
 
-        private void showDatas()
+        private void ShowDatas()
         {
-            lblName.Text = this._name.ToUpper();
-            lblCh.Text = _nota1.ToString("0.0");
-            lblCn.Text = _nota2.ToString("0.0");
-            lblMst.Text = _nota3.ToString("0.0");
-            lblLcst.Text = _nota4.ToString("0.0");
-
-
-            float media = 0.0f;
-
-            float m_number = 0.0f;
+            lblName.Text = this.name.ToUpper();
+            lblCh.Text = nota1.ToString("0.0");
+            lblCn.Text = nota2.ToString("0.0");
+            lblMst.Text = nota3.ToString("0.0");
+            lblLcst.Text = nota4.ToString("0.0");
 
             float soma = 0.0f;
 
             float[] notas = new float[4];
-            notas[0] = _nota1;
-            notas[1] = _nota2;
-            notas[2] = _nota3;
-            notas[3] = _nota4;
+            notas[0] = nota1;
+            notas[1] = nota2;
+            notas[2] = nota3;
+            notas[3] = nota4;
 
-            m_number = notas[0];
+            float m_number = notas[0];
 
             foreach (var nota in notas)
             {
@@ -62,8 +57,7 @@ namespace Aula_22_03_2024
                 soma += nota;
             }
 
-            media = (soma - m_number) / 3;
-
+            float media = (soma - m_number) / 3;
             lblNotaDescarte.Text = m_number.ToString("0.0");
 
             if (media < 6)
@@ -85,7 +79,7 @@ namespace Aula_22_03_2024
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            this.Text = "BOLETIM DE * " + this._name.ToUpper() + " * " + this.res.ToUpper();
+            this.Text = "BOLETIM " + this.res.ToUpper();
 
             lblBoletim.BackColor = Color.Transparent;
             lblName.BackColor = Color.Transparent;
