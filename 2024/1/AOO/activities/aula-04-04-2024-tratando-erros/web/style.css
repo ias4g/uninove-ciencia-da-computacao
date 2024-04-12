@@ -1,0 +1,9 @@
+body{
+    display: grid;
+    place-content: center;
+    background-color: #ccccff;
+}
+
+#reset{
+    margin-left: 24px;
+}

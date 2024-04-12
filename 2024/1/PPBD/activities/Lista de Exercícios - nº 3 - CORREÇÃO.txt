@@ -1,0 +1,149 @@
+Lista nº 3
+
+12.	Criar um bloco PL/SQL para selecionar na tabela FORNECEDOR, o código do fornecedor informado na tela.  Se o fornecedor existir, apresente seu código e nome, do contrário, apresente uma mensagem ‘Fornecedor não cadastrado’. Utilize para isso a estrutura EXCEPTION.
+
+DECLARE
+   v_for   fornecedor.n_fornec%type:=&v_for;
+   V_nome varchar2(30);
+BEGIN
+    Select nome into v_nome  from fornecedor WHERE n_fornec = v_for;
+    DBMS_OUTPUT.PUT_LINE('Fornecedor Consultado com sucesso');
+    DBMS_OUTPUT.PUT_LINE('Codigo fornec: ' || v_for);
+    DBMS_OUTPUT.PUT_LINE('Nome fornec: ' || v_nome);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+         DBMS_OUTPUT.PUT_LINE('Fornecedor não cadastrado!');
+END;
+
+------------------------------------
+
+13.	Fazer cálculo das parcelas da compra de um carro de acordo com a condição de pagamento escolhida. As condições são:
+
+	Parcelas para aquisição em 6 pagamentos
+	Parcelas para aquisição em 12 pagamentos
+	Parcelas para aquisição em 18 pagamentos
+Observação:
+a.	O valor da compra deverá ser informado em tempo de execução
+b.	O nº de parcelas que se deseja pagar deverá ser informado em tempo de execução
+c.	Deverá ser dada uma entrada de 20% do valor da compra
+d.	Deverá ser aplicada uma taxa de juros sobre o saldo restante, nas seguintes condições:
+•	Pagamento em 6 parcelas:  10%
+•	Pagamento em 12 parcelas: 15%
+•	Pagamento em 18 parcelas: 20%
+e.	No final, informar o valor da compra, o valor da entrada, o nº de parcelas escolhido para pagamento, além do valor da parcela.
+
+DECLARE
+	V_VLCOMPRA		NUMBER(8,2)		:=	&VALOR_COMPRA		;
+	V_NPARC			NUMBER(2)		:=	&NÚMERO_PARCELAS	;
+	V_VLENTR		NUMBER(8,2)						;
+	V_VLREST		NUMBER(8,2)						;
+	V_VLPARC		NUMBER(8,2)						;
+	V_PERC			NUMBER(3,2)						;
+	V_ERRO			EXCEPTION						;
+BEGIN
+	V_VLENTR := V_VLCOMPRA * 0.20							;
+	V_VLREST := V_VLCOMPRA - V_VLENTR						;
+	IF 	V_NPARC = 6 THEN
+		V_PERC := 1.10								;
+	ELSIF V_NPARC = 12 THEN
+		V_PERC := 1.15								;
+	ELSIF V_NPARC = 18 THEN
+		V_PERC := 1.20								;	
+	ELSE
+		RAISE V_ERRO								;
+	END IF										;	
+	V_VLPARC := (V_VLREST * V_PERC) / V_NPARC					;
+	DBMS_OUTPUT.PUT_LINE('VALOR DA COMPRA: ' || V_VLCOMPRA)				;
+	DBMS_OUTPUT.PUT_LINE('VALOR DA ENTRADA: ' || V_VLENTR)				;
+	DBMS_OUTPUT.PUT_LINE('SALDO RESTANTE: ' || V_VLREST)				;
+	DBMS_OUTPUT.PUT_LINE('QUANTIDADE DE PARCELAS: ' || V_NPARC)			;
+	DBMS_OUTPUT.PUT_LINE('VALOR DAS PARCELAS: ' || V_VLPARC)			;
+EXCEPTION
+	WHEN V_ERRO THEN
+		 DBMS_OUTPUT.PUT_LINE('NÚMERO DE PARCELAS INVÁLIDO!')			;
+END											;
+
+-------------------
+
+14.	O IMC – Índice de Massa Corporal é um critério da Organização Mundial de Saúde para dar uma indicação sobre a condição de peso de uma pessoa adulta. A fórmula é IMC = peso / (altura)2.
+Elabore um bloco PL/SQL que leia o peso e a altura de um adulto em tempo de execução e identifique em que condição ele se encontra, de acordo com a tabela abaixo.
+IMC em adultos	Condição
+< 18,5	Abaixo do peso
+>= 18,5 e < 25	Peso normal
+>= 25 e < 30	Acima do peso
+>= 30	Obeso
+No final, apresente seu peso, sua altura e sua condição.
+
+Atividade extra: Repita os exercícios nºs 13 e 14 utilizando a estrutura de decisão CASE.
+
+SOLUÇÃO 1:
+
+DECLARE
+	V_PESO 	NUMBER(5,2)	:= &PESO	;
+	V_ALT	NUMBER(3,2)	:= &ALTURA	;
+	V_IMC	NUMBER(5,2)				;
+	V_COND	VARCHAR(20)				;
+BEGIN
+	V_IMC := V_PESO / (V_ALT * V_ALT);
+	V_COND :=
+	CASE
+		WHEN V_IMC < 18.5 THEN 
+			'ABAIXO DO PESO'
+		WHEN V_IMC >= 18.5 AND V_IMC < 25 THEN
+			'PESO NORMAL'
+		WHEN V_IMC >= 25 AND V_IMC < 30 THEN
+			'ACIMA DO PESO'
+		ELSE
+			'OBESO'
+	END;
+	DBMS_OUTPUT.PUT_LINE('PESO INFORMADO: ' || V_PESO);
+	DBMS_OUTPUT.PUT_LINE('ALTURA INFORMADA: ' || V_ALT);
+	DBMS_OUTPUT.PUT_LINE('CONDIÇÃO ATUAL: ' || V_COND); 
+END;
+
+SOLUÇÃO 2:
+
+DECLARE
+	V_PESO 	NUMBER(5,2)	:= &PESO	;
+	V_ALT	NUMBER(3,2)	:= &ALTURA	;
+	V_IMC	NUMBER(5,2)				;
+	V_COND	VARCHAR(20)				;
+BEGIN
+	V_IMC := V_PESO / (V_ALT * V_ALT);
+	CASE
+		WHEN V_IMC < 18.5 THEN 
+			V_COND := 'ABAIXO DO PESO'	;
+		WHEN V_IMC >= 18.5 AND V_IMC < 25 THEN
+			V_COND := 'PESO NORMAL'		;
+		WHEN V_IMC >= 25 AND V_IMC < 30 THEN
+			V_COND := 'ACIMA DO PESO'	;
+		ELSE
+			V_COND := 'OBESO'			;
+	END CASE;
+	DBMS_OUTPUT.PUT_LINE('PESO INFORMADO: ' || V_PESO);
+	DBMS_OUTPUT.PUT_LINE('ALTURA INFORMADA: ' || V_ALT);
+	DBMS_OUTPUT.PUT_LINE('CONDIÇÃO ATUAL: ' || V_COND); 
+END;
+
+SOLUÇÃO 3:
+
+DECLARE
+	V_PESO 	NUMBER(5,2)	:= &PESO	;
+	V_ALT	NUMBER(3,2)	:= &ALTURA	;
+	V_IMC	NUMBER(5,2)				;
+	V_COND	VARCHAR(20)				;
+BEGIN
+	V_IMC := V_PESO / (V_ALT * V_ALT);
+	IF 	V_IMC < 18.5 	THEN 
+		V_COND := 'ABAIXO DO PESO'	;
+	ELSIF	V_IMC >= 18.5 AND V_IMC < 25 	THEN
+			V_COND := 'PESO NORMAL'		;
+	ELSIF   V_IMC >= 25 AND V_IMC < 30 		THEN
+			V_COND := 'ACIMA DO PESO'	;
+	ELSE
+			V_COND := 'OBESO'			;
+	END IF;
+	DBMS_OUTPUT.PUT_LINE('PESO INFORMADO: ' || V_PESO);
+	DBMS_OUTPUT.PUT_LINE('ALTURA INFORMADA: ' || V_ALT);
+	DBMS_OUTPUT.PUT_LINE('CONDIÇÃO ATUAL: ' || V_COND); 
+END;
