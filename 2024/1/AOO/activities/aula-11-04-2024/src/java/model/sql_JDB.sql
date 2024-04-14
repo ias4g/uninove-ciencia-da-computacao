@@ -9,6 +9,8 @@ CREATE TABLE CliFor (
     valorUltOper    float       NOT NULL
 );
 
+INSERT INTO CliFor
+
 
 /*
 CREATE TABLE HOTELAVAILABILITY
