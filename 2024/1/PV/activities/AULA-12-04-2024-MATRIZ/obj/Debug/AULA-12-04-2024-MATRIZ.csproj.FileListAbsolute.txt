@@ -1,0 +1,20 @@
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\bin\Debug\AULA-12-04-2024-MATRIZ.exe.config
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\bin\Debug\AULA-12-04-2024-MATRIZ.exe
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\bin\Debug\AULA-12-04-2024-MATRIZ.pdb
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.csproj.AssemblyReference.cache
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\obj\Debug\AULA_12_04_2024_MATRIZ.Form1.resources
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\obj\Debug\AULA_12_04_2024_MATRIZ.Properties.Resources.resources
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.csproj.GenerateResource.cache
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.csproj.CoreCompileInputs.cache
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.exe
+C:\Users\lab-mmd\Videos\PROG VISUAL-RA-922114939\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.pdb
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\bin\Debug\AULA-12-04-2024-MATRIZ.exe.config
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\bin\Debug\AULA-12-04-2024-MATRIZ.exe
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\bin\Debug\AULA-12-04-2024-MATRIZ.pdb
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.csproj.AssemblyReference.cache
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\obj\Debug\AULA_12_04_2024_MATRIZ.Form1.resources
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\obj\Debug\AULA_12_04_2024_MATRIZ.Properties.Resources.resources
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.csproj.GenerateResource.cache
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.csproj.CoreCompileInputs.cache
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.exe
+D:\www\repositories\uninove-ciencia-da-computacao\2024\1\PV\activities\AULA-12-04-2024-MATRIZ\obj\Debug\AULA-12-04-2024-MATRIZ.pdb
