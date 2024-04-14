@@ -6,18 +6,11 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-    // variáveis para a conexão
-    
-    // MYSQL:
-    //private final String driver = "com.mysql.jdbc.Driver";
-    //private final String url = "jdbc:mysql://localhost:3306/dbteste";
-    
-    // JAVA DB / DERBY:    
     private final String driver = "org.apache.derby.jdbc.ClientDriver";
-    private final String url = "jdbc:derby://localhost:1527/dbTeste";
+    private final String url = "jdbc:derby://localhost:1527/DB";
 
-    private final String usuario = "dbTeste";
-    private final String senha = "dbTeste";
+    private final String usuario = "db";
+    private final String senha = "123";
     private static ConnectionFactory connectionFactory = null;
 
     private ConnectionFactory() throws SQLException {
@@ -36,6 +29,7 @@ public class ConnectionFactory {
         try {
             conn = DriverManager.getConnection(url, usuario, senha);
         } catch (SQLException e) {
+            System.err.print(e.getMessage());
             throw new SQLException(String.valueOf(e.getMessage()));
         }
 
