@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.bean.Cliente;
 import utils.ConnectionFactory;
 
 // COM BASE EM ClienteDAO, fazer FornecedorDAO
