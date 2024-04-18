@@ -53,8 +53,8 @@
                             <h3 class="panel-title h1">Fornecedores Cadastrados - Java DB</h3>
                         </div>
                         <div style="float: right" >
-                            <a class="panel a" href="/___MVCExemploCRUD_Login/cadastrar_for.jsp"> Incluir </a>&nbsp;  
-                            <a class="panel a" href="/___MVCExemploCRUD_Login/pesquisar_for.html"> Pesquisar </a>  
+                            <a class="panel a" href="./cadastrar_for.jsp"> Incluir </a>&nbsp;  
+                            <a class="panel a" href="./pesquisar_for.html"> Pesquisar </a>  
                         </div>
                     </div>
                     <div class="panel-body">
@@ -98,7 +98,7 @@
                                 </tr>
                                 <%
                                     } // Fim do laço de repetição
-%>
+                                %>
                         </table>
                     </div>
                 </div>
