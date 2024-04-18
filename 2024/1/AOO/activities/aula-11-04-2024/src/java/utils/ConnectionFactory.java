@@ -6,11 +6,9 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-    private final String driver = "org.apache.derby.jdbc.ClientDriver";
-    private final String url = "jdbc:derby://localhost:1527/DB";
+    private final String driver = "org.sqlite.JDBC";
+    private final String url = "jdbc:sqlite:D:\\www\\repositories\\uninove-ciencia-da-computacao\\2024\\1\\AOO\\activities\\aula-11-04-2024\\src\\db\\db.db";
 
-    private final String usuario = "db";
-    private final String senha = "123";
     private static ConnectionFactory connectionFactory = null;
 
     private ConnectionFactory() throws SQLException {
@@ -27,9 +25,8 @@ public class ConnectionFactory {
         Connection conn = null;
 
         try {
-            conn = DriverManager.getConnection(url, usuario, senha);
+            conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
-            System.err.print(e.getMessage());
             throw new SQLException(String.valueOf(e.getMessage()));
         }
 

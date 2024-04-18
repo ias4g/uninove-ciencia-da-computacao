@@ -7,13 +7,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.File;
 import model.ClienteDAO;
 
 @WebServlet(name = "ControleCliente", urlPatterns = {"/ControleCliente"})
@@ -104,17 +102,6 @@ public class ControleCliente extends HttpServlet {
         }
 
         if (request.getParameter("acao").contains("listar_cli")) {
-
-            //String caminhoBancoDeDados;
-            //ServletContext servletContext = getServletContext();
-            //String caminhoSrc = servletContext.getRealPath("/src");
-            //File pastaSrc = new File(caminhoSrc);
-            //if (pastaSrc.exists() && pastaSrc.isDirectory()) {
-            //    caminhoBancoDeDados = "Caminho da pasta src: " + caminhoSrc;
-            //} else {
-            //    caminhoBancoDeDados = "A pasta src não foi encontrada.";
-            //}
-            
             try {
                 ClienteDAO dao = new ClienteDAO();
                 List clientes = dao.listar();

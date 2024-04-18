@@ -18,14 +18,6 @@ public class UserDAO {
         Connection conn = null;
 
         try {
-            //String driver = "jdbc:sqlite:E:\\Meu Drive\\Classroom\\5º SEMESTRE - TURMA 24\\APLICACOES ORIENTADAS A OBJETOS TURMA 24 - MM\\activities\\products-mvc-activity-03\\src\\sample.db";
-
-            //Class.forName("org.sqlite.JDBC");
-            //conn = DriverManager.getConnection(driver);
-            // Obtém o caminho do diretório raiz do projeto
-            //String rootPath = System.getProperty("user.dir");
-            // Monta o caminho completo para o banco de dados
-            //String dbPath = rootPath + File.separator + "db" + File.separator + "sample.db";
             String driver = "jdbc:sqlite:C:\\apache-tomcat\\bin\\bd\\sample.db";
 
             System.out.println("Caminho root: " + driver);

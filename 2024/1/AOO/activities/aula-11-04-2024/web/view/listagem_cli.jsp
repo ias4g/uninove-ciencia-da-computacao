@@ -53,8 +53,8 @@
                             <h3 class="panel-title h1">Clientes Cadastrados - Java DB</h3>
                         </div>
                         <div style="float: right" >
-                            <a class="panel a" href="/___MVCExemploCRUD_Login_JavaDB/cadastrar_cli.jsp"> Incluir </a>&nbsp;  
-                            <a class="panel a" href="/___MVCExemploCRUD_Login_JavaDB/pesquisar_cli.html"> Pesquisar </a>  
+                            <a class="panel a" href="./cadastrar_cli.jsp"> Incluir </a>&nbsp;  
+                            <a class="panel a" href="./pesquisar_cli.html"> Pesquisar </a>  
                         </div>
                     </div>
                     <div class="panel-body">
