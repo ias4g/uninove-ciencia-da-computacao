@@ -11,73 +11,79 @@
 
 ![alt text](image.png)
 
-Partes relevantes relacionadas aos controles `cbBd` e `mtxtCpf`:
+Fluxo para acrescentar o campo CPF tanto no visual do programa, como no banco de dados.
 
-1. **cbBd (ComboBox)**:
-   - `cbBd` parece ser um controle ComboBox que permite selecionar o banco de dados onde os dados do cliente serão gravados.
-   - No método `FrmCliente()`, o índice 0 é selecionado por padrão, presumivelmente indicando uma opção padrão ou vazia.
-   - No método `BtnGravar_Click`, é verificado se `cbBd.SelectedIndex` é diferente de 0 para determinar se um banco de dados foi selecionado.
+1. Adicionando a `Label | CPF` e a `Maskedtextbox | CPF` no `Form`
+    
+    * Label `label4`
 
-2. **mtxtCpf (MaskedTextBox)**:
-   - `mtxtCpf` é um controle MaskedTextBox usado para entrada formatada de números de CPF (Cadastro de Pessoa Física).
-   - No método `TsbIncluir_Click`, `mtxtCpf` é habilitado para entrada quando um novo cliente está sendo incluído.
-   - No método `Limpar()`, o conteúdo de `mtxtCpf` é limpo.
-   - No método `BtnGravar_Click`, é verificado se `mtxtCpf.Text` está vazio para garantir que o campo CPF seja preenchido antes de gravar os dados do cliente.
-
----
-
-<br>
-<br>
-
-Parte do `else` do método `BtnGravar_Click`. 
-
-No código, o bloco `else` é acionado quando todas as condições anteriores para validar os campos de entrada não são atendidas, o que significa que os campos foram preenchidos corretamente. Aqui está uma análise do que acontece dentro do bloco `else`:
-
-1. **Instância de Cadastro**:
-   - Uma instância da classe `Cadastro` é criada com base nos dados inseridos nos campos de entrada (`txtNome`, `mtxtPhone` e `mtxtCpf`).
-
-2. **Gravação dos Dados**:
-   - O código verifica qual banco de dados foi selecionado no `ComboBox` (`cbBd`) usando `cbBd.SelectedIndex`.
-   - Se o banco de dados selecionado for o índice 1, presume-se que seja o SQL Server, e o método `GravarWithSQL()` é chamado na instância de `Cadastro` para gravar os dados do cliente no SQL Server.
-   - Se o banco de dados selecionado for o índice 2, presume-se que seja SQLite, e o método `GravarWithSQLite()` é chamado na instância de `Cadastro` para gravar os dados do cliente no SQLite.
-
-3. **Limpeza e Atualização da Interface**:
-   - Após a gravação bem-sucedida dos dados do cliente, os campos de entrada são limpos chamando o método `Limpar()`.
-   - O grupo de opções (`grbOpcoes`) é ocultado.
-   - Os campos de entrada (`txtNome`, `mtxtPhone` e `mtxtCpf`) são desabilitados.
-   - O `ComboBox` é resetado para o índice 0, presumivelmente para selecionar a opção padrão ou vazia.
-
-4. **Tratamento de Exceções**:
-   - Qualquer exceção que ocorra durante a gravação dos dados é capturada no bloco `catch` e uma mensagem de erro é exibida em uma caixa de diálogo.
-
-5. **Cursor do Mouse**:
-   - Durante o processo de gravação, o cursor do mouse é alterado para um cursor de espera (`WaitCursor`) para indicar que a operação está em andamento. Após a conclusão da operação, o cursor é restaurado para o padrão (`DefaultCursor`).
+      ```C#
+        // 
+        // label4
+        // 
+        this.label4.AutoSize = true;
+        this.label4.Location = new System.Drawing.Point(7, 116);
+        this.label4.Name = "label4";
+        this.label4.Size = new System.Drawing.Size(27, 13);
+        this.label4.TabIndex = 7;
+        this.label4.Text = "CPF";
+      ```
+    * Maskedtextbox `mtxtCpf`
+    
+      ```C#
+        // 
+        // mtxtCpf
+        // 
+        this.mtxtCpf.Enabled = false;
+        this.mtxtCpf.Location = new System.Drawing.Point(84, 113);
+        this.mtxtCpf.Mask = "000\\.000\\.000-00";
+        this.mtxtCpf.Name = "mtxtCpf";
+        this.mtxtCpf.Size = new System.Drawing.Size(349, 20);
+        this.mtxtCpf.TabIndex = 3;
+      ```
 
 ---
 
 <br>
+
+2. Alterando a tabela `tb_Client` no bando de dados para acresncentar a coluna `CPF`.
+3. Alterando na `class Cadastro`
+
+    `public string PessoaCpf { get; set; }`
+
+    public const string strINSERT = "INSERT INTO tb_Client (PessoaId, PessoaNome, PessoaTelefone, `PessoaCpf`) " +
+    "VALUES(@PessoaId, @PessoaNome, @PessoaTelefone, @PessoaCpf); ";
+
+    * No metodo `public void GravarWithSQLite()` da `class Cadastro`
+
+      `oCmd.Parameters.AddWithValue("@PessoaCpf", PessoaCpf);`
+
+---
+
 <br>
 
-O método `GravarWithSQLite()` é responsável por gravar os dados de um cliente em um banco de dados SQLite. Aqui está uma descrição detalhada do que o método faz:
+4. No formulário Cliente `public partial class FrmCliente : Form`
 
-1. **Construção da String de Conexão**:
-   - A string de conexão para o banco de dados SQLite é construída usando `Path.Combine` para formar o caminho completo do arquivo de banco de dados. Este caminho é baseado no diretório base do domínio de aplicativo (`AppDomain.CurrentDomain.BaseDirectory`), combinado com a pasta "database" e o nome do arquivo SQLite ("db.sqlite").
+    * No metodo `TsbIncluir_Clic`
 
-2. **Bloco Try-Catch**:
-   - O código está envolto em um bloco `try-catch` para capturar e tratar exceções que possam ocorrer durante o processo de gravação no banco de dados SQLite.
+      `this.mtxtCpf.Enabled = true;`
 
-3. **Conexão com o Banco de Dados**:
-   - Uma conexão `SQLiteConnection` é criada usando a string de conexão construída anteriormente.
+    * No metodo `Limpar()`
 
-4. **Comando SQL e Parâmetros**:
-   - Um comando SQL (`SQLiteCommand`) é criado, com o comando de inserção (`strINSERT`) e a conexão SQLite associada.
-   - Parâmetros são adicionados ao comando para inserir os dados do cliente (`PessoaNome`, `PessoaTelefone`, `PessoaCpf`) e `PessoaId`, que é gerado anteriormente com o método `GenerateFormattedUuid()`.
+      `this.mtxtCpf.Clear();`
 
-5. **Abertura da Conexão e Execução do Comando**:
-   - A conexão é aberta.
-   - O comando é executado usando `ExecuteNonQuery()` para inserir os dados na tabela do banco de dados.
-   - A conexão é fechada para liberar recursos.
+    * No metodo `BtnGravar_Click`
 
-6. **Tratamento de Exceções**:
-   - Se ocorrer uma exceção do tipo `SqlException` (provavelmente devido a erros de sintaxe SQL ou problemas de conexão), ela é relançada encapsulada em uma exceção do tipo `ArgumentException`.
-   - Qualquer outra exceção genérica é capturada no bloco `catch (Exception ex)` e também relançada encapsulada em uma exceção do tipo `ArgumentException`.
+      ```c#
+        else if (String.IsNullOrEmpty(this.mtxtCpf.Text))
+        {
+          MessageBox.Show("Favor, preencha o campo CPF", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          this.mtxtPhone.Focus();
+          return;
+        }
+      ```
+    * No metodo `BtnCancelar_Click`
+
+      `this.mtxtPhone.Enabled = false;`
+
+---
