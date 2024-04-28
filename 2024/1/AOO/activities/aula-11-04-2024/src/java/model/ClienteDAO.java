@@ -35,7 +35,7 @@ public class ClienteDAO {
             psI.setFloat(4, c.getValorUltimaVenda());
             psI.execute();
             conexao.close();
-            return "Registro incluído com sucesso!";
+            return "Cliente incluído com sucesso!";
         } catch (SQLException e) {
             return e.getMessage();
         }
@@ -79,7 +79,7 @@ public class ClienteDAO {
         } catch (SQLException e) {
             return e.getMessage();
         }
-        return "Registro excluído com sucesso!";
+        return "Cliente excluído com sucesso!";
     }
 
     public String alterar(Cliente p) {
@@ -98,7 +98,7 @@ public class ClienteDAO {
         } catch (SQLException e) {
             return e.getMessage();
         }
-        return "Registro alterado com sucesso!";
+        return "Cliente alterado com sucesso!";
     }
 
     public List<Cliente> pesquisar(Cliente p) throws SQLException {

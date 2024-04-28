@@ -46,7 +46,7 @@
         <div class="container col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title h1">Edição do Registro</h3>
+                    <h3 class="panel-title h1">Edição do Registro de Fornecedores</h3>
                 </div>
                 <div class="panel-body">
                     <form name="form_mvc" class="form-horizontal" action="ControleFornecedor" method="post">

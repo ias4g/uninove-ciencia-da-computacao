@@ -32,7 +32,7 @@ public class FornecedorDAO {
             psI.setFloat(4, fornecedor.getValorUltimaCompra());
             psI.execute();
             conexao.close();
-            return "Registro incluído com sucesso!";
+            return "Fornecedor incluído com sucesso!";
         } catch (SQLException e) {
             return e.getMessage();
         }
@@ -75,7 +75,7 @@ public class FornecedorDAO {
         } catch (SQLException e) {
             return e.getMessage();
         }
-        return "Registro excluído com sucesso!";
+        return "Fornecedor excluído com sucesso!";
 
     }
 
@@ -95,7 +95,7 @@ public class FornecedorDAO {
         } catch (SQLException e) {
             return e.getMessage();
         }
-        return "Registro alterado com sucesso!";
+        return "Fornecedor alterado com sucesso!";
     }
 
     public List<Fornecedor> pesquisar(Fornecedor f) throws SQLException {

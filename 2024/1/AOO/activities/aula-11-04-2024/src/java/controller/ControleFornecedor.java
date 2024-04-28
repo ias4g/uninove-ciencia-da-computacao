@@ -107,7 +107,7 @@ public class ControleFornecedor extends HttpServlet {
                 List fornecedores = dao.listar();
                 if (fornecedores.isEmpty()) {
                     request.setAttribute("mensagem", "Não há registros para serem exibidos!");
-                    RequestDispatcher redireciona = request.getRequestDispatcher("cadastrar_for.jsp");
+                    RequestDispatcher redireciona = request.getRequestDispatcher("/cadastrar_for.jsp");
                     redireciona.forward(request, response);
                 } else {
                     request.setAttribute("listaFornecedores", fornecedores);

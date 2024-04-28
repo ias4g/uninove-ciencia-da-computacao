@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <title>CRUD MVC - Cadastro - Java DB</title>
         <meta charset="utf-8">
@@ -43,7 +43,7 @@
         <div class="container col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title h1">Novo Cadastro</h3>
+                    <h3 class="panel-title h1">Novo Cadastro de Cliente</h3>
                 </div>
                 <div class="panel-body">
                     <form name="form_mvc" class="form-horizontal" action="ControleCliente" method="post">
@@ -66,7 +66,7 @@
                                     <input type="number" class="form-control" id="inputValor" name="valor" value="" >
                                 </div>
                             </div>
-                           
+
                             <div class="form-group">
                                 <div class="col-lg-6 col-lg-offset-2">
                                     <button type="submit" name="acao" class="btn btn-warning" value="cadastrar_cli">Cadastrar</button>
