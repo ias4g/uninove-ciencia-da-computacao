@@ -67,7 +67,7 @@ Fluxo para acrescentar o campo CPF tanto no visual do programa, como no banco de
     `public string PessoaCpf { get; set; }`
     ```c#
     public const string strINSERT = "INSERT INTO tb_Client (PessoaId, PessoaNome, PessoaTelefone, `PessoaCpf`) " +
-        "VALUES(@PessoaId, @PessoaNome, @PessoaTelefone, @PessoaCpf); ";
+        "VALUES(@PessoaId, @PessoaNome, @PessoaTelefone, @PessoaCpf);";
     ```
     
 
