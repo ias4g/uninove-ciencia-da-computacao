@@ -1,13 +1,13 @@
 # 2024-04-26 - Atividade Presencial 
+<br>
 
 | PROF | ALUNO | RA |
 |----------|----------|----------|
 | ANTONIO ANDRADE   | IZAEL SILVA   | 922114939   |
 
 
-## Acrescentar campo CPF no formulário de cliente e fazer todo processo até a gravação no Banco de Dados.
+### Acrescentar campo CPF no formulário de cliente e fazer todo processo até a gravação no Banco de Dados.
 
-<br>
 
 ![alt text](image.png)
 
@@ -43,8 +43,6 @@ Fluxo para acrescentar o campo CPF tanto no visual do programa, como no banco de
       ```
 
 ---
-
-<br>
 
 2. Alterando a tabela `tb_Client` no bando de dados para acresncentar a coluna `CPF`.
 
