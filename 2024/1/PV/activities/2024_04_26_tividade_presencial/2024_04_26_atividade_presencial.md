@@ -62,7 +62,6 @@ Fluxo para acrescentar o campo CPF tanto no visual do programa, como no banco de
 
 ---
 
-<br>
 3. Alterando na `class Cadastro`
 
     `public string PessoaCpf { get; set; }`
@@ -75,8 +74,6 @@ Fluxo para acrescentar o campo CPF tanto no visual do programa, como no banco de
       `oCmd.Parameters.AddWithValue("@PessoaCpf", PessoaCpf);`
 
 ---
-
-<br>
 
 4. No formulário Cliente `public partial class FrmCliente : Form`
 
