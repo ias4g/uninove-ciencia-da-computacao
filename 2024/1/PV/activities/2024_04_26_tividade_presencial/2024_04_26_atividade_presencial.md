@@ -47,6 +47,22 @@ Fluxo para acrescentar o campo CPF tanto no visual do programa, como no banco de
 <br>
 
 2. Alterando a tabela `tb_Client` no bando de dados para acresncentar a coluna `CPF`.
+
+    ![alt text](image-1.png)
+  
+    * No banco de dado `SQLServer`
+
+      ```SQL
+      ALTER TABLE tb_Client ADD PessoaCpf VARCHAR(14);
+      ```
+    * No banco de dado `SQLite`
+      ```sql
+      ALTER TABLE tb_client ADD PessoaCpf TEXT;
+      ```
+
+---
+
+<br>
 3. Alterando na `class Cadastro`
 
     `public string PessoaCpf { get; set; }`
@@ -85,5 +101,3 @@ Fluxo para acrescentar o campo CPF tanto no visual do programa, como no banco de
     * No metodo `BtnCancelar_Click`
 
       `this.mtxtPhone.Enabled = false;`
-
----
