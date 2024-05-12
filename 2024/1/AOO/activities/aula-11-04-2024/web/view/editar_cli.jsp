@@ -75,6 +75,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="inputEmail" class="col-lg-2 control-label">E-mail</label>
+                                <div class="col-lg-10">
+                                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Digite seu email" value="<%=c.getEmail()%>">
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="inputValor" class="col-lg-2 control-label">Valor Última Venda</label>
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="inputValor" name="valor" value="<%=c.getValorUltimaVenda()%>" >
