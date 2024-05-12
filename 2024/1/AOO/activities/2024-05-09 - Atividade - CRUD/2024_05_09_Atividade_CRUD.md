@@ -76,21 +76,28 @@ Na classe `Pessoa.java` do pacote `model.bean` adicionei o bloco de código abai
         ```
 ## Fornecedor
 * No pacote `model`
+
   * Na classe `FornecedorDAO` adicionei os código:
+
     * No metodo `inserir()`
+
       * > String sql = "INSERT INTO CliFor (nome, telefone, `email`, tipo, valorUltOper) VALUES (?, ?, ?, ?, ?)";
+      
       * ```java
         psI.setString(3, fornecedor.getEmail());
         ```
     * No metodo `editar()`
+
         * ```java
           fornecedor.setEmail(rs.getString("email"));
           ```
     * No metodo `alterar()`
+
       * ```java
         psA.setString(3, fornecedor.getEmail());
         ```
     * No metodo `Listar()`
+
       * ```java
         fornecedor.setEmail(rs.getString("email"));
         ```
