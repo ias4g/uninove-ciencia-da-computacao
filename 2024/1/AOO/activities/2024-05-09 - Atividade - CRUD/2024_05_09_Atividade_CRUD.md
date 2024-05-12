@@ -55,6 +55,13 @@ Na classe `Pessoa.java` do pacote `model.bean` adicionei o bloco de código abai
 ```
 
 ## Cliente
+* No pacote `controller`
+
+  * Na classe `ControleCliente.java`
+
+    * Quando a ação é **cadastrar_cli** `if (request.getParameter("acao").contains("cadastrar_cli"))...`
+
+
 * No pacote `model`
 
   * Na classe `ClienteDAO()` adicionei os código:
@@ -76,7 +83,7 @@ Na classe `Pessoa.java` do pacote `model.bean` adicionei o bloco de código abai
         psA.setString(3, p.getEmail());
         ```
     * No metodo `Listar()`
-    
+
       * ```java
         cliente.setEmail(rs.getString("email"));
         ```
