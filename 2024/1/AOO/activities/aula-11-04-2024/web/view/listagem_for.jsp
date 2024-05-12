@@ -63,6 +63,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
+                                    <th>Tipo</th>
                                     <th>Telefone</th>
                                     <th>E-mail</th>
                                     <th>Valor Última Venda</th>
@@ -85,6 +86,7 @@
                                 <tr>
                                     <td><%=forn.getId()%></td>
                                     <td><%=forn.getNome()%></td>
+                                    <td><%=forn.getTipo()%></td>
                                     <td><%=forn.getTelefone()%></td>
                                     <th><%=forn.getEmail()%></th>
                                     <td><%=forn.getValorUltimaCompra()%></td>
