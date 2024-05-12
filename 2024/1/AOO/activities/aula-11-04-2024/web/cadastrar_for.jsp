@@ -61,6 +61,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="inputEmail" class="col-lg-2 control-label">E-mail</label>
+                                <div class="col-lg-10">
+                                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Digite seu email" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="inputValor" class="col-lg-2 control-label">Valor Última Venda</label>
                                 <div class="col-lg-10">
                                     <input type="number" class="form-control" id="inputValor" name="valor" value="" >
