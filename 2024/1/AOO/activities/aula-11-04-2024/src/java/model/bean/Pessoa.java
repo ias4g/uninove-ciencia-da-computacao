@@ -5,6 +5,7 @@ public class Pessoa {
     private int id;
     private String nome;
     private String telefone;
+    private String email;
 
     public Pessoa() {
     }
@@ -31,5 +32,13 @@ public class Pessoa {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
