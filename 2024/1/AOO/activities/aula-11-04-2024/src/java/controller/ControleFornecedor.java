@@ -25,6 +25,7 @@ public class ControleFornecedor extends HttpServlet {
             Fornecedor f = new Fornecedor();
             f.setNome(request.getParameter("nome"));
             f.setTelefone(request.getParameter("telefone"));
+            f.setEmail(request.getParameter("email"));
             f.setValorUltimaCompra(Float.parseFloat(request.getParameter("valor")));
             // TODO - Continuar codigicação para fornecedores...
             try {
@@ -129,6 +130,7 @@ public class ControleFornecedor extends HttpServlet {
                 f.setId(Integer.parseInt(request.getParameter("id")));
                 f.setNome(request.getParameter("nome"));
                 f.setTelefone(request.getParameter("telefone"));
+                f.setEmail(request.getParameter("email"));
                 f.setValorUltimaCompra(Float.parseFloat(request.getParameter("valor")));
                 // TODO - Continuar codigicação para fornecedores...
                 FornecedorDAO dao = new FornecedorDAO();
