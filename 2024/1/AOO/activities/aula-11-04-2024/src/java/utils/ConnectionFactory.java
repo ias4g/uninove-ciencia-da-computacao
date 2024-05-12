@@ -1,13 +1,17 @@
 package utils;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
 
+    String projectDir = System.getProperty("user.dir");
+    String dbPath = projectDir + File.separator + "bd" + File.separator + "db.db";
+
     private final String driver = "org.sqlite.JDBC";
-    private final String url = "jdbc:sqlite:D:\\www\\repositories\\uninove-ciencia-da-computacao\\2024\\1\\AOO\\activities\\aula-11-04-2024\\src\\db\\db.db";
+    private final String url = "jdbc:sqlite:" + dbPath;
 
     private static ConnectionFactory connectionFactory = null;
 
