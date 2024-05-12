@@ -54,14 +54,12 @@ Na classe `Pessoa.java` do pacote `model.bean` adicionei o bloco de código abai
 
 ```
 
-## Cliente
-No metodo `inserir()` da classe `ClienteDAO()` adicionei os código:
+* ## Cliente
+  * Na classe `ClienteDAO()` adicionei os código:
+    * No metodo `inserir()`
+      * > String sql = "INSERT INTO CliFor (nome, telefone, `email`, tipo, valorUltOper) VALUES (?, ?, ?, ?, ?) ";
 
-  > String sql = "INSERT INTO CliFor (nome, telefone, `email`, tipo, valorUltOper) VALUES (?, ?, ?, ?, ?) ";
-
-```java
-  psI.setString(3, c.getEmail());
-```
+      * ```java psI.setString(3, c.getEmail()); ```
 <br>
 
 No metodo `editar()`
@@ -80,5 +78,15 @@ No metodo `Listar()`
 ```java
   cliente.setEmail(rs.getString("email"));
 ```
+
+- Pasta Principal
+  - Subpasta 1
+    - Subpasta 1.1
+    - Subpasta 1.2
+  - Subpasta 2
+    - Subpasta 2.1
+    - Subpasta 2.2
+  - Subpasta 3
+
 
 ## Fornecedor
