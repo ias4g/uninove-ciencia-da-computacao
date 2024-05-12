@@ -64,6 +64,7 @@
                                     <th>ID</th>
                                     <th>Nome</th>
                                     <th>Telefone</th>
+                                    <th>E-mail</th>
                                     <th>Valor Última Venda</th>
                                     <th>Editar</th>
                                     <th>Excluir</th>
@@ -85,6 +86,7 @@
                                     <td><%=forn.getId()%></td>
                                     <td><%=forn.getNome()%></td>
                                     <td><%=forn.getTelefone()%></td>
+                                    <th><%=forn.getEmail()%></th>
                                     <td><%=forn.getValorUltimaCompra()%></td>
                                     <%
                                         if (usuario == null) {
