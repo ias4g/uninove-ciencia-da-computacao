@@ -25,17 +25,18 @@ public class ClienteDAO {
 
     public String inserir(Cliente c) throws SQLException {
         String sql = "INSERT INTO CliFor "
-                + "(nome, telefone, tipo, valorUltOper) "
-                + "VALUES (?, ?, ?, ?) ";
+                + "(nome, telefone, email, tipo, valorUltOper) "
+                + "VALUES (?, ?, ?, ?, ?) ";
         try {
             PreparedStatement psI = conexao.prepareStatement(sql);
             psI.setString(1, c.getNome());
             psI.setString(2, c.getTelefone());
-            psI.setString(3, c.getTipo());
-            psI.setFloat(4, c.getValorUltimaVenda());
+            psI.setString(3, c.getEmail());
+            psI.setString(4, c.getTipo());
+            psI.setFloat(5, c.getValorUltimaVenda());
             psI.execute();
             conexao.close();
-            return "Cliente incluído com sucesso!";
+            return "Cliente '<b>" + c.getNome() + "</b>' incluído com sucesso!";
         } catch (SQLException e) {
             return e.getMessage();
         }
@@ -58,6 +59,7 @@ public class ClienteDAO {
             c.setId(rs.getInt("id"));
             c.setNome(rs.getString("nome"));
             c.setTelefone(rs.getString("telefone"));
+            c.setEmail(rs.getString("email"));
             c.setTipo(rs.getString("tipo"));
             c.setValorUltimaVenda(rs.getFloat("valorUltOper"));
 
@@ -84,21 +86,22 @@ public class ClienteDAO {
 
     public String alterar(Cliente p) {
         String sql = "UPDATE CliFor SET "
-                + "nome = ?, telefone = ?, tipo = ?, valorUltOper = ? "
+                + "nome = ?, telefone = ?, email = ?, tipo = ?, valorUltOper = ? "
                 + "WHERE id = ?";
         try {
             PreparedStatement psA = conexao.prepareStatement(sql);
             psA.setString(1, p.getNome());
             psA.setString(2, p.getTelefone());
-            psA.setString(3, p.getTipo());
-            psA.setFloat(4, p.getValorUltimaVenda());
-            psA.setInt(5, p.getId());
+            psA.setString(3, p.getEmail());
+            psA.setString(4, p.getTipo());
+            psA.setFloat(5, p.getValorUltimaVenda());
+            psA.setInt(6, p.getId());
             psA.executeUpdate();
             conexao.close();
         } catch (SQLException e) {
             return e.getMessage();
         }
-        return "Cliente alterado com sucesso!";
+        return "Cliente '<b>" + p.getNome() + "</b>' alterado com sucesso!";
     }
 
     public List<Cliente> pesquisar(Cliente p) throws SQLException {
@@ -128,6 +131,7 @@ public class ClienteDAO {
                 cliente.setId(rs.getInt("id"));
                 cliente.setNome(rs.getString("nome"));
                 cliente.setTelefone(rs.getString("telefone"));
+                cliente.setEmail(rs.getString("email"));
                 cliente.setTipo(rs.getString("tipo"));
                 cliente.setValorUltimaVenda(rs.getFloat("valorUltOper"));
 
