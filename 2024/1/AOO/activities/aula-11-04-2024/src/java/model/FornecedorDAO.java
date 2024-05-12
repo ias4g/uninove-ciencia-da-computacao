@@ -22,17 +22,18 @@ public class FornecedorDAO {
 
     public String inserir(Fornecedor fornecedor) throws SQLException {
         String sql = "INSERT INTO CliFor "
-                + "(nome, telefone, tipo, valorUltOper) "
-                + "VALUES (?, ?, ?, ?) ";
+                + "(nome, telefone, email, tipo, valorUltOper) "
+                + "VALUES (?, ?, ?, ?, ?) ";
         try {
             PreparedStatement psI = conexao.prepareStatement(sql);
             psI.setString(1, fornecedor.getNome());
             psI.setString(2, fornecedor.getTelefone());
-            psI.setString(3, fornecedor.getTipo());
-            psI.setFloat(4, fornecedor.getValorUltimaCompra());
+            psI.setString(3, fornecedor.getEmail());
+            psI.setString(4, fornecedor.getTipo());
+            psI.setFloat(5, fornecedor.getValorUltimaCompra());
             psI.execute();
             conexao.close();
-            return "Fornecedor incluído com sucesso!";
+            return "Fornecedor '<b>" + fornecedor.getNome() + "</b>' incluído com sucesso!";
         } catch (SQLException e) {
             return e.getMessage();
         }
@@ -54,6 +55,7 @@ public class FornecedorDAO {
             fornecedor.setId(rs.getInt("id"));
             fornecedor.setNome(rs.getString("nome"));
             fornecedor.setTelefone(rs.getString("telefone"));
+            fornecedor.setEmail(rs.getString("email"));
             fornecedor.setTipo(rs.getString("tipo"));
             fornecedor.setValorUltimaCompra(rs.getFloat("valorUltOper"));
 
@@ -81,21 +83,22 @@ public class FornecedorDAO {
 
     public String alterar(Fornecedor fornecedor) {
         String sql = "UPDATE CliFor SET "
-                + "nome = ?, telefone = ?, tipo = ?, valorUltOper = ? "
+                + "nome = ?, telefone = ?, email = ?, tipo = ?, valorUltOper = ? "
                 + "WHERE id = ?;";
         try {
             PreparedStatement psA = conexao.prepareStatement(sql);
             psA.setString(1, fornecedor.getNome());
             psA.setString(2, fornecedor.getTelefone());
-            psA.setString(3, fornecedor.getTipo());
-            psA.setFloat(4, fornecedor.getValorUltimaCompra());
-            psA.setInt(5, fornecedor.getId());
+            psA.setString(3, fornecedor.getEmail());
+            psA.setString(4, fornecedor.getTipo());
+            psA.setFloat(5, fornecedor.getValorUltimaCompra());
+            psA.setInt(6, fornecedor.getId());
             psA.executeUpdate();
             conexao.close();
         } catch (SQLException e) {
             return e.getMessage();
         }
-        return "Fornecedor alterado com sucesso!";
+        return "Fornecedor '<b>" + fornecedor.getNome() + "</b>' alterado com sucesso!";
     }
 
     public List<Fornecedor> pesquisar(Fornecedor f) throws SQLException {
@@ -125,6 +128,7 @@ public class FornecedorDAO {
                 fornecedor.setId(rs.getInt("id"));
                 fornecedor.setNome(rs.getString("nome"));
                 fornecedor.setTelefone(rs.getString("telefone"));
+                fornecedor.setEmail(rs.getString("email"));
                 fornecedor.setTipo(rs.getString("tipo"));
                 fornecedor.setValorUltimaCompra(rs.getFloat("valorUltOper"));
 
