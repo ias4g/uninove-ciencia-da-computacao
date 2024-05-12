@@ -7,12 +7,16 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.InputStream;
 import model.ClienteDAO;
+import utils.ConnectionFactory;
 
 @WebServlet(name = "ControleCliente", urlPatterns = {"/ControleCliente"})
 public class ControleCliente extends HttpServlet {
@@ -25,6 +29,7 @@ public class ControleCliente extends HttpServlet {
             Cliente c = new Cliente();
             c.setNome(request.getParameter("nome"));
             c.setTelefone(request.getParameter("telefone"));
+            c.setEmail(request.getParameter("email"));
             c.setValorUltimaVenda(Float.parseFloat(request.getParameter("valor")));
 
             try {
@@ -129,6 +134,7 @@ public class ControleCliente extends HttpServlet {
                 c.setId(Integer.parseInt(request.getParameter("id")));
                 c.setNome(request.getParameter("nome"));
                 c.setTelefone(request.getParameter("telefone"));
+                c.setEmail(request.getParameter("email"));
                 c.setValorUltimaVenda(Float.parseFloat(request.getParameter("valor")));
                 ClienteDAO dao = new ClienteDAO();
                 String mensagem = dao.alterar(c);
