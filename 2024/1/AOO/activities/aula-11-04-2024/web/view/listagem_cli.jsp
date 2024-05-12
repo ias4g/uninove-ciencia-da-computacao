@@ -63,6 +63,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
+                                    <th>Tipo</th>
                                     <th>Telefone</th>
                                     <th>E-mail</th>
                                     <th>Valor Última Venda</th>
@@ -85,6 +86,7 @@
                                 <tr>
                                     <td><%=c.getId()%></td>
                                     <td><%=c.getNome()%></td>
+                                    <td><%=c.getTipo()%></td>
                                     <td><%=c.getTelefone()%></td>
                                     <td><%=c.getEmail()%></td>
                                     <td><%=c.getValorUltimaVenda()%></td>
