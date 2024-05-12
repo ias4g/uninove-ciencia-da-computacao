@@ -55,41 +55,42 @@ Na classe `Pessoa.java` do pacote `model.bean` adicionei o bloco de código abai
 ```
 
 ## Cliente
-* Na classe `ClienteDAO()` adicionei os código:
-
-  * No metodo `inserir()`
-
-    * > String sql = "INSERT INTO CliFor (nome, telefone, `email`, tipo, valorUltOper) VALUES (?, ?, ?, ?, ?) ";
-
-    * ```java psI.setString(3, c.getEmail()); ```
-    
-<br>
-
-No metodo `editar()`
-```java
-  psI.setString(3, c.getEmail());
-```
-<br>
-
-No metodo `alterar()`
-```java
-  psA.setString(3, p.getEmail());
-```
-<br>
-
-No metodo `Listar()`
-```java
-  cliente.setEmail(rs.getString("email"));
-```
-
-- Pasta Principal
-  - Subpasta 1
-    - Subpasta 1.1
-    - Subpasta 1.2
-  - Subpasta 2
-    - Subpasta 2.1
-    - Subpasta 2.2
-  - Subpasta 3
-
-
+* No pacote `model`
+  * Na classe `ClienteDAO()` adicionei os código:
+    * No metodo `inserir()`
+      * > String sql = "INSERT INTO CliFor (nome, telefone, `email`, tipo, valorUltOper) VALUES (?, ?, ?, ?, ?) ";
+      * ```java
+        psI.setString(3, c.getEmail());
+        ```
+    * No metodo `editar()`
+        * ```java
+          psI.setString(3, c.getEmail());
+          ```
+    * No metodo `alterar()`
+      * ```java
+        psA.setString(3, p.getEmail());
+        ```
+    * No metodo `Listar()`
+      * ```java
+        cliente.setEmail(rs.getString("email"));
+        ```
 ## Fornecedor
+* No pacote `model`
+  * Na classe `FornecedorDAO` adicionei os código:
+    * No metodo `inserir()`
+      * > String sql = "INSERT INTO CliFor (nome, telefone, `email`, tipo, valorUltOper) VALUES (?, ?, ?, ?, ?)";
+      * ```java
+        psI.setString(3, fornecedor.getEmail());
+        ```
+    * No metodo `editar()`
+        * ```java
+          fornecedor.setEmail(rs.getString("email"));
+          ```
+    * No metodo `alterar()`
+      * ```java
+        psA.setString(3, fornecedor.getEmail());
+        ```
+    * No metodo `Listar()`
+      * ```java
+        fornecedor.setEmail(rs.getString("email"));
+        ```
