@@ -1,0 +1,185 @@
+Lista nº 5
+
+18.	Criar um bloco PL-SQL para ler o empregado numero 7369, cuja característica das colunas deverá ser a mesma definida na tabela EMP.
+•	Calcular o novo salário que deverá ter um aumento de 8% sobre o salário atual.
+•	Posteriormente, deverá ser mostrado o nome, cargo e o novo salário calculado.
+Observação: Deverá ser usado registro com a opção ROWTYPE. 
+
+DECLARE
+    v_reg EMP%ROWTYPE;
+    v_novoSal EMP.SAL%TYPE;
+BEGIN
+    SELECT *
+    INTO v_reg
+    FROM EMP
+    WHERE EMPNO = &CODIGO;
+ 
+    v_novoSal := v_reg.SAL * 1.08;
+    DBMS_OUTPUT.PUT_LINE('Nome: ' || v_reg.ENAME);
+    DBMS_OUTPUT.PUT_LINE('Cargo: ' || v_reg.JOB);
+    DBMS_OUTPUT.PUT_LINE('Salário Anterior: ' || v_reg.SAL);
+    DBMS_OUTPUT.PUT_LINE('Salário Reajustado: ' || v_novoSal);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Empregado não encontrado.');
+END;
+
+------------------------------------
+
+19.	Criar um bloco PL/SQL para selecionar na tabela FORNECEDOR o fornecedor informado na tela em tempo de execução e controlar no programa as seguintes situações:
+
+•	Caso não encontre registro o bloco deve ir para o EXCEPTION apresentando mensagem de registro não encontrado.
+•	Caso encontre o registro, verificar a quantidade de estrelas para este fornecedor e:
+	Se for igual a 5, apresentar um EXCEPTION definido no programa como E_ForaEscopo com a mensagem ‘Fornecedor fora do escopo – Estrela = 5’. Para isso, utilize a opção RAISE.
+	Para os demais valores de ESTRELA, apresentar a mensagem: ‘'Fornecedor dentro parametro pesquisa – Estrela = x’.
+
+DECLARE
+    v_reg FORNECEDOR%ROWTYPE;
+    e_foraEscopo EXCEPTION;
+BEGIN
+    SELECT *
+    INTO v_reg
+    FROM FORNECEDOR
+    WHERE N_FORNEC = &CODIGO;
+ 
+    IF v_reg.ESTRELA = 5 THEN
+        RAISE e_foraEscopo;
+    END IF;
+ 
+    DBMS_OUTPUT.PUT_LINE('Fornecedor dentro parâmetro pesquisa - Estrela = ' || v_reg.ESTRELA);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Fornecedor não encontrado.');
+    WHEN e_foraEscopo THEN
+        DBMS_OUTPUT.PUT_LINE('Fornecedor fora do escopo - Estrela = 5');
+END;
+
+-----------------------------------
+
+20.	Criar um bloco PL/SQL para selecionar da tabela LANC os lançamentos de 106 a 114 que estejam com os valores negativos, mostrando na tela em seguida, utilizando os comandos OPEN, FETCH e CLOSE. 
+
+DECLARE
+	CURSOR C_LANC IS SELECT DT_LANC, N_CONTA, VALOR 
+	FROM LANC WHERE N_LANC BETWEEN 106 AND 114 AND VALOR < 0;
+	V_REG	C_LANC%ROWTYPE	;
+BEGIN
+	OPEN C_LANC	;
+	FETCH C_LANC INTO V_REG	;
+	WHILE C_LANC%FOUND LOOP
+		DBMS_OUTPUT.PUT_LINE('Nº CONTA: ' || V_REG.N_CONTA || ' / VALOR: ' || V_REG.VALOR);
+		FETCH C_LANC INTO V_REG	;
+	END LOOP;
+	CLOSE C_LANC;	
+END;
+
+-- OU
+
+DECLARE
+	CURSOR C_LANC IS SELECT DT_LANC, N_CONTA, VALOR 
+	FROM LANC WHERE N_LANC BETWEEN 106 AND 114 AND VALOR < 0;
+	V_DT	LANC.DT_LANC%TYPE;
+	V_CONTA	LANC.N_CONTA%TYPE;
+	V_VALOR LANC.VALOR%TYPE;
+BEGIN
+	OPEN C_LANC	;
+	FETCH C_LANC INTO V_DT, V_CONTA, V_VALOR	;
+	WHILE C_LANC%FOUND LOOP
+		DBMS_OUTPUT.PUT_LINE('Nº CONTA: ' || V_CONTA || ' / VALOR: ' || V_VALOR);
+		FETCH C_LANC INTO V_DT, V_CONTA, V_VALOR	;
+	END LOOP;
+	CLOSE C_LANC;	
+END;
+
+-- OU
+
+DECLARE
+ 	CURSOR C_LANC IS SELECT N_CONTA, VALOR 
+	FROM LANC WHERE N_LANC BETWEEN 106 AND 114 AND VALOR < 0;
+ 	v_lanc C_LANC%ROWTYPE;
+BEGIN
+ 	OPEN C_LANC;
+ 	LOOP
+		FETCH C_LANC INTO v_lanc;
+		EXIT WHEN C_LANC%NOTFOUND;
+		DBMS_OUTPUT.PUT_LINE('Código do lançamento: ' || v_lanc.N_CONTA);
+		DBMS_OUTPUT.PUT_LINE('Valor: ' || v_lanc.VALOR);
+ 	END LOOP;
+ 	CLOSE C_LANC;
+END;
+
+-----------------------------------
+
+21.	Repita o exercício anterior utilizando a estrutura FOR com LOOP e CURSOR com REGISTRO.
+
+
+DECLARE
+	CURSOR C_LANC IS SELECT * FROM LANC WHERE N_LANC BETWEEN 106 AND 114 AND VALOR < 0;
+BEGIN
+	FOR R_LANC IN C_LANC LOOP
+		DBMS_OUTPUT.PUT_LINE('Nº LANC = ' || R_LANC.N_LANC || ' / VALOR NEGATIVO = ' || R_LANC.VALOR);
+	END LOOP;
+END;
+
+----------------------------------------
+	
+ 
+22.	Criar um bloco PL/SQL para incluir registros na tabela TITULO para todos os clientes cadastrados na tabela CLIENTE cujo status seja ATIVO. 
+
+Para cada parcela existente na tabela CLIENTE, 1 registro de título deverá ser inserido na tabela TITULO, ou seja, se o cliente escolheu pagar em 5 parcelas, faça uma rotina que insira 5 novos registros na tabela TITULO, de acordo com as condições abaixo:
+•	CODIGO = CODIGO DO CLIENTE
+
+•	NUMERO DO TITULO = SEQUENCIAL A PARTÍR DE 1, PARA CADA CLIENTE SELECIONADO (Para isso, crie uma sequência)
+
+•	VALOR DO TITULO = VALOR DA VENDA DIVIDIDO PELO NÚMERO DE PARCELAS
+
+•	VALOR DOS JUROS = 0
+
+•	VALOR DOS DESCONTOS = 0
+
+•	VALOR PAGO = 0
+
+•	DATA DE EMISSÃO = EMISSÃO DA NOTA FISCAL DO CLIENTE
+
+•	DATA DE VENCTO = DEVERÁ SER DE 30 EM 30 DIAS A PARTIR DA EMISSÃO PARA CADA TÍTULO
+
+•	DATA DE PAGAMENTO = NULO
+
+Observações: Deverá ser utilizado CURSOR com registro ou com variáveis
+
+Criar sequência: CREATE SEQUENCE S_CLI INCREMENT BY 1 START WITH 1
+
+
+DECLARE
+    CURSOR c_cliente IS 
+	SELECT CODIGO, PARCELA, VALOR_NOTA, EMISSAO_NOTA
+        FROM CLIENTE
+        WHERE STATUS = 'A';
+ 
+    v_reg c_cliente%ROWTYPE;
+    v_parc NUMBER(2);
+    v_valTit TITULO.VALOR_TITULO%TYPE;
+    v_venc DATE;
+BEGIN
+    OPEN c_cliente;
+    FETCH c_cliente INTO v_reg;
+ 
+    WHILE c_cliente%FOUND LOOP
+        v_parc := 0;
+        v_valTit := v_reg.valor_nota / v_reg.PARCELA;
+        v_venc := v_reg.emissao_nota;
+ 
+        WHILE v_parc < v_reg.PARCELA LOOP
+            v_venc := v_venc + 30;
+            INSERT INTO TITULO
+            VALUES(seq_numtit.NEXTVAL, v_reg.CODIGO, v_valTit, 0, 0, 0, v_reg.EMISSAO_NOTA,v_venc, NULL);
+            v_parc := v_parc + 1;
+        END LOOP;          
+        FETCH c_cliente INTO v_reg;           
+    END LOOP;     
+    CLOSE c_cliente;    
+    IF V_PARC IS NOT NULL THEN
+        DBMS_OUTPUT.PUT_LINE('REGISTROS INSERIDOS COM SUCESSO!');
+    ELSE
+       DBMS_OUTPUT.PUT_LINE('NÃO FORAM ENCONTRADOS CLIENTES!'); 
+    END IF;
+END;
