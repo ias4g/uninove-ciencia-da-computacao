@@ -1,0 +1,92 @@
+Lista nº 7
+
+Atenção: Executar os comandos abaixo antes de fazer os exercícios
+
+CREATE TABLE ALUNO
+( RA NUMBER(4) PRIMARY KEY, N1 NUMBER(3,1), N2 NUMBER(3,1),
+  N3 NUMBER(3,1));
+
+INSERT INTO ALUNO VALUES (1001,7,4,7);
+INSERT INTO ALUNO VALUES (1002, 6, 4, 8);
+INSERT INTO ALUNO VALUES (1003, 5, 2, 7);
+INSERT INTO ALUNO VALUES (1004, 8, 9, 10);
+INSERT INTO ALUNO VALUES (1005, 3, 8, 2); 
+
+
+ 
+28.	Criar uma função que deverá receber o RA de um determinado aluno e retornar se 
+o aluno está “APROVADO” ou “REPROVADO”.
+
+As condições para isso são:
+
+•	A MÉDIA DEVE SER CALCULADA A PARTIR DA SOMA DAS 3 NOTAS (N1 +N2 + N3)
+
+•	SE MEDIA < 6.0 => REPROVADO
+
+•	SENÃO => APROVADO
+
+-------------------------------------
+ 
+CREATE OR REPLACE FUNCTION APR_REP
+(
+ V_RA	ALUNO.RA%TYPE	
+)
+RETURN VARCHAR2
+IS
+	V_REG 		ALUNO%ROWTYPE	;
+	V_MEDIA		NUMBER(4,2)		;
+	V_RESULT	VARCHAR2(15)		;
+BEGIN
+	SELECT 	*
+	INTO 	V_REG
+	FROM 	ALUNO
+	WHERE 	RA = V_RA			;
+	V_MEDIA := (V_REG.N1 + V_REG.N2 + V_REG.N3) / 3	;
+	IF  V_MEDIA < 6 THEN
+		V_RESULT := 'REPROVADO'		;
+	ELSE
+		V_RESULT := 'APROVADO'		;
+	END IF							;
+	RETURN V_RESULT					;	
+END APR_REP;	
+
+-- UTILIZANDO A FUNÇÃO
+
+SELECT RA, APR_REP(RA) AS STATUS FROM ALUNO
+ 
+ 
+29.	Repita o exercício anterior alterando a regra para considerar apenas as 
+duas maiores notas para cálculo da média.
+ 
+CREATE OR REPLACE FUNCTION APR_REP
+(
+  V_RA	ALUNO.RA%TYPE
+)
+RETURN	VARCHAR2
+IS
+	V_REG		ALUNO%ROWTYPE		;
+	V_MEDIA		NUMBER(4,2)			;
+	V_RESULT	VARCHAR2(15)			;
+BEGIN
+	SELECT	*
+	INTO	V_REG
+	FROM 	ALUNO
+	WHERE	RA = V_RA				;
+	IF (V_REG.N1 > V_REG.N2) AND (V_REG.N2 > V_REG.N3) 	THEN
+		V_MEDIA := (V_REG.N1 + V_REG.N2) / 2	;
+	ELSIF (V_REG.N2 > V_REG.N3) AND (V_REG.N3 > V_REG.N1) THEN
+		V_MEDIA := (V_REG.N2 + V_REG.N3) / 2	;	
+	ELSE
+		V_MEDIA := (V_REG.N1 + V_REG.N3) / 2	;
+	END IF;	
+	IF 	V_MEDIA < 6 THEN
+		V_RESULT := 'REPROVADO'	;
+	ELSE
+		V_RESULT := 'APROVADO'	;
+	END IF;	
+	RETURN V_RESULT				;
+END APR_REP;
+
+-- UTILIZANDO A FUNÇÃO
+
+SELECT RA, APR_REP(RA) FROM ALUNO
