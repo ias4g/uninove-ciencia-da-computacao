@@ -1,0 +1,148 @@
+Lista nº 4
+
+15.	Inserir dados na tabela LANC utilizando a estrutura de repetição WHILE.
+
+Criar um bloco PL/SQL para inserir na tabela de lançamentos (LANC), 10 registros de lançamentos de depósitos no valor de R$ 100,00, sendo:
+•	Campo N_LANC (nº lançamento) - preencher começando com o valor 120 e sendo incrementado de 1 em 1, até atingir o máximo necessário para inclusão dos 10 registros. 
+•	Campo N_CONTA (nº conta) – deve ser 4
+•	Campo DT_LANC (data de lançamento) – data do dia
+•	Campo HISTORICO – ‘crédito de cesta básica’.
+
+No final, apresentar a quantidade de lançamentos incluídos.
+
+DECLARE
+	V_AUX		NUMBER(2)			:= 0	;
+	V_NLANC		LANC.N_LANC%TYPE	:= 120	;
+	V_NCONTA	LANC.N_CONTA%TYPE	:= 4	;
+	V_HISTOR	LANC.HISTORICO%TYPE	:= 'crédito de cesta básica';
+	V_VALOR		LANC.VALOR%TYPE		:= 100	;
+BEGIN
+	WHILE V_AUX < 10 LOOP
+		INSERT INTO LANC
+		(N_LANC, N_CONTA, DT_LANC, VALOR, HISTORICO)
+		VALUES
+		(V_NLANC, V_NCONTA, SYSDATE, V_VALOR, V_HISTOR)	;
+		V_AUX := V_AUX + 1								;
+		V_NLANC := V_NLANC + 1							;
+	END LOOP;	
+	DBMS_OUTPUT.PUT_LINE('DADOS INSERIDOS COM SUCESSO!');
+	DBMS_OUTPUT.PUT_LINE('NÚMERO DE LANÇAMENTOS = ' || V_AUX);
+END;
+
+------------------------------------------------------
+
+16.	Inserir dados na tabela LANC utilizando a estrutura de repetição LOOP.
+
+Criar um bloco PL/SQL para inserir na tabela de lançamentos (LANC), 10 registros de lançamentos de depósitos no valor de R$ 180,00, sendo:
+•	Campo N_LANC (nº lançamento) - preencher começando com o valor 150 e sendo incrementado de 1 em 1, até atingir o máximo necessário para inclusão dos 10 registros. 
+•	Campo N_CONTA (nº conta) – deve ser 2
+•	Campo DT_LANC (data de lançamento) – data do dia
+•	Campo HISTORICO – ‘depósito em conta corrente’
+
+No final, apresentar a quantidade de lançamentos incluídos.
+
+DECLARE
+	V_AUX NUMBER(2) := 0;
+	V_N_LANC LANC.N_LANC%TYPE := 150;
+	V_N_CONTA LANC.N_CONTA%TYPE := 2;
+	V_HISTORICO LANC.HISTORICO%TYPE := 'depósito em conta corrente';
+	V_VALOR LANC.VALOR%TYPE:= 180;
+BEGIN
+    LOOP
+		INSERT INTO LANC
+		(N_LANC, N_CONTA, DT_LANC, VALOR, HISTORICO)
+		VALUES
+		(V_N_LANC, V_N_CONTA, SYSDATE, V_VALOR,  V_HISTORICO);
+         V_AUX := V_AUX + 1;  
+         V_N_LANC := V_N_LANC + 1 ;
+         IF V_AUX = 10 THEN
+            EXIT;
+         END IF;   
+ 	END LOOP;
+	DBMS_OUTPUT.PUT_LINE('Dados Inseridos com Sucesso');
+	DBMS_OUTPUT.PUT_LINE('Numero de vezes que o programa foi executado: ' || V_AUX);
+END;
+
+------------------------------------------------------
+
+17.	Criar um bloco PL/SQL para localizar um registro de cliente na tabela CLIENTE e a partir daí, gerar registros de parcelas de pagamentos na tabela TITULO.
+
+O código do cliente deverá ser informado em tempo de execução e, existindo o cliente, checar o valor de suas vendas para gerar as parcelas na tabela TITULO, de acordo com as regras abaixo:
+
+•	Se as vendas forem até 6000.00, gerar 10 registros de parcelas correspondentes a 10 pagamentos.
+•	Se as vendas estiverem entre 6000.00 e 7000.00 (inclusive), gerar 15 registros de parcelas correspondentes a 15 pagamentos.
+•	Acima de 7000.00, gerar 20 registros de parcelas correspondentes a 20 pagamentos.
+
+Informações a serem alimentadas na tabela TITULO, quando da inserção das parcelas acima mencionadas:
+TABELA TITULO:
+Nome                          Tipo
+------------------------------ -------------
+NUM_TITULO              NUMBER(5)    
+CODIGO                     NUMBER(5)
+VALOR_TITULO          NUMBER(11,2)
+VALOR_JUROS           NUMBER(11,2)
+VALOR_DESC             NUMBER(11,2)
+VALOR_PAGO             NUMBER(11,2)
+DT_EMISSAO              DATE
+DT_VENC                    DATE
+DT_PAGTO                  DATE
+
+INFORMAÇÕES:
+
+•	NUM_TITULO: Seqüencial a partir de 1
+•	CODIGO: Código do cliente informado
+•	VALOR_TITULO: Valor da venda dividido pelo número de parcelas
+•	VALOR_JUROS = 0
+•	VALOR_DESC = 0
+•	VALOR_PAGO = 0  
+•	DT_EMISSAO = sysdate
+•	DT_VENC = 30 em 30 dias, após a data de emissão corrente para cada parcela
+•	DT_PAGTO = null
+
+No final, apresentar na tela o código do cliente, o valor de cada parcela e a data de vencimento da última parcela.
+Obs: 1. Administrar erro caso o cliente não exista.
+2. Criar uma sequência para alimentar o campo NUM_TITULO, conforme comando abaixo:
+CREATE SEQUENCE seq_numtit INCREMENT BY 1 START WITH 1;
+
+
+DECLARE
+	V_COD		CLIENTE.CODIGO%TYPE	:=	&CODIGO								;
+	V_VENDA		CLIENTE.VENDA%TYPE										;
+	V_PARC		CLIENTE.PARCELA%TYPE										;
+	V_DTVENC	DATE												;
+	V_VALTIT	TITULO.VALOR_TITULO%TYPE									;
+	V_CONT		NUMBER(2)	:= 1										;
+	V_DIAS		NUMBER(4)	:= 0										;
+	V_TOTREG	NUMBER(2)											;
+BEGIN
+	SELECT	CODIGO,		VENDA,		PARCELA
+	INTO	V_COD,		V_VENDA,	V_PARC
+	FROM	CLIENTE
+	WHERE	CODIGO = V_COD												;
+	V_VALTIT := V_VENDA / V_PARC											;
+	IF	V_VENDA < 6000 THEN
+		V_TOTREG := 10												;
+	ELSIF 	V_VENDA BETWEEN 6000 AND 7000	THEN
+		V_TOTREG := 15												;
+	ELSE
+		V_TOTREG := 20												;	
+	END IF														;	
+	WHILE	V_CONT	<= V_TOTREG		LOOP	
+		V_DIAS := V_DIAS + 30											;
+		V_DTVENC :=	SYSDATE + V_DIAS									;
+		INSERT INTO TITULO
+		(NUM_TITULO, CODIGO, VALOR_TITULO, VALOR_JUROS, VALOR_DESC, VALOR_PAGO, DT_EMISSAO, DT_VENC, DT_PAGTO)
+		VALUES
+		(S_NUMTIT.NEXTVAL, V_COD, V_VALTIT, 0, 0, 0, SYSDATE, V_DTVENC, NULL)					;
+		V_CONT := V_CONT + 1											;
+	END LOOP													;	
+	DBMS_OUTPUT.PUT_LINE('REGISTROS INSERIDOS COM SUCESSO!')	;
+	DBMS_OUTPUT.PUT_LINE('CÓDIGO DO CLIENTE: ' || V_COD)		;
+	DBMS_OUTPUT.PUT_LINE('VALOR DAS PARCELAS: ' || V_VALTIT)	;
+	DBMS_OUTPUT.PUT_LINE('DATA VENC ÚLTIMA PARCELA: ' || V_DTVENC)	;
+EXCEPTION
+	WHEN	NO_DATA_FOUND	THEN
+		DBMS_OUTPUT.PUT_LINE('CLIENTE NÃO CADASTRADO!')	;
+END;
+
+-------------------------------------
