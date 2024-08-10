@@ -13,16 +13,16 @@
 
    <br><br>
 
-   | ⬇ Acesso aos conteúdos do semestre ⬇ | ⬇ Acesso direto às disciplinas atuais ⬇                                           |
-   |-----------------------------------------------|--------------------------------------------------------------------------|
-   | [Acessar conteúdo do 1º semestre](./2022/1/)  | [Aplicações Orientadas a Objetos](./2024/1/AOO/)                         |
-   | [Acessar conteúdo do 2º semestre](./2022/2/)  | [Ciência de Dados](./2024/1/CD/)                                         |
-   | [Acessar conteúdo do 3º semestre](./2023/1/)  | [Programação Para Banco De Dados](./2024/1/PPBD/)                        |
-   | [Acessar conteúdo do 4º semestre](./2023/2/)  | [Programação Visual](./2024/1/PV/)                                       |
-   | [Acessar conteúdo do 5º semestre](./2024/1/)  | [Projeto De Desenvolvimento De Aplicações multiplataforma](./2023/2/SO/) |
-   | Acessar conteúdo do 6º semestre               |                                                                          |
-   | Acessar conteúdo do 7º semestre               |                                                                          |
-   | Acessar conteúdo do 8º semestre               |                                                                          |
+   | ⬇ Acesso aos conteúdos do semestre ⬇ | ⬇ Acesso direto às disciplinas atuais ⬇                                                    |
+   |-----------------------------------------------|-----------------------------------------------------------------------------------|
+   | [Acessar conteúdo do 1º semestre](./2022/1/)  | [Estruturas De Dados](./2024/2/estrutura-de-dados/)                               |
+   | [Acessar conteúdo do 2º semestre](./2022/2/)  | [Linguagens Formais e Automatos](./2024/2/linguagens-formais-e-automatos/)        |
+   | [Acessar conteúdo do 3º semestre](./2023/1/)  | [Montadores e Compiladores](./2024/2/montadores-e-compiladores/)                  |
+   | [Acessar conteúdo do 4º semestre](./2023/2/)  | [Projeto Em Computação Aplicada](./2024/2/projeto-em-computacao-aplicada/)        |
+   | [Acessar conteúdo do 5º semestre](./2024/1/)  | [Sistemas Distribuídos](./2024/2/sistemas-distribuídos/)                          |
+   | [Acessar conteúdo do 6º semestre](./2024/2/)  | [Teoria dos Grafos e Complexidades](./2024/2/teoria-dos-grafos-e-complexidade/)   |
+   | Acessar conteúdo do 7º semestre               |                                                                                   |
+   | Acessar conteúdo do 8º semestre               |                                                                                   |
 
    <br><br>
 
