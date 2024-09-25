@@ -1,6 +1,6 @@
 # 4 - Autômato - Hello World
 
-<table>
+<table >
   <tr>
     <td colspan="2" align="center">Única célula em cima</td>
   </tr>
@@ -9,3 +9,8 @@
     <td align="center">Célula 2 embaixo</td>
   </tr>
 </table>
+
+|               Única célula em cima              |
+|:-----------------------------------------------:|
+| Célula 1 embaixo | Célula 2 embaixo              |
+
