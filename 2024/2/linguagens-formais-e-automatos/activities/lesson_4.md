@@ -1,6 +1,6 @@
 # 4 - Autômato - Hello World
 
-<table >
+<table>
   <tr>
     <td colspan="2" align="center">Única célula em cima</td>
   </tr>
@@ -11,7 +11,7 @@
 </table>
 
 | DISCIPLINA  | Única célula em cima    |
-|:------------|------------------------:|
+|-------------|-------------------------|
 | PROFESSOR   | ROLFI CINTAS GOMES LUZ  |
 | ALUNO       | IZAEL ALVES DA SILVA    |
 
