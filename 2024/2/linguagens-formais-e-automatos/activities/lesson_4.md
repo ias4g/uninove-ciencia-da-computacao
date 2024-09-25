@@ -10,8 +10,8 @@
   </tr>
 </table>
 
-| DISCIPLINA  | Única célula em cima    |
-|-------------|-------------------------|
-| PROFESSOR   | ROLFI CINTAS GOMES LUZ  |
-| ALUNO       | IZAEL ALVES DA SILVA    |
+| DISCIPLINA  | LINGUAGENS FORMAIS E AUTOMATOS - TURMA 30 - MM  |
+|-------------|-------------------------------------------------|
+| PROFESSOR   | ROLFI CINTAS GOMES LUZ                          |
+| ALUNO       | IZAEL ALVES DA SILVA                            |
 
