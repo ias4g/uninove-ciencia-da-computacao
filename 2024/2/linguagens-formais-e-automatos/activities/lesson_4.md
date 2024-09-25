@@ -10,7 +10,8 @@
   </tr>
 </table>
 
-|               Única célula em cima              |
-|:-----------------------------------------------:|
-| Célula 1 embaixo | Célula 2 embaixo              |
+| DISCIPLINA  | Única célula em cima    |
+|:------------|------------------------:|
+| PROFESSOR   | ROLFI CINTAS GOMES LUZ  |
+| ALUNO       | IZAEL ALVES DA SILVA    |
 
