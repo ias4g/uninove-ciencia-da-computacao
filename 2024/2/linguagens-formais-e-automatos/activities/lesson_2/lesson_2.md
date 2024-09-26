@@ -36,7 +36,7 @@
 
 Resposta:
 
-```
+```prolog
 estudante(N, I, R, C).
 estudante(alex, I, R, C).
 cursa(N, bda, M) , estudante(N, I, R, C)
