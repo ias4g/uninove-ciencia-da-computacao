@@ -7,7 +7,7 @@
 #### Avaliação 1 - Teoria dos Grafos e Complexidade | Mútipla Escolha
 
 | RA          | 922114939               |
-| ----------- | ----------------------- |
+|:----------- |:----------------------- |
 | NOME        | IZAEL ALVES DA SILVA    |
 | CURSO       | CIÊNCIA DA COMPUTAÇÃO   |
 | SÉRIE/TURMA | 06/30                   |
