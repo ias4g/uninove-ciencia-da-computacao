@@ -76,3 +76,13 @@
 
 **Alternativa correta**:
 <blockquote color="green">Computadores com arquiteturas diferentes não podem ser analisados pela mesma relação custo por desempenho.</blockquote>
+
+<br>
+<br>
+
+---
+
+<p align="center">
+    © 2024 | Feito com 💟 por
+    <a href="https://www.linkedin.com/in/izaelsilva" target="_blank">Silva, Izael A.</a>
+</p>
