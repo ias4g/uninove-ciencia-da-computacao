@@ -16,11 +16,11 @@
 
 ### QUESTÃO 1 DE 5
 > Qual era o critério utilizado na escolha de um sistema computacional nas décadas de 1950 e 1960?
-- [ ] _Todos os computadores possuíam o mesmo valor, independente da configuração e do fabricante._
-- [ ] _Utilizavam o conceito de Economia em Escala, que ocorre quando o custo médio de produção fica mais barato à medida que aumenta a quantidade de produtos produzidos._
-- [ ] _Utilizavam o critério da Economia Financeira, adquirindo máquinas com menor capacidade._
-- [x] **Como o computador era uma ciência nova, os fabricantes concediam as máquinas para que as empresas fizessem primeiramente os testes e, se satisfeitos, poderiam comprá-las pelo seu valor de mercado.**
-- [ ] _Buscavam comprar sempre do mesmo fabricante, a fim de obter melhores preços._
+- [ ] Todos os computadores possuíam o mesmo valor, independente da configuração e do fabricante.
+- [ ] Utilizavam o conceito de Economia em Escala, que ocorre quando o custo médio de produção fica mais barato à medida que aumenta a quantidade de produtos produzidos.
+- [ ] Utilizavam o critério da Economia Financeira, adquirindo máquinas com menor capacidade.
+- [x] **_Como o computador era uma ciência nova, os fabricantes concediam as máquinas para que as empresas fizessem primeiramente os testes e, se satisfeitos, poderiam comprá-las pelo seu valor de mercado._**
+- [ ] Buscavam comprar sempre do mesmo fabricante, a fim de obter melhores preços.
 
 
 ### QUESTÃO 2 DE 5
@@ -29,7 +29,7 @@
 - [ ] Transistor.
 - [ ] Interface Gráfica com o Usuário.
 - [ ] Redes de Computadores.
-- [x] ***Multiprogramação***.
+- [x] **_Multiprogramação_**.
 
 
 ### QUESTÃO 3 DE 5
