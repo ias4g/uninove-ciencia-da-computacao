@@ -51,7 +51,7 @@
 - [ ] I. não tem solução II. é o Teorema de Euler que diz que um grafo não conexo é euleriano se e somente se todo vértice tem grau par, ou dois vértices de grau impar e os demais pares. III. Teriam que ser ou derrubadas algumas pontes ou serem construído novas. Por exemplo, poderiam ser derrubadas uma de cada ponte dupla e a entre as duas ilhas. Outra solução seria ligar a segunda ilha também com duas pontes com cada margem.
 
 **Alternativa correta**:
-<blockquote color="green">não tem solução II. é o Teorema de Euler que diz que um grafo conexo é euleriano se e somente se todo vértice tem grau par, ou dois vértices de grau impar e os demais pares. III. Teriam que ser derrubadas algumas pontes ou serem construído novas. Por exemplo, poderiam ser derrubadas uma de cada ponte dupla e a entre as duas ilhas. Outra solução seria ligar a segunda ilha também com duas pontes com cada margem.</blockquote>
+<blockquote color="green">I. não tem solução II. é o Teorema de Euler que diz que um grafo conexo é euleriano se e somente se todo vértice tem grau par, ou dois vértices de grau impar e os demais pares. III. Teriam que ser derrubadas algumas pontes ou serem construído novas. Por exemplo, poderiam ser derrubadas uma de cada ponte dupla e a entre as duas ilhas. Outra solução seria ligar a segunda ilha também com duas pontes com cada margem.</blockquote>
 
 ---
 
