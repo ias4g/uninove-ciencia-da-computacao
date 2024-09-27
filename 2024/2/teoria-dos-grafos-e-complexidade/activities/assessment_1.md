@@ -87,4 +87,4 @@
 
 ---
 
-<p align="center"> Feito com ❤💖❤💞💟 por Silva, Izael A.</p>
+<p align="center">© 2024 | Feito com 💟 por Silva, Izael A.</p>
