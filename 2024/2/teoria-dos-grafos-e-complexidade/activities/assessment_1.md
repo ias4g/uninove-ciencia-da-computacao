@@ -79,3 +79,12 @@
 
 **Alternativa correta**:
 <blockquote color="green">Existe um grafo simples com cinco vértices dos seguintes graus 3,3,3,3,2</blockquote>
+
+<br>
+<br>
+<br>
+<br>
+
+---
+
+<p align="center"> Feito com ❤💖❤💞💟 por Silva, Izael A.</p>
