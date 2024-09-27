@@ -23,7 +23,7 @@
 - [ ] Buscavam comprar sempre do mesmo fabricante, a fim de obter melhores preços.
 
 **Alternativa correta**:
-<blockquote style="color:green;">Como o computador era uma ciência nova, os fabricantes concediam as máquinas para que as empresas fizessem primeiramente os testes e, se satisfeitos, poderiam comprá-las pelo seu valor de mercado.</blockquote>
+<blockquote color="green">Como o computador era uma ciência nova, os fabricantes concediam as máquinas para que as empresas fizessem primeiramente os testes e, se satisfeitos, poderiam comprá-las pelo seu valor de mercado.</blockquote>
 
 ---
 
