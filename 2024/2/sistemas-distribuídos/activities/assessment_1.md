@@ -21,7 +21,9 @@
 - [ ] Utilizavam o critério da Economia Financeira, adquirindo máquinas com menor capacidade.
 - [x] **_Como o computador era uma ciência nova, os fabricantes concediam as máquinas para que as empresas fizessem primeiramente os testes e, se satisfeitos, poderiam comprá-las pelo seu valor de mercado._**
 - [ ] Buscavam comprar sempre do mesmo fabricante, a fim de obter melhores preços.
-> **Alternativa correta**: Como o computador era uma ciência nova, os fabricantes concediam as máquinas para que as empresas fizessem primeiramente os testes e, se satisfeitos, poderiam comprá-las pelo seu valor de mercado.
+
+**Alternativa correta**:
+<blockquote style="color:green;">Como o computador era uma ciência nova, os fabricantes concediam as máquinas para que as empresas fizessem primeiramente os testes e, se satisfeitos, poderiam comprá-las pelo seu valor de mercado.</blockquote>
 
 ---
 
