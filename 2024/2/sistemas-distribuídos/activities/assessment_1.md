@@ -4,7 +4,7 @@
 
 #### SISTEMAS DISTRIBUÍDOS
 
-##### Avaliação 1 - Sistemas Distribuídos | Mútipla  Escolha
+#### Avaliação 1 - Sistemas Distribuídos | Mútipla  Escolha
 
 |	RA	|	922114939	|
 |-----------------|-------------------|
@@ -19,7 +19,7 @@
 - [ ] Todos os computadores possuíam o mesmo valor, independente da configuração e do fabricante.
 - [ ] Utilizavam o conceito de Economia em Escala, que ocorre quando o custo médio de produção fica mais barato à medida que aumenta a quantidade de produtos produzidos.
 - [ ] Utilizavam o critério da Economia Financeira, adquirindo máquinas com menor capacidade.
-- [x] Como o computador era uma ciência nova, os fabricantes concediam as máquinas para que as empresas fizessem primeiramente os testes e, se satisfeitos, poderiam comprá-las pelo seu valor de mercado.
+- [x] **Como o computador era uma ciência nova, os fabricantes concediam as máquinas para que as empresas fizessem primeiramente os testes e, se satisfeitos, poderiam comprá-las pelo seu valor de mercado.**
 - [ ] Buscavam comprar sempre do mesmo fabricante, a fim de obter melhores preços.
 
 
@@ -29,7 +29,7 @@
 - [ ] Transistor.
 - [ ] Interface Gráfica com o Usuário.
 - [ ] Redes de Computadores.
-- [x] **Multiprogramação**.
+- [x] ***Multiprogramação***.
 
 
 ### QUESTÃO 3 DE 5
