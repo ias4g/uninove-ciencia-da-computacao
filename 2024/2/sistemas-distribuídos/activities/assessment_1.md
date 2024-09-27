@@ -35,29 +35,44 @@
 - [ ] Redes de Computadores.
 - [x] **_Multiprogramação_**.
 
+**Alternativa correta**:
+<blockquote color="green">Multiprogramação</blockquote>
+
+---
 
 ### QUESTÃO 3 DE 5
 > Os sistemas de computação paralela são modelos com objetivos claros de aumento de desempenho, escalabilidade e confiabilidade. Desta forma, selecione a alternativa correta que apresenta os tipos de sistemas de computação paralela?
 - [ ] Sistemas distribuídos, sistemas monoprocessados, sistemas em rede e fortemente acoplados.
-- [x] **Sistemas distribuídos, sistemas em rede e fortemente acoplados.**
+- [x] **_Sistemas distribuídos, sistemas em rede e fortemente acoplados._**
 - [ ] CTSS, MULTICS, UNIX e System V.
 - [ ] Sistemas monoprocessados, sistemas em rede e fracamente acoplados.
 - [ ] Sistemas monoprocessados, sistemas de tempo compartilhado, sistemas em rede e fortemente acoplados.
 
+**Alternativa correta**:
+<blockquote color="green">Sistemas distribuídos, sistemas em rede e fortemente acoplados.</blockquote>
+
+---
 
 ### QUESTÃO 4 DE 5
 > Os computadores pessoais juntamente com o desenvolvimento das interfaces gráficas e a popularização da Internet, tiveram um papel significativo na evolução dos sistemas computacionais e no panorama atual da informática. Assim, selecione a alternativa correta que identifica os elementos importantes para a descentralização dos sistemas:
 - [ ] O desenvolvimento os sistemas de tempo compartilhado.
-- [x] **O desenvolvimento das redes de computadores e os microprocessadores.**
+- [x] **_O desenvolvimento das redes de computadores e os microprocessadores._**
 - [ ] Interface Gráfica com o Usuário.
 - [ ] O desenvolvimento da Internet e dos web services.
 - [ ] O desenvolvimento das Intranets e Extranets.
 
+**Alternativa correta**:
+<blockquote color="green">O desenvolvimento das redes de computadores e os microprocessadores.</blockquote>
+
+---
 
 ### QUESTÃO 5 DE 5
 > Qual das alternativas abaixo apresenta a razão pela qual a Lei de Grosch foi revisada?
-- [x] **Computadores com arquiteturas diferentes não podem ser analisados pela mesma relação custo por desempenho.**
+- [x] **_Computadores com arquiteturas diferentes não podem ser analisados pela mesma relação custo por desempenho._**
 - [ ] Computadores com arquiteturas iguais podem ser analisados pela mesma relação custo-benefício.
 - [ ] A Lei nunca foi de fato utilizada, uma vez que não havia dados que justificassem tal pensamento, bem como era impraticável, pois não era possível às empresas sempre adquirir o equipamento mais caro.
 - [ ] A Lei de Grosch privilegiava apenas a IBM, já que Grosch era um dos seus engenheiros, fazendo com que a concorrência perdesse sua fatia de mercado, promovendo assim o monopólio da Big Blue.
 - [ ] A não apresentação do embasamento que levou Grosch a elaborar tal teoria, passando a se tornar desacreditada após mais de duas décadas de uso.
+
+**Alternativa correta**:
+<blockquote color="green">Computadores com arquiteturas diferentes não podem ser analisados pela mesma relação custo por desempenho.</blockquote>
