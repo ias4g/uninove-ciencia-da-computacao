@@ -72,22 +72,23 @@ table:
     ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Ç','Z','X','C','V','B','N','M']: {write: "*", R}
     
 ```
+## 5. Criptografia
+input: '1010001101010111#'
 
+```pythin
+input: '#1011'
+blank: ' '
+start state: read
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+table:
+  read:
+    ['#', 0, 1]: R
+    [' ']: {L: cripto}
+  cripto:
+    [0]: {write: "1", L}
+    [1]: {write: "0", L}
+    ['#']: {R: descrypto}
+  descrypto:
+    [0]: {write: "1", R}
+    [1]: {write: "0", R}
+```
