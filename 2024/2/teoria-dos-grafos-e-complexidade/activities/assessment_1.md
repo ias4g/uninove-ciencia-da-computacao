@@ -47,8 +47,6 @@ Analise as questões abaixo, sobre o problema das pontes de Königsberg e assina
 
 ---
 
-<br>
-
 ### QUESTAO 4 DE 5
 **Assinale a alternativa que representa a definição de grafo.**
 - [ ] Grafo é uma tripla, G(N, A, g) onde N é um subconjunto de A e N tem contido os vértices, sendo que A é um subconjunto de N contendo as arestas e g é uma função que associa dada aresta a um par de vértices (x,y) que representam os extremos dessa aresta.
@@ -59,8 +57,6 @@ Analise as questões abaixo, sobre o problema das pontes de Königsberg e assina
 
 ---
 
-<br>
-
 ### QUESTAO 5 DE 5
 **Analise as afirmações abaixo e assinale a alternativa correta:**
 - [ ] Existe um grafo simples com cinco vértices dos seguintes graus 2,2,3,4,4
@@ -69,10 +65,10 @@ Analise as questões abaixo, sobre o problema das pontes de Königsberg e assina
 - [ ] Existe um grafo simples com cinco vértices dos seguintes graus 3,4,3,4,3
 - [ ] Existe um grafo simples com cinco vértices dos seguintes graus 1,1,1,1
 
-<br>
-<br>
-
 ---
+
+<br>
+<br>
 
 <p align="center">
     © 2024 | Feito com 💟 por
