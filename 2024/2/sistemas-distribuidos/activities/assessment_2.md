@@ -22,6 +22,10 @@
 - [ ] Todos os tipos de sistemas interligados por linhas de comunicação.
 - [ ] Sistemas fortemente acoplados transparentes e tolerantes a falhas.
 
+---
+
+<br>
+
 ### QUESTÃO 2 DE 5
 **Escolha a alternativa que contém a tecnologia que consiste em uma camada de software para mascarar as diferenças e viabilizar a integração e comunicação entre ambientes heterogêneos.**
 - [ ] CISC.
@@ -29,6 +33,10 @@
 - [ ] Terminais Burros.
 > - [x] Middleware.
 - [ ] RISC.
+
+---
+
+<br>
 
 ### QUESTÃO 3 DE 5
 **Analise as afirmativas abaixo:**
@@ -44,6 +52,10 @@ Escolha a alternativa que apresenta as afirmativas corretas:
 - [ ] I e II.
 - [ ] I, III e IV.
 
+---
+
+<br>
+
 ### QUESTÃO 4 DE 5
 **Dentre os Objetivos de um Sistema Distribuído (Compartilhamento de Recursos, Confiabilidade e Desempenho), selecione a alternativa incorreta:**
 > - [x] Espera-se que os sistemas centralizados sejam mais confiáveis que os sistemas distribuídos, tendo em vista que podem conter diversos terminais burros, sendo assim mais tolerantes às falhas.
@@ -51,6 +63,10 @@ Escolha a alternativa que apresenta as afirmativas corretas:
 - [ ] Espera-se que os sistemas distribuídos tenham um desempenho superior aos sistemas centralizados.
 - [ ] Espera-se que os sistemas distribuídos sejam mais confiáveis que os sistemas centralizados ou de tempo compartilhado, tendo em vista que podem conter diversas réplicas, sendo assim mais tolerantes às falhas.
 - [ ] A confiabilidade é um fator importante para as premissas de disponibilidade e segurança da informação em sistemas distribuídos.
+
+---
+
+<br>
 
 ### QUESTÃO 5 DE 5
 **Após o surgimento das redes de computadores, a descentralização dos sistemas foi se multiplicando ao longo dos anos. Assim, vimos que um tipo de sistema descentralizado (fracamente acoplado) permite transmitir ao usuário a sensação de um sistema único e coeso, enquanto outro tipo de sistema fracamente acoplado permite o conhecimento da rede e de seus componentes.**
