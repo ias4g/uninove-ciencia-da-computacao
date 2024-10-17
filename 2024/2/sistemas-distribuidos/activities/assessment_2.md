@@ -18,7 +18,7 @@
 **Dentre todas as definições de Sistemas Distribuídos estudadas, qual das alternativas abaixo apresenta aquela que é adotada como conceito geral de S.D.?**
 - [ ] Sistemas fracamente acoplados que não possuem problema de relógio global.
 - [ ] Sistemas fortemente acoplados que se comportam como sistemas fracamente acoplados.
-- [x] Sistemas de computadores que possuem autonomia e se mostram aos seus usuários (pessoas ou outros softwares) como um sistema único e coerente.
+> - [x] Sistemas de computadores que possuem autonomia e se mostram aos seus usuários (pessoas ou outros softwares) como um sistema único e coerente.
 - [ ] Todos os tipos de sistemas interligados por linhas de comunicação.
 - [ ] Sistemas fortemente acoplados transparentes e tolerantes a falhas.
 
@@ -27,7 +27,7 @@
 - [ ] CISC.
 - [ ] UNIX.
 - [ ] Terminais Burros.
-- [x] Middleware.
+> - [x] Middleware.
 - [ ] RISC.
 
 ### QUESTÃO 3 DE 5
@@ -40,13 +40,13 @@ Escolha a alternativa que apresenta as afirmativas corretas:
 
 - [ ] II e III.
 - [ ] III e IV.
-- [x] I e IV.
+> - [x] I e IV.
 - [ ] I e II.
 - [ ] I, III e IV.
 
 ### QUESTÃO 4 DE 5
 **Dentre os Objetivos de um Sistema Distribuído (Compartilhamento de Recursos, Confiabilidade e Desempenho), selecione a alternativa incorreta:**
-- [x] Espera-se que os sistemas centralizados sejam mais confiáveis que os sistemas distribuídos, tendo em vista que podem conter diversos terminais burros, sendo assim mais tolerantes às falhas.
+> - [x] Espera-se que os sistemas centralizados sejam mais confiáveis que os sistemas distribuídos, tendo em vista que podem conter diversos terminais burros, sendo assim mais tolerantes às falhas.
 - [ ] O compartilhamento de recursos é um fator importante para o trabalho colaborativo entre os usuários e na disponibilidade do acesso.
 - [ ] Espera-se que os sistemas distribuídos tenham um desempenho superior aos sistemas centralizados.
 - [ ] Espera-se que os sistemas distribuídos sejam mais confiáveis que os sistemas centralizados ou de tempo compartilhado, tendo em vista que podem conter diversas réplicas, sendo assim mais tolerantes às falhas.
