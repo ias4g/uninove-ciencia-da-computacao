@@ -22,6 +22,10 @@
 - [ ] O grafo não é bipartido, tem oito arestas e tem um caminho Hamiltoniano
 - [ ] O grafo é bipartido, tem nove arestas e tem um caminho Euleriano
 
+---
+
+<br>
+
 ### QUESTÃO 2 DE 5
 **Analise as afirmações abaixo e assinale a alternativa que represente um grafo de graus 2,2,2,2,2,4,4,4,6.**
 - [ ] O grafo tem 9 vértices, 15 arestas, é Euleriano mas não é Hamiltoniano.
@@ -29,6 +33,10 @@
 > - [X] O grafo tem 9 vértices, 14 arestas, é Euleriano mas não é Hamiltoniano.
 - [ ] O grafo tem 9 vértices, 15 arestas, é Euleriano e Hamiltoniano.
 - [ ] O grafo tem 9 vértices, 14 arestas, é Euleriano e Hamiltoniano.
+
+---
+
+<br>
 
 ### QUESTÃO 3 DE 5
 **Analise as afirmações abaixo e assinale a alternativa CORRETA.**
@@ -43,6 +51,10 @@
 - [ ] Somente as alternativas I, III e IV estão corretas
 > - [X] Somente as alternativas I, II, IV e V estão corretas
 
+---
+
+<br>
+
 ### QUESTÃO 4 DE 5
 **Analise as afirmações abaixo e assinale a alternativa CORRETA.**
 1. O número de arestas de um grafo com vértices de graus 5; 2; 2; 2; 2; 1 é 7
@@ -55,6 +67,10 @@
 - [ ] Somente as alternativas III, IV e V estão corretas 
 > - [X] Somente as alternativas I, IV e V estão corretas
 - [ ] Somente as alternativas II, III e IV estão corretas 
+
+---
+
+<br>
 
 ### QUESTÃO 5 DE 5
 **Analise os grafos em anexo e assinale a alternativa correta**
