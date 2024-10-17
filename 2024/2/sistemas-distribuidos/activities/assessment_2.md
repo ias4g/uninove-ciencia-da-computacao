@@ -58,7 +58,7 @@ Escolha a alternativa que apresenta as afirmativas corretas:
 - [ ] Sistemas de Tempo Compartilhado e Sistemas Distribuídos.
 - [ ] Sistemas em Rede e Sistemas de Tempo Compartilhado.
 - [ ] Sistemas em Rede e Sistemas Distribuídos.
-- [x] `Sistemas Distribuídos e Sistemas em Rede.`
+- `[x] Sistemas Distribuídos e Sistemas em Rede.`
 - [ ] SOA e Clusters.
 
 <br>
