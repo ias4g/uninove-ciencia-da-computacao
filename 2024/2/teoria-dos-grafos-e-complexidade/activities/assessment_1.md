@@ -24,8 +24,6 @@
 
 ---
 
-<br>
-
 ### QUESTAO 2 DE 5
 **Assinale a alternativa com o número de vértices de um grafo regular de grau 4 com 10 arestas.**
 
@@ -36,8 +34,6 @@
 - [ ] 7
 
 ---
-
-<br>
 
 ### QUESTAO 3 DE 5
 Analise as questões abaixo, sobre o problema das pontes de Königsberg e assinale a alternativa correta.
