@@ -16,11 +16,11 @@
 
 ### QUESTÃO 1 DE 5
 **Dentre todas as definições de Sistemas Distribuídos estudadas, qual das alternativas abaixo apresenta aquela que é adotada como conceito geral de S.D.?**
-- [] Sistemas fracamente acoplados que não possuem problema de relógio global.
-- [] Sistemas fortemente acoplados que se comportam como sistemas fracamente acoplados.
+- [ ] Sistemas fracamente acoplados que não possuem problema de relógio global.
+- [ ] Sistemas fortemente acoplados que se comportam como sistemas fracamente acoplados.
 - [x] Sistemas de computadores que possuem autonomia e se mostram aos seus usuários (pessoas ou outros softwares) como um sistema único e coerente.
-- [] Todos os tipos de sistemas interligados por linhas de comunicação.
-- [] Sistemas fortemente acoplados transparentes e tolerantes a falhas.
+- [ ] Todos os tipos de sistemas interligados por linhas de comunicação.
+- [ ] Sistemas fortemente acoplados transparentes e tolerantes a falhas.
 
 ### QUESTÃO 2 DE 5
 **Escolha a alternativa que contém a tecnologia que consiste em uma camada de software para mascarar as diferenças e viabilizar a integração e comunicação entre ambientes heterogêneos.**
