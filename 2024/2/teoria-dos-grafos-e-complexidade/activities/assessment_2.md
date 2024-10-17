@@ -24,8 +24,6 @@
 
 ---
 
-<br>
-
 ### QUESTÃO 2 DE 5
 **Analise as afirmações abaixo e assinale a alternativa que represente um grafo de graus 2,2,2,2,2,4,4,4,6.**
 - [ ] O grafo tem 9 vértices, 15 arestas, é Euleriano mas não é Hamiltoniano.
@@ -35,8 +33,6 @@
 - [ ] O grafo tem 9 vértices, 14 arestas, é Euleriano e Hamiltoniano.
 
 ---
-
-<br>
 
 ### QUESTÃO 3 DE 5
 **Analise as afirmações abaixo e assinale a alternativa CORRETA.**
@@ -53,8 +49,6 @@
 
 ---
 
-<br>
-
 ### QUESTÃO 4 DE 5
 **Analise as afirmações abaixo e assinale a alternativa CORRETA.**
 1. O número de arestas de um grafo com vértices de graus 5; 2; 2; 2; 2; 1 é 7
@@ -70,8 +64,6 @@
 
 ---
 
-<br>
-
 ### QUESTÃO 5 DE 5
 **Analise os grafos em anexo e assinale a alternativa correta**
 
@@ -82,10 +74,10 @@
 - [ ] O grafo 1 é Euleriano e Hamiltoniano O grafo 2 é Euleriano e não é Hamiltoniano O grafo 3 é Euleriano e é Hamiltoniano.
 - [ ] O grafo 1 é Euleriano e não é Hamiltoniano O grafo 2 é Euleriano e não é Hamiltoniano O grafo 3 não é Euleriano e é Hamiltoniano.
 
-<br>
-<br>
-
 ---
+
+<br>
+<br>
 
 <p align="center">
     © 2024 | Feito com 💟 por
