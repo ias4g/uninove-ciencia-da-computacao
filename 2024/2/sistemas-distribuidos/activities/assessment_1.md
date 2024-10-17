@@ -24,8 +24,6 @@
 
 ---
 
-<br>
-
 ### QUESTÃO 2 DE 5
 **Na década de 1960, a IBM lançou o System/360, no qual foi possível manter diversos programas ou tarefas na memória principal ao mesmo tempo. Qual o nome dessa técnica?**
 - [ ] Middleware.
@@ -35,8 +33,6 @@
 > - [x] Multiprogramação.
 
 ---
-
-<br>
 
 ### QUESTÃO 3 DE 5
 **Os sistemas de computação paralela são modelos com objetivos claros de aumento de desempenho, escalabilidade e confiabilidade. Desta forma, selecione a alternativa correta que apresenta os tipos de sistemas de computação paralela?**
@@ -48,8 +44,6 @@
 
 ---
 
-<br>
-
 ### QUESTÃO 4 DE 5
 **Os computadores pessoais juntamente com o desenvolvimento das interfaces gráficas e a popularização da Internet, tiveram um papel significativo na evolução dos sistemas computacionais e no panorama atual da informática. Assim, selecione a alternativa correta que identifica os elementos importantes para a descentralização dos sistemas:**
 - [ ] O desenvolvimento os sistemas de tempo compartilhado.
@@ -60,8 +54,6 @@
 
 ---
 
-<br>
-
 ### QUESTÃO 5 DE 5
 **Qual das alternativas abaixo apresenta a razão pela qual a Lei de Grosch foi revisada?**
 > - [x] Computadores com arquiteturas diferentes não podem ser analisados pela mesma relação custo por desempenho.
@@ -70,10 +62,10 @@
 - [ ] A Lei de Grosch privilegiava apenas a IBM, já que Grosch era um dos seus engenheiros, fazendo com que a concorrência perdesse sua fatia de mercado, promovendo assim o monopólio da Big Blue.
 - [ ] A não apresentação do embasamento que levou Grosch a elaborar tal teoria, passando a se tornar desacreditada após mais de duas décadas de uso.
 
-<br>
-<br>
-
 ---
+
+<br>
+<br>
 
 <p align="center">
     © 2024 | Feito com 💟 por
