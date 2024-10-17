@@ -16,11 +16,11 @@
 
 ### QUESTÃO 1 DE 5
 **Analise as afirmações abaixo e assinale a alternativa que represente um grafo regular de grau 3 com 6 vértices.**
-> [X] O grafo é bipartido, tem nove arestas e tem um caminho Hamiltoniano
-[ ] O grafo não é bipartido, tem nove arestas e tem um caminho Hamiltoniano
-[ ] O grafo é bipartido, tem oito arestas e tem um caminho Euleriano
-[ ] O grafo não é bipartido, tem oito arestas e tem um caminho Hamiltoniano
-[ ] O grafo é bipartido, tem nove arestas e tem um caminho Euleriano
+> - [X] O grafo é bipartido, tem nove arestas e tem um caminho Hamiltoniano
+- [ ] O grafo não é bipartido, tem nove arestas e tem um caminho Hamiltoniano
+- [ ] O grafo é bipartido, tem oito arestas e tem um caminho Euleriano
+- [ ] O grafo não é bipartido, tem oito arestas e tem um caminho Hamiltoniano
+- [ ] O grafo é bipartido, tem nove arestas e tem um caminho Euleriano
 
 ### QUESTÃO 2 DE 5
 **Analise as afirmações abaixo e assinale a alternativa que represente um grafo de graus 2,2,2,2,2,4,4,4,6.**
