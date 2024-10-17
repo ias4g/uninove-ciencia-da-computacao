@@ -53,12 +53,12 @@ Escolha a alternativa que apresenta as afirmativas corretas:
 - [ ] A confiabilidade é um fator importante para as premissas de disponibilidade e segurança da informação em sistemas distribuídos.
 
 ### QUESTÃO 5 DE 5
-> **Após o surgimento das redes de computadores, a descentralização dos sistemas foi se multiplicando ao longo dos anos. Assim, vimos que um tipo de sistema descentralizado (fracamente acoplado) permite transmitir ao usuário a sensação de um sistema único e coeso, enquanto outro tipo de sistema fracamente acoplado permite o conhecimento da rede e de seus componentes.**
+**Após o surgimento das redes de computadores, a descentralização dos sistemas foi se multiplicando ao longo dos anos. Assim, vimos que um tipo de sistema descentralizado (fracamente acoplado) permite transmitir ao usuário a sensação de um sistema único e coeso, enquanto outro tipo de sistema fracamente acoplado permite o conhecimento da rede e de seus componentes.**
 **Selecione a alternativa que apresenta, na ordem apresentada acima, esses sistemas fracamente acoplados.**
 - [ ] Sistemas de Tempo Compartilhado e Sistemas Distribuídos.
-- [ ] ***Sistemas em Rede e Sistemas de Tempo Compartilhado.***
-- [ ] **Sistemas em Rede e Sistemas Distribuídos.**
-- [x] *Sistemas Distribuídos e Sistemas em Rede.*
+- [ ] Sistemas em Rede e Sistemas de Tempo Compartilhado.
+- [ ] Sistemas em Rede e Sistemas Distribuídos.
+> - [x] Sistemas Distribuídos e Sistemas em Rede.
 - [ ] SOA e Clusters.
 
 <br>
