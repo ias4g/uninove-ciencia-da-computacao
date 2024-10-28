@@ -26,16 +26,14 @@
     start state: leitura
     table:
       leitura:
-      ['0','1','#']: R
-      ['A','C']: R
-      ' ': {L: cripto}
-    
+        ['0','1','#']: R
+        ['A','C']: R
+        ' ': {L: cripto}
       cripto:
         '0': {write: '1', L}  
         '1': {write: '0', L}  
         '#': {R: descripto}
         'A': {write: 'C', L}  
-
       descripto:
         '0': {write: '1', R}  
         '1': {write: '0', R}
