@@ -69,8 +69,6 @@ Escolha a alternativa que apresenta as afirmativas corretas:
 > - [x] Sistemas Distribuídos e Sistemas em Rede.
 - [ ] SOA e Clusters.
 
----
-
 <br>
 <br>
 
