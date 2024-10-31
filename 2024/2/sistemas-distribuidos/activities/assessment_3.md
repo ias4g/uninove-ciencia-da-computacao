@@ -54,7 +54,7 @@
 
 ---
 
-### QUESTÃO 4 DE 5
+### QUESTÃO 5 DE 5
 **Os Sistemas Distribuídos podem ser divididos em alguns tipos específicos, dependendo dos seus principais objetivos. Escolha a alternativa que apresenta o que é um Sistema de Computação Distribuído do tipo Cluster:**
 > - [x] Conjunto de estações de trabalho ou PCs semelhantes conectados por meio de uma rede local de alta velocidade, sendo que cada nó executa o mesmo Sistema Operacional.
 - [ ] Rede de grupos de computadores geograficamente dispersos organizados para realizarem uma tarefa em conjunto, envolvendo alto grau de heterogeneidade e descentralização.
