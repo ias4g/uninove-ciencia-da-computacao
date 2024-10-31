@@ -74,8 +74,6 @@
 - [ ] O grafo 1 é Euleriano e Hamiltoniano O grafo 2 é Euleriano e não é Hamiltoniano O grafo 3 é Euleriano e é Hamiltoniano.
 - [ ] O grafo 1 é Euleriano e não é Hamiltoniano O grafo 2 é Euleriano e não é Hamiltoniano O grafo 3 não é Euleriano e é Hamiltoniano.
 
----
-
 <br>
 <br>
 
