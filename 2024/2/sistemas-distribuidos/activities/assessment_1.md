@@ -62,8 +62,6 @@
 - [ ] A Lei de Grosch privilegiava apenas a IBM, já que Grosch era um dos seus engenheiros, fazendo com que a concorrência perdesse sua fatia de mercado, promovendo assim o monopólio da Big Blue.
 - [ ] A não apresentação do embasamento que levou Grosch a elaborar tal teoria, passando a se tornar desacreditada após mais de duas décadas de uso.
 
----
-
 <br>
 <br>
 
