@@ -65,8 +65,6 @@ Analise as questões abaixo, sobre o problema das pontes de Königsberg e assina
 - [ ] Existe um grafo simples com cinco vértices dos seguintes graus 3,4,3,4,3
 - [ ] Existe um grafo simples com cinco vértices dos seguintes graus 1,1,1,1
 
----
-
 <br>
 <br>
 
