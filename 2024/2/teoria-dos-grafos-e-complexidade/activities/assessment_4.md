@@ -34,17 +34,12 @@
 ---
 
 ### QUESTÃO 2 DE 5
-**A notação O-Grande (Big-O notation) é denominada complexidade do algoritmo, sendo exemplos dessa notação O(n2), O(log n), O(n), (n.logn), O(1). Neste contexto, analise as afirmações abaixo que tratam da complexidade de um algoritmo, e assinale a alternativa correta.**
-
-I. É uma medida da eficiência do algoritmo quando o tamanho do conjunto de dados tende para infinito.
-
-II. É uma medida do número de ciclos de CPU necessários para processar um dado conjunto de dados.
-
-III. A complexidade de um algoritmo varia, se mais processadores forem usados.
-
-IV. A complexidade de um algoritmo é menor em processadores mais rápidos.
-
-V. É uma medida do tempo necessário para processar um dado conjunto de dados.
+**A notação O-Grande (Big-O notation) é denominada complexidade do algoritmo, sendo exemplos dessa notação O(n2), O(log n), O(n), (n.logn), O(1). Neste contexto, analise as afirmações abaixo que tratam da complexidade de um algoritmo, e assinale a alternativa correta.**<br>
+**I. É uma medida da eficiência do algoritmo quando o tamanho do conjunto de dados tende para infinito.**<br>
+**II. É uma medida do número de ciclos de CPU necessários para processar um dado conjunto de dados.**<br>
+**III. A complexidade de um algoritmo varia, se mais processadores forem usados.**<br>
+**IV. A complexidade de um algoritmo é menor em processadores mais rápidos.**<br>
+**V. É uma medida do tempo necessário para processar um dado conjunto de dados.**
 - [ ] Somente a IV é correta
 - [ ] Somente a II é correta
 - [ ] Somente a III é correta
