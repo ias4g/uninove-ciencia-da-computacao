@@ -59,7 +59,7 @@ V. É uma medida do tempo necessário para processar um dado conjunto de dados.
 - [ ] uma árvore de busca binária.
 - [ ] um heap binário.
 > - [x] um vetor ordenado.
-= [ ] uma árvore B.
+- [ ] uma árvore B.
 
 ---
 
