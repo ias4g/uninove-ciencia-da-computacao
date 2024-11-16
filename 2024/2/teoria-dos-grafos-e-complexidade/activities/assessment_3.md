@@ -74,7 +74,6 @@ int algoritmo( int TAM, int vetor[]) {
     return 0;
 }
 ```
-
 > - [x] O(n2).
 - [ ] Correto
 - [ ] T(n log n).
