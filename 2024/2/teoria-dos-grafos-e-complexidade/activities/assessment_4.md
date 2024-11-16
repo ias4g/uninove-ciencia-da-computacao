@@ -64,7 +64,7 @@ V. É uma medida do tempo necessário para processar um dado conjunto de dados.
 ---
 
 ### QUESTÃO 4 DE 5
-**Dado o vetor [10, 20, 30, 40, 50, 60, 70, 80], ordenado de forma crescente. Assinale a alternativa que represente o número de iterações necessárias para que o valor 80 seja encontrado, aplicando o algoritmo de busca binária.**
+**Dado o vetor `[10, 20, 30, 40, 50, 60, 70, 80]`, ordenado de forma crescente. Assinale a alternativa que represente o número de iterações necessárias para que o valor 80 seja encontrado, aplicando o algoritmo de busca binária.**
 - [ ] 8
 - [ ] 9
 - [ ] 3
