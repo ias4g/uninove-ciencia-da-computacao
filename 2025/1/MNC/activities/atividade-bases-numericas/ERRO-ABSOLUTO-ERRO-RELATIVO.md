@@ -208,3 +208,50 @@ O erro absoluto indica a diferença numérica direta entre o valor real e o esti
 **Maior Precisão nos Cálculos:** Ajustar a precisão dos números utilizados (por exemplo, usar `float` de maior precisão ou `decimal` em Python).
 
 **Bibliotecas Mais Confiáveis:** Utilizar bibliotecas matemáticas otimizadas, como a função `math.sqrt()` do Python.
+
+---
+
+<br>
+<br>
+
+
+
+
+### Opcional:
+
+Faça o calculo da raiz quadrada em duas linguagens diferentes (C, Python,etc) ou Excel. Compare os resultados.
+
+Calculo no excel: `=RAIZ(10) = 3.16227766`
+
+Cálculo em Python: Usaremos a função math.sqrt(), que é altamente precisa.
+
+```python
+    import math
+
+    valor_real = math.sqrt(10)
+    print(valor_real)
+```
+
+Cálculo em C: O código em C usa a biblioteca math.h para calcular a raiz quadrada.
+
+```c
+    #include <stdio.h>
+    #include <math.h>
+
+    int main() {
+        double valor_real = sqrt(10);
+        printf("Raiz quadrada de 10: %.15f\n", valor_real);
+        return 0;
+    }
+```
+
+### **Comparação dos Resultados**
+| **Linguagem/Ferramenta** | **Resultado** |
+|-------------------------|--------------|
+| Python (`math.sqrt(10)`) | 3.16227766016838 |
+| C (`sqrt(10)`) | 3.16227766016838 |
+| Excel (`=RAIZ(10)`) | 3.16227766 |
+
+**Conclusão:**
+
+Todos os métodos fornecem o mesmo resultado, mas com precisões ligeiramente diferentes dependendo do número de casas decimais exibidas.
