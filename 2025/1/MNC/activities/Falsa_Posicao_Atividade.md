@@ -53,7 +53,7 @@ Formulas:
 | 1  | 0 | 1 | 4    | 0    | 1  | 0      |          TRUE         |
 | 2  | 0 | 1 | 4    | 0    | 1  | 0      |         TRUE           |
 
-> A raiz aproximada é: **Não existe raiz real no intervalo solicitado*
+> A raiz aproximada é: **Não existe raiz real no intervalo solicitado**
 
 ---
 
