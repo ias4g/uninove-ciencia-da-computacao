@@ -7,7 +7,7 @@
 
 <br>
 
-**📚 Situação/Problema: Ajuste de Threshold em um Classificador de Fraudes**
+## 📚 Situação/Problema: Ajuste de Threshold em um Classificador de Fraudes
 
 Uma empresa utiliza um modelo de **aprendizado de máquina** para detectar **transações fraudulentas**. O modelo retorna uma **probabilidade** de que a transação seja fraude, e a decisão final é tomada com base em um **threshold** (limiar) **T**.
 
@@ -81,21 +81,19 @@ Encontrar o valor de **threshold \( T \)** tal que a taxa de FN seja **exatament
 - O critério de parada | f(xk) | < 0,001 foi satisfeito no **6º passo**, porque:
   - | f(0,220690) | = 0,000483, que é menor que 0,001.
 
-✅ **Convergência OK!**
-
 #### 2. Método da Bisseção
 - A raiz foi encontrada em T ≈ 0,21953125.
 - O critério de parada também foi satisfeito, porque:
   - | f(0,21953125) | = 0,000096, que é muito menor que 0,001.
 
-✅ **Convergência OK!**
+---
 
-#### 3. Analisando os Resultados
+#### 3. Analise:
 - Ambos os métodos encontraram um **valor de T muito próximo**.
 - O **Método da Falsa Posição** chegou na solução com **menos iterações** (6 contra 7 da bisseção).
 - Isso acontece porque o Falsa Posição geralmente converge mais rápido **quando a função é aproximadamente linear** no intervalo.
 
-#### 4. Em relação ao modelo (conforme o enunciado):
+#### 4. Relações:
 - O valor de T encontrado será usado como **threshold** para manter **10% de falsos negativos**.
 - Se você **escolher um T menor que 0,22**, o modelo ficará **mais sensível** (detectando mais fraudes).
 - Se você **aumentar o T**, o modelo será **mais preciso**, mas poderá **perder detecção de fraudes**.
