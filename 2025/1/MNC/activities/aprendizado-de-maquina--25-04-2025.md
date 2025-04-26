@@ -1,4 +1,4 @@
-# ATIVIDADE: FALSA POSIÇÃO
+# ATIVIDADE: APRENDIZADO DE MÁQUINA
 
 | DISCIPLINA  | METODOS NUMERICOS COMPUTACIONAIS - TURMA 48 - MM  |
 |-------------|-------------------------------------------------|
@@ -7,22 +7,19 @@
 
 <br>
 
-Formulas:
-<table>
-  <tr>
-    <td rowspan="2">Xk = </td>
-    <td align="center">a * f (b) − b * f (a)</td>
-  </tr>
-  <tr>
-    <td align="center">f (b) − f (a)</td>
-  </tr>
-</table>
+**📚 Situação/Problema: Ajuste de Threshold em um Classificador de Fraudes**
 
-**a = se( f(xk) < 0; xk; a )**
+Uma empresa utiliza um modelo de **aprendizado de máquina** para detectar **transações fraudulentas**. O modelo retorna uma **probabilidade** de que a transação seja fraude, e a decisão final é tomada com base em um **threshold** (limiar) **T**.
 
-**b = se( f(xk) > 0; xk; b )**
+### Cenário:
+- Se a **probabilidade ≥ T**, a transação é **classificada como fraude**.
+- Se a **probabilidade < T**, é **classificada como legítima**.
 
----
+A equipe deseja encontrar o **valor de T** que resulta em uma **taxa de falsos negativos (FN)** de **10%** — ou seja, que apenas 10% das fraudes reais passem despercebidas.
+
+Para isso, a taxa de FN é aproximada por esta função (baseada em resultados empíricos do modelo):
+
+`f(T) = 0,3 * e−5T − 0,10`
 
 <br>
 
