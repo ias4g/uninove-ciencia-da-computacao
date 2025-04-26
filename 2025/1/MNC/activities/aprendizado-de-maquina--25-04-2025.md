@@ -23,62 +23,79 @@ Para isso, a taxa de FN é aproximada por esta função (baseada em resultados e
 
 <br>
 
+🎯 **Objetivo:**
 
-### Suponha que você deseja encontrar a raiz da função `f(x) = x³ - 2x - 5` no intervalo `[2, 3]`. A tolerância adotada é `0,001 (|f(x)| < 0,001)`.
+Encontrar o valor de **threshold \( T \)** tal que a taxa de FN seja **exatamente 10%**, ou seja, resolver:
 
-| k  | a           | b   | f(a)          | f(b) | xk          | f(xk)           | \| f(xk) \| < E |
-|:----|:-------------|:-----|:---------------|:------|:-------------|:------------------|:----------------|
-| 1  | 2           | 3   | -1            | 16   | 2,058823529 | -0,3907999186    | FALSE          |
-| 2  | 2,058823529 | 3   | -0,3907999186 | 16   | 2,08126366  | -0,1472040596    | FALSE          |
-| 3  | 2,08126366  | 3   | -0,1472040596 | 16   | 2,08963921  | -0,05467650327   | FALSE          |
-| 4  | 2,08963921  | 3   | -0,05467650327| 16   | 2,092739574 | -0,02020286631   | FALSE          |
-| 5  | 2,092739574 | 3   | -0,02020286631| 16   | 2,093883708 | -0,007450505938  | FALSE          |
-| 6  | 2,093883708 | 3   | -0,007450505938|16   | 2,094305451 | -0,002745672838  | FALSE          |
-| 7  | 2,094305451 | 3   | -0,002745672838|16   | 2,094460846 | -0,001011573949  | FALSE          |
-| 8  | 2,094460846 | 3   | -0,001011573949|16   | 2,094518093 | -0,0003726528256 | TRUE           |
+`f(T) = 0 ⇒ 0,3 * e−5T = 0,10 ⇒ T = ?`
 
-> A raiz aproximada é: **2,094518093**
+📌 **Parâmetros para a Bisseção:**
+- **Função:** `f(T) = 0,3 * e −5 * T − 0,10`
 
----
+- **Intervalo:** `T ∈ [0,1 1,0]`
+  
+- **Tolerância:**  `ε = 0,001`
 
 <br>
 
-### Dada a função `f(x) = x⁴ - 5x³ + 10x² - 10x + 4`, verifique primeiramente se existe pelo menos uma raiz real no intervalo `[0,1]`, se existir, calcule a raiz aproximada com tolerância de erro de `0,0005`.
+✅ **Interpretação esperada:**
 
-| k  | a | b | f(a) | f(b) | xk | f(xk) | \| f(xk) \| < 0,0005 |
-|:----|:---|:---|:------|:------|:----|:--------|:--------------------|
-| 1  | 0 | 1 | 4    | 0    | 1  | 0      |          TRUE         |
-| 2  | 0 | 1 | 4    | 0    | 1  | 0      |         TRUE           |
-
-> A raiz aproximada é: **Não existe raiz real no intervalo solicitado**
-
----
+- O valor de \( T \) encontrado será o **threshold ideal** para o modelo manter exatamente **10% de falsos negativos**.
+- Um **valor de \( T \) mais baixo** torna o modelo mais **sensível** (detecta mais fraudes).
+- Um **valor mais alto** torna o modelo mais **preciso**, mas **perde fraudes**.
+- Aplicar o Método da Falsa Posição e Bisseçao para este cenário e fazer a análise do resultado.
 
 <br>
 
-### Seja `f(x) = x³ - x² + 2x ln(x) – 3`, verifique se existe raiz neste intervalo `[1,2]`, se existir, determine a melhor raiz aproximada com `Erro < 0,001`.
+### MÉTODO DA FALSA POSIÇÃO
 
-| k  | a           | b | f(a)         | f(b)        | xk          | f(xk)          |  \| f(xk) \| < E |
-|:----|:-------------|:---|:--------------|:-------------|:-------------|:----------------|:----------------|
-| 1  | 1           | 2 | -3           | 3,772588722 | 1,442962082 | -1,019428496   | FALSE          |
-| 2  | 1,442962082 | 2 | -1,019428496 | 3,772588722 | 1,561463394 | -0,239408536   | FALSE          |
-| 3  | 1,561463394 | 2 | -0,239408536 | 3,772588722 | 1,587632257 | -0,05108192196 |  FALSE          |
-| 4  | 1,587632257 | 2 | -0,05108192196 | 3,772588722 | 1,59314124 | -0,01067525526 |  FALSE          |
-| 5  | 1,59314124  | 2 | -0,01067525526 | 3,772588722 | 1,594828896 | -0,00221992371 |  FALSE          |
-| 6  | 1,594828896 | 2 | -0,00221992371 | 3,772588722 | 1,594527587 | -0,00046135498 | TRUE           |
-
-> A raiz aproximada é: **1,594527587**
-
----
+| k | a       | b       | f(a)     | f(b)     | raiz aproximada (xk) | f(xk)    | critério de parada (abs(f(xk)) < 0,001) |
+|---|---------|---------|----------|----------|----------------------|----------|-----------------------------------------|
+| 1 | 0,1     | 1       | 0,081959 | -0,097979| 0,509938             | -0,076568| FALSE                                   |
+| 2 | 0,1     | 0,509938| 0,081959 | -0,076568| 0,311939             | -0,036940| FALSE                                   |
+| 3 | 0,311939| 0,509938| -0,036940| -0,076568| 0,127372             | 0,058685 | FALSE                                   |
+| 4 | 0,311939| 0,127372| -0,036940| 0,058685 | 0,240641             | -0,009931| FALSE                                   |
+| 5 | 0,240641| 0,127372| -0,009931| 0,058685 | 0,224247             | -0,002237| FALSE                                   |
+| 6 | 0,224247| 0,127372| -0,002237| 0,058685 | 0,220690             | -0,000483| TRUE                                    |
 
 <br>
 
-### Seja `f(x) = x³ - 2x² + sen(x) + 2cos(x) – 1`, no intervalo `[0,1]` e `tolerância 0,001`, calcule a raiz aproximada. Quantas iterações você precisou fazer?
+### MÉTODO DA BISSEÇÃO
 
-| k  | a          | b          | f(a)          | f(b)          | xk          | f(xk)           |  \| f(xk) \| < E |
-|:----|:------------|:------------|:---------------|:---------------|:-------------|:------------------|:----------------|
-| 1  | 0          | 1          | -0,07792440346| 0,07672558021 | 0,9277088419| -0,07672558021   | FALSE          |
-| 2  | 0          | 0,9277088419| 1             | 0,07672558021 | 1,004802093 | -0,0882143204    |FALSE          |
-| 3  | 1,004802093| 0,9277088419| -0,0882143204 | 0,07672558021 | 0,9635709262| 0,0001242716449  |  TRUE           |
+| k  | a         | b         | raiz aproximada (xk = (a+b)/2) | f(xk)      | critério de parada ([f(xk)] < 0,001) |
+|----|-----------|-----------|--------------------------------|------------|-------------------------------------|
+| 1  | 0,100000  | 1,000000   | 0,550000                      | -0,080822  | FALSE                               |
+| 2  | 0,100000  | 0,550000   | 0,325000                      | -0,040926  | FALSE                               |
+| 3  | 0,100000  | 0,325000   | 0,212500                      | 0,003677   | FALSE                               |
+| 4  | 0,212500  | 0,325000   | 0,268750                      | -0,021740  | FALSE                               |
+| 5  | 0,212500  | 0,268750   | 0,240625                      | -0,009924  | FALSE                               |
+| 6  | 0,212500  | 0,240625   | 0,226563                      | -0,003362  | FALSE                               |
+| 7  | 0,212500  | 0,226563   | 0,219531                      | 0,000096   | TRUE                                |
 
-> A raiz aproximada é: **0,9635709262**
+<br>
+
+### Interpretando os resultados:
+
+#### 1. Método da Falsa Posição
+- A raiz foi encontrada em 𝑇 ≈ 0,220690
+- O critério de parada | f(xk) | < 0,001 foi satisfeito no **6º passo**, porque:
+  - | f(0,220690) | = 0,000483, que é menor que 0,001.
+
+✅ **Convergência OK!**
+
+#### 2. Método da Bisseção
+- A raiz foi encontrada em T ≈ 0,21953125.
+- O critério de parada também foi satisfeito, porque:
+  - | f(0,21953125) | = 0,000096, que é muito menor que 0,001.
+
+✅ **Convergência OK!**
+
+#### 3. Analisando os Resultados
+- Ambos os métodos encontraram um **valor de T muito próximo**.
+- O **Método da Falsa Posição** chegou na solução com **menos iterações** (6 contra 7 da bisseção).
+- Isso acontece porque o Falsa Posição geralmente converge mais rápido **quando a função é aproximadamente linear** no intervalo.
+
+#### 4. Em relação ao modelo (conforme o enunciado):
+- O valor de T encontrado será usado como **threshold** para manter **10% de falsos negativos**.
+- Se você **escolher um T menor que 0,22**, o modelo ficará **mais sensível** (detectando mais fraudes).
+- Se você **aumentar o T**, o modelo será **mais preciso**, mas poderá **perder detecção de fraudes**.
