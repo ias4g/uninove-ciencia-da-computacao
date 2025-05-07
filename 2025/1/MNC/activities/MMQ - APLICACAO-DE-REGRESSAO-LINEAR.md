@@ -81,7 +81,7 @@ Faça uma análise do resultado. Testar outros valores para previsão.
     Equação da reta: `ValorMedido = −0,146 + 1,007 * pesoReal`
 
 
-![Imagep2](./images/q2.png)
+![Imagep2](./images/image.png)
 
 
   - Análise:
