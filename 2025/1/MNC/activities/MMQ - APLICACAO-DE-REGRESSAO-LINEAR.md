@@ -33,6 +33,8 @@ Dados:
 ​
 ![p1image](./images/image.png)
 
+![Image](./images/q2.png)
+
 
 2. > Analise o valor da correlação (r).
   
