@@ -31,7 +31,7 @@ Dados:
     A equação correta é: `y = 2,729 + 5,137x`
 
 
-![Image](./images/p1.png)
+![Imagep1](./images/p1.png)
 
 
 2. > Analise o valor da correlação (r).
@@ -81,7 +81,7 @@ Faça uma análise do resultado. Testar outros valores para previsão.
     Equação da reta: `ValorMedido = −0,146 + 1,007 * pesoReal`
 
 
-![Image](./images/q2.png)
+![Imagep2](./images/q2.png)
 
 
   - Análise:
