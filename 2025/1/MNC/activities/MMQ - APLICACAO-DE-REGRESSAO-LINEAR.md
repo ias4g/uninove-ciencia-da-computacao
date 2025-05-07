@@ -82,7 +82,6 @@ Faça uma análise do resultado. Testar outros valores para previsão.
 
 ![Image](./images/q2.png)
 
-
   - Análise:
 
     A inclinação próxima de 1 mostra que a balança está bem calibrada.
