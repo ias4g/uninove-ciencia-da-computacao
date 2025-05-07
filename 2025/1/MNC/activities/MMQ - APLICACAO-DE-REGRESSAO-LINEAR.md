@@ -31,7 +31,8 @@ Dados:
     A equação correta é: `y = 2,729 + 5,137x`
 ​
 
-  ![Image](./images/image.png)  
+![Image](./images/image.png)  
+
 
 2. > Analise o valor da correlação (r).
   
