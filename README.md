@@ -13,16 +13,16 @@
 
    <br><br>
 
-   | ⬇ Acesso aos conteúdos do semestre ⬇ | ⬇ Acesso direto às disciplinas atuais ⬇                      |
-   |-----------------------------------------------|-----------------------------------------------------|
-   | [Acessar conteúdo do 1º semestre](./2022/1/)  | [Automação de Processos](./2025/1/AP/)              |
-   | [Acessar conteúdo do 2º semestre](./2022/2/)  | [Inteligência Artificial](./2025/1/IA/)             |
-   | [Acessar conteúdo do 3º semestre](./2023/1/)  | [Modelagem e Simulação](./2025/1/M&S/)              |
-   | [Acessar conteúdo do 4º semestre](./2023/2/)  | [Metódos Númericos Computacionais](./2025/1/MNC/)   |
-   | [Acessar conteúdo do 5º semestre](./2024/1/)  | [Projeto em Sistemas Inteligentes](./2025/1/PSI/)   |
-   | [Acessar conteúdo do 6º semestre](./2024/2/)  |                                                     |
-   | [Acessar conteúdo do 7º semestre](./2025/1/)  |                                                     |
-   | Acessar conteúdo do 8º semestre               |                                                     |
+   | ⬇ Acesso aos conteúdos do semestre ⬇ | ⬇ Acesso direto às disciplinas atuais ⬇                                     |
+   |-----------------------------------------------|--------------------------------------------------------------------|
+   | [Acessar conteúdo do 1º semestre](./2022/1/)  | [Análise De Dados](./2025/2/AD/)                                   |
+   | [Acessar conteúdo do 2º semestre](./2022/2/)  | [Cidadania Para o Mundo](./2025/2/CPM/)                            |
+   | [Acessar conteúdo do 3º semestre](./2023/1/)  | [Desenvolvimento De Negócios  Com Agilidade](./2025/2/DNCA/)       |
+   | [Acessar conteúdo do 4º semestre](./2023/2/)  | [Empreendedorismo, Gestão De Pessoas e liderança](./2025/2/EGPL/)  |
+   | [Acessar conteúdo do 5º semestre](./2024/1/)  | [Gerência De Projetos Em TI](./2025/2/GPT/)                        |
+   | [Acessar conteúdo do 6º semestre](./2024/2/)  | [Projeto Em Gestão De Sistemas Computacionais](./2025/2/PGSC/)     |
+   | [Acessar conteúdo do 7º semestre](./2025/1/)  | [Pesquisas Operacionais](./2025/2/PO/)                             |
+   | [Acessar conteúdo do 8º semestre](./2025/2/)  | [Segurança Da Informação](./2025/2/SI/)                            |
 
    <br><br>
 
