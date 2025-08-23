@@ -67,9 +67,11 @@ $\text{Maximizar } Z = x + y$
 
 ### ✅ **Resumo do modelo**
 
-$\begin{cases}
+$$
+\begin{cases}
 \text{Max } Z = x + y \\
 2x + 3y \leq 100 \\
 x + 2y \leq 80 \\
 x \geq 0, \, y \geq 0
-\end{cases}$
+\end{cases}
+$$
