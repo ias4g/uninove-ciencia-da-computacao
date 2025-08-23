@@ -1,5 +1,3 @@
-Resolver equações lineares de 2 incógnitas
-
 # ATIVIDADE | EQUAÇÕES LINEARES
 
 ### RESOLVER EQUAÇÕES LINEARES DE 2 INCÓGNITAS
