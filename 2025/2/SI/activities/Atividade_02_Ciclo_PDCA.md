@@ -26,17 +26,12 @@ A **ISO 27001** é uma das principais normas internacionais para segurança da I
 
 #### Selecione um dos Problema de Segurança da Informação a seguir para aplicar o Ciclo de Melhoria Contínua (PDCA)
 
-[x] **Senhas Expostas em Post it nos Gabinetes dos Colaboradores**
-
-[ ] Dados Sigilosos Expostos em um repositório Público (GitHub por exemplo)
-
-[ ] Colaboradores com Antivirus Desatualizados em seus Computadores
-
-[ ] A Empresa que você trabalha não possui um Plano de Backup
-
-[ ] A Empresa não tem treinamentos de Segurança Recorrentes
-
-[ ] Dispositivos Emprestados para Funcionários em Home Office não são Controlados
+- [x] **Senhas Expostas em Post it nos Gabinetes dos Colaboradores**
+- [ ] Dados Sigilosos Expostos em um repositório Público (GitHub por exemplo)
+- [ ] Colaboradores com Antivirus Desatualizados em seus Computadores
+- [ ] A Empresa que você trabalha não possui um Plano de Backup
+- [ ] A Empresa não tem treinamentos de Segurança Recorrentes
+- [ ] Dispositivos Emprestados para Funcionários em Home Office não são Controlados
 
 ---
 
