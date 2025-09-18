@@ -24,7 +24,7 @@
 - [ ] O Product Owner insere o item no Sprint Backlog imediatamente.
 - [ ] O Scrum Master deve rejeitar a solicitação em nome do time.
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **O Product Owner pode renegociar o escopo da Sprint junto com os Developers.**
+- [x] ✅ _O Product Owner pode renegociar o escopo da Sprint junto com os Developers._
 - [ ] O item só poderá entrar na próxima Sprint Review.
  
 ---
@@ -34,7 +34,7 @@
 - [ ] Solicitar ao Scrum Master que redefina a Meta.
 - [ ] Encerrar a Sprint imediatamente.
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **Colaborar e adaptar o plano de trabalho para ainda buscar a Meta da Sprint.**
+- [x] ✅ _Colaborar e adaptar o plano de trabalho para ainda buscar a Meta da Sprint._
 - [ ] Transferir parte do trabalho para outro Scrum Team.
 - [ ] Informar os stakeholders que a Meta foi cancelada.
 
@@ -44,7 +44,7 @@
 
 - [ ] Continuar como está, pois o Scrum não define limite de tamanho.
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **Dividir-se em dois Scrum Teams coesos, compartilhando o mesmo Product Owner e Product Backlog.**
+- [x] ✅ _Dividir-se em dois Scrum Teams coesos, compartilhando o mesmo Product Owner e Product Backlog._
 - [ ] Nomear um líder técnico para centralizar as decisões.
 - [ ] Reduzir o escopo do produto.
 - [ ] Ampliar a duração das Sprints para compensar a dificuldade.
@@ -56,7 +56,7 @@
 - [ ] O Scrum Master anota e decide se entra no próximo Sprint Backlog.
 - [ ] Os stakeholders alteram diretamente o Sprint Backlog.
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **O Product Owner avalia e ajusta o Product Backlog para refletir as novas oportunidades.**
+- [x] ✅ _O Product Owner avalia e ajusta o Product Backlog para refletir as novas oportunidades._
 - [ ] Os Developers negociam diretamente com os stakeholders sem envolver o Product Owner.
 - [ ] As mudanças só podem ser aplicadas após três Sprints.
 
@@ -65,7 +65,7 @@
 > ### 6. Durante uma Sprint Retrospective, o time identifica falhas na comunicação. O que deve ser feito?  
 
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **Discutir e planejar ações de melhoria a serem aplicadas na próxima Sprint.**
+- [x] ✅ _Discutir e planejar ações de melhoria a serem aplicadas na próxima Sprint._
 - [ ] Aguardar o Scrum Master corrigir a situação.
 - [ ] Escalar o problema para a alta direção.
 - [ ] Cancelar a Sprint atual.
@@ -77,7 +77,7 @@
 
 - [ ] O gerente define porque tem mais experiência técnica.
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **O Scrum Master deve remover essa interferência, pois apenas os Developers decidem como fazer o trabalho.**
+- [x] ✅ _O Scrum Master deve remover essa interferência, pois apenas os Developers decidem como fazer o trabalho._
 - [ ] O Product Owner deve aceitar a interferência para acelerar entregas.
 - [ ] Os Developers devem seguir as ordens para não gerar conflito.
 - [ ] A decisão deve ser levada para votação da diretoria.
@@ -89,7 +89,7 @@
 - [ ] Permitir, já que o Product Owner precisa de relatórios.
 - [ ] Cancelar as Daily Scrums até reorganizar o processo.
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **Reforçar que a Daily Scrum é para os Developers inspecionarem e adaptarem seu trabalho, mantendo o foco de 15 minutos.**
+- [x] ✅ _Reforçar que a Daily Scrum é para os Developers inspecionarem e adaptarem seu trabalho, mantendo o foco de 15 minutos._
 - [ ] Substituir a Daily Scrum por um relatório escrito.
 - [ ] Prolongar a reunião para acomodar todas as discussões.
 
@@ -99,7 +99,7 @@
 
 - [ ] O item é aceito parcialmente na Sprint Review.
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **O item retorna ao Product Backlog para consideração futura.**
+- [x] ✅ _O item retorna ao Product Backlog para consideração futura._
 - [ ] O Scrum Master aprova a entrega.
 - [ ] O Product Owner libera o item para produção assim mesmo.
 - [ ] O item é ignorado e retirado do Backlog.
@@ -111,7 +111,7 @@
 - [ ] A Definição de Pronto.
 - [ ] O compromisso com a Meta do Produto.
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **A definição da Meta da Sprint.**
+- [x] ✅ _A definição da Meta da Sprint._
 - [ ] A presença dos stakeholders.
 - [ ] O plano detalhado de atividades diárias.
 
