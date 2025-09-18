@@ -12,7 +12,7 @@
 - [ ] O Scrum Master decide a ordem final.
 - [ ] O time vota e a maioria define a ordem.
 - [ ] O cliente externo define a ordem dos itens.
-- [x] ✅ **O Product Owner ouve os Developers, mas mantém a decisão final sobre a ordem.**
+- [x] ✅ _O Product Owner ouve os Developers, mas mantém a decisão final sobre a ordem._
 - [ ] O cliente externo define a ordem dos itens.
 - [ ] A ordem é definida automaticamente por ferramentas de gestão.
 
