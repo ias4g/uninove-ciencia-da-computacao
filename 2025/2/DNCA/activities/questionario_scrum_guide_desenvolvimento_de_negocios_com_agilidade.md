@@ -11,7 +11,8 @@
 
 - [ ] O Scrum Master decide a ordem final.
 - [ ] O time vota e a maioria define a ordem.
-- [x] O Product Owner ouve os Developers, mas mantém a decisão final sobre a ordem.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ O Product Owner ouve os Developers, mas mantém a decisão final sobre a ordem.
 - [ ] O cliente externo define a ordem dos itens.
 - [ ] A ordem é definida automaticamente por ferramentas de gestão.
 
@@ -22,7 +23,8 @@
 - [ ] Os Developers aceitam a demanda, já que vem da alta direção.
 - [ ] O Product Owner insere o item no Sprint Backlog imediatamente.
 - [ ] O Scrum Master deve rejeitar a solicitação em nome do time.
-- [x] O Product Owner pode renegociar o escopo da Sprint junto com os Developers.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ O Product Owner pode renegociar o escopo da Sprint junto com os Developers.
 - [ ] O item só poderá entrar na próxima Sprint Review.
  
 ---
@@ -31,7 +33,8 @@
 
 - [ ] Solicitar ao Scrum Master que redefina a Meta.
 - [ ] Encerrar a Sprint imediatamente.
-- [x] Colaborar e adaptar o plano de trabalho para ainda buscar a Meta da Sprint.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ Colaborar e adaptar o plano de trabalho para ainda buscar a Meta da Sprint.
 - [ ] Transferir parte do trabalho para outro Scrum Team.
 - [ ] Informar os stakeholders que a Meta foi cancelada.
 
@@ -40,7 +43,8 @@
 >  ### 4. Um Scrum Team de 12 pessoas percebe dificuldade de comunicação. Qual a melhor ação segundo o Scrum Guide?  
 
 - [ ] Continuar como está, pois o Scrum não define limite de tamanho.
-- [x] Dividir-se em dois Scrum Teams coesos, compartilhando o mesmo Product Owner e Product Backlog.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ Dividir-se em dois Scrum Teams coesos, compartilhando o mesmo Product Owner e Product Backlog.
 - [ ] Nomear um líder técnico para centralizar as decisões.
 - [ ] Reduzir o escopo do produto.
 - [ ] Ampliar a duração das Sprints para compensar a dificuldade.
@@ -51,7 +55,8 @@
 
 - [ ] O Scrum Master anota e decide se entra no próximo Sprint Backlog.
 - [ ] Os stakeholders alteram diretamente o Sprint Backlog.
-- [x] O Product Owner avalia e ajusta o Product Backlog para refletir as novas oportunidades.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ O Product Owner avalia e ajusta o Product Backlog para refletir as novas oportunidades.
 - [ ] Os Developers negociam diretamente com os stakeholders sem envolver o Product Owner.
 - [ ] As mudanças só podem ser aplicadas após três Sprints.
 
@@ -59,7 +64,8 @@
 
 > ### 6. Durante uma Sprint Retrospective, o time identifica falhas na comunicação. O que deve ser feito?  
 
-- [x] Discutir e planejar ações de melhoria a serem aplicadas na próxima Sprint.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ Discutir e planejar ações de melhoria a serem aplicadas na próxima Sprint.
 - [ ] Aguardar o Scrum Master corrigir a situação.
 - [ ] Escalar o problema para a alta direção.
 - [ ] Cancelar a Sprint atual.
@@ -70,7 +76,8 @@
 > ### 7. Em uma organização tradicional, um gerente tenta ditar como os Developers devem executar cada item do Product Backlog. Qual é a postura correta no Scrum?  
 
 - [ ] O gerente define porque tem mais experiência técnica.
-- [x] O Scrum Master deve remover essa interferência, pois apenas os Developers decidem como fazer o trabalho.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ O Scrum Master deve remover essa interferência, pois apenas os Developers decidem como fazer o trabalho.
 - [ ] O Product Owner deve aceitar a interferência para acelerar entregas.
 - [ ] Os Developers devem seguir as ordens para não gerar conflito.
 - [ ] A decisão deve ser levada para votação da diretoria.
@@ -81,7 +88,8 @@
 
 - [ ] Permitir, já que o Product Owner precisa de relatórios.
 - [ ] Cancelar as Daily Scrums até reorganizar o processo.
-- [x] Reforçar que a Daily Scrum é para os Developers inspecionarem e adaptarem seu trabalho, mantendo o foco de 15 minutos.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ Reforçar que a Daily Scrum é para os Developers inspecionarem e adaptarem seu trabalho, mantendo o foco de 15 minutos.
 - [ ] Substituir a Daily Scrum por um relatório escrito.
 - [ ] Prolongar a reunião para acomodar todas as discussões.
 
@@ -90,7 +98,8 @@
 > ### 9. Em um projeto, um item do Product Backlog foi entregue, mas não atende à Definição de Pronto. O que deve acontecer?  
 
 - [ ] O item é aceito parcialmente na Sprint Review.
-- [x] O item retorna ao Product Backlog para consideração futura.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ O item retorna ao Product Backlog para consideração futura.
 - [ ] O Scrum Master aprova a entrega.
 - [ ] O Product Owner libera o item para produção assim mesmo.
 - [ ] O item é ignorado e retirado do Backlog.
@@ -101,7 +110,8 @@
 
 - [ ] A Definição de Pronto.
 - [ ] O compromisso com a Meta do Produto.
-- [x] A definição da Meta da Sprint.
+- [ ] O cliente externo define a ordem dos itens.
+- [x] ✅ A definição da Meta da Sprint.
 - [ ] A presença dos stakeholders.
 - [ ] O plano detalhado de atividades diárias.
 
