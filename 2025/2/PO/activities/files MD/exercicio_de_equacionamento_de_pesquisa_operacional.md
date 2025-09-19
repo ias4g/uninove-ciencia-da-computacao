@@ -70,6 +70,7 @@ Requisitos por produto:
 * Calça: 1 m algodão, 1 m seda, 2 m lã
 
 Função objetivo (maximizar lucro):
+
 $$
 \max\; Z = 50x + 70y
 $$
@@ -81,7 +82,7 @@ $$
 2x + 1y \le 16 & (\text{algodão})\\[4pt]
 1x + 1y \le 11 & (\text{seda})\\[4pt]
 2y \le 15 & (\text{lã})\\[4pt]
-x\ge0,\; y\ge0
+x\ge0,\ y\ge0
 \end{cases}
 $$
 
