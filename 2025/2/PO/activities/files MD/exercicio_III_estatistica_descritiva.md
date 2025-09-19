@@ -36,7 +36,7 @@ def estatisticas_e_interpretacao(nome, notas):
     n = notas.size
     media = np.mean(notas)
     mediana = np.median(notas)
-    desvio = np.std(notas)           # comportamento igual ao que você usou antes
+    desvio = np.std(notas)
     minimo = np.min(notas)
     maximo = np.max(notas)
     pct_below_7 = (notas < 7).sum() / n * 100
