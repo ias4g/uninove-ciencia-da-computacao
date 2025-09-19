@@ -28,10 +28,10 @@ Restrições (horas disponíveis):
 **Solução (verificação por vértices):**
 Vértices candidatos: $(0,0), (60,0), (0,50)$ e interseção das duas retas: resolver
 
-$
+$$
 \begin{cases}3x+2y=180\\
-x+2y=100\end{cases}\Rightarrow x=40,\; y=30
-$
+x+2y=100\end{cases}\Rightarrow x=40,\ y=30
+$$
 
 Lucros:
 
