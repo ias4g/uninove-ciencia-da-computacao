@@ -19,7 +19,7 @@ $y$ = número de bonecas por semana
 
 Função objetivo (maximizar lucro):
 $$
-\max\; Z = 8x + 6y
+\max\ Z = 8x + 6y
 $$
 
 Restrições (horas disponíveis):
