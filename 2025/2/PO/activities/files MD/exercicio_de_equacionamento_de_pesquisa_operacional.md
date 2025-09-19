@@ -17,10 +17,7 @@ $x$ = número de carros por semana
 
 $y$ = número de bonecas por semana
 
-Função objetivo (maximizar lucro):
-$
-\max\ Z = 8x + 6y
-$
+Função objetivo (maximizar lucro): $\max\ Z = 8x + 6y$
 
 Restrições (horas disponíveis):
 
