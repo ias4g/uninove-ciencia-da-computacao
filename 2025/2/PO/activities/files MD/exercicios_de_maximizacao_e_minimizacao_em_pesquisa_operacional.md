@@ -87,7 +87,7 @@ Então $y = 4 - 2(1{,}2) = 4 - 2{,}4 = 1{,}6$.
 
 Essas quantidades são em porções de 100 g, ou seja: **120 g** do alimento A e **160 g** do alimento B.
 
-Custo: $Z = 2\cdot1{,}2 + 1{,}5\cdot1{,}6 = 2{,}4 + 2{,}4 = \mathbf{R\$\,4{,}80}$.
+Custo: $Z = 2\cdot1{,}2 + 1{,}5\cdot1{,}6 = 2{,}4 + 2{,}4 = 4{,}80$.
 
 **Ótimo:** comer **120g de A** e **160g de B** por dia.
 **Custo mínimo diário:** **R\$ 4,80**.
