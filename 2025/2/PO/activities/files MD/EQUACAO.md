@@ -74,3 +74,13 @@ x + 2y \leq 80 \\
 x \geq 0, \, y \geq 0
 \end{cases}
 $$
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div align="center">
+   👋 Feito com ♥ by Izael Silva 👋
+</div>

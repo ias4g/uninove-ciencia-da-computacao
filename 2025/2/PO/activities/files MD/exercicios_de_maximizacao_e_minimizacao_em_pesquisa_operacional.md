@@ -8,7 +8,6 @@
 <br>
 
 > ### Exercício 1: Maximização de Lucro na Produção de Móveis
-> 
 Uma pequena marcenaria produz dois tipos de móveis: **mesas** e **cadeiras**. A produção de uma mesa consome 2 horas de mão de obra e 1 unidade de
 madeira, gerando um lucro de R$ 80,00. A produção de uma cadeira consome 1 hora de mão de obra e 1 unidade de madeira, com um lucro de R$ 50,00. A marcenaria dispõe de um total de 40 horas de mão de obra e 30 unidades de madeira por semana. O objetivo é determinar quantas mesas e cadeiras devem ser produzidas semanalmente para maximizar o lucro total.
 
@@ -95,7 +94,7 @@ Custo: $Z = 2\cdot1{,}2 + 1{,}5\cdot1{,}6 = 2{,}4 + 2{,}4 = 4{,}80$.
 ---
 
 > ### Exercício 3: Maximização de Produção Agrícola
-Um agricultor tem 100 hectares de terra para plantar milho e soja. O custo de plantio por hectare de milho é de R$ 200,00 e o de soja é R$100,00. O agricultor tem um orçamento máximo de R$ 12.000,00 para o plantio. A mão de obra necessária para o milho é de 2 dias por hectare e para a soja é de
+Um agricultor tem 100 hectares de terra para plantar milho e soja. O custo de plantio por hectare de milho é de R$ 200,00 e o de soja é R$ 100,00. O agricultor tem um orçamento máximo de R$ 12.000,00 para o plantio. A mão de obra necessária para o milho é de 2 dias por hectare e para a soja é de
 3 dias por hectare. O agricultor dispõe de no máximo 240 dias de mão de obra. O lucro por hectare de milho é de R$ 500,00 e de soja é R$ 300,00. O objetivo é determinar quantos hectares de cada cultura devem ser plantados para maximizar o lucro.
 
 #### Equacione o problema:
