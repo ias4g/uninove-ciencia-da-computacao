@@ -114,7 +114,7 @@ A infraestrutura precisa de **otimização**, redistribuição de carga e verifi
 
 <br>
 
-[Link da Planilha google]([URL](https://docs.google.com/spreadsheets/d/1WlpwIowZiJteex-JagJ3khqgVR4bxl9d/edit?usp=sharing&ouid=109787904884700197957&rtpof=true&sd=true))
+[Link da Planilha google](https://docs.google.com/spreadsheets/d/1WlpwIowZiJteex-JagJ3khqgVR4bxl9d/edit?usp=sharing&ouid=109787904884700197957&rtpof=true&sd=true)
 
 
 <br>
