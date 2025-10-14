@@ -112,6 +112,10 @@ A infraestrutura precisa de **otimização**, redistribuição de carga e verifi
 🟢 Há servidores com excelente tempo de resposta.
 🔴 Mas a maioria ainda apresenta lentidão moderada a severa, exigindo atenção técnica.
 
+<br>
+
+[Link da Planilha google]([URL](https://docs.google.com/spreadsheets/d/1WlpwIowZiJteex-JagJ3khqgVR4bxl9d/edit?usp=sharing&ouid=109787904884700197957&rtpof=true&sd=true))
+
 
 <br>
 <br>
