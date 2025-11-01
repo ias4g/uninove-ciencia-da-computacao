@@ -39,7 +39,7 @@ Leia atentamente e escolha a alternativa correta.
 
 A linguagem é o uso da língua como forma de expressão e comunicação entre as pessoas, porém deve-se destacar que a linguagem não é somente um conjunto de palavras faladas ou escritas. Qual outra forma de comunicação?
 
-- [x] Gestos e imagens.
+- [x] **Gestos e imagens.**
     > A linguagem vai muito além das palavras — ela envolve todas as formas de expressão e comunicação humana. Isso inclui gestos, expressões faciais, posturas corporais, sinais visuais, imagens, sons e outros elementos não verbais que também transmitem mensagens e significados.
 
 - [ ] Por redes sociais e canais de comunicação.
@@ -56,7 +56,7 @@ A linguagem é o uso da língua como forma de expressão e comunicação entre a
 Como podemos planejar a gestão de RH?
 
 - [ ] Com treinamentos e investimentos na área de RH.
-- [x] O Planejamento de RH pode ser formulado e desenhado depois, isoladamente ou integradamente, com o planejamento estratégico da empresa. Alguns são genéricos e abrangem toda a empresa, enquanto outros são específicos para determinados níveis ou unidades organizacionais.
+- [x] **O Planejamento de RH pode ser formulado e desenhado depois, isoladamente ou integradamente, com o planejamento estratégico da empresa. Alguns são genéricos e abrangem toda a empresa, enquanto outros são específicos para determinados níveis ou unidades organizacionais.**
     > O planejamento de Recursos Humanos (RH) faz parte do planejamento estratégico organizacional, podendo ser desenvolvido de forma integrada (junto com o plano geral da empresa) ou isolada (quando há necessidades específicas). Ele define metas, políticas e ações voltadas para a gestão de pessoas, como recrutamento, treinamento, desenvolvimento e retenção de talentos, alinhando-se aos objetivos estratégicos da organização. Assim, essa alternativa reflete com precisão o conceito de gestão e planejamento de RH.
 
 - [ ] Com pesquisas de salários, direitos dos trabalhadores e convenções.
@@ -75,7 +75,7 @@ Quando se fala no tema liderança, a primeira questão que geralmente vem a ment
 - [ ] Liderança pode ser entendido entre o elo dos operários e gestores, o líder com sua capacidade acima dos outros, faz com que a equipe trabalhe e traga resultados para empresa.
 - [ ] Cargo de confiança, o líder manda em todos os funcionários.
 - [ ] Responsável por chefiar a equipe.
-- [x] Liderança pode ser definida como a capacidade de inspirar, apoiar e motivar pessoas. É a habilidade de tornar a visão do futuro da organização clara e atraente para todos os colaboradores. É a disposição e a capacidade de influenciar as pessoas a agirem favorável e positivamente para alcançarem os objetivos da organização. É, sobretudo, a qualidade de inspirar confiança e criar condições que favoreçam o desenvolvimento das pessoas no ambiente corporativo.
+- [x] **Liderança pode ser definida como a capacidade de inspirar, apoiar e motivar pessoas. É a habilidade de tornar a visão do futuro da organização clara e atraente para todos os colaboradores. É a disposição e a capacidade de influenciar as pessoas a agirem favorável e positivamente para alcançarem os objetivos da organização. É, sobretudo, a qualidade de inspirar confiança e criar condições que favoreçam o desenvolvimento das pessoas no ambiente corporativo.**
     > A liderança moderna não se baseia em autoridade ou poder hierárquico, mas em influência, inspiração e motivação. O verdadeiro líder é aquele que: Inspira confiança, Motiva e orienta a equipe, Torna clara a visão da organização, e Cria condições para o desenvolvimento pessoal e profissional de todos. Ou seja, liderar não é mandar — é influenciar positivamente e servir de exemplo.
 
 ---
@@ -86,7 +86,7 @@ Quando se fala no tema liderança, a primeira questão que geralmente vem a ment
 
 Qual importância da comunicação?
 
-- [x] A importância da comunicação é um processar e transformar informações para a compreensão humana nas relações entre pessoas.  Este processo se dá de modo oral (verbal), escrito ou corporal (por gestos do corpo).
+- [x] **A importância da comunicação é um processar e transformar informações para a compreensão humana nas relações entre pessoas.  Este processo se dá de modo oral (verbal), escrito ou corporal (por gestos do corpo).**
     > A comunicação é fundamental porque permite transmitir e compreender informações, facilita relações interpessoais e garante alinhamento entre pessoas e equipes. Ela não se restringe apenas às palavras, mas inclui formas verbais, escritas e não verbais (como gestos, expressões faciais e linguagem corporal), sendo essencial para cooperação, aprendizado e tomada de decisão.
 
 - [ ] Comunicação é transferir com palavras informações voltadas para trabalho realizado.
